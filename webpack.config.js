@@ -50,7 +50,6 @@ module.exports = {
       require('postcss-import')({
         addDependencyTo: webpack
       }),
-      require('postcss-opacity'),
       require('postcss-cssnext')()
     ]
   }
