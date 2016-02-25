@@ -3,7 +3,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
-    'rczp': [__dirname + '/src/js/rczp.js']
+    'rczp': [__dirname + '/src/rczp/rczp.js']
   },
   output: {
     path: __dirname + '/dist/',
