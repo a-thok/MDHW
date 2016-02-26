@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'microsoft yahei', sans-serif;
+}
+ul, ol {
+  list-style: none;
+}
+
+:root {
+  --rczpColor: #3d9ccc;
+  --borderColorLight: #e3e3e3;
+}
+
+html {
+  height: 100%;
+  color: #333;
+}
+body {
+  height: 100%;
+}
+.page {
+  max-width: 750px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #e7e8ed;
+  overflow: hidden;
+}
+
+/* 头部 */
+header {
+  width: 100%;
+  height: 100px;
+}
