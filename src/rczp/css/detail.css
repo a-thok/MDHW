@@ -2,150 +2,169 @@
 /*人才招聘触屏版-详情页*/
 
 /*详情页-职位名称及待遇*/
-.position {
+.detail_position {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  padding: 16px 2.0%;
+  padding: 10px 3.6%;
 }
 /*职位名称及待遇-左*/
-.position_left {
-  font-size: 18px;
+.detail_position_left {
+  font-size: 20px;
 }
-.position_left li {
-  margin-top: 3px;
+.detail_position_left li {
+  margin-top: 2px;
 }
 /*发布信息*/
-.position_left_three,
-.position_left_two,
-.position_left_one {
+.detail_position_left_three,
+.detail_position_left_two,
+.detail_position_left_one {
   display: flex;
   justify-content: flex-start;
+  overflow: auto;
 }
 /*发布时间与地点*/
-.position_left_one li {
+.detail_position_left_one li {
+  display: flex;
   font-size: 12px;
   margin-right: 1em;
-  /*color: #b6b6b6;*/
+  color: #999;
 }
 /*发布时间与地点的图标*/
-.position_left_one_one {
+.detail_position_left_one_time {
   display: inline-block;
   width: 1em;
   height: 1em;
+  align-self: center;
+  margin-right: 2px;
   background-color: red;
 }
-.position_left_one_two {
+.detail_position_left_one_place {
   display: inline-block;
   width: 1em;
   height: 1em;
+  align-self: center;
+  margin-right: 2px;
   background-color: red;
 }
 /*应聘要求*/
-.position_left_two li {
-  font-size: 14px;
-  /*color: #7d7d7d;*/
-  margin-right: 0.3em;;
+.detail_position_left_two li {
+  font-size: 12px;
+  color: #666;
+  margin-right: 0.5em;
 }
 /*公司待遇*/
-.position_left_three li {
-  font-size: 8px;;
-  margin-right: 0.3em;
-  /*color: #b6b6b6;*/
-  border: 1px solid #b6b6b6;
-  padding: 5px 1.0%;
-  /*flex-shrink: 0;*/
+.detail_position_left_bottom {
+  display: flex;
 }
-#position_left_three {
-  /*color: #7f7f7f;*/
+.detail_position_left_three li {
+  font-size: 12px;
+  margin-left: 0.3em;
+  color: #999;
+  border: 1px solid var(--borderColorLight);
+  padding: .2222em .2222em;
+  flex-shrink: 0;
+}
+#detail_position_left_three {
+  color: #777;
+  font-size: 12px;
+  flex-shrink: 0;
   border: 0;
+  align-self: center;
 }
 /*职位名称及待遇-右*/
-.position_right {
-  font-size: 14px;
-  /*color: #7d7d7d;*/
+.detail_position_right {
+  font-size: 13px;
+  flex-shrink: 0;
+  color: #666;
 }
-.position_right li {
+.detail_position_right li {
   display: flex;
   justify-content: flex-end;
-  margin-top: 0.5em;
+  margin-top: 8px;
 }
-.position_right_one {
+.detail_position_right_one {
   display: inline-block;
+  align-self: center;
+  margin-right: 2px;
   width: 1em;
   height: 1em;
   background-color: red;
 }
-.position_right_two {
-  font-size: 16px;
+.detail_position_right_two {
+  font-size: 14px;
   color: #ec6941;
 }
 /*公司简介*/
-.company {
+.detail_company {
   background-color: #fff;
   display: flex;
-  padding: 16px 3.6%;
-  margin-top: 16px;
-  font-size: 14px;
-  /*color: #919191;*/
+  padding: 5px 3.6%; 
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
   justify-content: space-between;
 }
 
-.company_left {
+.detail_company_left {
  display: flex;
 }
-.company_left_right {
+.detail_company_left_right {
   margin-left: 6px;
 }
-.company_left_right li {
-  margin-top: 4px;
+#detail_company_left_right {
+  font-size: 14px;
 }
-
-.company_right {
+.detail_company_left_right li {
+  margin-top: 2px;
+}
+.detail_company_left_right_color {
+  color: #333;
+}
+.detail_company_right {
  margin-right: 1vw;  
 }
-.company_left,
-.company_right {
+.detail_company_left,
+.detail_company_right {
   display: flex;
   align-items: center;
 }
-.company_right_one {
+.detail_company_right_one {
   display: inline-block; 
   width: 2em;
   height: 2em;
   background-color: red;
 }
 /*职位描述*/
-.introduce {
-  padding: 16px 3.6%;
-  font-size: 16px;
-  /*color: #484848;*/
+.detail_introduce {
+  padding: 10px 3.6%;
+  font-size: 14px;
 }
-.introduce_one {
+.detail_introduce_one {
   border-left: 0.3em solid var(--rczpColor); 
-  padding-left: 0.3em;
+  padding-left: 0.5em;
+  color: #333
 }
 /*职位介绍内容*/
-.Major_presentations {
+.detail_Major_presentations {
   background-color: #fff;
-  padding: 16px 3.6%;
-  font-size: 14px;
+  padding: 5px 3.6%;
+  font-size: 12px;
   
 }
-.Major_presentations_one li,
-.Major_presentations_two li {
-   margin-top: 0.3em;
-   /*color: #808080;*/
+.detail_Major_presentations_one li,
+.detail_Major_presentations_two li {
+   margin-top: 0.2em;
+   color: #666;
 }
 /*投递简历*/
-.main_five {
+.detail_submit {
   margin-top: 16px;
   background-color: var(--rczpColor);
   padding: 16px 0;
   font-size: 16px;
   color: #fff;
-}
-p {
   display: flex;
   justify-content: center;
 }
+
