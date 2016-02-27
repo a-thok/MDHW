@@ -2,18 +2,104 @@ header {
   background-color: var(--rczpColor);
 }
 
+/* 过滤栏 */
 .filter {
   display: flex;
   justify-content: space-between;
   padding: 16px 6.6667%;
+  border-bottom: 1px solid var(--borderColorLight);
   background-color: #fff;
   font-size: 18px;
 }
+.filter_title {
+  display: flex;
+}
+.filter_title_arrow {
+  align-self: center;
+  width: 0;
+  border-width: .35em .35em 0 .35em;
+  border-style: solid;
+  border-color: #333 transparent transparent;
+  margin-left: .3333em;
+}
+.filter_content {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  border-top: 157px solid transparent;
+}
+.province,
+.city {
+  flex-basis: 50%;
+  height: 100%;
+  background-color: #fff;
+  overflow: auto;
+}
+.province li,
+.city li {
+  height: 66px;
+  padding-left: 7.4667%;
+  background-color: #fff;
+  line-height: 66px;
+}
 
+/* 列表 */
 .list {
   margin: 22px 3.4667%;
   font-size: 16px;
 }
 .list_item {
+  display: flex;
+  justify-content: space-between;
   background-color: #fff;
+  padding: 3% 2.5%;
+  overflow: hidden;
+}
+.list_item_img {
+  margin-right: 5.1873%;
+  align-self: center;
+}
+.list_item_img div {
+  width: 18vw;
+  height: 18vw;
+  background-color: red;
+}
+.list_item_text {
+  /*flex-basis: */
+}
+.list_item_text p {
+  margin-bottom: 6px;
+}
+.company_info {
+  font-size: 14px;
+  color: #888;
+}
+.company_name {
+  margin-right: .5em;
+  color: #000;
+  font-size: 18px;
+}
+.company_comment a,
+.company_post a {
+  color: var(--rczpColor);
+  text-decoration: none;
+  margin-right: .5em;
+}
+.tagList {
+  display: flex;
+  justify-content: flex-start;
+  /*flex-wrap: wrap;*/
+  padding-bottom: 1px;
+  font-size: 12px;
+  overflow: auto;
+}
+.tagList_item {
+  flex-shrink: 0;
+  padding: .3333em .5833em;
+  margin-right: .4167em;
+  border: 1px solid var(--borderColorLight);
+  color: #888;
 }
