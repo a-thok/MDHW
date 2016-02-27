@@ -1,3 +1,16 @@
 header {
   background-color: var(--rczpColor);
 }
+.header_return,
+.header_search {
+  border: 0;
+  background: #fff;
+}
+.header_return {
+  width: 20px;
+  height: 38px;
+}
+.header_search {
+  width: 32px;
+  height: 32px;
+}

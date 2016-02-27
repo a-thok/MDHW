@@ -9,22 +9,40 @@
 <body>
   <div class="page">
     <header>
-      <button type="button"><</button>
-      <button type="button">搜索</button>
+      <button class="header_return" type="button"></button>
+      <button class="header_search" type="button">搜索</button>
     </header>
     <div class="filter">
-      <span class="filter_title">地区不限</span>
-      <span class="filter_title">行业不限</span>
-      <span class="filter_title">性质不限</span>
+      <span class="filter_title">
+        <span class="filter_title_area">地区不限</span><i class="filter_title_arrow"></i>
+        <div class="filter_content">
+          <ul class="province">
+            <li class="province_item">热门城市</li>
+          </ul>
+          <ul class="city"></ul>
+        </div>
+      </span>
+      <span class="filter_title">行业不限<i class="filter_title_arrow"></i></span>
+      <span class="filter_title">性质不限<i class="filter_title_arrow"></i></span>
     </div>
     <ul class="list">
       <li class="list_item">
-        adfafdsaf
-        adsfasd
-        asdfdas
+        <div class="list_item_img"><div></div></div>
+        <div class="list_item_text">
+          <p class="company_info"><span class="company_name">圈子在线</span>互联网/私营企业/规模:1-50人</p>
+          <p class="company_comment"><a href="#">8</a>条面试评价</p>
+          <p class="company_post"><a href="#">6</a>个在招职位</p>
+          <ul class="tagList">
+            <li class="tagList_item">公司发展前景大</li>
+            <li class="tagList_item">公司发展前景大</li>
+            <li class="tagList_item">公司发展前景大</li>
+            <li class="tagList_item">公司发展前景大</li>
+          </ul>
+        </div>
       </li>
     </ul>
   </div>
-
+  
+  <script src="/js/rczp.js"></script>
 </body>
 </html>
