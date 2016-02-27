@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import './css/main.css';
-=======
 import './css/main.css';
 import getArea from './js/area.js';
 
@@ -43,4 +40,3 @@ getArea(data => {
     });
   });
 });
->>>>>>> 8dd2f979d85e2a22c79e14987fc4e2a262878829
