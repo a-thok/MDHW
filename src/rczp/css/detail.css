@@ -24,6 +24,12 @@
 .dtBasic_p-grey {
   color: #777;
 }
+.dtBasic_p-grey .fa {
+  font-size: 14px;
+}
+.dtBasic_p span {
+  margin-right: 1em;
+}
 .dtBasic_p-big {
   font-size: 14px;
 }
@@ -40,6 +46,10 @@
   flex-shrink: 0;
   min-width: 80px;
   text-align: right;
+}
+.dtBasic_right .fa {
+  font-size: 20px;
+  color: var(--HighlightColorOrange);
 }
 .dtBasic_fav {
   font-size: 14px;
