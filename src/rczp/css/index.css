@@ -1,11 +1,6 @@
 body {
   background: #e7e8ed;
 }
-/*头部样式开始*/
-.header-box {
-   background-color: var(--rczpColor);
-}
-/*头部样式结束*/
 
 /*分类功能样式开始*/
 .content-box {  
