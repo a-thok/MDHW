@@ -33,5 +33,5 @@
   color: var(--rczpColor);
 }
 .post_salary {
-  color: #ea572b;
+  color: var(--HighlightColorOrange);
 }
