@@ -179,4 +179,5 @@ header {
   margin-right: .4167em;
   border: 1px solid var(--borderColorLight);
   color: #888;
+  line-height: 1;
 }
