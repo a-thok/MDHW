@@ -9,6 +9,7 @@ ul, ol {
 }
 
 :root {
+  --pageColor: #e7e8ed;
   --rczpColor: #3d9ccc;
   --borderColorLight: #e3e3e3;
 }
@@ -20,7 +21,7 @@ html, body {
   max-width: 750px;
   height: 100%;
   margin: 0 auto;
-  background-color: #e7e8ed;
+  background-color: var(--pageColor);
   overflow: hidden;
 }
 

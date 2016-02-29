@@ -11,23 +11,24 @@
 <body>
   <div class="page">
     <header>
-
+      <button class="header_return" type="button"></button>
+      <button class="header_search" type="button">搜索</button>
     </header>
-    <!--分类标题-->
-    <div class="position-title">
-      <p class="line"></p>
-      <p class="position-title-text">职业分类推荐</p>
-      <p class="line"></p>
-    </div>
+    
+    <!--分类标题 开始-->
+    <h2 class="titleLine">
+      <div class="titleLine_line"></div>
+      <div class="titleLine_text">职业分类推荐</div>
+    </h2>
+    <!--分类标题 结束-->
 
     <!--分类列表-->
-    <div class="position-classify-list">
-      <div class="position-classify-header">
-        <span class="position-classify-icon"></span>
-        <span class="position-classify-name">技术</span>
-      </div>
-      <div class="position-classify">
-        <ul class="position-classify-ul">
+    <div class="cate">
+      <div class="cate_item">
+        <div class="cate_item_title">
+          <span class="cate_item_title_icon"></span>技术
+        </div>
+        <ul class="cate_item_list">
           <li>后端开发</li>
           <li>移动开发</li>
           <li>前端测试</li>
@@ -39,12 +40,11 @@
           <li></li>
         </ul>
       </div>
-      <div class="position-classify-header">
-        <span class="position-classify-icon"></span>
-        <span class="position-classify-name">产品</span>
-      </div>
-      <div class="position-classify">
-        <ul class="position-classify-ul">
+      <div class="cate_item">
+        <div class="cate_item_title">
+          <span class="cate_item_title_icon"></span>产品
+        </div>
+        <ul class="cate_item_list">
           <li>产品经理</li>
           <li>产品设计师</li>
           <li>前端测试</li>
@@ -56,12 +56,11 @@
           <li></li>
         </ul>
       </div>
-      <div class="position-classify-header">
-        <span class="position-classify-icon"></span>
-        <span class="position-classify-name">设计</span>
-      </div>
-      <div class="position-classify">
-        <ul class="position-classify-ul">
+      <div class="cate_item">
+        <div class="cate_item_title">
+          <span class="cate_item_title_icon"></span>设计
+        </div>
+        <ul class="cate_item_list">
           <li>后端开发</li>
           <li>移动开发</li>
           <li>前端测试</li>
@@ -73,12 +72,11 @@
           <li></li>
         </ul>
       </div>
-      <div class="position-classify-header">
-        <span class="position-classify-icon"></span>
-        <span class="position-classify-name">运营</span>
-      </div>
-      <div class="position-classify">
-        <ul class="position-classify-ul">
+      <div class="cate_item">
+        <div class="cate_item_title">
+          <span class="cate_item_title_icon"></span>运营
+        </div>
+        <ul class="cate_item_list">
           <li>后端开发</li>
           <li>移动开发</li>
           <li>前端测试</li>
@@ -90,7 +88,6 @@
           <li></li>
         </ul>
       </div>
-      <div class="position-classify-bottom"></div>
     </div>
   </div>
 </body>

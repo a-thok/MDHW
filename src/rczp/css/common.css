@@ -109,6 +109,30 @@ header {
   color: var(--rczpColor);
   text-align: center;
 }
+/* 线条穿过标题 */
+.titleLine {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  margin: 0 17.3333%;
+}
+.titleLine_line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid #aaa;
+}
+.titleLine_text {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  padding: 0 5px;
+  background-color: var(--pageColor);
+  font-weight: normal;
+  font-size: 22px;
+}
 
 /* 列表 */
 .listWrap {
