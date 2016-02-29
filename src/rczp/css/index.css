@@ -1,112 +1,37 @@
-body {
-  background: #e7e8ed;
-}
-
-/*分类功能样式开始*/
-.content-box {  
+/* 分类 */
+.postCate {  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
   background: #fff;
 }
-.content-screen {
+.postCate_item {
   display: flex;
-  width: auto;
-  padding: 30px 0;
-  justify-content: center;
-  align-content: flex-start;
-  flex-flow: row wrap;
-}
-.content-each-model {
-  display: flex;
-  width: 22.93vw;
-  height: 22.93vw;
-  margin: 1px;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 25vw;
+  padding: 20px 0 0;
 }
-.content-icon{
+.postCate_item_icon {
   display: inline-block;
   width: 7.2vw;
   height: 7.2vw;
   background: mediumspringgreen;
 }
-.content-icon-name {
-  margin-top: 22px;
+.postCate_item_text {
+  font-size: 16px;
+  line-height: 3;
 }
-.content-hr {
-    margin-top: 48px;;
-    height: 6px;
-    background: #3d9ccc;
-}
-/*分类功能样式结束*/
 
-/*列表样式开始*/
-.list-box {
-  margin-top:12px;
-}
-.list-title {
-    height: 7.7vw;
-    line-height: 7.7vw;
-    font-size: 24px;
-    text-align: center;
-    color: #3d9ccc;
-}
-.list-ul {
-  width: 92.53%;
-  margin: 0 auto;
-  padding: 16px 0;
-}
-.list-li {
-  display: flex;
-  padding: 3.2% 0 3.2% 3.2%;
-  margin-bottom: 18px;
-  background: #fff;
-}
-.list-position-header {
-  display: flex;
-  align-items: center;
-}
-.list-position-img {
-  width: 18.67vw;
-  height: 18.67vw;
-}
-.list-position-imform {
-  flex-grow: 1;
-  padding-left: 3.6%;
-}
-.list-position-imform-p {
-  padding: 0.5%;
-}
-.list-position-name {
-  color: #3d9ccc;
-}
-.list-position-mess {
-  padding: 0 0.8%;
-}
-.list-position-salary {
-  margin-right: 2.67%;
-  color: #f08767;
-}
-.list-position-name,.list-position-salary {
+/* 职位列表 */
+.post_info {
   font-size: 16px;
 }
-.list-position-mess,.list-position-order {
-  font-size: 14px;
+.post_name {
+  font-size: 18px;
+  color: var(--rczpColor);
 }
-.list-position-mess,.list-gsmess-p {
-  color: #888;
+.post_salary {
+  color: #ea572b;
 }
-.list-gsmess-p{
-  font-size: 12px;
-  padding: 0.3%;
-}
-.list-more-li {
-  text-align: center;
-  background: #fff;
-}
-.list-more-li span{
-  display: inline-block;
-  padding: 24px;
-  color: #666;
-}
-/*列表样式结束*/
