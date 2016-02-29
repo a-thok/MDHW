@@ -16,7 +16,6 @@
   margin-top: 2px;
 }
 /*发布信息*/
-.detail_position_left_three,
 .detail_position_left_two,
 .detail_position_left_one {
   display: flex;
@@ -56,14 +55,6 @@
 /*公司待遇*/
 .detail_position_left_bottom {
   display: flex;
-}
-.detail_position_left_three li {
-  font-size: 12px;
-  margin-left: 0.3em;
-  color: #999;
-  border: 1px solid var(--borderColorLight);
-  padding: .2222em .2222em;
-  flex-shrink: 0;
 }
 #detail_position_left_three {
   color: #777;
@@ -159,7 +150,7 @@
 }
 /*投递简历*/
 .detail_submit {
-  margin-top: 16px;
+  margin-top: 20px;
   background-color: var(--rczpColor);
   padding: 16px 0;
   font-size: 16px;

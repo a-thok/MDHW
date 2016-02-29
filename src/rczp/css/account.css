@@ -1,0 +1,62 @@
+.account_backgroundcolor {
+  background-color: #fff;
+}
+/*登录  开始*/
+.account_register {
+  padding: 44px 3.7333%;
+  display: flex;
+  justify-content: center;
+  
+}
+.account_register_text {
+  align-self: center;
+  margin-left: .5em;
+  color: #666;
+  font-size: 16px;
+}
+
+/*登录  结束*/
+
+/*帐户信息  开始*/
+.account_message {
+  padding: 20px 3.7333%;
+}
+.account_message_text {
+  color: #666;
+  font-size: 14px;  
+}
+.account_message_text li {
+  display: flex;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.account_message_text_item {
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  background-color: red;
+}
+.account_message_text_item_text {
+  align-self: center;
+  margin-left: 0.5em;
+}
+/*退出登录*/
+.account_message_button {
+  padding: 16px 0;
+  margin-top: 3em;
+  color: #fff;
+  background-color: var(--rczpColor);
+  display: flex;
+  justify-content: center;
+}
+.account_message_button_img {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: red;
+  display: inline-block;
+}
+.account_message_button_text {
+  align-self: center;
+  margin-left: 1.5em;
+}
+/*帐户信息  结束*/
