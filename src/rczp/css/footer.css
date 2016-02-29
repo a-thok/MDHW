@@ -1,0 +1,30 @@
+/*职位搜索公用底部样式开始*/
+.search-footer {
+  display: flex;
+  padding: 28px 4.2667%;
+  border-top: 1px solid #ddddde;
+  background: #fff;
+  justify-content: space-around;
+}
+.search-footer-p {
+  display: flex;
+  align-items: center;
+}
+.search-footer-p span:hover {
+  color: var(--rczpColor);
+}
+.search-footer-img {
+  display: inline-block;
+  width: 4.5333vw;
+  height: 4.5333vw;
+  margin-right: 5px;
+  background: red;
+}
+.search-footer-text {
+  display: inline-block;
+  width: 40px;
+  font-size: 20px;
+  color: #7b8186;
+}
+/*职位搜索公用底部样式结束*/
+
