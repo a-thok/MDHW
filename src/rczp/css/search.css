@@ -1,0 +1,57 @@
+/*职位搜索样式*/
+
+/*搜索框样式开始*/
+.search-box {
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+.search-label {
+  display: flex;
+  height: 38px;
+  border-width: 0;
+  color: #99999b;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius:  8px;
+  background: #e7e8ed;
+  justify-content: center;
+  align-items: center;
+}
+.search-label span {
+  padding-left: 5px;
+}
+.search-arrow {
+  margin-right: 5px;
+}
+.search-input {
+  width: 63.73%;
+  height: 38px;
+  padding-left: 5px;
+  border-width: 0;
+  border-left: 1px solid #e7e8ed;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px
+}
+.search-label,.search-input {
+  font-size: 20px;
+}
+/*搜索框样式结束*/
+
+/*搜索推荐样式开始*/
+.search-blank {
+  height: 100px;
+}
+.position-hot-search-header {
+  padding-left: 4%;
+  margin-bottom:20px;
+  font-size: 18px;
+}
+.position-hot-search-ul li{
+  padding: 10px 0;
+  background: #fff;
+}
+.position-hot-search-name,
+.position-hot-search-ul li {
+  color: #616163;
+}
+/*搜索推荐样式结束*/

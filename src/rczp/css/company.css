@@ -2,50 +2,6 @@ header {
   background-color: var(--rczpColor);
 }
 
-/* 过滤栏 */
-.filter {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 6.6667%;
-  border-bottom: 1px solid var(--borderColorLight);
-  background-color: #fff;
-  font-size: 18px;
-}
-.filter_title {
-  display: flex;
-}
-.filter_title_arrow {
-  align-self: center;
-  width: 0;
-  border-width: .35em .35em 0 .35em;
-  border-style: solid;
-  border-color: #333 transparent transparent;
-  margin-left: .3333em;
-}
-.filter_content {
-  position: absolute;
-  display: none;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  border-top: 157px solid transparent;
-}
-.province,
-.city {
-  flex-basis: 50%;
-  height: 100%;
-  background-color: #fff;
-  overflow: auto;
-}
-.province li,
-.city li {
-  height: 66px;
-  padding-left: 7.4667%;
-  background-color: #fff;
-  line-height: 66px;
-}
-
 /* 列表 */
 .list {
   margin: 22px 3.4667%;
@@ -74,13 +30,17 @@ header {
   margin-bottom: 6px;
 }
 .company_info {
-  font-size: 14px;
+  font-size: 12px;
   color: #888;
 }
 .company_name {
   margin-right: .5em;
   color: #000;
   font-size: 18px;
+}
+.company_comment,
+.company_post {
+  font-size: 14px;
 }
 .company_comment a,
 .company_post a {
