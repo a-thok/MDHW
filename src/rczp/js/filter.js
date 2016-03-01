@@ -44,14 +44,29 @@ export default function filter() {
       if (e.target.nodeName === 'SPAN') {
         let parent = queryParent(e.target, '.filter_content_slect_list_item_p');
         let spans = parent.querySelectorAll('span');
-        forEachEl(spans, (element, index, array) => {
-          console.log(array)
+        forEachEl(spans, (element) => {
           element.classList.remove('filter_content_slect_list_item_p-backColor');
         })
         e.target.classList.add('filter_content_slect_list_item_p-backColor');
       }
     });
   });
+  
+  //重置事件
+  let parent = document.querySelectorAll('.filter_content_slect_list_item_p');
+  let reset = document.querySelector('.filter_content_reset');
+  reset.addEventListener('click', (el) => {
+    forEachEl(parent, (_el) => {
+      let spans = _el.querySelectorAll('span');
+      forEachEl(spans, (element, index) => {
+        if (index === 0) {
+          element.classList.add('filter_content_slect_list_item_p-backColor');
+        } else {
+          element.classList.remove('filter_content_slect_list_item_p-backColor');
+        }
+      })
+    })
+  })
   
   /* 省市 */
   // 获取省市县数据，绑定事件
