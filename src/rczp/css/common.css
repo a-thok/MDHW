@@ -1,3 +1,4 @@
+/* 头部 */
 header {
   background-color: var(--rczpColor);
 }
@@ -9,12 +10,17 @@ header {
   line-height: 1;
 }
 .header_btn-return {
-  font-size: 45px;
+  font-size: 40px;
 }
 .header_login {
   font-size: 18px;
   color: #fff;
   text-decoration: none;
+}
+
+/* 底部 */
+.footer_link-active {
+  color: var(--rczpColor);
 }
 
 /*
