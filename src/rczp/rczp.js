@@ -6,4 +6,6 @@ import fastclick from 'fastclick';
 fastclick.attach(document.body);
 
 import company from './js/company.js';
+import list from './js/list.js';
+list();
 company();

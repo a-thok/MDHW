@@ -1,0 +1,33 @@
+.filter_content_slect {
+  background: #fff;
+}
+.filter_content_slect_vocation {
+  display: flex;
+  padding: 32px 3.7333%;
+  justify-content: space-between;
+}
+.filter_content_slect_list{
+  padding: 0 3.7333%;
+  border-top: 1px solid var(--borderColorLight);
+}
+.filter_content_slect_list_item_order {
+  padding-top: 40px;
+}
+.filter_content_slect_list_item_p {
+  display: flex;
+  margin-top: 14px;
+  overflow: auto;
+  justify-content: flex-start;
+}
+.filter_content_slect_list_item_p span {
+  padding: 4px;
+  margin: 2px 1.333% 10px 1.333%;
+  font-size: 16px;
+  border: 1px solid #c3c3c3;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.filter_content_slect_list_item_p-backColor {
+  background-color: var(--rczpColor);
+  color: #fff;
+}
