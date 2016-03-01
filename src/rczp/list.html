@@ -1,11 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Document</title>
   <link rel="stylesheet" href="/css/rczp.css">
 </head>
+
 <body>
+  <div class="page">
+    <header>
+      <button class="header_return" type="button"></button>
+      <!--搜索框开始-->
+      <div class="search-box">
+        <label class="search-label"><span>职位</span><i class="filter_title_arrow search-arrow"></i></label>
+        <input class="search-input" placeholder="请输入关键词" type="text">
+      </div>
+      <!--搜索框结束-->
+      <button class="header_search" type="button">搜索</button>
+    </header>
+    
+    <div class="filter">
+      <span class="filter_item">
+        <div class="filter_title"><span class="filter_title_text">地区不限</span><i class="filter_title_arrow"></i></div>
+        <div class="filter_content filter_content-area">
+          <ul class="filter_content_list filter_content_list-province"></ul>
+          <ul class="filter_content_list filter_content_list-city"></ul>
+          <div class="filter_content_btns">
+            <button class="filter_content_btn" type="button">取消</button>
+        </div>
+      </div>
+     </span>
+     <span class="filter_item">
+      <div class="filter_title"><span class="filter_title_text">年薪不限</span><i class="filter_title_arrow"></i></div>
+        <div class="filter_content">
+          <ul class="filter_content_list">
+            <li class="filter_content_list_item">年薪不限</li>
+            <li class="filter_content_list_item">2K以下</li>
+            <li class="filter_content_list_item">2K-5K</li>
+            <li class="filter_content_list_item">5K-10K</li>
+            <li class="filter_content_list_item">10K-15K</li>
+            <li class="filter_content_list_item">15K-25K</li>
+            <li class="filter_content_list_item">25K-50K</li>
+            <li class="filter_content_list_item">50K以上</li>
+          </ul>
+          <div class="filter_content_btns">
+            <button class="filter_content_btn" type="button">取消</button>
+          </div>
+      </div>
+     </span>
+     <span class="filter_item">
+        <div class="filter_title"><span class="filter_title_text">更多</span><i class="filter_title_arrow"></i></div>
+        <div class="filter_content">
+          <div class="filter_content_slect">
+            <div class="filter_content_slect_vocation">
+              <span>行业选择</span>
+              <span>不限 ></span>
+            </div>
+            <ul class="filter_content_slect_list">
+              <li class="filter_content_slect_list_item_order">
+                <p>工作经验</p>
+                <p class="filter_content_slect_list_item_p">
+                  <span class="filter_content_slect_list_item_p-backColor">不限</span>
+                  <span>应届毕业生</span>
+                  <span>一年以下</span>
+                  <span>1-3年</span>
+                  <span>3-5年</span>
+                  <span>5年以上</span>
+                </p>
+              </li>
+              <li class="filter_content_slect_list_item_order">
+                <p>学历要求</p>
+                <p class="filter_content_slect_list_item_p">
+                  <span class="filter_content_slect_list_item_p-backColor">不限</span>
+                  <span>大专及以下</span>
+                  <span>本科</span>
+                  <span>硕士</span>
+                  <span>博士及以上</span>
+                </p>
+              </li>
+              <li class="filter_content_slect_list_item_order">
+                <p>公司时间</p>
+                <p class="filter_content_slect_list_item_p">
+                  <span class="filter_content_slect_list_item_p-backColor">不限</span>
+                  <span>10人及以下</span>
+                  <span>10-50人</span>
+                  <span>50-100人</span>
+                  <span>100人以上</span>
+                </p>
+              </li>
+              <li class="filter_content_slect_list_item_order">
+                <p>发布时间</p>
+                <p class="filter_content_slect_list_item_p">
+                  <span class="filter_content_slect_list_item_p-backColor">不限</span>
+                  <span>一天</span>
+                  <span>3天</span>
+                  <span>一周内</span>
+                  <span>一月内</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="filter_content_btns">
+            <button class="filter_content_btn" type="button">取消</button>
+          </div>
+        </div>
+    </span>   
+   </div>
   
+   <div class="listWrap">
+      <ul class="list">
+        <li class="list_item">
+          <div class="list_item_img"><div></div></div>
+          <div class="list_item_text">
+            <p class="list_item_text_p post_info"><span class="post_name list_margin">UI设计师</span>[福 建] 2015-10-13</p>
+            <p class="list_item_text_p post_info"><span class="post_salary list_margin">月薪: 3k-10k</span>经验: 3-5年</p>
+            <p class="list_item_text_p">福建省创企信息科技有限公司</p>
+            <p class="list_item_text_p">互联网公司/责任有限公司</p>
+          </div>
+        </li>
+        <li class="list_item">
+          <div class="list_item_img"><div></div></div>
+          <div class="list_item_text">
+            <p class="list_item_text_p post_info"><span class="post_name list_margin">UI设计师</span>[福 建] 2015-10-13</p>
+            <p class="list_item_text_p post_info"><span class="post_salary list_margin">月薪: 3k-10k</span>经验: 3-5年</p>
+            <p class="list_item_text_p">福建省创企信息科技有限公司</p>
+            <p class="list_item_text_p">互联网公司/责任有限公司</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="/js/rczp.js"></script>
 </body>
+
 </html>
