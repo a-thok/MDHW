@@ -108,6 +108,14 @@ header {
   font-size: 20px;
   color: #fff;
 }
+/*重置按样式*/
+.filter_content_reset {
+  border: 0;
+  margin-left: 11.2%;
+  font-size: 20px;
+  color: var(--rczpColor);
+  background-color: #fff;
+}
 
 /* 块标题 */
 .title {
