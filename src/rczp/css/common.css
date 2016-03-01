@@ -4,15 +4,18 @@ header {
 .header_return,
 .header_search {
   border: 0;
-  background: #fff;
+  background: transparent;
+  font-size: 32px;
+  color: #fff;
+  line-height: 1;
 }
 .header_return {
-  width: 20px;
-  height: 38px;
+  font-size: 50px;
 }
-.header_search {
-  width: 32px;
-  height: 32px;
+.header_login {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
 }
 
 /*
@@ -150,6 +153,7 @@ header {
 .list_item_img {
   margin-right: 5.1873%;
   align-self: center;
+  flex-shrink: 0;
 }
 .list_item_img div {
   width: 18vw;
