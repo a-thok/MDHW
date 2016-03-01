@@ -2,22 +2,17 @@ import getArea from './area.js';
 import { forEachEl, queryParent } from './common.js';
 
 export default function filter() {
-  
   let filterContents = document.querySelectorAll('.filter_content');
   // 弹出过滤
-  Array.prototype.forEach.call(document.querySelectorAll('.filter_title'), (el, index) => {
+  forEachEl('.filter_title', (el, index) => {
     el.addEventListener('click', function() {
-      Array.prototype.forEach.call(filterContents, (_el, _index) => {
-        _el.style.display =  _index === index ? 'flex' : 'none';
-      });
+      filterContents[index].style.display = 'flex';
     });
   });
   // 取消弹出
-  Array.prototype.forEach.call(document.querySelectorAll('.filter_content_btn'), el => {
+  forEachEl('.filter_content_btn', (el, index) => {
     el.addEventListener('click', () => {
-      forEachEl(filterContents, _el => {
-        _el.style.display = 'none';
-      });
+      filterContents[index].style.display = 'none';
     });
   });
   
@@ -37,36 +32,6 @@ export default function filter() {
       }
     });
   });
-  
-  // 基旭 更多过滤
-  forEachEl('.filter_content_slect_list_item_p', function (el) {
-    el.addEventListener('click', function (e) {
-      if (e.target.nodeName === 'SPAN') {
-        let parent = queryParent(e.target, '.filter_content_slect_list_item_p');
-        let spans = parent.querySelectorAll('span');
-        forEachEl(spans, (element) => {
-          element.classList.remove('filter_content_slect_list_item_p-backColor');
-        })
-        e.target.classList.add('filter_content_slect_list_item_p-backColor');
-      }
-    });
-  });
-  
-  //重置事件
-  let parent = document.querySelectorAll('.filter_content_slect_list_item_p');
-  let reset = document.querySelector('.filter_content_reset');
-  reset.addEventListener('click', (el) => {
-    forEachEl(parent, (_el) => {
-      let spans = _el.querySelectorAll('span');
-      forEachEl(spans, (element, index) => {
-        if (index === 0) {
-          element.classList.add('filter_content_slect_list_item_p-backColor');
-        } else {
-          element.classList.remove('filter_content_slect_list_item_p-backColor');
-        }
-      })
-    })
-  })
   
   /* 省市 */
   // 获取省市县数据，绑定事件

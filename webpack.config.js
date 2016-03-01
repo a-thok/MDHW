@@ -2,9 +2,6 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: {
-    'rczp': [__dirname + '/src/rczp/rczp.js']
-  },
   output: {
     path: __dirname + '/dist/',
     filename: 'js/[name].js',
@@ -41,9 +38,8 @@ module.exports = {
     ]
   },
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin('js/common.js'),
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('css/[name].css')
+    new webpack.optimize.CommonsChunkPlugin('js/common.js'),
+    new webpack.HotModuleReplacementPlugin()
   ],
   postcss: function(webpack) {
     return [

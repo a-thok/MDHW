@@ -55,7 +55,7 @@ footer {
   height: 50px;
   border-top: 1px solid var(--borderColorLight);
   background: #fff;
-  box-shadow: 0 -1px 3px #eee;
+  box-shadow: 0 -1px 3px #ddd;
 }
 .footer_link {
   font-size: 16px;
