@@ -11,6 +11,7 @@ ul, ol {
 :root {
   --pageColor: #e7e8ed;
   --rczpColor: #3d9ccc;
+  --rczpColorDark: #2991c6;
   --borderColorLight: #e3e3e3;
   --HighlightColorOrange: #ea572b;
 }
