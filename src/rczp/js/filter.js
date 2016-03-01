@@ -1,7 +1,7 @@
 import getArea from './area.js';
 import { forEachEl, queryParent } from './common.js';
 
-export default function company() {
+export default function filter() {
   
   let filterContents = document.querySelectorAll('.filter_content');
   // 弹出过滤
@@ -12,7 +12,7 @@ export default function company() {
       });
     });
   });
-  // 取消过滤弹出
+  // 取消弹出
   Array.prototype.forEach.call(document.querySelectorAll('.filter_content_btn'), el => {
     el.addEventListener('click', () => {
       forEachEl(filterContents, _el => {
@@ -21,6 +21,7 @@ export default function company() {
     });
   });
   
+  // 更新过滤条件
   forEachEl('.filter_content_list', el => {
     if (el.classList.contains('filter_content_list-province')) return;
     el.addEventListener('click', e => {
@@ -37,44 +38,51 @@ export default function company() {
     });
   });
   
+  // 基旭 更多过滤
+  forEachEl('.filter_content_slect_list_item_p', function (el) {
+    el.addEventListener('click', function (e) {
+      if (e.target.nodeName === 'SPAN') {
+        let parent = queryParent(e.target, '.filter_content_slect_list_item_p');
+        let spans = parent.querySelectorAll('span');
+        forEachEl(spans, (element, index, array) => {
+          console.log(array)
+          element.classList.remove('filter_content_slect_list_item_p-backColor');
+        })
+        e.target.classList.add('filter_content_slect_list_item_p-backColor');
+      }
+    });
+  });
+  
+  /* 省市 */
   // 获取省市县数据，绑定事件
   getArea(data => {
     let areaData = data.result;
-    let provinceHtml = '';
-    let cityHtml = '';
     let provinceContainer = document.querySelector('.filter_content_list-province');
     let cityContainer = document.querySelector('.filter_content_list-city');
     
-    // 获取省份，拼接成HTML插入文档相关位置
-    areaData.forEach(item => {
-      if (item.type === 'province') {
-        provinceHtml += `<li class="filter_content_list_item province_item" data-code="${item.code}">${item.name}</li>`;
+    // 填充省份列表
+    provinceContainer.innerHTML = areaData.reduce((previousValue, currentValue) => {
+      if (currentValue.type === 'province') {
+        return `${previousValue}<li class="filter_content_list_item province_item" data-code="${currentValue.code}">${currentValue.name}</li>`;
+      } else {
+        return previousValue;
       }
-    });
-    provinceContainer.innerHTML = provinceHtml;
+    }, '');
     
     // 选择省份
     provinceContainer.addEventListener('click', e => {
       if (e.target.nodeName === 'LI') {
-        // 获取相应城市，拼接成HTML插入文档相关位置
         let code = e.target.getAttribute('data-code');
-        areaData.forEach(item => {
-          if (item.type === 'city' && item.code.slice(0, 2) === code.slice(0, 2)) {
-            cityHtml += `<li class="filter_content_list_item city_item" data-code="${item.code}">${item.name}</li>`;
+        // 填充城市列表
+        cityContainer.innerHTML = areaData.reduce((previousValue, currentValue) => {
+          if (currentValue.type === 'city' && currentValue.code.slice(0, 2) === code.slice(0, 2)) {
+            return `${previousValue}<li class="filter_content_list_item city_item" data-code="${currentValue.code}">${currentValue.name}</li>`;
+          } else {
+            return previousValue;
           }
-        });
-        cityContainer.innerHTML = cityHtml;
-        cityHtml = '';
+        }, '');
       }
     });
     
-    // 选择城市
-    // cityContainer.addEventListener('click', e => {
-    //   e.stopPropagation();
-    //   if (e.target.nodeName === 'LI') {
-    //     document.querySelector('.filter_content').style.display = 'none';
-    //     document.querySelector('.filter_title_area').textContent = e.target.textContent.trim();
-    //   }
-    // });
   });
 }
