@@ -1,12 +1,12 @@
 import getArea from './area.js';
-import { forEachEl, queryParent } from './common.js'
+import { forEachEl, queryParent } from './common.js';
 
 export default function company() {
   
   let filterContents = document.querySelectorAll('.filter_content');
   // 弹出过滤
   Array.prototype.forEach.call(document.querySelectorAll('.filter_title'), (el, index) => {
-    el.addEventListener('touchend', function() {
+    el.addEventListener('click', function() {
       Array.prototype.forEach.call(filterContents, (_el, _index) => {
         _el.style.display =  _index === index ? 'flex' : 'none';
       });
@@ -14,7 +14,7 @@ export default function company() {
   });
   // 取消过滤弹出
   Array.prototype.forEach.call(document.querySelectorAll('.filter_content_btn'), el => {
-    el.addEventListener('touchend', () => {
+    el.addEventListener('click', () => {
       forEachEl(filterContents, _el => {
         _el.style.display = 'none';
       });
@@ -23,7 +23,7 @@ export default function company() {
   
   forEachEl('.filter_content_list', el => {
     if (el.classList.contains('filter_content_list-province')) return;
-    el.addEventListener('touchend', e => {
+    el.addEventListener('click', e => {
       if (e.target.classList.contains('filter_content_list_item')) {
         // 填充相应文本
         let text = e.target.textContent.trim();
@@ -54,7 +54,7 @@ export default function company() {
     provinceContainer.innerHTML = provinceHtml;
     
     // 选择省份
-    provinceContainer.addEventListener('touchend', e => {
+    provinceContainer.addEventListener('click', e => {
       if (e.target.nodeName === 'LI') {
         // 获取相应城市，拼接成HTML插入文档相关位置
         let code = e.target.getAttribute('data-code');
@@ -69,7 +69,7 @@ export default function company() {
     });
     
     // 选择城市
-    // cityContainer.addEventListener('touchend', e => {
+    // cityContainer.addEventListener('click', e => {
     //   e.stopPropagation();
     //   if (e.target.nodeName === 'LI') {
     //     document.querySelector('.filter_content').style.display = 'none';

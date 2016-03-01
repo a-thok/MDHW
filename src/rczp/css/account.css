@@ -1,62 +1,50 @@
-.account_backgroundcolor {
+.acBackgroundcolor {
   background-color: #fff;
 }
-/*登录  开始*/
-.account_register {
+/*
+*登录*
+*/
+.acRegister {
   padding: 44px 3.7333%;
   display: flex;
   justify-content: center;
   
 }
-.account_register_text {
+.acRegister_text {
   align-self: center;
   margin-left: .5em;
   color: #666;
   font-size: 16px;
 }
 
-/*登录  结束*/
-
-/*帐户信息  开始*/
-.account_message {
+/*
+*帐户信息*
+*/
+.acMessage {
   padding: 20px 3.7333%;
 }
-.account_message_text {
-  color: #666;
-  font-size: 14px;  
-}
-.account_message_text li {
-  display: flex;
+.acMessage p {
   padding: 0.5em 0;
   border-bottom: 1px solid #f0f0f0;
+  color: #666;
+  font-size: 14px;
 }
-.account_message_text_item {
-  width: 1.5em;
-  height: 1.5em;
-  display: inline-block;
-  background-color: red;
-}
-.account_message_text_item_text {
-  align-self: center;
-  margin-left: 0.5em;
+.acMessage p .fa {
+  color: var(--rczpColor);
+  font-size: 16px;
 }
 /*退出登录*/
-.account_message_button {
-  padding: 16px 0;
-  margin-top: 3em;
+.acMessage button {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 5em;
   color: #fff;
   background-color: var(--rczpColor);
-  display: flex;
-  justify-content: center;
 }
-.account_message_button_img {
-  width: 1.5em;
-  height: 1.5em;
-  background-color: red;
-  display: inline-block;
+.acMessage button .fa {
+  font-size: 16px;
+  margin-right: 0.6em;
 }
-.account_message_button_text {
-  align-self: center;
-  margin-left: 1.5em;
-}
-/*帐户信息  结束*/
+
+
+

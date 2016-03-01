@@ -1,6 +1,4 @@
-/*职位搜索样式*/
-
-/*搜索框样式开始*/
+/* 搜索框 */
 .search-box {
   width: auto;
   display: flex;
@@ -35,23 +33,17 @@
 .search-label,.search-input {
   font-size: 20px;
 }
-/*搜索框样式结束*/
 
-/*搜索推荐样式开始*/
-.search-blank {
-  height: 100px;
+/* 热门搜索 */
+.cate_item-search {
+  border: 0;
+  margin: 0;
+  background-color: transparent;
 }
-.position-hot-search-header {
-  padding-left: 4%;
-  margin-bottom:20px;
-  font-size: 18px;
+.cate_item-search_title {
+  margin-bottom: 10px;
 }
-.position-hot-search-ul li{
-  padding: 10px 0;
-  background: #fff;
+.cate_item-search_list li {
+  padding: .35em 0;
+  background-color: #fff;
 }
-.position-hot-search-name,
-.position-hot-search-ul li {
-  color: #616163;
-}
-/*搜索推荐样式结束*/

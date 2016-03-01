@@ -1,0 +1,28 @@
+.cate_item {
+  padding: 20px 0 5px;
+  margin-bottom: 2px;
+  background: #fff;
+  color: #666;
+}
+.cate_item_title {
+  display:flex;
+  align-items: center;
+  padding-left: 3.73%;
+}
+.cate_item_title .fa {
+  margin-right: .25em;
+  font-size: 24px;
+  color: var(--rczpColor);
+}
+.cate_item_list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0 6.5%;
+}
+.cate_item_list li {
+  flex-basis: 30%;
+  margin: 8px 1.6667%; 
+  font-size: 16px;
+  text-align: center;
+}
