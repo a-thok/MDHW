@@ -13,12 +13,16 @@
   width: 25vw;
   padding: 20px 0 0;
 }
-.postCate_item_icon {
+.postCate_item .fa {
+  font-size: 24px;
+  color: var(--rczpColor);
+}
+/*.postCate_item_icon {
   display: inline-block;
   width: 7.2vw;
   height: 7.2vw;
   background: mediumspringgreen;
-}
+}*/
 .postCate_item_text {
   font-size: 16px;
   line-height: 3;
