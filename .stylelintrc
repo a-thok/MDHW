@@ -1,31 +1,79 @@
 {
   "rules": {
-    "indentation": 2,
-    "block-no-empty": true,
-    "block-closing-brace-newline-before": "always-multi-line",
-    "block-closing-brace-newline-after": "always",
-    "block-opening-brace-space-before": "always",
-    "color-no-invalid-hex": true,
-    "declaration-colon-space-after": "always",
-    "declaration-colon-space-before": "never",
-    "declaration-block-semicolon-newline-after": "always-multi-line",
+    "block-no-empty": [true, {
+      "message": "代码块不应为空"
+    }],
+    "block-closing-brace-newline-before": ["always-multi-line", {
+      "message": "'}'应该紧接在一个换行符后"
+    }],
+    "block-closing-brace-newline-after": ["always", {
+      "message": "'}'后应该紧跟一个换行符"
+    }],
+    "block-opening-brace-space-before": ["always", {
+      "message": "'{'前应该有一个空格"
+    }],
+    "color-no-invalid-hex": [true, {
+      "message": "颜色值不合法"
+    }],
+    "declaration-colon-space-after": ["always", {
+      "message": "':'后应该紧跟着一个空格"
+    }],
+    "declaration-colon-space-before": ["never", {
+      "message": "':'前不应该有空格"
+    }],
+    "declaration-block-semicolon-newline-after": ["always-multi-line", {
+      "message": "';'后应该紧跟一个换行符"
+    }],
     "function-comma-space-after": "always",
     "function-url-quotes": "double",
+    "indentation": [2, {
+      "message": "请使用两个空格的缩进"
+    }],
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
     "media-feature-name-no-vendor-prefix": true,
-    "max-empty-lines": 5,
-    "number-leading-zero": "never",
-    "number-no-trailing-zeros": true,
-    "property-no-vendor-prefix": true,
-    "rule-no-duplicate-properties": true,
-    "declaration-block-no-single-line": true,
-    "rule-trailing-semicolon": "always",
-    "selector-list-comma-space-before": "never",
-    "selector-list-comma-newline-after": "always",
-    "selector-no-id": true,
-    "string-quotes": "double",
-    "value-no-vendor-prefix": true
+    "max-empty-lines": [1, {
+      "message": "空行不应该在一行以上"
+    }],
+    "no-missing-eof-newline": [true, {
+      "message": "每个文件应该以一个空行结束"
+    }],
+    "number-leading-zero": ["never", {
+      "message": "数字不应该以0开头"
+    }],
+    "number-no-trailing-zeros": [true, {
+      "message": "数字不应该以0结尾"
+    }],
+    "property-no-vendor-prefix": [true, {
+      "message": "不应该使用带厂商前缀的属性"
+    }],
+    "rule-no-duplicate-properties": [true, {
+      "message": "不应该重复声明同一个属性"
+    }],
+    "declaration-block-no-single-line": [true, {
+      "message": "代码块不应写成单行"
+    }],
+    "rule-trailing-semicolon": ["always", {
+      "message": "每一行样式声明后应该以';'结尾"
+    }],
+    "selector-list-comma-space-before": ["never", {
+      "message": "','前不应该有空格"
+    }],
+    "selector-list-comma-newline-after": ["always", {
+      "message": "每个选择器应该自起一行"
+    }],
+    "selector-no-id": [true, {
+      "message": "不要使用id选择器，容易引起意外的错误"
+    }],
+    "string-quotes": ["double", {
+      "message": "请使用双引号"
+    }],
+    "value-no-vendor-prefix": [true, {
+      "message": "不应该使用厂商前缀的值"
+    }],
+    "color-hex-case": ["lower", {
+      "message": "颜色值应使用小写字母，更容易和数字区分"
+    }],
   },
-  'ignoreFiles': 'node_modules/font-awesome/css/font-awesome.css'
+  "ignoreFiles": "node_modules/font-awesome/css/font-awesome.css"
 }

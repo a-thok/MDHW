@@ -4,7 +4,8 @@
   margin: 0;
   font-family: 'microsoft yahei', sans-serif;
 }
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -18,7 +19,8 @@ ul, ol {
   --HighlightColorOrange: #ea572b;
 }
 
-html, body {
+html,
+body {
   background-color: var(--pageColor);
   color: #333;
 }

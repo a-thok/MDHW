@@ -17,6 +17,13 @@ module.exports = {
   devtool: 'eval-source-map',
   module: {
     //加载器配置
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: 'eslint',
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         test: /\.css$/,
@@ -50,10 +57,10 @@ module.exports = {
   ],
   postcss: function (webpack) {
     return [
-      require('stylelint')(),
       require('postcss-import')({
         addDependencyTo: webpack
       }),
+      require('stylelint')(),
       require('postcss-cssnext')(),
       require('stylelint/node_modules/postcss-reporter')({
         clearMessages: true,
@@ -62,4 +69,7 @@ module.exports = {
       })
     ]
   },
+  eslint: {
+    formatter: require('eslint-friendly-formatter')
+  }
 };

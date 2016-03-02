@@ -5,7 +5,7 @@
   color: #666;
 }
 .cate_item_title {
-  display:flex;
+  display: flex;
   align-items: center;
   padding-left: 3.73%;
 }
@@ -22,7 +22,7 @@
 }
 .cate_item_list li {
   flex-basis: 30%;
-  margin: 8px 1.6667%; 
+  margin: 8px 1.6667%;
   font-size: 16px;
   text-align: center;
 }

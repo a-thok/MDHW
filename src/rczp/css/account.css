@@ -24,7 +24,7 @@
   padding: 20px 3.7333%;
 }
 .acMessage p {
-  padding: 0.5em 0;
+  padding: .5em 0;
   border-bottom: 1px solid #f0f0f0;
   /*color: #666;*/
   font-size: 14px;
@@ -43,7 +43,7 @@
 }
 .acMessage button .fa {
   font-size: 16px;
-  margin-right: 0.6em;
+  margin-right: .6em;
 }
 
 
