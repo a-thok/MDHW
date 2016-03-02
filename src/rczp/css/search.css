@@ -12,7 +12,7 @@
   border-top-left-radius: 4px;
   border-bottom-left-radius:  4px;
   background: var(--pageColor);
-  color: #999;
+  color: var(--fontColorLight);
   line-height: 40px;
 }
 .header_searchBox_input {

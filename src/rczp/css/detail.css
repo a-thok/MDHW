@@ -22,7 +22,7 @@
   line-height: 2;
 }
 .dtBasic_p-grey {
-  color: #777;
+ color: var(--fontColorLight);
 }
 .dtBasic_p-grey .fa {
   font-size: 14px;
@@ -91,7 +91,7 @@
 }
 .dtCompany_info_content_p_grey {
   margin-left: .5em;
-  color: #777;
+  color: var(--fontColorLight);
 }
 
 /* 右侧箭头 */
