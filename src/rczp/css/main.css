@@ -1,4 +1,4 @@
-@import './base.css';
+@import '../../common/css/base.css';
 @import './common.css';
 @import './index.css';
 @import './detail.css';
