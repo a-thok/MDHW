@@ -11,11 +11,13 @@ var compiler = webpack(config);
 var server = new WebpackDevServer(compiler, {
   hot: true,
   inline: true,
-  historyApiFallback: false,
+  // historyApiFallback: false,
   stats: {
-    colors: true
+    colors: true,
+    chunks: false
   },
   // noInfo: true,
+  // quiet: true,
   publicPath: '/',
   proxy: {
     // 转发api数据
@@ -32,4 +34,10 @@ var server = new WebpackDevServer(compiler, {
     }
   },
 });
-server.listen(8050);
+server.listen(8050, function(err) {
+  if (err) {
+    console.log(err)
+    return
+  }
+  console.log('Listening at http://localhost:8050')
+});
