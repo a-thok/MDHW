@@ -14,6 +14,7 @@ module.exports = {
     extensions: ['', '.js', '.json', '.css']
   },
   externals: {},
+  devtool: 'eval-source-map',
   module: {
     //加载器配置
     loaders: [
@@ -47,12 +48,18 @@ module.exports = {
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     }),
   ],
-  postcss: function(webpack) {
+  postcss: function (webpack) {
     return [
+      require('stylelint')(),
       require('postcss-import')({
         addDependencyTo: webpack
       }),
-      require('postcss-cssnext')()
+      require('postcss-cssnext')(),
+      require('stylelint/node_modules/postcss-reporter')({
+        clearMessages: true,
+        // throwError: true,
+        positionless: 'last'
+      })
     ]
-  }
+  },
 };
