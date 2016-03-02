@@ -14,8 +14,16 @@ module.exports = {
     extensions: ['', '.js', '.json', '.css']
   },
   externals: {},
+  devtool: 'eval-source-map',
   module: {
     //加载器配置
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: 'eslint',
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         test: /\.css$/,
@@ -47,12 +55,21 @@ module.exports = {
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     }),
   ],
-  postcss: function(webpack) {
+  postcss: function (webpack) {
     return [
       require('postcss-import')({
         addDependencyTo: webpack
       }),
-      require('postcss-cssnext')()
+      require('stylelint')(),
+      require('postcss-cssnext')(),
+      require('stylelint/node_modules/postcss-reporter')({
+        clearMessages: true,
+        // throwError: true,
+        positionless: 'last'
+      })
     ]
+  },
+  eslint: {
+    formatter: require('eslint-friendly-formatter')
   }
 };

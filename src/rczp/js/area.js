@@ -1,9 +1,9 @@
 /* global fetch */
 
-export default function getArea(cb) {
+export default function getArea (cb) {
   fetch('/Dict/city')
     .then(res => res.json())
     .then(data => {
       cb(data)
-    });
+    })
 }
