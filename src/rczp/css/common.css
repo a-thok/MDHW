@@ -205,6 +205,6 @@ header {
   padding: .3333em .5833em;
   margin-right: .4167em;
   border: 1px solid var(--borderColorLight);
-  color: #888;
+  color: var(--fontColorLight);
   line-height: 1;
 }

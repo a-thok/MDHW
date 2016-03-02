@@ -1,6 +1,6 @@
 /* 公司列表 */
 .company_info {
-  color: #888;
+  color: var(--fontColorLight);
 }
 .company_name {
   font-size: 18px;
