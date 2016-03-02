@@ -39,7 +39,10 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('js/common.js'),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    }),
   ],
   postcss: function(webpack) {
     return [
