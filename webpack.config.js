@@ -1,16 +1,19 @@
+var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   output: {
-    path: __dirname + '/dist/',
+    path: path.join(__dirname, '/dist/'),
     filename: 'js/[name].js',
     publicPath: '/'
   },
   resolve: {
     extensions: ['', '.js', '.json', '.css']
   },
-  externals: [],
+  externals: {
+    'fetch': 'window.fetch'
+  },
   module: {
     //加载器配置
     loaders: [
