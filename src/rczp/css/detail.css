@@ -22,7 +22,7 @@
   line-height: 2;
 }
 .dtBasic_p-grey {
- color: var(--fontColorLight);
+  color: var(--fontColorLight);
 }
 .dtBasic_p-grey .fa {
   font-size: 14px;
@@ -66,13 +66,13 @@
 .dtCompany {
   display: flex;
   justify-content: space-between;
-  padding: 5px 3.6%; 
+  padding: 5px 3.6%;
   background-color: #fff;
   font-size: 12px;
 }
 /* 左侧信息 */
 .dtCompany_info {
- display: flex;
+  display: flex;
 }
 .dtCompany_info_img {
   align-self: center;
@@ -96,9 +96,9 @@
 
 /* 右侧箭头 */
 .dtCompany_arrow {
- align-self: center;
- font-size: 44px;
- color: var(--rczpColor);
+  align-self: center;
+  font-size: 44px;
+  color: var(--rczpColor);
 }
 
 /*
@@ -113,7 +113,6 @@
 .dtIntro_title {
   font-weight: normal;
   font-size: 14px;
-  color: #333
 }
 .dtIntro_title_text {
   padding-left: .5em;

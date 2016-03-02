@@ -60,7 +60,7 @@
       "message": "','前不应该有空格"
     }],
     "selector-list-comma-newline-after": ["always", {
-      "message": "','后应该紧跟着一个空格"
+      "message": "每个选择器应该自起一行"
     }],
     "selector-no-id": [true, {
       "message": "不要使用id选择器，容易引起意外的错误"
