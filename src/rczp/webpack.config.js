@@ -1,3 +1,5 @@
+/* global __dirname */
+
 var path = require('path');
 var config = require("../../webpack.config.js");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");

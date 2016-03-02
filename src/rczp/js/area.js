@@ -1,4 +1,4 @@
-import fetch from 'fetch';
+/* global fetch */
 
 export default function getArea(cb) {
   fetch('/Dict/city')

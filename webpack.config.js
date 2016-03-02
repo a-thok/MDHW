@@ -1,3 +1,5 @@
+/* global __dirname */
+
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -11,9 +13,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.json', '.css']
   },
-  externals: {
-    'fetch': 'window.fetch'
-  },
+  externals: {},
   module: {
     //加载器配置
     loaders: [
