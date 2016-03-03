@@ -1,4 +1,4 @@
-import { forEachEl } from './common.js'
+import { forEachEl } from '../../common/js/func.js'
 
 export default function filterMore () {
   // 更多过滤

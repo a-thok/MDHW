@@ -1,5 +1,5 @@
-import getArea from './area.js'
-import { forEachEl, queryParent } from './common.js'
+import getArea from '../../common/js/area.js'
+import { forEachEl, queryParent } from '../../common/js/func.js'
 
 export default function filter () {
   let filterContents = document.querySelectorAll('.filter_content')
