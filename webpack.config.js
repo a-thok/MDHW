@@ -7,23 +7,13 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   output: {
     path: path.join(__dirname, '/dist/'),
-    filename: 'js/[name].js',
-    publicPath: '/'
+    filename: 'js/[name].js'
   },
   resolve: {
     extensions: ['', '.js', '.json', '.css']
   },
-  externals: {},
-  devtool: 'eval-source-map',
+  // externals: {},
   module: {
-    //加载器配置
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint',
-        exclude: /node_modules/
-      }
-    ],
     loaders: [
       {
         test: /\.css$/,
@@ -31,7 +21,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel!eslint',
         exclude: '/node_modules/'
       },
       {
@@ -40,7 +30,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url?limit=8192&name=img/[name].[ext]?[hash]'
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: 'img/[name].[ext]?[hash:7]'
+        }
       },
       // {
       //   test: require.resolve('angular'),
@@ -50,7 +44,6 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('js/common.js'),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     }),
@@ -64,8 +57,7 @@ module.exports = {
       require('postcss-cssnext')(),
       require('stylelint/node_modules/postcss-reporter')({
         clearMessages: true,
-        // throwError: true,
-        positionless: 'last'
+        // throwError: true
       })
     ]
   },
