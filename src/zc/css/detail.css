@@ -1,0 +1,152 @@
+body {
+  color: var(--fontColorLight);
+}
+/*众筹详情图片样式*/
+.dtImg {
+  padding-top: 2px;
+}
+.dtImg_img {
+  width: 100%;
+  height: 93.0667vw;
+  background: red;
+}
+
+/*众筹详情内容样式*/
+.rmb-black,
+.dtSection_p-font,
+.dtSection_p_count,
+.dtSection_p_span-color,
+.dtSection_progress_item-color,
+.dtSupport_list_text_item-font {
+  color: #535353;
+}
+.dtSection {
+  padding: 24px 5.3333% 24px 5.3333%;
+  background: #fff;
+}
+.dtSection_p {
+  display: flex;
+  padding-bottom: 40px;
+  align-items: center;
+}
+.dtSection_p_status {
+  width: 64px;
+  height: 26px;
+  padding-left: 4px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  color: #fff;
+  background: var(--zcColor);
+  flex-shrink: 0;
+}
+.dtSection_p_tgle {
+  /*display: inline-block;*/
+  width: 0;
+  height: 26px;
+  border-width: 0.615em;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--zcColor); 
+}
+.dtSection_p_count {
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-right: 5px;
+  font-size: 28px;
+}
+.dtSection_p-border {
+  border-bottom: 3px dotted var(--borderColorLight);
+}
+.dtSection_p-font {
+  font-size: 20px;
+}
+.dtSection_progress {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 30px;
+  justify-content: space-around;
+}
+.dtSection_progress_item {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+.dtSection_progress_item span {
+  padding-bottom: 22px;
+}
+.dtSection_line {
+  height: 12px;
+  background: var(--zcColor);
+  border-radius: 6px;
+}
+.dtSection_text {
+  display: flex;
+  align-items: center;
+}
+.dtSection_text_span {
+  width: 64.2%;
+  height: 106px;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  margin-right: 19.4667%;
+  padding-right: 10px;
+  flex-shrink: 0;
+}
+
+/*字体图标样式*/
+.rmb-red {
+  font-size: 18px;
+}
+.rmb-black {
+  font-size: 16px;
+  padding-left: 5px;
+}
+.angle-rightred {
+  float: right;
+  font-size: 36px;
+}
+.angle-rightblack {
+   font-size: 150px; 
+}
+.rmb-red,
+.angle-rightred,
+.dtSupport_list_li_title_span {
+  color: var(--zcColor);
+}
+
+/*众筹回报信息样式*/
+.dtSupport {
+  padding: 0 5.3333%;
+}
+.dtSupport_list {
+  margin-top: 42px;
+  padding-bottom: 10px;
+  border: 2px solid var(--borderColorLight);
+  background: #fff;
+}
+.dtSupport_list_li {
+  border-bottom: 2px solid var(--borderColorLight);
+}
+.dtSupport_list_text {
+  padding-top: 14px;
+}
+.dtSupport_list_li_title,
+.dtSupport_list_text_item {
+  margin: 0 5.0667%;
+}
+.dtSupport_list_li_title {
+  padding: 26px 0;
+}
+.dtSupport_list_li_title_span {
+  font-size: 28px;
+}
+.dtSupport_list_text_item {
+  padding-bottom: 14px; 
+}
+.dtSupport_list_text_item-border {
+  border-bottom: 2px solid var(--borderColorLight);
+}
+.dtSupport_list_text_item-padtop {
+  padding-top: 14px;
+}
+
+
