@@ -1,0 +1,181 @@
+/*
+ * 分类栏
+ */
+.zcCate {
+  padding: 14px 0;
+  background-color: #fff;
+  border-bottom: 1px solid var(--borderColorLight);
+}
+.zcCate_search {
+  display: flex;
+  align-items: center;
+  padding: 0 3.7333%;
+}
+.zcSearchLabel,
+.zcSearchInput {
+  height: 9.3333vw;
+  max-height: 70px;
+  border: 1px solid var(--borderColorLight);
+  background-color: #fff;
+}
+.zcSearchLabel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 12%;
+  border-right: 0;
+  border-top-left-radius: 4.6667vw;
+  border-bottom-left-radius: 4.6667vw;
+  color: var(--fontColorLight);
+}
+.zcSearchLabel .fa {
+  margin-right: .5em;
+  font-size: 20px;
+}
+.zcSearchInput {
+  width: 88%;
+  border-left: 0;
+  border-top-right-radius: 4.6667vw;
+  border-bottom-right-radius: 4.6667vw;
+}
+
+.zcCate_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 8%;
+}
+.zcCate .zcCate_list {
+  margin: 2% 0 4%;
+}
+.zcCate .zcCate_list:last-child {
+  margin: 0;
+}
+.zcCate_list_item_icon {
+  width: 10vw;
+  max-width: 75px;
+  height: 10vw;
+  max-height: 75px;
+  border-radius: 50%;
+}
+.zcCate_list_item_icon-tech {
+  background-color: #4dbdcc;
+}
+.zcCate_list_item_icon-ind {
+  background-color: #74acf8;
+}
+.zcCate_list_item_icon-agri {
+  background-color: #f66e6e;
+}
+.zcCate_list_item_icon-appl {
+  background-color: #91c731;
+}
+.zcCate_list_item_icon-idea {
+  background-color: #fc8240;
+}
+.zcCate_list_item_icon-ent {
+  background-color: #fcd23f;
+}
+.zcCate_list_item_icon-publ {
+  background-color: #9da5c8;
+}
+.zcCate_list_item_icon-all {
+  background-color: #eee;
+}
+.zcCate_list_item_text {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* 众筹标签 */
+.zcTag {
+  padding: .4em .6em;
+  border-radius: 5px;
+  background-color: var(--zcColor);
+  color: #fff;
+}
+.zcTag-transparent {
+  background-color: #999;
+  opacity: .7;
+}
+/* 众筹列表 */
+.zcList {
+  padding: 0 3.7333%;
+}
+.zcList_item {
+  padding: 0 16px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: #fff;
+}
+.zcList_item_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  line-height: 3;
+}
+.zcList_item_header .zcTag {
+  margin-right: .5em;
+  font-weight: normal;
+  font-size: 13px;
+}
+.zcList_item_header .fa {
+  padding: .5em;
+  color: var(--zcColor);
+}
+.zcList_item_img {
+  position: relative;
+  background-color: red;
+  margin: 0 -16px;
+  height: 200px;/* 临时 */
+}
+.zcList_item_img img {
+  width: 100%;
+}
+.zcList_item_img .zcTag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+.zcList_item_money,
+.zcList_item_info {
+  font-size: 14px;
+  color: var(--fontColorLight);
+}
+.zcList_item_number {
+  color: #333;
+  font-size: 18px;
+}
+.zcList_item_money {
+  padding: .8em 0;
+  border-bottom: 1px dotted var(--borderColorLight);
+}
+.zcList_item_info {
+  display: flex;
+  justify-content: space-around;
+}
+.zcList_item_info_sect {
+  padding: .8em 0;
+}
+.zcList_item_progress {
+  width: 100%;
+  height: 7px;
+  border: 0;
+  border-radius: 3px;
+  background-color: #e6e6e6;
+}
+.zcList_item_progress::-moz-progress-bar {
+  background: var(--zcColor);
+}
+.zcList_item_progress::-webkit-progress-bar {
+  background: #e6e6e6;
+}
+.zcList_item_progress::-webkit-progress-value {
+  background: var(--zcColor);
+}
+.zcList_item_intro {
+  font-size: 14px;
+  padding: 1.2em 0;
+}
