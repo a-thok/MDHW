@@ -2,24 +2,9 @@
 header {
   background-color: var(--rczpColor);
 }
-.header_btn {
-  border: 0;
-  background: transparent;
-  font-size: 32px;
-  color: #fff;
-  line-height: 1;
-}
-.header_btn-return {
-  font-size: 40px;
-}
-.header_login {
-  font-size: 18px;
-  color: #fff;
-  text-decoration: none;
-}
 
-/* 底部 */
-.footer_link-active {
+/* 导航 */
+.nav_link-active {
   color: var(--rczpColor);
 }
 
