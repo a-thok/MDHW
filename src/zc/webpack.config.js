@@ -6,7 +6,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 config.entry = {
   'zc.index': [path.join(__dirname, '/zc.index.js')],
-  'zc.detail': [path.join(__dirname, '/zc.detail.js')]
+  'zc.detail': [path.join(__dirname, '/zc.detail.js')],
+  'zc.progress': [path.join(__dirname, '/zc.progress.js')]
 };
 
 // add hot-reload related code to entry chunks

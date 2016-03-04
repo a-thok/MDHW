@@ -29,7 +29,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'font/[name].[ext]?[hash:7]'
+          name: 'font/[name].[ext]'
         }
       },
       {
