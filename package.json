@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js",
     "rczp": "node src/rczp/server.js",
     "zc": "node src/zc/server.js"
   },
