@@ -5,7 +5,7 @@
   display: flex;
   background-color: #fff;
   justify-content: space-between;
-  padding: 10px 3.6%;
+  padding: .8em 3.6%;
   margin-bottom: 20px;
 }
 .dtBasic_left {
@@ -28,7 +28,7 @@
   font-size: 14px;
 }
 .dtBasic_p span {
-  margin-right: 1em;
+  margin-right: .8em;
 }
 .dtBasic_p-big {
   font-size: 14px;
@@ -66,7 +66,7 @@
 .dtCompany {
   display: flex;
   justify-content: space-between;
-  padding: 5px 3.6%;
+  padding: .4em 3.6%;
   background-color: #fff;
   font-size: 12px;
 }
@@ -76,7 +76,7 @@
 }
 .dtCompany_info_img {
   align-self: center;
-  margin-right: 14px;
+  margin-right: 1em;
 }
 .dtCompany_info_content {
   font-size: 12px;
@@ -125,6 +125,7 @@
   padding-bottom: 15px;
   background-color: #fff;
   font-size: 12px;
+  line-height: 1.5;
 }
 
 /*投递简历*/
@@ -132,7 +133,7 @@
   width: 100%;
   padding: 1em 0;
   border: 0;
-  margin-top: 40px;
+  margin-top: 3em;
   background-color: var(--rczpColor);
   font-size: 16px;
   color: #fff;
