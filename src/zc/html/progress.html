@@ -10,65 +10,47 @@
 
 <body>
   <div class="page">
-    <section class="dialog">
-      <!--标题  开始-->
-        <p class="dialog_title"><i class="fa fa-commenting-o"></i> 项目进展</p>
-      <!--标题  结束-->
-      <!--评论列表  开始-->
-      <div class="progress_list">
-        <p class="dialog_contant_message_img"><img src="02323" alt="" style="width: 50px; height: 50px;"> <span>尼***拉</span>
-        </p>
-        <ul class="progress_list_text">
-          <li class="progress_list_content">
-            <p class="progress_list_time">2月28日</p>
-            <div class="progress_content_text">
-              <i></i>
-              <div class="dialog_content_text_div-pr">
-                <p>新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示</p>
-                <p class="dialog_content_text_time-pr progress_content_fullText">[全文]</p>
+    <div class="dialog">
+      <!--标题 开始-->
+      <h3 class="dialog_title">
+        <i class="fa fa-comments-o"></i>项目进展
+      </h3>
+      <!--标题 结束-->
+      
+      <!--列表 开始-->
+      <ul class="dialog_list">
+        <li class="dialog_list_item">
+          <div class="dialog_list_item_user">
+            <div class="dialog_list_item_user_avatar"></div><!--这里应该是一张图片-->
+            <span class="dialog_list_item_user_name">尼古拉斯</span>
+          </div>
+          <!--子评论 开始-->
+          <ul class="dialog_sublist dialog_sublist-progress">
+            <li class="dialog_sublist_item dialog_sublist_item-progress">
+              <div class="dialog_sublist_progressTime"><time>12月28日</time></div>
+              <div class="dialog_sublist_item_comment dialog_sublist_item_comment-progress">
+                <i class="dialog_sublist_item_arrow dialog_sublist_item_arrow-progress"></i>
+                <p class="dialog_sublist_item_content dialog_sublist_item_content--progress">评论内容评论内容评论内容评论内容评论内容评论内容评论内评论内容评内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容</p>
+                <p class="dialog_sublist_item_comment_more"><a class="dialog_sublist_item_comment_more_link" href="javascript:;">[全文]</a></p>
               </div>
-            </div>
-          </li>
-          
-          <li class="progress_list_content">
-            <p class="progress_list_time">2月28日</p>
-            <div class="progress_content_text">
-              <i></i>
-              <div class="dialog_content_text_div-pr">
-                <p>新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示</p>
-                <p class="dialog_content_text_time-pr progress_content_fullText">[全文]</p>
+            </li>
+            <li class="dialog_sublist_item dialog_sublist_item-progress">
+              <div class="dialog_sublist_progressTime"><time>12月28日</time></div>
+              <div class="dialog_sublist_item_comment dialog_sublist_item_comment-progress">
+                <i class="dialog_sublist_item_arrow dialog_sublist_item_arrow-progress"></i>
+                <p class="dialog_sublist_item_content dialog_sublist_item_content--progress">评论内容评论内容评论内容评论内容评论内容评论内容评论内评论内容评内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容</p>
+                <p class="dialog_sublist_item_comment_more"><a class="dialog_sublist_item_comment_more_link" href="javascript:;">[全文]</a></p>
               </div>
-            </div>
-          </li>
-          
-          <li class="progress_list_content">
-            <p class="progress_list_time">2月28日</p>
-            <div class="progress_content_text">
-              <i></i>
-              <div class="dialog_content_text_div-pr">
-                <p>新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示</p>
-                <p class="dialog_content_text_time-pr progress_content_fullText">[全文]</p>
-              </div>
-            </div>
-          </li>
-          
-          <li class="progress_list_content">
-            <p class="progress_list_time">2月28日</p>
-            <div class="progress_content_text">
-              <i></i>
-              <div class="dialog_content_text_div-pr">
-                <p>新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示新项目 评论内容展示</p>
-                <p class="dialog_content_text_time-pr progress_content_fullText">[全文]</p>
-              </div>
-            </div>
-          </li>
-          
-        </ul>
-      </div>
-
-      <!--评论列表  结束-->
-    </section>
+            </li>
+          </ul>
+        </li>
+         <!--子评论 结束-->
+      </ul>
+      <!--列表 结束-->
   </div>
+  
+  <script src="/js/common.js"></script>
+  <script src="/js/zc.progress.js"></script>
 </body>
 
 </html>
