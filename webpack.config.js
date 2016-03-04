@@ -1,8 +1,8 @@
 /* global __dirname */
 
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var path = require('path')
+var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   output: {
@@ -47,7 +47,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('js/common.js'),
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     }),
@@ -68,4 +67,4 @@ module.exports = {
   eslint: {
     formatter: require('eslint-friendly-formatter')
   }
-};
+}

@@ -5,7 +5,7 @@
 *登录*
 */
 .acRegister {
-  padding: 44px 3.7333%;
+  padding: 3em 3.7333%;
   display: flex;
   justify-content: center;
   
@@ -21,7 +21,7 @@
 *帐户信息*
 */
 .acMessage {
-  padding: 20px 3.7333%;
+  padding: 2em 3.7333%;
 }
 .acMessage p {
   padding: .5em 0;
@@ -32,12 +32,14 @@
 .acMessage p .fa {
   color: var(--rczpColor);
   font-size: 16px;
+  margin-right: .5em;
 }
 /*退出登录*/
 .acMessage button {
   width: 100%;
-  padding: 10px 0;
+  padding: 1em 0;
   margin-top: 5em;
+  border: 0;
   color: #fff;
   background-color: var(--rczpColor);
 }
