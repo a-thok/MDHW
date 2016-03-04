@@ -1,0 +1,39 @@
+/*
+*评论列表*
+*/
+.progress_list_text {
+  margin-left: 7.4667%;
+  border-left: 1px solid var(--fontColorLight);
+}
+.progress_list_text li:last-child {
+  height: 100%;
+  background-color: #fff;
+}
+.progress_list_content {
+  display: flex;
+  margin-left: -7.5%;
+  margin-top: 10px;
+}
+.progress_list_time {
+  color: var(--fontColorLight);
+  height: 30px;
+  background-color: #fff;
+}
+.progress_list_content p {
+  flex-shrink: 0;
+}
+.progress_content_text {
+  margin-left: 20px;
+  display: flex;
+}
+.progress_content_text i {
+  height: 0;
+  display: block;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent var(--pageColor) transparent transparent;
+  margin-top: 20px;
+}
+.progress_content_fullText {
+  color: var(--zcColor);
+}

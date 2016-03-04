@@ -1,0 +1,136 @@
+/*
+*标题栏*
+*/
+.dialog {
+  margin: 2em 3.7333%;
+  background-color: #fff;
+  font-size: 14px;
+  border: 1px solid var(--fontColorLight);
+}
+.progress_list,
+.dialog_title {
+  padding: 1em 2.6667%;
+  border-bottom: 1px solid var(--pageColor);
+}
+.dialog_title .fa {
+  font-size: 18px;
+  margin-right: .5em;
+  color: var(--zcColor);
+}
+.dialog_contant {
+  margin: 0 2.6667%;
+  border-bottom: 1px solid var(--pageColor);
+}
+.dialog_contant_i {
+  width: 0;
+  display: block;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent var(--pageColor);
+  margin-left: 3em;
+}
+.dialog_contant_message {
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+}
+.dialog_contant_message_img {
+  display: flex;
+  color: #666;
+}
+.dialog_contant_message_img span {
+  align-self: center;
+  margin-left: .5em;
+}
+.dialog_contant_message_text {
+  margin: 1em 0;
+  font-size: 12px;
+}
+.dialo_contantg_message_time {
+  color: var(--fontColorLight);
+  font-size: 12px;
+}
+.dialog_contant_message_time .fa {
+  font-size: 16px;
+}
+.dialog_contant_message_logo {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  color: var(--zcColor);
+}
+.dialog_contant_message_logo .fa {
+  font-size: 18px;
+}
+.dialog_content-pr {
+  margin: 0 10%;
+}
+.dialog_content_text-pr {
+  padding: 1em 0;
+}
+.dialog_content_i-pr {
+  margin-left: 1em;
+}
+.dialog_content_text_div-pr {
+  border: 1px solid var(--pageColor);
+  border-radius: 10px;
+  padding: 1em;
+  background-color: var(--pageColor);
+  font-size: 12px;
+  line-height: 2em;
+}
+.dialog_content_text_time-pr {
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+.dialog_spread p {
+  display: flex;
+  justify-content: center;
+  border: 0;
+  color: var(--zcColor);
+}
+.dialog_spread .fa {
+  color: #333;
+  font-size: 30px;
+}
+/*
+*底部*
+*/
+.pr_footer {
+  width: 100%;
+  background-color: #fff;
+  padding: 1em 3.7333%;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+}
+.pr_footer-input {
+  display: flex;
+}
+.pr_footer-input input {
+  width: 200px;
+  height: 10vw;
+  max-height: 75px;
+  border: 1px solid var(--fontColorLight);
+  border-radius: 5px 0 0 5px;
+  padding: 0 .5em;
+  border-right: 0;
+}
+.pr_footer-input .fa {
+  height: 10vw;
+  max-height: 75px;
+  line-height: 10vw;
+  padding-right: .5em;
+  border: 1px solid var(--fontColorLight);
+  border-radius: 0 5px 5px 0;
+  border-left: 0;
+  color: var(--fontColorLight);
+  font-size: 20px;
+}
+.pr_footer-text {
+  color: var(--zcColor);
+  margin-left: 20px;
+  align-self: center;
+}
