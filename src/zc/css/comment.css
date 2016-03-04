@@ -58,6 +58,10 @@
   font-size: 12px;
   color: var(--fontColorLight);
 }
+.dialog_list_item_info_time .fa {
+  margin-right: .3em;
+  font-size: 14px;
+}
 .dialog_list_item_info_btn {
   border: 0;
   background-color: transparent;
