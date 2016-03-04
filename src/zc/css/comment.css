@@ -1,136 +1,225 @@
 /*
-*标题栏*
-*/
+ * 对话框盒子
+ */
 .dialog {
   margin: 2em 3.7333%;
   background-color: #fff;
-  font-size: 14px;
-  border: 1px solid var(--fontColorLight);
+  border: 1px solid var(--borderColorLight);
 }
-.progress_list,
+
+/** 标题 **/
 .dialog_title {
   padding: 1em 2.6667%;
   border-bottom: 1px solid var(--pageColor);
+  font-weight: normal;
+  font-size: 16px;
 }
 .dialog_title .fa {
-  font-size: 18px;
+  font-size: 20px;
   margin-right: .5em;
   color: var(--zcColor);
 }
-.dialog_contant {
-  margin: 0 2.6667%;
-  border-bottom: 1px solid var(--pageColor);
+
+/** 列表 **/
+.dialog_list {
+  padding: 0 3.4482%;
 }
-.dialog_contant_i {
+.dialog_list_item {
+  margin-top: 18px;
+}
+/* 用户 */
+.dialog_list_item_user {
+  display: flex;
+  align-items: center;
+}
+.dialog_list_item_user_avatar {
+  width: 11.4942vw;
+  max-width: 80px;
+  height: 11.4942vw;
+  max-height: 80px;
+  border-radius: 50%;
+  background-color: red;
+}
+.dialog_list_item_user_name {
+  margin-left: .8em;
+  font-size: 15px;
+}
+/* 评论 */
+.dialog_list_item_content {
+  padding: .8em 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+/* 评论时间 */
+.dialog_list_item_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--fontColorLight);
+}
+.dialog_list_item_info_btn {
+  border: 0;
+  background-color: transparent;
+  color: var(--zcColor);
+}
+.dialog_list_item_info_btn .fa {
+  margin-right: .3em;
+  font-size: 24px;
+}
+
+/* 子评论列表 */
+.dialog_sublist {
+  position: relative;
+  padding: 0 6%;
+  border-top: 1px solid var(--borderColorLight);
+  margin: 22px 0;
+}
+.dialog_sublist-progress {
+  padding: 0;
+  border-top: 0;
+  border-left: 1px solid var(--borderColorLight);
+  margin-left: 8%;
+}
+.dialog_sublist_arrow {
+  position: absolute;
+  left: 5.1852%;
+  top: -8px;
   width: 0;
-  display: block;
-  border-width: 0 10px 10px 10px;
+  border-width: 0 8px 8px;
   border-style: solid;
-  border-color: transparent transparent var(--pageColor);
-  margin-left: 3em;
+  border-color: transparent transparent #e9e7e7;
 }
-.dialog_contant_message {
-  padding: 1em 0;
+.dialog_sublist_item {
+  margin-top: 14px;
+}
+.dialog_sublist_item-progress {
   display: flex;
   justify-content: space-between;
 }
-.dialog_contant_message_img {
-  display: flex;
-  color: #666;
-}
-.dialog_contant_message_img span {
-  align-self: center;
-  margin-left: .5em;
-}
-.dialog_contant_message_text {
-  margin: 1em 0;
+.dialog_sublist_progressTime {
+  margin-left: -2em;
   font-size: 12px;
-}
-.dialo_contantg_message_time {
   color: var(--fontColorLight);
-  font-size: 12px;
 }
-.dialog_contant_message_time .fa {
-  font-size: 16px;
-}
-.dialog_contant_message_logo {
-  display: flex;
-  align-items: flex-end;
-  flex-shrink: 0;
-  color: var(--zcColor);
-}
-.dialog_contant_message_logo .fa {
-  font-size: 18px;
-}
-.dialog_content-pr {
-  margin: 0 10%;
-}
-.dialog_content_text-pr {
-  padding: 1em 0;
-}
-.dialog_content_i-pr {
-  margin-left: 1em;
-}
-.dialog_content_text_div-pr {
-  border: 1px solid var(--pageColor);
-  border-radius: 10px;
-  padding: 1em;
-  background-color: var(--pageColor);
-  font-size: 12px;
-  line-height: 2em;
-}
-.dialog_content_text_time-pr {
-  margin-top: 1em;
-  display: flex;
-  justify-content: flex-end;
-}
-.dialog_spread p {
-  display: flex;
-  justify-content: center;
-  border: 0;
-  color: var(--zcColor);
-}
-.dialog_spread .fa {
-  color: #333;
-  font-size: 30px;
-}
-/*
-*底部*
-*/
-.pr_footer {
-  width: 100%;
+.dialog_sublist_progressTime time {
+  display: inline-block;
+  padding: .5em 0;
   background-color: #fff;
-  padding: 1em 3.7333%;
+}
+.dialog_sublist_item_username {
+  font-size: 13px;
+}
+.dialog_sublist_item_comment {
+  flex-basis: 85%;
+  position: relative;
+  padding: 1em 1em .4em;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: #e9e7e7;
+  font-size: 12px;
+}
+.dialog_sublist_item_comment-progress {
+  margin-top: 5px;
+}
+.dialog_sublist_item_arrow {
+  position: absolute;
+  left: 5.1852%;
+  top: -8px;
+  width: 0;
+  border-width: 0 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent #e9e7e7;
+}
+.dialog_sublist_item_arrow-progress {
+  left: -8px;
+  top: 21.4286%;
+  border-width: 8px 8px 8px 0;
+  border-color: transparent #e9e7e7 transparent;
+}
+.dialog_sublist_item_content {
+  line-height: 1.5;
+}
+.dialog_sublist_item_content--progress {
+  height: 54px;
+  overflow: hidden;
+}
+.isAuto {
+  height: auto;
+}
+.dialog_list_item_info_time {
+  margin-top: 8px;
+  text-align: right;
+}
+.dialog_sublist_item_comment_more {
+  margin-top: 6px;
+  text-align: right;
+}
+.dialog_sublist_item_comment_more_link {
+  color: var(--zcColor);
+  text-decoration: none;
+}
+
+/** 展开评论 **/
+.dialog_more {
+  text-align: center;
+}
+.dialog_more_link {
+  display: inline-block;
+  padding: .5em .8em;
+  color: var(--zcColor);
+  text-decoration: none;
+}
+
+/*
+ * 发布评论
+ */
+.reply {
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 15.3333vw;
+  max-height: 115px;
+  padding: 0 3.7333%;
+  background-color: #fff;
+}
+.reply_box {
+  flex-basis: 84%;
+  display: flex;
+  height: 65.2173%;
+}
+.replay_box_input,
+.replay_box_label {
+  height: 100%;
+  border: 1px solid var(--borderColorLight);
+}
+.replay_box_input {
+  flex-basis: 85%;
+  padding-left: 1em;
+  border-right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.replay_box_label {
+  flex-basis: 15%;
   display: flex;
   justify-content: center;
-}
-.pr_footer-input {
-  display: flex;
-}
-.pr_footer-input input {
-  width: 200px;
-  height: 10vw;
-  max-height: 75px;
-  border: 1px solid var(--fontColorLight);
-  border-radius: 5px 0 0 5px;
-  padding: 0 .5em;
-  border-right: 0;
-}
-.pr_footer-input .fa {
-  height: 10vw;
-  max-height: 75px;
-  line-height: 10vw;
-  padding-right: .5em;
-  border: 1px solid var(--fontColorLight);
-  border-radius: 0 5px 5px 0;
+  align-items: center;
   border-left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 26px;
   color: var(--fontColorLight);
-  font-size: 20px;
 }
-.pr_footer-text {
+.reply_btn {
+  flex-basis: 16%;
+  border: 0;
+  background-color: transparent;
+  font-size: 14px;
   color: var(--zcColor);
-  margin-left: 20px;
-  align-self: center;
+  text-align: center;
 }
