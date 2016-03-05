@@ -4,7 +4,7 @@
 
 /**
  * HTML 模板
- * 
+ *
     <div class="className">
       <ul class="slider">
         <li><img src=""></li>
@@ -17,22 +17,22 @@
       </ul>
     </div>
  *
- * 
+ *
  * CSS 样式
- * 
+ *
     .className {
       position: relative;
       width: 100%;
       height: 100px;
     }
-    className img {
+    .className img {
       width: 100%;
       height: 100%;
     }
  *
- * 
+ *
  * JS 调用
- * 
+ *
     slider(document.querySelector('.className'), {
       axis: 'y',
       interval: 6000,
@@ -42,7 +42,7 @@
  *
  **/
  
-import { swipe, style } from './func.js'
+import { swipe } from './func.js'
 
 function slider (element, params) {
   // 参数默认值
@@ -66,29 +66,12 @@ function slider (element, params) {
   let clientSize = isX ? 'clientWidth' : 'clientHeight'
   
   let slider = element.querySelector('.slider')
-  
-  // 是否显示圆点
-  let dots = element.querySelector('.dots')
-  let hasDots = !!dots
-  if (hasDots) var dotsHtml = ''
-  
   // 设置基本样式
   element.style.overflow = 'hidden'
   slider.style.display = 'flex'
   slider.style.transition = `margin ${defaults.speed} ${defaults.timingFunction}`
   slider.style[marginDir] = 0
-  if (hasDots) {
-    style(dots, {
-      display: 'flex',
-      justifyContent: 'space-between',
-      position: 'absolute',
-      left: '50%',
-      bottom: '10%',
-      width: '80px',
-      marginLeft: '-40px'
-    })
-  }
-  
+
   // 获得子元素及其个数
   let sliderItems = slider.children
   let count = sliderItems.length
@@ -102,11 +85,7 @@ function slider (element, params) {
       item.style[x] = 100 / count + '%'
       item.style[y] = '100%'
       item.style.flexShrink = '0'
-      if (hasDots) {
-        dotsHtml += `<li style="width:10px;height:10px;border:2px solid #fff;border-radius:50%;opacity:.8;${index === 0 ? 'background:#fff;' : ''}"></li>`
-      }
     })
-    if (hasDots) { dots.innerHTML = dotsHtml }
   }
   if (isX) {
     styleByCount('width', 'height')
@@ -116,6 +95,21 @@ function slider (element, params) {
   }
   // 计算span
   span = slider[clientSize] / count
+  
+  // 是否显示圆点
+  let dots = element.querySelector('.dots')
+  let hasDots = !!dots
+  if (hasDots) {
+    // 设置样式
+    dots.setAttribute('style', 'display:flex;justify-content:space-between;position:absolute;left:50%;bottom:10%;width:80px;margin-left:-40px;')
+    // 生成圆点，并插入页面
+    let dotsHtml = ''
+    for (let i = 0; i < count; i++) {
+      let style = 'width:10px;height:10px;border:2px solid #fff;border-radius:50%;opacity:.8;'
+      dotsHtml += `<li style="${style}${i === 0 ? 'background:#fff;' : ''}"></li>`
+    }
+    dots.innerHTML = dotsHtml
+  }
   
   // 圆点跟随滑动变化
   let dotsItem = dots.children
