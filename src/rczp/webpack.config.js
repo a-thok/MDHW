@@ -5,6 +5,7 @@ var config = require("../../webpack.dev.js")
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 config.entry = {
+  'rczp.main': [path.join(__dirname, '/rczp.main.js')],
   'rczp.company': [path.join(__dirname, '/rczp.company.js')],
   'rczp.search': [path.join(__dirname, '/rczp.search.js')]
 }
@@ -16,9 +17,5 @@ Object.keys(config.entry).forEach(function (name) {
   var extras = [devServer, WebpackDevServer]
   config.entry[name] = extras.concat(config.entry[name])
 })
-
-config.plugins = (config.plugins || []).concat([
-  new ExtractTextPlugin('css/rczp.css')
-])
 
 module.exports = config

@@ -1,0 +1,14 @@
+.slider {
+  width: 100%;
+  height: 100px;
+}
+.slider_list {
+  display: flex;
+  width: 500%;
+  transition: margin .5s ease-in-out;
+}
+.slider_list_item {
+  flex-shrink: 0;
+  height: 100px;
+  background-color: red;
+}

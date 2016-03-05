@@ -5,7 +5,7 @@ var config = require("../../webpack.dev.js")
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 config.entry = {
-  'zc.index': [path.join(__dirname, '/zc.index.js')],
+  'zc.main': [path.join(__dirname, '/zc.main.js')],
   'zc.detail': [path.join(__dirname, '/zc.detail.js')],
   'zc.progress': [path.join(__dirname, '/zc.progress.js')]
 };
@@ -17,9 +17,5 @@ Object.keys(config.entry).forEach(function (name) {
   var extras = [devServer, WebpackDevServer]
   config.entry[name] = extras.concat(config.entry[name])
 })
-
-config.plugins = (config.plugins || []).concat([
-  new ExtractTextPlugin('css/zc.css')
-])
 
 module.exports = config

@@ -164,3 +164,20 @@ header {
   padding: .4em 0;
   background-color: #fff;
 }
+
+/* 标签列表 */
+.tagList {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 1px;
+  font-size: 12px;
+  overflow: auto;
+}
+.tagList_item {
+  flex-shrink: 0;
+  padding: .3333em .5833em;
+  margin-right: .4167em;
+  border: 1px solid var(--borderColorLight);
+  color: var(--fontColorLight);
+  line-height: 1;
+}

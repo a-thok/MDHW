@@ -5,5 +5,5 @@ fastclick.attach(document.body)
 import 'font-awesome/css/font-awesome.css'
 import './css/main.css'
 
-import banner from './js/banner.js'
-banner()
+import slider from './js/slider.js'
+slider()
