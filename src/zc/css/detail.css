@@ -36,12 +36,13 @@
 }
 /*众筹详情内容样式*/
 .dtSection {
-  padding: 24px 3.7333% 24px 3.7333%;
+  padding: 10px 3.7333%;
   background-color: #fff;
+  font-size: 15px;
 }
 .dtSection_p {
   display: flex;
-  padding-bottom: 40px;
+  padding-bottom: 16px;
   align-items: center;
 }
 .dtSection_p_status {
@@ -75,8 +76,8 @@
 }
 .dtSection_progress {
   display: flex;
-  padding-top: 32px;
-  padding-bottom: 30px;
+  padding-top: 16px;
+  padding-bottom: 14px;
   justify-content: space-around;
 }
 .dtSection_progress_item {
@@ -85,7 +86,10 @@
   flex-direction: column;
 }
 .dtSection_progress_item span {
-  padding-bottom: 22px;
+  padding-bottom: 4px;
+}
+.dtSection_progress_item_font {
+  font-size: 26px;
 }
 .dtSection_line {
   height: 1.6vw;
@@ -95,17 +99,21 @@
 }
 .dtSection_text {
   display: flex;
+  margin: 20px 0;
   justify-content: space-between;
 }
 .dtSection_text_span {
-  width: 71.2%;
+  width: 76.2%;
   height: 13.6%;
-  max-height: 102px;
+  max-height: 78px;
   overflow-wrap: break-word;
   overflow-y: scroll;
-  margin-top: 30px;
-  padding-right: 10px;
+  padding: 0 1.3333%;
   flex-shrink: 0;
+  font-size: 14px;
+}
+.dtSection_text_icon {
+  padding-right: 14px;
 }
 
 /*字体图标样式*/
@@ -121,7 +129,7 @@
   font-size: 36px;
 }
 .angle-rightblack {
-  font-size: 150px;
+  font-size: 70px;
   color: var(--fontColorLight);
 }
 .rmb-red,
@@ -133,15 +141,16 @@
 /*众筹回报信息样式*/
 .dtSupport {
   padding: 0 3.7333%;
+  font-size: 15px;
 }
 .dtSupport_list {
-  margin-top: 42px;
+  margin-top: 2em;
   padding-bottom: 10px;
-  border: 2px solid var(--borderColorLight);
+  border: 1px solid var(--borderColorLight);
   background-color: #fff;
 }
 .dtSupport_list_li {
-  border-bottom: 2px solid var(--borderColorLight);
+  border-bottom: 1px solid var(--borderColorLight);
 }
 .dtSupport_list_text {
   padding-top: 14px;
@@ -152,19 +161,50 @@
   margin: 0 3.2%;
 }
 .dtSupport_list_li_title {
-  padding: 26px 0;
+  padding: 10px 0;
 }
 .dtSupport_list_li_title_span {
   font-size: 28px;
+  font-weight: bold;
 }
 .dtSupport_list_text_item {
   padding-bottom: 14px;
 }
 .dtSupport_list_text_item-border {
-  border-bottom: 2px solid var(--borderColorLight);
+  border-bottom: 1px solid var(--borderColorLight);
 }
 .dtSupport_list_text_item-font {
   color: #333;
 }
 
 
+/*项目进展样式*/
+ul.dialog_sublist-borderLeft {
+  border: 0;
+  margin-top: -14px;
+}
+.dialog_sublist_progressTime-pTop {
+  padding-top: 10px;
+}
+
+/*评论样式*/
+.dialog_title-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.dialog_title_more {
+  text-decoration: none;
+  color: #333;
+}
+ul.dialog_sublist-border {
+  border: 0;
+  padding-left: 15.7333%;
+  padding-right: 0;
+  margin-top: -10px;
+}
+.dialog_sublist_item_content-nowrap {
+  padding-bottom: 7.2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
