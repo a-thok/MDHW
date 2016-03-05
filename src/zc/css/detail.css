@@ -29,7 +29,7 @@
   text-align: center;
   line-height: 70px;
   border-radius: 50%;
-  opacity: 0.5;
+  opacity: .5;
   font-size: 55px;
   color: #fff;
   background-color: #333;
@@ -48,7 +48,7 @@
 .dtSection_p_status {
   width: 64px;
   height: 26px;
-  padding-left: 0.5333%;
+  padding-left: .5333%;
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
   color: #fff;
@@ -58,7 +58,7 @@
 .dtSection_p_tgle {
   width: 0;
   height: 26px;
-  border-width: 0.615em;
+  border-width: .615em;
   border-style: solid;
   border-color: transparent transparent transparent var(--zcColor);
 }
@@ -122,7 +122,7 @@
 }
 .rmb-black {
   font-size: 16px;
-  padding-left: 0.6667%;
+  padding-left: .6667%;
 }
 .angle-rightred {
   float: right;
