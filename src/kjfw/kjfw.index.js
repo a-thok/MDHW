@@ -7,3 +7,4 @@ import './css/main.css'
 
 import slider from './js/slider.js'
 slider()
+
