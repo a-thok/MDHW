@@ -4,7 +4,6 @@
 
 /**
  * HTML 模板
- *
     <div class="className">
       <ul class="slider">
         <li><img src=""></li>
@@ -17,9 +16,7 @@
       </ul>
     </div>
  *
- *
  * CSS 样式
- *
     .className {
       position: relative;
       width: 100%;
@@ -30,9 +27,7 @@
       height: 100%;
     }
  *
- *
  * JS 调用
- *
     slider(document.querySelector('.className'), {
       axis: 'y',
       interval: 6000,
