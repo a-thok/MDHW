@@ -16,6 +16,4 @@ Object.keys(config.entry).forEach(function (name) {
   config.entry[name] = extras.concat(config.entry[name])
 })
 
-config.module.loaders[0].loader = 'style!css!postcss'
-
 module.exports = config
