@@ -1,0 +1,119 @@
+/*
+  **公司列表**
+*/
+.kjList_item {
+  margin: 16px 1.3333% 0;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 5px;
+  background-color: #fff;
+}
+.kjList_item_title {
+  display: flex;
+  align-items: center;
+  padding: .8em 2.1918%;
+  border-bottom: 1px solid var(--pageColor);
+  font-weight: normal;
+  font-size: 14px;
+}
+.kjList_item_title .fa {
+  font-size: 22px;
+  margin-right: .3em;
+  color: var(--zcColor);
+}
+/*
+  **公司信息**
+*/
+.kjList_item_content {
+  padding: 0 2.1918%;
+}
+/**公司名称**/
+.kjList_item_content_title {
+  line-height: 2.5;
+  font-weight: normal;
+  font-size: 16px;
+}
+/**公司信息**/
+.kjList_item_content_info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+/**公司信息左边**/
+.kjList_item_content_info_logo {
+  width: 28%;
+  min-width: 108px;
+  flex-shrink: 0;
+}
+.kjList_item_content_info_logo img {
+  width: 80%;
+  height: 18vw;
+  max-height: 135px;
+  flex-wrap: wrap;
+}
+.kjList_item_content_info_logo span {
+  width: 100%;
+  flex-wrap: wrap;
+  display: inline-block;
+  margin-top: .5em;
+  color: #666;
+}
+.kjList_item_content_info_logo .fa {
+  font-size: 14px;
+  margin-right: .3em;
+}
+/**公司信息右边**/
+.kjList_item_content_info_text {
+  margin-left: 1.5em;
+}
+.kjList_item_content_info_text .fa {
+  font-size: 20px;
+  margin-right: .3em;
+  color: var(--zcColor);
+}
+.kjList_item_content_info_textLi {
+  padding-top: 1.5em;
+}
+/*字体颜色和背景颜色可能要设为变量*/
+.tagList-kj .tagList_item {
+  color: #ff7516;
+  background-color: #fcf5e6;
+}
+.kjList_item_content_text {
+  margin-top: 1em;
+  padding: 1em 5px;
+  font-size: 12px;
+  background-color: var(--pageColor);
+}
+.kjList_item_content_text span {
+  color: var(--zcColor);
+}
+/**查看公司详情**/
+.kjList_item_more {
+  padding: .8em 2.1918%;
+  display: flex;
+  justify-content: flex-end;
+  color: blue;
+  font-size: 14px;
+}
+/*
+  **查看更多**
+*/
+.companyMore {
+  margin: 16px 1.3333%;
+}
+.list_more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: .5em 0;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  background-color: #ff6600;
+  font-size: 16px;
+}
+.list_more .fa {
+  margin-left: 15px;
+  font-size: 26px;
+}
