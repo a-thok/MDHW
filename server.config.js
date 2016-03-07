@@ -12,7 +12,7 @@ var serverConfig = {
   publicPath: config.output.publicPath,
   proxy: {
     "*": {
-      target: "http://192.168.2.17:8085",
+      target: "http://192.168.2.17:8086",
       secure: false,
       bypass: function (req, res, proxyOptions) {
         if (req.headers.accept.indexOf('html') !== -1) {
