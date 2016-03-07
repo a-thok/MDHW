@@ -39,6 +39,7 @@ module.exports = {
     // // allow debugger during development
     // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // allow trailing spaces in blank lines
-    "no-trailing-spaces": [2, { "skipBlankLines": true }]
+    "no-trailing-spaces": [2, { "skipBlankLines": true }],
+    'space-before-function-paren': [2, {"anonymous": "always", "named": "never"}]
   }
 }

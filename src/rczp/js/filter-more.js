@@ -1,6 +1,6 @@
 import { forEachEl } from '../../common/js/func.js'
 
-export default function filterMore () {
+export default function filterMore() {
   // 更多过滤
   document.querySelector('.filter_content_more_main').addEventListener('click', e => {
     if (e.target.classList.contains('tagList_item-active')) return

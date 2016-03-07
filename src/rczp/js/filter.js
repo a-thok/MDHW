@@ -1,7 +1,7 @@
 import getArea from '../../common/js/area.js'
 import { forEachEl, queryParent } from '../../common/js/func.js'
 
-export default function filter () {
+export default function filter() {
   let filterContents = document.querySelectorAll('.filter_content')
   // 弹出过滤
   forEachEl('.filter_title', (el, index) => {

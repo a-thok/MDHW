@@ -1,6 +1,6 @@
 import { forEachEl, queryParent } from '../../common/js/func.js'
 
-export default function progress () {
+export default function progress() {
   forEachEl('.dialog_sublist_item_comment_more_link', (el) => {
     el.addEventListener('click', (e) => {
       let parent = queryParent(e.target, '.dialog_sublist_item_comment')

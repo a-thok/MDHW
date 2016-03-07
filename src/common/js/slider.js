@@ -36,10 +36,10 @@
     })
  *
  **/
- 
+
 import { swipe } from './func.js'
 
-function slider (element, params) {
+function slider(element, params) {
   // 参数默认值
   let defaults = {
     axis: 'x',
@@ -59,7 +59,7 @@ function slider (element, params) {
   let isX = defaults.axis === 'x'
   let marginDir = isX ? 'marginLeft' : 'marginTop'
   let clientSize = isX ? 'clientWidth' : 'clientHeight'
-  
+
   let slider = element.querySelector('.slider')
   // 设置基本样式
   element.style.overflow = 'hidden'

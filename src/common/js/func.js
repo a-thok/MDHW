@@ -1,9 +1,9 @@
-export function forEachEl (dom, cb) {
+export function forEachEl(dom, cb) {
   let els = (typeof dom === 'string') ? document.querySelectorAll(dom) : dom
   Array.prototype.forEach.call(els, cb)
 }
 
-export function queryParent (el, selector) {
+export function queryParent(el, selector) {
   if (!el.parentElement) return
   if (selector[0] === '.' && el.parentElement.classList.contains(selector.slice(1))) {
     return el.parentElement
@@ -15,13 +15,13 @@ export function queryParent (el, selector) {
   return queryParent(el.parentElement, selector)
 }
 
-export function style (element, css) {
+export function style(element, css) {
   Object.keys(css).forEach(prop => {
     element.style[prop] = css[prop]
   })
 }
 
-export function swipe (element, type, cb) {
+export function swipe(element, type, cb) {
   let isTouchMove, startTx, startTy
   element.addEventListener('touchstart', function (e) {
     let touches = e.touches[0]
