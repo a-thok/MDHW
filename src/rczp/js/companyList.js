@@ -1,17 +1,12 @@
 import render from '../../common/js/render.js'
 
 export default function companyList() {
-  let body = {
-    pageIndex: 1,
-    pageSize: 10
-  }
-  
   let template = function (data) {
     return data.result.data.reduce((pre, cur) => {
       let fuli = cur.fuli.reduce((_pre, _cur) => {
         return _pre + `<li class="tagList_item">${_cur}</li>`
       }, '')
-      
+
       return pre + `<li class="list_item">
         <div class="list_item_img"><img src="http://192.168.2.10:82/img/${cur.logo}"></div>
         <div class="list_item_text">
@@ -25,19 +20,16 @@ export default function companyList() {
       </li>`
     }, '')
   }
-  
+
+  let button = document.querySelector('.list_more')
   let config = {
     api: '/m/HR/CompanyList',
-    body: body,
+    body: {
+      pageIndex: 1,
+      pageSize: 10
+    },
     template: template,
-    container: document.querySelector('.list'),
-    btn: document.querySelector('.list_more')
+    container: document.querySelector('.list')
   }
-  
-  render(config)
-  
-  document.querySelector('.list_more').addEventListener('click', () => {
-    body.pageIndex++
-    render(config)
-  })
+  render(button, config)
 }
