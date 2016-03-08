@@ -1,8 +1,4 @@
 /**
- * slider滑动插件
- **/
-
-/**
  * HTML 模板
     <div class="className">
       <ul class="slider">
@@ -35,11 +31,20 @@
       timingFunction: 'ease-out'
     })
  *
- **/
+ */
 
 import { swipe } from './func.js'
 
-export default function slider(element, params) {
+/**
+ * A simple image slider
+ * @param {Object} element - the DOM object that contains the slider
+ * @param {Object} [config] - additional configuration
+ * @param {string} config.axis - sliding direction
+ * @param {number} config.interval - time interval of every sliding
+ * @param {string} config.speed - animation speed
+ * @param {string} config.timingFunction - animation timingFunction
+ */
+export default function slider(element, config) {
   // 参数默认值
   let defaults = {
     axis: 'x',
@@ -49,9 +54,9 @@ export default function slider(element, params) {
   }
   
   // 用户参数覆盖默认参数
-  if (params) {
-    Object.keys(params).forEach((prop) => {
-      defaults[prop] = params[prop]
+  if (config) {
+    Object.keys(config).forEach((prop) => {
+      defaults[prop] = config[prop]
     })
   }
   
