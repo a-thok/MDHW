@@ -26,7 +26,7 @@ export default function companyList() {
     }, '')
   }
   
-  let params = {
+  let config = {
     api: '/m/HR/CompanyList',
     body: body,
     template: template,
@@ -34,10 +34,10 @@ export default function companyList() {
     btn: document.querySelector('.list_more')
   }
   
-  render(params)
+  render(config)
   
   document.querySelector('.list_more').addEventListener('click', () => {
     body.pageIndex++
-    render(params)
+    render(config)
   })
 }
