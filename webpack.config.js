@@ -60,8 +60,5 @@ module.exports = {
         // throwError: true
       })
     ]
-  },
-  eslint: {
-    formatter: require('eslint-friendly-formatter')
   }
 }
