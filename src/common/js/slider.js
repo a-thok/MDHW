@@ -39,7 +39,7 @@
 
 import { swipe } from './func.js'
 
-function slider(element, params) {
+export default function slider(element, params) {
   // 参数默认值
   let defaults = {
     axis: 'x',
@@ -159,5 +159,3 @@ function slider(element, params) {
     slider.animation = setInterval(autoMove, defaults.interval)
   })
 }
-
-export default slider

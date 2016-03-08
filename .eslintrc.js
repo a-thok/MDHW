@@ -1,45 +1,31 @@
 module.exports = {
   root: true,
-  
+
   'env': {
     'browser': true,
     'node': true
   },
 
-  'ecmaFeatures': {
-    'arrowFunctions': true,
-    'destructuring': true,
-    'classes': true,
-    'defaultParams': true,
-    'blockBindings': true,
-    'modules': true,
-    'objectLiteralComputedProperties': true,
-    'objectLiteralShorthandMethods': true,
-    'objectLiteralShorthandProperties': true,
-    'restParams': true,
-    'spread': true,
-    'forOf': true,
-    'generators': true,
-    'templateStrings': true,
-    'superInFunctions': true,
-    'experimentalObjectRestSpread': true
+  'parserOptions': {
+    'ecmaVersion': 6,
+    'sourceType': 'module'
   },
-  
-  extends: 'standard',
-  
-  // required to lint *.vue files
+
+  'extends': 'standard',
+
   plugins: [
-    'html'
+    'html',// required to lint *.vue files
+    'standard'
   ],
-  
-  // add your custom rules here
+
+  'globals': {
+    // '$': true
+  },
+
   'rules': {
-    // allow paren-less arrow functions
-    'arrow-parens': 0,
-    // // allow debugger during development
-    // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    // allow trailing spaces in blank lines
-    "no-trailing-spaces": [2, { "skipBlankLines": true }],
-    'space-before-function-paren': [2, {"anonymous": "always", "named": "never"}]
+    'arrow-parens': 0,// allow paren-less arrow functions
+    // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,// allow debugger during development
+    'no-trailing-spaces': [2, { 'skipBlankLines': true }],// allow trailing spaces in blank lines
+    'space-before-function-paren': [2, { 'anonymous': 'always', 'named': 'never' }]
   }
 }

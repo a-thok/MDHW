@@ -1,8 +1,5 @@
-/* global __dirname */
-
 var path = require('path')
-var config = require("../../webpack.dev.js")
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var config = require('../../webpack.dev.js')
 
 config.entry = {
   'rczp.main': [path.join(__dirname, '/rczp.main.js')],

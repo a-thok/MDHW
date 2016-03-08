@@ -1,4 +1,4 @@
-var config = require("./webpack.dev.js")
+var config = require('./webpack.dev.js')
 
 var serverConfig = {
   hot: true,
@@ -11,8 +11,8 @@ var serverConfig = {
   // noInfo: true,
   publicPath: config.output.publicPath,
   proxy: {
-    // "*": {
-    //   target: "http://192.168.2.17:8086",
+    // '*': {
+    //   target: 'http://192.168.2.17:8086',
     //   secure: false,
     //   bypass: function (req, res, proxyOptions) {
     //     if (req.headers.accept.indexOf('html') !== -1) {
@@ -22,15 +22,15 @@ var serverConfig = {
     //     }
     //   }
     // },
-    "/Dict/City*": {
-      target: "http://192.168.2.17:8085",
-      secure: false,
+    '/Dict/City*': {
+      target: 'http://192.168.2.17:8085',
+      secure: false
     },
-    "/m/HR/*": {
-      target: "http://192.168.2.180:8086",
-      secure: false,
+    '/m/HR/*': {
+      target: 'http://192.168.2.180:8086',
+      secure: false
     }
-  },
+  }
 }
 
 module.exports = serverConfig

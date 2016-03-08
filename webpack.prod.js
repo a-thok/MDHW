@@ -1,9 +1,7 @@
-/* global __dirname */
-
 var path = require('path')
 var webpack = require('webpack')
 var config = require('./webpack.config.js')
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 config.entry = {
   'rczp.company': [path.join(__dirname, 'src/rczp/rczp.company.js')],

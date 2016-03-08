@@ -1,8 +1,5 @@
-/* global __dirname */
-
 var path = require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   output: {
@@ -39,7 +36,7 @@ module.exports = {
           limit: 10000,
           name: 'img/[name].[ext]?[hash:7]'
         }
-      },
+      }
       // {
       //   test: require.resolve('angular'),
       //   loader: 'expose?angular'
@@ -49,7 +46,7 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    }),
+    })
   ],
   postcss: function (webpack) {
     return [
@@ -59,7 +56,7 @@ module.exports = {
       require('stylelint')(),
       require('postcss-cssnext')(),
       require('stylelint/node_modules/postcss-reporter')({
-        clearMessages: true,
+        clearMessages: true
         // throwError: true
       })
     ]

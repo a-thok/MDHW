@@ -1,7 +1,5 @@
-/* global __dirname */
-
 var webpack = require('webpack')
-var config = require("./webpack.config.js")
+var config = require('./webpack.config.js')
 
 // eval-source-map is faster for development
 config.devtool = 'eval-source-map'
