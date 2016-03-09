@@ -1,5 +1,5 @@
 /* 分类 */
-.postCate {  
+.postCate {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
