@@ -34,7 +34,6 @@
 .list_item_content_info {
   display: flex;
   justify-content: space-between;
-  
 }
 /**公司信息左边**/
 .list_item_content_info_left {
@@ -113,7 +112,7 @@
   border-radius: 5px;
   border: 0;
   color: #fff;
-  background-color: #ff6600;
+  background-color: #f60;
   font-size: 16px;
 }
 .list_more .fa {
