@@ -6,7 +6,8 @@ config.entry = {
   'zc.detail': [path.join(__dirname, '/zc.detail.js')],
   'zc.progress': [path.join(__dirname, '/zc.progress.js')],
   'zc.search': [path.join(__dirname, '/zc.search.js')],
-  'zc.category': [path.join(__dirname, '/zc.category.js')]
+  'zc.category': [path.join(__dirname, '/zc.category.js')],
+  'zc.comment': [path.join(__dirname, '/zc.comment.js')]
 }
 
 // add hot-reload related code to entry chunks
