@@ -9,7 +9,8 @@
     "rczp": "node src/rczp/server.js",
     "zc": "node src/zc/server.js",
     "kjfw": "node src/kjfw/server.js",
-    "zckj": "node src/zckj/server.js"
+    "zckj": "node src/zckj/server.js",
+    "zb": "node src/zb/server.js"
   },
   "author": "",
   "license": "ISC",
