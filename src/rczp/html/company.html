@@ -18,67 +18,107 @@
     
     <!--过滤栏 开始-->
     <section class="filter">
-      <span class="filter_item">
-        <div class="filter_title"><span class="filter_title_text">地区不限</span><i class="filter_title_arrow"></i></div>
-        <div class="filter_content filter_content-area">
-          <ul class="filter_content_list filter_content_list-province"></ul>
-          <ul class="filter_content_list filter_content_list-city"></ul>
-          <div class="filter_content_btns">
-            <button class="filter_content_btn" type="button">取消</button>
-          </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">地区不限</span><i class="filter_title_arrow"></i>
         </div>
-      </span>
-      <span class="filter_item">
-         <div class="filter_title"><span class="filter_title_text">规模不限</span><i class="filter_title_arrow"></i></div>
         <div class="filter_content">
-          <ul class="filter_content_list">
-            <li class="filter_content_list_item">规模不限</li>
-            <li class="filter_content_list_item">2K以下</li>
-            <li class="filter_content_list_item">2K-5K</li>
-            <li class="filter_content_list_item">5K-10K</li>
-            <li class="filter_content_list_item">10K-15K</li>
-            <li class="filter_content_list_item">15K-25K</li>
-            <li class="filter_content_list_item">25K-50K</li>
-            <li class="filter_content_list_item">50K以上</li>
-          </ul>
+          <div class="filter_content_wrap">
+            <ul class="filter_content_list filter_content_list-province"></ul>
+            <ul class="filter_content_list filter_content_list-city"></ul>
+          </div>
           <div class="filter_content_btns">
             <button class="filter_content_btn" type="button">取消</button>
           </div>
         </div>
-      </span>
-      <span class="filter_item">
-        <div class="filter_title"><span class="filter_title_text">行业不限</span><i class="filter_title_arrow"></i></div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">规模不限</span><i class="filter_title_arrow"></i>
+        </div>
         <div class="filter_content">
-          <ul class="filter_content_list">
-            <li class="filter_content_list_item">行业不限</li>
-            <li class="filter_content_list_item">移动互联网</li>
-            <li class="filter_content_list_item">电子商务</li>
-            <li class="filter_content_list_item">金融</li>
-            <li class="filter_content_list_item">企业服务</li>
-            <li class="filter_content_list_item">教育</li>
-            <li class="filter_content_list_item">O2O</li>
-            <li class="filter_content_list_item">硬件</li>
-            <li class="filter_content_list_item">社交网络</li>
-            <li class="filter_content_list_item">旅游</li>
-            <li class="filter_content_list_item">医疗健康</li>
-            <li class="filter_content_list_item">生活服务</li>
-            <li class="filter_content_list_item">信息安全</li>
-            <li class="filter_content_list_item">数据服务</li>
-            <li class="filter_content_list_item">广告营销</li>
-            <li class="filter_content_list_item">招聘</li>
-            <li class="filter_content_list_item">其他</li>
-          </ul>       
+          <div class="filter_content_wrap">
+            <ul class="filter_content_list">
+              <li class="filter_content_list_item">规模不限</li>
+              <li class="filter_content_list_item">2K以下</li>
+              <li class="filter_content_list_item">2K-5K</li>
+              <li class="filter_content_list_item">5K-10K</li>
+              <li class="filter_content_list_item">10K-15K</li>
+              <li class="filter_content_list_item">15K-25K</li>
+              <li class="filter_content_list_item">25K-50K</li>
+              <li class="filter_content_list_item">50K以上</li>
+            </ul>
+          </div>
           <div class="filter_content_btns">
             <button class="filter_content_btn" type="button">取消</button>
           </div>
         </div>
-      </span>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">行业不限</span><i class="filter_title_arrow"></i>
+        </div>
+        <div class="filter_content">
+          <div class="filter_content_wrap">
+            <ul class="filter_content_list">
+              <li class="filter_content_list_item">行业不限</li>
+              <li class="filter_content_list_item">移动互联网</li>
+              <li class="filter_content_list_item">电子商务</li>
+              <li class="filter_content_list_item">金融</li>
+              <li class="filter_content_list_item">企业服务</li>
+              <li class="filter_content_list_item">教育</li>
+              <li class="filter_content_list_item">O2O</li>
+              <li class="filter_content_list_item">硬件</li>
+              <li class="filter_content_list_item">社交网络</li>
+              <li class="filter_content_list_item">旅游</li>
+              <li class="filter_content_list_item">医疗健康</li>
+              <li class="filter_content_list_item">生活服务</li>
+              <li class="filter_content_list_item">信息安全</li>
+              <li class="filter_content_list_item">数据服务</li>
+              <li class="filter_content_list_item">广告营销</li>
+              <li class="filter_content_list_item">招聘</li>
+              <li class="filter_content_list_item">其他</li>
+            </ul>      
+          </div>
+          <div class="filter_content_btns">
+            <button class="filter_content_btn" type="button">取消</button>
+          </div>
+        </div>
+      </div>
     </section>
     <!--过滤栏 结束-->
     
     <!--列表 开始-->
     <section class="listWrap">
       <ul class="list">
+        <li class="list_item">
+          <div class="list_item_img"><div></div></div>
+          <div class="list_item_text">
+            <p class="list_item_text_p company_info"><span class="company_name list_margin">圈子在线</span>互联网/私营企业/规模:1-50人</p>
+            <p class="list_item_text_p company_comment"><a class="list_margin" href="#">8</a>条面试评价</p>
+            <p class="list_item_text_p company_post"><a class="list_margin" href="#">6</a>个在招职位</p>
+            <ul class="tagList">
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+            </ul>
+          </div>
+        </li>
+        <li class="list_item">
+          <div class="list_item_img"><div></div></div>
+          <div class="list_item_text">
+            <p class="list_item_text_p company_info"><span class="company_name list_margin">圈子在线</span>互联网/私营企业/规模:1-50人</p>
+            <p class="list_item_text_p company_comment"><a class="list_margin" href="#">8</a>条面试评价</p>
+            <p class="list_item_text_p company_post"><a class="list_margin" href="#">6</a>个在招职位</p>
+            <ul class="tagList">
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+            </ul>
+          </div>
+        </li>
         <li class="list_item">
           <div class="list_item_img"><div></div></div>
           <div class="list_item_text">

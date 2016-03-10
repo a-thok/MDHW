@@ -1,0 +1,15 @@
+.zcCate_list-inside {
+  margin: 2% 0 4%;
+}
+.zcCate_list-inside .zcCate_list_item {
+  padding:6px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+.zcCate_list-inside .zcCate_list_item_icon {
+  display: flex;
+  font-size: 12px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}

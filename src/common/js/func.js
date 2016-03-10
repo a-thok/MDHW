@@ -3,7 +3,13 @@ export function forEachEl(dom, cb) {
   Array.prototype.forEach.call(els, cb)
 }
 
-export function queryParent(el, selector) {
+export function $(selector) {
+  let els = document.querySelectorAll(selector)
+  if (els.length === 1) return els[0]
+  return els
+}
+
+export function $parent(el, selector) {
   if (!el.parentElement) return
   if (selector[0] === '.' && el.parentElement.classList.contains(selector.slice(1))) {
     return el.parentElement
@@ -12,7 +18,7 @@ export function queryParent(el, selector) {
   } else if (el.parentElement.nodeName.toLowerCase() === selector) {
     return el.parentElement
   }
-  return queryParent(el.parentElement, selector)
+  return $parent(el.parentElement, selector)
 }
 
 export function style(element, css) {
