@@ -4,7 +4,9 @@ var config = require('../../webpack.dev.js')
 config.entry = {
   'zc.main': [path.join(__dirname, '/zc.main.js')],
   'zc.detail': [path.join(__dirname, '/zc.detail.js')],
-  'zc.progress': [path.join(__dirname, '/zc.progress.js')]
+  'zc.progress': [path.join(__dirname, '/zc.progress.js')],
+  'zc.search': [path.join(__dirname, '/zc.search.js')],
+  'zc.category': [path.join(__dirname, '/zc.category.js')]
 }
 
 // add hot-reload related code to entry chunks
