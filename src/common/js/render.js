@@ -29,7 +29,6 @@ export default function render(button, config) {
       .then(data => {
         // 计算总页数
         totalPages = Math.ceil(data.result.total / config.body.pageSize)
-
         // 生成html
         let html = config.template(data)
         // 插入文档
@@ -39,4 +38,8 @@ export default function render(button, config) {
 
   // 绑定
   button.addEventListener('click', config.listener)
+  if (config.immediate) {
+    config.container.innerHTML = ''
+    config.listener()
+  }
 }
