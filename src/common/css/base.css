@@ -25,17 +25,24 @@ body {
   background-color: var(--pageColor);
   color: #333;
 }
+body.is-static {
+  height: 100%;
+  overflow: hidden;
+}
 .page {
   max-width: 750px;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  /*overflow: hidden;*/
   /*可能要单独设一个类，因为有的页面没有底栏*/
   margin-bottom: 55px;
 }
 
 /* 头部 */
 header {
+  position: relative;
+  z-index: 2;
+  /*上面两行只是为了层级上比过滤栏高*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,6 +88,13 @@ header {
   background: #fff;
   box-shadow: 0 -1px 3px #ddd;
 }
+@media screen and (min-width: 750px) {
+  .nav {
+    left: 50%;
+    width: 750px;
+    margin-left: -375px;
+  }
+}
 .nav_link {
   flex-basis: 20%;
   display: flex;
@@ -103,23 +117,104 @@ header {
 
 /* 过滤栏 */
 .filter {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
-  padding: 16px 6.6667%;
   border-bottom: 1px solid var(--borderColorLight);
   background-color: #fff;
-  font-size: 16px;
+  font-size: 15px;
+}
+.filter_item {
+  flex-basis: 33.3333%;
 }
 .filter_title {
+  position: relative;
+  z-index: 1;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  background: #fff;
+}
+.is-show .filter_title {
+  font-weight: bold;
 }
 .filter_title_arrow {
-  align-self: center;
   width: 0;
   border-width: .35em .35em 0 .35em;
   border-style: solid;
   border-color: #333 transparent transparent;
   margin-left: .3333em;
+}
+.is-show .filter_title_arrow {
+  border-width: 0 .35em .35em;
+  border-color: transparent transparent #333;
+}
+.filter_content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 13.3333vw;
+  border-bottom: 50px solid transparent;
+  margin-top: 1px;
+  box-shadow: 0 1px 3px #ddd;
+  overflow: hidden;
+  transform: translateY(-100%);
+  transition: transform .3s ease-out;
+}
+@media screen and (min-width: 750px) {
+  .filter_content {
+    padding-bottom: 100px;
+  }
+}
+.filter_content_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  padding-bottom: 70px;
+}
+.filter_content-short {
+  height: auto;
+  padding-bottom: 0;
+  border-bottom: 0;
+  background: #fff;
+}
+.filter_content-short .filter_content_wrap {
+  padding-bottom: 0;
+}
+.is-show .filter_content {
+  transform: translateY(0);
+}
+.filter_content_btns {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  margin-top: -70px;
+  background: #fff;
+  box-shadow: 0 -3px 3px #ddd;
+  text-align: center;
+  line-height: 70px;
+}
+.filter_content_btn {
+  width: 9em;
+  height: 48px;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--rczpColor);
+  font-size: 18px;
+  color: #fff;
+}
+.filter_content_textbtn {
+  height: 48px;
+  padding: 0 .5em;
+  margin-left: 1em;
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  color: var(--rczpColor);
 }
 
 /* 分类盒子 */
@@ -209,4 +304,12 @@ header {
 .list_item_text_p {
   margin-bottom: 6px;
   font-size: 12px;
+}
+.list_more {
+  width: 100%;
+  padding: 1em 0;
+  margin-top: 10px;
+  background-color: #fff;
+  font-size: 16px;
+  border: 0;
 }

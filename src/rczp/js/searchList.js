@@ -17,7 +17,7 @@ export default function searchResult() {
   
   let button = document.querySelector('.list_more')
   let config = {
-    api: '/Jobs/List',
+    api: '/m/HR/JobList',
     body: {
       pageIndex: 1,
       pageSize: 10
