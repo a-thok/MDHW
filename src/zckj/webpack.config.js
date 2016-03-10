@@ -2,7 +2,8 @@ var path = require('path')
 var config = require('../../webpack.dev.js')
 
 config.entry = {
-  'zckj.main': [path.join(__dirname, '/zckj.main.js')]
+  'zckj.main': [path.join(__dirname, '/zckj.main.js')],
+  'zckj.detail': [path.join(__dirname, '/zckj.detail.js')]
 }
 
 // add hot-reload related code to entry chunks

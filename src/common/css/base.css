@@ -194,3 +194,19 @@ header {
   background-color: #fff;
   overflow: hidden;
 }
+
+/*待审查的公用样式*/
+.list_item_img {
+  margin-right: 5.1873%;
+  align-self: center;
+  flex-shrink: 0;
+}
+.list_item_img div {
+  width: 18vw;
+  height: 18vw;
+  background-color: red;
+}
+.list_item_text_p {
+  margin-bottom: 6px;
+  font-size: 12px;
+}

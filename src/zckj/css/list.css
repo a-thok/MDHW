@@ -1,0 +1,69 @@
+/*列表样式*/
+.list_item_text {
+  padding-left: 20px;
+}
+.list_item_text_p-text,
+.list_item_text_btn {
+  font-size: 14px;
+}
+.page-background {
+  background: #fff;
+}
+.list_item-boderAdd {
+  padding: 3% 2.5%;
+  margin-bottom: 0;
+  border: 0;
+  border-bottom: 1px dotted var(--borderColorLight);
+}
+.list_item_text_p-title {
+  font-size: 18px;
+}
+.list_item_text_p-text {
+  display: flex;
+}
+.list_item_text_p-text_address {
+  color: var(--fontColorLight);
+}
+.list_item_text_p-text_rz {
+  margin-left: 6.3333%;
+}
+.list_item_text_p-text_rz .fa {
+  color: var(--rczpColor);
+  font-size: 30px;
+}
+.list_item_text_btn {
+  padding: 6px 8.4667%;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  background-color: var(--rczpColor);
+}
+
+/*列表底部样式*/
+.listFooter {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  padding: 20px 0;
+  border-top: 2px solid #e3e3e3;
+  background: rgba(255, 255, 255, 0.95);
+  justify-content: center;
+}
+.listFooter_btn {
+  padding: 6px 6.5333%;
+  border: 1px solid var(--fontColorLight);
+  border-radius: 25px;
+  font-size: 16px;
+  color: var(--fontColorLight);
+  background: none;
+}
+.listFooter_num {
+  display: flex;
+  margin: 0 5.6667%;
+  color: var(--fontColorLight);
+  align-items: center;
+}
+.listFooter_num span {
+  padding: 0 5px;
+}
