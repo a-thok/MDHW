@@ -3,7 +3,12 @@
  * @param {Object} button - DOM element that trigger the rendering
  * @param {Object} config - render configuration
  */
-export default function render(button, config) {
+export default function render(button, config, cb) {
+  config = Object.assign({
+    replace: false,
+    forword: true
+  }, config)
+  
   // 防止重复绑定
   button.removeEventListener('click', config.listener)
 
@@ -11,7 +16,7 @@ export default function render(button, config) {
   let totalPages
 
   config.listener = function (e) {
-    config.body.pageIndex++
+    config.forward ? config.body.pageIndex++ : config.body.pageIndex--
     // 请求最后一页
     if (config.body.pageIndex === totalPages) e.target.textContent = '没有更多条目'
     // 请求不存在的页数
@@ -29,10 +34,12 @@ export default function render(button, config) {
       .then(data => {
         // 计算总页数
         totalPages = Math.ceil(data.result.total / config.body.pageSize)
+        // 使用回调函数操作额外的行为
+        if (cb) cb(data)
         // 生成html
         let html = config.template(data)
         // 插入文档
-        config.container.insertAdjacentHTML('beforeend', html)
+        config.replace ? config.container.insertAdjacentHTML('beforeend', html) : config.container.innerHTML(html)
       })
   }
 
