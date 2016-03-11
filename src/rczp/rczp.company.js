@@ -1,5 +1,7 @@
-import { showFilter, hideFilter, selectFilter, generateAreaFilter } from '../common/js/filter.js'
+import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter } from '../common/js/filter.js'
 
+// 固定过滤
+fixFilter()
 // 显示过滤
 showFilter()
 // 隐藏过滤

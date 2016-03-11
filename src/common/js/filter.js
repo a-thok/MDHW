@@ -1,19 +1,22 @@
 import getArea from '../../common/js/area.js'
 import { $, $parent } from '../../common/js/func.js'
 
-// 能用css解决就不用下面这个方法
-// export function calcFilterHeight() {
-//   let docHeight, headerHeight
-//   function calc() {
-//     docHeight = document.documentElement.clientHeight
-//     headerHeight = $('header').clientHeight;
-//     [...filterContents].forEach(item => {
-//       item.style.height = docHeight - headerHeight - 54 + 'px'
-//     })
-//   }
-//   calc()
-//   window.addEventListener('resize', () => calc)
-// }
+// 固定过滤
+export function fixFilter() {
+  function calc() {
+    let headerHeight = $('header').clientHeight
+    let filter = $('.filter')
+    window.addEventListener('scroll', function () {
+      if (document.body.scrollTop >= headerHeight) {
+        filter.classList.add('is-fixed')
+      } else {
+        filter.classList.remove('is-fixed')
+      }
+    })
+  }
+  calc()
+  window.addEventListener('resize', calc)
+}
 
 // 显示过滤
 export function showFilter() {

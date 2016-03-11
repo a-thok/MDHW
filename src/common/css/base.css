@@ -15,6 +15,7 @@ ol {
   --rczpColor: #3d9ccc;
   --rczpColorDark: #2991c6;
   --zcColor: #ea544a;
+  --zckjColor: #0097e0;
   --fontColorLight: #888;
   --borderColorLight: #e3e3e3;
   --HighlightColorOrange: #ea572b;
@@ -36,6 +37,30 @@ body.is-static {
   /*overflow: hidden;*/
   /*可能要单独设一个类，因为有的页面没有底栏*/
   margin-bottom: 55px;
+}
+
+/**
+ * 小部件
+ */
+ /* 左侧竖线式标题 */
+.titleA {
+  padding: 0 .5em;
+  border-left: 4px solid #000;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 1em 0;
+}
+/* 长圆角按钮 */
+.longRadiusBtn {
+  padding: .5em 3em;
+  margin: 1em 0;
+  border: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #fff;
+}
+.longRadiusBtn .fa {
+  margin-left: 1em;
 }
 
 /* 头部 */
@@ -121,9 +146,16 @@ header {
   z-index: 1;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: 750px;
   border-bottom: 1px solid var(--borderColorLight);
   background-color: #fff;
   font-size: 15px;
+}
+.filter.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .filter_item {
   flex-basis: 33.3333%;
@@ -157,13 +189,16 @@ header {
   left: 0;
   width: 100%;
   height: 100vh;
-  padding-bottom: 13.3333vw;
-  border-bottom: 50px solid transparent;
+  padding-bottom: 120px; /* 顶部过滤栏70 + 底部取消按钮50 */
+  border-bottom: 13.3333vw solid transparent;
   margin-top: 1px;
   box-shadow: 0 1px 3px #ddd;
   overflow: hidden;
   transform: translateY(-100%);
   transition: transform .3s ease-out;
+}
+.is-fixed .filter_content {
+  border-bottom: 0;
 }
 @media screen and (min-width: 750px) {
   .filter_content {
@@ -174,7 +209,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  padding-bottom: 70px;
 }
 .filter_content-short {
   height: auto;
@@ -192,7 +226,6 @@ header {
   position: relative;
   width: 100%;
   height: 70px;
-  margin-top: -70px;
   background: #fff;
   box-shadow: 0 -3px 3px #ddd;
   text-align: center;
@@ -289,7 +322,6 @@ header {
   background-color: #fff;
   overflow: hidden;
 }
-
 /*待审查的公用样式*/
 .list_item_img {
   margin-right: 5.1873%;
