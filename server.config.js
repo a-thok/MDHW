@@ -27,11 +27,11 @@ var serverConfig = {
       secure: false
     },
     '/m/HR/*': {
-      target: 'http://192.168.2.180:8086',
+      target: 'http://192.168.2.177:8086',
       secure: false
     },
     '/m/ZC/*': {
-      target: 'http://192.168.2.180:8088',
+      target: 'http://192.168.2.177:8088',
       secure: false
     }
   }
