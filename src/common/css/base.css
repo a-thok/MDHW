@@ -15,6 +15,7 @@ ol {
   --rczpColor: #3d9ccc;
   --rczpColorDark: #2991c6;
   --zcColor: #ea544a;
+  --zckjColor: #0097e0;
   --fontColorLight: #888;
   --borderColorLight: #e3e3e3;
   --HighlightColorOrange: #ea572b;
@@ -36,6 +37,30 @@ body.is-static {
   /*overflow: hidden;*/
   /*可能要单独设一个类，因为有的页面没有底栏*/
   margin-bottom: 55px;
+}
+
+/**
+ * 小部件
+ */
+ /* 左侧竖线式标题 */
+.titleA {
+  padding: 0 .5em;
+  border-left: 4px solid #000;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 1em 0;
+}
+/* 长圆角按钮 */
+.longRadiusBtn {
+  padding: .5em 3em;
+  margin: 1em 0;
+  border: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #fff;
+}
+.longRadiusBtn .fa {
+  margin-left: 1em;
 }
 
 /* 头部 */
@@ -319,13 +344,4 @@ header {
   background-color: #fff;
   font-size: 16px;
   border: 0;
-}
-
-/* 左侧竖线式标题 */
-.titleA {
-  padding: 0 .5em;
-  border-left: 4px solid #000;
-  font-weight: normal;
-  font-size: 16px;
-  margin: 1em 0;
 }
