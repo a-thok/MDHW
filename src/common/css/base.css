@@ -16,6 +16,7 @@ ol {
   --rczpColorDark: #2991c6;
   --zcColor: #ea544a;
   --zckjColor: #0097e0;
+  --zbColor: #e24846;
   --fontColorLight: #888;
   --borderColorLight: #e3e3e3;
   --HighlightColorOrange: #ea572b;
@@ -405,6 +406,7 @@ header {
 /**
  * 详情页共用样式
  */
+.summary,
 .baseinfo,
 .intro,
 .ftCtrl {
@@ -413,6 +415,78 @@ header {
 .baseinfo_title,
 .intro_title {
   font-size: 16px;
+}
+
+/* 摘要 */
+.summary {
+  padding: .8em 3.3333%;
+  margin-bottom: 20px;
+}
+/*.dtBasic-delPadding {
+  padding-right: 0;
+}*/
+/* 标题 */
+.summary_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-right: -3.5%;
+}
+.summary_title_wrap {
+  flex-grow: 1;
+  padding-bottom: 12px;
+  font-size: 16px;
+}
+.summary_title_text {
+  font-size: 16px;
+}
+.summary_title_tag {
+  padding: .1em .5em;
+  border-radius: 4px;
+  background: #efc028;
+  font-size: 12px;
+  color: #fff;
+  white-space:nowrap;
+}
+.summary_title_label {
+  display: flex;
+  height: 28px;
+  padding-right: .5em;
+  margin-left: 1em;
+  background: var(--zbColor);
+  font-size: 16px;
+  color: #fff;
+  line-height: 28px;
+}
+.summary_title_label .arrow {
+  border-width: 0 14px 8px;
+  border-bottom-color: #fff;
+  margin-right: -10px;
+}
+/* 内容 */
+.summary_content {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.summary_content_r {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.summary_content_para {
+  line-height: 2;
+}
+.summary_content_label {
+  flex-basis: 100%;
+  flex-shrink: 0;
+  color: var(--fontColorLight);
+  text-align: right;
+}
+.summary_content_em {
+  font-size: 28px;
+  color: var(--zbColor);
 }
 /* 基本信息 */
 .baseinfo {
@@ -444,10 +518,10 @@ header {
   border-bottom: 1px solid var(--borderColorLight);
 }
 .userInput {
+  padding: 1em;
   font-size: 14px;
 }
 .userInput p {
-  text-indent: 2em;
   line-height: 1.8;
 }
 
