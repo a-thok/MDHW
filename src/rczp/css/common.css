@@ -40,25 +40,3 @@ header {
   font-weight: normal;
   font-size: 22px;
 }
-
-/* 列表 */
-.list_item {
-  padding: 3% 2.5%;
-}
-.list_item_img {
-  margin-right: 5.1873%;
-  align-self: center;
-  flex-shrink: 0;
-}
-.list_item_img div {
-  width: 18vw;
-  height: 18vw;
-  background-color: red;
-}
-.list_item_text_p {
-  margin-bottom: 6px;
-  font-size: 12px;
-}
-.list_margin {
-  margin-right: .5em;
-}
