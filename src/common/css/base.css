@@ -42,6 +42,27 @@ body.is-static {
 /**
  * 小部件
  */
+ /* 三角形 */
+.arrow {
+  display: inline-block;
+  width: 0;
+  border-width: 0 6px 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #333;
+}
+.arrow-down {
+  transform: rotate(180deg);
+}
+.arrow-left {
+  transform: rotate(270deg);
+}
+.arrow-right {
+  transform: rotate(90deg);
+}
+.arrow-right-down {
+  transform: rotate(135deg) translateY(-3px);
+}
  /* 左侧竖线式标题 */
 .titleA {
   padding: 0 .5em;
@@ -87,6 +108,10 @@ header {
   font-size: 32px;
   color: #fff;
   line-height: 1;
+}
+.header_text {
+  font-size: 16px;
+  color: #fff;
 }
 .header_btn-return {
   font-size: 40px;
@@ -205,16 +230,16 @@ header {
     padding-bottom: 100px;
   }
 }
+.filter_content-short {
+  height: auto;
+  padding: 10px 0;
+  border-bottom: 0;
+  background: #fff;
+}
 .filter_content_wrap {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-}
-.filter_content-short {
-  height: auto;
-  padding-bottom: 0;
-  border-bottom: 0;
-  background: #fff;
 }
 .filter_content-short .filter_content_wrap {
   padding-bottom: 0;
