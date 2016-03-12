@@ -1,0 +1,82 @@
+/*众包信息上模块样式*/
+.dtBasic {
+  background-color: #fff;
+  padding: .8em 3.3333%;
+  margin-bottom: 20px;
+}
+.dtBasic-delPadding {
+  padding-right: 0;
+}
+.dtBasic_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.dtBasic_top_name {
+  width: 60%;
+  padding-bottom: 12px;
+  font-size: 16px;
+  flex-grow: 2;
+}
+.dtBasic_top_name_type {
+  padding: 0 .5em;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #efc028;
+}
+
+/*报名中背景样式*/
+.dtBasic_top_signUp {
+  display: flex;
+  padding-right: 4.4%;
+  font-size: 18px;
+  color: #fff;
+  background: #e24846;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.dtBasic_top_signUp_tgle {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-left: 10px solid #fff;
+  border-bottom: 15px solid transparent;
+}
+
+/*众包信息下模块样式*/
+.dtBasic_bottom_left_p,
+.dtBasic_bottom_right_amount {
+  font-size: 14px;
+}
+.dtBasic_bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.dtBasic_bottom_left_p {
+  padding-bottom: 12px;
+}
+.dtBasic_bottom_left_p_span {
+  padding-right: 3.3333%;
+  color: var(--fontColorLight);
+}
+.dtBasic_bottom_right {
+  display: flex;
+  padding-right: 3.3333%;
+  margin-bottom: 0.6em;
+  text-align: right;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.dtBasic_bottom_right_amount {
+  color: var(--fontColorLight);
+}
+.dtBasic_bottom_right_money {
+  padding-top: .1em;
+  color: #e24846;
+  font-size: 28px;
+}
+.dtBasic_bottom_right_money .fa {
+  padding-right: .2em;
+  font-size: 18px;
+}
