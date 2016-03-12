@@ -406,41 +406,37 @@ header {
 /**
  * 详情页共用样式
  */
-.summary,
-.baseinfo,
-.intro,
-.ftCtrl {
+.base,
+.info,
+.intro {
   background: #fff;
 }
-.baseinfo_title,
+.info_title,
 .intro_title {
   font-size: 16px;
 }
 
 /* 摘要 */
-.summary {
+.base {
   padding: .8em 3.3333%;
   margin-bottom: 20px;
 }
-/*.dtBasic-delPadding {
-  padding-right: 0;
-}*/
 /* 标题 */
-.summary_title {
+.base_title {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-right: -3.5%;
 }
-.summary_title_wrap {
+.base_title_wrap {
   flex-grow: 1;
   padding-bottom: 12px;
   font-size: 16px;
 }
-.summary_title_text {
+.base_title_text {
   font-size: 16px;
 }
-.summary_title_tag {
+.base_title_tag {
   padding: .1em .5em;
   border-radius: 4px;
   background: #efc028;
@@ -448,7 +444,7 @@ header {
   color: #fff;
   white-space:nowrap;
 }
-.summary_title_label {
+.base_title_label {
   display: flex;
   height: 28px;
   padding-right: .5em;
@@ -458,56 +454,87 @@ header {
   color: #fff;
   line-height: 28px;
 }
-.summary_title_label .arrow {
+.base_title_label .arrow {
   border-width: 0 14px 8px;
   border-bottom-color: #fff;
   margin-right: -10px;
 }
 /* 内容 */
-.summary_content {
+.base_content {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
 }
-.summary_content_r {
+.base_content_r {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-end;
 }
-.summary_content_para {
+.base_content_para {
   line-height: 2;
 }
-.summary_content_label {
+.base_content_label {
   flex-basis: 100%;
   flex-shrink: 0;
   color: var(--fontColorLight);
   text-align: right;
 }
-.summary_content_em {
+.base_content_em {
   font-size: 28px;
   color: var(--zbColor);
 }
 /* 基本信息 */
-.baseinfo {
-  padding: 20px 3.7333%;
+.info {
+  display: flex;
+  padding: 10px 2%;
 }
-.baseinfo_title,
-.baseinfo_para {
+/*主内容*/
+.info_content {
+  flex-grow: 1;
+}
+.info_title,
+.info_para {
   line-height: 2.2;
 }
-.baseinfo_para {
+.info-compact .info_title,
+.info-compact .info_para {
+  line-height: 1.6;
+}
+.info_title {
+  font-size: 16px;
+}
+.info-compact .info_title {
   font-size: 14px;
 }
-.baseinfo_para-light {
+.info_para {
+  font-size: 14px;
+}
+.info-compact .info_para {
+  font-size: 12px;
+}
+.info_para-light {
   color: var(--fontColorLight)
 }
-.baseinfo_para_item {
+.info_para_item {
   margin-right: 1em;
 }
-.baseinfo_para_item .fa {
+.info_para_item .fa {
   margin-right: .2em;
   font-size: 18px;
+}
+/*左侧图像 右侧图标*/
+.info_icon,
+.info_img {
+  display: flex;
+  align-items: center;
+}
+.info_img {
+  margin-right: 10px;
+}
+.info_icon .fa {
+  font-size: 36px;
+  padding: .2em .2em;
 }
 /* 简介 */
 .intro {

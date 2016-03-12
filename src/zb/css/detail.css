@@ -1,3 +1,10 @@
 .summary_title_label {
   background: var(--zbColor);
 }
+
+.ftCtrl_item-link {
+  color: var(--zbColor);
+}
+.ftCtrl_item_btn {
+  background-color: var(--zbColor);
+}
