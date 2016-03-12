@@ -42,6 +42,27 @@ body.is-static {
 /**
  * 小部件
  */
+ /* 三角形 */
+.arrow {
+  display: inline-block;
+  width: 0;
+  border-width: 0 6px 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #333;
+}
+.arrow-down {
+  transform: rotate(180deg);
+}
+.arrow-left {
+  transform: rotate(270deg);
+}
+.arrow-right {
+  transform: rotate(90deg);
+}
+.arrow-right-down {
+  transform: rotate(135deg) translateY(-3px);
+}
  /* 左侧竖线式标题 */
 .titleA {
   padding: 0 .5em;
@@ -98,6 +119,10 @@ header {
   color: #fff;
   line-height: 1;
 }
+.header_text {
+  font-size: 16px;
+  color: #fff;
+}
 .header_btn-return {
   font-size: 40px;
 }
@@ -109,6 +134,7 @@ header {
 
 /* 底部 */
 .nav,
+.ftCtrl,
 .pagination {
   position: fixed;
   bottom: 0;
@@ -125,7 +151,8 @@ header {
   box-shadow: 0 -1px 3px #ddd;
 }
 @media screen and (min-width: 750px) {
-  .nav {
+  .nav,
+  .ftCtrl {
     left: 50%;
     width: 750px;
     margin-left: -375px;
@@ -216,16 +243,16 @@ header {
     padding-bottom: 100px;
   }
 }
+.filter_content-short {
+  height: auto;
+  padding: 10px 0;
+  border-bottom: 0;
+  background: #fff;
+}
 .filter_content_wrap {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-}
-.filter_content-short {
-  height: auto;
-  padding-bottom: 0;
-  border-bottom: 0;
-  background: #fff;
 }
 .filter_content-short .filter_content_wrap {
   padding-bottom: 0;
@@ -321,7 +348,9 @@ header {
   line-height: 1;
 }
 
-/* 列表 */
+/**
+ * 列表
+ */
 .listWrap {
   margin: 22px 3.4667%;
   font-size: 16px;
@@ -333,11 +362,15 @@ header {
   background-color: #fff;
   overflow: hidden;
 }
-/*待审查的公用样式*/
+/* 图片 */
 .list_item_img {
   margin-right: 5.1873%;
   align-self: center;
   flex-shrink: 0;
+}
+/* 文本 */
+.list_item_text {
+  flex-grow: 1;
 }
 .list_item_img div {
   width: 18vw;
@@ -348,6 +381,9 @@ header {
   margin-bottom: 6px;
   font-size: 12px;
 }
+.list_item_text_p-light {
+  color: var(--fontColorLight)
+}
 .list_more {
   width: 100%;
   padding: 1em 0;
@@ -356,24 +392,103 @@ header {
   font-size: 16px;
   border: 0;
 }
+/* 图标 */
+.list_item_icon {
+  display: flex;
+  align-items: center;
+}
+.list_item_icon .fa {
+  color: var(--zckjColor);
+  font-size: 30px;
+}
 
-/*用户文本输入样式*/
-.dtContent {
-  margin: 20px 0;
+/**
+ * 详情页共用样式
+ */
+.baseinfo,
+.intro,
+.ftCtrl {
   background: #fff;
 }
-.dtContent_item-title {
-  border-bottom: 2px solid var(--borderColorLight);
+.baseinfo_title,
+.intro_title {
+  font-size: 16px;
 }
-.dtContent_item {
-  padding: 15px 3.7333%;
+/* 基本信息 */
+.baseinfo {
+  padding: 20px 3.7333%;
+}
+.baseinfo_title,
+.baseinfo_para {
+  line-height: 2.2;
+}
+.baseinfo_para {
+  font-size: 14px;
+}
+.baseinfo_para-light {
+  color: var(--fontColorLight)
+}
+.baseinfo_para_item {
+  margin-right: 1em;
+}
+.baseinfo_para_item .fa {
+  margin-right: .2em;
+  font-size: 18px;
+}
+/* 简介 */
+.intro {
+  margin: 20px 0;
+}
+.intro_title {
+  padding: .8em 1em;
+  border-bottom: 1px solid var(--borderColorLight);
 }
 .userInput {
   font-size: 14px;
 }
 .userInput p {
-  overflow: hidden;
-  word-wrap: break-word;
-  white-space: pre-wrap;
+  text-indent: 2em;
   line-height: 1.8;
+}
+
+/* 底部操作栏 最外层样式和nav共用 */
+.ftCtrl .fa {
+  font-size: 20px;  
+}
+.ftCtrl_item {
+  flex-grow: 1;
+  padding: .6em 0;
+  border-left: 1px solid var(--borderColorLight);
+  font-size: 14px; /* 考虑合并字体大小 */
+  text-align: center;
+}
+.ftCtrl_item:first-child {
+  border: 0;
+}
+.ftCtrl_item-link {
+  text-decoration: none;
+}
+.ftCtrl_item_btn { /* 考虑合并按钮样式 */
+  padding: .6em 1.6em;
+  border: 0;
+  border-radius: 3px;
+  font-size: 15px;
+  color: #fff;
+}
+
+/* 翻页模块 最外层样式和nav共用 */
+.pagination {
+  background: rgba(255, 255, 255, .8);
+  font-size: 14px; /* 考虑合并字体大小 */
+  color: var(--fontColorLight);
+}
+.pagination_btn {
+  padding: .5em 2em;
+  border: 1px solid var(--fontColorLight);
+  border-radius: 2em;
+  background: transparent;
+  color: var(--fontColorLight);
+}
+.pagination_count span {
+  margin: 0 .5em;
 }

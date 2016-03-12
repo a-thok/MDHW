@@ -1,8 +1,3 @@
-import detail from './js/detail.js'
-detail()
+import slider from '../common/js/slider.js'
 
-import 'url!./img/slider_pic1.jpg'
-
-// 解决click事件的移动端延迟
-import fastclick from 'fastclick'
-fastclick.attach(document.body)
+slider(document.querySelector('.sliderBox'))
