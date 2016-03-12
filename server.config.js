@@ -33,6 +33,10 @@ var serverConfig = {
     '/m/ZC/*': {
       target: 'http://192.168.2.177:8088',
       secure: false
+    },
+    '/m/MS/*': {
+      target: 'http://192.168.2.177:8091',
+      secure: false
     }
   }
 }
