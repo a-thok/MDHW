@@ -1,0 +1,144 @@
+header {
+  background: var(--zckjColor);
+}
+.header_text .arrow {
+  border-bottom-color: #fff;
+}
+
+.header_text-menu {
+  position: relative;
+  height: 100%;
+}
+.header_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 100%;
+}
+.header_menu > i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+.header_menu_wrap {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  visibility: 0;
+  opacity: 0;
+  transform: translateY(-50%) scaleY(0);
+  transition: all .4s ease-in-out;
+}
+.header_menu_wrap.is-show {
+  visibility: 1;
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
+}
+.header_menu_list {
+  width: 150px;
+  padding: 0 20px 3em;
+  border-radius: 5px;
+  background: #3f4042;
+  font-size: 14px;
+}
+.header_menu_list_item {
+  padding: 1em 0;
+  border-bottom: 1px solid #595a5c;
+}
+.arrow-wrap {
+  text-align: right;
+}
+.header_menu_wrap .arrow-wrap .arrow {
+  border-width: 0 9px 9px;
+  border-bottom-color: #3f4042;
+  margin-right: 15px;
+  vertical-align: bottom;
+}
+
+/**
+ * 侧边
+ */
+.aside {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .1);
+  box-shadow: -1px 0 5px #aaa;
+  transition: transform .3s ease-in;
+}
+.aside.is-show {
+  transform: translateX(-100%);
+}
+.aside_wrap {
+  height: 100%;
+  margin-left: 20vw;
+  background: #fff;
+  overflow: hidden;
+}
+/* 侧边总标题 */
+.aside_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 13.3333vw;
+  max-height: 100px;
+  font-weight: normal;
+}
+.aside_return {
+  width: 0;
+  transform: translateX(.5em);
+}
+.aside_title_text {
+  flex-basis: 100%;
+  flex-shrink: 0;
+  text-align: center;
+}
+/* 侧边分区 */
+.aside_sect_title {
+  padding: .4em 15px;
+  background: #eceef0;
+  color: var(--fontColorLight);
+  font-weight: normal;
+  font-size: 14px;
+}
+/* 侧边列表项 */
+.aside_item,
+.aside_fold_item {
+  padding: .8em 15px;
+  font-size: 16px;
+}
+/* 侧边默认不展开列表 */
+.aside_fold {
+  height: 0;
+  margin: 0 -5px;
+  background: #ececec;
+  box-shadow: 0 0 5px #d3d3d3 inset;
+  overflow: hidden;
+  transition: height .3s ease-in-out;
+}
+/* 侧边主内容区，滚动区 */
+.aside_contentWrap {
+  position: relative;
+  height: 100%;
+  padding-bottom: 334px; /* 这个数值不保险 */
+  overflow: auto;
+}
+/* 字母表 */
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2%;
+}
+.alphabet_item {
+  flex-basis: 20%;
+  flex-shrink: 0;
+  font-size: 16px;
+  padding: .6em 0;
+  text-align: center;
+}

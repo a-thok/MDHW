@@ -23,7 +23,7 @@ var serverConfig = {
     //   }
     // },
     '/Dict/City*': {
-      target: 'http://192.168.2.17:8085',
+      target: 'http://192.168.2.145:8085',
       secure: false
     },
     '/m/HR/*': {
