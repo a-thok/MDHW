@@ -1,4 +1,5 @@
 @import "../../common/css/base.css";
+@import "./common.css";
 @import "./detail.css";
 @import "./list.css";
-@import "./home.css";
+@import "./index.css";

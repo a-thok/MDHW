@@ -3,6 +3,7 @@ var config = require('../../webpack.dev.js')
 
 config.entry = {
   'zckj.main': [path.join(__dirname, '/zckj.main.js')],
+  'zckj.index': [path.join(__dirname, '/zckj.index.js')],
   'zckj.detail': [path.join(__dirname, '/zckj.detail.js')]
 }
 
