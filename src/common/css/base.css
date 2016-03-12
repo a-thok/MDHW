@@ -83,6 +83,16 @@ body.is-static {
 .longRadiusBtn .fa {
   margin-left: 1em;
 }
+/*  页码 未确定代码，有待审核  */
+.num {
+  display: flex;
+  margin: 0 5.6667%;
+  color: var(--fontColorLight);
+  align-items: center;
+}
+.num span {
+  padding: 0 5px;
+}
 
 /* 头部 */
 header {
@@ -123,7 +133,8 @@ header {
 }
 
 /* 底部 */
-.nav {
+.nav,
+.pagination {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -369,4 +380,25 @@ header {
   background-color: #fff;
   font-size: 16px;
   border: 0;
+}
+
+/*用户文本输入样式*/
+.dtContent {
+  margin: 20px 0;
+  background: #fff;
+}
+.dtContent_item-title {
+  border-bottom: 2px solid var(--borderColorLight);
+}
+.dtContent_item {
+  padding: 15px 3.7333%;
+}
+.userInput {
+  font-size: 14px;
+}
+.userInput p {
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  line-height: 1.8;
 }

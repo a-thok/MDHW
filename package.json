@@ -10,7 +10,8 @@
     "zc": "node src/zc/server.js",
     "kjfw": "node src/kjfw/server.js",
     "zckj": "node src/zckj/server.js",
-    "zb": "node src/zb/server.js"
+    "zb": "node src/zb/server.js",
+    "cysj": "node src/cysj/server.js"
   },
   "author": "",
   "license": "ISC",
