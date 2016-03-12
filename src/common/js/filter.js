@@ -61,6 +61,19 @@ export function selectFilter() {
   })
 }
 
+export function selectFilter2() {
+  [...$('.zcCate_list_item')].forEach(el => {
+    el.addEventListener('click', function (e) {
+      let text = e.target.textContent.trim()
+      let parent = $parent(e.target, '.filter_item')
+      parent.querySelector('.filter_title_text').textContent = text
+      // 隐藏当前过滤器
+      parent.classList.remove('is-show')
+      document.body.classList.remove('is-static') // 恢复body滚动
+    })
+  })
+}
+
 // 更多过滤
 export function moreFilter() {
   // 选取
