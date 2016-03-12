@@ -51,22 +51,6 @@ p.baseInform_item-title,
   color: #fff;
 }
 
-/*基地详情样式*/
-.baseBrief {
-  margin-top: 25px;
-  margin-bottom: 6px;
-}
-.baseBrief_item {
-  padding: 15px 3.7333%;
-}
-.baseBrief_item-title {
-  border-bottom: 2px solid var(--borderColorLight);
-}
-.baseBrief_item-text {
-  overflow: hidden;
-  word-wrap: break-word;
-}
-
 /*详情底部样式*/
 .detFooter {
   position: fixed;
