@@ -1,0 +1,139 @@
+/*
+ * 分类栏
+ */
+.zcCate {
+  padding: 14px 0;
+  background-color: #fff;
+  border-bottom: 1px solid var(--borderColorLight);
+}
+
+.zcCate_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 8%;
+}
+.zcCate .zcCate_list {
+  margin: 2% 0 4%;
+}
+.zcCate .zcCate_list:last-child {
+  margin: 0;
+}
+.zcCate_list_item {
+  flex-basis: 20vw;
+  text-align: center;
+}
+.zcCate_list_item_icon {
+  display: inline-block;
+  width: 10vw;
+  max-width: 75px;
+  height: 10vw;
+  max-height: 75px;
+  line-height: 10vw;
+  border-radius: 50%;
+}
+.zcCate_list_item_icon .fa {
+  vertical-align: middle;
+  font-size: 20px;
+  color: #fff;
+}
+.zcCate_list_item_icon-tech {
+  background-color: #c6cad2;
+}
+.zcCate_list_item_icon-ind {
+  background-color: #fc71a3;
+}
+.zcCate_list_item_icon-agri {
+  background-color: #75c822;
+}
+.zcCate_list_item_icon-appl {
+  background-color: #efc028;
+}
+.zcCate_list_item_icon-idea {
+  background-color: #f66464;
+}
+.zcCate_list_item_icon-ent {
+  background-color: #64b5f6;
+}
+.zcCate_list_item_icon-publ {
+  background-color: #f8a167;
+}
+.zcCate_list_item_icon-all {
+  background-color: #b1e14a;
+}
+.zcCate_list_item_text {
+  font-size: 14px;
+  text-align: center;
+}
+
+/*
+  **推荐**
+*/
+.hot {
+  margin-top: 20px;
+  background-color: #fff;
+}
+/**为你推荐**/
+.hotTitle {
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--borderColorLight);
+}
+.hotTitle_titleA {
+  border-left: 4px solid #e50013;
+  margin: 0;
+}
+.hotTitle_btn {
+  border: 0;
+  background-color: #fff;
+  color: var(--fontColorLight);
+}
+/**推荐列表**/ 
+.hotList_item {
+  margin: 0 3.7333%;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--borderColorLight);
+}
+.hotList_item_title {
+  line-height: 2;
+  font-weight: normal;
+  font-size: 16px;
+}
+.hotList_item_title_bmz {
+  color: red;
+  margin-right: 5px;
+}
+.hotList_item_title_net {
+  margin-left: 10px;
+  padding: 2px 1.4%;
+  border-radius: 5px;
+  background-color: #efc028;
+  color: #fff;
+}
+.hotList_item_text {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--fontColorLight);
+}
+.hotList_item_text_oof {
+  color: #e24846;
+}
+.hotList_item_text_oof span {
+  font-size: 18px;
+}
+.hotList_item_text_time,
+.hotList_item_text_user {
+  display: flex;
+  align-items: center;
+}
+.hotList_item_text_time span,
+.hotList_item_text_user span {
+  color: #333;
+}
+.hotList_item_text_time_fg {
+  padding: 0 3px;
+}
