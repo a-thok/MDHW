@@ -383,7 +383,7 @@ header {
   font-size: 12px;
 }
 .list_item_text_p-light {
-  color: var(--fontColorLight)
+  color: var(--fontColorLight);
 }
 .list_more {
   width: 100%;
@@ -531,7 +531,7 @@ header {
   font-size: 12px;
 }
 .info_para-light {
-  color: var(--fontColorLight)
+  color: var(--fontColorLight);
 }
 .info_para_item {
   margin-right: 1em;
@@ -571,7 +571,7 @@ header {
 
 /* 底部操作栏 最外层样式和nav共用 */
 .ftCtrl .fa {
-  font-size: 20px;  
+  font-size: 20px;
 }
 .ftCtrl_item {
   flex-grow: 1;
@@ -614,7 +614,10 @@ header {
 /**
  * 众包式推荐列表，列表项标题和详情页base共享样式
  */
-
+.hotwrap {
+  margin-top: 20px;
+  background-color: #fff;
+}
 /* 标题 */
 .hottitle {
   display: flex;
