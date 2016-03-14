@@ -1,37 +1,18 @@
 /*
  * 职位基本信息
  */
-.dtBasic {
-  display: flex;
-  background-color: #fff;
-  justify-content: space-between;
-  padding: .8em 3.6%;
-  margin-bottom: 20px;
-}
-.dtBasic_left {
-  flex-basis: 74.6667%;
-}
 /* 左侧 */
-.dtBasic_title {
-  font-weight: normal;
-  font-size: 20px;
-  margin-bottom: 6px;
-}
-.dtBasic_p {
-  font-size: 12px;
-  line-height: 2;
-}
 .dtBasic_p-grey {
   color: var(--fontColorLight);
 }
 .dtBasic_p-grey .fa {
-  font-size: 14px;
+  font-size: 16px;
 }
-.dtBasic_p span {
+.dtBasic_p-grey span {
   margin-right: .8em;
 }
 .dtBasic_p-big {
-  font-size: 14px;
+  font-size: 12px;
 }
 .dtBasic_p-tag {
   display: flex;
@@ -41,93 +22,26 @@
   align-self: center;
 }
 /* 右侧 */
-.dtBasic_right {
-  flex-basis: 16%;
-  flex-shrink: 0;
-  min-width: 80px;
-  text-align: right;
-}
-.dtBasic_right .fa {
+.dtBasic_fav .fa {
   font-size: 20px;
   color: var(--HighlightColorOrange);
 }
-.dtBasic_fav {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
 .dtBasic_salary {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--HighlightColorOrange);
 }
 
 /*
  * 公司简介
  */
-.dtCompany {
-  display: flex;
-  justify-content: space-between;
-  padding: .4em 3.6%;
-  background-color: #fff;
-  font-size: 12px;
-}
-/* 左侧信息 */
-.dtCompany_info {
-  display: flex;
-}
-.dtCompany_info_img {
-  align-self: center;
-  margin-right: 1em;
-}
-.dtCompany_info_content {
-  font-size: 12px;
-}
-.dtCompany_info_content_title {
-  font-weight: normal;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-.dtCompany_info_content_p {
-  line-height: 1.6;
-}
 .dtCompany_info_content_p_grey {
   margin-left: .5em;
   color: var(--fontColorLight);
 }
-
 /* 右侧箭头 */
 .dtCompany_arrow {
-  align-self: center;
-  font-size: 44px;
   color: var(--rczpColor);
 }
-
-/*
- * 职位介绍
- */
-.dtIntro_title,
-.dtIntro_content {
-  padding: 1em 3.6%;
-}
-
-/* 标题 */
-.dtIntro_title {
-  font-weight: normal;
-  font-size: 14px;
-}
-.dtIntro_title_text {
-  padding-left: .5em;
-  border-left: .3em solid var(--rczpColor);
-}
-
-/* 内容 */
-.dtIntro_content {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #fff;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
 /*投递简历*/
 .dtDeliver {
   width: 100%;
