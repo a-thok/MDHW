@@ -39,7 +39,7 @@ export default function render(button, config, cb) {
         // 生成html
         let html = config.template(data)
         // 插入文档
-        config.replace ? config.container.insertAdjacentHTML('beforeend', html) : config.container.innerHTML(html)
+        config.replace ? config.container.innerHTML(html) : config.container.insertAdjacentHTML('beforeend', html)
       })
   }
 
