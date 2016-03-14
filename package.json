@@ -5,13 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.prod.js",
-    "rczp": "node src/rczp/server.js",
-    "zc": "node src/zc/server.js",
-    "kjfw": "node src/kjfw/server.js",
-    "zckj": "node src/zckj/server.js",
-    "zb": "node src/zb/server.js",
-    "cysj": "node src/cysj/server.js"
+    "dev": "node server.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "",
   "license": "ISC",

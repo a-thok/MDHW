@@ -1,6 +1,10 @@
+var webpack = require('webpack')
+var WebpackDevServer = require('webpack-dev-server')
 var config = require('./webpack.dev.js')
 
-var serverConfig = {
+var compiler = webpack(config)
+
+var server = new WebpackDevServer(compiler, {
   hot: true,
   inline: true,
   historyApiFallback: true,
@@ -39,6 +43,12 @@ var serverConfig = {
       secure: false
     }
   }
-}
+})
 
-module.exports = serverConfig
+server.listen(8080, function (err) {
+  if (err) {
+    console.log(err)
+    return
+  }
+  console.log('Listening at http://localhost:8080')
+})

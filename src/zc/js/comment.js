@@ -1,6 +1,6 @@
-import render from '../../common/js/render.js'
+import render from 'render'
 
-export default function commentList() {
+export default function comment() {
   let template = function (data) {
     return data.result.data.reduce((pre, cur) => {
       let fuli = cur.fuli.reduce((_pre, _cur) => {
