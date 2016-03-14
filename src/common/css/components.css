@@ -58,14 +58,3 @@
 .longRadiusBtn .fa {
   margin-left: 1em;
 }
-
-/*  页码 未确定代码，有待审核  */
-.num {
-  display: flex;
-  margin: 0 5.6667%;
-  color: var(--fontColorLight);
-  align-items: center;
-}
-.num span {
-  padding: 0 5px;
-}
