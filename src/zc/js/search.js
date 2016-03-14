@@ -1,5 +1,5 @@
-import { $ } from '../../common/js/func.js'
-import render from '../../common/js/render.js'
+import { $ } from 'func'
+import render from 'render'
 import template from './template.js'
 
 export default function search() {

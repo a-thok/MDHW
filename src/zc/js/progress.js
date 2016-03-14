@@ -1,4 +1,4 @@
-import { forEachEl, queryParent } from '../../common/js/func.js'
+import { forEachEl, queryParent } from 'func'
 
 export default function progress() {
   forEachEl('.dialog_sublist_item_comment_more_link', (el) => {

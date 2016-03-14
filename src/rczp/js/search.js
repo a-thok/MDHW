@@ -1,6 +1,16 @@
-import render from '../../common/js/render.js'
+import render from 'render'
+import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter, moreFilter } from 'filter'
 
-export default function searchResult() {
+export default function search() {
+  // 过滤
+  fixFilter()
+  showFilter()
+  hideFilter()
+  selectFilter()
+  moreFilter()
+  generateAreaFilter()
+
+  // 渲染列表
   let template = function (data) {
     return data.result.data.reduce((pre, cur) => {
       return pre + `<li class="list_item">
@@ -14,7 +24,7 @@ export default function searchResult() {
         </li>`
     }, '')
   }
-  
+
   let button = document.querySelector('.list_more')
   let config = {
     api: '/m/HR/JobList',

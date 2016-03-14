@@ -2,19 +2,33 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
+  entry: {
+    'rczp': [path.join(__dirname, 'src/rczp/rczp.js')],
+    'kjfw': [path.join(__dirname, 'src/kjfw/kjfw.js')],
+    'zc': [path.join(__dirname, 'src/zc/zc.js')],
+    'zckj': [path.join(__dirname, 'src/zckj/zckj.js')],
+    'zb': [path.join(__dirname, 'src/zb/zb.js')],
+    'cysj': [path.join(__dirname, 'src/cysj/cysj.js')]
+  },
   output: {
     path: path.join(__dirname, '/dist/'),
     filename: 'js/[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.json', '.css']
+    extensions: ['', '.js', '.json', '.css'],
+    root: path.resolve('./src/common/js'),
+    alias: {
+      'func': 'func.js',
+      'render': 'render.js',
+      'slider': 'slider.js',
+      'filter': 'filter.js'
+    }
   },
-  // externals: {},
   module: {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style!css!postcss'
+        loader: 'style!css?sourceMap!postcss'
       },
       {
         test: /\.js$/,
@@ -23,10 +37,10 @@ module.exports = {
       },
       {
         test: /\.(woff|svg|eot|ttf)\??.*$/,
-        loader: 'url',
+        loader: 'url?sourceMap',
         query: {
           limit: 10000,
-          name: 'font/[name].[ext]'
+          name: 'font/[name].[ext]?[hash:7]'
         }
       },
       {
@@ -37,10 +51,6 @@ module.exports = {
           name: 'img/[name].[ext]?[hash:7]'
         }
       }
-      // {
-      //   test: require.resolve('angular'),
-      //   loader: 'expose?angular'
-      // },
     ]
   },
   plugins: [

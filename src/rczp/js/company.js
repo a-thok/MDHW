@@ -1,6 +1,15 @@
-import render from '../../common/js/render.js'
+import render from 'render'
+import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter } from 'filter'
 
-export default function companyList() {
+export default function company() {
+  // 过滤
+  fixFilter()
+  showFilter()
+  hideFilter()
+  selectFilter()
+  generateAreaFilter()
+  
+  // 渲染列表
   let template = function (data) {
     return data.result.data.reduce((pre, cur) => {
       let fuli = cur.fuli.reduce((_pre, _cur) => {

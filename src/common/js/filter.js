@@ -1,4 +1,3 @@
-import getArea from '../../common/js/area.js'
 import { $, $parent } from '../../common/js/func.js'
 
 // 固定过滤
@@ -6,7 +5,7 @@ export function fixFilter() {
   function calc() {
     let headerHeight = $('header').clientHeight
     let filter = $('.filter')
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', () => {
       if (document.body.scrollTop >= headerHeight) {
         filter.classList.add('is-fixed')
       } else {
@@ -63,7 +62,7 @@ export function selectFilter() {
 
 export function selectFilter2() {
   [...$('.zcCate_list_item')].forEach(el => {
-    el.addEventListener('click', function (e) {
+    el.addEventListener('click', e => {
       let text = e.target.textContent.trim()
       let parent = $parent(e.target, '.filter_item')
       parent.querySelector('.filter_title_text').textContent = text
@@ -102,33 +101,35 @@ export function moreFilter() {
 
 // 生成省市过滤列表
 export function generateAreaFilter() {
-  getArea(data => {
-    let areaData = data.result
-    let provinceContainer = $('.filter_content_list-province')
-    let cityContainer = $('.filter_content_list-city')
+  fetch('/Dict/city')
+    .then(res => res.json())
+    .then(data => {
+      let areaData = data.result
+      let provinceContainer = $('.filter_content_list-province')
+      let cityContainer = $('.filter_content_list-city')
 
-    // 填充省份列表
-    provinceContainer.innerHTML = areaData.reduce((previousValue, currentValue) => {
-      if (currentValue.type === 'province') {
-        return `${previousValue}<li class="filter_content_list_item province_item" data-code="${currentValue.code}">${currentValue.name}</li>`
-      } else {
-        return previousValue
-      }
-    }, '')
+      // 填充省份列表
+      provinceContainer.innerHTML = areaData.reduce((previousValue, currentValue) => {
+        if (currentValue.type === 'province') {
+          return `${previousValue}<li class="filter_content_list_item province_item" data-code="${currentValue.code}">${currentValue.name}</li>`
+        } else {
+          return previousValue
+        }
+      }, '')
 
-    // 选择省份
-    provinceContainer.addEventListener('click', e => {
-      if (e.target.nodeName === 'LI') {
-        let code = e.target.getAttribute('data-code')
-        // 填充城市列表
-        cityContainer.innerHTML = areaData.reduce((previousValue, currentValue) => {
-          if (currentValue.type === 'city' && currentValue.code.slice(0, 2) === code.slice(0, 2)) {
-            return `${previousValue}<li class="filter_content_list_item city_item" data-code="${currentValue.code}">${currentValue.name}</li>`
-          } else {
-            return previousValue
-          }
-        }, '')
-      }
+      // 选择省份
+      provinceContainer.addEventListener('click', e => {
+        if (e.target.nodeName === 'LI') {
+          let code = e.target.getAttribute('data-code')
+          // 填充城市列表
+          cityContainer.innerHTML = areaData.reduce((previousValue, currentValue) => {
+            if (currentValue.type === 'city' && currentValue.code.slice(0, 2) === code.slice(0, 2)) {
+              return `${previousValue}<li class="filter_content_list_item city_item" data-code="${currentValue.code}">${currentValue.name}</li>`
+            } else {
+              return previousValue
+            }
+          }, '')
+        }
+      })
     })
-  })
 }

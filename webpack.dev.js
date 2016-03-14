@@ -1,10 +1,18 @@
 var webpack = require('webpack')
 var config = require('./webpack.config.js')
 
-// eval-source-map is faster for development
-config.devtool = 'eval-source-map'
+// add hot-reload related code to entry chunks
+var devServer = 'webpack/hot/dev-server'
+var WebpackDevServer = 'webpack-dev-server/client?http://localhost:8080'
+Object.keys(config.entry).forEach(function (name) {
+  var extras = [devServer, WebpackDevServer]
+  config.entry[name] = extras.concat(config.entry[name])
+})
 
 config.output.publicPath = '/'
+
+// eval-source-map is faster for development
+config.devtool = 'eval-source-map'
 
 config.plugins = (config.plugins || []).concat([
   new webpack.optimize.OccurenceOrderPlugin(),
