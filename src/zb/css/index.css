@@ -67,73 +67,10 @@
   text-align: center;
 }
 
-/*
-  **推荐**
-*/
+/**
+ * 推荐
+ */
 .hot {
   margin-top: 20px;
   background-color: #fff;
-}
-/**为你推荐**/
-.hotTitle {
-  padding: 10px 5px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--borderColorLight);
-}
-.hotTitle_titleA {
-  border-left: 4px solid #e50013;
-  margin: 0;
-}
-.hotTitle_btn {
-  border: 0;
-  background-color: #fff;
-  color: var(--fontColorLight);
-}
-/**推荐列表**/ 
-.hotList_item {
-  margin: 0 3.7333%;
-  padding: 10px 0;
-  border-bottom: 1px dashed var(--borderColorLight);
-}
-.hotList_item_title {
-  line-height: 2;
-  font-weight: normal;
-  font-size: 16px;
-}
-.hotList_item_title_bmz {
-  color: red;
-  margin-right: 5px;
-}
-.hotList_item_title_net {
-  margin-left: 10px;
-  padding: 2px 1.4%;
-  border-radius: 5px;
-  background-color: #efc028;
-  color: #fff;
-}
-.hotList_item_text {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: var(--fontColorLight);
-}
-.hotList_item_text_oof {
-  color: #e24846;
-}
-.hotList_item_text_oof span {
-  font-size: 18px;
-}
-.hotList_item_text_time,
-.hotList_item_text_user {
-  display: flex;
-  align-items: center;
-}
-.hotList_item_text_time span,
-.hotList_item_text_user span {
-  color: #333;
-}
-.hotList_item_text_time_fg {
-  padding: 0 3px;
 }

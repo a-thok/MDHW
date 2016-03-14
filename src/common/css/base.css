@@ -484,6 +484,23 @@ header {
   font-size: 28px;
   color: var(--zbColor);
 }
+  /* 单行变体，用于列表 */
+.base_title_wrap-singleLine {
+  display: flex;
+  font-size: 14px;
+}
+.base_title_wrap_label {
+  margin-right: .2em;
+}
+.base_title_text-singleLine {
+  flex-basis: 60%;
+  margin-right: .5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 14px;
+}
 /* 基本信息 */
 .info {
   display: flex;
@@ -592,4 +609,55 @@ header {
 }
 .pagination_count span {
   margin: 0 .5em;
+}
+
+/**
+ * 众包式推荐列表，列表项标题和详情页base共享样式
+ */
+
+/* 标题 */
+.hottitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .5em;
+}
+.titleA {
+  border-color: var(--zbColor);
+}
+.hottitle_more {
+  font-size: 14px;
+  color: var(--fontColorLight);
+  text-decoration: none;
+}
+/* 推荐列表 */ 
+.hostlist {
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: var(--borderColorLight);
+}
+.hostlist_item {
+  padding: 15px 3.3333%;
+  border-bottom: 1px dashed var(--borderColorLight);
+}
+.hostlist_item:last-child {
+  border-bottom: 0;
+}
+.base_title_wrap_label {
+  color: var(--zbColor);
+}
+.hostlist_item_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 12px;
+}
+.hostlist_item_info_item-em {
+  color: var(--zbColor);
+}
+.hostlist_item_info_item-em strong {
+  font-size: 18px;
+}
+.hostlist_item_info_item_label {
+  color: var(--fontColorLight);
 }
