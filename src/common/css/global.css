@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  font-family: "microsoft yahei", sans-serif;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+:root {
+  --pageColor: #e7e8ed;
+  --rczpColor: #3d9ccc;
+  --rczpColorDark: #2991c6;
+  --zcColor: #ea544a;
+  --zckjColor: #0097e0;
+  --kjfwColor: #f60;
+  --zbColor: #e24846;
+  --fontColorLight: #888;
+  --borderColorLight: #e3e3e3;
+  --HighlightColorOrange: #ea572b;
+}
+
+html,
+body {
+  background-color: var(--pageColor);
+  color: #333;
+}
+body.is-static {
+  height: 100%;
+  overflow: hidden;
+}
+.page {
+  max-width: 750px;
+  height: 100%;
+  margin: 0 auto;
+  /*overflow: hidden;*/
+  /*可能要单独设一个类，因为有的页面没有底栏*/
+  margin-bottom: 55px;
+}

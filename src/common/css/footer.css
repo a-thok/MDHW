@@ -1,0 +1,87 @@
+/* 底部 */
+.nav,
+.ftCtrl,
+.pagination {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 12vw;
+  min-height: 45px;
+  max-height: 90px;
+  border-top: 1px solid var(--borderColorLight);
+  background: #fff;
+  box-shadow: 0 -1px 3px #ddd;
+}
+@media screen and (min-width: 750px) {
+  .nav,
+  .ftCtrl {
+    left: 50%;
+    width: 750px;
+    margin-left: -375px;
+  }
+}
+.nav_link {
+  flex-basis: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+@media screen and (min-width: 550px) {
+  .nav_link {
+    font-size: 20px;
+  }
+}
+.nav_link .fa {
+  font-size: 20px;
+  margin-right: .25em;
+}
+
+/* 底部操作 最外层样式和nav共用 */
+.ftCtrl .fa {
+  font-size: 20px;
+}
+.ftCtrl_item {
+  flex-grow: 1;
+  padding: .6em 0;
+  border-left: 1px solid var(--borderColorLight);
+  font-size: 14px; /* 考虑合并字体大小 */
+  text-align: center;
+}
+.ftCtrl_item:first-child {
+  border: 0;
+}
+.ftCtrl_item-link {
+  text-decoration: none;
+}
+.ftCtrl_item_btn { /* 考虑合并按钮样式 */
+  padding: .6em 1.6em;
+  border: 0;
+  border-radius: 3px;
+  font-size: 15px;
+  color: #fff;
+}
+
+/* 翻页模块 最外层样式和nav共用 */
+.pagination {
+  background: rgba(255, 255, 255, .8);
+  font-size: 14px; /* 考虑合并字体大小 */
+  color: var(--fontColorLight);
+}
+.pagination_btn {
+  padding: .5em 2em;
+  border: 1px solid var(--fontColorLight);
+  border-radius: 2em;
+  background: transparent;
+  color: var(--fontColorLight);
+}
+.pagination_count span {
+  margin: 0 .5em;
+}
