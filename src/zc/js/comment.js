@@ -3,7 +3,7 @@ import render from 'render'
 export default function comment() {
   let template = function (data) {
     return data.result.data.reduce((pre, cur) => {
-      let fuli = cur.fuli.reduce((_pre, _cur) => {
+      let child = cur.child.reduce((_pre, _cur) => {
         return _pre + ` <li class="dialog_sublist_item">
               <div class="dialog_sublist_item_username">${_cur.user}</div>
               <div class="dialog_sublist_item_comment">
@@ -27,7 +27,7 @@ export default function comment() {
           <!--子评论 开始-->
           <ul class="dialog_sublist">
             <li class="dialog_sublist_arrow"></li>
-            ${fuli}
+            ${child}
           </ul>
         </li>`
     }, '')
