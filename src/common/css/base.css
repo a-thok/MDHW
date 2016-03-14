@@ -429,11 +429,13 @@ header {
   margin-right: -3.5%;
 }
 .base_title_wrap {
+  display: block;
   flex-grow: 1;
   padding-bottom: 12px;
   font-size: 16px;
 }
 .base_title_text {
+  display: inline;
   font-size: 16px;
 }
 .base_title_tag {
@@ -445,6 +447,7 @@ header {
   white-space:nowrap;
 }
 .base_title_label {
+  flex-shrink: 0;
   display: flex;
   height: 28px;
   padding-right: .5em;
@@ -486,7 +489,6 @@ header {
 }
   /* 单行变体，用于列表 */
 .base_title_wrap-singleLine {
-  display: flex;
   font-size: 14px;
 }
 .base_title_wrap_label {
