@@ -45,6 +45,10 @@ var server = new WebpackDevServer(compiler, {
     '/m/DIY/*': {
       target: 'http://192.168.2.177:8092',
       secure: false
+    },
+    '/m/ZB/*': {
+      target: 'http://192.168.2.182:8090',
+      secure: false
     }
   }
 })
