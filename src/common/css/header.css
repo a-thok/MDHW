@@ -42,16 +42,12 @@
   font-size: 40px;
 }
 
-/* 三角形颜色 */
-.header .arrow {
-  border-bottom-color: #fff;
-}
-
 /* 搜索框 */
 .header_srch {
   display: flex;
   width: 85.3333%;
-  height: 56.6666%;
+  height: 64%;
+  /*height: 56.6666%;*/
 }
 .header_srch_label {
   flex-shrink: 0;
@@ -64,6 +60,9 @@
   background: var(--pageColor);
   color: var(--fontColorLight);
   font-size: 16px;
+}
+.header_srch_label .arrow {
+  margin-left: .5em;
 }
 .header_srch_input {
   width: 50%;
@@ -82,6 +81,7 @@
   padding-left: 1em;
   font-size: 16px;
 }
+
 
 /* 三点弹出菜单 */
 .header_sect-menu {

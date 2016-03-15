@@ -30,17 +30,6 @@
 .is-show .filter_title {
   font-weight: bold;
 }
-.filter_title_arrow {
-  width: 0;
-  border-width: .35em .35em 0 .35em;
-  border-style: solid;
-  border-color: #333 transparent transparent;
-  margin-left: .3333em;
-}
-.is-show .filter_title_arrow {
-  border-width: 0 .35em .35em;
-  border-color: transparent transparent #333;
-}
 .filter_content {
   position: absolute;
   top: 100%;
@@ -106,4 +95,9 @@
   background: transparent;
   font-size: 18px;
   color: var(--rczpColor);
+}
+
+/* 三角形 */
+.filter .arrow {
+  margin-left: .5em;
 }

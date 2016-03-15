@@ -24,6 +24,12 @@
   border-color: transparent;
   border-bottom-color: #333;
 }
+.arrow-samll {
+  border-width: 0 .35em .35em;
+}
+.arrow-white {
+  border-bottom-color: #fff;
+}
 .arrow-down {
   transform: rotate(180deg);
 }
