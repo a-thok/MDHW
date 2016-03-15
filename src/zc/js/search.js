@@ -16,7 +16,7 @@ export default function search() {
   render(button, config)
   
   function searchResult() {
-    let keyword = $('#zcSearchInput').value.trim()
+    let keyword = $('#search').value.trim()
     if (keyword.length === 0) return
     Object.assign(config, {
       body: {
@@ -28,8 +28,8 @@ export default function search() {
     })
     render(button, config)
   }
-  $('#zcSearchInput').addEventListener('keyup', e => {
+  $('#search').addEventListener('keyup', e => {
     if (e.keyCode === 13) searchResult()
   })
-  $('.zcSearch_btn').addEventListener('click', () => searchResult())
+  $('.srch_btn').addEventListener('click', () => searchResult())
 }
