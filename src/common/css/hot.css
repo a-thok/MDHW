@@ -38,6 +38,7 @@
   display: flex;
   padding: 15px 3.3333%;
   border-bottom: 1px dashed var(--borderColorLight);
+  background: #fff;
 }
 .hostlist_item_img {
   align-self: center;
