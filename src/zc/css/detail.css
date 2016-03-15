@@ -207,7 +207,7 @@ ul.dialog_sublist-border {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: rgba(51,51,51,.3);
+  background: rgba(51, 51, 51, .3);
 }
 .sliderShare_box {
   position: fixed;
@@ -215,6 +215,6 @@ ul.dialog_sublist-border {
   height: 20.3333vw;
   max-height: 100px;
   bottom: 0;
-  padding: 0.5em 3.7333%;
+  padding: .5em 3.7333%;
   background-color: #fff;
 }

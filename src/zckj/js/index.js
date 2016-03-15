@@ -1,9 +1,8 @@
 import { $ } from '../../common/js/func.js'
+import showMenu from './showMenu.js'
+
 export default function index() {
-  // 点击顶栏菜单按钮，弹出菜单
-  $('.header_text-menu').addEventListener('click', () => {
-    $('.header_menu_wrap').classList.toggle('is-show')
-  })
+  showMenu()
   
   // 获取数据，填充侧边栏
   fetch('/Dict/city2')
@@ -69,7 +68,7 @@ export default function index() {
   })
   
   // 点击顶栏城市，滑出侧边栏
-  $('.header_text-aside').addEventListener('click', () => {
+  $('.header_sect-aside').addEventListener('click', () => {
     document.body.classList.add('is-static') // 阻止body滚动
     $('.aside').classList.add('is-show')
   })
@@ -93,7 +92,7 @@ export default function index() {
     // 点击城市，关闭侧边栏，替换顶栏城市名字
     if (classList.contains('aside_fold_item')) {
       let text = e.target.textContent
-      $('.header_text-aside_text').textContent = text
+      $('.header_sect-aside_text').textContent = text
       $('.aside').classList.remove('is-show')
       document.body.classList.remove('is-static') // 恢复body滚动
     }

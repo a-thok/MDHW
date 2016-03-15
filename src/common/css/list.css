@@ -1,0 +1,53 @@
+/**
+ * 列表
+ */
+.listWrap {
+  margin: 22px 3.4667%;
+  font-size: 16px;
+}
+.list_item {
+  display: flex;
+  border: 1px solid var(--borderColorLight);
+  margin-bottom: 15px;
+  background-color: #fff;
+  overflow: hidden;
+}
+/* 图片 */
+.list_item_img {
+  margin-right: 5.1873%;
+  align-self: center;
+  flex-shrink: 0;
+}
+/* 文本 */
+.list_item_text {
+  flex-grow: 1;
+}
+.list_item_img div {
+  width: 18vw;
+  height: 18vw;
+  background-color: red;
+}
+.list_item_text_p {
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+.list_item_text_p-light {
+  color: var(--fontColorLight);
+}
+.list_more {
+  width: 100%;
+  padding: 1em 0;
+  margin-top: 10px;
+  background-color: #fff;
+  font-size: 16px;
+  border: 0;
+}
+/* 图标 */
+.list_item_icon {
+  display: flex;
+  align-items: center;
+}
+.list_item_icon .fa {
+  color: var(--zckjColor);
+  font-size: 30px;
+}

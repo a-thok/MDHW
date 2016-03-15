@@ -1,0 +1,151 @@
+/**
+ * 详情页共用样式
+ */
+.base,
+.info,
+.intro {
+  background: #fff;
+}
+.info_title,
+.intro_title {
+  font-size: 16px;
+}
+
+/* 摘要 */
+.base {
+  padding: .8em 3.3333%;
+  margin-bottom: 20px;
+}
+/* 标题 */
+.base_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-right: -3.5%;
+}
+.base_title_wrap {
+  display: block;
+  flex-grow: 1;
+  padding-bottom: 12px;
+  font-size: 16px;
+}
+.base_title_text {
+  display: inline;
+  font-size: 16px;
+}
+.base_title_tag {
+  padding: .1em .5em;
+  border-radius: 4px;
+  background: #efc028;
+  font-size: 12px;
+  color: #fff;
+  white-space:nowrap;
+}
+.base_title_label {
+  flex-shrink: 0;
+  display: flex;
+  height: 28px;
+  padding-right: .5em;
+  margin-left: 1em;
+  background: var(--zbColor);
+  font-size: 16px;
+  color: #fff;
+  line-height: 28px;
+}
+.base_title_label .arrow {
+  border-width: 0 14px 8px;
+  border-bottom-color: #fff;
+  margin-right: -10px;
+}
+/* 内容 */
+.base_content {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.base_content_r {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.base_content_para {
+  line-height: 2;
+}
+.base_content_label {
+  flex-basis: 100%;
+  flex-shrink: 0;
+  color: var(--fontColorLight);
+  text-align: right;
+}
+.base_content_em {
+  font-size: 28px;
+  color: var(--zbColor);
+}
+/* 基本信息 */
+.info {
+  display: flex;
+  padding: 10px 2%;
+}
+/*主内容*/
+.info_content {
+  flex-grow: 1;
+}
+.info_title,
+.info_para {
+  line-height: 2.2;
+}
+.info-compact .info_title,
+.info-compact .info_para {
+  line-height: 1.6;
+}
+.info_title {
+  font-size: 16px;
+}
+.info-compact .info_title {
+  font-size: 14px;
+}
+.info_para {
+  font-size: 14px;
+}
+.info-compact .info_para {
+  font-size: 12px;
+}
+.info_para-light {
+  color: var(--fontColorLight);
+}
+.info_para_item {
+  margin-right: 1em;
+}
+.info_para_item .fa {
+  margin-right: .2em;
+  font-size: 18px;
+}
+/*左侧图像 右侧图标*/
+.info_icon,
+.info_img {
+  display: flex;
+  align-items: center;
+}
+.info_img {
+  margin-right: 10px;
+}
+.info_icon .fa {
+  font-size: 36px;
+  padding: .2em .2em;
+}
+/* 简介 */
+.intro {
+  margin: 20px 0;
+}
+.intro_title {
+  padding: .8em 1em;
+  border-bottom: 1px solid var(--borderColorLight);
+}
+.userInput {
+  padding: 1em;
+  font-size: 14px;
+}
+.userInput p {
+  line-height: 1.8;
+}

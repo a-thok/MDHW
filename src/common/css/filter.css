@@ -1,0 +1,103 @@
+/* 过滤栏 */
+.filter {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 750px;
+  border-bottom: 1px solid var(--borderColorLight);
+  background-color: #fff;
+  font-size: 15px;
+}
+.filter.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.filter_item {
+  flex-basis: 33.3333%;
+}
+.filter_title {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  background: #fff;
+}
+.is-show .filter_title {
+  font-weight: bold;
+}
+.filter_content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 120px; /* 顶部过滤栏70 + 底部取消按钮50 */
+  border-bottom: 13.3333vw solid transparent;
+  margin-top: 1px;
+  box-shadow: 0 1px 3px #ddd;
+  overflow: hidden;
+  transform: translateY(-100%);
+  transition: transform .3s ease-out;
+}
+.is-fixed .filter_content {
+  border-bottom: 0;
+}
+@media screen and (min-width: 750px) {
+  .filter_content {
+    padding-bottom: 100px;
+  }
+}
+.filter_content-short {
+  height: auto;
+  padding: 10px 0;
+  border-bottom: 0;
+  background: #fff;
+}
+.filter_content_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.filter_content-short .filter_content_wrap {
+  padding-bottom: 0;
+}
+.is-show .filter_content {
+  transform: translateY(0);
+}
+.filter_content_btns {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  box-shadow: 0 -3px 3px #ddd;
+  text-align: center;
+  line-height: 70px;
+}
+.filter_content_btn {
+  width: 9em;
+  height: 48px;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--rczpColor);
+  font-size: 18px;
+  color: #fff;
+}
+.filter_content_textbtn {
+  height: 48px;
+  padding: 0 .5em;
+  margin-left: 1em;
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  color: var(--rczpColor);
+}
+
+/* 三角形 */
+.filter .arrow {
+  margin-left: .5em;
+}

@@ -1,13 +1,3 @@
-/* 头部 */
-header {
-  background-color: #fff;
-  border-bottom: 1px solid var(--borderColorLight);
-}
-.header_btn,
-.header_login {
-  color: var(--fontColorLight);
-}
-
 /* 导航 */
 .nav_link-active {
   color: var(--zcColor);
