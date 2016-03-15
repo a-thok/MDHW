@@ -1,0 +1,17 @@
+
+.zbSearch_hot li {
+  border-radius: 5px;
+}
+.zbNav .fa {
+  font-size: 20px;
+}
+.zbNav a {
+  /*flex-grow: 1;*/
+  padding: .6em 0;
+  border-left: 1px solid var(--borderColorLight);
+  font-size: 14px;
+  text-align: center;
+}
+.zbNav:first-child {
+  border: 0;
+}
