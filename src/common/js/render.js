@@ -6,7 +6,7 @@
 export default function render(button, config, cb) {
   config = Object.assign({
     replace: false,
-    prev: true
+    next: true
   }, config)
   
   // 防止重复绑定
@@ -16,7 +16,7 @@ export default function render(button, config, cb) {
   let totalPages
 
   config.listener = function (e) {
-    config.prev ? config.body.pageIndex++ : config.body.pageIndex--
+    config.next ? config.body.pageIndex++ : config.body.pageIndex--
     // 请求最后一页
     if (config.body.pageIndex === totalPages) e.target.textContent = '没有更多条目'
     // 请求不存在的页数
@@ -39,7 +39,7 @@ export default function render(button, config, cb) {
         // 生成html
         let html = config.template(data)
         // 插入文档
-        config.replace ? config.container.innerHTML(html) : config.container.insertAdjacentHTML('beforeend', html)
+        config.replace ? (config.container.innerHTML = html) : config.container.insertAdjacentHTML('beforeend', html)
       })
   }
 
