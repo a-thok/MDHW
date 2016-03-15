@@ -1,62 +1,6 @@
 header {
   background: var(--zckjColor);
 }
-.header_text .arrow {
-  border-bottom-color: #fff;
-}
-
-.header_text-menu {
-  position: relative;
-  height: 100%;
-}
-.header_menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 30px;
-  height: 100%;
-}
-.header_menu > i {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #fff;
-}
-.header_menu_wrap {
-  position: absolute;
-  top: 100%;
-  right: 0%;
-  visibility: 0;
-  opacity: 0;
-  transform: translateY(-50%) scaleY(0);
-  transition: all .4s ease-in-out;
-}
-.header_menu_wrap.is-show {
-  visibility: 1;
-  opacity: 1;
-  transform: translateY(0) scaleY(1);
-}
-.header_menu_list {
-  width: 150px;
-  padding: 0 20px 3em;
-  border-radius: 5px;
-  background: #3f4042;
-  font-size: 14px;
-}
-.header_menu_list_item {
-  padding: 1em 0;
-  border-bottom: 1px solid #595a5c;
-}
-.arrow-wrap {
-  text-align: right;
-}
-.header_menu_wrap .arrow-wrap .arrow {
-  border-width: 0 9px 9px;
-  border-bottom-color: #3f4042;
-  margin-right: 15px;
-  vertical-align: bottom;
-}
 
 /**
  * 侧边

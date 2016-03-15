@@ -1,5 +1,5 @@
 /* 头部 */
-header {
+.header {
   position: relative;
   z-index: 2;
   /*上面两行只是为了层级上比过滤栏高*/
@@ -13,25 +13,126 @@ header {
   padding: 0 4%;
   color: #fff;
 }
-.header-singleRight {
+.header-reverse {
+  background: #fff;
+  color: var(--fontColorLight);
+}
+.header-noleft {
   justify-content: flex-end;
 }
 .header_btn {
   border: 0;
   background: transparent;
-  font-size: 32px;
+  font-size: 28px;
   color: #fff;
   line-height: 1;
 }
-.header_text {
+.header_link {
   font-size: 16px;
   color: #fff;
+  text-decoration: none;
 }
-.header_btn-return {
+.header-reverse .header_btn,
+.header-reverse .header_link {
+  color: var(--fontColorLight);
+}
+
+/* 图标大小调整 */
+.header .fa-angle-left {
   font-size: 40px;
 }
-.header_login {
-  font-size: 18px;
-  color: #fff;
-  text-decoration: none;
+
+/* 三角形颜色 */
+.header .arrow {
+  border-bottom-color: #fff;
+}
+
+/* 搜索框 */
+.header_srch {
+  display: flex;
+  width: 85.3333%;
+  height: 56.6666%;
+}
+.header_srch_label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 .5em;
+  border-width: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: var(--pageColor);
+  color: var(--fontColorLight);
+  font-size: 16px;
+}
+.header_srch_input {
+  width: 50%;
+  flex-grow: 1;
+  padding-left: .5em;
+  border: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: 16px;
+}
+.header_srch_input-nolabel {
+  border-radius: 4px;
+}
+.header_srch_btn {
+  flex-shrink: 0;
+  padding-left: 1em;
+  font-size: 16px;
+}
+
+/* 三点弹出菜单 */
+.header_sect-menu {
+  position: relative;
+  height: 100%;
+}
+.header_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 100%;
+}
+.header_menu > i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+.header_menu_wrap {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  visibility: 0;
+  opacity: 0;
+  transform: translateY(-50%) scaleY(0);
+  transition: all .4s ease-in-out;
+}
+.header_menu_wrap.is-show {
+  visibility: 1;
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
+}
+.header_menu_list {
+  width: 150px;
+  padding: 0 20px 3em;
+  border-radius: 5px;
+  background: #3f4042;
+  font-size: 14px;
+}
+.header_menu_list_item {
+  padding: 1em 0;
+  border-bottom: 1px solid #595a5c;
+}
+.arrow-wrap {
+  text-align: right;
+}
+.header_menu_wrap .arrow-wrap .arrow {
+  border-width: 0 9px 9px;
+  border-bottom-color: #3f4042;
+  margin-right: 15px;
+  vertical-align: bottom;
 }
