@@ -1,5 +1,6 @@
 import render from 'render'
 import { hideFilter, showFilter, selectFilter } from 'filter'
+import { pageCallback } from 'func'
 
 export default function list() {
   // 过滤
@@ -45,15 +46,9 @@ export default function list() {
     container: document.querySelector('.hostlist'),
     replace: true
   }
-  // 页码
-  // function cb(data) {
-  //   let page = document.querySelector('.pagination_current')
-  //   let pageNum = document.querySelector('.pagination_total')
-  //   page.textContent = config.body.pageIndex
-  //   pageNum.textContent = Math.ceil(data.result.total / config.body.pageSize)
-  // }
-  render(buttons[1], config)
-  render(buttons[0], Object.assign(config, {
+
+  render(buttons, config, pageCallback)
+  render(buttons, Object.assign(config, {
     next: false
-  }))
+  }), pageCallback)
 }

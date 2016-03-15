@@ -3,11 +3,18 @@
  * @param {Object} button - DOM element that trigger the rendering
  * @param {Object} config - render configuration
  */
-export default function render(button, config, cb) {
+export default function render(buttons, config, cb) {
   config = Object.assign({
     replace: false,
     next: true
   }, config)
+  
+  let button
+  if (config.replace) {
+    button = config.next ? buttons[1] : buttons[0]
+  } else {
+    button = buttons
+  }
   
   // 防止重复绑定
   button.removeEventListener('click', config.listener)
@@ -16,18 +23,12 @@ export default function render(button, config, cb) {
   let totalPages
 
   config.listener = function (e) {
-    if (config.next) {
-      // 请求最后一页
-      if (config.body.pageIndex + 1 === totalPages) e.target.textContent = '没有更多条目'
-      // 请求不存在的页数
-      if (config.body.pageIndex + 1 > totalPages) return
-    } else {
-      // 请求第一页
-      if (config.body.pageIndex - 1 === 1) e.target.textContent = '没有更多条目'
-      // 请求不存在的页数
-      if (config.body.pageIndex - 1 < 1) return
-    }
+    // 计算被请求的页数
+    let requiedPage = config.next ? config.body.pageIndex + 1 : config.body.pageIndex - 1
+    // 请求不存在的页数
+    if (requiedPage > totalPages || requiedPage < 1) return
     
+    // 实际变更页数
     config.next ? config.body.pageIndex++ : config.body.pageIndex--
 
     // 请求数据
@@ -42,8 +43,26 @@ export default function render(button, config, cb) {
       .then(data => {
         // 计算总页数
         totalPages = Math.ceil(data.result.total / config.body.pageSize)
+
+        if (config.replace) {
+          // 如果是上下页翻页，每次重置按钮的class到初始状态
+          [...buttons].forEach(button => {
+            button.classList.remove('disabled')
+          })
+          // 请求头尾页时，判断是否添加disalbed
+          if (requiedPage === totalPages || requiedPage === 1) {
+            button.classList.add('disabled')
+          }
+        } else {
+          // 如果是加载更，到最后一页时改变文本
+          if (requiedPage === totalPages) {
+            button.classList.add('disabled')
+            button.textContent = '没有更多内容'
+          }
+        }
+        
         // 使用回调函数操作额外的行为
-        if (cb) cb(data)
+        if (cb) cb(config, data)
         // 生成html
         let html = config.template(data)
         // 插入文档

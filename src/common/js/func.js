@@ -76,3 +76,11 @@ export function swipe(element, type, cb) {
     }
   }, false)
 }
+
+// 翻页回调
+export function pageCallback(config, data) {
+  let page = document.querySelector('.pagination_current')
+  let pageNum = document.querySelector('.pagination_total')
+  page.textContent = config.body.pageIndex
+  pageNum.textContent = Math.ceil(data.result.total / config.body.pageSize)
+}

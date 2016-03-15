@@ -43,6 +43,10 @@
   font-size: 16px;
   border: 0;
 }
+/* disabled样式可能需要优化 */
+.list_more.disabled {
+  color: #bbb;
+}
 /* 图标 */
 .list_item_icon {
   display: flex;
