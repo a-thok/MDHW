@@ -32,6 +32,9 @@
   color: #fff;
   text-decoration: none;
 }
+.header-reverse {
+  border-bottom: 1px solid var(--borderColorLight);
+}
 .header-reverse .header_btn,
 .header-reverse .header_link {
   color: var(--fontColorLight);
