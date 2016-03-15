@@ -16,11 +16,19 @@ export default function render(button, config, cb) {
   let totalPages
 
   config.listener = function (e) {
+    if (config.next) {
+      // 请求最后一页
+      if (config.body.pageIndex + 1 === totalPages) e.target.textContent = '没有更多条目'
+      // 请求不存在的页数
+      if (config.body.pageIndex + 1 > totalPages) return
+    } else {
+      // 请求第一页
+      if (config.body.pageIndex - 1 === 1) e.target.textContent = '没有更多条目'
+      // 请求不存在的页数
+      if (config.body.pageIndex - 1 < 1) return
+    }
+    
     config.next ? config.body.pageIndex++ : config.body.pageIndex--
-    // 请求最后一页
-    if (config.body.pageIndex === totalPages) e.target.textContent = '没有更多条目'
-    // 请求不存在的页数
-    if (config.body.pageIndex > totalPages || config.body.pageIndex < 1) return
 
     // 请求数据
     fetch(config.api, {
