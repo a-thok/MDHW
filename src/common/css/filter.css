@@ -38,7 +38,7 @@
   transform: rotate(180deg);
 }
 .is-show .filter_title_text i {
-  transform: rotateY(0)
+  transform: rotateY(0);
 }
 .filter_title-line::after {
   content: '';

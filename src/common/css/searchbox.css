@@ -1,6 +1,5 @@
 .srch {
   display: flex;
-  justify-content: space-between;
   align-items: stretch;
   padding: 0 3.7333%;
 }
@@ -41,6 +40,9 @@
 }
 
 /* 左右拼合变体 */
+.srch-join {
+  justify-content: space-between;
+}
 .srch-join .srch_wrap {
   flex-basis: 77%;
 }
