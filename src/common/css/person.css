@@ -1,0 +1,40 @@
+/*雇主样式*/
+.person .list_item {
+  margin: 0;
+}
+.person_name {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.person_item {
+  margin-right: 1em;
+  font-size: 14px;
+}
+.person_item_value {
+  color: red;
+}
+
+.person_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .8em 1em;
+  background: #fff;
+  font-size: 14px;
+}
+.person_bar_l .fa {
+  margin-right: .4em;
+  font-size: 20px;
+  color: #0097e0;
+}
+.person_bar_btn {
+  padding: .5em 1em;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  color: #fff;
+}
+.person_bar_btn .fa {
+  margin-right: .4em;
+  font-size: 22px;
+}

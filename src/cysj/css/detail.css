@@ -1,55 +1,12 @@
-/*雇主样式*/
-.listWrap-nomar {
-  margin-left: 0;
-  margin-right: 0;
-}
-.list_item-border { /*待审核，并入公用css*/
-  padding: 5% 2.5%;
-  margin-bottom: 0;
-  border: 0;
-  border-bottom: 1px dotted var(--borderColorLight);
-}
-.list_item-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.list_item_text-center {
-  margin: auto 0;
-}
-.list_item_text_p-pad {
-  padding: 0.3em 0;
-}
-.list_item_text_p-title { /*待审核，并入公用css*/
-  font-size: 18px;
-}
-.list_item_text_p_span {
-  padding-right: 1em;
-  color: #e0383a;
-}
-.list_item_icon .faColor {
-  font-size: 60px;
-  color: var(--fontColorLight);
-}
-.list_item_rzIcon .fa {
-  font-size: 20px;
-  color: #0097e0;
-}
-.list_item_contact_btn {
-  padding: .5em 1em;
-  color: #fff;
-  border-radius: .4em;
-  background-color: #e0383a;
-}
-.list_item_contact_btn .fa {
-  margin-right: 0.2em;
-  font-size: 28px;
+/* 雇主 */
+.person_bar_btn {
+  background-color: var(--cysjColor);
 }
 
 /*底栏*/
 .ftCtrl_item-color {
-  color: #e0383a;
+  color: var(--cysjColor);
 }
 .ftCtrl_item_btn-bgColor {
-  background-color: #e0383a;
+  background-color: var(--cysjColor);
 }
