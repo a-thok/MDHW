@@ -41,8 +41,14 @@
   background: #fff;
 }
 .hostlist_item_img {
+  flex-basis: 16%;
+  width: 16%;
+  flex-shrink: 0;
   align-self: center;
   margin-right: 3.3333%;
+}
+.hostlist_item_img img {
+  width: 100%;
 }
 .hostlist_content {
   flex-grow: 1;
