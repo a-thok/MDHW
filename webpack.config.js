@@ -8,7 +8,8 @@ module.exports = {
     'zc': [path.join(__dirname, 'src/zc/zc.js')],
     'zckj': [path.join(__dirname, 'src/zckj/zckj.js')],
     'zb': [path.join(__dirname, 'src/zb/zb.js')],
-    'cysj': [path.join(__dirname, 'src/cysj/cysj.js')]
+    'cysj': [path.join(__dirname, 'src/cysj/cysj.js')],
+    'srdz': [path.join(__dirname, 'src/srdz/srdz.js')]
   },
   output: {
     path: path.join(__dirname, '/dist/'),
