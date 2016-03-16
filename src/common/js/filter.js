@@ -46,29 +46,26 @@ export function hideFilter() {
 export function selectFilter() {
   [...$('.filter_content_list')].forEach(el => {
     if (el.classList.contains('filter_content_list-province')) return
+    
     el.addEventListener('click', e => {
-      if (e.target.classList.contains('filter_content_list_item')) {
+      let cl = e.target.classList
+      if (cl.contains('filter_content_list_item') || cl.contains('grid_item_icon')) {
         let wrapper = $parent(e.target, '.filter_item')
+         
+        // 选中项添加圆圈边框
+        if (cl.contains('grid_item_icon')) {
+          let icons = wrapper.querySelectorAll('.grid_item_icon');
+          [...icons].forEach(icon => icon.classList.remove('is-active'))
+          cl.add('is-active')
+        }
+       
         // 获取文本，填充到对应位置
         let text = e.target.textContent.trim()
-        wrapper.querySelector('.filter_title_text').textContent = text
+        wrapper.querySelector('.filter_active').textContent = text
         // 隐藏当前过滤器
         wrapper.classList.remove('is-show')
         document.body.classList.remove('is-static') // 恢复body滚动
       }
-    })
-  })
-}
-
-export function selectFilter2() {
-  [...$('.zcCate_list_item')].forEach(el => {
-    el.addEventListener('click', e => {
-      let text = e.target.textContent.trim()
-      let parent = $parent(e.target, '.filter_item')
-      parent.querySelector('.filter_title_text').textContent = text
-      // 隐藏当前过滤器
-      parent.classList.remove('is-show')
-      document.body.classList.remove('is-static') // 恢复body滚动
     })
   })
 }

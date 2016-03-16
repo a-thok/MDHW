@@ -1,19 +1,60 @@
-.zcCate_list-inside {
-  margin: 2% 0 4%;
+/*
+ * 格子列表
+ */
+.gridWrap {
+  background-color: #fff;
+  border-bottom: 1px solid var(--borderColorLight);
 }
-.zcCate_list-inside .zcCate_list_item {
-  padding:6px;
-  border: 1px solid #000;
-  border-radius: 50%;
+
+.grid_item_icon.tech {
+  background-color: #4dbdcc;
 }
-.zcCate_list-inside .zcCate_list_item_icon {
-  display: flex;
-  font-size: 12px;
-  color: #fff;
-  justify-content: center;
-  align-items: center;
+.grid_item_icon.ind {
+  background-color: #74acf8;
 }
-.zcCate_list_item_icon-big {
-  width: 16vw;
-  height: 16vw;
+.grid_item_icon.agri {
+  background-color: #f66e6e;
+}
+.grid_item_icon.appl {
+  background-color: #91c731;
+}
+.grid_item_icon.idea {
+  background-color: #fc8240;
+}
+.grid_item_icon.ent {
+  background-color: #fcd23f;
+}
+.grid_item_icon.publ {
+  background-color: #9da5c8;
+}
+.grid_item_icon.all {
+  background-color: #eee;
+}
+
+.grid_item_icon.tech.is-active {
+  border-color: #4dbdcc;
+}
+.grid_item_icon.tech.is-active {
+  border-color: #4dbdcc;
+}
+.grid_item_icon.ind.is-active {
+  border-color: #74acf8;
+}
+.grid_item_icon.agri.is-active {
+  border-color: #f66e6e;
+}
+.grid_item_icon.appl.is-active {
+  border-color: #91c731;
+}
+.grid_item_icon.idea.is-active {
+  border-color: #fc8240;
+}
+.grid_item_icon.ent.is-active {
+  border-color: #fcd23f;
+}
+.grid_item_icon.publ.publ.is-active {
+  border-color: #9da5c8;
+}
+.grid_item_icon.all.is-active {
+  border-color: #eee;
 }

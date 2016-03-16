@@ -1,12 +1,12 @@
 import render from 'render'
-import { fixFilter, showFilter, selectFilter2 } from 'filter'
+import { fixFilter, showFilter, selectFilter } from 'filter'
 import template from './template.js'
 
 export default function category() {
   // 过滤
   fixFilter()
   showFilter()
-  selectFilter2()
+  selectFilter()
   
   // 渲染列表
   let button = document.querySelector('.list_more')
