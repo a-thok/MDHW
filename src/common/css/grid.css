@@ -38,10 +38,16 @@
     line-height: 75px;
   }
 }
+.grid_item_icon img {
+  width: 60%;
+  height: 60%;
+  vertical-align: middle;
+}
 .grid_item_img img {
   width: 100%;
 }
 .grid_item_text {
+  margin-top: 5px;
   font-size: 14px;
 }
 
