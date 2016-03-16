@@ -1,117 +1,30 @@
-/*套用人才招聘搜索框样式，待审核合并*/
-.search {
-  padding: 24px 2.3333%;
+/* 搜索框 */
+.srch-join .srch_btn {
+  background: var(--cysjColor);
 }
-.search_text {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
+
+/* 功能 */
+.grid-func .grid_item_icon {
+  background: #f1f1f1;
 }
-.search_text_icon {
-  position: absolute;
-  top: 50%;
-  margin-top: -1em;
-  margin-left: 0.5em;
-  line-height: 2em;
+/* 分类 */
+.grid-cate .grid_item_icon {
+  border-radius: 0;
+  background: transparent;
+}
+
+/* 标题 */
+.titleA {
+  border-color: var(--cysjColor);
+  margin-left: .5em;
+}
+
+/* 赏金大厅 */
+.demand_title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #2ecc71;
+}
+.demand_text {
   color: var(--fontColorLight);
-}
-.search_text_icon-font {
-  font-size: 20px;
-}
-.search_text_input,
-.search_text_btn {
-  height: 10vw;
-  max-height: 75px;
-}
-.search_text_input {
-  width: 74.9333%;
-  padding-left: 8.3333%;
-  border: 1px solid var(--borderColorLight);
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-.search_text_btn {
-  width: 23.0667%;
-  border: 0;
-  border-top-right-radius: 4px; /* 已修改*/
-  border-bottom-right-radius: 4px; /* 已修改*/
-  color: #fff;
-  font-size: 14px;
-}
-.search_text_btn-bgcolor { /*新增样式*/
-  background-color: #e50013;
-}
-
-/*
- * 分类栏
- */
-.zcCate {
-  padding: 14px 0;
-  background-color: #fff;
-  border-bottom: 1px solid var(--borderColorLight);
-}
-
-.zcCate_list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 8%;
-}
-.zcCate .zcCate_list {
-  margin: 2% 0 4%;
-}
-.zcCate .zcCate_list:last-child {
-  margin: 0;
-}
-.zcCate_list_item {
-  flex-basis: 20vw;
-  text-align: center;
-}
-.zcCate_list_item_icon {
-  display: inline-block;
-  width: 10vw;
-  max-width: 75px;
-  height: 10vw;
-  max-height: 75px;
-  line-height: 10vw;
-  border-radius: 50%;
-}
-.zcCate_list_item_icon .fa {
-  vertical-align: middle;
-  font-size: 20px;
-  color: #fff;
-}
-.zcCate_list_item_icon-bgColor { /* 临时样式 */
-  background-color: red;
-}
-.zcCate_list_item_text {
-  font-size: 14px;
-  text-align: center;
-}
-.hotTitle_titleA {
-  border-left: 4px solid #e50013;
-  margin: 0;
-}
-
-
-/*添加样式*/
-.search-bgColor {
-  padding-bottom: 0;
-  background-color: #fff;
-}
-.listWrap-nomar {
-  margin: 0;
-}
-li.list_item-noborder {
-  border-bottom: 0;
-}
-.list_item_text_p-titleColor {
-  font-size: 18px;
-  color: #37ce77;
-}
-.nav_link-flex {
-  display: flex;
-  color: var(--fontColorLight);
-  flex-direction: column;
 }
