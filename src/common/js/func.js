@@ -23,7 +23,7 @@ export function $from(selector) {
   })
 }
 
-export function style(element, css) {
+export function $style(element, css) {
   Object.keys(css).forEach(prop => {
     element.style[prop] = css[prop]
   })
