@@ -1,3 +1,4 @@
+import { $from } from 'func'
 /**
  * Render a list using server data
  * @param {Object} button - DOM element that trigger the rendering
@@ -46,7 +47,7 @@ export default function render(buttons, config, cb) {
 
         if (config.replace) {
           // 如果是上下页翻页，每次重置按钮的class到初始状态
-          [...buttons].forEach(button => {
+          $from(buttons).forEach(button => {
             button.classList.remove('disabled')
           })
           // 请求头尾页时，判断是否添加disalbed

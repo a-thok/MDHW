@@ -1,8 +1,3 @@
-export function forEachEl(dom, cb) {
-  let els = (typeof dom === 'string') ? document.querySelectorAll(dom) : dom
-  Array.prototype.forEach.call(els, cb)
-}
-
 export function $(selector) {
   let els = document.querySelectorAll(selector)
   if (els.length === 1) return els[0]
@@ -19,6 +14,13 @@ export function $parent(el, selector) {
     return el.parentElement
   }
   return $parent(el.parentElement, selector)
+}
+
+export function $from(selector) {
+  let els = (typeof selector === 'string') ? document.querySelectorAll(selector) : selector
+  return Array.prototype.map.call(els, (el) => {
+    return el
+  })
 }
 
 export function style(element, css) {

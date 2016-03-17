@@ -1,4 +1,4 @@
-import { $, $parent } from '../../common/js/func.js'
+import { $, $parent, $from } from '../../common/js/func.js'
 
 // 固定过滤
 export function fixFilter() {
@@ -19,10 +19,10 @@ export function fixFilter() {
 
 // 显示过滤
 export function showFilter() {
-  [...$('.filter_title')].forEach((el, index) => {
+  $from('.filter_title').forEach((el, index) => {
     el.addEventListener('click', e => {
-      document.body.classList.add('is-static'); // 阻止body滚动
-      [...$('.filter_item')].forEach((_el, _index) => {
+      document.body.classList.add('is-static') // 阻止body滚动
+      $from('.filter_item').forEach((_el, _index) => {
         if (_index !== index) _el.classList.remove('is-show')
       })
       let wrapper = $parent(e.target, '.filter_item')
@@ -34,7 +34,7 @@ export function showFilter() {
 
 // 隐藏过滤
 export function hideFilter() {
-  [...$('.filter_content_btn')].forEach((el, index) => {
+  $from('.filter_content_btn').forEach((el, index) => {
     el.addEventListener('click', e => {
       $parent(e.target, '.filter_item').classList.remove('is-show')
       document.body.classList.remove('is-static') // 恢复body滚动
@@ -44,7 +44,7 @@ export function hideFilter() {
 
 // 选择过滤
 export function selectFilter() {
-  [...$('.filter_content_list')].forEach(el => {
+  $from('.filter_content_list').forEach(el => {
     if (el.classList.contains('filter_content_list-province')) return
     
     el.addEventListener('click', e => {
@@ -54,8 +54,7 @@ export function selectFilter() {
          
         // 选中项添加圆圈边框
         if (cl.contains('grid_item_icon')) {
-          let icons = wrapper.querySelectorAll('.grid_item_icon');
-          [...icons].forEach(icon => icon.classList.remove('is-active'))
+          $from('.grid_item_icon').forEach(icon => icon.classList.remove('is-active'))
           cl.add('is-active')
         }
        
@@ -76,7 +75,7 @@ export function moreFilter() {
   $('.filter_content_more_main').addEventListener('click', e => {
     if (e.target.classList.contains('tagList_item-active')) return
     if (e.target.classList.contains('tagList_item')) {
-      [...e.target.parentElement.children].forEach(el => {
+      $from(e.target.parentElement.children).forEach(el => {
         el.classList.remove('tagList_item-active')
       })
       e.target.classList.add('tagList_item-active')
@@ -84,8 +83,8 @@ export function moreFilter() {
   })
   // 重置
   $('.filter_content_textbtn').addEventListener('click', () => {
-    [...$('.tagList-filter')].forEach(el => {
-      [...el.children].forEach((_el, _index) => {
+    $from('.tagList-filter').forEach(el => {
+      $from(el.children).forEach((_el, _index) => {
         if (_index === 0) {
           _el.classList.add('tagList_item-active')
         } else {

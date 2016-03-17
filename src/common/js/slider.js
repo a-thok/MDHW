@@ -20,7 +20,7 @@
  *
  */
 
-import { swipe } from './func.js'
+import { $from, swipe } from 'func'
 
 /**
  * A simple image slider
@@ -43,10 +43,10 @@ export default function slider(element, config) {
     // 是沿x轴还是y轴滑动
     let isX = config.axis === 'x'
     let translateDir = isX ? 'translateX' : 'translateY'
-    let clientSize = isX ? 'clientWidth' : 'clientHeight';
+    let clientSize = isX ? 'clientWidth' : 'clientHeight'
 
     // 设置基本样式
-    [...element.querySelectorAll('img')].forEach(img => { img.style.width = '100%' }) // 图片宽度100%
+    $from('img').forEach(img => { img.style.width = '100%' }) // 图片宽度100%
 
     let elementStyle = `position:relative;width:100%;height:${element.querySelector('img').clientHeight}px;overflow:hidden`
     element.setAttribute('style', elementStyle)
@@ -62,8 +62,8 @@ export default function slider(element, config) {
     let span // 根据滑动方向，取得单个子元素的宽度或高度
 
     // 根据子元素个数，用设置相关样式
-    slider.style[isX ? 'width' : 'height'] = count + '00%';
-    [...sliderItems].forEach(item => {
+    slider.style[isX ? 'width' : 'height'] = count + '00%'
+    $from(sliderItems).forEach(item => {
       item.style[isX ? 'width' : 'height'] = 100 / count + '%'
       if (isX) item.style.flexShrink = '0' // 如果是横向滑动，图片宽度不收缩
     })
@@ -86,7 +86,7 @@ export default function slider(element, config) {
       // 圆点跟随滑动变化
       let dotsItem = dots.children
       var changeDots = function (pos, change) {
-        [...dotsItem].forEach(item => { item.style.background = '' })
+        $from(dotsItem).forEach(item => { item.style.background = '' })
         let index = Math.floor(-pos / span) + change
         dotsItem[pos !== undefined ? index : 0].style.background = '#fff'
       }
