@@ -1,0 +1,32 @@
+/*搜索类型样式*/
+.srchBtn {
+  padding: 1.5em 0;
+}
+.srchBtn_list {
+  display: flex;
+  justify-content: center;
+}
+.srchBtn_list_item {
+  display: flex;
+  width: 24.2667vw;
+  height: 9.3333vw;
+  line-height: 10.3333vw;
+  max-height: 70px;
+  padding: 0 .5em;
+  background-color : #fff;
+  justify-content: center;
+  align-items: center;
+}
+.srchBtn_list_item-borderL {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.srchBtn_list_item-borderR {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+/*切换样式*/
+.srchBtn_list_item-bgColor {
+  color: #fff;
+  background-color: #e0383a;
+}
