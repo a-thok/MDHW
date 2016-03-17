@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0,  minimum-scale=1, maximum-scale=1">
   <title>首页 - 众包 - 梦高速</title>
   <!--<link rel="stylesheet" href="/css/zb.css">-->
 </head>
+
 <body>
   <div class="page">
     <!--头部 开始-->
@@ -15,8 +17,16 @@
       </div>
     </header>
     <!--头部 结束-->
-    
-     <!--分类栏 开始-->
+    <!--搜索框 开始-->
+    <div class="srch srch-join">
+      <div class="srch_wrap">
+        <label class="srch_label" for="search"><i class="fa fa-search"></i></label>
+        <input class="srch_input" id="search" type="text" placeholder="请输入关键词">
+      </div>
+      <button class="srch_btn" type="button">搜索</button>
+    </div>
+    <!--搜索框 结束-->
+    <!--分类栏 开始-->
     <ul class="grid">
       <li class="grid_item">
         <div class="grid_item_icon"><i class="fa fa-qrcode"></i></div>
@@ -52,7 +62,7 @@
       </li>
     </ul>
     <!--分类栏 结束-->
-    
+
     <!--推荐  开始-->
     <div class="hotwrap">
       <!--标题  开始-->
@@ -61,7 +71,7 @@
         <a class="hottitle_more" href="#">更多></a>
       </div>
       <!--标题  结束-->
-      
+
       <!--推荐列表  开始-->
       <ul class="hostlist">
         <li class="hostlist_item">
@@ -110,7 +120,8 @@
     </div>
     <!--推荐  结束-->
   </div>
-  
+
   <script src="/js/zb.js"></script>
 </body>
+
 </html>

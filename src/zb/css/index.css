@@ -2,3 +2,6 @@
 .grid_item_icon {
   background: #ccc;
 }
+.srch_btn {
+  background-color: var(--zbColor);
+}
