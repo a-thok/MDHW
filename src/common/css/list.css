@@ -15,6 +15,7 @@
 }
 /* 图片 */
 .list_item_img {
+  width: 18%;
   margin-right: 5.1873%;
   align-self: center;
   flex-shrink: 0;

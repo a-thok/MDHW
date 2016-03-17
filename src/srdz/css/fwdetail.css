@@ -1,0 +1,45 @@
+/*项目信息*/
+.base_content_label-pad {
+  padding-left: 1em;
+}
+.base_content_num {
+  color: #65bd34;
+}
+/*雇主*/
+.person_bar_btn {
+  background-color: #e0383a;
+}
+/*介绍*/
+.intro_list {
+  display: flex;
+}
+.intro_list_item {
+  padding: 1em 0;
+  text-align: center;
+  border-bottom: 1px solid var(--borderColorLight);
+  flex-grow: 1;
+}
+.intro_list_item-color {
+  color: #e0383a;
+  border-bottom: 1px solid #e0383a;
+}
+.intro_list_item-border {
+  display: flex;
+}
+.intro_list_item-border::after {
+  content: '';
+  display: inline-block;
+  height: 20px;
+  border: 1px solid var(--borderColorLight);
+}
+.intro_list_span {
+  font-size: 16px;
+  width: 100%;
+}
+.userInput_item {
+  display: none;
+}
+.userInput_show {
+  display: block;
+}
+
