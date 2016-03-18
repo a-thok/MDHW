@@ -4,6 +4,7 @@
 }
 .filter_content_list-province,
 .filter_content_list-city {
+  width: 50%;
   flex-basis: 50%;
 }
 .filter_content_list-city {

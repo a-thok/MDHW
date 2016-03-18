@@ -73,6 +73,7 @@
   line-height: 2;
 }
 .base_content_label {
+  width: 100%;
   flex-basis: 100%;
   flex-shrink: 0;
   color: var(--fontColorLight);
