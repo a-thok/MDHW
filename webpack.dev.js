@@ -12,10 +12,9 @@ Object.keys(config.entry).forEach(function (name) {
 config.output.publicPath = '/'
 
 // eval-source-map is faster for development
-config.devtool = 'eval-source-map'
+config.devtool = 'cheap-module-eval-source-map'
 
 config.plugins = (config.plugins || []).concat([
-  new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin()
 ])
