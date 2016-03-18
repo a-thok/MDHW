@@ -1,4 +1,5 @@
 import render from 'render'
+import { $ } from 'func'
 
 export default function comment() {
   let template = function (data) {
@@ -32,7 +33,7 @@ export default function comment() {
         </li>`
     }, '')
   }
-  let button = document.querySelector('.dialog_more_link')
+  let button = $('.dialog_more_link')
   let config = {
     api: '/m/ZC/Comments',
     body: {
@@ -41,7 +42,7 @@ export default function comment() {
       pageSize: 10
     },
     template: template,
-    container: document.querySelector('.dialog_list')
+    container: $('.dialog_list')
   }
   render(button, config)
 }
