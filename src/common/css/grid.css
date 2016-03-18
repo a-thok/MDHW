@@ -7,6 +7,7 @@
   background: #fff;
 }
 .grid_item {
+  width: 21%;
   flex-basis: 21%;
   width: 21%;
   margin: 10px 0;
@@ -24,6 +25,7 @@
   color: #fff;
 }
 .grid_item_icon-big {
+  width: 30%;
   flex-basis: 30%;
   background: #74acf8;
   width: 15vw;
