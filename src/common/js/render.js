@@ -11,7 +11,7 @@ export default function render(buttons, config, cb) {
   }, config)
   
   let button
-  if (config.replace) {
+  if (buttons.length && config.replace) {
     button = config.next ? buttons[1] : buttons[0]
   } else {
     button = buttons

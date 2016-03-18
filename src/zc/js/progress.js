@@ -1,9 +1,9 @@
-import { forEachEl, queryParent } from 'func'
+import { $from, $parent } from 'func'
 
 export default function progress() {
-  forEachEl('.dialog_sublist_item_comment_more_link', (el) => {
+  $from('.dialog_sublist_item_comment_more_link').forEach(el => {
     el.addEventListener('click', (e) => {
-      let parent = queryParent(e.target, '.dialog_sublist_item_comment')
+      let parent = $parent(e.target, '.dialog_sublist_item_comment')
       let content = parent.querySelector('.dialog_sublist_item_content')
       let autoClass = 'isAuto'
       if (content.classList.contains(autoClass)) {

@@ -1,5 +1,5 @@
 export default function detail() {
-  let shareArry = [document.querySelector('.header_login'), document.querySelector('.dtImg_btn')]
+  let shareArry = [document.querySelector('.header_link'), document.querySelector('.dtImg_btn')]
   let share = document.querySelector('.sliderShare')
   for (let i = 0, len = shareArry.length; i < len; i++) {
     shareArry[i].addEventListener('click', () => {
