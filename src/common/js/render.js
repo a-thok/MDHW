@@ -48,16 +48,16 @@ export default function render(buttons, config, cb) {
         if (config.replace) {
           // 如果是上下页翻页，每次重置按钮的class到初始状态
           $from(buttons).forEach(button => {
-            button.classList.remove('disabled')
+            button.disabled = false
           })
           // 请求头尾页时，判断是否添加disalbed
-          if (requiedPage === totalPages || requiedPage === 1) {
-            button.classList.add('disabled')
+          if (config.next && requiedPage === totalPages || !config.next && requiedPage === 1) {
+            button.disabled = true
           }
         } else {
           // 如果是加载更，到最后一页时改变文本
           if (requiedPage === totalPages) {
-            button.classList.add('disabled')
+            button.disabled = true
             button.textContent = '没有更多内容'
           }
         }

@@ -90,7 +90,7 @@
   color: var(--fontColorLight);
 }
 /* 颜色可能需要修改 */
-.pagination_btn.disabled {
+.pagination_btn[disabled] {
   border: 1px solid #bbb;
   color: #bbb;
 }

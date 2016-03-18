@@ -45,7 +45,7 @@
   border: 0;
 }
 /* disabled样式可能需要优化 */
-.list_more.disabled {
+.list_more[disabled] {
   color: #bbb;
 }
 /* 图标 */
