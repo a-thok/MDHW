@@ -115,6 +115,7 @@
   font-size: 13px;
 }
 .dialog_sublist_item_comment {
+  width: 85%;
   flex-basis: 85%;
   position: relative;
   padding: 1em 1em .4em;
@@ -192,6 +193,7 @@
   background-color: #fff;
 }
 .reply_box {
+  width: 84%;
   flex-basis: 84%;
   display: flex;
   height: 65.2173%;
@@ -202,6 +204,7 @@
   border: 1px solid var(--borderColorLight);
 }
 .replay_box_input {
+  width: 85%;
   flex-basis: 85%;
   padding-left: 1em;
   border-right: 0;
@@ -209,6 +212,7 @@
   border-bottom-left-radius: 5px;
 }
 .replay_box_label {
+  width: 15%;
   flex-basis: 15%;
   display: flex;
   justify-content: center;
@@ -220,6 +224,7 @@
   color: var(--fontColorLight);
 }
 .reply_btn {
+  width: 16%;
   flex-basis: 16%;
   border: 0;
   background-color: transparent;
