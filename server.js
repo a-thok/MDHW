@@ -47,7 +47,11 @@ var server = new WebpackDevServer(compiler, {
       secure: false
     },
     '/m/ZB/*': {
-      target: 'http://192.168.2.182:8090',
+      target: 'http://192.168.2.177:8090',
+      secure: false
+    },
+    '/m/main/*': {
+      target: 'http://192.168.2.177:8085',
       secure: false
     }
   }
