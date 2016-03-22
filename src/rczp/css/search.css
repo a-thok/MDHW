@@ -1,0 +1,23 @@
+/*人才招聘搜索类型样式*/
+.header_srch_label {
+  position: relative;
+}
+.header_srch_select {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  z-index: -1;
+  transform: translateY(-100%) scale(1, 0);
+  transition: transform .5s ease-in-out;
+  background-color: #fff;
+  color: var(--fontColorLight);
+}
+.header_srch_select.is-show {
+  transform: translateY(0) scale(1, 1);
+}
+.header_srch_select_item {
+  padding: .4em 0;
+  text-align: center;
+  border-bottom: 1px solid var(--borderColorLight);
+}

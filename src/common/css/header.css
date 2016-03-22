@@ -85,7 +85,6 @@
   font-size: 16px;
 }
 
-
 /* 三点弹出菜单 */
 .header_sect-menu {
   position: relative;
@@ -139,24 +138,3 @@
   margin-right: 15px;
   vertical-align: bottom;
 }
-
-/*人才招聘搜索类型样式*/
-.header_srch_select {
-  position: absolute;
-  width: 4.1em;
-  transform: translate(-4.1em,0) scale(1,0);
-  transform-origin: center top;
-  transition: transform .5s ease-in-out;
-  background-color: #fff;
-  color: var(--fontColorLight);
-  z-index: -1;
-}
-.header_srch_select-slip {
-  transform: translate(-4.1em,2.1em) scale(1,1);
-}
-.header_srch_select_item {
-  padding: .4em 0;
-  text-align: center;
-  border-bottom: 1px solid var(--borderColorLight);
-}
-
