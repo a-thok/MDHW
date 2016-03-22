@@ -2,7 +2,7 @@ import render from 'render'
 import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter, moreFilter } from 'filter'
 import { $, $from, $parent } from 'func'
 
-export function search() {
+export default function search() {
   // 过滤
   fixFilter()
   showFilter()
@@ -36,6 +36,19 @@ export function search() {
     container: document.querySelector('.list')
   }
   
+  // 搜索类型选择
+  $('.header_srch_label').addEventListener('click', () => {
+    $('.header_srch_select').classList.toggle('is-show')
+  })
+  $from('.header_srch_select_item').forEach(el => {
+    el.addEventListener('click', e => {
+      let searchText = $parent(e.target, '.header_srch_label').querySelector('.header_srch_label_text')
+      let text = e.target.textContent.trim()
+      searchText.textContent = text
+      searchText.setAttribute('data-type', searchText.textContent === '职位' ? 1 : 2)
+    })
+  })
+  
   // 模糊搜索
   function searchCloud() {
     let keyword = $('#search').value.trim()
@@ -59,20 +72,4 @@ export function search() {
     if (e.keyCode === 13) searchCloud()
   })
   $('.header_srch_btn').addEventListener('click', () => searchCloud())
-}
-
-// 搜索类型选择
-export function searchSelect() {
-  $('.header_srch_label').addEventListener('click', function (el) {
-    $('.header_srch_select').classList.toggle('header_srch_select-slip')
-  })
-  $from('.header_srch_select_item').forEach(el => {
-    el.addEventListener('click', e => {
-      let searchText = $parent(e.target, '.header_srch').querySelector('.header_srch_label_span')
-      let text = e.target.textContent.trim()
-      searchText.textContent = text
-      $('.header_srch_select').classList.remove('header_srch_select-slip')
-      searchText.setAttribute('data-type', searchText.textContent === '职位' ? 1 : 2)
-    })
-  })
 }

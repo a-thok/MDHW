@@ -33,7 +33,6 @@
 }
 .zcList_item_header .fa {
   padding: .5em;
-  color: var(--zcColor);
 }
 .zcList_item_img {
   position: relative;
@@ -88,4 +87,9 @@
 .zcList_item_intro {
   font-size: 14px;
   padding: 1.2em 0;
+}
+
+/*点赞切换样式*/
+.zcList_item_header .cgColor {
+  color: var(--zcColor);
 }
