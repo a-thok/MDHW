@@ -15,14 +15,14 @@
   left: 0;
 }
 .filter_item {
-  width: 33.3333%;
+  width: 33.4%; /* 数值是为了兼容旧浏览器 */
   flex-basis: 33.3333%;
+  flex-grow: 1;
 }
 /* 标题 */
 .filter_title {
   position: relative;
   z-index: 1;
-  display: flex;
   padding: 1em 0;
   background: #fff;
   text-align: center;

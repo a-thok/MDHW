@@ -144,7 +144,7 @@
 .header_srch_select {
   position: absolute;
   width: 4.1em;
-  transform: translate(-4.1em,0) scale(1,0);
+  transform: translate(-4.1em, 0) scale(1, 0);
   transform-origin: center top;
   transition: transform .5s ease-in-out;
   background-color: #fff;
@@ -152,7 +152,7 @@
   z-index: -1;
 }
 .header_srch_select-slip {
-  transform: translate(-4.1em,2.1em) scale(1,1);
+  transform: translate(-4.1em, 2.1em) scale(1, 1);
 }
 .header_srch_select_item {
   padding: .4em 0;

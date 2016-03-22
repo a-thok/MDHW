@@ -1,3 +1,6 @@
+.filter_content_wrap {
+  background: #e5e5e5;
+}
 .filter_content_list {
   height: 100%;
   overflow: auto;

@@ -10,6 +10,7 @@
 }
 .srch_label,
 .srch_input {
+  height: 50px; /* uc */
   height: 9.3333vw;
   max-height: 70px;
   border: 1px solid var(--borderColorLight);
@@ -20,7 +21,9 @@
   align-items: center;
   padding: 0 .5em;
   border-right: 0;
+  border-top-left-radius: 25px; /* uc */
   border-top-left-radius: 4.6667vw;
+  border-bottom-left-radius: 25px; /* uc */
   border-bottom-left-radius: 4.6667vw;
   color: var(--fontColorLight);
 }
@@ -28,12 +31,16 @@
   font-size: 20px;
 }
 .srch_input {
+  display: block; /* uc */
   width: 88%;
   border-left: 0;
+  border-top-right-radius: 25px; /* uc */
   border-top-right-radius: 4.6667vw;
+  border-bottom-right-radius: 25px; /* uc */
   border-bottom-right-radius: 4.6667vw;
 }
 .srch_btn {
+  display: block; /* uc */
   width: 17%;
   flex-basis: 17%;
   border: 0;
