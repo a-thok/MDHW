@@ -53,7 +53,7 @@ export default function search() {
   function searchCloud() {
     let keyword = $('#search').value.trim()
     if (keyword.length === 0) return
-    let searchText = document.querySelector('.header_srch_label_span')
+    let searchText = document.querySelector('.header_srch_label_text')
     let type = searchText.getAttributeNode('data-type').value
     let api = (+type === 1) ? '/m/HR/JobList' : '/m/HR/CompanyList'
     Object.assign(config, {
