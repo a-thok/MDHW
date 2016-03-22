@@ -29,6 +29,9 @@
   height: 18vw;
   background-color: red;
 }
+.list_item_img img { /*修改样式，暂改列表图片大小*/
+  width: 100%;
+}
 .list_item_text_p {
   margin-bottom: 6px;
   font-size: 12px;
