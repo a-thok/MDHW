@@ -21,3 +21,7 @@
   text-align: center;
   border-bottom: 1px solid var(--borderColorLight);
 }
+/*添加搜索切换样式*/
+.list_more-show {
+  display: none;
+}
