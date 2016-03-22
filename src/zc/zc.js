@@ -11,6 +11,7 @@ import category from './js/category.js'
 import comment from './js/comment.js'
 import progress from './js/progress.js'
 import search from './js/search.js'
+import index from './js/index.js'
 if (document.location.pathname.indexOf('detail') !== -1) {
   detail()
 } else if (document.location.pathname.indexOf('category') !== -1) {
@@ -21,4 +22,6 @@ if (document.location.pathname.indexOf('detail') !== -1) {
   progress()
 } else if (document.location.pathname.indexOf('search') !== -1) {
   search()
+} else if (document.location.pathname.indexOf('index') !== -1) {
+  index()
 }

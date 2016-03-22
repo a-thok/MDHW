@@ -6,6 +6,9 @@ import fastclick from 'fastclick'
 fastclick.attach(document.body)
 
 import list from './js/list.js'
+import detail from './js/detail.js'
 if (window.location.pathname.indexOf('list') !== -1) {
   list()
+} else if (window.location.pathname.indexOf('detail') !== -1) {
+  detail()
 }
