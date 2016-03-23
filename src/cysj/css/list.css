@@ -10,18 +10,6 @@
 .filter_content_list_item .fa {
   font-size: 20px;
 }
-.filter_content_list_item-color {
-  color: red;
-}
-.item_iconHide {
-  display: none;
-}
-.item_iconShow {
-  display: block;
-  width: 2em;
-  text-align: center;
-  padding-right: 4em;
-}
 .hotwrap-nomar { /*热门推荐样式*/
   margin-top: 0;
 }
