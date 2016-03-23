@@ -53,6 +53,10 @@ var server = new WebpackDevServer(compiler, {
     '/m/main/*': {
       target: 'http://192.168.2.177:8085',
       secure: false
+    },
+    '/m/Srdz/*': {
+      target: 'http://192.168.2.177:8093',
+      secure: false
     }
   }
 })
