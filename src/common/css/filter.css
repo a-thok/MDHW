@@ -27,10 +27,14 @@
   background: #fff;
   text-align: center;
 }
+.filter_title-line {
+  display: flex;
+}
 .is-show .filter_title {
   font-weight: bold;
 }
 .filter_title_text {
+  display: block;
   width: 100%;
 }
 .filter_title_text i {

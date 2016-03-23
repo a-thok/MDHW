@@ -3,6 +3,7 @@
   color: var(--fontColorLight);
 }
 .company_name {
+  margin-right: .4em;
   font-size: 18px;
   color: #000;
 }

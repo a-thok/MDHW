@@ -34,7 +34,8 @@ header {
 .titleLine_text {
   position: relative;
   z-index: 1;
-  align-self: center;
+  line-height: 120px;/*uc兼容*/
+  /*align-self: center;*/
   padding: 0 5px;
   background-color: var(--pageColor);
   font-weight: normal;

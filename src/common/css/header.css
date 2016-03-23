@@ -48,6 +48,7 @@
 /* 搜索框 */
 .header_srch {
   display: flex;
+  align-items: center;
   width: 85.3333%;
   height: 64%;
   /*height: 56.6666%;*/
@@ -55,8 +56,8 @@
 .header_srch_label {
   flex-shrink: 0;
   display: flex;
-  align-items: center;
-  padding: 0 .5em;
+  /*padding: 0 .5em;*/
+  padding: .5em;/*uc兼容*/
   border-width: 0;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -68,8 +69,10 @@
   margin-left: .5em;
 }
 .header_srch_input {
-  width: 50%;
+  display: block;
+  width: 70%; /*uc兼容*/
   flex-grow: 1;
+  padding: .5em 0; /*uc兼容*/
   padding-left: .5em;
   border: 0;
   border-top-right-radius: 4px;

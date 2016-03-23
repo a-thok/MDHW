@@ -33,8 +33,10 @@
   align-items: center;
 }
 .dialog_list_item_user_avatar {
+  width: 55px;/* uc兼容 */
   width: 11.4942vw;
   max-width: 80px;
+  height: 55px;/* uc兼容 */
   height: 11.4942vw;
   max-height: 80px;
   border-radius: 50%;
@@ -153,6 +155,7 @@
   height: auto;
 }
 .dialog_list_item_info_time {
+  display: block;
   margin-top: 8px;
   text-align: right;
 }
@@ -161,6 +164,7 @@
   text-align: right;
 }
 .dialog_sublist_item_comment_more_link {
+  padding: .5em;
   color: var(--zcColor);
   text-decoration: none;
 }
@@ -184,9 +188,10 @@
   bottom: 0;
   left: 0;
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   align-items: center;
   width: 100%;
+  height: 50px; /* uc兼容 */
   height: 15.3333vw;
   max-height: 115px;
   padding: 0 3.7333%;
@@ -204,6 +209,7 @@
   border: 1px solid var(--borderColorLight);
 }
 .replay_box_input {
+  display: block;
   width: 85%;
   flex-basis: 85%;
   padding-left: 1em;
@@ -224,6 +230,7 @@
   color: var(--fontColorLight);
 }
 .reply_btn {
+  display: block; /* uc兼容*/
   width: 16%;
   flex-basis: 16%;
   border: 0;

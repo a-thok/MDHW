@@ -1,54 +1,36 @@
-/*
- * 职位基本信息
- */
-/* 左侧 */
-.dtBasic_p-grey {
-  color: var(--fontColorLight);
-}
-.dtBasic_p-grey .fa {
+.base_content_em {
   font-size: 16px;
+  line-height: 2.6;
 }
-.dtBasic_p-grey span {
-  margin-right: .8em;
+.base_content_para-tag {
+  clear: both;
 }
-.dtBasic_p-big {
-  font-size: 12px;
-}
-.dtBasic_p-tag {
-  display: flex;
-}
-.dtBasic_p-tag_title {
+.tagListLabel {
   flex-shrink: 0;
-  align-self: center;
+  font-size: 14px;
 }
-/* 右侧 */
-.dtBasic_fav .fa {
-  font-size: 20px;
-  color: var(--HighlightColorOrange);
+.base_content_para-tag {
+  display: flex;
+  align-items: center;
+  line-height: 28px;
+  overflow: hidden;
 }
-.dtBasic_salary {
-  font-size: 16px;
-  color: var(--HighlightColorOrange);
-}
-
-/*
- * 公司简介
- */
-.dtCompany_info_content_p_grey {
-  margin-left: .5em;
-  color: var(--fontColorLight);
-}
-/* 右侧箭头 */
-.dtCompany_arrow {
-  color: var(--rczpColor);
-}
-/*投递简历*/
-.dtDeliver {
-  width: 100%;
-  padding: 1em 0;
-  border: 0;
-  margin-top: 3em;
-  background-color: var(--rczpColor);
-  font-size: 16px;
-  color: #fff;
+@media screen and (max-width: 369px) {
+  .base_content_r {
+    clear: both;
+    width: 100%;
+    transform: translateY(100%);
+  }
+  .base_content_para-tag {
+    transform: translateY(-100%);
+  }
+  .base_content_label {
+    float: right;
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .base_content_em {
+    float: left;
+    line-height: 28px;
+  }
 }

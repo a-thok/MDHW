@@ -52,7 +52,7 @@
 }
 .hostlist_content {
   flex-grow: 1;
-  display: flex;
+  /*display: flex;*//*uc兼容*/
   flex-wrap: wrap;
 }
 .hostlist_item:last-child {

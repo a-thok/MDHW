@@ -25,6 +25,8 @@
   flex-grow: 1;
 }
 .list_item_img div {
+  width: 50px;/*uc兼容*/
+  height: 50px;/*uc兼容*/
   width: 18vw;
   height: 18vw;
   background-color: red;

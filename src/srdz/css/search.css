@@ -8,11 +8,14 @@
 }
 .srchBtn_list_item {
   display: flex;
+  width: 100px;/*uc兼容*/
   width: 24.2667vw;
+  height: 50px;/*uc兼容*/
   height: 9.3333vw;
   line-height: 10.3333vw;
   max-height: 70px;
-  padding: 0 .5em;
+  /*padding: 0 .5em;*/
+  padding: .5em;/*uc兼容*/
   background-color: #fff;
   justify-content: center;
   align-items: center;
@@ -29,4 +32,7 @@
 .srchBtn_list_item-bgColor {
   color: #fff;
   background-color: #e0383a;
+}
+.srch_btn {
+  background-color: var(--pageColor);
 }

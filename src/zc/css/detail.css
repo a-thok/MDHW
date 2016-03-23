@@ -5,6 +5,7 @@
 }
 .dtImg_img {
   width: 100%;
+  height: 250px;/* uc */
   height: 64.5333vw;
   max-height: 484px;
   background-color: red;
@@ -13,6 +14,7 @@
 .dtImg_btn {
   position: absolute;
   right: 3.4667%;
+  bottom: 10px;/* uc */
   bottom: 3.2vw;
   width: 70px;
   height: 70px;
