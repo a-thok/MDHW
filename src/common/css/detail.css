@@ -46,43 +46,46 @@
   display: flex;
   height: 28px;
   padding-right: .5em;
-  margin-left: 1em;
+  /*margin-left: 1em;*/
   background: var(--zbColor);
   font-size: 16px;
   color: #fff;
   line-height: 28px;
 }
 .base_title_label .arrow {
+  display: block;
   border-width: 0 14px 8px;
   border-bottom-color: #fff;
-  margin-right: -10px;
+  /*margin-right: -10px;*/
 }
 /* 内容 */
 .base_content {
-  display: flex;
-  justify-content: space-between;
   font-size: 14px;
 }
+.base_content::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.base_content_l {
+  float: left;
+}
 .base_content_r {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: flex-end;
+  float: right;
 }
 .base_content_para {
   line-height: 2;
 }
 .base_content_label {
-  width: 100%;
-  flex-basis: 100%;
-  flex-shrink: 0;
   color: var(--fontColorLight);
   text-align: right;
 }
 .base_content_em {
   font-size: 28px;
   color: var(--zbColor);
+  line-height: 2;
 }
+
 /* 基本信息 */
 .info {
   display: flex;

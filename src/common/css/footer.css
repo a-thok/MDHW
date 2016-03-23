@@ -51,7 +51,10 @@
   font-size: 20px;
 }
 .ftCtrl_item {
+  flex-basis: 30%;
+  width: 50%;
   flex-grow: 1;
+  display: block;
   padding: .6em 0;
   border-left: 1px solid var(--borderColorLight);
   font-size: 14px; /* 考虑合并字体大小 */
@@ -61,6 +64,8 @@
   border: 0;
 }
 .ftCtrl_item-link {
+  flex-basis: 15%;
+  width: 30%;
   text-decoration: none;
 }
 .ftCtrl_item_btn { /* 考虑合并按钮样式 */
@@ -72,7 +77,8 @@
 }
 /* 折行式变体，HTML有变化 */
 .nav-wrap .nav_link {
-  display: inline-block;
+  /*display: inline-block;*/
+  display: block;/*uc兼容*/
   padding-top: 5px;
   font-size: 13px;
   text-align: center;

@@ -10,7 +10,8 @@
   justify-content: center;
 }
 .acRegister_text {
-  align-self: center;
+  line-height: 65px;/*uc兼容*/
+  /*align-self: center;*/
   margin-left: .5em;
   /*color: var(--fontColorLight);*/
   font-size: 16px;
