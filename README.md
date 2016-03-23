@@ -49,3 +49,13 @@
   * detail.html
   * progress.html
   
+  
+#人才招聘 CSS问题  
+##搜索框
+  * iPhone中左边圆角无法清除
+##在Safari中的问题
+  * 页面滑动有问题
+##在我的页面
+  * iPhone4中字体看起来偏小
+##详情页
+  * iPhone6以下薪资出现折行
