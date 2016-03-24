@@ -22,6 +22,8 @@
   border-bottom: 1px solid var(--borderColorLight);
 }
 /*添加搜索切换样式*/
-.list_more-show {
+.cate.is-hidden,
+.filter.is-hidden,
+.list_more.is-hidden {
   display: none;
 }

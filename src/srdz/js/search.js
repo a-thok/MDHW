@@ -1,12 +1,12 @@
-import { $ } from 'func'
+import { $from } from 'func'
 // import render from 'render'
 
 // 搜索切换
 export function search() {
-  [...$('.srchBtn_list_item')].forEach(el => {
+  $from('.srchBtn_list_item').forEach(el => {
     el.addEventListener('click', e => {
       if (e.target.classList.contains('srchBtn_list_item-bgColor')) return
-      [...e.target.parentElement.children].forEach((_e, _index) => {
+      $from(e.target.parentElement.children).forEach((_e, _index) => {
         _e.classList.remove('srchBtn_list_item-bgColor')
       })
       e.target.classList.add('srchBtn_list_item-bgColor')
