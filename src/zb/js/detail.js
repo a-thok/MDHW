@@ -1,27 +1,25 @@
+import { $, $cookie } from 'func'
 
 export default function detail() {
-  let collect = document.querySelector('.ftCtrl_item')
-  collect.addEventListener('click', el => {
-    let rep = el.currentTarget.children[0]
+  let likebtn = $('.ftCtrl_item')[0]
+  
+  likebtn.addEventListener('click', e => {
+    let star = e.currentTarget.children[0]
 
-    // 获取cookie字符串，用 ; 切为数组
-    let arrCookie = document.cookie.split('; ')
-    // 新建空对象
-    let objCookie = {}
-    // 循环数组
-    arrCookie.forEach(item => {
-      // 将数组每项元素用 = 切为数组，赋值给 arrItem 即：arrItem[arrItem[0], arrItem[1]]
-      let arrItem = item.split('=')
-      objCookie[arrItem[0]] = arrItem[1]
-    })
     // 用cookie中的字段判断用户是否登录
-    if (!objCookie.accountType) {
+    if (!$cookie().accountType) {
       alert('请先登录!')
     } else {
-      let id = 55 // 自定义的id
-      let unFav = rep.classList.contains('fa-star-o')
-      let api = unFav ? '/m/ZB/ZbCollect' : '/m/Main/ZbScDel' // 判断接口类型
-      let operation = unFav ? +1 : -1  // 判断收藏或取消收藏数字的变化
+      let id = 55 // 临时代码，自定义的id
+      let unlike = star.classList.contains('fa-star-o')
+      let api, operation
+      if (unlike) {
+        api = '/m/ZB/ZbCollect'
+        operation = +1
+      } else {
+        api = '/m/Main/ZbScDel'
+        operation = -1
+      }
 
       // 向后台传入参数，发送请求
       fetch(api, {
@@ -37,10 +35,10 @@ export default function detail() {
         .then(res => res.json())
         .then(data => {
           if (data.success) {
-            let count = parseInt(collect.children[2].textContent)
+            let count = parseInt(likebtn.children[2].textContent)
             count += operation
-            collect.children[2].textContent = count
-            rep.classList.toggle('fa-star-o')
+            likebtn.children[2].textContent = count
+            star.classList.toggle('fa-star-o')
           } else {
             alert('未知原因导致出错')
           }
