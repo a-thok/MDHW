@@ -3,6 +3,7 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: {
+    // 'vendor': ['es6-promise', 'whatwg-fetch'],
     'rczp': [path.join(__dirname, 'src/rczp/rczp.js')],
     'kjfw': [path.join(__dirname, 'src/kjfw/kjfw.js')],
     'zc': [path.join(__dirname, 'src/zc/zc.js')],
@@ -34,7 +35,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel!eslint',
-        exclude: '/node_modules/'
+        exclude: path.resolve(__dirname, 'node_modules')
       },
       {
         test: /\.(woff|svg|eot|ttf)\??.*$/,
@@ -55,6 +56,7 @@ module.exports = {
     ]
   },
   plugins: [
+    // new webpack.optimize.CommonsChunkPlugin('vendor', 'js/vendor.js', Infinity),
     new webpack.ProvidePlugin({
       'Promise': 'imports?this=>global!exports?global.Promise!es6-promise',
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
