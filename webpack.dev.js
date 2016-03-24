@@ -9,7 +9,7 @@ Object.keys(config.entry).forEach(function (name) {
 
 config.output.publicPath = '/'
 
-config.devtool = 'cheap-module-eval-source-map'
+config.devtool = 'eval-source-map'
 
 config.plugins = (config.plugins || []).concat([
   new webpack.HotModuleReplacementPlugin(),

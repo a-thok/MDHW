@@ -1,9 +1,9 @@
 var path = require('path')
 var webpack = require('webpack')
 
-module.exports = {
+var config = {
   entry: {
-    // 'vendor': ['es6-promise', 'whatwg-fetch'],
+    'common': ['font-awesome/css/font-awesome.css', 'es6-promise', 'whatwg-fetch', 'fastclick', path.join(__dirname, './src/common/css/base.css')],
     'rczp': [path.join(__dirname, 'src/rczp/rczp.js')],
     'kjfw': [path.join(__dirname, 'src/kjfw/kjfw.js')],
     'zc': [path.join(__dirname, 'src/zc/zc.js')],
@@ -56,11 +56,7 @@ module.exports = {
     ]
   },
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin('vendor', 'js/vendor.js', Infinity),
-    new webpack.ProvidePlugin({
-      'Promise': 'imports?this=>global!exports?global.Promise!es6-promise',
-      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    })
+    new webpack.optimize.CommonsChunkPlugin('common', 'js/common.js', Infinity)
   ],
   postcss: function (webpack) {
     return [
@@ -76,3 +72,9 @@ module.exports = {
     ]
   }
 }
+
+;['func', 'render', 'filter', 'slider'].forEach((item) => {
+  config.entry.common.push(path.join(__dirname, `./src/common/js/${item}.js`))
+})
+
+module.exports = config
