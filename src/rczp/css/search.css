@@ -21,9 +21,3 @@
   text-align: center;
   border-bottom: 1px solid var(--borderColorLight);
 }
-/*添加搜索切换样式*/
-.cate.is-hidden,
-.filter.is-hidden,
-.list_more.is-hidden {
-  display: none;
-}

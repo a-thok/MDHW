@@ -23,7 +23,8 @@ var config = {
       'func': 'func.js',
       'render': 'render.js',
       'slider': 'slider.js',
-      'filter': 'filter.js'
+      'filter': 'filter.js',
+      'doSearch': 'doSearch.js'
     }
   },
   module: {

@@ -1,7 +1,7 @@
-import render from 'render'
 import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter, moreFilter } from 'filter'
-import { $, $from } from 'func'
+import { $ } from 'func'
 import template from './template'
+import doSearch from 'doSearch'
 
 export default function search() {
   // 过滤
@@ -36,63 +36,14 @@ export default function search() {
     }
   })
   
-  // 热门搜索
-  let hotitems = $('.cate_item_list').children
-  
-  function setDisplay() {
-    let hotbox = $('.cate')
-    let filter = $('.filter')
-    if (!hotbox.classList.contains('is-hidden')) {
-      hotbox.classList.add('is-hidden')
-      filter.classList.remove('is-hidden')
-      button.classList.remove('is-hidden')
+  doSearch({
+    button,
+    config,
+    srchbtn: '.header_srch_btn',
+    url: () => {
+      let searchText = document.querySelector('.header_srch_label_text')
+      let type = searchText.getAttributeNode('data-type').value
+      return (+type === 1) ? '/m/HR/JobList' : '/m/HR/CompanyList'
     }
-  }
-  
-  // 循环目标元素，点击获取元素值，作为keyword的值
-  $from(hotitems).forEach(hotitem => {
-    hotitem.addEventListener('click', e => {
-      setDisplay()
-      let keyword = e.target.textContent.trim()
-      Object.assign(config, {
-        body: {
-          pageIndex: 0,
-          pageSize: 10,
-          keyword: keyword
-        },
-        immediate: true
-      })
-      render(button, config)
-    })
-  })
-
-  // 搜索框搜索
-  function searchByBox() {
-    let keyword = $('#search').value.trim()
-    if (keyword.length === 0) return
-    let searchText = document.querySelector('.header_srch_label_text')
-    let type = searchText.getAttributeNode('data-type').value
-    let api = (+type === 1) ? '/m/HR/JobList' : '/m/HR/CompanyList'
-    Object.assign(config, {
-      api: api,
-      body: {
-        pageIndex: 0,
-        pageSize: 10,
-        keyword: keyword
-      },
-      immediate: true
-    })
-    render(button, config)
-  }
-  
-  $('#search').addEventListener('keyup', e => {
-    if (e.keyCode === 13) {
-      setDisplay()
-      searchByBox()
-    }
-  })
-  $('.header_srch_btn').addEventListener('click', () => {
-    setDisplay()
-    searchByBox()
   })
 }

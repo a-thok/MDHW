@@ -1,0 +1,6 @@
+.cate.is-hidden,
+.list_more.is-hidden,
+.filter.is-hidden,
+.pagination.is-hidden {
+  display: none;
+}

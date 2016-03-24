@@ -1,6 +1,7 @@
 export function $(selector) {
   let els = document.querySelectorAll(selector)
   if (els.length === 1) return els[0]
+  if (els.length === 0) return undefined
   return els
 }
 

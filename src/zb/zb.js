@@ -7,8 +7,11 @@ fastclick.attach(document.body)
 
 import list from './js/list.js'
 import detail from './js/detail.js'
+import search from './js/search.js'
 if (window.location.pathname.indexOf('list') !== -1) {
   list()
 } else if (window.location.pathname.indexOf('detail') !== -1) {
   detail()
+} else if (window.location.pathname.indexOf('search') !== -1) {
+  search()
 }
