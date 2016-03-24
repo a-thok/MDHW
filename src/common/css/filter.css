@@ -46,7 +46,7 @@
   transform: rotateY(0);
 }
 .filter_title-line::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1px;
   height: 20px;
