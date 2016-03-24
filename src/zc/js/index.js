@@ -1,42 +1,26 @@
-import { $from } from 'func'
+import { $, $parent, $from, $cookie } from 'func'
 
-// 点赞
 export default function index(config, data) {
-  function getObjCookie() {
-    let arrCookie = document.cookie.split('; ')
-    // 新建空对象
-    let objCookie = {}
-    // 循环数组
-    arrCookie.forEach(item => {
-      // 将数组每项元素用 = 切为数组，赋值给 arrItem 即：arrItem[arrItem[0], arrItem[1]]
-      let arrItem = item.split('=')
-      objCookie[arrItem[0]] = arrItem[1]
-    })
-    // 返回对象
-    return objCookie
-  }
+  // 点赞
+  $('.zcList').addEventListener('click', (e) => {
+    if (e.target.classList.contains('fa-thumbs-o-up')) {
+      let item = $parent(e.target, '.zcList_item')
+      let id = item.getAttribute('data-id')
+      let num = $cookie().num
+      if (num && num.split(',').indexOf(id) !== -1) return
+      e.target.classList.add('cgColor')
+      document.cookie = `num=${num ? $cookie().num : ''},${id}`
+    }
+  })
+  
   // 循环列表中的每个li
   $from('.zcList_item').forEach(function (el) {
-    // 调用cookie转为对象的方法
-    let objCookie = getObjCookie()
-    // 获取取cookied的值，转为数组
-    let inarr = objCookie.num.split(',')
-    // 获取id
     let id = el.getAttribute('data-id')
-    let child = el.querySelector('.fa-thumbs-o-up')
-    // 循环中点击行为，为没点赞的加上样式
-    child.addEventListener('click', function (e) {
-      let objCookie = getObjCookie()
-      let outarr = objCookie.num.split(',')
-      // 判断cookie中是否有已存在项目id
-      if (outarr.indexOf(id) === -1) {
-        e.target.classList.add('cgColor')
-        // cookie叠加
-        document.cookie = `num=${objCookie.num},${id}`
-      }
-    })
-    if (inarr.indexOf(id) !== -1) {
-      child.classList.add('cgColor')
+    if (!$cookie().num) return
+    let ids = $cookie().num.split(',')
+    let icon = el.querySelector('.fa-thumbs-o-up')
+    if (ids.indexOf(id) !== -1) {
+      icon.classList.add('cgColor')
     }
   })
 }

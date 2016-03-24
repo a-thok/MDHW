@@ -79,6 +79,17 @@ export function swipe(element, type, cb) {
   }, false)
 }
 
+// 操作cookie
+export function $cookie() {
+  let arrCookie = document.cookie.split('; ')
+  let cookieObj = {}
+  arrCookie.forEach(item => {
+    let arrItem = item.split('=')
+    cookieObj[arrItem[0]] = arrItem[1]
+  })
+  return cookieObj
+}
+
 // 翻页回调
 export function pageCallback(config, data) {
   let page = document.querySelector('.pagination_current')
