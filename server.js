@@ -30,6 +30,7 @@ app.use('/m/ZC', proxy(url.parse('http://192.168.2.177:8088//m/ZC')))
 app.use('/m/ZB', proxy(url.parse('http://192.168.2.177:8090//m/ZB')))
 app.use('/m/MS', proxy(url.parse('http://192.168.2.177:8091//m/MS')))
 app.use('/m/DIY', proxy(url.parse('http://192.168.2.177:8092//m/DIY')))
+app.use('/m/Srdz', proxy(url.parse('http://192.168.2.177:8093//m/Srdz')))
 
 app.listen(app.get('port'), function (err) {
   if (err) {

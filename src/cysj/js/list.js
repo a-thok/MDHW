@@ -26,7 +26,7 @@ export function listfil2() {
     el.addEventListener('click', e => {
       let text = e.target.textContent.trim()
       let parent = $parent(e.target, '.filter_item')
-      parent.querySelector('.filter_title_text').textContent = text
+      parent.querySelector('.filter_active').textContent = text
       // 隐藏当前过滤器
       parent.classList.remove('is-show')
       document.body.classList.remove('is-static') // 恢复body滚动
