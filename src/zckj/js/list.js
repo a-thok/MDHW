@@ -1,5 +1,6 @@
 import render from 'render'
-import pageCallback from 'func'
+import { $, pageCallback } from 'func'
+// import doSearch from 'doSearch'
 export default function list() {
   let template = function (data) {
     return data.result.data.reduce((pre, cur) => {
@@ -14,19 +15,18 @@ export default function list() {
         </li>`
     }, '')
   }
-  let buttons = document.querySelectorAll('.pagination_btn')
+  
   let config = {
+    template,
+    buttons: $('.pagination_btn'),
     api: '/m/MS/MakerSpaceList',
-    body: {
-      pageIndex: 1,
-      pageSize: 10
-    },
-    template: template,
     container: document.querySelector('.list'),
-    replace: true
+    replace: true,
+    cb: pageCallback
   }
-  render(buttons, config, pageCallback)
-  render(buttons, Object.assign(config, {
-    next: false
-  }), pageCallback)
+  render(config)
+  // doSearch({
+  //   config,
+  //   srchbtn: '.header_srch_btn'
+  // })
 }
