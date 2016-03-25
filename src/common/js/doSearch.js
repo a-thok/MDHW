@@ -2,9 +2,14 @@ import { $ } from 'func'
 import render from 'render'
 
 export default function doSearch({ config, srchbtn, url }) {
+  Object.assign(config, {
+    immediate: true,
+    replace: true
+  })
+  
   // 热门搜索
-  // let hotItems = $('.cate_item_list').children
   let hot = $('.cate')
+  
   // 设置页面各部分的显示与隐藏
   function setView() {
     let filter = $('.filter')

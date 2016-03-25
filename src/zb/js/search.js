@@ -34,8 +34,6 @@ export default function search() {
     template,
     buttons: $('.pagination_btn'),
     api: '/m/ZB/ZbList',
-    replace: true,
-    immediate: true,
     container: document.querySelector('.hostlist'),
     cb: pageCallback
   }
