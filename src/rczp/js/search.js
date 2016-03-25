@@ -11,17 +11,6 @@ export default function search() {
   selectFilter()
   moreFilter()
   generateAreaFilter()
-
-  let button = document.querySelector('.list_more')
-  let config = {
-    api: '/m/HR/JobList',
-    body: {
-      pageIndex: 0,
-      pageSize: 10
-    },
-    template: template,
-    container: document.querySelector('.list')
-  }
   
   // 搜索类型选择
   $('.header_srch_label').addEventListener('click', (e) => {
@@ -35,9 +24,15 @@ export default function search() {
       searchText.setAttribute('data-type', searchText.textContent === '职位' ? 1 : 2)
     }
   })
+
+  let config = {
+    template,
+    buttons: $('.list_more'),
+    api: '/m/HR/JobList',
+    container: document.querySelector('.list')
+  }
   
   doSearch({
-    button,
     config,
     srchbtn: '.header_srch_btn',
     url: () => {
