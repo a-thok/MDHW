@@ -1,7 +1,7 @@
 .srch {
   display: flex;
   align-items: stretch;
-  padding: 0 3.7333%;
+  padding: 10px 3.7333%;
 }
 .srch_wrap {
   width: 83%;
