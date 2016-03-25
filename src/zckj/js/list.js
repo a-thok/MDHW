@@ -1,10 +1,10 @@
-import render from 'render'
-import { $, pageCallback } from 'func'
+import render from 'render';
+import { $, pageCallback } from 'func';
 // import doSearch from 'doSearch'
 export default function list() {
-  let template = function (data) {
-    return data.result.data.reduce((pre, cur) => {
-      return pre + `<li class="list_item list_item-border">
+  function template(data) {
+    return data.result.data.reduce((pre, cur) => (
+      `${pre}<li class="list_item list_item-border">
           <div class="list_item_img"><div></div></div>
           <div class="list_item_text">
             <p class="list_item_text_p list_item_text_p-title">${cur.catchphrase}</p>
@@ -13,9 +13,9 @@ export default function list() {
           </div>
           <div class="list_item_icon"><i class="fa fa-check-circle"></i></div>
         </li>`
-    }, '')
+    ), '');
   }
-  
+
   let config = {
     template,
     buttons: $('.pagination_btn'),
@@ -23,8 +23,8 @@ export default function list() {
     container: document.querySelector('.list'),
     replace: true,
     cb: pageCallback
-  }
-  render(config)
+  };
+  render(config);
   // doSearch({
   //   config,
   //   srchbtn: '.header_srch_btn'

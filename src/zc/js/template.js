@@ -1,6 +1,6 @@
 export default function template(data) {
-  return data.result.data.reduce((pre, cur) => {
-    return pre + `<li class="zcList_item">
+  return data.result.data.reduce((pre, cur) => (
+    `${pre}<li class="zcList_item">
         <h6 class="zcList_item_header">
           <div class="zcList_item_header_text"><span class="zcTag">${cur.name}</span>${cur.title}</div>
           <i class="fa fa-thumbs-o-up"></i>
@@ -27,5 +27,5 @@ export default function template(data) {
         <progress class="zcList_item_progress" max="100" value="85"></progress>
         <div class="zcList_item_intro">${cur.purpose}</div>
       </li>`
-  }, '')
+  ), '');
 }
