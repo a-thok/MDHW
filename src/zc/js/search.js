@@ -1,35 +1,17 @@
 import { $ } from 'func'
-import render from 'render'
 import template from './template.js'
+import doSearch from 'doSearch'
 
 export default function search() {
-  let button = document.querySelector('.list_more')
   let config = {
+    template,
+    buttons: $('.list_more'),
     api: '/m/ZC/ZcList',
-    body: {
-      pageIndex: 1,
-      pageSize: 10
-    },
-    template: template,
-    container: document.querySelector('.zcList')
+    container: $('.zcList')
   }
-  render(button, config)
-  
-  function searchResult() {
-    let keyword = $('#search').value.trim()
-    if (keyword.length === 0) return
-    Object.assign(config, {
-      body: {
-        pageIndex: 0,
-        pageSize: 10,
-        keyword: keyword
-      },
-      immediate: true
-    })
-    render(button, config)
-  }
-  $('#search').addEventListener('keyup', e => {
-    if (e.keyCode === 13) searchResult()
+
+  doSearch({
+    config,
+    srchbtn: '.srch_btn'
   })
-  $('.srch_btn').addEventListener('click', () => searchResult())
 }

@@ -30,15 +30,10 @@ export default function company() {
     }, '')
   }
 
-  let button = document.querySelector('.list_more')
-  let config = {
+  render({
+    buttons: document.querySelector('.list_more'),
     api: '/m/HR/CompanyList',
-    body: {
-      pageIndex: 1,
-      pageSize: 10
-    },
     template: template,
     container: document.querySelector('.list')
-  }
-  render(button, config)
+  })
 }

@@ -2,22 +2,16 @@ import { $, pageCallback } from 'func'
 import doSearch from 'doSearch'
 import template from './template.js'
 export default function search() {
-  let buttons = $('.pagination_btn')
   let config = {
+    template,
+    buttons: $('.pagination_btn'),
     api: '/m/ZB/ZbList',
-    body: {
-      pageIndex: 0,
-      pageSize: 10
-    },
-    replace: true,
-    template: template,
-    container: document.querySelector('.hostlist')
+    container: document.querySelector('.hostlist'),
+    cb: pageCallback
   }
   
   doSearch({
-    button: buttons,
     config,
-    srchbtn: '.srch_btn',
-    cb: pageCallback
+    srchbtn: '.srch_btn'
   })
 }

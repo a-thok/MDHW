@@ -1,7 +1,6 @@
 export function $(selector) {
   let els = document.querySelectorAll(selector)
   if (els.length === 1) return els[0]
-  if (els.length === 0) return undefined
   return els
 }
 
@@ -19,6 +18,7 @@ export function $parent(el, selector) {
 
 export function $from(selector) {
   let els = (typeof selector === 'string') ? document.querySelectorAll(selector) : selector
+  if (!els.length) return [els]
   return Array.prototype.map.call(els, (el) => {
     return el
   })
@@ -92,9 +92,9 @@ export function $cookie() {
 }
 
 // 翻页回调
-export function pageCallback(config, data) {
+export function pageCallback(body, data) {
   let page = document.querySelector('.pagination_current')
   let pageNum = document.querySelector('.pagination_total')
-  page.textContent = config.body.pageIndex
-  pageNum.textContent = Math.ceil(data.result.total / config.body.pageSize)
+  page.textContent = body.pageIndex
+  pageNum.textContent = Math.ceil(data.result.total / body.pageSize)
 }
