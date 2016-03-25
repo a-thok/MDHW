@@ -28,3 +28,8 @@
 .demand_text {
   color: var(--fontColorLight);
 }
+
+.grid_item {
+  width: 26%;
+  flex-basis: 26%;
+}
