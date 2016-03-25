@@ -29,23 +29,19 @@ export default function search() {
         </li>`
     }, '')
   }
-  
-  let buttons = $('.pagination_btn')
+
   let config = {
+    template,
+    buttons: $('.pagination_btn'),
     api: '/m/ZB/ZbList',
-    body: {
-      pageIndex: 0,
-      pageSize: 10
-    },
     replace: true,
-    template: template,
-    container: document.querySelector('.hostlist')
+    immediate: true,
+    container: document.querySelector('.hostlist'),
+    cb: pageCallback
   }
   
   doSearch({
-    button: buttons,
     config,
-    srchbtn: '.srch_btn',
-    cb: pageCallback
+    srchbtn: '.srch_btn'
   })
 }

@@ -1,78 +1,62 @@
-import { $, $from } from 'func'
+import { $ } from 'func'
 import render from 'render'
 
-export default function doSearch(params) {
+export default function doSearch({ config, srchbtn, url }) {
   // 热门搜索
-  let hotitems = $('.cate_item_list').children
-  
-  function setDisplay() {
-    let hotbox = $('.cate')
+  // let hotItems = $('.cate_item_list').children
+  let hot = $('.cate')
+  // 设置页面各部分的显示与隐藏
+  function setView() {
     let filter = $('.filter')
     
-    if (!hotbox.classList.contains('is-hidden')) {
-      hotbox.classList.add('is-hidden')
-      if (filter) filter.classList.remove('is-hidden')
-      if (params.button.length) {
-        let pagination = $('.pagination')
-        pagination.classList.remove('is-hidden')
+    if (!hot.classList.contains('is-hidden')) {
+      // 隐藏热门搜索项
+      hot.classList.add('is-hidden')
+      // 显示其它相关元素
+      if (filter.length) filter.classList.remove('is-hidden')
+      if (config.buttons.length) {
+        $('.pagination').classList.remove('is-hidden')
       } else {
-        params.button.classList.remove('is-hidden')
+        config.buttons.classList.remove('is-hidden')
       }
     }
   }
   
-  // 循环目标元素，点击获取元素值，作为keyword的值
-  $from(hotitems).forEach(hotitem => {
-    hotitem.addEventListener('click', e => {
-      setDisplay()
+  // 点击热门搜索项，获取文本，作为keyword的值，并搜索
+  hot.addEventListener('click', (e) => {
+    if (e.target.nodeName === 'LI') { // 临时
+      setView()
       let keyword = e.target.textContent.trim()
-      Object.assign(params.config, {
-        body: {
-          pageIndex: 0,
-          pageSize: 10,
-          keyword: keyword
-        },
-        immediate: true
-      })
-      if (params.cb) {
-        params.config.next = true
-        render(params.button, params.config, params.cb)
-        params.config.next = false
-        render(params.button, params.config, params.cb)
-      } else {
-        render(params.button, params.config)
+      config.params = {
+        keyword,
+        pageIndex: 0,
+        pageSize: 10
       }
-    })
+      render(config)
+    }
   })
-
+  
   // 搜索框搜索
   function searchByBox() {
     let keyword = $('#search').value.trim()
     if (keyword.length === 0) return
-    Object.assign(params.config, {
-      body: {
-        pageIndex: 0,
-        pageSize: 10,
-        keyword: keyword
-      },
-      immediate: true
-    })
-    if (params.url) params.config.api = params.url()
-    if (params.cb) {
-      render(params.button, params.config, params.cb)
-    } else {
-      render(params.button, params.config)
+    config.params = {
+      keyword,
+      pageIndex: 0,
+      pageSize: 10
     }
+    if (url) config.api = url()
+    render(config)
   }
   
   $('#search').addEventListener('keyup', e => {
     if (e.keyCode === 13) {
-      setDisplay()
+      setView()
       searchByBox()
     }
   })
-  $(params.srchbtn).addEventListener('click', () => {
-    setDisplay()
+  $(srchbtn).addEventListener('click', () => {
+    setView()
     searchByBox()
   })
 }
