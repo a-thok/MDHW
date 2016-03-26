@@ -13,6 +13,7 @@ module.exports = {
     "prefer-const": 0,
     "react/prefer-es6-class": 0,
     "react/prefer-stateless-function": 0,
-    "func-names": 0
+    "func-names": 0,
+    "react/prop-types": 0
   }
 }
