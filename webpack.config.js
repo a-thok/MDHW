@@ -71,7 +71,7 @@ var config = {
       }),
       require('stylelint')(),
       require('postcss-cssnext')(),
-      require('stylelint/node_modules/postcss-reporter')({
+      require('postcss-reporter')({
         clearMessages: true
         // throwError: true
       })
