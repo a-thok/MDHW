@@ -1,0 +1,138 @@
+.header-noleft {
+  background-color: #fff;
+}
+.header_link {
+  color: #333;
+}
+.srch_btn {
+  background: #129341;
+}
+.placard {
+  width: 100%;
+  padding: 10px 8%;
+  line-height: 1.5;
+  border-top: 1px solid var(--borderColorLight);
+  border-bottom: 1px solid var(--borderColorLight);
+  background: #fff;
+}
+.placard .fa {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #129341;
+}
+/** 精品服务 **/
+.gifts {
+  margin-top: 20px;
+  border-top: 2px solid red;
+  background: #fff;
+}
+.gifts_content {
+  border-top: 1px solid var(--borderColorLight);
+  display: flex;
+}
+.gifts_content_img {
+  width:50%;
+  height: 170px;
+  height: 45.3333vw;
+  max-height: 340px;
+  display: block;
+  background: red;
+}
+.gifts_content_text {
+  width:50%;
+}
+.gifts_content_text li:first-child,
+.gifts_content_list li:first-child {
+  border: none;
+}
+.gifts_content_text_item {
+  padding: 8px 10px 8px 20px;
+  border-top: 1px solid var(--borderColorLight);
+}
+.gifts_content_text_item_title {
+  font-weight: normal;
+  line-height: 2;
+}
+.gifts_content_text_item_title .fa {
+  color: green;
+  font-size: 20px;
+  margin-right: 15px;
+}
+.gifts_content_text_item p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--fontColorLight);
+}
+@media screen and (max-width: 350px) {
+  .gifts_content_img {
+    width:35%;
+    height: 42.6667vw;
+    max-height: 320px;
+  }
+  .gifts_content_text {
+    width:65%;
+  }
+  .gifts_content_text_item {
+    padding: 5px 5px 5px 10px;
+  }
+  .gifts_content_text_item_title {
+    line-height: 1.5;
+  }
+}
+.gifts_content_list {
+  margin-top: 5px;
+  border-top: 1px solid var(--borderColorLight);
+  display: flex;
+  justify-content: space-between;
+}
+.gifts_content_list_item {
+  width: 25%;
+  padding: 30px 0;
+  text-align: center;
+  border-left: 1px solid var(--borderColorLight);
+}
+.gifts_content_list_item .fa {
+  line-height: 1.2;
+  font-size: 25px;
+  color: red;
+}
+/** 推荐 **/
+.hotwrap {
+  border-top: 2px solid #00a2e8;
+}
+.titleA {
+  border: 0;
+  padding: 0;
+}
+.hot {
+  padding: 10px .5em;
+  border-top: 1px solid var(--borderColorLight);
+  display: flex;
+  justify-content: space-between;
+}
+.hot_img {
+  width: 30%;
+  height: 200px;
+  height: 44vw;
+  max-height: 330px;
+  display: block;
+  background: red;
+}
+.hot_list {
+  width: 66%;
+}
+.hot_list_item {
+  display: flex;
+  justify-content: space-between;
+}
+.hot_list_item img {
+  width: 48%;
+  height: 95px;
+  height: 21.0667vw;
+  max-height: 158px;
+  display: block;
+  background: red;
+}
+.hot_list_item-pad {
+  margin-top: 8px;
+}

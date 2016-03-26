@@ -10,7 +10,8 @@ var config = {
     'zckj': [path.join(__dirname, 'src/zckj/zckj.js')],
     'zb': [path.join(__dirname, 'src/zb/zb.js')],
     'cysj': [path.join(__dirname, 'src/cysj/cysj.js')],
-    'srdz': [path.join(__dirname, 'src/srdz/srdz.js')]
+    'srdz': [path.join(__dirname, 'src/srdz/srdz.js')],
+    'cqbh': [path.join(__dirname, 'src/cqbh/cqbh.js')]
   },
   output: {
     path: path.join(__dirname, '/dist/'),
