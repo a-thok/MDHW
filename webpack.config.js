@@ -11,11 +11,16 @@ var config = {
     'zb': [path.join(__dirname, 'src/zb/zb.js')],
     'cysj': [path.join(__dirname, 'src/cysj/cysj.js')],
     'srdz': [path.join(__dirname, 'src/srdz/srdz.js')],
-    'cqbh': [path.join(__dirname, 'src/cqbh/cqbh.js')]
+    'cqbh': [path.join(__dirname, 'src/cqbh/cqbh.js')],
+    'uc': [path.join(__dirname, 'src/uc/uc.js')]
   },
   output: {
     path: path.join(__dirname, '/dist/'),
     filename: 'js/[name].js'
+  },
+  externals: {
+    'react': 'window.React',
+    'react-dom': 'window.ReactDOM'
   },
   resolve: {
     extensions: ['', '.js', '.json', '.css'],
@@ -35,7 +40,7 @@ var config = {
         loader: 'style!css?sourceMap!postcss'
       },
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel!eslint',
         exclude: path.resolve(__dirname, 'node_modules')
       },
@@ -67,7 +72,7 @@ var config = {
       }),
       require('stylelint')(),
       require('postcss-cssnext')(),
-      require('stylelint/node_modules/postcss-reporter')({
+      require('postcss-reporter')({
         clearMessages: true
         // throwError: true
       })

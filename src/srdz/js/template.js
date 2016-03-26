@@ -1,6 +1,6 @@
 export default function template(data) {
-  return data.result.data.reduce((pre, cur) => {
-    return pre + `<li class="hostlist_item">
+  return data.result.data.reduce((pre, cur) => (
+    `${pre}<li class="hostlist_item">
           <div class="hostlist_item_img">
             <div style="width:60px;height:60px;background:red"></div>
           </div>
@@ -18,5 +18,5 @@ export default function template(data) {
             </div>
           </div>
         </li>`
-  }, '')
+  ), '');
 }

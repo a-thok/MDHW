@@ -1,24 +1,25 @@
-import { $, $cookie } from 'func'
+import { $, $cookie } from 'func';
 
 export default function detail() {
-  let likebtn = $('.ftCtrl_item')[0]
-  
+  const likebtn = $('.ftCtrl_item')[0];
+
   likebtn.addEventListener('click', e => {
-    let star = e.currentTarget.children[0]
+    const star = e.currentTarget.children[0];
 
     // 用cookie中的字段判断用户是否登录
     if (!$cookie().accountType) {
-      alert('请先登录!')
+      alert('请先登录!');
     } else {
-      let id = 55 // 临时代码，自定义的id
-      let unlike = star.classList.contains('fa-star-o')
-      let api, operation
+      const id = 55; // 临时代码，自定义的id
+      const unlike = star.classList.contains('fa-star-o');
+      let api;
+      let operation;
       if (unlike) {
-        api = '/m/ZB/ZbCollect'
-        operation = +1
+        api = '/m/ZB/ZbCollect';
+        operation = +1;
       } else {
-        api = '/m/Main/ZbScDel'
-        operation = -1
+        api = '/m/Main/ZbScDel';
+        operation = -1;
       }
 
       // 向后台传入参数，发送请求
@@ -31,18 +32,18 @@ export default function detail() {
           id: id
         })
       })
-      // 请求通过，执行操作
+        // 请求通过，执行操作
         .then(res => res.json())
         .then(data => {
           if (data.success) {
-            let count = parseInt(likebtn.children[2].textContent)
-            count += operation
-            likebtn.children[2].textContent = count
-            star.classList.toggle('fa-star-o')
+            let count = parseInt(likebtn.children[2].textContent, 10);
+            count += operation;
+            likebtn.children[2].textContent = count;
+            star.classList.toggle('fa-star-o');
           } else {
-            alert('未知原因导致出错')
+            alert('未知原因导致出错');
           }
-        })
+        });
     }
-  })
+  });
 }

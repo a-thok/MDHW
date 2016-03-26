@@ -1,11 +1,11 @@
-import render from 'render'
-import { showFilter, selectFilter } from 'filter'
-import { pageCallback } from 'func'
-import template from './template.js'
+import render from 'render';
+import { showFilter, selectFilter } from 'filter';
+import { pageCallback } from 'func';
+import template from './template.js';
 
 export default function list() {
-  showFilter()
-  selectFilter()
+  showFilter();
+  selectFilter();
 
   render({
     template,
@@ -14,5 +14,5 @@ export default function list() {
     container: document.querySelector('.hostlist'),
     replace: true,
     cb: pageCallback
-  })
+  });
 }

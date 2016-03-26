@@ -1,21 +1,21 @@
-import render from 'render'
-import { $ } from 'func'
+import render from 'render';
+import { $ } from 'func';
 
 export default function comment() {
-  let template = function (data) {
+  function template(data) {
     return data.result.data.reduce((pre, cur) => {
-      let child = cur.child.reduce((_pre, _cur) => {
-        return _pre + ` <li class="dialog_sublist_item">
-              <div class="dialog_sublist_item_username">${_cur.user}</div>
-              <div class="dialog_sublist_item_comment">
-                <i class="dialog_sublist_item_arrow"></i>
-                <p class="dialog_sublist_item_content">${_cur.comment}</p>
-                <p class="dialog_list_item_info_time"><time>${_cur.date}</time></p>
-              </div>
-            </li>`
-      }, '')
+      const child = cur.child.reduce((_pre, _cur) => (
+        `${_pre}<li class="dialog_sublist_item">
+          <div class="dialog_sublist_item_username">${_cur.user}</div>
+          <div class="dialog_sublist_item_comment">
+            <i class="dialog_sublist_item_arrow"></i>
+            <p class="dialog_sublist_item_content">${_cur.comment}</p>
+            <p class="dialog_list_item_info_time"><time>${_cur.date}</time></p>
+          </div>
+        </li>`
+      ), '');
 
-      return pre + ` <li class="dialog_list_item">
+      return `${pre}<li class="dialog_list_item">
           <div class="dialog_list_item_user">
             <div class="dialog_list_item_user_avatar"></div><!--这里应该是一张图片-->
             <span class="dialog_list_item_user_name">${cur.user}</span>
@@ -30,11 +30,12 @@ export default function comment() {
             <li class="dialog_sublist_arrow"></li>
             ${child}
           </ul>
-        </li>`
-    }, '')
+        </li>`;
+    }, '');
   }
-  let button = $('.dialog_more_link')
-  let config = {
+
+  render({
+    buttons: $('.dialog_more_link'),
     api: '/m/ZC/Comments',
     body: {
       fpid: 1,
@@ -43,6 +44,5 @@ export default function comment() {
     },
     template: template,
     container: $('.dialog_list')
-  }
-  render(button, config)
+  });
 }

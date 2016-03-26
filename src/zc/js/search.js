@@ -1,6 +1,6 @@
-import { $ } from 'func'
-import template from './template.js'
-import doSearch from 'doSearch'
+import { $ } from 'func';
+import template from './template.js';
+import doSearch from 'doSearch';
 
 export default function search() {
   let config = {
@@ -8,10 +8,10 @@ export default function search() {
     buttons: $('.list_more'),
     api: '/m/ZC/ZcList',
     container: $('.zcList')
-  }
+  };
 
   doSearch({
     config,
     srchbtn: '.srch_btn'
-  })
+  });
 }

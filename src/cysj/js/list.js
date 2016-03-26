@@ -1,10 +1,10 @@
-import { $, pageCallback } from 'func'
-import render from 'render'
-import template from './template.js'
+import { $, pageCallback } from 'func';
+import render from 'render';
+import template from './template.js';
 
-import { showFilter, selectFilter } from 'filter'
-showFilter()
-selectFilter()
+import { showFilter, selectFilter } from 'filter';
+showFilter();
+selectFilter();
 // 图标没显示
 
 export default function list() {
@@ -15,5 +15,5 @@ export default function list() {
     replace: true,
     container: $('.hostlist'),
     cb: pageCallback
-  })
+  });
 }

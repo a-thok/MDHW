@@ -1,6 +1,6 @@
-import { $, pageCallback } from 'func'
-import doSearch from 'doSearch'
-import template from './template.js'
+import { $, pageCallback } from 'func';
+import doSearch from 'doSearch';
+import template from './template.js';
 export default function search() {
   let config = {
     template,
@@ -8,10 +8,10 @@ export default function search() {
     api: '/m/DIY/DiyList',
     container: document.querySelector('.hostlist'),
     cb: pageCallback
-  }
-  
+  };
+
   doSearch({
     config,
     srchbtn: '.srch_btn'
-  })
+  });
 }
