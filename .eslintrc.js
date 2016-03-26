@@ -10,6 +10,7 @@ module.exports = {
     "consistent-return": 0,
     "no-shadow": 0,
     "no-alert": 0,
+    "quote-props": 0,
     "prefer-const": 0,
     "react/prefer-es6-class": 0,
     "react/prefer-stateless-function": 0,

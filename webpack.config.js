@@ -1,7 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
-var config = {
+const config = {
   entry: {
     'common': ['font-awesome/css/font-awesome.css', 'es6-promise', 'whatwg-fetch', 'fastclick', path.join(__dirname, './src/common/css/base.css')],
     'rczp': [path.join(__dirname, 'src/rczp/rczp.js')],
@@ -76,12 +76,12 @@ var config = {
         clearMessages: true
         // throwError: true
       })
-    ]
+    ];
   }
 }
 
 ;['func', 'render', 'filter', 'slider'].forEach((item) => {
-  config.entry.common.push(path.join(__dirname, `./src/common/js/${item}.js`))
-})
+  config.entry.common.push(path.join(__dirname, `./src/common/js/${item}.js`));
+});
 
-module.exports = config
+module.exports = config;
