@@ -1,9 +1,13 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
-var config = {
+const BASE_CSS_PATH = path.join(__dirname, './src/common/css/base.css');
+const PATH_ARRAY = ['func', 'render', 'filter', 'slider', 'doSearch']
+  .map((item) => path.join(__dirname, `./src/common/js/${item}.js`));
+
+module.exports = {
   entry: {
-    'common': ['font-awesome/css/font-awesome.css', 'es6-promise', 'whatwg-fetch', 'fastclick', path.join(__dirname, './src/common/css/base.css')],
+    'common': ['font-awesome/css/font-awesome.css', BASE_CSS_PATH, 'es6-promise', 'whatwg-fetch', 'fastclick'].concat(PATH_ARRAY),
     'rczp': [path.join(__dirname, 'src/rczp/rczp.js')],
     'kjfw': [path.join(__dirname, 'src/kjfw/kjfw.js')],
     'zc': [path.join(__dirname, 'src/zc/zc.js')],
@@ -76,12 +80,6 @@ var config = {
         clearMessages: true
         // throwError: true
       })
-    ]
+    ];
   }
-}
-
-;['func', 'render', 'filter', 'slider'].forEach((item) => {
-  config.entry.common.push(path.join(__dirname, `./src/common/js/${item}.js`))
-})
-
-module.exports = config
+};
