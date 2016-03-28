@@ -8,14 +8,14 @@ const PATH_ARRAY = ['func', 'render', 'filter', 'slider', 'doSearch']
 module.exports = {
   entry: {
     'common': ['font-awesome/css/font-awesome.css', BASE_CSS_PATH, 'es6-promise', 'whatwg-fetch', 'fastclick'].concat(PATH_ARRAY),
-    'rczp': [path.join(__dirname, 'src/rczp/rczp.js')],
-    'kjfw': [path.join(__dirname, 'src/kjfw/kjfw.js')],
-    'zc': [path.join(__dirname, 'src/zc/zc.js')],
-    'zckj': [path.join(__dirname, 'src/zckj/zckj.js')],
-    'zb': [path.join(__dirname, 'src/zb/zb.js')],
-    'cysj': [path.join(__dirname, 'src/cysj/cysj.js')],
-    'srdz': [path.join(__dirname, 'src/srdz/srdz.js')],
-    'cqbh': [path.join(__dirname, 'src/cqbh/cqbh.js')],
+    // 'rczp': [path.join(__dirname, 'src/rczp/rczp.js')],
+    // 'kjfw': [path.join(__dirname, 'src/kjfw/kjfw.js')],
+    // 'zc': [path.join(__dirname, 'src/zc/zc.js')],
+    // 'zckj': [path.join(__dirname, 'src/zckj/zckj.js')],
+    // 'zb': [path.join(__dirname, 'src/zb/zb.js')],
+    // 'cysj': [path.join(__dirname, 'src/cysj/cysj.js')],
+    // 'srdz': [path.join(__dirname, 'src/srdz/srdz.js')],
+    // 'cqbh': [path.join(__dirname, 'src/cqbh/cqbh.js')],
     'uc': [path.join(__dirname, 'src/uc/uc.js')]
   },
   output: {
