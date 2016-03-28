@@ -22,10 +22,6 @@ module.exports = {
     path: path.join(__dirname, '/dist/'),
     filename: 'js/[name].js'
   },
-  externals: {
-    'react': 'window.React',
-    'react-dom': 'window.ReactDOM'
-  },
   resolve: {
     extensions: ['', '.js', '.json', '.css'],
     root: path.resolve('./src/common/js'),
