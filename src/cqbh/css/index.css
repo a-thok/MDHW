@@ -31,7 +31,7 @@
   display: flex;
 }
 .gifts_content_img {
-  width:50%;
+  width: 50%;
   height: 170px;
   height: 45.3333vw;
   max-height: 340px;
@@ -39,7 +39,7 @@
   background: red;
 }
 .gifts_content_text {
-  width:50%;
+  width: 50%;
 }
 .gifts_content_text li:first-child,
 .gifts_content_list li:first-child {
@@ -65,12 +65,12 @@
 }
 @media screen and (max-width: 350px) {
   .gifts_content_img {
-    width:35%;
+    width: 35%;
     height: 42.6667vw;
     max-height: 320px;
   }
   .gifts_content_text {
-    width:65%;
+    width: 65%;
   }
   .gifts_content_text_item {
     padding: 5px 5px 5px 10px;
