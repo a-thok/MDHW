@@ -1,19 +1,16 @@
 import React from 'react';
-// let Box
-// props.data.map(item => {
-//   return <Para label="item.label" content="label.content" />
-// })
-
-// return (
-//   <div>
-//     { nodes }
-//   </div>
-// )
+import ItemBox from './ItemBox.jsx';
 
 const Index = React.createClass({
   render: function () {
     return (
-      <div className="index">1213</div>
+      <div className="indexBox">
+        <ItemBox data={this.props.data.resultPro} />
+        <ItemBox data={this.props.data.resultAdd} />
+        <ItemBox data={this.props.data.resultOther} />
+        <ItemBox data={this.props.data.resultPri} />
+        <ItemBox data={this.props.data.resultFx} />
+      </div>
     );
   }
 });
