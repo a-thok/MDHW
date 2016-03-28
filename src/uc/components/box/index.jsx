@@ -3,6 +3,7 @@ import ItemBox from './ItemBox.jsx';
 
 const Index = React.createClass({
   render: function () {
+    console.log(this.props);
     return (
       <div className="indexBox">
         <ItemBox data={this.props.data.resultPro} />
