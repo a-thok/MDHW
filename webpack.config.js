@@ -25,7 +25,7 @@ const config = {
     filename: 'js/[name].js'
   },
   resolve: {
-    extensions: ['', '.js', 'jsx', '.json', '.css'],
+    extensions: ['', '.js', '.jsx', '.json', '.css'],
     root: path.resolve('./src/common/js'),
     alias: {
       'func': 'func.js',

@@ -31,9 +31,8 @@ let data = {
 };
 ReactDOM.render((
   <Router history={hashHistory}>
-    <Route path="/" component={Home} data={data}>
-      <Route path="box" component={Index} />
-    </Route>
+    <Route path="/" component={Home} />
+    <Route path="/box" component={Index} data={data} />
   </Router>
   ), document.querySelector('.page')
 );
