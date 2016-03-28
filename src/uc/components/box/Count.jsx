@@ -17,6 +17,7 @@ const Count = React.createClass({
     });
   },
   render: function () {
+    // console.log(this.props.text);
     return (
       <span className="count">
         <label className="countBtn" onClick={this.handleReduce}>-</label>
