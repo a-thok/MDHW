@@ -1,0 +1,24 @@
+.get_codes {
+  justify-content: space-between;
+}
+.enter_msg-get {
+  width: 49%;
+  margin-top: 0;
+}
+.get_codes_btn {
+  width: 49%;
+  height: 50px;
+  height: 12.5333vw;
+  max-height: 94px;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--fontColorLight);
+}
+.register_link {
+  text-decoration: none;
+  color: var(--mgsColor);
+}
+.enter_btn-top {
+  margin-top: 20px;
+}
