@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
 import Home from './components/Home';
+import App from './App';
 
 let data = {
   resultMes: [{ name: 'ddd', text: '15分钟内付款' }],
@@ -31,7 +32,9 @@ let data = {
 };
 ReactDOM.render((
   <Router history={hashHistory}>
-    <Route path="/" component={Home} />
+    <Route path="/" component={App}>
+      <Route path="/home" component={Home} />
+    </Route>
     <Route path="/box" component={Index} data={data} />
   </Router>
   ), document.querySelector('.page')

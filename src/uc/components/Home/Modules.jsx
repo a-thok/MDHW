@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function () {
+export default function Modules() {
   return (
     <div className="modulesWrap">
       <ul className="modules">

@@ -3,6 +3,7 @@ import React from 'react';
 import Profile from './Profile';
 import Basics from './Basics';
 import Modules from './Modules';
+import ULink from '../ULink';
 
 export default React.createClass({
   getInitialState: function () {
@@ -29,6 +30,15 @@ export default React.createClass({
           money={this.state.money}
         />
         <Modules />
+        <div>
+          <ULink href="#" text="我的收藏" icon="angle-right" />
+          <ULink href="#" text="我的足迹" icon="angle-right" />
+          <ULink href="#" text="我的服务" icon="angle-right" />
+        </div>
+        <div>
+          <ULink href="#" text="帮助" icon="angle-right" />
+          <ULink href="#" text="设置" icon="angle-right" />
+        </div>
       </div>
     );
   }
