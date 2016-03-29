@@ -1,0 +1,11 @@
+.Reservation_box {
+  padding-top: 0.5em;
+  margin-bottom: 1em;
+  background-color: #fff;
+}
+.FormItemCount,
+.FormItemTextRight {
+  display: flex;
+  padding: 0 .8em;
+  justify-content: space-between;
+}
