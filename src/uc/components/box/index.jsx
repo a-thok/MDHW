@@ -5,11 +5,16 @@ const Index = React.createClass({
   render: function () {
     return (
       <div className="indexBox">
-        <ItemBox data={this.props.data.resultPro} />
-        <ItemBox data={this.props.data.resultAdd} />
-        <ItemBox data={this.props.data.resultOther} />
-        <ItemBox data={this.props.data.resultPri} />
-        <ItemBox data={this.props.data.resultFx} />
+        <ItemBox data={this.props.route.data.resultPro} />
+        <ItemBox data={this.props.route.data.resultAdd} />
+        <ItemBox data={this.props.route.data.resultOther} hasInput />
+        <ItemBox
+          data={this.props.route.data.resultPri}
+          hasCount={[true, false, false, false]}
+          hasIcon={[false, true, false, true]}
+          alignRight
+        />
+        <ItemBox data={this.props.route.data.resultFx} />
       </div>
     );
   }

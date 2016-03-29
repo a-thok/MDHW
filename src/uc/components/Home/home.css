@@ -1,0 +1,17 @@
+.profile {
+  padding: 38px 0 24px;
+  color: #fff;
+  font-size: 14px;
+}
+.modules {
+  padding: 20px 0;
+  background: #fff;
+}
+.modules > ul {
+  display: flex;
+}
+.modules > ul > li {
+  flex-basis: 25%;
+  width: 25%;
+  text-align: center;
+}
