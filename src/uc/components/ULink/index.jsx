@@ -6,25 +6,41 @@ export default function ULink(props) {
     width: '100%',
     overflow: 'hidden',
     fontSize: '16px',
-    padding: '.6em 0',
-    textDecoration: 'none',
-    color: '#333'
-  };
-  const floatLeft = {
-    float: 'left',
-    fontSize: '25px',
-    marginRight: '10px'
-  };
-  const floatRight = {
-    float: 'right',
-    fontSize: '25px',
-    color: '#888'
+    color: '#333',
+    textDecoration: 'none'
   };
   return (
-    <a className="ulink_link" href={props.href} style={style}>
-      <i className={`fa fa-${props.icon}`} style={ floatLeft }></i>
-      <span>{props.text}</span>
-      <i className="fa fa-angle-right" style={ floatRight }></i>
+    <a className="ulink" href={props.href} style={style}>
+      <div
+        className={`fa fa-${props.icon}`}
+        style={{
+          float: 'left',
+          width: '45px',
+          padding: '8px 0',
+          textAlign: 'center'
+        }}
+      ></div>
+      <div
+        className="ulink_right"
+        style={{
+          padding: '8px 0',
+          overflow: 'hidden'
+        }}
+      >
+        <span
+          style={{
+            display: 'inline-block',
+            verticalAlign: 'middle'
+          }}
+        >{props.text}</span>
+        <i
+          className="fa fa-angle-right"
+          style={{
+            float: 'right',
+            marginRight: '15px'
+          }}
+        ></i>
+      </div>
     </a>
   );
 }
