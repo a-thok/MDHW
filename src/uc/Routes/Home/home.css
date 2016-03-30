@@ -1,60 +1,49 @@
 .profile {
-  padding: 38px 20px 10px;
-  color: #fff;
+  padding: 30px 20px 10px;
+  background: red;
   font-size: 14px;
-  text-align: center;
-  background: red;
+  color: #fff;
 }
-.profile > img {
+.profile > h1 {
+  font-size: 20px;
+}
+.profile > img { /* 兼容uc */
   width: 100px;
-  width: 24.8vw;
   height: 100px;
-  height: 24.8vw;
-  border-radius: 50px;
-  background: deepskyblue;
 }
-.profile_msg {
-  padding: 10px 0;
-}
-.profile_msg span:last-child {
-  margin-left: 20px;
-}
-.profile_text {
-  text-align: left;
-}
-.basicList {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0 0;
+
+.basics {
   background: #fff;
+  font-size: 14px;
 }
-.basicFunc {
-  width: 33.3333%;
+.basics > li {
+  display: flex;
+  align-items: center;
 }
-.basicFunc > span {
+.basics_content {
+  flex-basis: 100%;
+  width: 100%;
+}
+.basics li::after {
+  content: "";
   display: block;
-  margin: 0 auto;
-  padding: 5px 0;
-  text-align: center;
-  color: #333;
-  border-right: 1px solid #ddd;
-}
-.basicFunc > span:last-child {
-  color: red;
-  border: 0;
-}
-.basicFunc-none > span {
-  border: 0;
-}
-.basicFunc_img {
-  width: 50px;
-  width: 12vw;
+  width: 0;
   height: 50px;
-  height: 12vw;
-  border-radius: 50px;
-  background: red;
+  border-right: 1px solid var(--borderColorLight);
 }
+.basics li:last-child::after {
+  border: 0;
+}
+.basics_num {
+  height: 24px;
+  line-height: 24px;
+  color: red;
+}
+.basics img { /* 兼容uc */
+  width: 50px;
+  height: 50px;
+}
+
 .modulesWrap {
   margin-top: 28px;
   padding: 0 10px;
@@ -63,10 +52,11 @@
 .modules {
   display: flex;
   justify-content: space-between;
+  padding: 15px 0;
 }
 .module {
-  width: 23%;
-  padding: 15px 0;
+  flex-basis: 25%;
+  width: 25%;
 }
 .module > span {
   display: block;
@@ -74,22 +64,14 @@
   font-size: 14px;
   text-align: center;
 }
-.module_img {
+.module > span > img {
   width: 50px;
-  width: 14.1333vw;
+  width: 14vw;
   height: 50px;
-  height: 14.1333vw;
-  background: red;
+  height: 14vw;
 }
-.link {
-  text-decoration: none;
+
+.ulinkWrap {
   margin-top: 20px;
   background: #fff;
-  padding: 0 10px;
-}
-.ulink_link {
-  border-bottom: 1px solid #ddd;
-}
-.link a:last-child {
-  border: 0;
 }
