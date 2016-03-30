@@ -17,7 +17,8 @@ const Reservation = React.createClass({
       repayNum: 0,
       danjia: '1.00',
       yunfei: '免运费',
-      price: '1.00'
+      price: '1.00',
+      fx: '风险提示内容'
     };
     return state;
   },
@@ -59,7 +60,8 @@ const Reservation = React.createClass({
           <FormItemTextRight name="支持金额" text={this.state.price} font="￥" color="red" />
         </div>
         <div className="Reservation_box">
-          <FormItemText name="风险提示" text={this.state.name} hasAttention />
+          <p><i className="fa fa-exclamation-circle"></i>风险提示</p>
+          <p>{this.state.fx}</p>
         </div>
       </div>
     );
