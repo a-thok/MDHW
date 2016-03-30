@@ -1,11 +1,38 @@
 .Reservation_box {
-  padding-top: 0.5em;
+  padding: 10px .8em;
   margin-bottom: 1em;
   background-color: #fff;
+}
+.Reservation_box-width > p > span:first-child,
+.Reservation_box_img > p > span:first-child {
+  width: 21%;
+}
+.Reservation_box-width > p > span:last-child,
+.Reservation_box_img > p > span:last-child,
+.Reservation_box-width > p > input {
+  width: 77%;
 }
 .FormItemCount,
 .FormItemTextRight {
   display: flex;
-  padding: 0 .8em;
+  /*padding: 0 .8em;*/
   justify-content: space-between;
+}
+.Reservation > div:first-child > p:first-child {
+  border-bottom: 2px dotted #ccc;
+}
+.Reservation_box_img {
+  color: #888;
+}
+.Reservation_box_tColor > div > p:last-child {
+  color: red;
+}
+.Reservation_box .fa {
+  color: #888;
+  margin-right: 5px;
+}
+.Reservation_box_text {
+  color: #888;
+  line-height: 2;
+  font-size: 14px;
 }

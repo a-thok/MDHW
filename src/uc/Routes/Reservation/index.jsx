@@ -36,16 +36,16 @@ const Reservation = React.createClass({
   render: function () {
     return (
       <div className="Reservation">
-        <div className="Reservation_box">
+        <div className="Reservation_box Reservation_box-width">
           <FormItemText name="项目名称" text={this.state.name} />
           <FormItemText name="发起人" text={this.state.person} />
           <FormItemText name="回报内容" text={this.state.text} />
         </div>
-        <div className="Reservation_box">
+        <div className="Reservation_box Reservation_box-width">
           <FormItemText name="收获地址" text={this.state.pName} />
-          <FormItemText name="图片" text={this.state.pAddr} />
+          <div className="Reservation_box_img"><FormItemText name="图片" text={this.state.pAddr} /></div>
         </div>
-        <div className="Reservation_box">
+        <div className="Reservation_box Reservation_box-width">
           <FormItemInput name="备注信息" text={this.state.remark} />
         </div>
         <div className="Reservation_box">
@@ -57,11 +57,11 @@ const Reservation = React.createClass({
           />
           <FormItemTextRight name="支持单价" text={this.state.danjia} font="￥" />
           <FormItemTextRight name="配送运费" text={this.state.yunfei} />
-          <FormItemTextRight name="支持金额" text={this.state.price} font="￥" color="red" />
+          <div className="Reservation_box_tColor"><FormItemTextRight name="支持金额" text={this.state.price} font="￥" color="red" /></div>
         </div>
         <div className="Reservation_box">
           <p><i className="fa fa-exclamation-circle"></i>风险提示</p>
-          <p>{this.state.fx}</p>
+          <p className="Reservation_box_text">{this.state.fx}</p>
         </div>
       </div>
     );

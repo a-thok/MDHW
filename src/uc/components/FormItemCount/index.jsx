@@ -6,7 +6,8 @@ const FormItemCount = React.createClass({
       display: 'inline-block',
       width: '1.4em',
       textAlign: 'center',
-      border: '1px solid #999'
+      border: '1px solid #999',
+      background: '#f5f5f5'
     };
     let inputStyle = {
       width: '2.5em',
@@ -14,9 +15,12 @@ const FormItemCount = React.createClass({
       paddingLeft: '.8em',
       verticalAlign: 'top'
     };
+    const textstyle = {
+      color: '#888'
+    };
     return (
       <p className="FormItemCount">
-      <span>{this.props.name}:</span>
+      <span style={textstyle}>{this.props.name}:</span>
       <span style={this.props.style}>
         <label style={labelStyle} onClick={this.props.onReduceNumber}>-</label>
         <input style={inputStyle} type="text" value={this.props.text} />

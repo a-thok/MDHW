@@ -27,10 +27,29 @@ const FormItemInput = React.createClass({
     //   }
     //   return <span style={style}>{this.props.text}</span>;
     // }.bind(this)());
+    const style = {
+      width: '100%',
+      fontSize: '16px',
+      padding: '.6em 0'
+    };
+    const textleft = {
+      display: 'inline-block',
+      // width: '22%',
+      textAlign: 'right',
+      verticalAlign: 'top'
+    };
+    const textright = {
+      display: 'inline-block',
+      // width: '76%',
+      marginLeft: '5px',
+      padding: '0 .5em',
+      color: '#888',
+      border: '0'
+    };
     return (
-      <p className="FormItemInput">
-        <span className="">{this.props.name}:</span>
-        <input className="" text={this.props.text} />
+      <p className="FormItemInput" style={style}>
+        <span className="" style={textleft}>{this.props.name}:</span>
+        <input className="" text={this.props.text} style={textright} />
       </p>
     );
   }

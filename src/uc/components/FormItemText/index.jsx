@@ -17,10 +17,26 @@ const FormItemText = React.createClass({
     //   }
     //   return <span style={style}>{this.props.text}</span>;
     // }.bind(this)());
+    const style = {
+      width: '100%',
+      fontSize: '16px',
+      padding: '.6em 0'
+    };
+    const textleft = {
+      display: 'inline-block',
+      // width: '22%',
+      textAlign: 'right',
+      verticalAlign: 'top'
+    };
+    const textright = {
+      display: 'inline-block',
+      // width: '76%',
+      marginLeft: '5px'
+    };
     return (
-      <p className="FormItemText" >
-        <span className="">{this.props.name}:</span>
-        <span className="" >{this.props.text}</span>
+      <p className="FormItemText" style={style}>
+        <span className="" style={textleft}>{this.props.name}:</span>
+        <span className="" style={textright}>{this.props.text}</span>
       </p>
     );
   }

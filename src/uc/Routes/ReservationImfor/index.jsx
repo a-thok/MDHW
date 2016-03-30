@@ -15,11 +15,11 @@ const ReservationImfor = React.createClass({
   render: function () {
     return (
       <div className="ReservationImfor">
-        <FormItemInput name="姓名" />
-        <FormItemInput name="手机" />
+       <span className="ReservationImfor_width"><FormItemInput name="姓名" /></span>
+       <span className="ReservationImfor_width"><FormItemInput name="手机" /></span>
         <FormItemSelect name="地址" />
         <p><input type="checkbox" />设为默认地址</p>
-        <FormItemBtn value="保存" />
+        <div className="ReservationImfor_btn"><FormItemBtn value="保存" /></div>
       </div>
     );
   }
