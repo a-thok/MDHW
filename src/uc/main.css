@@ -2,4 +2,4 @@
 @import './routes/Reservation/box.css';
 @import './routes/ReservationImfor/box.css';
 @import "./routes/home/home.css";
-@import "./routes/home/ulink.css";
+@import "./components/ulink/ulink.css";
