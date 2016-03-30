@@ -3,7 +3,7 @@ import React from 'react';
 import Profile from './Profile';
 import Basics from './Basics';
 import Modules from './Modules';
-import ULink from '../ULink';
+import ULink from '../../components/ULink';
 
 export default React.createClass({
   getInitialState: function () {
