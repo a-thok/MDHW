@@ -31,9 +31,8 @@ export default function company() {
   }
 
   render({
-    buttons: document.querySelector('.list_more'),
+    template,
     api: '/m/HR/CompanyList',
-    template: template,
     container: document.querySelector('.list')
   });
 }
