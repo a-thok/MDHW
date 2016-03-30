@@ -1,3 +1,4 @@
 @import './routes/Reservation/box.css';
 @import './routes/ReservationImfor/box.css';
-@import "./routes/home/home.css";
+@import "./routes/Home/home.css";
+@import "./routes/Addresses/addresses.css";
