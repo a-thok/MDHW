@@ -30,12 +30,12 @@ export default React.createClass({
           money={this.state.money}
         />
         <Modules />
-        <div>
+        <div className="link">
           <ULink href="#" text="我的收藏" icon="angle-right" />
           <ULink href="#" text="我的足迹" icon="angle-right" />
           <ULink href="#" text="我的服务" icon="angle-right" />
         </div>
-        <div>
+        <div className="link">
           <ULink href="#" text="帮助" icon="angle-right" />
           <ULink href="#" text="设置" icon="angle-right" />
         </div>

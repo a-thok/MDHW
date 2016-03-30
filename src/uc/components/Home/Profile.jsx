@@ -5,8 +5,8 @@ export default function Profile(props) {
     <div className="profile">
       <img src="#" alt={props.name} />
       <h1>{props.name}</h1>
-      <p>账号：{props.phone} {props.company}</p>
-      <p>{props.intro}</p>
+      <p className="profile_msg">账号：{props.phone}{props.company}</p>
+      <p className="profile_text">{props.intro}</p>
     </div>
   );
 }

@@ -1,17 +1,95 @@
 .profile {
-  padding: 38px 0 24px;
+  padding: 38px 20px 10px;
   color: #fff;
   font-size: 14px;
+  text-align: center;
+  background: red;
 }
-.modules {
-  padding: 20px 0;
+.profile > img {
+  width: 100px;
+  width: 24.8vw;
+  height: 100px;
+  height: 24.8vw;
+  border-radius: 50px;
+  background: deepskyblue;
+}
+.profile_msg {
+  padding: 10px 0;
+}
+.profile_msg span:last-child {
+  margin-left: 20px;
+}
+.profile_text {
+  text-align: left;
+}
+.basicList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 0;
   background: #fff;
 }
-.modules > ul {
-  display: flex;
+.basicFunc {
+  width: 33.3333%;
 }
-.modules > ul > li {
-  flex-basis: 25%;
-  width: 25%;
+.basicFunc > span {
+  display: block;
+  margin: 0 auto;
+  padding: 5px 0;
   text-align: center;
+  color: #333;
+  border-right: 1px solid #ddd;
+}
+.basicFunc > span:last-child {
+  color: red;
+  border: 0;
+}
+.basicFunc-none > span {
+  border: 0;
+}
+.basicFunc_img {
+  width: 50px;
+  width: 12vw;
+  height: 50px;
+  height: 12vw;
+  border-radius: 50px;
+  background: red;
+}
+.modulesWrap {
+  margin-top: 28px;
+  padding: 0 10px;
+  background: #fff;
+}
+.modules {
+  display: flex;
+  justify-content: space-between;
+}
+.module {
+  width: 23%;
+  padding: 15px 0;
+}
+.module > span {
+  display: block;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+}
+.module_img {
+  width: 50px;
+  width: 14.1333vw;
+  height: 50px;
+  height: 14.1333vw;
+  background: red;
+}
+.link {
+  text-decoration: none;
+  margin-top: 20px;
+  background: #fff;
+  padding: 0 10px;
+}
+.ulink_link {
+  border-bottom: 1px solid #ddd;
+}
+.link a:last-child {
+  border: 0;
 }
