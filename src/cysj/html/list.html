@@ -28,7 +28,7 @@
           <span class="filter_title_text"><span class="filter_active">分类</span><i class="fa fa-angle-up"></i></span>
         </div>
         <div class="filter_content">
-          <ul class="filter_content_list filter_content_list-type" data-filter="type">
+          <ul class="filter_content_list filter_content_list-type scroll" data-filter="type">
             <!--<li class="filter_content_list_item">不限<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
             <li class="filter_content_list_item">截稿最迟<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
             <li class="filter_content_list_item">价格最高<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
@@ -39,15 +39,13 @@
       </div>
       <div class="filter_item">
         <div class="filter_title filter_title-line">
-          <span class="filter_title_text"><span class="filter_active">任务类型</span><i class="fa fa-angle-up"></i></span>
+          <span class="filter_title_text"><span class="filter_active">任务模式</span><i class="fa fa-angle-up"></i></span>
         </div>
         <div class="filter_content">
-          <ul class="filter_content_list" data-filter="">
+          <ul class="filter_content_list" data-filter="transaction">
             <li class="filter_content_list_item" data-code="">不限<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">截稿最迟<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">价格最高<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">人数最高<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">最热门<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="0">悬赏模式<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="1">投标模式<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
           </ul>
         </div>
       </div>
@@ -56,26 +54,29 @@
           <span class="filter_title_text"><span class="filter_active">赏金状态</span><i class="fa fa-angle-up"></i></span>
         </div>
         <div class="filter_content">
-          <ul class="filter_content_list" data-filter="">
+          <ul class="filter_content_list" data-filter="state">
             <li class="filter_content_list_item" data-code="">不限<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">截稿最迟<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">价格最高<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">人数最高<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">最热门<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="2">审核通过<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="3">托管赏金<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="4">威客投标<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="5">雇主选标<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="6">威客工作<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="7">验收成功<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
           </ul>
         </div>
       </div>
       <div class="filter_item">
         <div class="filter_title filter_title-line">
-          <span class="filter_title_text"><span class="filter_active">筛选</span><i class="fa fa-angle-up"></i></span>
+          <span class="filter_title_text"><span class="filter_active">排序</span><i class="fa fa-angle-up"></i></span>
         </div>
         <div class="filter_content">
-          <ul class="filter_content_list" data-filter="">
+          <ul class="filter_content_list" data-filter="sort">
             <li class="filter_content_list_item" data-code="">不限<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">截稿最迟<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">价格最高<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">人数最高<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
-            <li class="filter_content_list_item" data-code="">最热门<span class="item_iconHide" ><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="money">价格<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="count">参与人数<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="collect">热门程度<span class="item_iconHide" ><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="xmzq">项目周期<span class="item_iconHide"><i class="fa fa-check-circle"></i></span></li>
+            <li class="filter_content_list_item" data-code="brows">浏览人数<span class="item_iconHide" ><i class="fa fa-check-circle"></i></span></li>
           </ul>
         </div>
       </div>
