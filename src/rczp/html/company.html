@@ -31,7 +31,7 @@
         <div class="filter_content">
           <div class="filter_content_wrap">
             <ul class="filter_content_list filter_content_list-province"></ul>
-            <ul class="filter_content_list filter_content_list-city"></ul>
+            <ul class="filter_content_list filter_content_list-city" data-filter="cityname"></ul>
           </div>
           <div class="filter_content_btns">
             <button class="filter_content_btn" type="button">取消</button>
@@ -47,9 +47,9 @@
         </div>
         <div class="filter_content">
           <div class="filter_content_wrap">
-            <ul class="filter_content_list">
+            <ul class="filter_content_list"  data-filter="scale">
               <li class="filter_content_list_item">规模不限</li>
-              <li class="filter_content_list_item">2K以下</li>
+              <li class="filter_content_list_item">20人</li>
               <li class="filter_content_list_item">2K-5K</li>
               <li class="filter_content_list_item">5K-10K</li>
               <li class="filter_content_list_item">10K-15K</li>
@@ -72,7 +72,7 @@
         </div>
         <div class="filter_content">
           <div class="filter_content_wrap">
-            <ul class="filter_content_list">
+            <ul class="filter_content_list"  data-filter="trade">
               <li class="filter_content_list_item">行业不限</li>
               <li class="filter_content_list_item">移动互联网</li>
               <li class="filter_content_list_item">电子商务</li>
@@ -191,6 +191,12 @@
       <!--<button class="list_more" type="button">查看更多</button>-->
     </section>
     <!--列表 结束-->
+    
+    <!-- 加载栏 开始-->
+    <div class="list_load">
+      <i class="fa fa-spinner fa-pulse"></i><span class="list_load_text">加载中...</span>
+    </div>
+    <!-- 加载栏 结束-->
     
     <!--导航 开始-->
     <nav class="nav">

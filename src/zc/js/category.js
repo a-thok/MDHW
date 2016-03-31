@@ -9,9 +9,10 @@ export default function category() {
   showFilter();
   selectFilter();
   // 渲染列表
+  let load = document.querySelector('.list_load');
   render({
     template,
-    buttons: $('.list_more'),
+    load,
     api: '/m/ZC/ZcList',
     container: $('.zcList')
   });

@@ -3,13 +3,13 @@
  * @param {Object} button - DOM element that trigger the rendering
  * @param {Object} config - render configuration
  */
-export default function render({ api, params, template, container, immediate }) {
+export default function render({ api, params, template, container, immediate, load }) {
   // 设置fetch请求参数
   const body = params || {
     pageIndex: 1,
     pageSize: 10
   };
-
+  let loadRemain = load.clientHeight;
   // 总页数
   let totalPages;
   let fetching = false;
@@ -20,12 +20,15 @@ export default function render({ api, params, template, container, immediate }) 
     const docHeight = document.documentElement.clientHeight;
 
     const pageRemain = pageHeight - pageScroll - docHeight;
-    if (pageRemain > 100 || fetching) return;
+    if (pageRemain > loadRemain || fetching) return;
 
     body.pageIndex++;
-    console.log(body.pageIndex, totalPages);
-    if (body.pageIndex > totalPages) return;
-
+    // if (body.pageIndex > totalPages) return;
+    if (body.pageIndex > totalPages) {
+      load.children[0].classList.remove('fa-spinner');
+      load.children[1].textContent = '没有更多条目';
+      return;
+    }
     fetching = true;
     // 请求数据
     fetch(api, {
@@ -53,6 +56,6 @@ export default function render({ api, params, template, container, immediate }) 
 
   if (immediate) {
     container.innerHTML = '';
-    // container.listener(null, btns[0], true);
+    container.listener();
   }
 }

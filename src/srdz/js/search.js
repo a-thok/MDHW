@@ -1,4 +1,4 @@
-import { $, pageCallback } from 'func';
+// import { $, pageCallback } from 'func';
 import doSearch from 'doSearch';
 import template from './template.js';
 // import render from 'render'
@@ -14,13 +14,12 @@ export default function search() {
   //     e.target.classList.add('srchBtn_list_item-bgColor')
   //   })
   // })
-
+  let load = document.querySelector('.list_load');
   let config = {
     template,
-    buttons: $('.pagination_btn'),
+    load,
     api: '/m/Srdz/SrdzList',
     container: document.querySelector('.hostlist'),
-    cb: pageCallback
   };
 
   doSearch({

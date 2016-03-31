@@ -1,19 +1,44 @@
-import { $, pageCallback } from 'func';
+import { $ } from 'func';
 import render from 'render';
 import template from './template.js';
-
 import { showFilter, selectFilter } from 'filter';
-showFilter();
-selectFilter();
-// 图标没显示
 
-export default function list() {
-  render({
+export function list() {
+  let load = document.querySelector('.list_load');
+  let config = {
     template,
-    buttons: $('.pagination_btn'),
+    load,
     api: '/m/DIY/DiyList',
-    replace: true,
+    params: {
+      pageIndex: 0,
+      pageSize: 10
+    },
     container: $('.hostlist'),
-    cb: pageCallback
+  };
+  render(config);
+
+  showFilter();
+  selectFilter((filter, text) => {
+    config.params.pageIndex = 0;
+    config.params[filter] = text;
+    config.immediate = true;
+    render(config);
   });
+}
+export function listType() {
+  fetch('/m/DIY/DiyTypeList')
+    .then(res => res.json())
+    .then(data => {
+      const html = data.result.reduce((prev, curr) => {
+        const lis = curr.item.reduce((_prev, _curr) => (
+          `${_prev}
+            <li class="filter_content_list_item" data-id="${_curr.id}">
+              ${_curr.protype}
+              <span class="item_iconHide"><i class="fa fa-check-circle"></i></span>
+            </li>`
+        ), '');
+        return prev + lis;
+      }, '');
+      $('.filter_content_list-type').innerHTML = html;
+    });
 }
