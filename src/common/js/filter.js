@@ -62,9 +62,9 @@ export function selectFilter(cb) {
         const text = e.target.textContent.trim();
         wrapper.querySelector('.filter_active').textContent = text;
         // 获取对应类型ID
-        const typeid = e.target.getAttribute('data-code');
+        const type = e.target.getAttribute('data-code');
         const filter = e.currentTarget.getAttribute('data-filter');
-        cb(filter, typeid);
+        cb(filter, type);
         // 隐藏当前过滤器
         wrapper.classList.remove('is-show');
         document.body.classList.remove('is-static'); // 恢复body滚动

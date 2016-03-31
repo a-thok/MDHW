@@ -39,9 +39,9 @@ export default function company() {
   fixFilter();
   showFilter();
   hideFilter();
-  selectFilter((filter, text) => {
+  selectFilter((filter, type) => {
     config.params.pageIndex = 0;
-    config.params[filter] = text;
+    config.params[filter] = type;
     config.immediate = true;
     render(config);
   });
