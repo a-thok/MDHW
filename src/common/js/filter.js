@@ -61,8 +61,10 @@ export function selectFilter(cb) {
         // 获取文本，填充到对应位置
         const text = e.target.textContent.trim();
         wrapper.querySelector('.filter_active').textContent = text;
+        // 获取对应类型ID
+        const typeid = e.target.getAttribute('data-code');
         const filter = e.currentTarget.getAttribute('data-filter');
-        cb(filter, text);
+        cb(filter, typeid);
         // 隐藏当前过滤器
         wrapper.classList.remove('is-show');
         document.body.classList.remove('is-static'); // 恢复body滚动
