@@ -25,7 +25,7 @@ export function list() {
     render(config);
   });
 }
-export function listType() {
+export function listFilter() {
   fetch('/m/DIY/DiyTypeList')
     .then(res => res.json())
     .then(data => {
