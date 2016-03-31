@@ -18,9 +18,9 @@ export function list() {
   };
   render(config);
   showFilter();
-  selectFilter((filter, typeid) => {
+  selectFilter((filter, type) => {
     config.params.pageIndex = 0;
-    config.params[filter] = typeid;
+    config.params[filter] = type;
     config.immediate = true;
     render(config);
   });
