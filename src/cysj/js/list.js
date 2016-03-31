@@ -18,9 +18,9 @@ export function list() {
   render(config);
 
   showFilter();
-  selectFilter((filter, typeid) => {
+  selectFilter((filter, type) => {
     config.params.pageIndex = 0;
-    config.params[filter] = typeid;
+    config.params[filter] = type;
     config.immediate = true;
     render(config);
   });
@@ -32,7 +32,7 @@ export function listFilter() {
       const html = data.result.reduce((prev, curr) => {
         const lis = curr.item.reduce((_prev, _curr) => (
           `${_prev}
-            <li class="filter_content_list_item" data-id="${_curr.id}">
+            <li class="filter_content_list_item" data-code="${_curr.id}">
               ${_curr.protype}
               <span class="item_iconHide"><i class="fa fa-check-circle"></i></span>
             </li>`
