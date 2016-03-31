@@ -14,21 +14,24 @@ export default function render({ api, params, template, container, immediate, lo
   let totalPages;
   let fetching = false;
 
+  function noMore() {
+    load.children[0].classList.remove('fa-spinner');
+    load.children[1].textContent = '没有更多条目';
+  }
+
   container.listener = () => {
     const pageHeight = document.body.offsetHeight;
     const pageScroll = document.body.scrollTop;
     const docHeight = document.documentElement.clientHeight;
-
     const pageRemain = pageHeight - pageScroll - docHeight;
     if (pageRemain > loadRemain || fetching) return;
 
     body.pageIndex++;
-    // if (body.pageIndex > totalPages) return;
     if (body.pageIndex > totalPages) {
-      load.children[0].classList.remove('fa-spinner');
-      load.children[1].textContent = '没有更多条目';
+      noMore();
       return;
     }
+
     fetching = true;
     // 请求数据
     fetch(api, {
@@ -40,7 +43,11 @@ export default function render({ api, params, template, container, immediate, lo
     })
       .then(res => res.json())
       .then(data => {
-        if (!data.result.data.length) return;
+        if (data.result.total < 1) {
+          load.children[0].classList.remove('fa-spinner');
+          load.children[1].textContent = '暂无数据';
+          return;
+        }
 
         // 计算总页数
         totalPages = Math.ceil(data.result.total / body.pageSize);
@@ -48,6 +55,12 @@ export default function render({ api, params, template, container, immediate, lo
         // 生成html
         const html = template(data);
         container.insertAdjacentHTML('beforeend', html);
+
+        if (totalPages < body.pageSize) {
+          noMore();
+          return;
+        }
+
         fetching = false;
       });
   };
