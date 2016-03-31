@@ -5,12 +5,12 @@
 }
 .Reservation_box-width > p > span:first-child,
 .Reservation_box_img > p > span:first-child {
-  width: 21%;
+  width: 24%;
 }
 .Reservation_box-width > p > span:last-child,
 .Reservation_box_img > p > span:last-child,
 .Reservation_box-width > p > input {
-  width: 77%;
+  width: 74%;
 }
 .FormItemCount,
 .FormItemTextRight {
