@@ -1,15 +1,14 @@
-import { $, pageCallback } from 'func';
+import { $ } from 'func';
 import doSearch from 'doSearch';
 import template from './template.js';
 export default function search() {
+  let load = document.querySelector('.list_load');
   let config = {
     template,
-    buttons: $('.pagination_btn'),
+    load,
     api: '/m/DIY/DiyList',
-    container: document.querySelector('.hostlist'),
-    cb: pageCallback
+    container: $('.hostlist'),
   };
-
   doSearch({
     config,
     srchbtn: '.srch_btn'

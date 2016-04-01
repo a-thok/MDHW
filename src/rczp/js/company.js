@@ -2,13 +2,6 @@ import render from 'render';
 import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter } from 'filter';
 
 export default function company() {
-  // 过滤
-  fixFilter();
-  showFilter();
-  hideFilter();
-  selectFilter();
-  generateAreaFilter();
-
   // 渲染列表
   function template(data) {
     return data.result.data.reduce((pre, cur) => {
@@ -29,11 +22,28 @@ export default function company() {
       );
     }, '');
   }
-
-  render({
-    buttons: document.querySelector('.list_more'),
+  let load = document.querySelector('.list_load');
+  let config = {
+    template,
+    load,
     api: '/m/HR/CompanyList',
-    template: template,
+    params: {
+      pageIndex: 1,
+      pageSize: 10
+    },
     container: document.querySelector('.list')
+  };
+  render(config);
+
+  // 过滤
+  fixFilter();
+  showFilter();
+  hideFilter();
+  selectFilter((filter, type) => {
+    config.params.pageIndex = 0;
+    config.params[filter] = type;
+    config.immediate = true;
+    render(config);
   });
+  generateAreaFilter();
 }

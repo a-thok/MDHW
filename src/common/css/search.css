@@ -1,6 +1,7 @@
 .cate.is-hidden,
 .list_more.is-hidden,
 .filter.is-hidden,
-.pagination.is-hidden {
+.pagination.is-hidden,
+.list_load.is-hidden {
   display: none;
 }

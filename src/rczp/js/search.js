@@ -24,11 +24,12 @@ export default function search() {
       searchText.setAttribute('data-type', searchText.textContent === '职位' ? 1 : 2);
     }
   });
-
+  let load = document.querySelector('.list_load');
   let config = {
     template,
-    buttons: $('.list_more'),
+    load,
     api: '/m/HR/JobList',
+    replace: true,
     container: document.querySelector('.list')
   };
 
@@ -42,3 +43,4 @@ export default function search() {
     }
   });
 }
+

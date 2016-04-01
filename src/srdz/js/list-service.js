@@ -1,6 +1,5 @@
 import { $, $from, $parent } from '../../common/js/func.js';
 import { showFilter } from 'filter';
-import { pageCallback } from 'func';
 import render from 'render';
 
 showFilter();
@@ -25,14 +24,12 @@ export function listService() {
         </li>`
     ), '');
   }
-
+  let load = document.querySelector('.list_load');
   render({
     template,
-    buttons: $('.pagination_btn'),
+    load,
     api: '/m/Srdz/SrdzList',
-    replace: true,
     container: document.querySelector('.hostlist'),
-    cb: pageCallback
   });
 
   // 条件筛选，待清理

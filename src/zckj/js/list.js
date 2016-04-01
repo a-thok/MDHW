@@ -1,5 +1,5 @@
 import render from 'render';
-import { $, pageCallback } from 'func';
+// import { $, pageCallback } from 'func';
 // import doSearch from 'doSearch'
 export default function list() {
   function template(data) {
@@ -15,14 +15,12 @@ export default function list() {
         </li>`
     ), '');
   }
-
+  let load = document.querySelector('.list_load');
   let config = {
     template,
-    buttons: $('.pagination_btn'),
+    load,
     api: '/m/MS/MakerSpaceList',
     container: document.querySelector('.list'),
-    replace: true,
-    cb: pageCallback
   };
   render(config);
   // doSearch({

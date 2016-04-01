@@ -6,24 +6,22 @@ export default function doSearch({ config, srchbtn, url }) {
     immediate: true,
     replace: true
   });
-
   // 热门搜索
   const hot = $('.cate');
-
   // 设置页面各部分的显示与隐藏
   function setView() {
     const filter = $('.filter');
-
     if (!hot.classList.contains('is-hidden')) {
       // 隐藏热门搜索项
       hot.classList.add('is-hidden');
+      config.load.classList.remove('is-hidden');
       // 显示其它相关元素
       if (filter.length) filter.classList.remove('is-hidden');
-      if (config.buttons.length) {
-        $('.pagination').classList.remove('is-hidden');
-      } else {
-        config.buttons.classList.remove('is-hidden');
-      }
+      // if (config.buttons.length) {
+      //   $('.pagination').classList.remove('is-hidden');
+      // } else {
+      //   config.buttons.classList.remove('is-hidden');
+      // }
     }
   }
 

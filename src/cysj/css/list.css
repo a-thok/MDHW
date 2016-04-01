@@ -13,3 +13,8 @@
 .hotwrap-nomar { /*热门推荐样式*/
   margin-top: 0;
 }
+/*分类滚动*/
+.scroll {
+  height: 90vh;
+  overflow: auto;
+}

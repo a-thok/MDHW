@@ -1,30 +1,38 @@
-import { $from } from 'func';
 /**
  * Render a list using server data
  * @param {Object} button - DOM element that trigger the rendering
  * @param {Object} config - render configuration
  */
-export default function render({ buttons, api, params, template, container, replace, immediate, cb }) {
-  const btns = $from(buttons);
-
+export default function render({ api, params, template, container, immediate, load }) {
   // 设置fetch请求参数
   const body = params || {
     pageIndex: 1,
     pageSize: 10
   };
-
+  let loadRemain = load.clientHeight;
   // 总页数
   let totalPages;
+  let fetching = false;
 
-  container.listener = (e, button, isNextPage) => {
-    const target = button || e.target;
-    // 即将被请求的页数
-    const requiedPage = isNextPage ? body.pageIndex + 1 : body.pageIndex - 1;
-    if (requiedPage > totalPages || requiedPage < 1) return;
+  function noMore() {
+    load.children[0].classList.remove('fa-spinner');
+    load.children[1].textContent = '没有更多条目';
+  }
 
-    // 实际变更页数
-    body.pageIndex = requiedPage;
+  container.listener = () => {
+    const pageHeight = document.body.offsetHeight;
+    const pageScroll = document.body.scrollTop;
+    const docHeight = document.documentElement.clientHeight;
+    const pageRemain = pageHeight - pageScroll - docHeight;
+    if (pageRemain > loadRemain || fetching) return;
 
+    body.pageIndex++;
+    if (body.pageIndex > totalPages) {
+      noMore();
+      return;
+    }
+
+    fetching = true;
     // 请求数据
     fetch(api, {
       method: 'POST',
@@ -35,50 +43,32 @@ export default function render({ buttons, api, params, template, container, repl
     })
       .then(res => res.json())
       .then(data => {
+        if (data.result.total < 1) {
+          load.children[0].classList.remove('fa-spinner');
+          load.children[1].textContent = '暂无数据';
+          return;
+        }
+
         // 计算总页数
         totalPages = Math.ceil(data.result.total / body.pageSize);
 
-        if (btns.length > 1) {
-          // 如果是上下页翻页，每次重置按钮的class到初始状态
-          btns.forEach((btn) => {
-            btn.disabled = false;
-          });
-          // 请求头尾页时，判断是否添加disalbed
-          if (isNextPage && requiedPage === totalPages || !isNextPage && requiedPage === 1) {
-            target.disabled = true;
-          }
-        } else {
-          // 如果是加载更多，到最后一页时改变文本
-          if (requiedPage === totalPages) {
-            target.disabled = true;
-            target.textContent = '没有更多内容'; // 临时
-          }
-        }
-
         // 生成html
         const html = template(data);
-        // 插入文档
-        if (replace) {
-          container.innerHTML = html;
-        } else {
-          container.insertAdjacentHTML('beforeend', html);
+        container.insertAdjacentHTML('beforeend', html);
+
+        if (totalPages < body.pageSize) {
+          noMore();
+          return;
         }
 
-        // 使用回调函数操作额外的行为
-        if (cb) cb(body, data);
+        fetching = false;
       });
   };
 
-  btns.forEach((btn, i, arr) => {
-    // 防止重复绑定
-    btn.removeEventListener('click', container.listener);
-    // 绑定
-    const isNextPage = arr.length === 1 || i === 1;
-    btn.addEventListener('click', e => container.listener(e, null, isNextPage));
-  });
+  document.addEventListener('scroll', container.listener);
 
   if (immediate) {
     container.innerHTML = '';
-    container.listener(null, btns[0], true);
+    container.listener();
   }
 }

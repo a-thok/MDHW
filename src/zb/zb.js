@@ -4,11 +4,12 @@ import './css/main.css';
 import fastclick from 'fastclick';
 fastclick.attach(document.body);
 
-import list from './js/list.js';
+import { list, listFilter } from './js/list.js';
 import detail from './js/detail.js';
 import search from './js/search.js';
 if (window.location.pathname.indexOf('list') !== -1) {
   list();
+  listFilter();
 } else if (window.location.pathname.indexOf('detail') !== -1) {
   detail();
 } else if (window.location.pathname.indexOf('search') !== -1) {
