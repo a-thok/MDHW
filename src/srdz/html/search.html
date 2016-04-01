@@ -28,6 +28,55 @@
     </section>-->
     <!--切换按钮 结束-->
     
+    <!--过滤栏 开始-->
+    <section class="filter is-hidden">
+      <div class="filter_item">
+        <div class="filter_title filter_title-line">
+          <span class="filter_title_text"><span class="filter_active">分类</span><i class="fa fa-angle-up"></i></span>
+        </div>
+        <div class="filter_content">
+          <div class="filter_content_wrap">
+            <ul class="filter_content_list filter_content_list-type" data-filter="type">
+              <!--<li class="filter_content_list_item" data-code=""}>全部分类<i class="fa fa-check-circle"></i></li>-->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title filter_title-line">
+          <span class="filter_title_text"><span class="filter_active">订制金额</span><i class="fa fa-angle-up"></i></span>
+        </div>
+        <div class="filter_content">
+          <div class="filter_content_wrap">
+            <ul class="filter_content_list state" data-filter="pricemin pricemax">
+              <li class="filter_content_list_item" data-code="">不限<i class="fa fa-check-circle"></i></li>
+              <li class="filter_content_list_item" data-code="-100">100以下<i class="fa fa-check-circle"></i></li>
+              <li class="filter_content_list_item" data-code="100-200">100-200<i class="fa fa-check-circle"></i></li>
+              <li class="filter_content_list_item" data-code="200-500">200-500<i class="fa fa-check-circle"></i></li>
+              <li class="filter_content_list_item" data-code="500-1000">500-1000<i class="fa fa-check-circle"></i></li>
+              <li class="filter_content_list_item" data-code="1000-">大于1000<i class="fa fa-check-circle"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text"><span class="filter_active">筛选</span><i class="fa fa-angle-up"></i></span>
+        </div>
+        <div class="filter_content">
+          <div class="filter_content_wrap">
+            <ul class="filter_content_list" data-filter="sort">
+              <li class="filter_content_list_item" data-code="" >不限<i class="fa fa-check-circle"></i></li>
+              <li class="filter_content_list_item" data-code="fbtime">发布时间<i class="fa fa-check-circle"></i></li>
+              <li class="filter_content_list_item" data-code="price">订制金额<i class="fa fa-check-circle"></i></li>
+              <li class="filter_content_list_item" data-code="attention">关注数量<i class="fa fa-check-circle"></i></li>
+            </ul>      
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--过滤栏 结束-->
+    
     <!--搜索框 开始-->
     <div class="srch">
       <div class="srch_wrap">
