@@ -1,41 +1,53 @@
-/* 分类 */
-.postCate {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
+.header {
+  background-image: url(../img/rczp_logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40% 70%;
+}
+.special {
+  margin: 10px 0;
+  padding: 0 3.73%;
   background: #fff;
 }
-.postCate_item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25vw;
-  padding: 20px 0 0;
-}
-.postCate_item .fa {
-  font-size: 24px;
-  color: var(--rczpColor);
-}
-/*.postCate_item_icon {
-  display: inline-block;
-  width: 7.2vw;
-  height: 7.2vw;
-  background: mediumspringgreen;
-}*/
-.postCate_item_text {
-  font-size: 16px;
+.special_title {
+  font-weight: normal;
   line-height: 3;
-}
-
-/* 职位列表 */
-.post_info {
-  font-size: 16px;
-}
-.post_name {
-  font-size: 18px;
   color: var(--rczpColor);
 }
-.post_salary {
-  color: var(--HighlightColorOrange);
+.special_list,
+.famous_list {
+  display: flex;
+  justify-content: space-between;
+}
+.cate_item_title-item {
+  padding: 0;
+  padding-bottom: 1em;
+  width: 40.8%;
+  color: var(--fontColorLight);
+}
+.cate_item_title .fa {
+  width: 50px;
+  width: 9.3333vw;
+  height: 50px;
+  height: 9.3333vw;
+  line-height: 50px;
+  line-height: 9.3333vw;
+  text-align: center;
+  border-radius: 50px;
+  background: var(--rczpColor);
+  color: #fff;
+}
+.famous_list_item {
+  width: 48%;
+  text-align: center;
+}
+.famous_list_item img {
+  display: block;
+  width: 100%;
+  height: 80px;
+  height: 20.3333vw;
+  background: red;
+}
+.famous_list_item p {
+  line-height: 2;
 }
