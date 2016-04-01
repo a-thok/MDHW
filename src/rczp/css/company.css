@@ -16,3 +16,6 @@
   color: var(--rczpColor);
   text-decoration: none;
 }
+.filter_content_list_item.is-active {
+  color: var(--rczpColor)
+}

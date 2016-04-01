@@ -31,7 +31,11 @@ export function listFilter() {
     .then(data => {
       const html = data.result.reduce((prev, curr) => (
         `${prev}<li class="filter_content_list_item" data-code="${curr.id}">
-        <i class="fa fa-fort-awesome"></i>${curr.name}</li>`
+        <span class="filter_content_list_item_icon">
+          <i class="fa fa-fort-awesome"></i>${curr.name}
+        </span>
+        <i class="fa fa-check-circle"></i>
+        </li>`
       ), '');
       $('.filter_content_list-type').innerHTML = html;
     });

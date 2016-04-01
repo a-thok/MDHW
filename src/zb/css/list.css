@@ -14,3 +14,9 @@
   font-size: 16px;
   color: orangered;
 }
+.filter_content_list_item.is-active {
+  color: var(--zbColor)
+}
+.filter_content_list_item_icon .fa {
+  margin-right: .6em;
+}

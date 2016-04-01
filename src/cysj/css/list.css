@@ -18,3 +18,6 @@
   height: 90vh;
   overflow: auto;
 }
+.filter_content_list_item.is-active {
+  color: var(--cysjColor);
+}
