@@ -4,7 +4,7 @@
   border-bottom: 1px solid var(--borderColorLight);
 }
 .srch_btn {
-  background-color: #e50013;
+  background-color: var(--srdzColor);
 }
 .grid_item_icon {
   background-color: #333;
@@ -54,6 +54,6 @@
   padding-left: .5em;
 }
 .srdz_hostlist_item_coin {
-  color: red;
+  color: var(--srdzColor);
   font-size: 16px;
 }
