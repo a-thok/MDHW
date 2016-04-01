@@ -49,14 +49,14 @@ export function selectFilter(cb) {
 
     el.addEventListener('click', e => {
       const cl = e.target.classList;
+      if (cl.contains('is-active')) return;
       if (cl.contains('filter_content_list_item') || cl.contains('grid_item_icon')) {
         const wrapper = $parent(e.target, '.filter_item');
 
-        // 选中项添加圆圈边框
-        if (cl.contains('grid_item_icon')) {
-          $from('.grid_item_icon').forEach(icon => icon.classList.remove('is-active'));
-          cl.add('is-active');
-        }
+        // 选中项视觉效果
+        const items = cl.contains('grid_item_icon') ? $from('.grid_item_icon') : $from(e.target.parentElement.children);
+        items.forEach(_e => _e.classList.remove('is-active'));
+        cl.add('is-active');
 
         // 获取文本，填充到对应位置
         const text = e.target.textContent.trim();
