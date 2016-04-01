@@ -1,36 +1,23 @@
-.ReservationImfor {
+.reservationImfor {
   background-color: #fff;
 }
-.FormItemSelect {
-  display: flex;
-}
-.ReservationImfor_width {
+.reservationImfor_width {
   display: block;
   border-bottom: 1px solid #ccc;
 }
-.FormItemSelect > div:first-child,
-.ReservationImfor_width > p > span {
-  display: block;
-  width: 17%;
-}
-.FormItemSelect > div:last-child,
-.ReservationImfor_width > p > input {
-  display: block;
-  width: 80%;
-}
-.ReservationImfor > p {
-  padding: 15px 20% 25px;
+.reservationImfor > p {
+  padding: 15px 26% 25px;
   border-bottom: 1px solid #ccc;
 }
-.ReservationImfor > p > input {
+.reservationImfor > p > input {
   margin-right: 5px;
   background-color: #ea544a;
 }
-.ReservationImfor_btn {
+.reservationImfor_btn {
   padding: 30px 0;
   display: flex;
   justify-content: center;
 }
-.ReservationImfor_btn > button {
+.reservationImfor_btn > button {
   background: #ea544a;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 const FormItemBtn = React.createClass({
   render: function () {
     return (
-      <button className="FormItemBtn" type="button">{this.props.value}</button>
+      <button className="formItemBtn" type="button">{this.props.value}</button>
     );
   }
 });
