@@ -9,6 +9,14 @@
   display: flex;
   justify-content: center;
 }
+.acRegister img {
+  width:65px;
+  width: 20vw;
+  height:65px;
+  height: 20vw;
+  border-radius: 50px;
+  background: red;
+}
 .acRegister_text {
   line-height: 65px;/*uc兼容*/
   /*align-self: center;*/
