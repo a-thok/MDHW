@@ -34,93 +34,101 @@
     <div class="filter is-hidden">
       <div class="filter_item">
         <div class="filter_title">
-          <span class="filter_title_text">地区不限</span><i class="filter_title_arrow"></i>
+          <span class="filter_title_text">
+            <span class="filter_active">地区不限</span>
+            <i class="filter_title_arrow"></i>
+          </span>
         </div>
         <div class="filter_content">
           <div class="filter_content_wrap">
             <ul class="filter_content_list filter_content_list-province"></ul>
-            <ul class="filter_content_list filter_content_list-city"></ul>
+            <ul class="filter_content_list filter_content_list-city" data-filter="citycode"></ul>
           </div>
           <div class="filter_content_btns">
-            <button class="filter_content_btn" type="button">取消</button>
+            <button class="filter_content_btn" type="button">收起</button>
           </div>
         </div>
       </div>
       <div class="filter_item">
         <div class="filter_title">
-          <span class="filter_title_text">年薪不限</span><i class="filter_title_arrow"></i>
+          <span class="filter_title_text">
+            <span class="filter_active">年薪不限</span>
+            <i class="filter_title_arrow"></i>
+          </span>
         </div>
         <div class="filter_content">
           <div class="filter_content_wrap">
-            <ul class="filter_content_list">
-              <li class="filter_content_list_item">年薪不限</li>
-              <li class="filter_content_list_item">2K以下</li>
-              <li class="filter_content_list_item">2K-5K</li>
-              <li class="filter_content_list_item">5K-10K</li>
-              <li class="filter_content_list_item">10K-15K</li>
-              <li class="filter_content_list_item">15K-25K</li>
-              <li class="filter_content_list_item">25K-50K</li>
-              <li class="filter_content_list_item">50K以上</li>
+            <ul class="filter_content_list" data-filter="yx">
+              <li class="filter_content_list_item" data-code="">年薪不限</li>
+              <li class="filter_content_list_item" data-code="2k以下">2k以下</li>
+              <li class="filter_content_list_item" data-code="2k-5k">2k-5k</li>
+              <li class="filter_content_list_item" data-code="5k-10k">5k-10k</li>
+              <li class="filter_content_list_item" data-code="10k-15k">10k-15k</li>
+              <li class="filter_content_list_item" data-code="15k-25k">15k-25k</li>
+              <li class="filter_content_list_item" data-code="25k-50k">25k-50k</li>
+              <li class="filter_content_list_item" data-code="50k以上">50k以上</li>
             </ul>
           </div>
           <div class="filter_content_btns">
-            <button class="filter_content_btn" type="button">取消</button>
+            <button class="filter_content_btn" type="button">收起</button>
           </div>
         </div>
       </div>
       <div class="filter_item">
         <div class="filter_title">
-          <span class="filter_title_text">更多</span><i class="filter_title_arrow"></i>
+          <span class="filter_title_text">
+            <span class="filter_active">更多</span>
+            <i class="filter_title_arrow"></i>
+          </span>
         </div>
         <div class="filter_content">
           <div class="filter_content_wrap">
             <div class="filter_content_more">
               <div class="filter_content_more_main">
-                <section class="filter_content_more_main_sect">
+                <section class="filter_content_more_main_sect" data-filter="gzjy">
                   <h6 class="filter_content_more_main_sect_title">工作经验</h6>
-                  <ul class="tagList tagList-filter">
-                    <li class="tagList_item tagList_item-active">应届毕业生</li>
-                    <li class="tagList_item">一年以下</li>
-                    <li class="tagList_item">1-3年</li>
-                    <li class="tagList_item">3-5年</li>
-                    <li class="tagList_item">5年以上</li>
+                  <ul class="tagList tagList-filter" data-filter="gzjy">
+                    <li class="tagList_item tagList_item-active" data-code="应届毕业生">应届毕业生</li>
+                    <li class="tagList_item" data-code="一年以下">一年以下</li>
+                    <li class="tagList_item" data-code="1-3年">1-3年</li>
+                    <li class="tagList_item" data-code="3-5年">3-5年</li>
+                    <li class="tagList_item" data-code="5年以上">5年以上</li>
                   </ul>
                 </section>
                 <section class="filter_content_more_main_sect">
                   <h6 class="filter_content_more_main_sect_title">学历要求</h6>
-                  <ul class="tagList tagList-filter">
-                    <li class="tagList_item tagList_item-active">不限</li>
-                    <li class="tagList_item">大专及以下</li>
-                    <li class="tagList_item">本科</li>
-                    <li class="tagList_item">硕士</li>
-                    <li class="tagList_item">博士及以上</li>
+                  <ul class="tagList tagList-filter" data-filter="xlyq">
+                    <li class="tagList_item tagList_item-active" data-code="">不限</li>
+                    <li class="tagList_item" data-code="大专及以下">大专及以下</li>
+                    <li class="tagList_item" data-code="本科">本科</li>
+                    <li class="tagList_item" data-code="硕士">硕士</li>
+                    <li class="tagList_item" data-code="博士及以上">博士及以上</li>
                   </ul>
                 </section>
                 <section class="filter_content_more_main_sect">
                   <h6 class="filter_content_more_main_sect_title">公司规模</h6>
-                  <ul class="tagList tagList-filter">
-                    <li class="tagList_item tagList_item-active">不限</li>
-                    <li class="tagList_item">10人及以下</li>
-                    <li class="tagList_item">10-50人</li>
-                    <li class="tagList_item">50-100人</li>
-                    <li class="tagList_item">100人以上</li>
+                  <ul class="tagList tagList-filter" data-filter="gsgm">
+                    <li class="tagList_item tagList_item-active" data-code="">不限</li>
+                    <li class="tagList_item" data-code="10人及以下">5-10人</li>
+                    <li class="tagList_item" data-code="10-50人">10-50人</li>
+                    <li class="tagList_item" data-code="50-100人">50-100人</li>
+                    <li class="tagList_item" data-code="50-100人">100-200人</li>
+                    <li class="tagList_item" data-code="100人以上">200以上</li>
                   </ul>
                 </section>
                 <section class="filter_content_more_main_sect">
-                  <h6 class="filter_content_more_main_sect_title">发布时间</h6>
-                  <ul class="tagList tagList-filter">
-                    <li class="tagList_item tagList_item-active">不限</li>
-                    <li class="tagList_item">一天</li>
-                    <li class="tagList_item">3天</li>
-                    <li class="tagList_item">一周内</li>
-                    <li class="tagList_item">一月内</li>
+                  <h6 class="filter_content_more_main_sect_title">职位排序</h6>
+                  <ul class="tagList tagList-filter" data-filter="sort">
+                    <li class="tagList_item tagList_item-active" data-code="">不限</li>
+                    <li class="tagList_item" data-code="fbtime">发布时间</li>
+                    <li class="tagList_item" data-code="collect">收藏数量</li>
                   </ul>
                 </section>
               </div>
             </div>
           </div>
           <div class="filter_content_btns">
-            <button class="filter_content_btn" type="button">取消</button>
+            <button class="filter_content_btn filter_content_btn-post" type="button">确定</button>
             <button class="filter_content_textbtn" type="button">重置</button>
           </div>
         </div>

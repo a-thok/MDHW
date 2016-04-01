@@ -14,4 +14,5 @@ if (window.location.pathname.indexOf('list') !== -1) {
   detail();
 } else if (window.location.pathname.indexOf('search') !== -1) {
   search();
+  listFilter();
 }

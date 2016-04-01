@@ -18,4 +18,5 @@ if (pathname.indexOf('list') !== -1) {
   detail();
 } else if (pathname.indexOf('search') !== -1) {
   search();
+  listFilter();
 }

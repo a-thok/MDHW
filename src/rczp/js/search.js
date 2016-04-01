@@ -2,16 +2,9 @@ import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter, mo
 import { $ } from 'func';
 import template from './template';
 import doSearch from 'doSearch';
+import render from 'render';
 
 export default function search() {
-  // 过滤
-  fixFilter();
-  showFilter();
-  hideFilter();
-  selectFilter();
-  moreFilter();
-  generateAreaFilter();
-
   // 搜索类型选择
   $('.header_srch_label').addEventListener('click', (e) => {
     // 切换显示
@@ -29,6 +22,10 @@ export default function search() {
     template,
     load,
     api: '/m/HR/JobList',
+    params: {
+      pageIndex: 1,
+      pageSize: 10
+    },
     replace: true,
     container: document.querySelector('.list')
   };
@@ -42,5 +39,26 @@ export default function search() {
       return (+type === 1) ? '/m/HR/JobList' : '/m/HR/CompanyList';
     }
   });
+
+  // 过滤
+  fixFilter();
+  showFilter();
+  hideFilter();
+  selectFilter((filter, type) => {
+    config.params.pageIndex = 0;
+    config.params[filter] = type;
+    config.immediate = true;
+    render(config);
+  });
+  moreFilter((filter, type) => {
+    config.params.pageIndex = 0;
+    config.params[filter] = type;
+    config.immediate = true;
+  });
+  // 更多选择
+  $('.filter_content_btn-post').addEventListener('click', () => {
+    render(config);
+  });
+  generateAreaFilter();
 }
 

@@ -16,12 +16,9 @@ export default function doSearch({ config, srchbtn, url }) {
       hot.classList.add('is-hidden');
       config.load.classList.remove('is-hidden');
       // 显示其它相关元素
-      if (filter.length) filter.classList.remove('is-hidden');
-      // if (config.buttons.length) {
-      //   $('.pagination').classList.remove('is-hidden');
-      // } else {
-      //   config.buttons.classList.remove('is-hidden');
-      // }
+      if (filter) {
+        filter.classList.remove('is-hidden');
+      }
     }
   }
 
