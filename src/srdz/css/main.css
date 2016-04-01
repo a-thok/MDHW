@@ -1,7 +1,6 @@
 @import "../../common/css/var.css";
 @import "./index.css";
-@import "./list-service.css";
-@import "./list-demand.css";
+@import "./list.css";
 @import "./detail.css";
 @import "./fwdetail.css";
 @import "./search.css";

@@ -4,3 +4,7 @@
 .list_item_color {
   color: lightgreen;
 }
+
+.filter_content_list_item.is-active {
+  color: var(--srdzColor);
+}
