@@ -1,6 +1,7 @@
 import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter, moreFilter } from 'filter';
 import { $ } from 'func';
-import template from './template';
+import zwTemplate from './zwTemplate';
+import gsTemplate from './gsTemplate';
 import doSearch from 'doSearch';
 import render from 'render';
 
@@ -19,8 +20,8 @@ export default function search() {
   });
   let load = document.querySelector('.list_load');
   let config = {
-    template,
     load,
+    template: zwTemplate,
     api: '/m/HR/JobList',
     params: {
       pageIndex: 1,
@@ -33,10 +34,16 @@ export default function search() {
   doSearch({
     config,
     srchbtn: '.header_srch_btn',
-    url: () => {
+    url: (config) => {
       const searchText = document.querySelector('.header_srch_label_text');
       const type = searchText.getAttributeNode('data-type').value;
-      return (+type === 1) ? '/m/HR/JobList' : '/m/HR/CompanyList';
+      if (+type === 1) {
+        config.template = zwTemplate;
+        config.api = '/m/HR/JobList';
+      } else {
+        config.template = gsTemplate;
+        config.api = '/m/HR/CompanyList';
+      }
     }
   });
 
