@@ -34,3 +34,10 @@
     line-height: 28px;
   }
 }
+.dtDeliver {
+  width: 100%;
+  padding: 1em 0;
+  border: 0;
+  background: var(--rczpColor);
+  color: #fff;
+}
