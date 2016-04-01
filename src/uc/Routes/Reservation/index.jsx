@@ -2,7 +2,7 @@ import React from 'react';
 import FormItemText from '../../components/FormItemText';
 import FormItemInput from '../../components/FormItemInput';
 import FormItemTextRight from '../../components/FormItemTextRight';
-import FormItemCount from '../../components/FormItemCount';
+import Counter from '../../components/Counter';
 
 
 const Reservation = React.createClass({
@@ -48,8 +48,8 @@ const Reservation = React.createClass({
         <div className="reservation_box reservation_box-width">
           <FormItemInput name="备注信息" text={this.state.remark} />
         </div>
-        <div className="reservation_box">
-          <FormItemCount
+        <div className="Reservation_box">
+          <Counter
             name="回报数量"
             text={this.state.repayNum}
             onAddNumber={this.onAddNumber}

@@ -1,7 +1,7 @@
 import React from 'react';
 import FormItemInput from '../../components/FormItemInput';
 import FormItemSelect from '../../components/FormItemSelect';
-import FormItemBtn from '../../components/FormItemBtn';
+import FormButton from '../../components/FormButton';
 
 const ReservationImfor = React.createClass({
   getInitialState: function () {
@@ -19,7 +19,7 @@ const ReservationImfor = React.createClass({
        <span className="reservationImfor_width"><FormItemInput name="手机" /></span>
         <FormItemSelect name="地址" />
         <p><input type="checkbox" />设为默认地址</p>
-        <div className="reservationImfor_btn"><FormItemBtn value="保存" /></div>
+        <div className="reservationImfor_btn"><FormButton value="保存" /></div>
       </div>
     );
   }
