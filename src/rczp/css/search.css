@@ -40,3 +40,27 @@
   color: var(--HighlightColorOrange);
   margin-right: .8em;
 }
+/** 置顶 **/
+.scrollTop {
+  position: fixed;
+  bottom: 10%;
+  right: 20px;
+  width: 90px;
+  width: 14.1333vw;
+  height: 90px;
+  height: 14.1333vw;
+  line-height: 90px;
+  line-height: 14.1333vw;
+  text-align: center;
+  border: 0;
+  border-radius: 100px;
+  background: #727275;
+}
+.scrollTop .fa {
+  display: block;
+  font-size: 25px;
+}
+.scrollTop span {
+  display: block;
+  margin-top: -15px;
+}
