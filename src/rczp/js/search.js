@@ -5,7 +5,7 @@ import gsTemplate from './gsTemplate';
 import doSearch from 'doSearch';
 import render from 'render';
 
-export default function search() {
+export function search() {
   // 搜索类型选择
   $('.header_srch_label').addEventListener('click', (e) => {
     // 切换显示
@@ -69,3 +69,25 @@ export default function search() {
   generateAreaFilter();
 }
 
+// 返回顶部
+export function goTop() {
+  let goTopBtn = $('.scrollTop');
+  document.addEventListener('scroll', () => {
+    const pageScroll = document.body.scrollTop;
+    if (pageScroll > 50) {
+      goTopBtn.classList.remove('is-hidden');
+    } else {
+      goTopBtn.classList.add('is-hidden');
+    }
+    function scrollTime(speed) {
+      if (document.body.scrollTop <= 0) return;
+      document.body.scrollTop -= speed;
+      scrollTime();
+    }
+    goTopBtn.addEventListener('click', () => {
+      let distance = document.body.scrollTop;
+      let speed = distance / 1000;
+      goTopBtn.timer = setTimeout(() => scrollTime(speed), 100);
+    });
+  });
+}
