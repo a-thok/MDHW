@@ -9,7 +9,7 @@ import company from './js/company.js';
 import { search, goTop } from './js/search.js';
 if (window.location.pathname.indexOf('company') !== -1) {
   company();
-} else if (window.location.pathname.indexOf('search-result') !== -1) {
+} else if (window.location.pathname.indexOf('search') !== -1) {
   search();
   goTop();
 }
