@@ -34,7 +34,7 @@ export function listFilter() {
           `${_prev}
             <li class="filter_content_list_item" data-code="${_curr.id}">
               ${_curr.protype}
-              <span class="item_iconHide"><i class="fa fa-check-circle"></i></span>
+              <i class="fa fa-check-circle"></i>
             </li>`
         ), '');
         return prev + lis;

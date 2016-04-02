@@ -136,10 +136,10 @@
   background-color: #fff;
   line-height: 54px;
 }
-.filter_content_list_item .fa {
+.filter_content_list_item .fa-check-circle {
   display: none;
 }
-.filter_content_list_item.is-active .fa {
+.filter_content_list_item.is-active .fa-check-circle {
   display: block;
   font-size: 18px;
 }

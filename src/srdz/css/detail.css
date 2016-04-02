@@ -1,9 +1,9 @@
 .person_bar_btn {
-  background: #e0383a;
+  background: var(--srdzColor);
 }
 .ftCtrl_item-color {
-  color: #e0383a;
+  color: var(--srdzColor);
 }
 .ftCtrl_item_btn-bgColor {
-  background-color: #e0383a;
+  background-color: var(--srdzColor);
 }

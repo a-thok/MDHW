@@ -31,7 +31,7 @@
 /*切换样式*/
 .srchBtn_list_item-bgColor {
   color: #fff;
-  background-color: #e0383a;
+  background-color: var(--srdzColor);
 }
 .srch_btn {
   background-color: var(--pageColor);
