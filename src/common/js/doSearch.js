@@ -1,7 +1,7 @@
 import { $ } from 'func';
 import render from 'render';
 
-export default function doSearch({ config, srchbtn, url }) {
+export default function doSearch({ config, srchbtn, url, keywordProp }) {
   Object.assign(config, {
     immediate: true,
     replace: true
@@ -28,7 +28,7 @@ export default function doSearch({ config, srchbtn, url }) {
       setView();
       const keyword = e.target.textContent.trim();
       config.params = {
-        keyword,
+        [keywordProp]: keyword,
         pageIndex: 0,
         pageSize: 10
       };
@@ -41,11 +41,11 @@ export default function doSearch({ config, srchbtn, url }) {
     const keyword = $('#search').value.trim();
     if (keyword.length === 0) return;
     config.params = {
-      keyword,
+      [keywordProp]: keyword,
       pageIndex: 0,
       pageSize: 10
     };
-    if (url) url(config);
+    if (url) url(config, keyword);
     console.log(config);
     render(config);
   }

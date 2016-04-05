@@ -56,7 +56,7 @@ export default function render({ api, params, template, container, immediate, lo
         const html = template(data);
         container.insertAdjacentHTML('beforeend', html);
 
-        if (totalPages < body.pageSize) {
+        if (data.result.data.length < body.pageSize) {
           noMore();
           return;
         }
