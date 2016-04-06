@@ -1,6 +1,8 @@
 import { $, $from } from '../../common/js/func.js';
+import slider from 'slider';
 //  切换显示
 export default function fwdetail() {
+  slider(document.querySelector('.sliderBox'));
   $from('.intro_list_item').forEach((el, index) => {
     const ul = $('.userInput');
     el.addEventListener('click', e => {

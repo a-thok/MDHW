@@ -1,5 +1,5 @@
 import slider from 'slider';
-import showMenu from './showMenu.js';
+import showMenu from 'showMenu';
 
 export default function detail() {
   showMenu();

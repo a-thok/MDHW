@@ -3,22 +3,6 @@ import render from 'render';
 import { showFilter, selectFilter } from 'filter';
 
 export default function list() {
-  fetch('/m/Srdz/SrdzTypeList')
-    .then(res => res.json())
-    .then(data => {
-      const html = data.result.reduce((prev, curr) => {
-        const lis = curr.item.reduce((_prev, _curr) => (
-          `${_prev}
-            <li class="filter_content_list_item" data-code="${_curr.id}">
-              ${_curr.name}
-              <i class="fa fa-check-circle"></i>
-            </li>`
-        ), '');
-        return prev + lis;
-      }, '');
-      $('.filter_content_list-type').innerHTML = html;
-    });
-
   function template(data) {
     return data.result.data.reduce((pre, cur) => (
       `${pre}<li class="hostlist_item">
@@ -48,8 +32,9 @@ export default function list() {
       pageIndex: 1,
       pageSize: 10
     },
-    container: document.querySelector('.hostlist'),
+    container: $('.hostlist'),
   };
+  render(config);
 
   showFilter();
   selectFilter((filter, type) => {

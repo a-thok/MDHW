@@ -1,5 +1,5 @@
 import { $ } from '../../common/js/func.js';
-import showMenu from './showMenu.js';
+import showMenu from 'showMenu';
 
 export default function index() {
   showMenu();
