@@ -39,7 +39,7 @@ export default function slider(element, config) {
     timingFunction: 'ease-in-out'
   }, config);
 
-  element.querySelector('img').addEventListener('load', () => {
+  window.addEventListener('load', () => {
     // 是沿x轴还是y轴滑动
     const isX = config.axis === 'x';
     const translateDir = isX ? 'translateX' : 'translateY';
