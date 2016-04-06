@@ -144,3 +144,8 @@
   margin-right: 15px;
   vertical-align: bottom;
 }
+.header-logo {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 35%;
+}
