@@ -104,7 +104,7 @@ export function moreFilter(cb) {
 
 // 生成省市过滤列表
 export function generateAreaFilter() {
-  fetch('/Dict/city')
+  fetch('http://192.168.2.177:8085/Dict/city') // 上线时 需修改地址
     .then(res => res.json())
     .then(data => {
       const areaData = data.result;

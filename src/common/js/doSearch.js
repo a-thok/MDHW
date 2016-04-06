@@ -46,7 +46,6 @@ export default function doSearch({ config, srchbtn, url, keywordProp }) {
       pageSize: 10
     };
     if (url) url(config, keyword);
-    console.log(config);
     render(config);
   }
 

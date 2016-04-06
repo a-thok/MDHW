@@ -4,16 +4,27 @@ import template from './template.js';
 import { $ } from 'func';
 
 export default function category() {
-  // 过滤
-  fixFilter();
-  showFilter();
-  selectFilter();
   // 渲染列表
   let load = document.querySelector('.list_load');
-  render({
+  let config = {
     template,
     load,
     api: '/m/ZC/ZcList',
+    params: {
+      pageIndex: 0,
+      pageSize: 10
+    },
     container: $('.zcList')
+  };
+  render(config);
+
+  // 过滤
+  fixFilter();
+  showFilter();
+  selectFilter((filter, type) => {
+    config.params.pageIndex = 1;
+    config.params[filter] = type;
+    config.immediate = true;
+    render(config);
   });
 }

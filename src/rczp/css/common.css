@@ -41,3 +41,6 @@ header {
   font-weight: normal;
   font-size: 22px;
 }
+.link-color {
+  color: var(--rczpColor);
+}

@@ -5,7 +5,7 @@ import gsTemplate from './gsTemplate';
 import doSearch from 'doSearch';
 import render from 'render';
 
-export function search() {
+export default function search() {
   // 搜索类型选择
   $('.header_srch_label').addEventListener('click', (e) => {
     // 切换显示
@@ -33,16 +33,21 @@ export function search() {
 
   doSearch({
     config,
+    keywordProp: 'zwmc',
     srchbtn: '.header_srch_btn',
-    url: (config) => {
+    url: (config, keyword) => {
       const searchText = document.querySelector('.header_srch_label_text');
       const type = searchText.getAttributeNode('data-type').value;
       if (+type === 1) {
         config.template = zwTemplate;
         config.api = '/m/HR/JobList';
+        config.params.compay = '';
+        config.params.zwmc = keyword;
       } else {
         config.template = gsTemplate;
         config.api = '/m/HR/CompanyList';
+        config.params.zwmc = '';
+        config.params.compay = keyword;
       }
     }
   });
@@ -67,27 +72,4 @@ export function search() {
     render(config);
   });
   generateAreaFilter();
-}
-
-// 返回顶部
-export function goTop() {
-  let goTopBtn = $('.scrollTop');
-  document.addEventListener('scroll', () => {
-    const pageScroll = document.body.scrollTop;
-    if (pageScroll > 50) {
-      goTopBtn.classList.remove('is-hidden');
-    } else {
-      goTopBtn.classList.add('is-hidden');
-    }
-    function scrollTime(speed) {
-      if (document.body.scrollTop <= 0) return;
-      document.body.scrollTop -= speed;
-      scrollTime();
-    }
-    goTopBtn.addEventListener('click', () => {
-      let distance = document.body.scrollTop;
-      let speed = distance / 1000;
-      goTopBtn.timer = setTimeout(() => scrollTime(speed), 100);
-    });
-  });
 }
