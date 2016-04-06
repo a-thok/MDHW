@@ -13,14 +13,15 @@ import search from './js/search.js';
 import list from './js/list.js';
 import index from './js/index.js';
 
-if (window.location.pathname.indexOf('detail') !== -1) {
+const pathname = window.location.pathname;
+if (pathname.indexOf('detail') !== -1) {
   showMenu();
   detail();
-} else if (window.location.pathname.indexOf('search') !== -1) {
+} else if (pathname.indexOf('search') !== -1) {
   showMenu();
   search();
-} else if (window.location.pathname.indexOf('list') !== -1) {
+} else if (pathname.indexOf('list') !== -1) {
   list();
-} else if (window.location.pathname.indexOf('index') !== -1) {
+} else if (pathname.indexOf('index') !== -1 || pathname === '/m/srdz') {
   index();
 }
