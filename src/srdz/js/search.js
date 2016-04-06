@@ -1,7 +1,7 @@
-// import { $, pageCallback } from 'func';
 import doSearch from 'doSearch';
 import template from './template.js';
-// import render from 'render'
+import render from 'render';
+import { showFilter, selectFilter } from 'filter';
 
 // 搜索切换
 export default function search() {
@@ -24,11 +24,15 @@ export default function search() {
 
   doSearch({
     config,
+    keywordProp: 'title',
     srchbtn: '.srch_btn'
-    // url: () => {
-    //   let searchText = $('.srchBtn_list')
-    //   let type = searchText.getAttributeNode('data-type').value
-    //   return (+type === 1) ? '/m/HR/JobList' : '/m/HR/CompanyList'
-    // }
+  });
+
+  showFilter();
+  selectFilter((filter, type) => {
+    config.params.pageIndex = 0;
+    config.params[filter] = type;
+    config.immediate = true;
+    render(config);
   });
 }

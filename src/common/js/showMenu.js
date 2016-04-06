@@ -1,4 +1,4 @@
-import { $ } from '../../common/js/func.js';
+import { $ } from 'func';
 
 export default function showMenu() {
   $('.header_menu').addEventListener('click', () => {

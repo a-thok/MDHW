@@ -27,3 +27,9 @@ body.is-static {
   /*可能要单独设一个类，因为有的页面没有底栏*/
   margin-bottom: 55px;
 }
+.page-noMb {
+  margin-bottom: 0;
+}
+.page-white {
+  background-color: #fff; 
+}

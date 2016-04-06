@@ -33,6 +33,11 @@
   color: #fff;
   background-color: var(--srdzColor);
 }
+
+/*搜索按钮样式*/
 .srch_btn {
   background-color: var(--pageColor);
+}
+.srch_btn-color {
+  background-color: var(--srdzColor);
 }
