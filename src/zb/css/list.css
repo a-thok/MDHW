@@ -15,7 +15,7 @@
   color: orangered;
 }
 .filter_content_list_item.is-active {
-  color: var(--zbColor)
+  color: var(--zbColor);
 }
 .filter_content_list_item_icon .fa {
   margin-right: .6em;

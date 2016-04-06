@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>搜索 - 众筹 - 梦高速</title>
+  <title>搜索结果 - 众筹 - 梦高速</title>
+  <!--<link rel="stylesheet" href="/css/common.css">
   <!--<link rel="stylesheet" href="/css/zc.css">-->
 </head>
 <body>
@@ -18,6 +19,95 @@
       </div>
     </header>
     <!--头部 结束-->
+    
+    <!--分类栏 开始-->
+    <div class="filter is-hidden">
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">
+            <span class="filter_active">科技</span>
+            <i class="arrow arrow-small arrow-down"></i>
+          </span>
+        </div>
+        <div class="filter_content filter_content-short">
+          <div class="filter_content_wrap">
+            <ul class="grid filter_content_list" data-filter="type">
+              <li class="grid_item">
+                <div class="grid_item_icon tech" data-code="4">科技</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon ind" data-code="5">工业</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon agri" data-code="6">农业</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon appl" data-code="7">家电</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon idea" data-code="8">创意</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon ent" data-code="9">娱乐</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon publ" data-code="10">出版</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon all" data-code="">全部</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">
+            <span class="filter_active">状态</span>
+            <i class="arrow arrow-small arrow-down"></i>
+          </span>
+        </div>
+        <div class="filter_content filter_content-short">
+          <div class="filter_content_wrap">
+            <ul class="grid filter_content_list" data-filter="state">
+              <li class="grid_item">
+                <div class="grid_item_icon grid_item_icon-big" data-code="">全部</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon grid_item_icon-big" data-code="0">众筹中</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon grid_item_icon-big" data-code="1">筹款成功</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">
+            <span class="filter_active">排序</span>
+            <i class="arrow arrow-small arrow-down"></i>
+          </span>
+        </div>
+        <div class="filter_content filter_content-short">
+          <div class="filter_content_wrap">
+            <ul class="grid filter_content_list" data-filter="sort">
+              <li class="grid_item">
+                <div class="grid_item_icon grid_item_icon-big" data-code="data">最新上线</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon grid_item_icon-big" data-code="moneyAll">最高金额</div>
+              </li>
+              <li class="grid_item">
+                <div class="grid_item_icon grid_item_icon-big" data-code="attention">最受欢迎</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--分类栏 结束-->
     
     <!--搜索框 开始-->
     <div class="srch">
@@ -46,6 +136,17 @@
       </div>
     </div>
     <!--热门搜索 结束-->
+    
+    <!--列表 开始-->
+    <ul class="zcList"></ul>
+    <!--列表 结束-->
+    
+    <!--加载栏 开始-->
+    <div class="list_load is-hidden">
+      <i class="fa fa-spinner fa-pulse"></i><span class="list_load_text">加载中...</span>
+    </div>
+    <!--加载栏 结束-->
+    
   </div>
   
   <script src="/js/common.js"></script>

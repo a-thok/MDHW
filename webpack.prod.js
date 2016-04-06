@@ -2,9 +2,13 @@ const webpack = require('webpack');
 const config = require('./webpack.config.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-config.output.publicPath = '//cdn.dreamhiway.com/static/';
+// config.output.publicPath = '//cdn.dreamhiway.com/mstatic/';
+config.output.publicPath = 'http://192.168.2.10:81/mstatic/';
+
+config.devtool = 'source-map';
 
 config.module.loaders[0].loader = ExtractTextPlugin.extract('style', 'css!postcss');
+config.module.loaders[2].loader = 'url';
 
 config.plugins = (config.plugins || []).concat([
   new webpack.optimize.UglifyJsPlugin({

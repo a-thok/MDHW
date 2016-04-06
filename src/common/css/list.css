@@ -78,3 +78,8 @@
 .list_load_text {
   padding-left: .5em;
 }
+
+/*职位名连接*/
+.list_link {
+  text-decoration: none;
+}

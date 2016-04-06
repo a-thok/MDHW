@@ -19,6 +19,7 @@ export default function search() {
 
   doSearch({
     config,
+    keywordProp: 'zwmc',
     srchbtn: '.srch_btn'
   });
 

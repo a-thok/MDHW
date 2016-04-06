@@ -33,16 +33,21 @@ export default function search() {
 
   doSearch({
     config,
+    keywordProp: 'zwmc',
     srchbtn: '.header_srch_btn',
-    url: (config) => {
+    url: (config, keyword) => {
       const searchText = document.querySelector('.header_srch_label_text');
       const type = searchText.getAttributeNode('data-type').value;
       if (+type === 1) {
         config.template = zwTemplate;
         config.api = '/m/HR/JobList';
+        config.params.compay = '';
+        config.params.zwmc = keyword;
       } else {
         config.template = gsTemplate;
         config.api = '/m/HR/CompanyList';
+        config.params.zwmc = '';
+        config.params.compay = keyword;
       }
     }
   });
@@ -68,4 +73,3 @@ export default function search() {
   });
   generateAreaFilter();
 }
-
