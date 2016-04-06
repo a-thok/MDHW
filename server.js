@@ -23,7 +23,7 @@ app.use(webpackHotMiddleware(compiler));
 
 const proxy = require('proxy-middleware');
 const url = require('url');
-app.use('/Dict', proxy(url.parse('http://192.168.2.145:8085/Dict')));
+app.use('/Dict', proxy(url.parse('http://192.168.2.177:8085/Dict')));
 app.use('/m/main', proxy(url.parse('http://192.168.2.177:8085/m/main')));
 app.use('/m/HR', proxy(url.parse('http://192.168.2.177:8086/m/HR')));
 app.use('/m/ZC', proxy(url.parse('http://192.168.2.177:8088/m/ZC')));
