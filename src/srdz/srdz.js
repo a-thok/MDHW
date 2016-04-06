@@ -1,13 +1,13 @@
 import './css/main.css';
 
-import showMenu from 'showMenu';
-
+// 导入图片
 import './img/srdz_logo.png';
+
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
 fastclick.attach(document.body);
 
-
+import showMenu from 'showMenu';
 import detail from './js/detail.js';
 import search from './js/search.js';
 import list from './js/list.js';

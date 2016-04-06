@@ -1,6 +1,7 @@
-import { $ } from '../../common/js/func.js';
-import render from 'render';
+import { $ } from 'func';
 import { showFilter, selectFilter } from 'filter';
+import render from 'render';
+
 
 export default function list() {
   function template(data) {
@@ -23,6 +24,7 @@ export default function list() {
         </li>`
     ), '');
   }
+
   let load = document.querySelector('.list_load');
   let config = {
     template,
