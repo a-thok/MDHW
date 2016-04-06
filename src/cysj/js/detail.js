@@ -7,7 +7,7 @@ export default function detail() {
   });
 
   const collect = $('.ftCtrl_item');
-  collect.addEventListener('click', el => {
+  collect[0].addEventListener('click', el => {
     const rep = el.currentTarget.children[0];
     // 获取cookie的值
     const arrCookie = document.cookie.split('; ');
