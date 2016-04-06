@@ -8,16 +8,14 @@ import fastclick from 'fastclick';
 fastclick.attach(document.body);
 
 
-import fwdetail from './js/fwdetail.js';
+import detail from './js/detail.js';
 import search from './js/search.js';
 import list from './js/list.js';
 import index from './js/index.js';
 
-if (window.location.pathname.indexOf('fwdetail') !== -1) {
+if (window.location.pathname.indexOf('detail') !== -1) {
   showMenu();
-  fwdetail();
-} else if (window.location.pathname.indexOf('detail') !== -1) {
-  showMenu();
+  detail();
 } else if (window.location.pathname.indexOf('search') !== -1) {
   showMenu();
   search();
