@@ -12,6 +12,10 @@
   margin: 10px 0;
   text-align: center;
 }
+.grid_item a {
+  text-decoration: none;
+  color: #333;
+}
 .grid_item_icon {
   display: inline-block;
   width: 50px; /* uc */
