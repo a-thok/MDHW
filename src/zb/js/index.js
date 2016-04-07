@@ -5,7 +5,7 @@ export default function detail() {
   slider(document.querySelector('.sliderBox'));
   function search() {
     const keyword = $('.srch_input').value;
-    let url = `http://www.baidu.com?kw=${keyword}`;
+    let url = `http://192.168.2.177/m/zb/search?kw=${keyword}`;
     location.href = url;
   }
   $('#search').addEventListener('keyup', e => {
@@ -20,8 +20,8 @@ export default function detail() {
   const grids = $from('.grid_item');
   grids.forEach((grid) => {
     grid.addEventListener('click', e => {
-      const text = e.currentTarget.querySelector('.grid_item_text').textContent;
-      let url = `http://www.baidu.com?text=${text}`;
+      const type = e.currentTarget.querySelector('.grid_item_text').textContent;
+      let url = `http://192.168.2.177/m/zb/search?type=${type}`;
       location.href = url;
     });
   });
