@@ -46,7 +46,7 @@ export default function slider(element, config) {
     const clientSize = isX ? 'clientWidth' : 'clientHeight';
 
     // 设置基本样式
-    $from('img').forEach(img => { img.style.width = '100%'; }); // 图片宽度100%
+    $from(element.querySelectorAll('img')).forEach(img => { img.style.width = '100%'; }); // 图片宽度100%
 
     const elementStyle = `position:relative;width:100%;height:${element.querySelector('img').clientHeight}px;overflow:hidden`;
     element.setAttribute('style', elementStyle);
