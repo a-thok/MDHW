@@ -17,7 +17,9 @@ module.exports = {
     'srdz': [path.join(__dirname, 'src/srdz/srdz.js')],
     'cqbh': [path.join(__dirname, 'src/cqbh/cqbh.js')],
     'uc': [path.join(__dirname, 'src/uc/uc.js')],
-    'home': [path.join(__dirname, 'src/home/home.js')]
+    'home': [path.join(__dirname, 'src/home/home.js')],
+    'zxsj': [path.join(__dirname, 'src/zxsj/zxsj.js')],
+    'gsss': [path.join(__dirname, 'src/gsss/gsss.js')]
   },
   output: {
     path: path.join(__dirname, '/dist/'),

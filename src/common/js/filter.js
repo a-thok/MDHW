@@ -50,7 +50,8 @@ export function selectFilter(cb) {
     el.addEventListener('click', e => {
       const cl = e.target.classList;
       if (cl.contains('is-active')) return;
-      if (cl.contains('filter_content_list_item') || cl.contains('grid_item_icon')) {
+      if ((e.target !== e.currentTarget) || cl.contains('grid_item_icon')) {
+        console.log(e.target);
         const wrapper = $parent(e.target, '.filter_item');
 
         // 选中项视觉效果
