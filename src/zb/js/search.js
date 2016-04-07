@@ -19,7 +19,8 @@ export default function search() {
 
   doSearch({
     config,
-    srchbtn: '.srch_btn'
+    srchbtn: '.srch_btn',
+    keywordProp: 'title'
   });
 
   showFilter();
