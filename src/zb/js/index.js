@@ -1,10 +1,11 @@
-import { $, $from } from 'func';
+import { $ } from 'func';
 import slider from 'slider';
 
 export default function detail() {
   slider(document.querySelector('.sliderBox'));
   function search() {
-    const keyword = $('.srch_input').value;
+    const keyword = $('.srch_input').value.trim();
+    if (!keyword) return;
     let url = `http://192.168.2.177:8093/m/zb/search?kw=${keyword}`;
     location.href = url;
   }
