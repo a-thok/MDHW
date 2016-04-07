@@ -30,8 +30,17 @@ export default function search() {
 
   showFilter();
   selectFilter((filter, type) => {
+    if (filter.indexOf(' ')) {
+      let filtermin = filter.split(' ')[0];
+      let filtermax = filter.split(' ')[1];
+      let typemin = type.split('-')[0];
+      let typemax = type.split('-')[1];
+      config.params[filtermin] = typemin;
+      config.params[filtermax] = typemax;
+    } else {
+      config.params[filter] = type;
+    }
     config.params.pageIndex = 0;
-    config.params[filter] = type;
     config.immediate = true;
     render(config);
   });
