@@ -9,14 +9,16 @@ import { list, listFilter } from './js/list.js';
 import detail from './js/detail.js';
 import search from './js/search.js';
 import index from './js/index.js';
-if (window.location.pathname.indexOf('list') !== -1) {
+
+const pathname = window.location.pathname;
+if (pathname.indexOf('list') !== -1) {
   list();
   listFilter();
-} else if (window.location.pathname.indexOf('detail') !== -1) {
+} else if (pathname.indexOf('detail') !== -1) {
   detail();
-} else if (window.location.pathname.indexOf('search') !== -1) {
+} else if (pathname.indexOf('search') !== -1) {
   search();
   listFilter();
-} else if (window.location.pathname.indexOf('index') !== -1) {
+} else if (pathname.indexOf('index') !== -1 || pathname === '/m/zb') {
   index();
 }

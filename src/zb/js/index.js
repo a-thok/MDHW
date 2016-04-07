@@ -6,7 +6,7 @@ export default function detail() {
   function search() {
     const keyword = $('.srch_input').value.trim();
     if (!keyword) return;
-    let url = `http://192.168.2.152:8090/m/zb/search?kw=${keyword}`;
+    let url = `http://192.168.2.177:8090/m/zb/search?kw=${keyword}`;
     location.href = url;
   }
   $('#search').addEventListener('keyup', e => {
