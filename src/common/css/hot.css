@@ -77,3 +77,13 @@
 .hostlist_item_info_item_label {
   color: var(--fontColorLight);
 }
+
+/*热门订制 列表样式 待整理*/
+.hostlist_item_info_item-moneyW,
+.hostlist_item_info_item-nameW {
+  width: 110px;
+}
+.hostlist_item_info_item-numW {
+  width: 75px;
+  text-align: right;
+}
