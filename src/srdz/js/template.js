@@ -7,7 +7,7 @@ export default function template(data) {
           <div class="hostlist_content">
             <div class="base_title_wrap">
               <h2 class="base_title_text base_title_text-small">
-                <span class="base_title_wrap_label srdz_title_wrap_label">【${cur.typename}】</span>
+                <span class="base_title_wrap_label srdz_title_wrap_label">[${cur.typename}]</span>
                 <a href="http://192.168.2.177:8093/m/srdz/detail/${cur.id}">${cur.title}</a>
               </h2>
             </div>
