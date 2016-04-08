@@ -5,6 +5,9 @@
   margin: 22px 3.4667%;
   font-size: 16px;
 }
+.listWrap a {
+  color: #333;
+}
 .list_item {
   display: flex;
   padding: 3% 2%;
@@ -23,13 +26,6 @@
 /* 文本 */
 .list_item_text {
   flex-grow: 1;
-}
-.list_item_img div {
-  width: 50px;/*uc兼容*/
-  height: 50px;/*uc兼容*/
-  width: 18vw;
-  height: 18vw;
-  background-color: red;
 }
 .list_item_img img { /*修改样式，暂改列表图片大小*/
   width: 100%;
