@@ -10,6 +10,7 @@ export default function gsTemplate(data) {
                 <span class="company_name list_margin">
                   <a class="list_link link-color" href="#">${cur.compay}</a>
                 </span>
+                <a href="http://192.168.2.177:8086/m/hr/detail/${cur.id}"><span class="company_name list_margin">${cur.compay}</span></a>
                 ${cur.trade}/${cur.Nature}/规模:${cur.scale}
               </p>
               <p class="list_item_text_p company_comment"><a class="list_margin" href="#">${cur.numEvaluation}</a>条面试评价</p>
