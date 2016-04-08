@@ -5,9 +5,6 @@
   margin: 22px 3.4667%;
   font-size: 16px;
 }
-.listWrap a {
-  color: #333;
-}
 .list_item {
   display: flex;
   padding: 3% 2%;
@@ -73,9 +70,4 @@
 }
 .list_load_text {
   padding-left: .5em;
-}
-
-/*职位名连接*/
-.list_link {
-  text-decoration: none;
 }
