@@ -1,0 +1,24 @@
+.header-logo {
+  background-image: url("../img/kjfw_logo.png");
+}
+.listWrap-margin {
+  margin-top: 0;
+}
+.iconList_item .fa-shield {
+  color: #4d8a53;
+}
+.iconList_item .fa-sort-amount-desc {
+  color: #ea4c34;
+}
+.iconList_item .fa-car {
+  color: #52bef6;
+}
+.iconList_item .fa-picture-o {
+  color: #888;
+}
+.list_link {
+  text-decoration: none;
+}
+.link-color {
+  color: #333;
+}
