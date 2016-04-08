@@ -24,6 +24,6 @@ if (pathname.indexOf('list') !== -1) {
 } else if (pathname.indexOf('search') !== -1) {
   search();
   showMenu();
-} else if (pathname.indexOf('index') !== -1) {
+} else if (pathname.indexOf('index') !== -1 || pathname === '/m/diy') {
   index();
 }
