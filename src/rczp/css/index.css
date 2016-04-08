@@ -48,3 +48,7 @@
 .famous_list_item p {
   line-height: 2;
 }
+.cate_item_list li a {
+  text-decoration: none;
+  color: #333;
+}
