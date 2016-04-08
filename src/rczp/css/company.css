@@ -19,3 +19,7 @@
 .filter_content_list_item.is-active {
   color: var(--rczpColor);
 }
+.list_item_text_p a {
+  color: #333;
+  text-decoration: none;
+}
