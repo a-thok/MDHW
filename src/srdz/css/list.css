@@ -8,3 +8,7 @@
 .filter_content_list_item.is-active {
   color: var(--srdzColor);
 }
+.base_title_text a {
+  color: #333;
+  text-decoration: none;
+}
