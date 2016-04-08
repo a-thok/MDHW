@@ -5,7 +5,6 @@
 .company_name {
   margin-right: .4em;
   font-size: 18px;
-  color: #000;
 }
 .company_comment,
 .company_post {
@@ -19,7 +18,7 @@
 .filter_content_list_item.is-active {
   color: var(--rczpColor);
 }
-.list_item_text_p a {
+/*.list_item_text_p a {
   color: #333;
   text-decoration: none;
-}
+}*/
