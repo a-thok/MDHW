@@ -39,7 +39,7 @@ export default function doSearch({ config, srchbtn, url, keywordProp }) {
   // 搜索框搜索
   function searchByBox() {
     const keyword = $('#search').value.trim();
-    if (keyword.length === 0) return;
+    // if (keyword.length === 0) return; 应该允许用户搜索空关键字
     config.params = {
       [keywordProp]: keyword,
       pageIndex: 0,

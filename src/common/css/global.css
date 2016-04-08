@@ -21,7 +21,7 @@ body.is-static {
 }
 .page {
   max-width: 750px;
-  height: 100%;
+  /*height: 100%;*/
   margin: 0 auto;
   /*overflow: hidden;*/
   /*可能要单独设一个类，因为有的页面没有底栏*/
