@@ -41,6 +41,10 @@ header {
   font-weight: normal;
   font-size: 22px;
 }
-a.link-color {
+/*职位名连接*/
+.list_link {
+  text-decoration: none;
+}
+.link-color {
   color: var(--rczpColor);
 }
