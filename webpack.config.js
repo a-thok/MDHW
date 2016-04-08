@@ -57,9 +57,8 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url?sourceMap',
+        loader: 'file',
         query: {
-          limit: 10000,
           name: 'img/[name].[ext]?[hash:7]'
         }
       }
