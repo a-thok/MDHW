@@ -9,6 +9,7 @@ config.devtool = 'source-map';
 
 config.module.loaders[0].loader = ExtractTextPlugin.extract('style', 'css!postcss');
 config.module.loaders[2].loader = 'url';
+config.module.loaders[3].loader = 'file';
 
 config.plugins = (config.plugins || []).concat([
   new webpack.optimize.UglifyJsPlugin({
