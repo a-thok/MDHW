@@ -13,11 +13,14 @@
   text-align: center;
 }
 .grid_item a {
+  display: block;
   text-decoration: none;
   color: #333;
 }
 .grid_item_icon {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px; /* uc */
   width: 10vw;
   max-width: 75px;
@@ -25,8 +28,7 @@
   height: 10vw;
   max-height: 75px;
   border-radius: 50%;
-  line-height: 50px;
-  line-height: 10vw;
+  margin: 0 auto;
   font-size: 12px;
   color: #fff;
 }

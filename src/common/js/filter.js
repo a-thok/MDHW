@@ -51,19 +51,26 @@ export function selectFilter(cb) {
       const cl = e.target.classList;
       if (cl.contains('is-active')) return;
       if ((e.target !== e.currentTarget) || cl.contains('grid_item_icon')) {
-        console.log(e.target);
         const wrapper = $parent(e.target, '.filter_item');
 
         // 选中项视觉效果
-        const items = cl.contains('grid_item_icon') ? $from('.grid_item_icon') : $from(e.target.parentElement.children);
+        const items = cl.contains('grid_item_icon') ? $from('.grid_item_icon') : $from(e.currentTarget.children);
         items.forEach(_e => _e.classList.remove('is-active'));
-        cl.add('is-active');
 
-        // 获取文本，填充到对应位置
-        const text = e.target.textContent.trim();
+        let type; // 过滤值
+        let text; // 填充文本
+        if (cl.contains('filter_content_list_item')) {
+          cl.add('is-active');
+          type = e.target.getAttribute('data-code');
+          text = e.target.textContent.trim();
+        } else {
+          let target = $parent(e.target, '.filter_content_list_item');
+          target.classList.add('is-active');
+          type = target.getAttribute('data-code');
+          text = target.textContent.trim();
+        }
+
         wrapper.querySelector('.filter_active').textContent = text;
-        // 获取对应类型ID
-        const type = e.target.getAttribute('data-code');
         const filter = e.currentTarget.getAttribute('data-filter');
         cb(filter, type);
         // 隐藏当前过滤器
