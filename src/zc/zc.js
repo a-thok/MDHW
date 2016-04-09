@@ -11,6 +11,7 @@ import comment from './js/comment.js';
 import progress from './js/progress.js';
 import search from './js/search.js';
 import index from './js/index.js';
+
 if (document.location.pathname.indexOf('detail') !== -1) {
   detail();
 } else if (document.location.pathname.indexOf('category') !== -1) {
