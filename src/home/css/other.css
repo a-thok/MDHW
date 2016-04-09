@@ -1,0 +1,134 @@
+/*
+  **输入信息**
+*/
+.acc,
+.acc_func,
+.other {
+  padding: 0 4%;
+  margin-top: 25px;
+}
+.acc_link {
+  text-decoration: none;
+  color: var(--mgsColor);
+}
+
+/* input */
+.acc_group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.acc_input {
+  width: 100%;
+  height: 50px; /*uc兼容*/
+  height: 14vw;
+  max-height: 94px;
+  padding: 0 3%;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+.acc_input-short {
+  float: left;
+  width: 49%;
+  margin-top: 0;
+}
+/* 获取验证码按钮 */
+.acc_getCode {
+  float: right;
+  width: 49%;
+  height: 50px;
+  height: 14vw;
+  max-height: 94px;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--fontColorLight);
+}
+.acc_input-hasLabel {
+  padding-right: 28%;
+}
+/* label */
+.acc_label {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 50px; /*uc兼容*/
+  height: 14vw;
+  max-height: 94px;
+  padding: 1px;
+}
+.acc_label-hasBorder::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 80%;
+  border-left: 1px solid var(--borderColorLight);
+}
+/* 验证码 */
+.acc_label_code {
+  width: 100%;
+  padding: 5%;
+  text-align: center;
+}
+.acc_label_code img {
+  width: 100%;
+  vertical-align: middle;
+}
+/* 切换开关 */
+.acc_switcher {
+  width: 80%;
+  height: 80%;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 50px;
+  background: #ccc;
+}
+.acc_switcher_btn {
+  width: 65%;
+  height: 100%;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 50px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #eee;
+}
+/* 文本 */
+.acc_text {
+  font-size: 14px;
+  color: var(--fontColorLight);
+  line-height: 3.6;
+}
+.acc_text .fa {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: .5em;
+  background: #ccc;
+  color: #fff;
+  text-align: center;
+  line-height: 22px;
+}
+/* 记住登录 */
+#remember {
+  display: none;
+}
+#remember:checked + label .fa {
+  background: var(--mgsColor);
+}
+/* 大按钮 */
+.acc_btn {
+  width: 100%;
+  height: 50px; /*uc兼容*/
+  height: 14vw;
+  max-height: 94px;
+  font-size: 18px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #e2e2e2;
+  color: var(--fontColorLight);
+}
