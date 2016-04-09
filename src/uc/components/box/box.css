@@ -1,0 +1,46 @@
+.itemBox {
+  margin: 1em 0;
+  background-color: #fff;
+}
+.itemRow {
+  padding: .8em 0;
+}
+.itemRow_name {
+  display: inline-block;
+  width: 6em;
+  text-align: right;
+  vertical-align: top;
+}
+.itemRow_text {
+  display: inline-block;
+  width: 19em;
+  word-wrap: break-word;
+  padding-left: 0.5em;
+}
+.itemRow_text-float {
+ float: right;
+ padding-right: 1em;
+}
+.count {
+  /*width: auto;*/
+}
+.countIput {
+  width: 2.5em;
+  height: 1.7em;
+  padding-left: .5em;
+  vertical-align: top;
+}
+.countBtn {
+  display: inline-block;
+  width: 1.4em;
+  width: 1.4em;
+  text-align: center;
+  border: 1px solid #999;
+}
+.Input {
+  width: 12em;
+  border: 0;
+}
+  /*.icon {
+    color: red;
+  }*/
