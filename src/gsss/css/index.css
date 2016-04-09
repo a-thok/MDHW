@@ -1,0 +1,188 @@
+.header-logo {
+  background-image: url('../img/gssslogolqt.png');
+}
+.gsDetail {
+  margin-top: 10px;
+  background: #fff;
+}
+.gsDetail_list {
+  display: flex;
+  padding: 0 3.7333%;
+  border-bottom: 1px solid var(--borderColorLight);
+}
+.gsDetail_list_item {
+  display: flex;
+  width: 49%;
+  padding: 15px 0;
+  /*text-align: center;*/
+}
+.gsDetail_list_item-first::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 50px;
+  border-right: 1px solid var(--borderColorLight);
+}
+.gsDetail_list_item_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.gsDetail_list_item_text_div {
+  padding-left: 50px;
+  background-position: center  left;
+  background-repeat: no-repeat;
+  background-size: 30%;
+}
+.gsDetail_list_item_text_div-imgl {
+  background-image: url('../img/iconfont-chengweitouziren2.png');
+}
+.gsDetail_list_item_text_div-imgr {
+  background-image: url('../img/iconfont-gongsi.png');
+}
+.gsHot {
+  padding: 0 3.7333%;
+}
+/*.gsHot img {
+  width: 17.3333%;
+  height: 
+}*/
+.gsHot div {
+  background-position: center  left;
+  background-repeat: no-repeat;
+  background-size: 25%;
+  background-image: url('../img/hotlqt.png');
+}
+.zxList_item_link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 27%;
+  line-height: 3;
+  border-top: 1px solid var(--borderColorLight);
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+.zxList_item_link_i .fa {
+  font-size: 12px;
+  color: #e89800;
+}
+.zxList_item_link_i_span {
+  color: #ddd;
+  margin-right: .5em;
+}
+.investor {
+  padding: 0 3.7333%;
+}
+/* 线条穿过标题 */
+.titleLine {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  /*margin: 0 3.7333%;*/
+}
+.titleLine_line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #ddd;
+}
+.titleLine_text {
+  position: relative;
+  z-index: 1;
+  line-height: 60px;
+  color: #e89800;
+  padding: 0 8px;
+  background-color: var(--pageColor);
+  font-weight: normal;
+  font-size: 20px;
+}
+.titleLine_text_more {
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+}
+.titleLine_text_more a {
+  color: var(--fontColorLight);
+  text-decoration: none;
+}
+.investor_list {
+  background: #fff;
+}
+.investor_list_item {
+  border-top: 1px solid var(--borderColorLight);
+}
+.investor_list_item_a {
+  padding: 4.4%;
+  display: flex;
+  color: var(--fontColorLight);
+  text-decoration: none;
+}
+.investor_list li :first-child{
+  border: 0;
+}
+.investor_list_item_img {
+  width: 50px;;
+  width: 17.3333vw;
+  height: 50px;
+  height: 17.3333vw;
+  border-radius: 50%;
+  /*background: red;*/
+  flex-shrink: 0;
+}
+.investor_list_item_msg {
+  margin-left: 1em;
+  width: 79%;
+}
+.hotBody_list_item-a h3,
+.investor_list_item_msg h3 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #333;
+}
+.hotBody_list_item-a p,
+.investor_list_item_msg p {
+  line-height: 1.5;
+  font-size: 12px;
+  color: var(--fontColorLight); 
+}
+.hotBody_list {
+  display: flex;
+  background: #fff;
+}
+.hotBody_list_item {
+  width: 33.3%;
+  padding: 4.4%;
+  border-right: 1px solid var(--borderColorLight);
+}
+.hotBody_list li:last-child {
+  border: 0;
+}
+.hotBody_list_item-a {
+  display: block;
+  color: var(--fontColorLight);
+  text-decoration: none;
+  text-align: center;
+}
+.hotBody_list_item-a img {
+  width: 50px;;
+  width: 17.3333vw;
+  height: 50px;
+  height: 17.3333vw;
+  border-radius: 50%;
+  /*background: red;*/
+}
+.hotBody_list_item-a p,
+.hotBody_list_item-a h3 {
+  height: 1.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.hotBody_list_top {
+  border-top: 1px solid var(--borderColorLight);
+}
