@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PRODUCTION = process.env.NODE_ENV === 'production';
+console.log(PRODUCTION);
 
 const config = {
   entry: {
@@ -24,7 +25,7 @@ const config = {
   },
   output: {
     path: path.join(__dirname, '/dist/'),
-    publicPath: PRODUCTION ? '//cdn.dreamhiway.com/static' : '/',
+    publicPath: PRODUCTION ? 'http://192.168.2.10:81/mstatic/' : '/', // '//cdn.dreamhiway.com/mstatic/'
     filename: 'js/[name].js'
   },
   resolve: {
@@ -60,7 +61,7 @@ const config = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url?sourceMap',
+        loader: PRODUCTION ? 'file' : 'url?sourceMap',
         query: {
           name: 'img/[name].[ext]?[hash:7]'
         }
