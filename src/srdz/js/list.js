@@ -34,7 +34,7 @@ export default function list() {
       pageIndex: 1,
       pageSize: 10
     },
-    container: $('.hostlist'),
+    container: $('.hostlist')
   };
   render(config);
 

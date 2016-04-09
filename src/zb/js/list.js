@@ -14,7 +14,7 @@ export function list() {
       pageSize: 10
     },
     container: document.querySelector('.hostlist'),
-    replace: true,
+    replace: true
   };
   render(config);
   showFilter();

@@ -14,7 +14,7 @@ export default function search() {
       pageIndex: 1,
       pageSize: 10
     },
-    container: $('.hostlist'),
+    container: $('.hostlist')
   };
 
   doSearch({
