@@ -22,10 +22,12 @@ export default function search() {
     keywordProp: 'keyword',
     srchbtn: '.srch_btn'
   });
-
   fixFilter();
   showFilter();
   selectFilter((filter, type) => {
+    if (/^[0-9]/.test(type)) {
+      type = +type;
+    }
     config.params.pageIndex = 0;
     config.params[filter] = type;
     config.immediate = true;
