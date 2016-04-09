@@ -41,3 +41,7 @@
   background: var(--rczpColor);
   color: #fff;
 }
+.icon_link {
+  color: var(--fontColorLight);
+  text-decoration: none;
+}

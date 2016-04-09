@@ -69,7 +69,7 @@
 .iconList_item .fa {
   font-size: 20px;
   margin-right: .3em;
-  color: var(--zcColor);
+  /*color: var(--zcColor);*/
 }
 .tagList-kjfw {
   flex-wrap: wrap;

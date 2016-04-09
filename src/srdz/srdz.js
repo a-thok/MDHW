@@ -1,7 +1,7 @@
 import './css/main.css';
 
 // 导入图片
-import './img/srdz_logo.png';
+// import 'file?name=img/[name].[ext]!./img/srdz_logo.png';
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
