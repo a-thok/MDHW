@@ -1,5 +1,7 @@
 import './css/main.css';
 
+import './img/kjfw_pg1.png';
+import './img/kjfw_pg2.png';
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
 fastclick.attach(document.body);
