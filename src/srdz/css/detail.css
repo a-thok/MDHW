@@ -42,4 +42,6 @@
 .userInput_show {
   display: block;
 }
-
+.list_item_a {
+  color: #333;
+}
