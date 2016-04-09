@@ -10,18 +10,18 @@ console.log(PRODUCTION);
 const config = {
   entry: {
     'common': ['font-awesome/css/font-awesome.css', 'es6-promise', 'whatwg-fetch', 'fastclick'],
-    'rczp': [path.join(__dirname, 'src/rczp/rczp.js')],
-    'kjfw': [path.join(__dirname, 'src/kjfw/kjfw.js')],
-    'zc': [path.join(__dirname, 'src/zc/zc.js')],
-    'zckj': [path.join(__dirname, 'src/zckj/zckj.js')],
-    'zb': [path.join(__dirname, 'src/zb/zb.js')],
-    'cysj': [path.join(__dirname, 'src/cysj/cysj.js')],
-    'srdz': [path.join(__dirname, 'src/srdz/srdz.js')],
-    'cqbh': [path.join(__dirname, 'src/cqbh/cqbh.js')],
-    'uc': [path.join(__dirname, 'src/uc/uc.js')],
-    'home': [path.join(__dirname, 'src/home/home.js')],
-    'zxsj': [path.join(__dirname, 'src/zxsj/zxsj.js')],
-    'gsss': [path.join(__dirname, 'src/gsss/gsss.js')]
+    'rczp': [path.join(__dirname, 'src/rczp')],
+    'kjfw': [path.join(__dirname, 'src/kjfw')],
+    'zc': [path.join(__dirname, 'src/zc')],
+    'zckj': [path.join(__dirname, 'src/zckj')],
+    'zb': [path.join(__dirname, 'src/zb')],
+    'cysj': [path.join(__dirname, 'src/cysj')],
+    'srdz': [path.join(__dirname, 'src/srdz')],
+    'cqbh': [path.join(__dirname, 'src/cqbh')],
+    'uc': [path.join(__dirname, 'src/uc')],
+    'home': [path.join(__dirname, 'src/home')],
+    'zxsj': [path.join(__dirname, 'src/zxsj')],
+    'gsss': [path.join(__dirname, 'src/gsss')]
   },
   output: {
     path: path.join(__dirname, '/dist/'),
@@ -40,7 +40,7 @@ const config = {
       'goToSearch': 'goToSearch.js'
     }
   },
-  devtool: PRODUCTION ? 'source-map' : 'eval-source-map',
+  devtool: PRODUCTION ? 'source-map' : 'cheap-source-map',
   module: {
     loaders: [
       {
