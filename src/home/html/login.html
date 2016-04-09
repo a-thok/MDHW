@@ -22,36 +22,40 @@
     <!--头部 结束-->
 
     <!--输入信息  开始-->
-    <div class="enter">
-      <input class="enter_msg" type="text" placeholder="请输入用户名/邮箱/以验证手机">
-      <!--密码  开始-->
-      <div class="enter_psw">
-        <input class="enter_msg enter_msg-psw" type="password">
-        <label class="enter_lab" for="">
-          <div class="enter_lab_opt">
-            <button class="enter_lab_btn" type="button"></button>
+    <form class="acc">
+      <div class="acc_group">
+        <input class="acc_input" type="text" placeholder="请输入用户名/邮箱/以验证手机">
+      </div>
+      <div class="acc_group">
+        <input class="acc_input" type="password">
+        <label class="acc_label" for="">
+          <div class="acc_switcher">
+            <div class="acc_switcher_btn"></div>
           </div>
         </label>
       </div>
-      <!--密码 结束-->
-      <!--验证码  开始-->
-      <div class="enter_psw">
-        
-          <input class="enter_msg enter_msg-psw enter_msg-codes" type="text" placeholder="请输入验证码">
-        
-        <label class="enter_lab enter_lab-few" for="">
-          <img src="" alt="">
+      <div class="acc_group">
+        <input class="acc_input" type="text" placeholder="请输入验证码">
+        <label class="acc_label">
+          <div class="acc_label_codeWrap">
+            <img src="http://www.dreamhiway.com/Login/VerifyCode?_=1450339330618" alt="">
+          </div>
         </label>
       </div>
-      <!--验证码  结束-->
-      <p class="enter_check"><span><i class="fa fa-check"></i></span>一个月内免登录</p>
-      <button class="enter_btn" type="button">登录</button>
-      <div class="enter_link">
-        <a href="">快速注册</a>
-        <a href="">找回密码</a>
-      </div>
-    </div>
+      <p class="acc_text">
+        <input class="remember" id="remember" type="checkbox">
+        <label for="remember"><i class="fa fa-check"></i></label>
+        <label for="remember">记住登录</label>
+      </p>
+      <button class="acc_btn" type="button">登录</button>
+    </form>
     <!--输入信息  结束-->
+    
+    <div class="acc_func">
+      <a href="#">快速注册</a>
+      <a href="#">找回密码</a>
+    </div>
+      
     <!--其他帐号登录  开始-->
     <div class="other">
       <div class="titleLine">
@@ -59,8 +63,8 @@
         <div class="titleLine_text">其他帐号登录</div>
       </div>
       <div class="other_list">
-        <div class="other_list_item"><i class="fa fa-weixin"></i></div>
-        <div class="other_list_item other_list_item-color"><i class="fa fa-qq"></i></div>
+        <i class="fa fa-weixin"></i>
+        <i class="fa fa-qq"></i>
       </div>
     </div>
     <!--其他帐号登录  结束-->

@@ -26,7 +26,7 @@ const url = require('url');
 app.use('/Dict', proxy(url.parse('http://192.168.2.177:8085/Dict')));
 app.use('/m/main', proxy(url.parse('http://192.168.2.177:8085/m/main')));
 app.use('/m/HR', proxy(url.parse('http://192.168.2.177:8086/m/HR')));
-app.use('/m/ZC', proxy(url.parse('http://192.168.2.177:8088/m/ZC')));
+app.use('/m/ZC', proxy(url.parse('http://192.168.2.177:8098/m/ZC')));
 app.use('/m/ZB', proxy(url.parse('http://192.168.2.177:8090/m/ZB')));
 app.use('/m/MS', proxy(url.parse('http://192.168.2.177:8091/m/MS')));
 app.use('/m/DIY', proxy(url.parse('http://192.168.2.177:8092/m/DIY')));

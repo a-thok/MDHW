@@ -14,7 +14,7 @@ const pathname = window.location.pathname;
 
 if (pathname.indexOf('assess') !== -1) {
   assess();
-} else if (pathname.indexOf('index') !== -1 || pathname === '/m/kj') {
+} else if (window.location.pathname.indexOf('index') !== -1 || pathname === '/m/kj') {
   index();
 } else if (pathname.indexOf('company') !== -1) {
   company();
