@@ -1,5 +1,5 @@
 .header-logo {
-  background-image: url('../img/gssslogolqt.png');
+  background-image: url("../img/gssslogolqt.png");
 }
 .gsDetail {
   margin-top: 10px;
@@ -36,23 +36,22 @@
   background-size: 30%;
 }
 .gsDetail_list_item_text_div-imgl {
-  background-image: url('../img/iconfont-chengweitouziren2.png');
+  background-image: url("../img/iconfont-chengweitouziren2.png");
 }
 .gsDetail_list_item_text_div-imgr {
-  background-image: url('../img/iconfont-gongsi.png');
+  background-image: url("../img/iconfont-gongsi.png");
 }
 .gsHot {
   padding: 0 3.7333%;
 }
 /*.gsHot img {
   width: 17.3333%;
-  height: 
 }*/
 .gsHot div {
   background-position: center  left;
   background-repeat: no-repeat;
   background-size: 25%;
-  background-image: url('../img/hotlqt.png');
+  background-image: url("../img/hotlqt.png");
 }
 .zxList_item_link {
   display: flex;
@@ -122,11 +121,11 @@
   color: var(--fontColorLight);
   text-decoration: none;
 }
-.investor_list li :first-child{
+.investor_list li:first-child {
   border: 0;
 }
 .investor_list_item_img {
-  width: 50px;;
+  width: 50px;
   width: 17.3333vw;
   height: 50px;
   height: 17.3333vw;
@@ -148,7 +147,7 @@
 .investor_list_item_msg p {
   line-height: 1.5;
   font-size: 12px;
-  color: var(--fontColorLight); 
+  color: var(--fontColorLight);
 }
 .hotBody_list {
   display: flex;
@@ -169,7 +168,7 @@
   text-align: center;
 }
 .hotBody_list_item-a img {
-  width: 50px;;
+  width: 50px;
   width: 17.3333vw;
   height: 50px;
   height: 17.3333vw;

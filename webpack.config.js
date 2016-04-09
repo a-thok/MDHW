@@ -36,7 +36,8 @@ const config = {
       'render': 'render.js',
       'slider': 'slider.js',
       'filter': 'filter.js',
-      'doSearch': 'doSearch.js'
+      'doSearch': 'doSearch.js',
+      'goToSearch': 'goToSearch.js'
     }
   },
   devtool: PRODUCTION ? 'source-map' : 'eval-source-map',
