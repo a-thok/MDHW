@@ -21,3 +21,6 @@
 .filter_content_list_item.is-active {
   color: var(--cysjColor);
 }
+.hostlist_item_a {
+  color: #333;
+}

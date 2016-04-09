@@ -28,17 +28,20 @@
   color: var(--fontColorLight);
   text-decoration: none;
 }
-/* 列表 */ 
+/* 列表 */
 .hostlist {
   border-width: 1px 0;
   border-style: solid;
   border-color: var(--borderColorLight);
 }
 .hostlist_item {
-  display: flex;
   padding: 15px 3.3333%;
   border-bottom: 1px dashed var(--borderColorLight);
   background: #fff;
+}
+.hostlist_item_a {
+  display: flex;
+  text-decoration: none;
 }
 .hostlist_item_img {
   width: 16%;

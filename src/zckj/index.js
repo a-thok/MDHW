@@ -8,10 +8,13 @@ fastclick.attach(document.body);
 import index from './js/index.js';
 import detail from './js/detail.js';
 import list from './js/list.js';
-if (document.location.pathname.indexOf('detail') !== -1) {
+
+const pathname = window.location.pathname;
+
+if (pathname.indexOf('detail') !== -1) {
   detail();
-} else if (document.location.pathname.indexOf('index') !== -1) {
+} else if (pathname.indexOf('index') !== -1) {
   index();
-} else if (document.location.pathname.indexOf('list') !== -1) {
+} else if (pathname.indexOf('list') !== -1 || pathname === '/m/zckj') {
   list();
 }

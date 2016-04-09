@@ -10,10 +10,12 @@ import assess from './js/assess.js';
 import index from './js/index.js';
 import company from './js/company.js';
 
-if (window.location.pathname.indexOf('assess') !== -1) {
+const pathname = window.location.pathname;
+
+if (pathname.indexOf('assess') !== -1) {
   assess();
-} else if (window.location.pathname.indexOf('index') !== -1) {
+} else if (pathname.indexOf('index') !== -1 || pathname === '/m/kj') {
   index();
-} else if (window.location.pathname.indexOf('company') !== -1) {
+} else if (pathname.indexOf('company') !== -1) {
   company();
 }
