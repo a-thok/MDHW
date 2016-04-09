@@ -33,7 +33,7 @@
 /**公司信息**/
 .list_item_content_info {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 /**公司信息左边**/
 .list_item_content_info_left {
