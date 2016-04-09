@@ -1,0 +1,9 @@
+.ulink .fa {
+  font-size: 28px;
+}
+.ulink_right {
+  border-bottom: 1px solid #f1f1f1;
+}
+.ulink:last-child .ulink_right {
+  border: 0;
+}
