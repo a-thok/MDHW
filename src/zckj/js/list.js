@@ -20,7 +20,7 @@ export default function list() {
     template,
     load,
     api: '/m/MS/MakerSpaceList',
-    container: document.querySelector('.list'),
+    container: document.querySelector('.list')
   };
   render(config);
   // doSearch({

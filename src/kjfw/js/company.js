@@ -13,7 +13,7 @@ export default function company() {
       pageIndex: 1,
       pageSize: 10
     },
-    container: $('.listWrap'),
+    container: $('.listWrap')
   };
   render(config);
   doSearch({

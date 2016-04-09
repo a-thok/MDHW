@@ -12,7 +12,7 @@ export default function search() {
     api: '/m/ZC/ZcList',
     params: {
       pageIndex: 1,
-      pageSize: 10,
+      pageSize: 10
     },
     container: $('.zcList')
   };
