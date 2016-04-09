@@ -22,36 +22,35 @@
     <!--头部 结束-->
 
     <!--输入信息  开始-->
-    <div class="enter">
-       <!--验证码  开始-->
-      <div class="enter_psw">
-        <input class="enter_msg enter_msg-psw enter_msg-codes" type="text" placeholder="请输入验证码">
-        <label class="enter_lab enter_lab-few" for="">
-          <i></i>
-          <img src="" alt="">
-        </label>
-      </div>
-      <!--验证码  结束-->
-      <!--获取验证码  开始-->
-      <div class="enter_psw get_codes">
-        <input class="enter_msg enter_msg-get" type="text" placeholder="请输入手机号">
-        <button class="get_codes_btn" type="button">获取短信验证码</button>
-      </div>
-      <!--获取验证码  结束-->
-      <input class="enter_msg" type="text" placeholder="请输入短信验证码">
-      <!--设置密码  开始-->
-      <div class="enter_psw">
-        <input class="enter_msg enter_msg-psw" type="password" placeholder="请设置6-20位的登录密码">
-        <label class="enter_lab" for="">
-          <div class="enter_lab_opt">
-            <button class="enter_lab_btn" type="button"></button>
+    <form class="acc">
+      <div class="acc_group">
+        <input class="acc_input acc_input-hasLabel" type="text" placeholder="请输入验证码">
+        <label class="acc_label acc_label-hasBorder">
+          <div class="acc_label_code">
+            <img src="http://www.dreamhiway.com/Login/VerifyCode?_=1450339330618" alt="验证码">
           </div>
         </label>
       </div>
-      <!--设置密码 结束-->
+      <div class="acc_group">
+        <input class="acc_input acc_input-short" type="text" placeholder="请输入手机号">
+        <button class="acc_getCode" type="button">获取短信验证码</button>
+      </div>
+      <div class="acc_group">
+        <input class="acc_input" type="text" placeholder="请输入短信验证码">
+      </div>
+      <div class="acc_group">
+        <input class="acc_input acc_input-hasLabel" type="password" placeholder="请设置6-20位的登录密码">
+        <label class="acc_label">
+          <div class="acc_switcher">
+            <div class="acc_switcher_btn"></div>
+          </div>
+        </label>
+      </div>
      
-      <p class="enter_check">注册即视为同意<a class="register_link" href="">《梦高速用户注册协议》</a></p>
-      <button class="enter_btn enter_btn-top" type="button">注册</button>
+      <p class="acc_text">注册即视为同意<a class="acc_link" href="#">《梦高速用户注册协议》</a></p>
+      
+      <button class="acc_btn" type="button">注册</button>
+    </form>
   </div>
 
   <script src="/js/common.js"></script>

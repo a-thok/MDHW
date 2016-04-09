@@ -12,8 +12,10 @@ import './img/morepeoplelqt.png';
 import './img/twopeoplelqt.png';
 import './img/onepeoplelqt.png';
 
+const pathname = window.location.pathname;
+
 import index from './js/index.js';
-if (window.location.pathname.indexOf('index') !== -1) {
+if (pathname.indexOf('index') !== -1 || pathname === '/m/zxsj') {
   index();
 }
 

@@ -6,12 +6,15 @@
   font-size: 16px;
 }
 .list_item {
-  display: flex;
   padding: 3% 2%;
   border: 1px solid var(--borderColorLight);
   margin-bottom: 15px;
   background-color: #fff;
   overflow: hidden;
+}
+.list_item_a {
+  display: flex;
+  text-decoration: none;
 }
 /* 图片 */
 .list_item_img {

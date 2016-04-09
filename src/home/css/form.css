@@ -1,0 +1,57 @@
+.acc_func {
+  display: flex;
+  justify-content: space-between;
+}
+.acc_func a {
+  display: block;
+  text-decoration: none;
+  color: #666;
+}
+
+.other {
+  margin-top: 40px;
+}
+.titleLine {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+.titleLine_line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #aaa;
+}
+.titleLine_text {
+  position: relative;
+  z-index: 1;
+  line-height: 50px; /*uc兼容*/
+  padding: 0 10px;
+  background-color: var(--pageColor);
+  font-weight: normal;
+  font-size: 16px;
+  color: var(--fontColorLight);
+}
+
+.other_list {
+  padding: 0 20%;
+  display: flex;
+  justify-content: space-between;
+}
+.other_list .fa {
+  padding: .5em;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  font-size: 30px;
+}
+.other_list .fa-weixin {
+  border-color: #ff9d91;
+  color: #ff9d91;
+}
+.other_list .fa-qq {
+  border-color: #73cdef;
+  color: #73cdef;
+}

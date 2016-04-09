@@ -26,7 +26,7 @@
 .hostlist_item_info_item-big {
   width: 44%;
 }
-.base_title_text a {
+.hostlist_item_a {
+  display: block;
   color: #333;
-  text-decoration: none;
 }
