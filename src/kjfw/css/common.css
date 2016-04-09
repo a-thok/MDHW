@@ -18,6 +18,7 @@
 }
 .list_link {
   text-decoration: none;
+  display: block;
 }
 .link-color {
   color: #333;
