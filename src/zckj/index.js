@@ -1,6 +1,8 @@
 // import 'font-awesome/css/font-awesome.css'
 import './css/main.css';
 
+import './img/1-banner.png';
+import './img/zckj_logo.png';
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
 fastclick.attach(document.body);

@@ -17,13 +17,65 @@
       </div>
       <!--搜索框开始-->
       <div class="header_srch">
-        <input class="header_srch_input header_srch_input-nolabel" type="text" placeholder="请输入关键词">
+        <input class="header_srch_input header_srch_input-nolabel" id="search" type="text" placeholder="请输入关键词">
         <button class="header_btn header_srch_btn" type="button">搜索</button>
       </div>
       <!--搜索框结束-->
     </header>
     <!--头部 结束-->
-
+    <!--热门搜索 开始-->
+    <div class="cate">
+    </div>
+    <!--热门搜索 结束-->
+    <!--过滤栏 开始-->
+    <section class="filter">
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">
+            <span class="filter_active">地区不限</span>
+          <i class="fa fa-angle-up"></i>
+          </span>
+        </div>
+        <div class="filter_content">
+          <div class="filter_content_wrap">
+            <ul class="filter_content_list filter_content_list-province"></ul>
+            <ul class="filter_content_list filter_content_list-city" data-filter="citycode">
+              <li class="attention attention-top">请</li>
+              <li class="attention">先</li>
+              <li class="attention">选</li>
+              <li class="attention">择</li>
+              <li class="attention">左</li>
+              <li class="attention">侧</li>
+              <li class="attention">的</li>
+              <li class="attention">省</li>
+              <li class="attention">份</li>
+            </ul>
+          </div>
+          <!--<div class="filter_content_btns">
+            <button class="filter_content_btn" type="button">收起</button>
+          </div>-->
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">
+            <span class="filter_active">优惠政策</span>
+          <i class="fa fa-angle-up"></i>
+          </span>
+        </div>
+        <div class="filter_content">
+          <ul class="filter_content_list" data-filter="zc">
+            <li class="filter_content_list_item" data-code="">不限<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="">资金补贴<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="">免费场地<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="">免管理费<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="">免水电费<i class="fa fa-check-circle"></i></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--过滤栏 结束-->
+    
     <!--列表开始-->
     <section class="listWrap">
       <ul class="list">

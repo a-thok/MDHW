@@ -1,3 +1,7 @@
+.header_menu_list_item a {
+  text-decoration: none;
+  color: #fff;
+}
 /**
  * 推荐
  */
@@ -60,17 +64,31 @@
   text-align: center;
 }
 .hot_list_item_apply {
+  display: block;
   margin: 1.5em 0;
   padding: .5em 1em;
   border: 0;
+  border-radius: 5px;
   background: var(--zckjColor);
+  text-decoration: none;
   color: #fff;
 }
 /** 更多 **/
-.hot_more {
-  width: 100%;
-  text-align: center;
+.zckjMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
-.longRadiusBtn-zckj {
+.hot_more_LINK {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 50px;
+  width: 50%;
   background: var(--zckjColor);
+}
+.hot_more_LINK .fa {
+  margin-left: 1em;
 }
