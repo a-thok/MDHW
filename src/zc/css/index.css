@@ -68,6 +68,9 @@
 .zcList_item_info_sect {
   padding: .8em 0;
 }
+.zcList_item_info_sect_number {
+  text-align: center;
+}
 .zcList_item_progress {
   width: 100%;
   height: 7px;
