@@ -24,30 +24,31 @@
     <!--输入信息  开始-->
     <form class="acc">
       <div class="acc_group">
-        <input class="acc_input" type="text" placeholder="请输入用户名/邮箱/以验证手机">
+        <input class="acc_input" name="name" type="text" placeholder="请输入用户名/邮箱/以验证手机">
       </div>
       <div class="acc_group">
-        <input class="acc_input" type="password">
-        <label class="acc_label" for="">
+        <input class="acc_input" name="pwd" type="password">
+        <input class="acc_input showPassword" type="text">
+        <label class="acc_label">
           <div class="acc_switcher">
             <div class="acc_switcher_btn"></div>
           </div>
         </label>
       </div>
-      <div class="acc_group">
-        <input class="acc_input" type="text" placeholder="请输入验证码">
+      <div class="acc_group acc_group-verify">
+        <input class="acc_input" name="verify" type="text" placeholder="请输入验证码">
         <label class="acc_label">
           <div class="acc_label_codeWrap">
-            <img src="http://www.dreamhiway.com/Login/VerifyCode?_=1450339330618" alt="">
+            <img class="codeImg" src="http://www.dreamhiway.com/Login/VerifyCode" alt="">
           </div>
         </label>
       </div>
       <p class="acc_text">
-        <input class="remember" id="remember" type="checkbox">
+        <input class="remember" name="autoLogin" id="remember" type="checkbox">
         <label for="remember"><i class="fa fa-check"></i></label>
         <label for="remember">记住登录</label>
       </p>
-      <button class="acc_btn" type="button">登录</button>
+      <button class="acc_btn login" type="submit">登录</button>
     </form>
     <!--输入信息  结束-->
     

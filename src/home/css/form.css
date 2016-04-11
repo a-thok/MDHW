@@ -1,57 +1,152 @@
-.acc_func {
-  display: flex;
-  justify-content: space-between;
+/*
+  **输入信息**
+*/
+.acc,
+.acc_func,
+.other {
+  padding: 0 4%;
+  margin-top: 25px;
 }
-.acc_func a {
-  display: block;
+.acc_link {
   text-decoration: none;
-  color: #666;
+  color: var(--mgsColor);
 }
 
-.other {
-  margin-top: 40px;
-}
-.titleLine {
+/* input */
+.acc_group {
   position: relative;
-  display: flex;
-  justify-content: center;
-  height: 50px;
-}
-.titleLine_line {
-  position: absolute;
-  top: 50%;
-  left: 0;
   width: 100%;
-  border-top: 1px solid #aaa;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
-.titleLine_text {
-  position: relative;
-  z-index: 1;
-  line-height: 50px; /*uc兼容*/
-  padding: 0 10px;
-  background-color: var(--pageColor);
-  font-weight: normal;
+.acc_group-verify {
+  display: none;
+}
+.acc_group-verify.is-show {
+  display: block;
+}
+.acc_input {
+  width: 100%;
+  height: 50px; /*uc兼容*/
+  height: 14vw;
+  max-height: 94px;
+  padding: 0 3%;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+.acc_input.showPassword {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.acc_input-short {
+  float: left;
+  width: 49%;
+  margin-top: 0;
+}
+/* 获取验证码按钮 */
+.acc_getCode {
+  float: right;
+  width: 49%;
+  height: 50px;
+  height: 14vw;
+  max-height: 94px;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 5px;
   font-size: 16px;
   color: var(--fontColorLight);
 }
-
-.other_list {
-  padding: 0 20%;
+.acc_input-hasLabel {
+  padding-right: 28%;
+}
+/* label */
+.acc_label {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 50px; /*uc兼容*/
+  height: 14vw;
+  max-height: 94px;
+  padding: 1px;
 }
-.other_list .fa {
-  padding: .5em;
-  border-width: 1px;
-  border-style: solid;
+.acc_label-hasBorder::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 80%;
+  border-left: 1px solid var(--borderColorLight);
+}
+/* 验证码 */
+.acc_label_code {
+  width: 100%;
+  padding: 5%;
+  text-align: center;
+}
+.acc_label_code img {
+  width: 100%;
+  vertical-align: middle;
+}
+/* 切换开关 */
+.acc_switcher {
+  width: 80%;
+  height: 80%;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 50px;
+  background: #ccc;
+}
+.acc_switcher_btn {
+  display: inline-block;
+  width: 65%;
+  height: 100%;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 50px;
+  background: #fff;
+  /*box-shadow: 0 0 0 1px #eee;*/
+}
+.acc_switcher.is-on {
+  border-color: var(--mgsColor);
+  background: var(--mgsColor);
+  text-align: right;
+}
+/* 文本 */
+.acc_text {
+  font-size: 14px;
+  color: var(--fontColorLight);
+  line-height: 3.6;
+}
+.acc_text .fa {
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  font-size: 30px;
+  margin-right: .5em;
+  background: #ccc;
+  color: #fff;
+  text-align: center;
+  line-height: 22px;
 }
-.other_list .fa-weixin {
-  border-color: #ff9d91;
-  color: #ff9d91;
+/* 记住登录 */
+#remember {
+  display: none;
 }
-.other_list .fa-qq {
-  border-color: #73cdef;
-  color: #73cdef;
+#remember:checked + label .fa {
+  background: var(--mgsColor);
+}
+/* 大按钮 */
+.acc_btn {
+  width: 100%;
+  height: 50px; /*uc兼容*/
+  height: 14vw;
+  max-height: 94px;
+  font-size: 18px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #e2e2e2;
+  color: var(--fontColorLight);
 }
