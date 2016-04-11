@@ -10,6 +10,6 @@ import './img/hotlqt.png';
 
 const pathname = window.location.pathname;
 
-if (pathname.indexOf('index') !== -1) {
+if (pathname.indexOf('index') !== -1 || pathname === '/m/gsss') {
   index();
 }

@@ -1,6 +1,12 @@
 import { $, $parent, $from, $cookie } from 'func';
+import goToSearch from 'goToSearch';
 
 export default function index() {
+  goToSearch({
+    input: $('.srch_input'),
+    partialUrl: 'http://192.168.2.177:8090/m/zc/search?kw=',
+    btn: $('.srch_btn')
+  });
   // 点赞
   $('.zcList').addEventListener('click', (e) => {
     if (e.target.classList.contains('fa-thumbs-o-up')) {

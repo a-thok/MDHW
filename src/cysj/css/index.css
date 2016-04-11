@@ -37,3 +37,7 @@
   color: #333;
   text-decoration: none;
 }
+.grid_item_icon .fa {
+  color: #000;
+  font-size: 30px;
+}

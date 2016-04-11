@@ -3,7 +3,6 @@
  */
 .dialog {
   margin: 2em 3.7333%;
-  background-color: #fff;
   border: 1px solid var(--borderColorLight);
 }
 
@@ -13,6 +12,7 @@
   border-bottom: 1px solid var(--pageColor);
   font-weight: normal;
   font-size: 16px;
+  background-color: #fff;
 }
 .dialog_title .fa {
   font-size: 20px;
@@ -21,11 +21,10 @@
 }
 
 /** 列表 **/
-.dialog_list {
-  padding: 0 3.4482%;
-}
 .dialog_list_item {
-  margin-top: 18px;
+  padding: 1em 3.4482%;
+  margin-bottom: .8em;
+  background-color: #fff;
 }
 /* 用户 */
 .dialog_list_item_user {
@@ -40,7 +39,6 @@
   height: 11.4942vw;
   max-height: 80px;
   border-radius: 50%;
-  background-color: red;
 }
 .dialog_list_item_user_name {
   margin-left: .8em;
@@ -68,6 +66,7 @@
   border: 0;
   background-color: transparent;
   color: var(--zcColor);
+  cursor: pointer;
 }
 .dialog_list_item_info_btn .fa {
   margin-right: .3em;
@@ -198,6 +197,7 @@
   background-color: #fff;
 }
 .reply_box {
+  position: relative;
   width: 84%;
   flex-basis: 84%;
   display: flex;
@@ -238,4 +238,18 @@
   font-size: 14px;
   color: var(--zcColor);
   text-align: center;
+  cursor: pointer;
+}
+.reply_box_name {
+  position: absolute;
+  top: 2.5vw;
+  left: 2vw;
+  color: #2991c6;
+}
+.is-hidden {
+  display: none;
+}
+.is-focus {
+  /*outline: 1px solid #2991c6;*/
+  box-shadow: inset 0px 0px 5px #2991c6;
 }

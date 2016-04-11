@@ -10,10 +10,9 @@
 .company_post {
   font-size: 14px;
 }
-.company_comment a,
-.company_post a {
+.company_comment span,
+.company_post span {
   color: var(--rczpColor);
-  text-decoration: none;
 }
 .filter_content_list_item.is-active {
   color: var(--rczpColor);
@@ -22,3 +21,6 @@
   color: #333;
   text-decoration: none;
 }*/
+.list_link {
+  display: block;
+}
