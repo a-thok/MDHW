@@ -8,7 +8,6 @@
   height: 250px;/* uc */
   height: 64.5333vw;
   max-height: 484px;
-  background-color: red;
 }
 /*分享按钮样式*/
 .dtImg_btn {
@@ -212,11 +211,26 @@ ul.dialog_sublist-border {
   background: rgba(51, 51, 51, .3);
 }
 .sliderShare_box {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 20.3333vw;
   max-height: 100px;
   bottom: 0;
-  padding: .5em 3.7333%;
+  padding: 0 3.7333%;
   background-color: #fff;
+}
+.sliderShare_box_cencel {
+  position: absolute;
+  top: .2em;
+  right: 1em;
+}
+.sliderShare_box span.jiathis_txt {
+  font-size: 16px;
+}
+.jiathis_style_m {
+  margin-top: 1.5em;
+}
+
+.jiathis_txt.jtico {
+  padding: 0 .5em;
 }

@@ -11,12 +11,21 @@
 <body>
   <div class="page">
     <!--头部 开始-->
-    <header class="header header-reverse">
+    <header class="header header-reverse header-logo">
       <div class="header_sect">
         <button class="header_btn" type="button"><i class="fa fa-angle-left"></i></button>
       </div>
-      <div class="header_sect">
-        <button class="header_btn" type="button"><i class="fa fa-search"></i></button>
+      <div class="header_sect header_sect-menu">
+        <span class="header_menu"><i></i><i></i><i></i></span>
+        <div class="header_menu_wrap">
+          <div class="arrow-wrap"><i class="arrow"></i></div>
+          <ul class="header_menu_list">
+            <li class="header_menu_list_item">梦高速首页</li>
+            <li class="header_menu_list_item">创客空间</li>
+            <li class="header_menu_list_item">关于我们</li>
+            <li class="header_menu_list_item">个人中心</li>
+          </ul>
+        </div>
       </div>
     </header>
     <!--头部 结束-->
@@ -30,16 +39,17 @@
       
       <!--列表 开始-->
       <ul class="dialog_list">
-        <li class="dialog_list_item">
+        <li class="dialog_list_item" code-id="1">
           <div class="dialog_list_item_user">
-            <div class="dialog_list_item_user_avatar"></div><!--这里应该是一张图片-->
+              <img class="dialog_list_item_user_avatar" src="#" alt="" /> 
             <span class="dialog_list_item_user_name">尼古拉斯</span>
           </div>
           <p class="dialog_list_item_content">评论内容评论内容评论内容</p>
           <div class="dialog_list_item_info">
             <time class="dialog_list_item_info_time"><i class="fa fa-clock-o"></i>2016-03-01 23:25:00</time>
-            <button class="dialog_list_item_info_btn" type="button"><i class="fa fa-commenting-o"></i>评论</button>
+            <button class="dialog_list_item_info_btn" type="button" for=""><i class="fa fa-commenting-o"></i>评论</button>
           </div>
+          
           <!--子评论 开始-->
           <ul class="dialog_sublist">
             <li class="dialog_sublist_arrow"></li>
@@ -60,22 +70,64 @@
               </div>
             </li>
           </ul>
+          <!--子评论 结束-->
+          
         </li>
-         <!--子评论 结束-->
+        <li class="dialog_list_item" code-id="2">
+          <div class="dialog_list_item_user">
+            <div class="dialog_list_item_user_avatar"></div><!--这里应该是一张图片-->
+            <span class="dialog_list_item_user_name">尼古拉斯</span>
+          </div>
+          <p class="dialog_list_item_content">评论内容评论内容评论内容</p>
+          <div class="dialog_list_item_info">
+            <time class="dialog_list_item_info_time"><i class="fa fa-clock-o"></i>2016-03-01 23:25:00</time>
+            <button class="dialog_list_item_info_btn" type="button" for=""><i class="fa fa-commenting-o"></i>评论</button>
+          </div>
+          
+          <!--子评论 开始-->
+          <ul class="dialog_sublist">
+            <li class="dialog_sublist_arrow"></li>
+            <li class="dialog_sublist_item">
+              <div class="dialog_sublist_item_username">尼古拉斯</div>
+              <div class="dialog_sublist_item_comment">
+                <i class="dialog_sublist_item_arrow"></i>
+                <p class="dialog_sublist_item_content">评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容</p>
+                <p class="dialog_list_item_info_time"><time>2016-03-01 23:25:00</time></p>
+              </div>
+            </li>
+            <li class="dialog_sublist_item">
+              <div class="dialog_sublist_item_username">尼古拉斯</div>
+              <div class="dialog_sublist_item_comment">
+                <i class="dialog_sublist_item_arrow"></i>
+                <p class="dialog_sublist_item_content">评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容</p>
+                <p class="dialog_list_item_info_time"><time>2016-03-01 23:25:00</time></p>
+              </div>
+            </li>
+          </ul>
+          <!--子评论 结束-->
+          
+        </li>
       </ul>
       <!--列表 结束-->
       
       <!--展开评论 开始-->
-      <div class="dialog_more">
+      <!--<div class="dialog_more">
         <a class="dialog_more_link" href="javascript:;">展开评论(12)</a>
-      </div>
+      </div>-->
       <!--展开评论 结束-->
+      
+      <!--加载栏 开始-->
+      <div class="list_load is-hidden">
+        <i class="fa fa-spinner fa-pulse"></i><span class="list_load_text">加载中...</span>
+      </div>
+      <!--加载栏 结束-->
     </div>
     
     <!--发布评论 开始-->
     <div class="reply">
       <div class="reply_box">
-        <input class="replay_box_input" type="text" placeholder="来畅所欲言吧">
+        <span class="reply_box_name is-hidden"></span>
+        <input class="replay_box_input" id="replay" type="text" placeholder="来畅所欲言吧">
         <label class="replay_box_label" for=""><i class="fa fa-smile-o"></i></label>
       </div>
       <button class="reply_btn" type="button">发布</button>

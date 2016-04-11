@@ -2,3 +2,16 @@
 .nav_link-active {
   color: var(--zcColor);
 }
+.header-logo {
+  background-image: url("../img/zc_logo.png");
+}
+.header_menu > i {
+  background-color: var(--fontColorLight);
+}
+/*链接样式*/
+.list_link {
+  text-decoration: none;
+}
+.link-color {
+  color: #333;
+}

@@ -7,9 +7,9 @@ export default function template(data) {
         </h6>
         <div class="zcList_item_img">
           <span class="zcTag zcTag-transparent">${cur.ztmc}</span>
-          <img src="" alt="">
+          <img src="http://192.168.2.10:82/img/${cur.frontpic}_280x280.jpg" alt="${cur.frontpic}">
         </div>
-        <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${cur.moneySum}</span>万/ ￥<span class="zcList_item_number">${cur.moneyAll}</span>万</div>
+        <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${cur.moneySum}</span>/ ￥<span class="zcList_item_number">${cur.moneyAll}</span></div>
         <div class="zcList_item_info">
           <div class="zcList_item_info_sect">
             <div class="zcList_item_info_sect_title">支持人数</div>
@@ -17,14 +17,14 @@ export default function template(data) {
           </div>
           <div class="zcList_item_info_sect">
             <div class="zcList_item_info_sect_title">项目进度</div>
-            <div class="zcList_item_info_sect_number"><span class="zcList_item_number">${cur.percentage}</span></div>
+            <div class="zcList_item_info_sect_number"><span class="zcList_item_number">${cur.progress}%</span></div>
           </div>
           <div class="zcList_item_info_sect">
             <div class="zcList_item_info_sect_title">剩余天数</div>
             <div class="zcList_item_info_sect_number"><span class="zcList_item_number">${cur.numSy}</span>天</div>
           </div>
         </div>
-        <progress class="zcList_item_progress" max="100" value="85"></progress>
+        <progress class="zcList_item_progress" max="100" value="${cur.percentage}"></progress>
         <div class="zcList_item_intro">${cur.purpose}</div>
       </li>`
   ), '');
