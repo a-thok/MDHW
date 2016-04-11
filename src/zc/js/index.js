@@ -4,7 +4,7 @@ import goToSearch from 'goToSearch';
 export default function index() {
   goToSearch({
     input: $('.srch_input'),
-    partialUrl: 'http://192.168.2.177:8090/m/zc/search?kw=',
+    partialUrl: 'http://192.168.2.177:8088/m/zc/search?kw=',
     btn: $('.srch_btn')
   });
   // 点赞
