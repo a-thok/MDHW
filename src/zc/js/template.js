@@ -9,7 +9,7 @@ export default function template(data) {
           <span class="zcTag zcTag-transparent">${cur.ztmc}</span>
           <img src="" alt="">
         </div>
-        <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${cur.moneySum}</span>万/ ￥<span class="zcList_item_number">${cur.moneyAll}</span>万</div>
+        <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${cur.moneySum}</span>/ ￥<span class="zcList_item_number">${cur.moneyAll}</span></div>
         <div class="zcList_item_info">
           <div class="zcList_item_info_sect">
             <div class="zcList_item_info_sect_title">支持人数</div>

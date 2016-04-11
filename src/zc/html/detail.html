@@ -11,7 +11,7 @@
 <body>
   <div class="page">
     <!--头部 开始-->
-    <header class="header header-reverse">
+    <header class="header header-reverse header-logo">
       <div class="header_sect">
         <button class="header_btn" type="button"><i class="fa fa-angle-left"></i></button>
       </div>
@@ -23,7 +23,7 @@
     
     <!--众筹项目进度信息开始-->
     <div class="dtImg">
-      <img class="dtImg_img" src="" alt="">
+      <img class="dtImg_img" src="#" alt="">
       <span class="dtImg_btn">
         <i class="fa fa-share-square-o"></i>
       </span>
@@ -136,8 +136,10 @@
       <ul class="dtSupport_list">
         <li class="dtSupport_list_li">
          <p class="dtSupport_list_li_title">
-          <i class="fa fa-jpy rmb-red"></i><span class="dtSupport_list_li_title_span">1</span> 55人已支持/限250名
-          <i class="fa fa-angle-right angle-rightred"></i>
+          <a class="list_link link-color" href="#">
+            <i class="fa fa-jpy rmb-red"></i><span class="dtSupport_list_li_title_span">1</span> 55人已支持/限250名
+            <i class="fa fa-angle-right angle-rightred"></i>
+          </a>
         </p>
         </li>
         <li class="dtSupport_list_text">
@@ -153,8 +155,10 @@
       <ul class="dtSupport_list">
         <li class="dtSupport_list_li">
          <p class="dtSupport_list_li_title">
-          <i class="fa fa-jpy rmb-red" ></i><span class="dtSupport_list_li_title_span">1</span> 55人已支持/限250名
-          <i class="fa fa-angle-right angle-rightred"></i>
+          <a class="list_link link-color" href="#">
+            <i class="fa fa-jpy rmb-red" ></i><span class="dtSupport_list_li_title_span">1</span> 55人已支持/限250名
+            <i class="fa fa-angle-right angle-rightred"></i>
+          </a>
         </p>
         </li>
         <li class="dtSupport_list_text">
@@ -183,21 +187,17 @@
   <!-- 分享选择滑出-->
   <div class="sliderShare">
     <div class="sliderShare_box">
-      <p>
-        <span>微信</span>
-        <span>QQ</span>
-        <span>微博</span>
-      </p>
-      <p>
-        <button class="sliderShare_box_sure">确定</button>
-        <button class="sliderShare_box_cancel">取消</button>
-      </p>
+      <div class="jiathis_style_m"></div>
+      <sapn class="sliderShare_box_cencel"><i class="fa fa-times"></i></sapn>
     </div>
   </div>
   <!--分享选择滑出结束-->
   
   <script src="/js/common.js"></script>
   <script src="/js/zc.js"></script>
+  <!-- JiaThis Button BEGIN -->
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_m.js" charset="utf-8"></script>
+  <!-- JiaThis Button END -->
 </body>
 
 </html>
