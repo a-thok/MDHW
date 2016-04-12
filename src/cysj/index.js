@@ -1,7 +1,7 @@
 import './css/main.css';
 
 // 图片导入
-import './img/cysj_logo.png';
+import './img/cysj_xq.png';
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
