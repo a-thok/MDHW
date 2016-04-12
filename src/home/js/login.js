@@ -1,10 +1,10 @@
-import { $ } from 'func';
+import { $, $from } from 'func';
 import { switchPassword, refrechCodeImg, dataBinding } from './form.js';
 
 export default function login() {
   const data = {};
   const login = $('.login');
-  const inputs = $('input');
+  const inputs = $from('input');
   const modal = $('.modal');
   const modalText = modal.querySelector('.modal_content_text');
 
