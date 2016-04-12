@@ -250,6 +250,10 @@
   display: none;
 }
 .is-focus {
-  /*outline: 1px solid #2991c6;*/
   box-shadow: inset 0 0 5px #2991c6;
+}
+
+/*子评论回复时间*/
+.sub_time {
+  padding-right: 1em;
 }
