@@ -1,10 +1,12 @@
 export default function template(data) {
   return data.result.data.reduce((pre, cur) => (
-    `${pre}<li class="zcList_item">
+    `${pre}
+    <li class="zcList_item">
         <h6 class="zcList_item_header">
           <div class="zcList_item_header_text"><span class="zcTag">${cur.name}</span>${cur.title}</div>
           <i class="fa fa-thumbs-o-up"></i>
         </h6>
+        <a class="zcList_item_a" href="http://192.168.2.177:8088/m/zc/detail/${cur.id}">
         <div class="zcList_item_img">
           <span class="zcTag zcTag-transparent">${cur.ztmc}</span>
           <img src="http://192.168.2.10:82/img/${cur.frontpic}_280x280.jpg" alt="${cur.frontpic}">
@@ -26,6 +28,7 @@ export default function template(data) {
         </div>
         <progress class="zcList_item_progress" max="100" value="${cur.percentage}"></progress>
         <div class="zcList_item_intro">${cur.purpose}</div>
+        </a>
       </li>`
   ), '');
 }
