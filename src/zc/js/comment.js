@@ -25,7 +25,7 @@ export default function comment() {
           <p class="dialog_list_item_content">${cur.comment}</p>
           <div class="dialog_list_item_info">
             <time class="dialog_list_item_info_time"><i class="fa fa-clock-o"></i>${cur.date}</time>
-            <button class="dialog_list_item_info_btn" type="button"><i class="fa fa-commenting-o"></i>评论</button>
+            <button class="dialog_list_item_info_btn" type="button"><i class="fa fa-commenting-o"></i>回复</button>
           </div>
           <!--子评论 开始-->
           <ul class="dialog_sublist" ${child.length ? '' : 'style="visibility:hidden"'}>
