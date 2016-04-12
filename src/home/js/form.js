@@ -50,7 +50,7 @@ export function dataBinding(data, btn) {
       });
     } else {
       input.addEventListener('input', (e) => {
-        data[prop] = e.target.value.trim();
+        data[prop] = e.target.value;
         common();
       });
     }

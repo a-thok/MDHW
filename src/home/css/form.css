@@ -17,7 +17,7 @@
   position: relative;
   width: 100%;
   margin-bottom: 10px;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .acc_group-verify {
   display: none;
@@ -257,26 +257,31 @@
   }
 }*/
 /* 提示框 */
-/*.acc_group {
-  position: relative;
-}*/
 .acc_tip {
-  position: relative;
-  /*top: -3em;
-  left: 20px;*/
-  width: 70%;
+  position: absolute;
+  top: -115%;
+  left: 5px;
+  width: 65%;
+  height: 100%;
+  padding: .3em .8em;
   font-size: 12px;
   border-radius: 5px;
-  background: #fff;
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+}
+.is-hidden {
+  display: none;
 }
 .acc_tip_text {
-  /*position: absolute;*/
-  padding: .5em 5px;
-  /*text-align: center;*/
   color: #ccc;
+}
+.acc_tip_text .fa {
+  margin-right: .8em;
+  color: var(--mgsColor);
 }
 .arrow-down {
   position: absolute;
-  bottom: -5px;
+  top: 100%;
   left: 10px;
+  border-bottom-color: rgba(0, 0, 0, .7);
 }
