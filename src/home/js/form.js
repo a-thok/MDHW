@@ -30,14 +30,29 @@ export function refrechCodeImg() {
   };
 }
 
-export function dataBinding(data) {
+export function dataBinding(data, btn) {
   const inputs = $from('input[name]');
+  const common = function () {
+    console.log(data);
+    btn.disabled = false;
+    inputs.forEach((_input) => {
+      if (_input.required && !_input.value) btn.disabled = true;
+    });
+  };
+
   inputs.forEach((input) => {
     const prop = input.name;
     data[prop] = '';
-    input.addEventListener('change', (e) => {
-      data[prop] = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-      console.log(data);
-    });
+    if (input.type === 'checkbox') {
+      input.addEventListener('change', (e) => {
+        data[prop] = e.target.checked;
+        common();
+      });
+    } else {
+      input.addEventListener('input', (e) => {
+        data[prop] = e.target.value.trim();
+        common();
+      });
+    }
   });
 }

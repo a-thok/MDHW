@@ -3,14 +3,17 @@ import { switchPassword, refrechCodeImg, dataBinding } from './form.js';
 
 export default function login() {
   const data = {};
+  const login = $('.login');
+  const modal = $('.modal');
+  const modalText = modal.querySelector('.modal_content_text');
 
   switchPassword(data, 'pwd');
   const refresh = refrechCodeImg();
-  dataBinding(data);
+  dataBinding(data, login);
 
-  const login = $('.login');
   login.addEventListener('click', (e) => {
     e.preventDefault();
+    login.disabled = true;
     fetch('/m/main/Login', {
       method: 'POST',
       headers: {
@@ -24,11 +27,13 @@ export default function login() {
           alert('登录成功');
         } else {
           if (res.msg) {
-            alert(res.msg);
+            modalText.textContent = res.msg;
           } else {
-            alert('未知错误');
+            modalText.textContent = '未知错误，请稍候重试';
           }
           refresh();
+          modal.classList.add('is-show');
+          setTimeout(() => modal.classList.remove('is-show'), 2500);
         }
       });
   });
