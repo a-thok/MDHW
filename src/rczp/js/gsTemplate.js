@@ -5,7 +5,7 @@ export default function gsTemplate(data) {
     // let url = `http://192.168.2.10:82/img/${cur.logo || 'default.png'}`;
     return (
       `${pre}<li class="list_item">
-            <a class="list_item_a" href="http://192.168.2.177:8086/m/hr/detail/${cur.id}">
+            <a class="list_item_a" href="#">
               <div class="list_item_img"><img src="${url}"></div>
               <div class="list_item_text">
                 <p class="list_item_text_p company_info">
