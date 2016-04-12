@@ -4,6 +4,7 @@ import { switchPassword, refrechCodeImg, dataBinding } from './form.js';
 export default function login() {
   const data = {};
   const login = $('.login');
+  const inputs = $('input');
   const modal = $('.modal');
   const modalText = modal.querySelector('.modal_content_text');
 
@@ -11,7 +12,7 @@ export default function login() {
   const refresh = refrechCodeImg();
   dataBinding(data, login);
 
-  login.addEventListener('click', (e) => {
+  function doLogin(e) {
     e.preventDefault();
     login.disabled = true;
     fetch('/m/main/Login', {
@@ -40,5 +41,12 @@ export default function login() {
           setTimeout(() => modal.classList.remove('is-show'), 2500);
         }
       });
+  }
+
+  login.addEventListener('click', doLogin);
+  inputs.forEach((input) => {
+    input.addEventListener('keyup', (e) => {
+      if (e.keyCode === 13) doLogin(e);
+    });
   });
 }
