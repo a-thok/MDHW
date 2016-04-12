@@ -148,8 +148,5 @@
 }
 .userInput {
   padding: 1em;
-  font-size: 14px;
-}
-.userInput p {
-  line-height: 1.8;
+  font-size: 13px;
 }
