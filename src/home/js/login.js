@@ -24,7 +24,11 @@ export default function login() {
       .then(res => res.json())
       .then(res => {
         if (res.success) {
-          alert('登录成功');
+          let locationSrch = location.search;
+          let urlEndPoint = locationSrch.indexOf('&');
+          let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
+          location.href = url;
+          // alert('登录成功');
         } else {
           if (res.msg) {
             modalText.textContent = res.msg;
