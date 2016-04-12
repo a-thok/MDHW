@@ -47,23 +47,27 @@ export default function comment() {
     container: $('.dialog_list')
   });
 
-  function mainComment() {
+  // 评论事件
+  (function () {
+    // 存放回复的用户名
     const replyName = $('.reply_box_name');
+    // 输入框
     const replyInput = $('.replay_box_input');
 
+    // 评论列表最外层元素
     const commentList = $('.dialog_list');
     let subCommentList;
 
     let replyComment;
     let subComment;
     let replyId;
+
+    // 获取id
     commentList.addEventListener('click', (e) => {
       if (!e.target.classList.contains('dialog_list_item_info_btn')) return;
       if (e.target.classList.contains('sub')) {
         // 获取子评论id
-        // subComment = $parent(e.target, '.dialog_sublist');
         subComment = $parent(e.target, '.sub_item');
-        console.log(subComment);
         replyId = subComment.getAttribute('code-id');
       } else {
         // 获取主评论id
@@ -71,12 +75,16 @@ export default function comment() {
         replyId = replyComment.getAttribute('code-id');
       }
 
+      // 获取回复的用户名
       const userName = replyComment.querySelector('.dialog_list_item_user_name').textContent;
+
       replyName.textContent = `@${userName}:`;
       replyName.classList.remove('is-hidden');
-      let width = replyName.offsetWidth;
       replyInput.focus();
       replyInput.classList.add('is-focus');
+
+      // 获取用户名存放标签的宽度
+      let width = replyName.offsetWidth;
       replyInput.style.paddingLeft = `${14 + width}px`;
       replyInput.value = '';
     });
@@ -86,17 +94,25 @@ export default function comment() {
       if (replyInput.value === '') return;
       const isRootComment = replyName.classList.contains('is-hidden');
 
+      //  构造新评论的信息
       const user = $cookie().name;
       const comment = replyInput.value;
       const dt = new Date();
       const date = dt.toISOString().slice(0, -5).replace(/T/, ' ');
+
+      // 获取浏览框中的项目id
       let proPath = window.location.pathname;
       let array = proPath.split('/');
+
       if (isRootComment) {
+        // 插入发布的新评论
         const html = template({ result: { data: [{ comment, date, user, child: [] }] } });
         commentList.insertAdjacentHTML('beforeEnd', html);
+
+        // 页面滚动到新评论的位置
         document.body.scrollTop = commentList.lastElementChild.offsetTop;
       } else {
+        // 插入回复的评论
         const html = `<li class="dialog_sublist_item sub_item">
           <div class="dialog_sublist_item_username">${user}</div>
           <div class="dialog_sublist_item_comment">
@@ -109,15 +125,19 @@ export default function comment() {
         subCommentList = replyComment.querySelector('.dialog_sublist');
         subCommentList.style.visibility = 'visible';
         subCommentList.insertAdjacentHTML('beforeEnd', html);
-        document.body.scrollTop = replyComment.querySelector('.dialog_sublist').lastElementChild.offsetTop + 1000;
+
+        // 页面滚动到新回复的位置
+        document.body.scrollTop = replyComment.querySelector('.dialog_sublist').lastElementChild.offsetTop;
       }
+
       let params = {
-        fpid: array[4],
-        fid: isRootComment ? 0 : replyId, // 临时
+        fpid: array[4].replace(/[?#].*/, ''),
+        fid: isRootComment ? 0 : replyId,
         comment,
         type: 0
       };
 
+      // 向后台请求数据后，清空输入框内容
       replyInput.value = '';
 
       fetch('/m/ZC/FbComments', {
@@ -129,6 +149,7 @@ export default function comment() {
       })
         .then(res => res.json())
         .then(data => {
+          // 判断是否有数据返回，并处理
           if (data.success) {
             (isRootComment ? commentList : subCommentList)
               .lastElementChild.setAttribute('code-id', data.result.id);
@@ -138,6 +159,7 @@ export default function comment() {
         });
     });
 
+    // 删除事件
     function keyDel() {
       if (replyName.classList.contains('is-hidden')) return;
       replyName.classList.add('is-hidden');
@@ -148,6 +170,11 @@ export default function comment() {
         keyDel();
       }
     });
-  }
-  mainComment();
+  }());
+
+  $('.replay_box_input').addEventListener('focus', () => {
+    if (!$cookie().accountType) {
+      location.href = `http://192.168.2.177:8085/m/main/denglu?redirectURL=${encodeURIComponent(location.href)}`;
+    }
+  });
 }
