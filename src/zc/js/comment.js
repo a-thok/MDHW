@@ -143,6 +143,7 @@ export default function comment() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Cookie': document.cookie,
           'credentials': 'include'
         },
         body: JSON.stringify(params)
