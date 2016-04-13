@@ -10,13 +10,13 @@ export default function ULink(props) {
     textDecoration: 'none'
   };
   return (
-    <a className="ulink" href={props.href} style={style}>
+    <div className="ulink" style={style}>
       <div
         className={`fa fa-${props.icon}`}
         style={{
           float: 'left',
           width: '45px',
-          padding: '8px 0',
+          padding: '11px 0 5px',
           textAlign: 'center'
         }}
       ></div>
@@ -41,6 +41,6 @@ export default function ULink(props) {
           }}
         ></i>
       </div>
-    </a>
+    </div>
   );
 }

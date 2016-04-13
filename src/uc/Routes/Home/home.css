@@ -14,34 +14,42 @@
 
 .basics {
   background: #fff;
-  font-size: 14px;
+  font-size: 12px;
 }
 .basics > li {
   display: flex;
   align-items: center;
 }
-.basics_content {
-  flex-basis: 100%;
-  width: 100%;
-}
-.basics li::after {
+.basics li:first-child::after,
+.basics li:last-child::before {
   content: "";
   display: block;
   width: 0;
   height: 50px;
   border-right: 1px solid var(--borderColorLight);
 }
-.basics li:last-child::after {
-  border: 0;
+.basics > li > a {
+  display: block;
+  flex-basis: 100%;
+  width: 100%;
+  color: #333;
+  text-decoration: none;
+}
+.basics section {
+  margin: 5px 0;
+}
+.basics .fa {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: red;
+  font-size: 20px;
+  color: #fff;
+  line-height: 35px;
+  text-align: center;
 }
 .basics_num {
-  height: 24px;
-  line-height: 24px;
   color: red;
-}
-.basics img { /* 兼容uc */
-  width: 50px;
-  height: 50px;
 }
 
 .modulesWrap {
@@ -54,24 +62,20 @@
   justify-content: space-between;
   padding: 15px 0;
 }
+.modules > li {
+  width: 22%;
+  flex-basis: 22%;
+}
 .module {
-  flex-basis: 25%;
   width: 25%;
-}
-.module > span {
-  display: block;
-  margin: 0 auto;
-  font-size: 14px;
-  text-align: center;
-}
-.module > span > img {
-  width: 50px;
-  width: 14vw;
-  height: 50px;
-  height: 14vw;
+  color: #333;
+  text-decoration: none;
 }
 
 .ulinkWrap {
   margin-top: 20px;
   background: #fff;
+}
+.ulinkWrap a {
+  display: block;
 }

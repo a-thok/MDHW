@@ -19,8 +19,12 @@ export default function register() {
 
     xhr('/m/Main/RegPhone', data, (res) => {
       if (res.success) {
-        // location.href = decodeURIComponent(url);
-        alert('成功');
+        let locationSrch = location.search;
+        let urlEndPoint = locationSrch.indexOf('&');
+        let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
+        // console.log(decodeURIComponent(url));
+        location.href = decodeURIComponent(url);
+        // alert('成功');
       } else {
         if (res.msg) {
           modalText.textContent = res.msg;

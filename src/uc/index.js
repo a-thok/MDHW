@@ -1,7 +1,7 @@
 import './main.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Home from './routes/Home';
 import Reservation from './routes/Reservation';
 import ReservationImfor from './routes/ReservationImfor';
@@ -17,13 +17,14 @@ import SRDZ from './routes/SRDZ';
 import ZB from './routes/ZB';
 import ZC from './routes/ZC';
 import App from './App';
+import Test from './routes/Test';
 
 ReactDOM.render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <Route path="/home" component={Home} />
+      <IndexRoute component={Home} />
       <Route path="/rczp" component={RCZP}>
-        <Route path="/rczp/home" component={RczpHome} />
+        <IndexRoute component={RczpHome} />
         <Route path="/rczp/preview" component={Preview} />
         <Route path="/rczp/compares" component={Compares} />
         <Route path="/rczp/position" component={Position} />
@@ -36,6 +37,7 @@ ReactDOM.render((
       <Route path="/address" component={Addresses} />
       <Route path="/reservation" component={Reservation} />
       <Route path="/reservationImfor" component={ReservationImfor} />
+      <Route path="/test" component={Test} />
     </Route>
   </Router>
   ), document.querySelector('.page')

@@ -1,0 +1,25 @@
+.form {
+  background: #fff;
+  padding: 10px 3.3337%;
+}
+.form label {
+  padding-left: .5em;
+  border-left: 3px solid #f00;
+}
+.form input,
+.form select,
+.form textarea {
+  display: block;
+  width: 100%;
+  padding: .5em .8em;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 3px;
+  background: #eee;
+  font-size: 14px;
+  line-height: 20px;
+}
+.form textarea {
+  height: 74px;
+}
+

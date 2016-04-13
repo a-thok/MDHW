@@ -1,5 +1,9 @@
 .ulink .fa {
-  font-size: 28px;
+  font-size: 22px;
+  color: #777;
+}
+.ulink .fa-angle-right {
+  color: #ccc;
 }
 .ulink_right {
   border-bottom: 1px solid #f1f1f1;

@@ -7,14 +7,10 @@ export default React.createClass({
     return (
       <div>
         <div className="ulinkWrap">
-          <Link to="/rczp/preview"><ULink href="#" text="简历预览" icon="angle-right" /></Link>
-          <Link to="/rczp/resume"><ULink href="#" text="已投简历" icon="angle-right" /></Link>
-          <Link to="/rczp/position"><ULink href="#" text="职位收藏" icon="angle-right" /></Link>
-          <Link to="/rczp/compares"><ULink href="#" text="我的评价" icon="angle-right" /></Link>
-        </div>
-        <div className="ulinkWrap">
-          <ULink href="#" text="帮助" icon="angle-right" />
-          <ULink href="#" text="设置" icon="angle-right" />
+          <Link to="/rczp/preview"><ULink href="#" text="简历预览" icon="eye" /></Link>
+          <Link to="/rczp/resume"><ULink href="#" text="已投简历" icon="inbox" /></Link>
+          <Link to="/rczp/position"><ULink href="#" text="职位收藏" icon="star-o" /></Link>
+          <Link to="/rczp/compares"><ULink href="#" text="我的评价" icon="comments-o" /></Link>
         </div>
       </div>
     );
