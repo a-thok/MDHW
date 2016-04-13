@@ -11,7 +11,9 @@
   text-decoration: none;
   color: var(--mgsColor);
 }
-
+.other_list a {
+  text-decoration: none;
+}
 /* input */
 .acc_group {
   position: relative;
