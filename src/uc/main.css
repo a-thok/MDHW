@@ -3,6 +3,9 @@
 @import './routes/ReservationImfor/box.css';
 @import "./routes/Home/home.css";
 @import "./routes/Addresses/addresses.css";
+@import "./routes/RCZP/partials/compares/compares.css";
 @import "./components/ulink/ulink.css";
 @import "./components/FormButton/FormButton.css";
 @import "./components/FormItemSelect/formitemselect.css";
+@import "./components/FormItemTitle/formitemTitle.css";
+@import "./components/FormItemCompares/formItemCompares.css";
