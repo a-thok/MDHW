@@ -1,6 +1,6 @@
-@import '../common/css/var.css';
-@import './routes/Reservation/box.css';
-@import './routes/ReservationImfor/box.css';
+@import "../common/css/var.css";
+@import "./routes/Reservation/box.css";
+@import "./routes/ReservationImfor/box.css";
 @import "./routes/Home/home.css";
 @import "./routes/Addresses/addresses.css";
 @import "./routes/RCZP/partials/compares/compares.css";
@@ -9,3 +9,4 @@
 @import "./components/FormItemSelect/formitemselect.css";
 @import "./components/FormItemTitle/formitemTitle.css";
 @import "./components/FormItemCompares/formItemCompares.css";
+@import "./components/UGroup/ugroup.css";

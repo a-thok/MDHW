@@ -2,6 +2,10 @@ import React from 'react';
 
 export default function FormButton(props) {
   return (
-    <button className="formButton" type="button">{props.value}</button>
+    <button
+      className="formButton"
+      style={props.style}
+      type={props.type}
+    >{props.value}</button>
   );
 }

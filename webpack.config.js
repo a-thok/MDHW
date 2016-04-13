@@ -37,7 +37,8 @@ const config = {
       'slider': 'slider.js',
       'filter': 'filter.js',
       'doSearch': 'doSearch.js',
-      'goToSearch': 'goToSearch.js'
+      'goToSearch': 'goToSearch.js',
+      'xhr': 'xhr.js'
     }
   },
   devtool: PRODUCTION ? 'source-map' : 'cheap-source-map',

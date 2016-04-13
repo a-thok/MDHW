@@ -1,4 +1,5 @@
 import { $, $from } from 'func';
+import xhr from 'xhr';
 import { switchPassword, refrechCodeImg, dataBinding } from './form.js';
 
 export default function register() {
@@ -16,33 +17,54 @@ export default function register() {
     e.preventDefault();
     register.disabled = true;
 
-    fetch('/m/Main/RegPhone', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-      .then(res => res.json)
-      .then(res => {
-        if (res.success) {
-          // let locationSrch = location.search;
-          // let urlEndPoint = locationSrch.indexOf('&');
-          // let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
-          // // console.log(decodeURIComponent(url));
-          // location.href = decodeURIComponent(url);
-          alert('注册成功跳到某个页面');
+    xhr('/m/Main/RegPhone', data, (res) => {
+      if (res.success) {
+        let locationSrch = location.search;
+        let urlEndPoint = locationSrch.indexOf('&');
+        let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
+        // console.log(decodeURIComponent(url));
+        location.href = decodeURIComponent(url);
+        // alert('成功');
+      } else {
+        if (res.msg) {
+          modalText.textContent = res.msg;
         } else {
-          if (res.msg) {
-            modalText.textContent = res.msg;
-          } else {
-            modalText.textContent = '未知错误，请稍候重试';
-          }
-          refresh();
-          modal.classList.add('is-show');
-          setTimeout(() => modal.classList.remove('is-show'), 2500);
+          modalText.textContent = '未知错误，请稍候重试';
         }
-      });
+        refresh();
+        modal.classList.add('is-show');
+        setTimeout(() => modal.classList.remove('is-show'), 2500);
+      }
+    });
+
+    // fetch('/m/Main/RegPhone', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'credentials': 'include'
+    //   },
+    //   body: JSON.stringify(data)
+    // })
+    //   .then(res => res.json)
+    //   .then(res => {
+    //     if (res.success) {
+    //       // let locationSrch = location.search;
+    //       // let urlEndPoint = locationSrch.indexOf('&');
+    //       // let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
+    //       // // console.log(decodeURIComponent(url));
+    //       // location.href = decodeURIComponent(url);
+    //       alert('注册成功跳到某个页面');
+    //     } else {
+    //       if (res.msg) {
+    //         modalText.textContent = res.msg;
+    //       } else {
+    //         modalText.textContent = '未知错误，请稍候重试';
+    //       }
+    //       refresh();
+    //       modal.classList.add('is-show');
+    //       setTimeout(() => modal.classList.remove('is-show'), 2500);
+    //     }
+    //   });
   }
 
   register.addEventListener('click', doReg);

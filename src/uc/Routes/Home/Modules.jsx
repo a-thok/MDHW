@@ -1,46 +1,81 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export default function Modules() {
-  let imgStyle = {
-    width: '14vw',
-    height: '14vw'
+  const imgStyle = {
+    width: '100%'
+  };
+  const figureStyle = {
+    textAlign: 'center'
   };
   return (
     <div className="modulesWrap">
       <ul className="modules">
-        <li className="module">
-          <span><img style={imgStyle} src="#" alt="会计服务" /></span>
-          <span>会计服务</span>
+        <li>
+          <Link to="/rczp" className="module">
+            <figure style={figureStyle}>
+              <img style={imgStyle} src="http://img1.3lian.com/gif/more/11/201209/03e4eb4be19da810a4567d7f40e9f0c0.jpg" alt="人才招聘" />
+              <figcaption>人才招聘</figcaption>
+            </figure>
+          </Link>
         </li>
-        <li className="module">
-          <span><img style={imgStyle} src="#" alt="人才招聘" /></span>
-          <span>人才招聘</span>
+        <li>
+          <Link to="/zc" className="module">
+            <figure style={figureStyle}>
+              <img style={imgStyle} src="http://img1.3lian.com/gif/more/11/201209/03e4eb4be19da810a4567d7f40e9f0c0.jpg" alt="众筹" />
+              <figcaption>众筹</figcaption>
+            </figure>
+          </Link>
         </li>
-        <li className="module">
-          <span><img style={imgStyle} src="#" alt="众筹" /></span>
-          <span>众筹</span>
+        <li>
+          <Link to="/cysj" className="module">
+            <figure style={figureStyle}>
+              <img style={imgStyle} src="http://img1.3lian.com/gif/more/11/201209/03e4eb4be19da810a4567d7f40e9f0c0.jpg" alt="创意设计" />
+              <figcaption>创意设计</figcaption>
+            </figure>
+          </Link>
         </li>
-        <li className="module">
-          <span><img style={imgStyle} src="#" alt="众包" /></span>
-          <span>众包</span>
+        <li>
+          <Link to="/srdz" className="module">
+            <figure style={figureStyle}>
+              <img style={imgStyle} src="http://img1.3lian.com/gif/more/11/201209/03e4eb4be19da810a4567d7f40e9f0c0.jpg" alt="私人定制" />
+              <figcaption>私人定制</figcaption>
+            </figure>
+          </Link>
         </li>
       </ul>
       <ul className="modules">
-        <li className="module">
-          <span><img style={imgStyle} src="#" alt="会计服务" /></span>
-          <span>会计服务</span>
+        <li>
+          <Link to="/zb" className="module">
+            <figure style={figureStyle}>
+              <img style={imgStyle} src="http://img1.3lian.com/gif/more/11/201209/03e4eb4be19da810a4567d7f40e9f0c0.jpg" alt="众包" />
+              <figcaption>众包</figcaption>
+            </figure>
+          </Link>
         </li>
-        <li className="module">
-          <span><img style={imgStyle} src="#" alt="人才招聘" /></span>
-          <span>人才招聘</span>
+        <li>
+          <Link to="/rczp" className="module">
+            <figure style={figureStyle}>
+              <img style={imgStyle} src="http://img1.3lian.com/gif/more/11/201209/03e4eb4be19da810a4567d7f40e9f0c0.jpg" alt="人才招聘" />
+              <figcaption>人才招聘</figcaption>
+            </figure>
+          </Link>
         </li>
-        <li className="module">
-          <span><img style={imgStyle} src="#" alt="众筹" /></span>
-          <span>众筹</span>
+        <li>
+          <Link to="/rczp" className="module">
+            <figure style={figureStyle}>
+              <img style={imgStyle} src="http://img1.3lian.com/gif/more/11/201209/03e4eb4be19da810a4567d7f40e9f0c0.jpg" alt="人才招聘" />
+              <figcaption>人才招聘</figcaption>
+            </figure>
+          </Link>
         </li>
-        <li className="module">
-          <span><img style={imgStyle} src="#" alt="众包" /></span>
-          <span>众包</span>
+        <li>
+          <Link to="/rczp" className="module">
+            <figure style={figureStyle}>
+              <img style={imgStyle} src="http://img1.3lian.com/gif/more/11/201209/03e4eb4be19da810a4567d7f40e9f0c0.jpg" alt="人才招聘" />
+              <figcaption>人才招聘</figcaption>
+            </figure>
+          </Link>
         </li>
       </ul>
     </div>
