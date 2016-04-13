@@ -16,6 +16,7 @@ module.exports = {
     "react/prefer-es6-class": 0,
     "react/prefer-stateless-function": 0,
     "func-names": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "no-case-declarations": 0
   }
 }
