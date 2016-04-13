@@ -103,7 +103,6 @@ export default function comment() {
       // 获取浏览框中的项目id
       let proPath = window.location.pathname;
       let array = proPath.split('/');
-
       if (isRootComment) {
         // 插入发布的新评论
         const html = template({ result: { data: [{ comment, date, user, child: [] }] } });
@@ -143,7 +142,8 @@ export default function comment() {
       fetch('/m/ZC/FbComments', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'credentials': 'include'
         },
         body: JSON.stringify(params)
       })
