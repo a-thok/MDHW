@@ -11,7 +11,10 @@
   text-decoration: none;
   color: var(--mgsColor);
 }
-
+.other_list a {
+  display: block;
+  text-decoration: none;
+}
 /* input */
 .acc_group {
   position: relative;
