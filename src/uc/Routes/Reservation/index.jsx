@@ -1,5 +1,5 @@
 import React from 'react';
-import FormItemText from '../../components/FormItemText';
+import UTextGroup from '../../components/UTextGroup';
 import FormItemInput from '../../components/FormItemInput';
 import FormItemTextRight from '../../components/FormItemTextRight';
 import Counter from '../../components/Counter';
@@ -37,13 +37,13 @@ const Reservation = React.createClass({
     return (
       <div className="reservation">
         <div className="reservation_box reservation_box-width">
-          <FormItemText name="项目名称" text={this.state.name} />
-          <FormItemText name="发起人" text={this.state.person} />
-          <FormItemText name="回报内容" text={this.state.text} />
+          <UTextGroup name="项目名称" text={this.state.name} />
+          <UTextGroup name="发起人" text={this.state.person} />
+          <UTextGroup name="回报内容" text={this.state.text} />
         </div>
         <div className="reservation_box reservation_box-width">
-          <FormItemText name="收获地址" text={this.state.pName} />
-          <div className="reservation_box_img"><FormItemText name="图片" text={this.state.pAddr} /></div>
+          <UTextGroup name="收获地址" text={this.state.pName} />
+          <div className="reservation_box_img"><UTextGroup name="图片" text={this.state.pAddr} /></div>
         </div>
         <div className="reservation_box reservation_box-width">
           <FormItemInput name="备注信息" text={this.state.remark} />

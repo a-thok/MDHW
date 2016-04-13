@@ -1,47 +1,29 @@
 import React from 'react';
-import FormItemTitle from '../../../../components/FormItemTitle';
-import FormItemText from '../../../../components/FormItemText';
+import UTitle from '../../../../components/UTitle';
+import UTextGroup from '../../../../components/UTextGroup';
 
-export default React.createClass({
-  getInitialState: function () {
-    let state = {
-      name: '小李',
-      sex: '男',
-      birth: '2016-04-08',
-      degree: '博士',
-      worktime: '10年',
-      city: '火星',
-      tel: '121201210000',
-      email: 'xiaoli@qq.com',
-      wishpos: '风险顾问',
-      posnature: '全职',
-      wishcity: '意大利',
-      wishsalary: '230000以上'
-    };
-    return state;
-  },
-  render: function () {
-    return (
-      <div>
-        <FormItemTitle name="基本信息" />
-        <div>
-          <FormItemText name="姓   名" text={this.state.name} />
-          <FormItemText name="性   别" text={this.state.sex} />
-          <FormItemText name="出生年月" text={this.state.birth} />
-          <FormItemText name="最高学历" text={this.state.degree} />
-          <FormItemText name="工作年限" text={this.state.worktime} />
-          <FormItemText name="所在城市" text={this.state.city} />
-          <FormItemText name="手机号码" text={this.state.tel} />
-          <FormItemText name="电子邮箱" text={this.state.email} />
-        </div>
-        <FormItemTitle name="期望工作" />
-        <div>
-          <FormItemText name="期望职位" text={this.state.wishpos} />
-          <FormItemText name="职位性质" text={this.state.posnature} />
-          <FormItemText name="期望城市" text={this.state.wishcity} />
-          <FormItemText name="期望月薪" text={this.state.wishsalary} />
-        </div>
+export default function Preview(props) {
+  console.log(props);
+  return (
+    <div className="preview">
+      <UTitle name="基本信息" />
+      <div className="preview_content">
+        <UTextGroup name="姓 名" text={props.name} />
+        <UTextGroup name="性 别" text={props.sex} />
+        <UTextGroup name="出生年月" text={props.birth} />
+        <UTextGroup name="最高学历" text={props.degree} />
+        <UTextGroup name="工作年限" text={props.worktime} />
+        <UTextGroup name="所在城市" text={props.city} />
+        <UTextGroup name="手机号码" text={props.tel} />
+        <UTextGroup name="电子邮箱" text={props.email} />
       </div>
-    );
-  }
-});
+      <UTitle name="期望工作" />
+      <div className="preview_content">
+        <UTextGroup name="期望职位" text={props.wishpos} />
+        <UTextGroup name="职位性质" text={props.posnature} />
+        <UTextGroup name="期望城市" text={props.wishcity} />
+        <UTextGroup name="期望月薪" text={props.wishsalary} />
+      </div>
+    </div>
+  );
+}
