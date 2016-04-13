@@ -24,33 +24,64 @@
     <!--输入信息  开始-->
     <form class="acc">
       <div class="acc_group">
-        <input class="acc_input acc_input-hasLabel" type="text" placeholder="请输入验证码">
+        <input class="acc_input acc_input-hasLabel" name="verify" type="text" placeholder="请输入验证码" required>
         <label class="acc_label acc_label-hasBorder">
           <div class="acc_label_code">
-            <img src="http://www.dreamhiway.com/Login/VerifyCode?_=1450339330618" alt="验证码">
+            <img class="codeImg" src="http://192.168.2.177:8085/m/main/VerifyCode" alt="验证码">
           </div>
         </label>
       </div>
+      
       <div class="acc_group">
+        <div class="acc_tip is-hidden">
+          <p class="acc_tip_content">
+            <i class="fa fa-hand-o-right"></i>
+            <span class="acc_tip_content_text"></span>
+          </p>
+          <i class="arrow arrow-down"></i>
+        </div>
+        <input class="acc_input" name="phone" type="text" placeholder="请输入手机号" required>
+      </div>
+      <!--<div class="acc_group">
         <input class="acc_input acc_input-short" type="text" placeholder="请输入手机号">
         <button class="acc_getCode" type="button">获取短信验证码</button>
       </div>
       <div class="acc_group">
         <input class="acc_input" type="text" placeholder="请输入短信验证码">
-      </div>
+      </div>-->
+      <!--<div class="acc_group">
+        <div class="acc_tip is-hidden">
+          <p class="acc_tip_content"><i class="fa fa-hand-o-right"></i>4-20位字符，支持汉字、字母、数字及“-”、"_"组合</p>
+          <i class="arrow arrow-down"></i>
+        </div>
+        <input class="acc_input attention" type="text" placeholder="请输入用户名">
+      </div>-->
       <div class="acc_group">
-        <input class="acc_input acc_input-hasLabel" type="password" placeholder="请设置6-20位的登录密码">
+        <input class="acc_input acc_input-hasLabel" name="pwd" type="password" placeholder="请设置6-20位的登录密码" required>
+        <input class="acc_input acc_input-hasLabel showPassword" type="text">
         <label class="acc_label">
           <div class="acc_switcher">
             <div class="acc_switcher_btn"></div>
           </div>
         </label>
       </div>
-     
+
       <p class="acc_text">注册即视为同意<a class="acc_link" href="#">《梦高速用户注册协议》</a></p>
-      
-      <button class="acc_btn" type="button">注册</button>
+
+      <button class="acc_btn register" type="button" disabled>注册</button>
     </form>
+    
+    <!--报错  开始-->
+    <div class="modal">
+      <p class="modal_content">
+        <i class="fa fa-exclamation-triangle"></i>
+        <span class="modal_content_text">账号或密码错误，请重新输入。</span>
+      </p>
+      <!--<div class="modal_btn">
+        <button type="button">确定</button>
+      </div>-->
+    </div>
+    <!--报错  开始-->
   </div>
 
   <script src="/js/common.js"></script>
