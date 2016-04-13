@@ -1,0 +1,9 @@
+.FormItemTitle {
+  padding: .6em 4.5333%;
+  margin: 1em 0;
+  font-size: 18px;
+  background-color: #fff;
+}
+.FormItemTitleSpan {
+  border-left: .4em solid cornflowerblue;
+}
