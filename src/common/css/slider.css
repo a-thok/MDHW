@@ -1,0 +1,10 @@
+.dots {
+  display:flex;
+  justify-content:space-between;
+  position:absolute;
+  left:50%;
+  bottom:10%;
+  width:80px;
+  margin-left:-40px;
+}
+
