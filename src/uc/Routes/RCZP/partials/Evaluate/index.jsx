@@ -7,7 +7,8 @@ export default function Evaluate(props) {
         key={index}
         index={index}
         {...item}
-        onEvalComplete={props.onEvalComplete}
+        onUnfold={props.onUnfold}
+        onTooLong={props.onTooLong}
       />
     ));
   return (
