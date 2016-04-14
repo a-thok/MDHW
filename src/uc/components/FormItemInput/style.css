@@ -1,0 +1,18 @@
+.formItemInput {
+  overflow: hidden;
+  padding: .6em 0;
+}
+.formItemInput_dt {
+  float: left;
+  width: 24%;
+  text-align: right;
+}
+.formItemInput_dd {
+  float: left;
+  widows: 74%;
+}
+.formItemInput_dd_input {
+  padding: 0 .5em;
+  width: 100%;
+  border: 0;
+}

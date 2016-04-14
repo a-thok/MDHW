@@ -10,37 +10,31 @@ export default function ListItem(props) {
   } else {
     bRight = props.other;
   }
+
   let multipleNodes = Object.keys(props.multiple).map((item, index) => (
-    <div style={{ float: 'left' }} key={index}>
+    <div className="listItem_multiple_l" style={{ float: 'left' }} key={index}>
       <span>{item}</span>: {props.multiple[item]}
     </div>
   ));
   return (
     <div className="listItem">
-      <section
-        style={{
-          flexShrink: '0',
-          width: '92px',
-          height: '92px',
-          overflow: 'hidden'
-        }}
-      >
-        <img style={{ width: '100%' }} src={props.img} alt={props.position} />
+      <section className="listItem_img">
+        <img src={props.img} alt={props.position} />
       </section>
-      <section style={{ flexGrow: '1', marginLeft: '12px' }}>
-        <div style={{ overflow: 'hidden' }}>
-          <div style={{ float: 'left' }}>
+      <section className="listItem_text">
+        <div className="listItem_text_t">
+          <div className="listItem_text_t_l">
             <h3>
               {props.title}
-              <small style={{ marginLeft: '1em' }}>{props.small}</small>
+              <small className="listItem_text_t_l_small">{props.small}</small>
             </h3>
             <p>{props.emp}</p>
           </div>
-          <div style={{ float: 'right' }}><span>{props.label}</span></div>
+          <div className="listItem_text_t_r"><span>{props.label}</span></div>
         </div>
-        <div className="multiple" style={{ overflow: 'hidden' }}>
+        <div className="listItem_multiple">
           { multipleNodes }
-          <div style={{ float: 'right' }}><span>{bRight}</span></div>
+          <div className="listItem_multiple_r"><span>{bRight}</span></div>
         </div>
       </section>
     </div>
