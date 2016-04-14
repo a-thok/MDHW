@@ -3,14 +3,14 @@ import ListItem from '../../../../components/ListItem';
 
 export default React.createClass({
   render: function () {
-    let content = this.props.data.map((data, index) => (
+    let content = this.props.data.map((item, index) => (
        <ListItem
+         {...item}
          key={index}
-         tLeft={data.title}
-         tRight={`(${data.type})`}
-         m={`目标:${data.item}`}
-         bLeft={`进度: ${data.progress}`}
-         bMiddle={`状态: ${data.state}`}
+         multiple={{ '进度': item.progress, '状态': item.state }}
+         title={item.title}
+         label={`(${item.type})`}
+         emp={`目标:${item.item}`}
          tep="down"
        />
     ));
