@@ -12,7 +12,7 @@ export default function Evaluate(props) {
       />
     ));
   return (
-    <div className="List">
+    <div className="list-eval">
       { commentList }
     </div>
   );

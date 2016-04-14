@@ -6,12 +6,12 @@ export default function Resume(props) {
     <ListItem
       key={index}
       {...item}
-      tLeft={item.position}
-      tRight={`[${item.city}]`}
-      m={`月薪:${item.salary}`}
-      mRight="投递成功"
-      bLeft={item.company}
-      bRight={item.time}
+      title={item.position}
+      small={`[${item.city}]`}
+      emp={`月薪:${item.salary}`}
+      other="投递成功"
+      multiple={{ '公司': item.company }}
+      label={item.time}
     />
   ));
   return (

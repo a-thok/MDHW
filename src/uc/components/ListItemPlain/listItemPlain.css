@@ -1,0 +1,31 @@
+.FormItemProList {
+  margin: 10px 0;
+  padding: 0 3.7333%;
+  background: #fff;
+}
+.FormItemProList > li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 18px;;
+  border-top: 1px solid var(--borderColorLight);
+}
+.FormItemProList > li:nth-child(n+2) {
+  padding: 10px .4em;
+}
+.FormItemProList > li:first-child,
+.FormItemProList > li:last-child {
+  font-size: 15PX;
+  color: var(--fontColorLight);
+}
+.FormItemProList > li:first-child {
+  border: 0;
+}
+.FormItemProList_border::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  margin-right: .4em;
+  border-left: 3px solid #f00;
+}

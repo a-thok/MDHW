@@ -14,14 +14,14 @@ export default React.createClass({
     return res;
   },
   render: function () {
-    let contentList = this.state.data.map((data, index) => (
+    let contentList = this.state.data.map((item, index) => (
       <ListItem
         key={index}
-        {...data}
-        mMiddle={`￥${data.money}/个`}
-        mBottom={`成交量:${data.sum}`}
-        rTop={data.type}
-        rBottom="取消关注"
+        {...item}
+        multiple={{ '成交量': item.sum }}
+        emp={`￥${item.money}/个`}
+        label={`(${item.type})`}
+        other="取消关注"
       />
     ));
     return (

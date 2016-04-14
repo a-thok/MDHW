@@ -10,8 +10,9 @@ export default function ListItem(props) {
   } else {
     bRight = props.other;
   }
-  let multipleNodes = Object.keys(props.multiple).map((item) => (
-    <div className="listItem_multiple_l">
+
+  let multipleNodes = Object.keys(props.multiple).map((item, index) => (
+    <div className="listItem_multiple_l" style={{ float: 'left' }} key={index}>
       <span>{item}</span>: {props.multiple[item]}
     </div>
   ));
