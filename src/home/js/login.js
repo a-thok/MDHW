@@ -1,11 +1,10 @@
-import { $, $from } from 'func';
+import { $ } from 'func';
 import xhr from 'xhr';
 import { switchPassword, refrechCodeImg, dataBinding } from './form.js';
 
 export default function login() {
   const data = {};
   const login = $('.login');
-  const inputs = $from('input');
   const modal = $('.modal');
   const modalText = modal.querySelector('.modal_content_text');
 
@@ -14,6 +13,7 @@ export default function login() {
   dataBinding(data, login);
 
   function doLogin(e) {
+    console.log(e.target);
     e.preventDefault();
     login.disabled = true;
 
@@ -24,6 +24,10 @@ export default function login() {
         let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
         location.href = decodeURIComponent(url);
       } else {
+        const cl = $('.acc_group-verify').classList;
+        if (!cl.contains('is-show')) {
+          cl.add('is-show');
+        }
         if (res.msg) {
           modalText.textContent = res.msg;
         } else {
@@ -66,9 +70,4 @@ export default function login() {
   }
 
   login.addEventListener('click', doLogin);
-  inputs.forEach((input) => {
-    input.addEventListener('keyup', (e) => {
-      if (e.keyCode === 13) doLogin(e);
-    });
-  });
 }
