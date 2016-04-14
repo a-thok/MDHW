@@ -6,11 +6,12 @@ export default function Position(props) {
     <ListItem
       key={index}
       {...item}
-      mMiddle={`月薪:${item.salary}`}
-      mBottom={item.company}
-      rTop="已投递"
-      rBottom={item.time}
-      city={`[${item.city}]`}
+      tLeft={item.position}
+      tRight={`[${item.city}]`}
+      m={`月薪:${item.salary}`}
+      mRight="已投递"
+      bLeft={item.company}
+      bRight={item.time}
     />
   ));
   return (

@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function ListItem(props) {
-  console.log(props);
   let bRight;
   if (props.tep) {
     if (props.tep === 'up') {
@@ -13,24 +12,26 @@ export default function ListItem(props) {
   }
   return (
     <div className="listItem">
-        <div style={{ width: '17.3333vw',
-                      height: '17.3333vw',
-                      maxHeight: '130px',
-                      flexShrink: '0',
-                      alignSelf: 'center'
-                     }}
+        <section
+          style={{
+            flexShrink: '0',
+            width: '92px',
+            height: '92px',
+            overflow: 'hidden'
+          }}
         >
-          <img style={{ width: '100%', padding: '0 .8em' }} src={props.src} alt={props.position} />
-        </div>
-        <div>
-          <p>{props.tLeft}</p><span>{props.tRight}</span>
+          <img style={{ width: '100%' }} src={props.src} alt={props.position} />
+        </section>
+        <section style={{ flexGrow: '1', marginLeft: '12px' }}>
+          <h3 style={{ display: 'inline' }}>{props.tLeft}</h3>
+          <small style={{ marginLeft: '1em' }}>{props.tRight}</small>
           <div>
-            <p>{props.m}</p>
+            <p style={{ display: 'flex', justifyContent: 'space-between' }}>{props.m}<span>{props.mRight}</span></p>
             <p>
-              <span>{props.bLeft}</span><span>{props.bMiddle}</span><span ref={props.template}>{bRight}</span>
+              <span>{props.bLeft}</span><span>{props.bMiddle}</span><span>{bRight}</span>
             </p>
           </div>
-        </div>
+        </section>
       </div>
   );
 }
