@@ -8,30 +8,42 @@ export default function ListItem(props) {
     }
     bRight = <i className="fa fa-angle-down"></i>;
   } else {
-    bRight = props.bRight;
+    bRight = props.other;
   }
+  let multipleNodes = Object.keys(props.multiple).map((item) => (
+    <div style={{ float: 'left' }}>
+      <span>{item}</span>: {props.multiple[item]}
+    </div>
+  ));
   return (
     <div className="listItem">
-        <section
-          style={{
-            flexShrink: '0',
-            width: '92px',
-            height: '92px',
-            overflow: 'hidden'
-          }}
-        >
-          <img style={{ width: '100%' }} src={props.src} alt={props.position} />
-        </section>
-        <section style={{ flexGrow: '1', marginLeft: '12px' }}>
-          <h3 style={{ display: 'inline' }}>{props.tLeft}</h3>
-          <small style={{ marginLeft: '1em' }}>{props.tRight}</small>
-          <div>
-            <p style={{ display: 'flex', justifyContent: 'space-between' }}>{props.m}<span>{props.mRight}</span></p>
-            <p>
-              <span>{props.bLeft}</span><span>{props.bMiddle}</span><span>{bRight}</span>
-            </p>
+      <section
+        style={{
+          flexShrink: '0',
+          width: '92px',
+          height: '92px',
+          overflow: 'hidden'
+        }}
+      >
+        <img style={{ width: '100%' }} src={props.img} alt={props.position} />
+      </section>
+      <section style={{ flexGrow: '1', marginLeft: '12px' }}>
+        <div style={{ overflow: 'hidden' }}>
+          <div style={{ float: 'left' }}>
+            <h3>
+              {props.title}
+              <small style={{ marginLeft: '1em' }}>{props.small}</small>
+            </h3>
+            <p>{props.emp}</p>
           </div>
-        </section>
-      </div>
+          <div style={{ float: 'right' }}><span>{props.label}</span></div>
+        </div>
+        <div className="multiple" style={{ overflow: 'hidden' }}>
+          { multipleNodes }
+          <div style={{ float: 'right' }}><span>{bRight}</span></div>
+        </div>
+      </section>
+    </div>
   );
 }
+
