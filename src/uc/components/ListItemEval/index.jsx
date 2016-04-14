@@ -15,38 +15,25 @@ export default React.createClass({
     const text = this.props.unfold ? '收起' : '展开';
     return (
       <div className="listItem">
-        <section
-          style={{
-            flexShrink: '0',
-            width: '92px',
-            height: '92px',
-            overflow: 'hidden'
-          }}
-        >
-          <img style={{ width: '100%' }} src={this.props.img} alt={this.props.position} />
+        <section className="listItem_img">
+          <img src={this.props.img} alt={this.props.position} />
         </section>
-        <section style={{ flexGrow: '1', marginLeft: '12px' }}>
+        <section className="listItem_text">
           <h3>
             {this.props.position}
-            <small style={{ marginLeft: '1em' }}>{this.props.company}</small>
+            <small className="listItem_text_t_l_small">{this.props.company}</small>
             <span
               className="listItem_unfold"
-              style={{ display, float: 'right', cursor: 'pointer' }}
+              style={{ display }}
               onClick={this.handleUnfold}
             >{text}</span>
           </h3>
           <p
             className="listItem_content"
-            style={{
-              height,
-              marginTop: '.5em',
-              overflow: 'hidden',
-              lineHeight: '16px',
-              wordBreak: 'break-all'
-            }}
+            style={{ height }}
             ref={this.handleTooLong}
           >{this.props.content}</p>
-          <p style={{ textAlign: 'right', lineHeight: '1.8' }}>{this.props.time}</p>
+          <p className="listItem_time">{this.props.time}</p>
         </section>
       </div>
     );

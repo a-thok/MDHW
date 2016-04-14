@@ -15,12 +15,22 @@
   font-size: 12px;
 }
 .listItem_unfold {
+  float: right;
+  cursor: pointer;
   font-size: 14px;
 }
-.listItem .listItem_content {
+.listItem_content {
+  margin-top: .5em;
+  overflow: hidden;
   font-size: 14px;
+  line-height: 16px;
   text-indent: 2em;
-} 
+  word-break: break-all;
+}
+.listItem_time {
+  text-align: right;
+  line-height: 1.8;
+}
 
 .listItem section > div > div {
   line-height: 2;

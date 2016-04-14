@@ -1,22 +1,10 @@
 import React from 'react';
 
 export default function FormItemSelect(props) {
-  const style = {
-    width: '100%',
-    fontSize: '16px',
-    padding: '.6em 0'
-  };
-  const textleft = {
-    textAlign: 'right',
-    verticalAlign: 'top'
-  };
-  const textright = {
-    padding: '0 10px'
-  };
   return (
-    <div className="formItemSelect" style={style}>
-      <div style={textleft}>{props.name}:</div>
-      <div style={textright}>
+    <div className="formItemSelect">
+      <div className="formItemSelect_l">{props.name}:</div>
+      <div className="formItemSelect_r">
         <div className="formItemSelect_select">
           <select>
             <option value ="volvo">Volvo</option>

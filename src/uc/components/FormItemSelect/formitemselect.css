@@ -1,3 +1,15 @@
+.formItemSelect {
+  width: 100%;
+  padding: 0 .6em;
+  font: 16px;
+}
+.formItemSelect_l {
+  text-align: right;
+  vertical-align: top;
+}
+.formItemSelect_r {
+  padding: 0 10px;
+}
 .formItemSelect_select {
   display: flex;
   justify-content: space-between;

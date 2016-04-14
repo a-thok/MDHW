@@ -1,0 +1,34 @@
+.listItem_img {
+  flex-shrink: 0;
+  width: 92px;
+  height: 92px;
+  overflow: hidden;
+}
+.listItem_img img {
+  width: 100%;
+}
+.listItem_text {
+  flex-grow: 1;
+  margin-left: 12px;
+}
+.listItem_text_t {
+  overflow: hidden;
+}
+.listItem_text_t_l {
+  float: left;
+}
+.listItem_text_t_r {
+  float: right;
+}
+.listItem_text_t_l_small {
+  margin-left: 1em;
+}
+.listItem_multiple {
+  overflow: hidden;
+}
+.listItem_multiple_l {
+  float: left;
+}
+.listItem_multiple_r {
+  float: right;
+}
