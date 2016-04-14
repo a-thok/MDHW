@@ -7,7 +7,7 @@ export default function Resume(props) {
       key={index}
       {...item}
       title={item.position}
-      small={`[${item.city}]`}
+      small={item.city}
       emp={`月薪:${item.salary}`}
       other="投递成功"
       multiple={{ '公司': item.company }}
@@ -15,7 +15,7 @@ export default function Resume(props) {
     />
   ));
   return (
-    <div className="List">
+    <div className="list list-rich">
       {contentList}
     </div>
   );

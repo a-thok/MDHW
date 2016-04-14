@@ -1,9 +1,9 @@
 import React from 'react';
-import FormItemCompares from '../../../../components/ListItemEval';
+import ListItemEval from '../../../../components/ListItemEval';
 
 export default function Evaluate(props) {
   let commentList = props.data.map((item, index) => (
-      <FormItemCompares
+      <ListItemEval
         key={index}
         index={index}
         {...item}
@@ -12,8 +12,8 @@ export default function Evaluate(props) {
       />
     ));
   return (
-    <div className="list-eval">
+    <ul className="list list-eval">
       { commentList }
-    </div>
+    </ul>
   );
 }

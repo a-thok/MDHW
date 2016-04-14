@@ -1,0 +1,40 @@
+.uLink {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+.uLink .fa {
+  font-size: 22px;
+  color: #777;
+}
+.uLink_logo {
+  float: left;
+  width: 45px;
+  padding: 11px 0 5px;
+  text-align: center;
+}
+.uLink_right {
+  padding: 8px 0;
+  overflow: hidden;
+}
+.uLink_right span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.uLink_right .fa {
+  float: right;
+  margin-right: 15px;
+}
+.uLink .fa-angle-right {
+  color: #ccc;
+}
+.uLink {
+  border-bottom: 1px solid #f1f1f1;
+  letter-spacing: .1em;
+}
+.uLink:last-child .uLink_right {
+  border: 0;
+}

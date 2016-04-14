@@ -19,18 +19,20 @@ export default React.createClass({
         key={index}
         {...item}
         multiple={{ '状态': item.state }}
-        emp={`买家名称:${item.buyerName}`}
-        label={`(${item.type})`}
+        emp={['买家名称', item.buyerName]}
+        small={item.type}
         tep="down"
       />
     ));
     return (
-      <div className="List">
+      <div>
         <section style={{ display: 'flex', justifyContent: 'space-around' }}>
           <p>待付款</p>
           <p>已付款</p>
         </section>
-        {content}
+        <ul className="list list-rich">
+          {content}
+        </ul>
       </div>
     );
   }

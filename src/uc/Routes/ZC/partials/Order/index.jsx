@@ -9,18 +9,20 @@ export default React.createClass({
          key={index}
          multiple={{ '进度': item.progress, '状态': item.state }}
          title={item.title}
-         label={`(${item.type})`}
-         emp={`目标:${item.item}`}
+         small={item.type}
+         emp={['目标', item.item]}
          tep="down"
        />
     ));
     return (
-      <div className="List">
+      <div>
         <section style={{ display: 'flex', justifyContent: 'space-around' }}>
           <p style={{ background: 'red' }} filter>待付款</p>
           <p style={{ background: 'red' }} filter>已付款</p>
         </section>
-        {content}
+        <ul className="list list-rich">
+          {content}
+        </ul>
       </div>
     );
   }

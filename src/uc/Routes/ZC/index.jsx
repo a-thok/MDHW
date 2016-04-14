@@ -5,12 +5,12 @@ export default React.createClass({
     return {
       Attention: {
         data: [
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' }
+          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
+          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
+          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
+          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
+          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
+          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' }
         ]
       },
       Support: {

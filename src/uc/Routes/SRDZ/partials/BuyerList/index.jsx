@@ -20,12 +20,12 @@ export default React.createClass({
         title={item.title}
         other="确认收货"
         multiple={{}}
-        emp={`￥${item.money}`}
-        label={item.time}
+        emp={['金额', item.money]}
+        small={item.time}
       />
     ));
     return (
-      <div className="List">
+      <div className="list list-rich">
         <section style={{ display: 'flex', justifyContent: 'space-around' }}>
           <p>待付款</p>
           <p>已付款</p>

@@ -1,7 +1,11 @@
 @import "./Counter/style.css";
 @import "./FormButton/style.css";
-@import "./ListItemEval/listItemEval.css";
-@import "./FormItemSelect/formItemSelect.css";
+@import "./FormItemInput/style.css";
+@import "./FormItemSelect/style.css";
+@import "./FormItemTextRight/style.css";
+@import "./ListItem/style.css";
+@import "./ListItemEval/style.css";
+/*@import "./ListItemPlain/style.css";*/
 @import "./UGroup/style.css";
 @import "./ULink/style.css";
 @import "./UTextGroup/style.css";
@@ -10,20 +14,13 @@
 .list {
   margin: 10px 0;
   padding: 0 3.7333%;
-}
-
-.list-eval {
-  background: #fff;
-}
-
-.list-pain {
   background: #fff;
 }
 .list-pain > li {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  font-size: 18px;;
+  font-size: 18px;
   border-top: 1px solid var(--borderColorLight);
 }
 .list-pain > li:nth-child(n+2) {

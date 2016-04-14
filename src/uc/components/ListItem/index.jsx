@@ -11,30 +11,26 @@ export default function ListItem(props) {
     bRight = props.other;
   }
 
+  const display = props.small ? 'inline' : 'none';
   let multipleNodes = Object.keys(props.multiple).map((item, index) => (
-    <div className="listItem_multiple_l" style={{ float: 'left' }} key={index}>
-      <span>{item}</span>: {props.multiple[item]}
-    </div>
+      <span className="listItem_lastItem" key={index}><span>{item}</span>: {props.multiple[item]}</span>
   ));
   return (
     <div className="listItem">
-      <section className="listItem_img">
+      <section className="listItem_img listItem_img-rich">
         <img src={props.img} alt={props.position} />
       </section>
       <section className="listItem_text">
-        <div className="listItem_text_t">
-          <div className="listItem_text_t_l">
-            <h3>
-              {props.title}
-              <small className="listItem_text_t_l_small">{props.small}</small>
-            </h3>
-            <p>{props.emp}</p>
+        <h3 className="listItem_title listItem_title-rich">
+          {props.title}
+          <small style={{ display }} className="listItem_title_small">[{props.small}]</small>
+        </h3>
+        <p className="listItem_emp">{props.emp[0]}: <span>{props.emp[1]}</span></p>
+        <div className="listItem_last">
+          <div className="listItem_last_l" style={{ float: 'left' }}>
+            { multipleNodes }
           </div>
-          <div className="listItem_text_t_r"><span>{props.label}</span></div>
-        </div>
-        <div className="listItem_multiple">
-          { multipleNodes }
-          <div className="listItem_multiple_r"><span>{bRight}</span></div>
+          <div className="listItem_last_r"><span>{bRight}</span></div>
         </div>
       </section>
     </div>

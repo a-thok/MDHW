@@ -14,14 +14,13 @@ export default React.createClass({
     const display = this.props.tooLong ? 'inline' : 'none';
     const text = this.props.unfold ? '收起' : '展开';
     return (
-      <div className="listItem">
+      <li className="listItem">
         <section className="listItem_img">
           <img src={this.props.img} alt={this.props.position} />
         </section>
         <section className="listItem_text">
-          <h3>
+          <h3 className="listItem_title">
             {this.props.position}
-            <small className="listItem_text_t_l_small">{this.props.company}</small>
             <span
               className="listItem_unfold"
               style={{ display }}
@@ -35,7 +34,7 @@ export default React.createClass({
           >{this.props.content}</p>
           <p className="listItem_time">{this.props.time}</p>
         </section>
-      </div>
+      </li>
     );
   }
 });

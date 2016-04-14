@@ -7,15 +7,15 @@ export default function Position(props) {
       key={index}
       {...item}
       title={item.position}
-      small={`[${item.city}]`}
-      emp={`月薪:${item.salary}`}
+      small={item.city}
+      emp={['月薪', item.salary]}
       other="已投递"
       multiple={{ '公司': item.company }}
       label={item.time}
     />
   ));
   return (
-    <div className="List">
+    <div className="list list-rich">
       {contentList}
     </div>
   );

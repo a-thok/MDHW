@@ -8,13 +8,13 @@ export default function Support(props) {
          {...item}
          multiple={{ '进度': item.progress, '状态': item.state }}
          title={item.title}
-         label={`(${item.type})`}
-         emp={`目标:${item.item}`}
-         other={`支持金额: ${item.total}￥`}
+         small={item.type}
+         emp={['目标', item.item]}
+         other={`￥${item.total}`}
        />
     ));
   return (
-    <div className="List">
+    <div className="list list-rich">
       {content}
     </div>
   );
