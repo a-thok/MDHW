@@ -6,7 +6,7 @@ export default React.createClass({
   render: function () {
     return (
       <div>
-        <Header />
+        <Header to={this.props.children.type.displayName} />
         {this.props.children}
       </div>
     );

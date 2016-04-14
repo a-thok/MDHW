@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FormItemProList(props) {
+export default function ListItemPlain(props) {
   return (
     <ul className="FormItemProList">
       <li><span>{props.tLeft}</span><span>{props.tRight}</span></li>
