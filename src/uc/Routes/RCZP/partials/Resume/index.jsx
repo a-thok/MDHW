@@ -17,13 +17,12 @@ export default React.createClass({
     let contentList = this.state.data.map((data, index) => (
       <FormItemList
         key={index}
-        img={data.img}
-        position={data.position}
-        city={data.city}
-        company={data.company}
-        salary={data.salary}
-        time={data.time}
-        moneyText="月薪"
+        {...data}
+        mMiddle={`月薪:${data.salary}`}
+        mBottom={data.company}
+        rTop="投递成功"
+        rBottom={data.time}
+        city={`[${data.city}]`}
       />
     ));
     return (

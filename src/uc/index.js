@@ -34,6 +34,11 @@ import ZbHasRelease from './routes/ZB/partials/HasRelease';
 import ZbHasCollect from './routes/ZB/partials/HasCollect';
 
 import ZC from './routes/ZC';
+import ZcHome from './routes/ZC/partials/Home';
+import Order from './routes/ZC/partials/Order';
+import ZcAttention from './routes/ZC/partials/Attention';
+import Support from './routes/ZC/partials/Support';
+
 import App from './App';
 import Test from './routes/Test';
 
@@ -67,7 +72,12 @@ ReactDOM.render((
         <Route path="/zb/hasrelease" component={ZbHasRelease} />
         <Route path="/zb/hascollect" component={ZbHasCollect} />
       </Route>
-      <Route path="/zc" component={ZC} />
+      <Route path="/zc" component={ZC}>
+        <Route path="/zc/home" component={ZcHome} />
+        <Route path="/zc/order" component={Order} />
+        <Route path="/zc/attention" component={ZcAttention} />
+        <Route path="/zc/support" component={Support} />
+      </Route>
       <Route path="/address" component={Addresses} />
       <Route path="/reservation" component={Reservation} />
       <Route path="/reservationImfor" component={ReservationImfor} />

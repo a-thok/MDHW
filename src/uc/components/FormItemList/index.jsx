@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function FormItemList(props) {
+  let name = props.position || props.title;
   return (
     <div className="FormItemCompares">
         <div style={{ width: '17.3333vw',
@@ -14,19 +15,18 @@ export default function FormItemList(props) {
         </div>
         <div style={{ flexGrow: '1', fontSize: '14px' }}>
           <p>
-            <span style={{ color: '#3d9ccc',
-                           marginRight: '.5em',
+            <span style={{ marginRight: '.5em',
                            fontSize: '16px' }}
             >
-              {props.position}
-            </span>[{props.city}]
+              {name}
+            </span>{props.city}
           </p>
-          <p>{props.moneyText}：{props.salary}</p>
-          <p>{props.company}</p>
+          <p>{props.mMiddle}</p>
+          <p>{props.mBottom}</p>
         </div>
         <div>
-          <p>投递成功</p>
-          <p>{props.time}</p>
+          <p>{props.rTop}</p>
+          <p>{props.rBottom}</p>
         </div>
       </div>
   );

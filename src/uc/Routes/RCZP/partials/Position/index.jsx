@@ -16,14 +16,13 @@ export default React.createClass({
   render: function () {
     let contentList = this.state.data.map((data, index) => (
       <FormItemList
+        {...data}
         key={index}
-        img={data.img}
-        position={data.position}
-        city={data.city}
-        company={data.company}
-        salary={data.salary}
-        time={data.time}
-        moneyText="月薪"
+        mMiddle={`月薪:${data.salary}`}
+        mBottom={data.company}
+        rTop="已投递"
+        rBottom={data.time}
+        city={`[${data.city}]`}
       />
     ));
     return (
