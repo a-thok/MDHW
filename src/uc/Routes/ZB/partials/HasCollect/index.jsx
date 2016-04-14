@@ -1,5 +1,5 @@
 import React from 'react';
-import FormItemProList from '../../../../components/FormItemProList';
+import ListItemPlain from '../../../../components/ListItemPlain';
 
 export default React.createClass({
   getInitialState: function () {
@@ -15,7 +15,7 @@ export default React.createClass({
   },
   render: function () {
     let content = this.state.data.map((data, index) => (
-       <FormItemProList
+       <ListItemPlain
          key={index}
          tLeft={`收藏时间:${data.seltime}`}
          m={data.title}
