@@ -26,7 +26,7 @@ export default React.createClass({
        />
     ));
     return (
-      <div className="List">
+      <div className="list-plain">
         {content}
       </div>
     );
