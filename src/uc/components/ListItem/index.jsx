@@ -10,9 +10,9 @@ export default function ListItem(props) {
   } else {
     bRight = props.other;
   }
-  let multipleNodes = props.multiple.map((item) => (
+  let multipleNodes = Object.keys(props.multiple).map((item) => (
     <div style={{ float: 'left' }}>
-      <span>{item[0]}</span>: {item[1]}
+      <span>{item}</span>: {props.multiple[item]}
     </div>
   ));
   return (
@@ -38,7 +38,7 @@ export default function ListItem(props) {
           </div>
           <div style={{ float: 'right' }}><span>{props.label}</span></div>
         </div>
-        <div style={{ overflow: 'hidden' }}>
+        <div className="multiple" style={{ overflow: 'hidden' }}>
           { multipleNodes }
           <div style={{ float: 'right' }}><span>{bRight}</span></div>
         </div>
