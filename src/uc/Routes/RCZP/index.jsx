@@ -11,7 +11,8 @@ export default React.createClass({
       ]
     };
     eva.data.forEach(item => {
-      item.complete = false;
+      item.complete = true;
+      item.unfold = false;
     });
     return {
       Preview: {
@@ -49,6 +50,11 @@ export default React.createClass({
   },
   onEvalComplete: function (index) {
     const newState = Object.assign({}, this.state);
+    newState.Evaluate.data[index].unfold = !newState.Evaluate.data[index].unfold;
+    this.setState(newState);
+  },
+  onX: function (index) {
+    const newState = Object.assign({}, this.state);
     newState.Evaluate.data[index].complete = !newState.Evaluate.data[index].complete;
     this.setState(newState);
   },
@@ -59,7 +65,7 @@ export default React.createClass({
     let extra;
     switch (ChildName) {
       case 'Evaluate':
-        extra = { onEvalComplete: this.onEvalComplete };
+        extra = { onEvalComplete: this.onEvalComplete, onX: this.onX };
         break;
       default:
         extra = {};

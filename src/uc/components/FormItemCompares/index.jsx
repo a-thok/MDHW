@@ -1,19 +1,18 @@
 import React from 'react';
 
 export default React.createClass({
-  isOverflow: function (e) {
-    console.log(e.target);
+  isOverflow: function (p) {
+    if (p.scrollHeight > 40) this.props.onX(this.props.index);
+  },
+  handleEvalComplete: function () {
+    this.props.onEvalComplete(this.props.index);
   },
   render: function () {
-    const height = this.props.complete ? 'auto' : '40px';
-    const text = this.props.complete ? '收起' : '展开';
-
-    const handleEvalComplete = function () {
-      this.props.onEvalComplete(this.props.index);
-    };
-
+    const height = this.props.unfold ? 'auto' : '40px';
+    const text = this.props.unfold ? '收起' : '展开';
+    const display = this.props.complete ? 'none' : 'block';
     return (
-      <div className="FormItemCompares" ref={this.isOverflow}>
+      <div className="FormItemCompares">
         <section
           style={{
             width: '17.3333vw',
@@ -43,15 +42,17 @@ export default React.createClass({
               wordBreak: 'break-all',
               color: '#666'
             }}
+            ref={this.isOverflow}
           >{this.props.content}</p>
           <p
             style={{
               marginBottom: '.5em',
               textAlign: 'right',
               color: '#3d9ccc',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              display: display
             }}
-            onClick={handleEvalComplete}
+            onClick={this.handleEvalComplete}
           >{text}</p>
           <p style={{ textAlign: 'right', color: '#666' }}>{this.props.time}</p>
         </section>
