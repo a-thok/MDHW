@@ -2,6 +2,7 @@
   display: flex;
   padding: 20px 0 10px 0;
   border-bottom: 2px solid #ccc;
+  font-size: 12px;
 }
 .listItem:last-child {
   border: 0;
@@ -16,10 +17,18 @@
 .listItem_unfold {
   font-size: 14px;
 }
-.listItem p {
-  font-size: 12px;
-}
 .listItem .listItem_content {
   font-size: 14px;
   text-indent: 2em;
 } 
+
+.listItem section > div > div {
+  line-height: 2;
+}
+.listItem .multiple span > span {
+  margin-right: 1em;
+  color: red;
+}
+.listItem .other {
+  font-size: 16px;
+}
