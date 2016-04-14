@@ -1,8 +1,47 @@
-@import "./FormButton/formButton.css";
+@import "./Counter/style.css";
+@import "./FormButton/style.css";
 @import "./ListItemEval/listItemEval.css";
-@import "./listItemPlain/listItemPlain.css";
 @import "./FormItemSelect/formItemSelect.css";
-@import "./UGroup/uGroup.css";
-@import "./ULink/uLink.css";
-@import "./UTextGroup/uTextGroup.css";
-@import "./UTitle/uTitle.css";
+@import "./UGroup/style.css";
+@import "./ULink/style.css";
+@import "./UTextGroup/style.css";
+@import "./UTitle/style.css";
+
+.list {
+  margin: 10px 0;
+  padding: 0 3.7333%;
+}
+
+.list-eval {
+  background: #fff;
+}
+
+.list-pain {
+  background: #fff;
+}
+.list-pain > li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 18px;;
+  border-top: 1px solid var(--borderColorLight);
+}
+.list-pain > li:nth-child(n+2) {
+  padding: 10px .4em;
+}
+.list-pain > li:first-child,
+.list-pain > li:last-child {
+  font-size: 15PX;
+  color: var(--fontColorLight);
+}
+.list-pain > li:first-child {
+  border: 0;
+}
+.list-pain_border::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  margin-right: .4em;
+  border-left: 3px solid #f00;
+}
