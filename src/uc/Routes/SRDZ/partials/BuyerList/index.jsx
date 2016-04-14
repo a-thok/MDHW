@@ -13,17 +13,23 @@ export default React.createClass({
     return res;
   },
   render: function () {
-    let contentList = this.state.data.map((data, index) => (
+    let contentList = this.state.data.map((item, index) => (
       <ListItem
         key={index}
-        {...data}
-        mMiddle={data.money}
-        rTop="确认收货"
-        rBottom={data.time}
+        {...item}
+        title={item.title}
+        other="确认收货"
+        multiple={{}}
+        emp={`￥${item.money}`}
+        label={item.time}
       />
     ));
     return (
       <div className="List">
+        <section style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <p>待付款</p>
+          <p>已付款</p>
+        </section>
         {contentList}
       </div>
     );

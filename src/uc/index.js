@@ -54,20 +54,20 @@ ReactDOM.render((
         <Route path="/rczp/resume" component={Resume} />
       </Route>
       <Route path="/cysj" component={CYSJ}>
-        <Route path="/cysj/home" component={CysjHome} />
+        <IndexRoute component={CysjHome} />
         <Route path="/cysj/release" component={CysjRelease} />
         <Route path="/cysj/hasRelease" component={CysjHasRelease} />
         <Route path="/cysj/hascollect" component={CysjHasCollect} />
         <Route path="/cysj/hasdelivery" component={HasDelivery} />
       </Route>
       <Route path="/srdz" component={SRDZ}>
-        <Route path="/srdz/home" component={SrdzHome} />
+        <IndexRoute component={SrdzHome} />
         <Route path="/srdz/buyerList" component={BuyerList} />
         <Route path="/srdz/sellerList" component={SellerList} />
         <Route path="/srdz/attention" component={Attention} />
       </Route>
       <Route path="/zb" component={ZB}>
-        <Route path="/zb/home" component={ZbHome} />
+        <IndexRoute component={ZbHome} />
         <Route path="/zb/release" component={ZbRelease} />
         <Route path="/zb/hasrelease" component={ZbHasRelease} />
         <Route path="/zb/hascollect" component={ZbHasCollect} />

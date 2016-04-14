@@ -31,10 +31,10 @@ export default React.createClass({
       },
       Resume: {
         data: [
-          { img: '图片1', position: '工程师1', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
-          { img: '图片2', position: '工程师2', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
-          { img: '图片3', position: '工程师3', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
-          { img: '图片4', position: '工程师4', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' }
+          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师1', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
+          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师2', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
+          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师3', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
+          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师4', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' }
         ]
       },
       Position: {

@@ -2,15 +2,15 @@ import React from 'react';
 import ListItem from '../../../../components/ListItem';
 
 export default function Support(props) {
-  let content = props.data.map((data, index) => (
+  let content = props.data.map((item, index) => (
        <ListItem
          key={index}
-         tLeft={data.title}
-         tRight={`(${data.type})`}
-         m={`目标:${data.item}`}
-         bLeft={`进度: ${data.progress}`}
-         bMiddle={`状态: ${data.state}`}
-         bRight={`支持金额: ${data.total}￥`}
+         {...item}
+         multiple={{ '进度': item.progress, '状态': item.state }}
+         title={item.title}
+         label={`(${item.type})`}
+         emp={`目标:${item.item}`}
+         other={`支持金额: ${item.total}￥`}
        />
     ));
   return (

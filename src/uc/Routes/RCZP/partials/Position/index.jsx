@@ -10,7 +10,7 @@ export default function Position(props) {
       small={`[${item.city}]`}
       emp={`月薪:${item.salary}`}
       other="已投递"
-      multiple={{ '公司': item.company, '其它': item.company }}
+      multiple={{ '公司': item.company }}
       label={item.time}
     />
   ));
