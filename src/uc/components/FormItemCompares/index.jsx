@@ -1,16 +1,16 @@
 import React from 'react';
 
 export default React.createClass({
-  isOverflow: function (p) {
-    if (p.scrollHeight > 40) this.props.onX(this.props.index);
+  handleTooLong: function (p) {
+    if (p.scrollHeight > 40) this.props.onTooLong(this.props.index);
   },
-  handleEvalComplete: function () {
-    this.props.onEvalComplete(this.props.index);
+  handleUnfold: function () {
+    this.props.onUnfold(this.props.index);
   },
   render: function () {
     const height = this.props.unfold ? 'auto' : '40px';
     const text = this.props.unfold ? '收起' : '展开';
-    const display = this.props.complete ? 'none' : 'block';
+    const display = this.props.tooLong ? 'block' : 'none';
     return (
       <div className="FormItemCompares">
         <section
@@ -42,7 +42,7 @@ export default React.createClass({
               wordBreak: 'break-all',
               color: '#666'
             }}
-            ref={this.isOverflow}
+            ref={this.handleTooLong}
           >{this.props.content}</p>
           <p
             style={{
@@ -52,7 +52,7 @@ export default React.createClass({
               cursor: 'pointer',
               display: display
             }}
-            onClick={this.handleEvalComplete}
+            onClick={this.handleUnfold}
           >{text}</p>
           <p style={{ textAlign: 'right', color: '#666' }}>{this.props.time}</p>
         </section>

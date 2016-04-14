@@ -11,7 +11,7 @@ export default React.createClass({
       ]
     };
     eva.data.forEach(item => {
-      item.complete = true;
+      item.tooLong = false;
       item.unfold = false;
     });
     return {
@@ -48,14 +48,14 @@ export default React.createClass({
       Evaluate: eva
     };
   },
-  onEvalComplete: function (index) {
+  onTooLong: function (index) {
     const newState = Object.assign({}, this.state);
-    newState.Evaluate.data[index].unfold = !newState.Evaluate.data[index].unfold;
+    newState.Evaluate.data[index].tooLong = true;
     this.setState(newState);
   },
-  onX: function (index) {
+  onUnfold: function (index) {
     const newState = Object.assign({}, this.state);
-    newState.Evaluate.data[index].complete = !newState.Evaluate.data[index].complete;
+    newState.Evaluate.data[index].unfold = !newState.Evaluate.data[index].unfold;
     this.setState(newState);
   },
   render: function () {
@@ -65,7 +65,10 @@ export default React.createClass({
     let extra;
     switch (ChildName) {
       case 'Evaluate':
-        extra = { onEvalComplete: this.onEvalComplete, onX: this.onX };
+        extra = {
+          onUnfold: this.onUnfold,
+          onTooLong: this.onTooLong
+        };
         break;
       default:
         extra = {};
