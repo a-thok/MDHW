@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default function FormItemList(props) {
+export default function ListItem(props) {
+  console.log(props);
   let bRight;
   if (props.tep) {
     if (props.tep === 'up') {
@@ -11,7 +12,7 @@ export default function FormItemList(props) {
     bRight = props.bRight;
   }
   return (
-    <div className="FormItemCompares">
+    <div className="listItem">
         <div style={{ width: '17.3333vw',
                       height: '17.3333vw',
                       maxHeight: '130px',
@@ -19,7 +20,7 @@ export default function FormItemList(props) {
                       alignSelf: 'center'
                      }}
         >
-          <img style={{ width: '100%', padding: '0 .8em' }} src="#" alt={props.position} />
+          <img style={{ width: '100%', padding: '0 .8em' }} src={props.src} alt={props.position} />
         </div>
         <div>
           <p>{props.tLeft}</p><span>{props.tRight}</span>

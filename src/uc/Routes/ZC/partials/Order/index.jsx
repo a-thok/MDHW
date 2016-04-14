@@ -1,10 +1,10 @@
 import React from 'react';
-import FormItemList from '../../../../components/FormItemList';
+import ListItem from '../../../../components/ListItem';
 
 export default React.createClass({
   render: function () {
     let content = this.props.data.map((data, index) => (
-       <FormItemList
+       <ListItem
          key={index}
          tLeft={data.title}
          tRight={`(${data.type})`}

@@ -1,5 +1,5 @@
 import React from 'react';
-import FormItemList from '../../../../components/FormItemList';
+import ListItem from '../../../../components/ListItem';
 
 export default React.createClass({
   getInitialState: function () {
@@ -15,7 +15,7 @@ export default React.createClass({
   },
   render: function () {
     const content = this.state.data.map((data, index) => (
-      <FormItemList
+      <ListItem
         key={index}
         {...data}
         mMiddle={`买家名称:${data.buyerName}`}

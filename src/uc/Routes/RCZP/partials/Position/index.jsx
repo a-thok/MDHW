@@ -1,11 +1,11 @@
 import React from 'react';
-import FormItemList from '../../../../components/FormItemList';
+import ListItem from '../../../../components/ListItem';
 
 export default function Position(props) {
   let contentList = props.data.map((item, index) => (
-    <FormItemList
-      {...item}
+    <ListItem
       key={index}
+      {...item}
       mMiddle={`月薪:${item.salary}`}
       mBottom={item.company}
       rTop="已投递"

@@ -1,5 +1,5 @@
 import React from 'react';
-import FormItemCompares from '../../../../components/FormItemCompares';
+import FormItemCompares from '../../../../components/ListItemEval';
 
 export default function Evaluate(props) {
   let commentList = props.data.map((item, index) => (

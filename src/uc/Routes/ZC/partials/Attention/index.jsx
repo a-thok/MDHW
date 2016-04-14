@@ -1,9 +1,9 @@
 import React from 'react';
-import FormItemList from '../../../../components/FormItemList';
+import ListItem from '../../../../components/ListItem';
 
 export default function Attention(props) {
   let content = props.data.map((data, index) => (
-       <FormItemList
+       <ListItem
          key={index}
          tLeft={data.title}
          tRight={`(${data.type})`}

@@ -1,9 +1,9 @@
 import React from 'react';
-import FormItemList from '../../../../components/FormItemList';
+import ListItem from '../../../../components/ListItem';
 
 export default function Resume(props) {
   let contentList = props.data.map((item, index) => (
-    <FormItemList
+    <ListItem
       key={index}
       {...item}
       mMiddle={`月薪:${item.salary}`}
