@@ -10,7 +10,7 @@ export default function ULink(props) {
     textDecoration: 'none'
   };
   return (
-    <div className="ulink" style={style}>
+    <div className="uLink" style={style}>
       <div
         className={`fa fa-${props.icon}`}
         style={{
@@ -21,7 +21,7 @@ export default function ULink(props) {
         }}
       ></div>
       <div
-        className="ulink_right"
+        className="uLink_right"
         style={{
           padding: '8px 0',
           overflow: 'hidden'

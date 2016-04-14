@@ -1,13 +1,14 @@
-.ulink .fa {
+.uLink .fa {
   font-size: 22px;
   color: #777;
 }
-.ulink .fa-angle-right {
+.uLink .fa-angle-right {
   color: #ccc;
 }
-.ulink_right {
+.uLink {
   border-bottom: 1px solid #f1f1f1;
+  letter-spacing: .1em;
 }
-.ulink:last-child .ulink_right {
+.uLink:last-child .uLink_right {
   border: 0;
 }
