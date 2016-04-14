@@ -40,7 +40,7 @@ export default function UGroup(props) {
       return null;
   }
   return (
-    <div className="form">
+    <div className="uGroup">
       <label htmlFor={props.id}>{ props.label }</label>
       {formNode}
     </div>

@@ -1,14 +1,14 @@
-.form {
+.uGroup {
   background: #fff;
   padding: 10px 3.3337%;
 }
-.form label {
+.uGroup label {
   padding-left: .5em;
   border-left: 3px solid #f00;
 }
-.form input,
-.form select,
-.form textarea {
+.uGroup input,
+.uGroup select,
+.uGroup textarea {
   display: block;
   width: 100%;
   padding: .5em .8em;
@@ -19,7 +19,7 @@
   font-size: 14px;
   line-height: 20px;
 }
-.form textarea {
+.uGroup textarea {
   height: 74px;
 }
 

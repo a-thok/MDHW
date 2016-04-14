@@ -10,7 +10,7 @@ import Addresses from './routes/Addresses';
 import RCZP from './routes/RCZP';
 import RczpHome from './routes/RCZP/partials/Home';
 import Preview from './routes/RCZP/partials/Preview';
-import Compares from './routes/RCZP/partials/Compares';
+import Evaluate from './routes/RCZP/partials/Evaluate';
 import Position from './routes/RCZP/partials/Position';
 import Resume from './routes/RCZP/partials/Resume';
 
@@ -49,7 +49,7 @@ ReactDOM.render((
       <Route path="/rczp" component={RCZP}>
         <IndexRoute component={RczpHome} />
         <Route path="/rczp/preview" component={Preview} />
-        <Route path="/rczp/compares" component={Compares} />
+        <Route path="/rczp/evaluate" component={Evaluate} />
         <Route path="/rczp/position" component={Position} />
         <Route path="/rczp/resume" component={Resume} />
       </Route>
@@ -73,7 +73,7 @@ ReactDOM.render((
         <Route path="/zb/hascollect" component={ZbHasCollect} />
       </Route>
       <Route path="/zc" component={ZC}>
-        <Route path="/zc/home" component={ZcHome} />
+        <IndexRoute component={ZcHome} />
         <Route path="/zc/order" component={Order} />
         <Route path="/zc/attention" component={ZcAttention} />
         <Route path="/zc/support" component={Support} />

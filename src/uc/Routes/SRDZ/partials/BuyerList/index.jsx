@@ -1,5 +1,5 @@
 import React from 'react';
-import FormItemList from '../../../../components/FormItemList';
+import ListItem from '../../../../components/ListItem';
 export default React.createClass({
   getInitialState: function () {
     let res = {
@@ -14,7 +14,7 @@ export default React.createClass({
   },
   render: function () {
     let contentList = this.state.data.map((data, index) => (
-      <FormItemList
+      <ListItem
         key={index}
         {...data}
         mMiddle={data.money}
