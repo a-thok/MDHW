@@ -1,7 +1,15 @@
 import React from 'react';
 
 export default function FormItemList(props) {
-  let name = props.position || props.title;
+  let bRight;
+  if (props.tep) {
+    if (props.tep === 'up') {
+      bRight = <i className="fa fa-angle-up"></i>;
+    }
+    bRight = <i className="fa fa-angle-down"></i>;
+  } else {
+    bRight = props.bRight;
+  }
   return (
     <div className="FormItemCompares">
         <div style={{ width: '17.3333vw',
@@ -13,20 +21,14 @@ export default function FormItemList(props) {
         >
           <img style={{ width: '100%', padding: '0 .8em' }} src="#" alt={props.position} />
         </div>
-        <div style={{ flexGrow: '1', fontSize: '14px' }}>
-          <p>
-            <span style={{ marginRight: '.5em',
-                           fontSize: '16px' }}
-            >
-              {name}
-            </span>{props.city}
-          </p>
-          <p>{props.mMiddle}</p>
-          <p>{props.mBottom}</p>
-        </div>
         <div>
-          <p>{props.rTop}</p>
-          <p>{props.rBottom}</p>
+          <p>{props.tLeft}</p><span>{props.tRight}</span>
+          <div>
+            <p>{props.m}</p>
+            <p>
+              <span>{props.bLeft}</span><span>{props.bMiddle}</span><span ref={props.template}>{bRight}</span>
+            </p>
+          </div>
         </div>
       </div>
   );

@@ -2,31 +2,24 @@ import React from 'react';
 import FormItemList from '../../../../components/FormItemList';
 
 export default React.createClass({
-  getInitialState: function () {
-    let res = {
-      data: [
-        { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-        { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-        { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-        { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-        { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-        { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' }
-      ]
-    };
-    return res;
-  },
   render: function () {
-    let content = this.state.data.map((data, index) => (
+    let content = this.props.data.map((data, index) => (
        <FormItemList
          key={index}
-         tLeft={data.type}
-         mMiddle={`目标:${data.item}`}
-         bLeft={`项目金额: ￥ ${data.money}`}
-         bRight={data.endtime}
+         tLeft={data.title}
+         tRight={`(${data.type})`}
+         m={`目标:${data.item}`}
+         bLeft={`进度: ${data.progress}`}
+         bMiddle={`状态: ${data.state}`}
+         tep="down"
        />
     ));
     return (
       <div className="List">
+        <section style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <p style={{ background: 'red' }} filter>待付款</p>
+          <p style={{ background: 'red' }} filter>已付款</p>
+        </section>
         {content}
       </div>
     );

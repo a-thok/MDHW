@@ -73,7 +73,7 @@ ReactDOM.render((
         <Route path="/zb/hascollect" component={ZbHasCollect} />
       </Route>
       <Route path="/zc" component={ZC}>
-        <Route path="/zc/home" component={ZcHome} />
+        <IndexRoute component={ZcHome} />
         <Route path="/zc/order" component={Order} />
         <Route path="/zc/attention" component={ZcAttention} />
         <Route path="/zc/support" component={Support} />
