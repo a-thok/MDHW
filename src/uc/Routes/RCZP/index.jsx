@@ -1,4 +1,5 @@
 import React from 'react';
+import loadList from '../../mixins/loadList.js';
 
 export default React.createClass({
   getInitialState: function () {
@@ -6,6 +7,13 @@ export default React.createClass({
       data: [
         { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师1', content: '面试还好dasdasddasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdasdasdasdasdas', company: '创企科技', time: '2016-04-06' },
         { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师2', content: '面试还好ddadasdasdasdasdasdad', company: '创企科技', time: '2016-04-06' },
+        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
+        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
+        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
+        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
+        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
+        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
+        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
         { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
         { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师4', content: '面试还好', company: '创企科技', time: '2016-04-06' }
       ]
@@ -30,12 +38,8 @@ export default React.createClass({
         wishsalary: '230000以上'
       },
       Resume: {
-        data: [
-          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师1', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
-          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师2', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
-          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师3', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
-          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师4', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' }
-        ]
+        index: 0,
+        data: []
       },
       Position: {
         data: [
@@ -45,8 +49,17 @@ export default React.createClass({
           { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师4', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' }
         ]
       },
-      Evaluate: eva
+      Evaluate: {
+        index: 0,
+        data: []
+      }
     };
+  },
+  onResemuList: function () {
+    loadList.bind(this)('/m/sys/hr/deliver/resumelist', 'Resume');
+  },
+  onEvaluateList: function () {
+    loadList.bind(this)('/m/sys/hr/comment/companylist', 'Evaluate');
   },
   onTooLong: function (index) {
     const newState = Object.assign({}, this.state);
@@ -64,8 +77,14 @@ export default React.createClass({
 
     let extra;
     switch (ChildName) {
+      case 'Resume':
+        extra = {
+          onResemuList: this.onResemuList
+        };
+        break;
       case 'Evaluate':
         extra = {
+          onEvaluateList: this.onEvaluateList,
           onUnfold: this.onUnfold,
           onTooLong: this.onTooLong
         };
@@ -80,6 +99,7 @@ export default React.createClass({
           React.cloneElement(Child, Object.assign(
             {},
             this.state[ChildName],
+            { onChangeHash: this.props.onChangeHash },
             extra
           ))
         }
