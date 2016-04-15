@@ -2,6 +2,12 @@ import React from 'react';
 import ListItem from '../../../../components/ListItem';
 
 export default React.createClass({
+  componentDidMount: function () {
+    this.props.onFilter(0);
+  },
+  handleClick: function (type) {
+    this.props.onFilter(type);
+  },
   render: function () {
     let content = this.props.data.map((item, index) => (
        <ListItem
@@ -16,10 +22,16 @@ export default React.createClass({
     ));
     return (
       <div>
-        <section style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <p style={{ background: 'red' }} filter>待付款</p>
-          <p style={{ background: 'red' }} filter>已付款</p>
-        </section>
+        <ul className="listTabs">
+          <li
+            className={ `listTab${this.props.type === 0 ? ' is-active' : ''}` }
+            onClick={() => this.handleClick(0)}
+          >待付款</li>
+          <li
+            className={ `listTab${this.props.type === 1 ? ' is-active' : ''}` }
+            onClick={() => this.handleClick(1)}
+          >已付款</li>
+        </ul>
         <ul className="list">
           {content}
         </ul>
