@@ -25,13 +25,13 @@ export default React.createClass({
       />
     ));
     return (
-      <div className="list list-rich">
+      <ul className="list">
         <section style={{ display: 'flex', justifyContent: 'space-around' }}>
           <p>待付款</p>
           <p>已付款</p>
         </section>
         {contentList}
-      </div>
+      </ul>
     );
   }
 });

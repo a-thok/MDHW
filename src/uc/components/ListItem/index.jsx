@@ -16,7 +16,7 @@ export default function ListItem(props) {
       <span className="listItem_lastItem" key={index}><span>{item}</span>: {props.multiple[item]}</span>
   ));
   return (
-    <div className="listItem">
+    <li className="listItem">
       <section className="listItem_img listItem_img-rich">
         <img src={props.img} alt={props.position} />
       </section>
@@ -33,7 +33,7 @@ export default function ListItem(props) {
           <div className="listItem_last_r"><span>{bRight}</span></div>
         </div>
       </section>
-    </div>
+    </li>
   );
 }
 

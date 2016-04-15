@@ -14,8 +14,8 @@ export default function Support(props) {
        />
     ));
   return (
-    <div className="list list-rich">
+    <ul className="list">
       {content}
-    </div>
+    </ul>
   );
 }

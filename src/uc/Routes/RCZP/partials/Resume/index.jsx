@@ -15,8 +15,8 @@ export default function Resume(props) {
     />
   ));
   return (
-    <div className="list list-rich">
+    <ul className="list">
       {contentList}
-    </div>
+    </ul>
   );
 }

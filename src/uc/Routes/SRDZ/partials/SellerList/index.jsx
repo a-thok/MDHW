@@ -30,7 +30,7 @@ export default React.createClass({
           <p>待付款</p>
           <p>已付款</p>
         </section>
-        <ul className="list list-rich">
+        <ul className="list">
           {content}
         </ul>
       </div>

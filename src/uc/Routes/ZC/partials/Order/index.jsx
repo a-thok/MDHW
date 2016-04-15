@@ -20,7 +20,7 @@ export default React.createClass({
           <p style={{ background: 'red' }} filter>待付款</p>
           <p style={{ background: 'red' }} filter>已付款</p>
         </section>
-        <ul className="list list-rich">
+        <ul className="list">
           {content}
         </ul>
       </div>
