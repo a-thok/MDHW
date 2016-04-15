@@ -1,27 +1,9 @@
 import React from 'react';
 import loadList from '../../mixins/loadList.js';
+import fetching from '../../mixins/fetching.js';
 
 export default React.createClass({
   getInitialState: function () {
-    let eva = {
-      data: [
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师1', content: '面试还好dasdasddasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdas面试还好dasdasddasdasdasdasdasdasdasdasdasdasdas', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师2', content: '面试还好ddadasdasdasdasdasdad', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师3', content: '面试还好', company: '创企科技', time: '2016-04-06' },
-        { img: 'http://tse3.mm.bing.net/th?id=OIP.M4ac8976c8e68a2e071b54f96760efc07o0&pid=15.1', position: '工程师4', content: '面试还好', company: '创企科技', time: '2016-04-06' }
-      ]
-    };
-    eva.data.forEach(item => {
-      item.tooLong = false;
-      item.unfold = false;
-    });
     return {
       Preview: {
         name: '小李',
@@ -39,27 +21,40 @@ export default React.createClass({
       },
       Resume: {
         index: 0,
+        fetching: false,
+        finished: false,
         data: []
       },
       Position: {
-        data: [
-          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师1', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
-          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师2', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
-          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师3', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' },
-          { img: 'http://i1.w.hjfile.cn/doc/201202/012maochong156451.jpg', position: '工程师4', city: '福建', company: '创企科技', salary: '2000-5000', time: '2016-04-06' }
-        ]
+        index: 0,
+        fetching: false,
+        finished: false,
+        data: []
       },
       Evaluate: {
         index: 0,
+        fetching: false,
+        finished: false,
         data: []
       }
     };
   },
+  onPositionList: function () {
+    loadList.bind(this)('/m/sys/hr/collect/list', 'Position');
+    fetching.bind(this)('Position');
+  },
   onResemuList: function () {
-    loadList.bind(this)('/m/sys/hr/deliver/resumelist', 'Resume');
+    loadList.bind(this)('/m/sys/hr/deliver/deliverylist', 'Resume');
+    fetching.bind(this)('Resume');
   },
   onEvaluateList: function () {
-    loadList.bind(this)('/m/sys/hr/comment/companylist', 'Evaluate');
+    loadList.bind(this)('/m/sys/hr/comment/companylist', 'Evaluate', (data) => {
+      data.forEach((item) => {
+        item.tooLong = false;
+        item.unfold = false;
+      });
+    });
+    fetching.bind(this)('Resume');
   },
   onTooLong: function (index) {
     const newState = Object.assign({}, this.state);
@@ -87,6 +82,11 @@ export default React.createClass({
           onEvaluateList: this.onEvaluateList,
           onUnfold: this.onUnfold,
           onTooLong: this.onTooLong
+        };
+        break;
+      case 'Position':
+        extra = {
+          onPositionList: this.onPositionList
         };
         break;
       default:
