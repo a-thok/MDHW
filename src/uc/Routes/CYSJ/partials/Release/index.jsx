@@ -1,29 +1,10 @@
 import React from 'react';
 import UGroup from '../../../../components/UGroup';
 import FormButton from '../../../../components/FormButton';
+import getHash from '../../../../mixins/getHash';
 
 export default React.createClass({
-  getInitialState: function () {
-    return {
-      a: '',
-      b: '',
-      c: '',
-      d: '',
-      e: '',
-      f: '',
-      g: ''
-    };
-  },
-  onChange: function (e, name) {
-    console.log(e.target.value, name);
-    this.setState(Object.assign({}, this.state, {
-      [name]: e.target.value
-    }));
-  },
-  onSubmit: function (e) {
-    e.preventDefault();
-    console.log(this.state);
-  },
+  mixins: [getHash],
   render: function () {
     const form = {
       a: { type: 'select', label: '项目类型', id: 'projectname', options: ['请选择', 'b', 'c'] },
@@ -32,17 +13,17 @@ export default React.createClass({
       e: { type: 'input', label: '悬赏金额', id: 'projectname', placeholder: '待商议' },
       g: { type: 'input', label: '联系方式', id: 'projectname', placeholder: '请填写您的手机号码' }
     };
-    const nodes = Object.keys(this.state).map((item, index) => (
+    const nodes = Object.keys(this.props.data).map((item, index) => (
       <UGroup
         key={index}
         name={item}
-        value={this.state[item]}
+        value={this.props.data[item]}
         { ...form[item] }
-        onChange={(e, name) => this.onChange(e, name)}
+        onChange={(e, name) => this.props.onChange(e, name)}
       />
     ));
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.props.onSubmit}>
         { nodes }
         <FormButton
           style={{

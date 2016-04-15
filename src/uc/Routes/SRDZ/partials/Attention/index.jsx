@@ -1,20 +1,38 @@
 import React from 'react';
 import ListItem from '../../../../components/ListItem';
+import Loading from '../../../../components/Loading';
+import getHash from '../../../../mixins/getHash';
+import removeWindowEvent from '../../../../mixins/removeWindowEvent';
 
-export default function Attention(props) {
-  let contentList = props.data.map((item, index) => (
-    <ListItem
-      key={index}
-      {...item}
-      multiple={{ '成交量': item.sum }}
-      emp={`￥${item.money}/个`}
-      small={item.type}
-      other="取消关注"
-    />
-  ));
-  return (
-    <ul className="list">
-      {contentList}
-    </ul>
-  );
-}
+export default React.createClass({
+  mixins: [getHash, removeWindowEvent],
+  componentDidMount: function () {
+    this.props.onAttentionList();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  handleScroll: function () {
+    const body = document.body;
+    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
+    if (remain < 50) this.props.onAttentionList();
+  },
+  render: function () {
+    let contentList = this.props.data.map((item, index) => (
+      <ListItem
+        key={index}
+        {...item}
+        multiple={{ '成交量': item.sum }}
+        emp={`￥${item.money}/个`}
+        small={item.type}
+        other="取消关注"
+      />
+    ));
+    return (
+      <div>
+        <ul className="list">
+          {contentList}
+        </ul>
+        <Loading finished={this.props.finished} />
+      </div>
+    );
+  }
+});

@@ -1,52 +1,61 @@
 import React from 'react';
+import loadList from '../../mixins/loadList.js';
+import fetching from '../../mixins/fetching.js';
+import tabSwitch from '../../mixins/tabSwitch.js';
 
 export default React.createClass({
   getInitialState: function () {
     return {
       Attention: {
-        data: [
-          { img: 'http://tse1.mm.bing.net/th?id=OIP.M9c40f0765adda5cc0073e1f9d21ea8eeo0&pid=15.1', title: '蓝牙耳机——世界上最小的立体声无线耳机', money: '500.00', sum: '20160', type: '创意订制' },
-          { img: 'http://tse1.mm.bing.net/th?id=OIP.M9c40f0765adda5cc0073e1f9d21ea8eeo0&pid=15.1', title: '蓝牙耳机——世界上最小的立体声无线耳机', money: '500.00', sum: '20166', type: 'logod订制' },
-          { img: 'http://tse1.mm.bing.net/th?id=OIP.M9c40f0765adda5cc0073e1f9d21ea8eeo0&pid=15.1', title: '蓝牙耳机——世界上最小的立体声无线耳机', money: '500.00', sum: '2016', type: '服装订制' },
-          { img: 'http://tse1.mm.bing.net/th?id=OIP.M9c40f0765adda5cc0073e1f9d21ea8eeo0&pid=15.1', title: '蓝牙耳机——世界上最小的立体声无线耳机', money: '500.00', sum: '2016', type: '创意订制' }
-        ]
+        index: 0,
+        fetching: false,
+        finished: false,
+        data: []
       },
       BuyerList: {
-        data: [
-          { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', money: '500.00', time: '2016-05-06' },
-          { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', money: '500.00', time: '2016-05-06' },
-          { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', money: '500.00', time: '2016-05-06' },
-          { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', money: '500.00', time: '2016-05-06' }
-        ]
+        index: 0,
+        fetching: false,
+        finished: false,
+        type: 0,
+        data: []
       },
       SellerList: {
+        index: 0,
+        fetching: false,
+        finished: false,
         type: 0,
         data: []
       }
     };
   },
+
+  onAttentionList: function () {
+    loadList.bind(this)('/m/sys/hr/collect/list', 'Attention');
+    fetching.bind(this)('Attention');
+  },
+  onSellerListList: function () {
+    loadList.bind(this)('/m/sys/hr/collect/list', 'SellerList');
+    fetching.bind(this)('SellerList');
+  },
+  onBuyerListList: function () {
+    loadList.bind(this)('/m/sys/hr/collect/list', 'BuyerList');
+    fetching.bind(this)('BuyerList');
+  },
+
+
   onFilter: function (type) {
-    const data1 = [
-          { img: '图1', title: '111蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '张三', state: '待发货', type: '科学', status: false },
-          { img: '图1', title: '111蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '李四', state: '待发货', type: '日常', status: false },
-          { img: '图1', title: '111蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '马武', state: '待发货', type: '科学', status: false },
-          { img: '图1', title: '11蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '午马', state: '待发货', type: '科学', status: false }
-    ];
-    const data2 = [
-          { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '张三', state: '待发货', type: '科学', status: false },
-          { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '李四', state: '待发货', type: '日常', status: false },
-          { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '马武', state: '待发货', type: '科学', status: false },
-          { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '午马', state: '待发货', type: '科学', status: false }
-    ];
-    const newState = Object.assign({}, this.state);
-    newState.SellerList.type = type;
-    newState.SellerList.data = type ? data1 : data2;
-    this.setState(newState);
+    const url = type === 0 ? 'fake url1' : 'fake url2';
+    tabSwitch.bind(this)(url, 'SellerList', type);
   },
   onPush: function (index) {
     const newState = Object.assign({}, this.state);
     newState.SellerList.data[index].status = !newState.SellerList.data[index].status;
     this.setState(newState);
+  },
+
+  onFilter2: function (type) {
+    const url = type === 0 ? 'fake url1' : 'fake url2';
+    tabSwitch.bind(this)(url, 'BuyerList', type);
   },
   render: function () {
     const Child = this.props.children;
@@ -54,10 +63,23 @@ export default React.createClass({
 
     let extra;
     switch (ChildName) {
+      case 'Attention':
+        extra = {
+          onAttentionList: this.onAttentionList
+        };
+        break;
       case 'SellerList':
         extra = {
+          onSellerListList: this.onSellerListList,
           onFilter: this.onFilter,
           onPush: this.onPush
+        };
+        break;
+      case 'BuyerList':
+        extra = {
+          onBuyerListList: this.onBuyerListList,
+          onFilter2: this.onFilter2,
+          onPush2: this.onPush2
         };
         break;
       default:
@@ -70,6 +92,7 @@ export default React.createClass({
           React.cloneElement(Child, Object.assign(
             {},
             this.state[ChildName],
+            { onChangeHash: this.props.onChangeHash },
             extra
           ))
         }
