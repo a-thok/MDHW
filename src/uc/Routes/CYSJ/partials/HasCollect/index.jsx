@@ -17,16 +17,18 @@ export default React.createClass({
     let content = this.state.data.map((data, index) => (
        <ListItemPlain
          key={index}
-         tLeft={`收藏时间:${data.seltime}`}
-         m={data.title}
-         bLeft={`结束时间: ${data.endtime}`}
-         bRight="取消收藏"
+         info={`收藏时间:${data.seltime}`}
+         title={data.title}
+         elems={[
+           <span>结束时间: {data.endtime}</span>,
+           <a className="list-link" href="#">取消收藏</a>
+         ]}
        />
     ));
     return (
-      <div className="list">
+      <ul className="list list-plain">
         {content}
-      </div>
+      </ul>
     );
   }
 });
