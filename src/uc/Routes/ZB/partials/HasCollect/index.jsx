@@ -1,34 +1,39 @@
 import React from 'react';
 import ListItemPlain from '../../../../components/ListItemPlain';
+import Loading from '../../../../components/Loading';
+import getHash from '../../../../mixins/getHash';
+import removeWindowEvent from '../../../../mixins/removeWindowEvent';
 
 export default React.createClass({
-  getInitialState: function () {
-    let res = {
-      data: [
-        { seltime: '20196-06-05', title: '蓝莓卡通设计', endtime: '20196-06-05' },
-        { seltime: '20196-06-05', title: '蓝莓卡通设计', endtime: '20196-06-05' },
-        { seltime: '20196-06-05', title: '蓝莓卡通设计', endtime: '20196-06-05' },
-        { seltime: '20196-06-05', title: '蓝莓卡通设计', endtime: '20196-06-05' }
-      ]
-    };
-    return res;
+  mixins: [getHash, removeWindowEvent],
+  componentDidMount: function () {
+    this.props.onHasCollectList();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  handleScroll: function () {
+    const body = document.body;
+    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
+    if (remain < 50) this.props.onHasCollectList();
   },
   render: function () {
-    let content = this.state.data.map((data, index) => (
+    let content = this.props.data.map((item, index) => (
       <ListItemPlain
         key={index}
-        info={`收藏时间:${data.seltime}`}
-        title={data.title}
+        info={`收藏时间:${item.seltime}`}
+        title={item.title}
         elems={[
-          <span>结束时间: {data.endtime}</span>,
+          <span>结束时间: {item.endtime}</span>,
           <a className="list-link" href="#">取消收藏</a>
         ]}
       />
     ));
     return (
-      <ul className="list list-plain">
-        {content}
-      </ul>
+      <div>
+        <ul className="list list-plain">
+          {content}
+        </ul>
+        <Loading finished={this.props.finished} />
+      </div>
     );
   }
 });

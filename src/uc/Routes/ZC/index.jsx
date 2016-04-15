@@ -1,9 +1,14 @@
 import React from 'react';
+import loadList from '../../mixins/loadList.js';
+import fetching from '../../mixins/fetching.js';
 
 export default React.createClass({
   getInitialState: function () {
     return {
       Attention: {
+        index: 0,
+        fetching: false,
+        finished: false,
         data: [
           { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
           { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
@@ -14,6 +19,9 @@ export default React.createClass({
         ]
       },
       Support: {
+        index: 0,
+        fetching: false,
+        finished: false,
         data: [
           { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '200000' },
           { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '200000' },
@@ -25,9 +33,24 @@ export default React.createClass({
       },
       Order: {
         type: 0,
+        index: 0,
+        fetching: false,
+        finished: false,
         data: []
       }
     };
+  },
+  onAttentionList: function () {
+    loadList.bind(this)('/m/sys/hr/deliver/deliverylist', 'Attention');
+    fetching.bind(this)('Attention');
+  },
+  onSupportList: function () {
+    loadList.bind(this)('/m/sys/hr/deliver/deliverylist', 'Support');
+    fetching.bind(this)('Support');
+  },
+  onOrderList: function () {
+    loadList.bind(this)('/m/sys/hr/deliver/deliverylist', 'Order');
+    fetching.bind(this)('Order');
   },
   onFilter: function (type) {
     const data1 = [
@@ -58,7 +81,20 @@ export default React.createClass({
     let extra;
     switch (ChildName) {
       case 'Order':
-        extra = { onFilter: this.onFilter };
+        extra = {
+          onFilter: this.onFilter,
+          onOrderList: this.onOrderList
+        };
+        break;
+      case 'Attention':
+        extra = {
+          onAttentionList: this.onAttentionList
+        };
+        break;
+      case 'Support':
+        extra = {
+          onSupportList: this.onSupportList
+        };
         break;
       default:
         extra = {};
@@ -70,6 +106,7 @@ export default React.createClass({
           React.cloneElement(Child, Object.assign(
             {},
             this.state[ChildName],
+            { onChangeHash: this.props.onChangeHash },
             extra
           ))
         }

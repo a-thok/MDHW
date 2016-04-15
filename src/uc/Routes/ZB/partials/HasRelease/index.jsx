@@ -1,20 +1,22 @@
 import React from 'react';
 import ListItemPlain from '../../../../components/ListItemPlain';
+import Loading from '../../../../components/Loading';
+import getHash from '../../../../mixins/getHash';
+import removeWindowEvent from '../../../../mixins/removeWindowEvent';
 
 export default React.createClass({
-  getInitialState: function () {
-    let res = {
-      data: [
-        { type: '开发众包', title: '软件开发 MAX插件开发', money: '200.00', endtime: '2016-06-06' },
-        { type: '开发众包', title: '软件开发 MAX插件开发', money: '200.00', endtime: '2016-06-06' },
-        { type: '开发众包', title: '软件开发 MAX插件开发', money: '200.00', endtime: '2016-06-06' },
-        { type: '开发众包', title: '软件开发 MAX插件开发', money: '200.00', endtime: '2016-06-06' }
-      ]
-    };
-    return res;
+  mixins: [getHash, removeWindowEvent],
+  componentDidMount: function () {
+    this.props.onHasReleaseList();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  handleScroll: function () {
+    const body = document.body;
+    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
+    if (remain < 50) this.props.onHasReleaseList();
   },
   render: function () {
-    let content = this.state.data.map((data, index) => (
+    let content = this.props.data.map((data, index) => (
        <ListItemPlain
          key={index}
          info={data.type}
@@ -26,9 +28,12 @@ export default React.createClass({
        />
     ));
     return (
-      <ul className="list list-plain">
-        {content}
-      </ul>
+      <div>
+        <ul className="list list-plain">
+          {content}
+        </ul>
+        <Loading finished={this.props.finished} />
+      </div>
     );
   }
 });
