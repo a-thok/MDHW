@@ -24,18 +24,7 @@ export default React.createClass({
     });
     return {
       Preview: {
-        name: '小李',
-        sex: '男',
-        birth: '2016-04-08',
-        degree: '博士',
-        worktime: '10年',
-        city: '火星',
-        tel: '121201210000',
-        email: 'xiaoli@qq.com',
-        wishpos: '风险顾问',
-        posnature: '全职',
-        wishcity: '意大利',
-        wishsalary: '230000以上'
+        items: []
       },
       Resume: {
         index: 0,
@@ -54,6 +43,24 @@ export default React.createClass({
         data: []
       }
     };
+  },
+  onResumePreview: function () {
+    fetch('/m/sys/hr/resumes/detail', {
+      method: 'GET',
+      credentials: 'include'
+    })
+      .then(res => res.json())
+      .then(res => {
+        const newState = {};
+        res.result.items.forEach((item) => {
+          Object.assign(newState, item.content);
+        });
+        // location 和 react-router 有命名冲突
+        newState.city = newState.location;
+        delete newState.location;
+
+        this.setState({ Preview: newState });
+      });
   },
   onResemuList: function () {
     loadList.bind(this)('/m/sys/hr/deliver/resumelist', 'Resume');
@@ -77,6 +84,11 @@ export default React.createClass({
 
     let extra;
     switch (ChildName) {
+      case 'Preview':
+        extra = {
+          onResumePreview: this.onResumePreview
+        };
+        break;
       case 'Resume':
         extra = {
           onResemuList: this.onResemuList
