@@ -16,13 +16,19 @@ export default function SellerList(props) {
   ));
   return (
     <div>
-      <section style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <p>待付款</p>
-        <p>已付款</p>
-      </section>
-      <ul className="list">
-        {content}
-      </ul>
-    </div>
+        <ul className="listTabs">
+          <li
+            className={ `listTab${this.props.type === 0 ? ' is-active' : ''}` }
+            onClick={() => this.handleClick(0)}
+          >待付款</li>
+          <li
+            className={ `listTab${this.props.type === 1 ? ' is-active' : ''}` }
+            onClick={() => this.handleClick(1)}
+          >已付款</li>
+        </ul>
+        <ul className="list">
+          {content}
+        </ul>
+      </div>
   );
 }

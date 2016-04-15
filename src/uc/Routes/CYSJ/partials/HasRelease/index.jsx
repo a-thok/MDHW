@@ -17,18 +17,20 @@ export default React.createClass({
     let content = this.state.data.map((data, index) => (
        <ListItemPlain
          key={index}
-         tLeft={data.type}
-         tRight={data.state}
-         m={data.title}
-         bLeft={`￥ ${data.money}`}
-         bMiddle={`${data.num}参与`}
-         bRight={data.model}
+         info={data.type}
+         small={data.state}
+         title={data.title}
+         elems={[
+           <span className="fontColor">￥ {data.money}</span>,
+           <span>{data.num}参与</span>,
+           <span>{data.mode}</span>
+         ]}
        />
     ));
     return (
-      <div className="list-plain">
+      <ul className="list list-plain">
         {content}
-      </div>
+      </ul>
     );
   }
 });

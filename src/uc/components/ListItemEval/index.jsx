@@ -1,10 +1,9 @@
 import React from 'react';
 
 export default React.createClass({
-  handleTooLong: function (p) {
-    setTimeout(() => {
-      if (p.scrollHeight > 48) this.props.onTooLong(this.props.index);
-    });
+  componentDidMount: function () {
+    const content = this.refs.content;
+    if (content.scrollHeight > 48) this.props.onTooLong(this.props.index);
   },
   handleUnfold: function () {
     this.props.onUnfold(this.props.index);
@@ -30,8 +29,8 @@ export default React.createClass({
           <p
             className="listItem_content"
             style={{ height }}
-            ref={this.handleTooLong}
-          >{this.props.content}</p>
+            ref="content"
+          >{this.props.about}</p>
           <p className="listItem_time">{this.props.time}</p>
         </section>
       </li>
