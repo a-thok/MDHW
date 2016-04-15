@@ -18,17 +18,19 @@ export default React.createClass({
     let content = this.state.data.map((data, index) => (
        <ListItemPlain
          key={index}
-         tLeft={`地区:${data.province}省-${data.city}市`}
-         m={data.title}
-         bLeft={`报价: ￥ ${data.money}`}
-         bMiddle={`工作周期: ${data.day}天`}
-         bRight="查看详情"
+         info={`地区:${data.province}省-${data.city}市`}
+         title={data.title}
+         elems={[
+           <span className="fontColor">报价: ￥{data.money}</span>,
+           <span>工作周期: {data.day}天</span>,
+           <a className="list-link" href="#">查看详情</a>
+         ]}
        />
     ));
     return (
-      <div className="list">
+      <ul className="list list-plain">
         {content}
-      </div>
+      </ul>
     );
   }
 });

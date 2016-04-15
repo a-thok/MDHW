@@ -1,7 +1,7 @@
 import { $, $parent, $cookie } from 'func';
 import render from 'render';
 import showMenu from 'showMenu';
-
+import xhr from 'xhr';
 
 export default function comment() {
   showMenu();
@@ -139,25 +139,14 @@ export default function comment() {
       // 向后台请求数据后，清空输入框内容
       replyInput.value = '';
 
-      fetch('/m/ZC/FbComments', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Cookie': document.cookie,
-          'credentials': 'include'
-        },
-        body: JSON.stringify(params)
-      })
-        .then(res => res.json())
-        .then(data => {
-          // 判断是否有数据返回，并处理
-          if (data.success) {
-            (isRootComment ? commentList : subCommentList)
-              .lastElementChild.setAttribute('code-id', data.result.id);
-          } else {
-            alert('对不起，评论发布失败!');
-          }
-        });
+      xhr('/m/ZC/FbComments', params, (data) => {
+        if (data.success) {
+          (isRootComment ? commentList : subCommentList)
+            .lastElementChild.setAttribute('code-id', data.result.id);
+        } else {
+          alert('对不起，评论发布失败!');
+        }
+      });
     });
 
     // 删除事件
