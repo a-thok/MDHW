@@ -28,7 +28,6 @@ export default React.createClass({
       }
     };
   },
-<<<<<<< HEAD
   onResumePreview: function () {
     fetch('/m/sys/hr/resumes/detail', {
       method: 'GET',
@@ -46,11 +45,10 @@ export default React.createClass({
 
         this.setState({ Preview: newState });
       });
-=======
+  },
   onPositionList: function () {
     loadList.bind(this)('/m/sys/hr/collect/list', 'Position');
     fetching.bind(this)('Position');
->>>>>>> 9d3cc3a0b617d56b8823e122e9f4d3748cdca71c
   },
   onResemuList: function () {
     loadList.bind(this)('/m/sys/hr/deliver/deliverylist', 'Resume');
