@@ -1,6 +1,7 @@
 import React from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
+import tabSwitch from '../../mixins/tabSwitch.js';
 
 export default React.createClass({
   getInitialState: function () {
@@ -9,27 +10,13 @@ export default React.createClass({
         index: 0,
         fetching: false,
         finished: false,
-        data: [
-          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' },
-          { img: 'http://ugc.qpic.cn/baikepic2/28006/20141031114942-931010796.jpg/300', type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '2000000' }
-        ]
+        data: []
       },
       Support: {
         index: 0,
         fetching: false,
         finished: false,
-        data: [
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '200000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '200000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '200000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '200000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '200000' },
-          { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中', total: '200000' }
-        ]
+        data: []
       },
       Order: {
         type: 0,
@@ -53,26 +40,8 @@ export default React.createClass({
     fetching.bind(this)('Order');
   },
   onFilter: function (type) {
-    const data1 = [
-      { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' }
-    ];
-    const data2 = [
-      { type: '科技2', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技3', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技3', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技3', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技2', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' },
-      { type: '科技2', title: '蓝牙立体耳机世界上最小的立体无线耳机', item: '50000000', progress: '72%', state: '众筹中' }
-    ];
-    const newState = Object.assign({}, this.state);
-    newState.Order.type = type;
-    newState.Order.data = !type ? data1 : data2;
-    this.setState(newState);
+    const url = type === 0 ? 'fake url1' : 'fake url2';
+    tabSwitch.bind(this)(url, 'Order', type);
   },
   render: function () {
     const Child = this.props.children;

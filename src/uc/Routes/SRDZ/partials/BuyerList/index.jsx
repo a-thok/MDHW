@@ -7,12 +7,12 @@ import removeWindowEvent from '../../../../mixins/removeWindowEvent';
 export default React.createClass({
   mixins: [getHash, removeWindowEvent],
   componentDidMount: function () {
-    this.props.onFilter2(0);
+    this.props.onFilter(0);
     this.props.onBuyerListList();
     window.addEventListener('scroll', this.handleScroll);
   },
   handleClick: function (type) {
-    this.props.onFilter2(type);
+    this.props.onFilter(type);
   },
   handleScroll: function () {
     const body = document.body;

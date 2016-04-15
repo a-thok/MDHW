@@ -28,22 +28,23 @@ export default React.createClass({
       }
     };
   },
-
   onAttentionList: function () {
     loadList.bind(this)('/m/sys/hr/collect/list', 'Attention');
     fetching.bind(this)('Attention');
-  },
-  onSellerListList: function () {
-    loadList.bind(this)('/m/sys/hr/collect/list', 'SellerList');
-    fetching.bind(this)('SellerList');
   },
   onBuyerListList: function () {
     loadList.bind(this)('/m/sys/hr/collect/list', 'BuyerList');
     fetching.bind(this)('BuyerList');
   },
-
-
-  onFilter: function (type) {
+  onBuyerListFilter: function (type) {
+    const url = type === 0 ? 'fake url1' : 'fake url2';
+    tabSwitch.bind(this)(url, 'BuyerList', type);
+  },
+  onSellerListList: function () {
+    loadList.bind(this)('/m/sys/hr/collect/list', 'SellerList');
+    fetching.bind(this)('SellerList');
+  },
+  onSellerListFilter: function (type) {
     const url = type === 0 ? 'fake url1' : 'fake url2';
     tabSwitch.bind(this)(url, 'SellerList', type);
   },
@@ -51,11 +52,6 @@ export default React.createClass({
     const newState = Object.assign({}, this.state);
     newState.SellerList.data[index].status = !newState.SellerList.data[index].status;
     this.setState(newState);
-  },
-
-  onFilter2: function (type) {
-    const url = type === 0 ? 'fake url1' : 'fake url2';
-    tabSwitch.bind(this)(url, 'BuyerList', type);
   },
   render: function () {
     const Child = this.props.children;
@@ -71,14 +67,14 @@ export default React.createClass({
       case 'SellerList':
         extra = {
           onSellerListList: this.onSellerListList,
-          onFilter: this.onFilter,
+          onFilter: this.onSellerListFilter,
           onPush: this.onPush
         };
         break;
       case 'BuyerList':
         extra = {
           onBuyerListList: this.onBuyerListList,
-          onFilter2: this.onFilter2,
+          onFilter: this.onBuyerListFilter,
           onPush2: this.onPush2
         };
         break;

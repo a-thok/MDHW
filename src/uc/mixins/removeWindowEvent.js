@@ -1,5 +1,5 @@
 export default {
   componentWillUnmount: function () {
-    window.removeEventListener('scoll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 };
