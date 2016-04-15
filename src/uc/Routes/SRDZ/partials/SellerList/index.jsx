@@ -1,13 +1,25 @@
 import React from 'react';
 import ListItem from '../../../../components/ListItem';
 import ListItemDetail from '../../../../components/ListItemDetail';
+import Loading from '../../../../components/Loading';
+import getHash from '../../../../mixins/getHash';
+import removeWindowEvent from '../../../../mixins/removeWindowEvent';
 
 export default React.createClass({
+  mixins: [getHash, removeWindowEvent],
   componentDidMount: function () {
     this.props.onFilter(0);
+    this.props.onSellerListList();
+    window.addEventListener('scroll', this.handleScroll);
   },
   handleClick: function (type) {
+    if (type === this.props.type) return;
     this.props.onFilter(type);
+  },
+  handleScroll: function () {
+    const body = document.body;
+    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
+    if (remain < 50) this.props.onSellerListList();
   },
   render: function () {
     let content = this.props.data.map((item, index) => (
@@ -38,6 +50,7 @@ export default React.createClass({
         <ul className="list">
           {content}
         </ul>
+        <Loading finished={this.props.finished} />
       </div>
     );
   }

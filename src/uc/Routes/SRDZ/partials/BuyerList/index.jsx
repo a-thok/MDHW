@@ -1,25 +1,55 @@
 import React from 'react';
 import ListItem from '../../../../components/ListItem';
-export default function BuyerList(props) {
-  let contentList = props.data.map((item, index) => (
-    <ListItem
-      key={index}
-      {...item}
-      title={item.title}
-      other="确认收货"
-      multiple={{}}
-      emp={['金额', item.money]}
-      small={item.time}
-    />
-  ));
-  return (
-    <ul className="list">
-      <section style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <p>待付款</p>
-        <p>已付款</p>
-      </section>
-      {contentList}
-    </ul>
-  );
-}
+import Loading from '../../../../components/Loading';
+import getHash from '../../../../mixins/getHash';
+import removeWindowEvent from '../../../../mixins/removeWindowEvent';
+
+export default React.createClass({
+  mixins: [getHash, removeWindowEvent],
+  componentDidMount: function () {
+    this.props.onFilter2(0);
+    this.props.onBuyerListList();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  handleClick: function (type) {
+    this.props.onFilter2(type);
+  },
+  handleScroll: function () {
+    const body = document.body;
+    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
+    if (remain < 50) this.props.onBuyerListList();
+  },
+  render: function () {
+    let contentList = this.props.data.map((item, index) => (
+      <ListItem
+        key={index}
+        {...item}
+        title={item.title}
+        other="确认收货"
+        multiple={{}}
+        emp={['金额', item.money]}
+        small={item.time}
+
+      />
+    ));
+    return (
+      <div>
+        <ul className="listTabs">
+          <li
+            className={ `listTab${this.props.type === 0 ? ' is-active' : ''}` }
+            onClick={() => this.handleClick(0) }
+          >待付款</li>
+          <li
+            className={ `listTab${this.props.type === 1 ? ' is-active' : ''}` }
+            onClick={() => this.handleClick(1) }
+          >已付款</li>
+        </ul>
+        <ul className="list">
+          {contentList}
+        </ul>
+        <Loading finished={this.props.finished} />
+      </div>
+    );
+  }
+});
 

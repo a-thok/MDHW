@@ -1,36 +1,40 @@
 import React from 'react';
 import ListItemPlain from '../../../../components/ListItemPlain';
+import Loading from '../../../../components/Loading';
+import getHash from '../../../../mixins/getHash';
+import removeWindowEvent from '../../../../mixins/removeWindowEvent';
 
 export default React.createClass({
-  getInitialState: function () {
-    let res = {
-      data: [
-        { province: '黑龙江', city: '牡丹江', title: '蓝莓卡通设计', money: '200.00', day: '7' },
-        { province: '黑龙江', city: '牡丹江', title: '蓝莓卡通设计', money: '200.00', day: '7' },
-        { province: '黑龙江', city: '牡丹江', title: '蓝莓卡通设计', money: '200.00', day: '7' },
-        { province: '黑龙江', city: '牡丹江', title: '蓝莓卡通设计', money: '200.00', day: '7' },
-        { province: '黑龙江', city: '牡丹江', title: '蓝莓卡通设计', money: '200.00', day: '7' }
-      ]
-    };
-    return res;
+  mixins: [getHash, removeWindowEvent],
+  componentDidMount: function () {
+    this.props.onHasDeliveryList();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  handleScroll: function () {
+    const body = document.body;
+    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
+    if (remain < 50) this.props.onHasDeliveryList();
   },
   render: function () {
-    let content = this.state.data.map((data, index) => (
-       <ListItemPlain
-         key={index}
-         info={`地区:${data.province}省-${data.city}市`}
-         title={data.title}
-         elems={[
-           <span className="fontColor">报价: ￥{data.money}</span>,
-           <span>工作周期: {data.day}天</span>,
-           <a className="list-link" href="#">查看详情</a>
-         ]}
-       />
+    let content = this.props.data.map((item, index) => (
+      <ListItemPlain
+        key={index}
+        info={`地区:${item.province}省-${item.city}市`}
+        title={item.title}
+        elems={[
+          <span className="fontColor">报价: ￥{item.money}</span>,
+          <span>工作周期: {item.day}天</span>,
+          <a className="list-link" href="#">查看详情</a>
+        ]}
+      />
     ));
     return (
-      <ul className="list list-plain">
-        {content}
-      </ul>
+      <div>
+        <ul className="list list-plain">
+          {content}
+        </ul>
+        <Loading finished={this.props.finished} />
+      </div>
     );
   }
 });
