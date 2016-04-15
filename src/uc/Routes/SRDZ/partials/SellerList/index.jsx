@@ -1,27 +1,26 @@
 import React from 'react';
 import ListItem from '../../../../components/ListItem';
+import ListItemDetail from '../../../../components/ListItemDetail';
 
 export default React.createClass({
-  getInitialState: function () {
-    let res = {
-      data: [
-      { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '张三', state: '待发货', type: '科学' },
-      { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '李四', state: '待发货', type: '日常' },
-      { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '马武', state: '待发货', type: '科学' },
-      { img: '图1', title: '蓝牙耳机——世界上最小的立体声无线耳机', buyerName: '午马', state: '待发货', type: '科学' }
-      ]
-    };
-    return res;
+  componentDidMount: function () {
+    this.props.onFilter(0);
+  },
+  handleClick: function (type) {
+    this.props.onFilter(type);
   },
   render: function () {
-    const content = this.state.data.map((item, index) => (
+    let content = this.props.data.map((item, index) => (
       <ListItem
         key={index}
         {...item}
+        index={index}
         multiple={{ '状态': item.state }}
         emp={['买家名称', item.buyerName]}
         small={item.type}
         tep="down"
+        extra={<ListItemDetail />}
+        onPush={this.props.onPush}
       />
     ));
     return (
@@ -29,11 +28,11 @@ export default React.createClass({
         <ul className="listTabs">
           <li
             className={ `listTab${this.props.type === 0 ? ' is-active' : ''}` }
-            onClick={() => this.handleClick(0)}
+            onClick={() => this.handleClick(0) }
           >待付款</li>
           <li
             className={ `listTab${this.props.type === 1 ? ' is-active' : ''}` }
-            onClick={() => this.handleClick(1)}
+            onClick={() => this.handleClick(1) }
           >已付款</li>
         </ul>
         <ul className="list">
