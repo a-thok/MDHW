@@ -2,14 +2,20 @@ export default function template(data) {
   return data.result.data.reduce((pre, cur) => {
     function count(len, str) {
       let money;
-      if (len >= 5) {
-        money = `${str.slice(0, -4)}万`;
+      if (len < 4) {
+        money = str;
+      } else if (len === 7) {
+        money = `${str.slice(0, 1)}百万`;
+      } else if (len === 8) {
+        money = `${str.slice(0, 1)}千万`;
       } else if (len >= 9) {
         let million = str.slice(0, -8);
         let thousand = str.slice(-8, -4);
         money = `${million}亿${thousand}万`;
       } else {
-        money = cur.moneySum;
+        let million = str.slice(-4, -3);
+        let thousand = str.slice(-3);
+        money = `${million},${thousand}`;
       }
       return money;
     }
