@@ -4,8 +4,19 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const PRODUCTION = process.env.NODE_ENV === 'production';
+const PRODUCTION = process.env.NODE_ENV !== 'development';
 console.log(PRODUCTION);
+
+let publicPath;
+if (process.env.NODE_ENV === 'development') {
+  publicPath = '/';
+} else {
+  if (process.env.NODE_ENV === 'production') {
+    publicPath = '//cdn.dreamhiway.com/mstatic/';
+  } else {
+    publicPath = 'http://192.168.2.10:81/mstatic/';
+  }
+}
 
 const config = {
   entry: {
@@ -25,7 +36,7 @@ const config = {
   },
   output: {
     path: path.join(__dirname, '/dist/'),
-    publicPath: PRODUCTION ? 'http://192.168.2.10:81/mstatic/' : '/', // '//cdn.dreamhiway.com/mstatic/'
+    publicPath,
     filename: 'js/[name].js'
   },
   resolve: {
