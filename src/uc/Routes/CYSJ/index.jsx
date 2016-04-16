@@ -38,15 +38,24 @@ export default React.createClass({
     console.log(this.state.Release.data);
   },
   onHasReleaseList: function () {
-    loadList.bind(this)('/m/sys/hr/collect/list', 'HasRelease');
+    loadList.bind(this)({
+      url: '/m/sys/diy/Publish/List',
+      list: 'HasRelease'
+    });
     fetching.bind(this)('HasRelease');
   },
   onHasCollectList: function () {
-    loadList.bind(this)('/m/sys/hr/collect/list', 'HasCollect');
+    loadList.bind(this)({
+      url: '/m/sys/diy/collect/list',
+      list: 'HasCollect'
+    });
     fetching.bind(this)('HasCollect');
   },
   onHasDeliveryList: function () {
-    loadList.bind(this)('/m/sys/hr/collect/list', 'HasDelivery');
+    loadList.bind(this)({
+      url: '/m/sys/diy/Deal/BidsList',
+      list: 'HasDelivery'
+    });
     fetching.bind(this)('HasDelivery');
   },
   render: function () {

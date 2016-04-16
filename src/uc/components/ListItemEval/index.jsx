@@ -15,7 +15,7 @@ export default React.createClass({
     return (
       <li className="listItem">
         <section className="listItem_img">
-          <img src={this.props.img} alt={this.props.position} />
+          <img src={`http://${UPLOAD_HOST}/img/${this.props.logo}`} alt={this.props.position} />
         </section>
         <section className="listItem_text">
           <h3 className="listItem_title">

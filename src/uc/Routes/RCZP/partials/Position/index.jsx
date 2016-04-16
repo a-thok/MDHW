@@ -20,11 +20,12 @@ export default React.createClass({
       <ListItem
         key={index}
         {...item}
+        img={item.logo}
         title={item.position}
         small={item.city}
-        emp={['月薪', item.salary]}
+        emp={['月薪', item.money]}
         other="已投递"
-        multiple={{ '公司': item.company }}
+        multiple={{ '公司': item.compay }}
         label={item.time}
       />
     ));

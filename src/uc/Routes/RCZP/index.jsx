@@ -47,19 +47,29 @@ export default React.createClass({
       });
   },
   onPositionList: function () {
-    loadList.bind(this)('/m/sys/hr/collect/list', 'Position');
+    loadList.bind(this)({
+      url: '/m/sys/hr/collect/list',
+      list: 'Position'
+    });
     fetching.bind(this)('Position');
   },
   onResemuList: function () {
-    loadList.bind(this)('/m/sys/hr/deliver/deliverylist', 'Resume');
+    loadList.bind(this)({
+      url: '/m/sys/hr/deliver/deliverylist',
+      list: 'Resume'
+    });
     fetching.bind(this)('Resume');
   },
   onEvaluateList: function () {
-    loadList.bind(this)('/m/sys/hr/comment/companylist', 'Evaluate', (data) => {
-      data.forEach((item) => {
-        item.tooLong = false;
-        item.unfold = false;
-      });
+    loadList.bind(this)({
+      url: '/m/sys/hr/comment/companylist',
+      list: 'Evaluate',
+      cb: function (data) {
+        data.forEach((item) => {
+          item.tooLong = false;
+          item.unfold = false;
+        });
+      }
     });
     fetching.bind(this)('Resume');
   },

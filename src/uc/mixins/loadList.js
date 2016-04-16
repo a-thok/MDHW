@@ -1,5 +1,23 @@
-export default function loadList(url, list, cb) {
-  const newState = this.state[list];
+export default function loadList({ url, list, cb, type, param, reset }) {
+  let newState;
+  if (reset) {
+    newState = {
+      type,
+      index: 0,
+      fetching: false,
+      finished: false,
+      data: []
+    };
+  } else {
+    newState = this.state[list];
+  }
+
+  let body = {
+    pageIndex: ++newState.index,
+    pageSize: 10
+  };
+  if (param) body[param] = type;
+
   if (newState.fetching || newState.finished) return;
   fetch(url, {
     method: 'POST',
@@ -7,15 +25,12 @@ export default function loadList(url, list, cb) {
       'Content-Type': 'application/json'
     },
     credentials: 'include',
-    body: JSON.stringify({
-      pageIndex: ++newState.index,
-      pageSize: 10
-    })
+    body: JSON.stringify(body)
   })
     .then(res => res.json())
     .then(res => {
       const totalPages = Math.ceil(res.result.total / 10);
-      if (newState.index === totalPages) newState.finished = true;
+      if (newState.index >= totalPages) newState.finished = true;
 
       // 为列表项添加额外的状态
       if (cb) cb(res.result.data);

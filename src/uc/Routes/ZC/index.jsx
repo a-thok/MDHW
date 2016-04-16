@@ -1,7 +1,6 @@
 import React from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
-import tabSwitch from '../../mixins/tabSwitch.js';
 
 export default React.createClass({
   getInitialState: function () {
@@ -28,25 +27,36 @@ export default React.createClass({
     };
   },
   onAttentionList: function () {
-    loadList.bind(this)('/m/sys/ZC/Collect/List', 'Attention');
+    loadList.bind(this)({
+      url: '/m/sys/ZC/Collect/List',
+      list: 'Attention'
+    });
     fetching.bind(this)('Attention');
   },
   onSupportList: function () {
-    loadList.bind(this)('/m/sys/ZC/ZC/SupportList', 'Support');
+    loadList.bind(this)({
+      url: '/m/sys/ZC/Deal/SupportList',
+      list: 'Support'
+    });
     fetching.bind(this)('Support');
   },
-  onOrderList: function () {
-    loadList.bind(this)('/m/sys/ZC/Deal/InvestList', 'Order');
+  onOrderList: function (type) {
+    loadList.bind(this)({
+      url: '/m/sys/ZC/Deal/InvestList',
+      list: 'Order',
+      type: type === undefined ? 0 : type,
+      param: 'state',
+      cb: function (items) {
+        console.log(items);
+        items.forEach((item) => {item.showDetail = false;});
+      },
+      reset: type !== undefined
+    });
     fetching.bind(this)('Order');
   },
-  onFilter: function (type) {
-    const url = type === 0 ? 'fake url1' : 'fake url2';
-    tabSwitch.bind(this)(url, 'Order', type);
-  },
-  onPush: function (index) {
-    console.log(this.state);
-    const newState = Object.assign({}, this.state);
-    newState.Order.data[index].status = !newState.Order.data[index].status;
+  onShowDetail: function (index) {
+    const newState = Object.assign({}, this.state.Order);
+    newState.data[index].showDetail = !newState.data[index].showDetail;
     this.setState(newState);
   },
   render: function () {
@@ -57,9 +67,8 @@ export default React.createClass({
     switch (ChildName) {
       case 'Order':
         extra = {
-          onFilter: this.onFilter,
           onOrderList: this.onOrderList,
-          onPush: this.onPush
+          onShowDetail: this.onShowDetail
         };
         break;
       case 'Attention':
