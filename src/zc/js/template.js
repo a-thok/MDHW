@@ -1,5 +1,21 @@
 export default function template(data) {
-  return data.result.data.reduce((pre, cur) => (
+  return data.result.data.reduce((pre, cur) => {
+    function count(len, str) {
+      let money;
+      if (len >= 5) {
+        money = `${str.slice(0, -4)}万`;
+      } else if (len >= 9) {
+        let million = str.slice(0, -8);
+        let thousand = str.slice(-8, -4);
+        money = `${million}亿${thousand}万`;
+      } else {
+        money = cur.moneySum;
+      }
+      return money;
+    }
+    let moneyAll = count(cur.moneyAll.toString().length, cur.moneyAll.toString());
+    let moneySum = count(cur.moneySum.toString().length, cur.moneySum.toString());
+    return (
     `${pre}
     <li class="zcList_item">
         <h6 class="zcList_item_header">
@@ -11,7 +27,7 @@ export default function template(data) {
           <span class="zcTag zcTag-transparent">${cur.ztmc}</span>
           <img src="http://${UPLOAD_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.frontpic}">
         </div>
-        <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${cur.moneySum}</span>/ ￥<span class="zcList_item_number">${cur.moneyAll}</span></div>
+        <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${moneySum}</span>/ ￥<span class="zcList_item_number">${moneyAll}</span></div>
         <div class="zcList_item_info">
           <div class="zcList_item_info_sect">
             <div class="zcList_item_info_sect_title">支持人数</div>
@@ -30,5 +46,6 @@ export default function template(data) {
         <div class="zcList_item_intro">${cur.purpose}</div>
         </a>
       </li>`
-  ), '');
+      );
+  }, '');
 }
