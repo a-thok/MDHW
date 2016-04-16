@@ -1,6 +1,6 @@
 export default function template(data) {
   return data.result.data.reduce((pre, cur) => {
-    let url = cur.logo ? `http://${CDN_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
+    let url = cur.logo ? `http://${DIY_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
     return (
     `${pre}<li class="hostlist_item">
       <a class="hostlist_item_a" href="http://${DIY_HOST}/m/diy/detail/${cur.id}">
