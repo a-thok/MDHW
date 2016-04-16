@@ -26,7 +26,7 @@ export default function ListItem(props) {
     <li>
       <div className="listItem">
         <section className="listItem_img listItem_img-rich">
-          <img src={props.img} alt={props.position} />
+          <img src={`http://${UPLOAD_HOST}/img/${props.img}`} alt={props.position} />
         </section>
         <section className="listItem_text">
           <h3 className="listItem_title listItem_title-rich">
