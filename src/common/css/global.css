@@ -26,6 +26,12 @@ body.is-static {
   /*overflow: hidden;*/
   /*可能要单独设一个类，因为有的页面没有底栏*/
   margin-bottom: 55px;
+  margin-bottom: 12vw;
+}
+@media screen and (min-width: 750px) {
+  .page {
+    margin-bottom: 90px;
+  }
 }
 .page-noMb {
   margin-bottom: 0;

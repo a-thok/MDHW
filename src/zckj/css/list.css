@@ -71,3 +71,9 @@
   height: 20px;
   height: 10vw;
 }
+@media screen and (min-width: 550px) {
+  .list_item_icon img {
+  width: 60px;
+  height: 60px;
+}
+}

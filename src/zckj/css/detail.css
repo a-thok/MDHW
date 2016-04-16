@@ -1,5 +1,6 @@
 .tagList-zckj {
   padding: 5px 0;
+  width: 100%;
 }
 
 .ftCtrl_item-link {
@@ -37,7 +38,7 @@
   line-height: 30px;
 }
 .userInput p {
-  line-height: 1.8;
+  line-height: 1.6;
 }
 .main_picture li {
   text-align: center;
@@ -52,5 +53,5 @@
   background-image: url("../img/iconfont-qiyerenzheng.png");
   background-position: right center;
   background-repeat: no-repeat;
-  background-size: 30%;
+  background-size: 18%;
 }

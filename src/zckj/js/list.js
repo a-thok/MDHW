@@ -4,10 +4,12 @@ import { showFilter, selectFilter, generateAreaFilter } from 'filter';
 import doSearch from 'doSearch';
 export default function list() {
   function template(data) {
-    return data.result.data.reduce((pre, cur) => (
-      `${pre}<li class="list_item list_item-border">
+    return data.result.data.reduce((pre, cur) => {
+      let url = cur.logo ? `http://${CDN_HOST}/mstatic/img/lqt.png` : `http://${CDN_HOST}/images/default2.png`;
+      return (
+        `${pre}<li class="list_item list_item-border">
           <a class="list_item_a" href="http://${ZCKJ_HOST}/m/zckj/detail/${cur.id}">
-            <div class="list_item_img"><img src="http://${CDN_HOST}/mstatic/img/lqt.png" alt=""></div>
+            <div class="list_item_img"><img src="${url}" alt=""></div>
             <div class="list_item_text">
               <p class="list_item_text_p list_item_text_p-title">${cur.name}</p>
               <p class="list_item_text_p list_item_text_p-light">${cur.province}${cur.city}${cur.addr}<p>
@@ -16,7 +18,8 @@ export default function list() {
           <div class="list_item_icon"><img src="http://${CDN_HOST}/mstatic/img/iconfont-qiyerenzheng1.png" alt=""></div>
           </a>
         </li>`
-    ), '');
+      );
+    }, '');
   }
   let load = document.querySelector('.list_load');
   let config = {
