@@ -2,9 +2,14 @@
 .tagList {
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 1px;
+  padding: 3px 1px 3px 0;
   font-size: 12px;
   overflow: auto;
+}
+.tagList.is-overflow {
+  background: radial-gradient(at right, rgba(0, 0, 0, .3), transparent 50%) no-repeat;
+  background-position: right center;
+  background-size: 2% 180%;
 }
 .tagList_item {
   flex-shrink: 0;
