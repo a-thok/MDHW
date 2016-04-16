@@ -1,7 +1,7 @@
 export default function template(data) {
   return data.result.data.reduce((pre, cur) => (
     `${pre}<li class="hostlist_item">
-        <a class="hostlist_item_a" href="http://192.168.2.177:8090/m/zb/detail/${cur.id}"
+        <a class="hostlist_item_a" href="http://${ZB_HOST}/m/zb/detail/${cur.id}"
           <div class="hostlist_content">
             <div class="base_title_wrap">
               <h2 class="base_title_text base_title_text-small">

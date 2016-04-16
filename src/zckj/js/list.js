@@ -6,14 +6,14 @@ export default function list() {
   function template(data) {
     return data.result.data.reduce((pre, cur) => (
       `${pre}<li class="list_item list_item-border">
-          <a class="list_item_a" href="http://192.168.2.177:8091/m/zckj/detail/${cur.id}">
-            <div class="list_item_img"><img src="http://192.168.2.10:81/mstatic/img/lqt.png" alt=""></div>
+          <a class="list_item_a" href="http://${ZCKJ_HOST}/m/zckj/detail/${cur.id}">
+            <div class="list_item_img"><img src="http://${CDN_HOST}/mstatic/img/lqt.png" alt=""></div>
             <div class="list_item_text">
               <p class="list_item_text_p list_item_text_p-title">${cur.name}</p>
               <p class="list_item_text_p list_item_text_p-light">${cur.province}${cur.city}${cur.addr}<p>
               <button type="button" class="list_item_btn">申请入驻</button>
             </div>
-          <div class="list_item_icon"><img src="http://192.168.2.10:81/mstatic/img/iconfont-qiyerenzheng1.png" alt=""></div>
+          <div class="list_item_icon"><img src="http://${CDN_HOST}/mstatic/img/iconfont-qiyerenzheng1.png" alt=""></div>
           </a>
         </li>`
     ), '');

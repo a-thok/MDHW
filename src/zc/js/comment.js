@@ -164,7 +164,7 @@ export default function comment() {
 
   $('.replay_box_input').addEventListener('focus', () => {
     if (!$cookie().accountType) {
-      location.href = `http://192.168.2.177:8085/m/main/denglu?redirectURL=${encodeURIComponent(location.href)}`;
+      location.href = `http://${MAIN_HOST}/m/main/denglu?redirectURL=${encodeURIComponent(location.href)}`;
     }
   });
 }

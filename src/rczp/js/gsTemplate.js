@@ -1,8 +1,7 @@
 export default function gsTemplate(data) {
   return data.result.data.reduce((pre, cur) => {
     const fuli = cur.fuli.reduce((_pre, _cur) => `${_pre}<li class="tagList_item">${_cur}</li>`, '');
-    let url = cur.logo ? `http://192.168.2.10:82/img/${cur.logo}` : 'http://192.168.2.10:81/images/default2.png';
-    // let url = `http://192.168.2.10:82/img/${cur.logo || 'default.png'}`;
+    let url = cur.logo ? `http://${CDN_HOST}/img/${cur.logo}` : `http://${CDN_HOST}/images/default2.png`;
     return (
       `${pre}<li class="list_item">
             <a class="list_item_a" href="#">
