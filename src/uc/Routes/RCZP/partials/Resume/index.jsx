@@ -20,12 +20,12 @@ export default React.createClass({
       <ListItem
         key={index}
         {...item}
-        title={item.post}
-        small={item.city}
-        emp={`月薪:${item.salary}`}
-        other={item.state}
+        img={item.logo}
+        title={item.position}
+        small={item.tdcgsj}
+        emp={['月薪', item.money]}
+        other={item.qysfck}
         multiple={{ '公司': item.company }}
-        label={item.time}
       />
     ));
     return (

@@ -8,7 +8,6 @@ import ListItemDetail from '../../../../components/ListItemDetail';
 export default React.createClass({
   mixins: [getHash, removeWindowEvent],
   componentDidMount: function () {
-    this.props.onFilter(0);
     this.props.onOrderList();
     window.addEventListener('scroll', this.handleScroll);
   },
@@ -18,7 +17,7 @@ export default React.createClass({
     if (remain < 50) this.props.onOrderList();
   },
   handleClick: function (type) {
-    this.props.onFilter(type);
+    this.props.onOrderList(type);
   },
   render: function () {
     let content = this.props.data.map((item, index) => (
@@ -26,13 +25,13 @@ export default React.createClass({
          {...item}
          img={item.frontpic}
          key={index}
+         index={index}
          multiple={{ '进度': item.test, '状态': item.status }}
-         title={item.title}
+         title={item.projectName}
          small={item.typename}
          emp={['目标', item.moneyall]}
-         tep="down"
          extra={<ListItemDetail />}
-         onPush={this.props.onPush}
+         onShowDetail={this.props.onShowDetail}
        />
     ));
     return (

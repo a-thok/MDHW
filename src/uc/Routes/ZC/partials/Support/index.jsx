@@ -20,7 +20,7 @@ export default React.createClass({
         <ListItem
           key={index}
           {...item}
-          img={item.frontpic}
+          img={item.logo}
           multiple={{ '进度': item.progress, '状态': item.status }}
           title={item.title}
           small={item.name}
