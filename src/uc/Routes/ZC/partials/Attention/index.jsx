@@ -20,11 +20,12 @@ export default React.createClass({
        <ListItem
          key={index}
          {...item}
-         multiple={{ '进度': item.progress, '状态': item.state }}
+         img={item.frontpic}
+         multiple={{ '进度': item.progress, '状态': item.status }}
          title={item.title}
-         small={item.type}
-         emp={['目标', item.item]}
-         other={`￥${item.total}`}
+         small={item.name}
+         emp={['目标', item.moneys]}
+         other={`￥${item.summoney}`}
        />
     ));
     return (

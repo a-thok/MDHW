@@ -3,6 +3,7 @@ import ListItem from '../../../../components/ListItem';
 import Loading from '../../../../components/Loading';
 import getHash from '../../../../mixins/getHash';
 import removeWindowEvent from '../../../../mixins/removeWindowEvent';
+import ListItemDetail from '../../../../components/ListItemDetail';
 
 export default React.createClass({
   mixins: [getHash, removeWindowEvent],
@@ -23,12 +24,15 @@ export default React.createClass({
     let content = this.props.data.map((item, index) => (
        <ListItem
          {...item}
+         img={item.frontpic}
          key={index}
-         multiple={{ '进度': item.progress, '状态': item.state }}
+         multiple={{ '进度': item.test, '状态': item.status }}
          title={item.title}
-         small={item.type}
-         emp={['目标', item.item]}
+         small={item.typename}
+         emp={['目标', item.moneyall]}
          tep="down"
+         extra={<ListItemDetail />}
+         onPush={this.props.onPush}
        />
     ));
     return (
