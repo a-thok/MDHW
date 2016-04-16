@@ -1,7 +1,7 @@
 export default function zwTemplate(data) {
   // 默认图片需要修改
   return data.result.data.reduce((pre, cur) => {
-    const url = cur.logo ? `http://${CDN_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
+    const url = cur.logo ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
     return (`${pre}<li class="list_item">
           <a class="list_item_a" href="http://${HR_HOST}//m/hr/detail/${cur.ID}">
             <div class="list_item_img"><img src="${url}"></div>

@@ -22,6 +22,7 @@ module.exports = {
   
   'globals': {
     CDN_HOST: true,
+    UPLOAD_HOST: true,
     MAIN_HOST: true,
     HR_HOST: true,
     ZC_HOST: true,

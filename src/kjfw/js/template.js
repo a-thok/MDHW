@@ -6,7 +6,7 @@ export default function template(data) {
       if (i === 3) break;
     }
     let detail = cur.prof.length > 65 ? cur.prof.substr(0, 65) : cur.prof;
-    let url = cur.log ? `http://${CDN_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
+    let url = cur.log ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
     return (
       `${pre}<ul class="list">
         <li class="list_item">
