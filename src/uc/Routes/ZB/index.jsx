@@ -1,6 +1,7 @@
 import React from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
+import deFavorite from '../../mixins/deFavorite.js';
 
 export default React.createClass({
   getInitialState: function () {
@@ -45,6 +46,10 @@ export default React.createClass({
     e.preventDefault();
     console.log(this.state.Release.data);
   },
+  onCancle: function (id, index) {
+    deFavorite.bind(this)('/m/sys/zb/collect/del', 'HasCollect', id, index);
+    fetching.bind(this)('HasCollect');
+  },
   render: function () {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
@@ -53,7 +58,8 @@ export default React.createClass({
     switch (ChildName) {
       case 'HasCollect':
         extra = {
-          onHasCollectList: this.onHasCollectList
+          onHasCollectList: this.onHasCollectList,
+          onCancle: this.onCancle
         };
         break;
       case 'HasRelease':
