@@ -5,14 +5,8 @@ export default function template(data) {
       business += `<li class="tagList_item">${cur.business[i].name}</li>`;
       if (i === 3) break;
     }
-    // const business = cur.business.reduce((_pre, _cur, _i) => {
-    //   if (_i < 3) {
-    //     return `${_pre}<li class="tagList_item">${_cur.name}</li>`;
-    //   }
-    //   return `${_pre}`;
-    // }, '');
     let detail = cur.prof.length > 65 ? cur.prof.substr(0, 65) : cur.prof;
-    let url = cur.log ? `http://192.168.2.10:82/img/${cur.logo}` : 'http://192.168.2.10:81/images/default2.png';
+    let url = cur.log ? `http://${CDN_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
     return (
       `${pre}<ul class="list">
         <li class="list_item">

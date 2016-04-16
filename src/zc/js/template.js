@@ -6,10 +6,10 @@ export default function template(data) {
           <div class="zcList_item_header_text"><span class="zcTag">${cur.name}</span>${cur.title}</div>
           <i class="fa fa-thumbs-o-up"></i>
         </h6>
-        <a class="list_link link-color" href="//192.168.2.177:8088/m/zc/detail/${cur.id}">
+        <a class="list_link link-color" href="//${ZC_HOST}/m/zc/detail/${cur.id}">
         <div class="zcList_item_img">
           <span class="zcTag zcTag-transparent">${cur.ztmc}</span>
-          <img src="http://192.168.2.10:82/img/${cur.frontpic}_280x280.jpg" alt="${cur.frontpic}">
+          <img src="http://${CDN_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.frontpic}">
         </div>
         <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${cur.moneySum}</span>/ ￥<span class="zcList_item_number">${cur.moneyAll}</span></div>
         <div class="zcList_item_info">

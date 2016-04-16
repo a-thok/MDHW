@@ -4,8 +4,9 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const PRODUCTION = process.env.NODE_ENV !== 'development';
-console.log(PRODUCTION);
+const PRODUCTION = process.env.NODE_ENV !== 'development'; // 判断测试还是打包
+const RELEASE = process.env.NODE_ENV === 'production';  // 判断打包到内网还是外网
+console.log(process.env.NODE_ENV);
 
 let publicPath;
 if (process.env.NODE_ENV === 'development') {
@@ -82,7 +83,24 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('common', 'js/common.js', Infinity)
+    new webpack.optimize.CommonsChunkPlugin('common', 'js/common.js', Infinity),
+    new webpack.DefinePlugin({
+      __SERVER__: !PRODUCTION,
+      __DEVELOPMENT__: !PRODUCTION,
+      __DEVTOOLS__: !PRODUCTION,
+      CDN_HOST: RELEASE ? JSON.stringify('upload.dreamhiway.com') : JSON.stringify('192.168.2.10:81'),
+      MAIN_HOST: RELEASE ? JSON.stringify('www.dreamhiway.com') : JSON.stringify('192.168.2.177:8085'),
+      HR_HOST: RELEASE ? JSON.stringify('hr.dreamhiway.com') : JSON.stringify('192.168.2.177:8086'),
+      ZC_HOST: RELEASE ? JSON.stringify('zc.dreamhiway.com') : JSON.stringify('192.168.2.177:8088'),
+      ZB_HOST: RELEASE ? JSON.stringify('zb.dreamhiway.com') : JSON.stringify('192.168.2.177:8090'),
+      ZCKJ_HOST: RELEASE ? JSON.stringify('zckj.dreamhiway.com') : JSON.stringify('192.168.2.177:8091'),
+      DIY_HOST: RELEASE ? JSON.stringify('diy.dreamhiway.com') : JSON.stringify('192.168.2.177:8092'),
+      SRDZ_HOST: RELEASE ? JSON.stringify('srdz.dreamhiway.com') : JSON.stringify('192.168.2.177:8093'),
+      KJ_HOST: RELEASE ? JSON.stringify('kj.dreamhiway.com') : JSON.stringify('192.168.2.177:8087'),
+      'process.env': {
+        BABEL_ENV: JSON.stringify(process.env.NODE_ENV)
+      }
+    })
   ],
   postcss: function (webpack) {
     return PRODUCTION ? [
@@ -122,14 +140,6 @@ if (PRODUCTION) {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
-      }
-    }),
-    new webpack.DefinePlugin({
-      __SERVER__: !PRODUCTION,
-      __DEVELOPMENT__: !PRODUCTION,
-      __DEVTOOLS__: !PRODUCTION,
-      'process.env': {
-        BABEL_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     })
   ];

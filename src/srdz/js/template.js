@@ -1,9 +1,9 @@
 export default function template(data) {
   return data.result.data.reduce((pre, cur) => (
     `${pre}<li class="hostlist_item">
-          <a class="hostlist_item_a" href="http://192.168.2.177:8093/m/srdz/detail/${cur.id}">
+          <a class="hostlist_item_a" href="http://${SRDZ_HOST}/m/srdz/detail/${cur.id}">
             <div class="hostlist_item_img">
-              <img src="http://192.168.2.10:82/img/${cur.img}_310x310.jpg">
+              <img src="http://${CDN_HOST}/img/${cur.img}_310x310.jpg">
             </div>
             <div class="hostlist_content">
               <div class="base_title_wrap">

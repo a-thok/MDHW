@@ -18,5 +18,17 @@ module.exports = {
     "func-names": 0,
     "react/prop-types": 0,
     "no-case-declarations": 0
+  },
+  
+  'globals': {
+    CDN_HOST: true,
+    MAIN_HOST: true,
+    HR_HOST: true,
+    ZC_HOST: true,
+    ZB_HOST: true,
+    ZCKJ_HOST: true,
+    DIY_HOST: true,
+    SRDZ_HOST: true,
+    KJ_HOST: true
   }
 }
