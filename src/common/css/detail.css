@@ -94,10 +94,15 @@
 /*主内容*/
 .info_content {
   flex-grow: 1;
+  flex-basis: 50%;
+  width: 50%;
+  white-space: nowrap;
 }
 .info_title,
 .info_para {
   line-height: 2.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .info-compact .info_title,
 .info-compact .info_para {
