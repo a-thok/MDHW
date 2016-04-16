@@ -31,7 +31,7 @@ export default function template(data) {
         <a class="list_link link-color" href="//${ZC_HOST}/m/zc/detail/${cur.id}">
         <div class="zcList_item_img">
           <span class="zcTag zcTag-transparent">${cur.ztmc}</span>
-          <img src="http://${UPLOAD_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.frontpic}">
+          <img src="http://${UPLOAD_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.title}">
         </div>
         <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${moneySum}</span>/ ￥<span class="zcList_item_number">${moneyAll}</span></div>
         <div class="zcList_item_info">
