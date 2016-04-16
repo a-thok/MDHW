@@ -1,8 +1,10 @@
 import React from 'react';
 import UTitle from '../../../../components/UTitle';
 import UTextGroup from '../../../../components/UTextGroup';
+import getHash from '../../../../mixins/getHash';
 
 export default React.createClass({
+  mixins: [getHash],
   componentDidMount: function () {
     this.props.onResumePreview();
   },
