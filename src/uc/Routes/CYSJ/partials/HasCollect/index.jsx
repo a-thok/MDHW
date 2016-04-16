@@ -15,15 +15,19 @@ export default React.createClass({
     const remain = body.scrollHeight - body.scrollTop - window.screen.height;
     if (remain < 50) this.props.onHasCollectList();
   },
+  handleClick: function (e, id, index) {
+    e.preventDefault();
+    this.props.onCancle(id, index);
+  },
   render: function () {
     let content = this.props.data.map((item, index) => (
       <ListItemPlain
         key={index}
-        info={`收藏时间:${item.seltime}`}
+        info={`收藏时间:${item.collecttime}`}
         title={item.title}
         elems={[
           <span>结束时间: {item.endtime}</span>,
-          <a className="list-link" href="#">取消收藏</a>
+          <a className="list-link" href="#" onClick={(e) => this.handleClick(e, item.id, index)}>取消收藏</a>
         ]}
       />
     ));

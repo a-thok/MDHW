@@ -12,13 +12,15 @@ export default function loadList({ url, list, cb, type, param, reset }) {
     newState = this.state[list];
   }
 
+  if (newState.fetching || newState.finished) return;
+
   let body = {
     pageIndex: ++newState.index,
     pageSize: 10
   };
   if (param) body[param] = type;
 
-  if (newState.fetching || newState.finished) return;
+
   fetch(url, {
     method: 'POST',
     headers: {

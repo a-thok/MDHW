@@ -40,17 +40,17 @@ export default React.createClass({
     });
     fetching.bind(this)('Support');
   },
-  onOrderList: function (type) {
+  onOrderList: function (type, reset) {
     loadList.bind(this)({
       url: '/m/sys/ZC/Deal/InvestList',
       list: 'Order',
-      type: type === undefined ? 0 : type,
+      type,
       param: 'state',
       cb: function (items) {
         console.log(items);
         items.forEach((item) => {item.showDetail = false;});
       },
-      reset: type !== undefined
+      reset
     });
     fetching.bind(this)('Order');
   },

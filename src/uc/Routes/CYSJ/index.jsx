@@ -58,6 +58,41 @@ export default React.createClass({
     });
     fetching.bind(this)('HasDelivery');
   },
+  onCancle: function (id, index) {
+    const currentPage = this.state.HasCollect.index;
+    const whichPage = Math.ceil(index / 10);
+
+    console.log(whichPage, this.state);
+    fetch('/m/sys/diy/collect/del', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        pageIndex: whichPage,
+        pageSize: 10,
+        fpid: id
+      }),
+      credentials: 'include'
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        const newState = this.state.HasCollect;
+
+        const totalPages = Math.ceil(res.result.total / 10);
+        if (currentPage === totalPages) newState.finished = true;
+
+        const startIndex = (whichPage - 1) * 10;
+        newState.data.splice(startIndex, 10, ...res.result.data);
+        console.log(newState.data);
+
+        newState.fetching = false;
+
+        this.setState({ HasCollect: newState });
+      });
+    fetching.bind(this)('HasCollect');
+  },
   render: function () {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
@@ -77,7 +112,8 @@ export default React.createClass({
         break;
       case 'HasCollect':
         extra = {
-          onHasCollectList: this.onHasCollectList
+          onHasCollectList: this.onHasCollectList,
+          onCancle: this.onCancle
         };
         break;
       case 'HasDelivery':

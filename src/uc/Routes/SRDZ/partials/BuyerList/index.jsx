@@ -7,12 +7,12 @@ import removeWindowEvent from '../../../../mixins/removeWindowEvent';
 export default React.createClass({
   mixins: [getHash, removeWindowEvent],
   componentDidMount: function () {
-    this.props.onFilter(0);
-    this.props.onBuyerListList();
+    this.props.onBuyerListList(0, false);
     window.addEventListener('scroll', this.handleScroll);
   },
   handleClick: function (type) {
-    this.props.onFilter(type);
+    if (type === this.props.type) return;
+    this.props.onBuyerListList(type, true);
   },
   handleScroll: function () {
     const body = document.body;
@@ -24,12 +24,11 @@ export default React.createClass({
       <ListItem
         key={index}
         {...item}
-        title={item.title}
+        img={item.productlmg}
+        title={item.projectName}
         other="确认收货"
-        multiple={{}}
-        emp={['金额', item.money]}
-        small={item.time}
-
+        multiple={{ '下单时间': item.date }}
+        emp={['金额', item.total_fee]}
       />
     ));
     return (

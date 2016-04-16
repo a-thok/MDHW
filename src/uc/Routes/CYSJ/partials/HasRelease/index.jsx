@@ -19,13 +19,13 @@ export default React.createClass({
     let content = this.props.data.map((item, index) => (
       <ListItemPlain
         key={index}
-        info={item.type}
-        small={item.state}
+        info={item.protype}
+        small={item.status}
         title={item.title}
         elems={[
           <span className="fontColor">￥ {item.money}</span>,
-          <span>{item.num}参与</span>,
-          <span>{item.mode}</span>
+          <span>{item.count}参与</span>,
+          <span>{item.transaction}</span>
         ]}
       />
     ));

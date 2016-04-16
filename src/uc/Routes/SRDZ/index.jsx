@@ -1,7 +1,6 @@
 import React from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
-import tabSwitch from '../../mixins/tabSwitch.js';
 
 export default React.createClass({
   getInitialState: function () {
@@ -29,28 +28,39 @@ export default React.createClass({
     };
   },
   onAttentionList: function () {
-    loadList.bind(this)('/m/sys/hr/collect/list', 'Attention');
+    loadList.bind(this)({
+      url: '/m/sys/Srdz/Collect/List',
+      list: 'Attention'
+    });
     fetching.bind(this)('Attention');
   },
-  onBuyerListList: function () {
-    loadList.bind(this)('/m/sys/hr/collect/list', 'BuyerList');
+  onBuyerListList: function (type) {
+    loadList.bind(this)({
+      url: '/m/sys/Srdz/Deal/BuyerList',
+      list: 'BuyerList',
+      type: type === undefined ? 0 : type,
+      param: 'state',
+      reset: type !== undefined
+    });
     fetching.bind(this)('BuyerList');
   },
-  onBuyerListFilter: function (type) {
-    const url = type === 0 ? 'fake url1' : 'fake url2';
-    tabSwitch.bind(this)(url, 'BuyerList', type);
-  },
-  onSellerListList: function () {
-    loadList.bind(this)('/m/sys/hr/collect/list', 'SellerList');
+  onSellerListList: function (type, reset) {
+    loadList.bind(this)({
+      url: '/m/sys/Srdz/Deal/SellerList',
+      list: 'SellerList',
+      type,
+      cb: function (items) {
+        console.log(items);
+        items.forEach((item) => {item.showDetail = false;});
+      },
+      param: 'state',
+      reset
+    });
     fetching.bind(this)('SellerList');
   },
-  onSellerListFilter: function (type) {
-    const url = type === 0 ? 'fake url1' : 'fake url2';
-    tabSwitch.bind(this)(url, 'SellerList', type);
-  },
-  onPush: function (index) {
-    const newState = Object.assign({}, this.state);
-    newState.SellerList.data[index].status = !newState.SellerList.data[index].status;
+  onShowDetail: function (index) {
+    const newState = Object.assign({}, this.state.SellerList);
+    newState.data[index].showDetail = !newState.data[index].showDetail;
     this.setState(newState);
   },
   render: function () {
@@ -67,15 +77,12 @@ export default React.createClass({
       case 'SellerList':
         extra = {
           onSellerListList: this.onSellerListList,
-          onFilter: this.onSellerListFilter,
-          onPush: this.onPush
+          onShowDetail: this.onShowDetail
         };
         break;
       case 'BuyerList':
         extra = {
-          onBuyerListList: this.onBuyerListList,
-          onFilter: this.onBuyerListFilter,
-          onPush2: this.onPush2
+          onBuyerListList: this.onBuyerListList
         };
         break;
       default:

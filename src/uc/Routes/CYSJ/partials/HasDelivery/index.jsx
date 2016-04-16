@@ -19,11 +19,11 @@ export default React.createClass({
     let content = this.props.data.map((item, index) => (
       <ListItemPlain
         key={index}
-        info={`地区:${item.province}省-${item.city}市`}
+        info={`地区: ${item.address}`}
         title={item.title}
         elems={[
-          <span className="fontColor">报价: ￥{item.money}</span>,
-          <span>工作周期: {item.day}天</span>,
+          <span className="fontColor">报价: ￥{item.quote}</span>,
+          <span>工作周期: {item.worktime}天</span>,
           <a className="list-link" href="#">查看详情</a>
         ]}
       />

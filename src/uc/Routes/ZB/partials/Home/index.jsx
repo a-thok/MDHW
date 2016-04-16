@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 import ULink from '../../../../components/ULink';
+import getHash from '../../../../mixins/getHash';
 
 export default React.createClass({
+  mixins: [getHash],
   render: function () {
     return (
       <div>

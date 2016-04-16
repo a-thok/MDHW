@@ -20,9 +20,10 @@ export default React.createClass({
       <ListItem
         key={index}
         {...item}
-        multiple={{ '成交量': item.sum }}
-        emp={`￥${item.money}/个`}
-        small={item.type}
+        img={item.productlmg}
+        multiple={{ '成交量': item.num }}
+        emp={`￥${item.price}/个`}
+        small={item.name}
         other="取消关注"
       />
     ));

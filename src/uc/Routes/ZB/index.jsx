@@ -9,23 +9,13 @@ export default React.createClass({
         index: 0,
         fetching: false,
         finished: false,
-        data: [
-          { seltime: '20196-06-05', title: '蓝莓卡通设计', endtime: '20196-06-05' },
-          { seltime: '20196-06-05', title: '蓝莓卡通设计', endtime: '20196-06-05' },
-          { seltime: '20196-06-05', title: '蓝莓卡通设计', endtime: '20196-06-05' },
-          { seltime: '20196-06-05', title: '蓝莓卡通设计', endtime: '20196-06-05' }
-        ]
+        data: []
       },
       HasRelease: {
         index: 0,
         fetching: false,
         finished: false,
-        data: [
-          { type: '开发众包', title: '软件开发 MAX插件开发', money: '200.00', endtime: '2016-06-06' },
-          { type: '开发众包', title: '软件开发 MAX插件开发', money: '200.00', endtime: '2016-06-06' },
-          { type: '开发众包', title: '软件开发 MAX插件开发', money: '200.00', endtime: '2016-06-06' },
-          { type: '开发众包', title: '软件开发 MAX插件开发', money: '200.00', endtime: '2016-06-06' }
-        ]
+        data: []
       },
       Release: {
         data: { a: '1', b: '1', c: '1', d: '1', e: '1', g: '1' }
@@ -33,11 +23,17 @@ export default React.createClass({
     };
   },
   onHasCollectList: function () {
-    loadList.bind(this)('/m/sys/hr/deliver/deliverylist', 'HasCollect');
+    loadList.bind(this)({
+      url: '/m/sys/zb/Collect/List',
+      list: 'HasCollect'
+    });
     fetching.bind(this)('HasCollect');
   },
   onHasReleaseList: function () {
-    loadList.bind(this)('/m/sys/hr/deliver/deliverylist', 'HasRelease');
+    loadList.bind(this)({
+      url: '/m/sys/ZB/publish/List',
+      list: 'HasRelease'
+    });
     fetching.bind(this)('HasRelease');
   },
   onChange: function (e, name) {

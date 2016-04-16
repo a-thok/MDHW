@@ -5,7 +5,7 @@ import doSearch from 'doSearch';
 export default function list() {
   function template(data) {
     return data.result.data.reduce((pre, cur) => {
-      let url = cur.logo ? `http://${UPLOAD_HOST}/mstatic/img/lqt.png` : `http://${CDN_HOST}/images/default2.png`;
+      let url = `http://${CDN_HOST}/mstatic/img/lqt.png`;
       return (
         `${pre}<li class="list_item list_item-border">
           <a class="list_item_a" href="http://${ZCKJ_HOST}/m/zckj/detail/${cur.id}">

@@ -19,7 +19,7 @@ export default React.createClass({
     let content = this.props.data.map((item, index) => (
       <ListItemPlain
         key={index}
-        info={`收藏时间:${item.seltime}`}
+        info={`收藏时间: ${item.time}`}
         title={item.title}
         elems={[
           <span>结束时间: {item.endtime}</span>,

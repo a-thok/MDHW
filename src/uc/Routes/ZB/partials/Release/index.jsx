@@ -1,8 +1,10 @@
 import React from 'react';
 import UGroup from '../../../../components/UGroup';
 import FormButton from '../../../../components/FormButton';
+import getHash from '../../../../mixins/getHash';
 
 export default React.createClass({
+  mixins: [getHash],
   render: function () {
     const form = {
       a: { type: 'select', label: '项目类型', id: 'projectname', options: ['请选择', '开发众包', '装修众包'] },

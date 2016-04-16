@@ -19,7 +19,7 @@ export default React.createClass({
     let content = this.props.data.map((data, index) => (
        <ListItemPlain
          key={index}
-         info={data.type}
+         info={data.name}
          title={data.title}
          elems={[
            <span className="fontColor">项目金额: ￥{data.money}</span>,
