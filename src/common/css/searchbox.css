@@ -34,10 +34,13 @@
   display: block; /* uc */
   width: 88%;
   border-left: 0;
+  border-top-left-radius: 0; /*safari*/
+  border-bottom-left-radius: 0; /*safari*/
   border-top-right-radius: 25px; /* uc */
   border-top-right-radius: 4.6667vw;
   border-bottom-right-radius: 25px; /* uc */
   border-bottom-right-radius: 4.6667vw;
+  -webkit-appearance: none; /*safari*/
 }
 .srch_btn {
   display: block; /* uc */
@@ -61,8 +64,11 @@
   border-bottom-left-radius: 5px;
 }
 .srch-join .srch_input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  /*-webkit-appearance: none;*/
 }
 .srch-join .srch_btn {
   width: 22%;

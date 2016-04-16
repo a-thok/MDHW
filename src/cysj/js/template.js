@@ -1,9 +1,11 @@
 export default function template(data) {
-  return data.result.data.reduce((pre, cur) => (
+  return data.result.data.reduce((pre, cur) => {
+    let url = cur.logo ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
+    return (
     `${pre}<li class="hostlist_item">
       <a class="hostlist_item_a" href="http://${DIY_HOST}/m/diy/detail/${cur.id}">
         <div class="hostlist_item_img">
-          <img src="http://${CDN_HOST}/img/${cur.logo}">
+          <img src="${url}">
         </div>
         <div class="hostlist_content">
           <div class="base_title_wrap">
@@ -21,5 +23,6 @@ export default function template(data) {
         </div>
       </a>
     </li>`
-  ), '');
+    );
+  }, '');
 }

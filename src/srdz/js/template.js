@@ -3,7 +3,7 @@ export default function template(data) {
     `${pre}<li class="hostlist_item">
           <a class="hostlist_item_a" href="http://${SRDZ_HOST}/m/srdz/detail/${cur.id}">
             <div class="hostlist_item_img">
-              <img src="http://${CDN_HOST}/img/${cur.img}_310x310.jpg">
+              <img src="http://${UPLOAD_HOST}/img/${cur.img}_310x310.jpg">
             </div>
             <div class="hostlist_content">
               <div class="base_title_wrap">
