@@ -21,7 +21,7 @@ export default function template(data) {
               </h3>
               <div class="list_item_content_info">
                 <div class="list_item_content_info_left">
-                  <img src="${url}" alt="${cur.logo}">
+                  <img src="${url}" alt="${cur.company}">
                   <span class="list_item_phone"><i class="fa fa-phone"></i>${cur.phone}</span>
                 </div>
                 <div class="list_item_content_info_right">

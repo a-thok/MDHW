@@ -2,14 +2,20 @@ export default function template(data) {
   return data.result.data.reduce((pre, cur) => {
     function count(len, str) {
       let money;
-      if (len >= 5) {
-        money = `${str.slice(0, -4)}万`;
+      if (len < 4) {
+        money = str;
+      } else if (len === 7) {
+        money = `${str.slice(0, 1)}百万`;
+      } else if (len === 8) {
+        money = `${str.slice(0, 1)}千万`;
       } else if (len >= 9) {
         let million = str.slice(0, -8);
         let thousand = str.slice(-8, -4);
         money = `${million}亿${thousand}万`;
       } else {
-        money = cur.moneySum;
+        let million = str.slice(-4, -3);
+        let thousand = str.slice(-3);
+        money = `${million},${thousand}`;
       }
       return money;
     }
@@ -25,7 +31,7 @@ export default function template(data) {
         <a class="list_link link-color" href="//${ZC_HOST}/m/zc/detail/${cur.id}">
         <div class="zcList_item_img">
           <span class="zcTag zcTag-transparent">${cur.ztmc}</span>
-          <img src="http://${UPLOAD_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.frontpic}">
+          <img src="http://${UPLOAD_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.title}">
         </div>
         <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${moneySum}</span>/ ￥<span class="zcList_item_number">${moneyAll}</span></div>
         <div class="zcList_item_info">

@@ -50,7 +50,8 @@ const config = {
       'filter': 'filter.js',
       'doSearch': 'doSearch.js',
       'goToSearch': 'goToSearch.js',
-      'xhr': 'xhr.js'
+      'xhr': 'xhr.js',
+      'overflowxhr': 'overflow.js'
     }
   },
   devtool: PRODUCTION ? 'source-map' : 'cheap-source-map',

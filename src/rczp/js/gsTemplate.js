@@ -5,7 +5,7 @@ export default function gsTemplate(data) {
     return (
       `${pre}<li class="list_item">
             <a class="list_item_a" href="#">
-              <div class="list_item_img"><img src="${url}"></div>
+              <div class="list_item_img"><img src="${url}" alt="${cur.compay}"></div>
               <div class="list_item_text">
                 <p class="list_item_text_p company_info">
                   ${cur.compay}</span>
