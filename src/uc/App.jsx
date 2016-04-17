@@ -19,8 +19,13 @@ export default React.createClass({
   },
   onChangeHash: function () {
     const hash = location.hash.slice(1).replace(/\?.*/, '');
-    const indexOfSlash = hash.lastIndexOf('/');
-    const to = indexOfSlash === 1 ? '/' : hash.slice(0, indexOfSlash);
+    let to;
+    if (hash === '/') {
+      to = false;
+    } else {
+      const indexOfSlash = hash.lastIndexOf('/');
+      to = indexOfSlash === 1 ? '/' : hash.slice(0, indexOfSlash);
+    }
     this.setState({ to });
   },
   render: function () {

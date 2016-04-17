@@ -5,8 +5,10 @@ import Basics from './Basics';
 import Modules from './Modules';
 import ULink from '../../components/ULink';
 import { Link } from 'react-router';
+import getHash from '../../mixins/getHash';
 
 export default React.createClass({
+  mixins: [getHash],
   render: function () {
     return (
       <div className="home">
