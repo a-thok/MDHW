@@ -1,9 +1,13 @@
 export default function template(data) {
   return data.result.data.reduce((pre, cur) => {
     let business = '';
-    for (let i = 0, len = cur.business.length; i < len; i++) {
-      business += `<li class="tagList_item">${cur.business[i].name}</li>`;
-      if (i === 3) break;
+    if (!cur.business) {
+      business = '';
+    } else {
+      for (let i = 0, len = cur.business.length; i < len; i++) {
+        business += `<li class="tagList_item">${cur.business[i].name}</li>`;
+        if (i === 3) break;
+      }
     }
     let detail = cur.prof.length > 65 ? cur.prof.substr(0, 65) : cur.prof;
     let url = cur.log ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
