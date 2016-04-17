@@ -11,9 +11,9 @@ header {
   right: -100%;
   z-index: 5;
   width: 100%;
+  max-width: 750px;
   height: 100%;
   background: rgba(0, 0, 0, .1);
-  box-shadow: -1px 0 5px #aaa;
   transition: transform .3s ease-in;
 }
 .aside.is-show {
@@ -23,6 +23,7 @@ header {
   height: 100%;
   margin-left: 20vw;
   background: #fff;
+  box-shadow: -1px 0 5px #aaa;
   overflow: hidden;
 }
 /* 侧边总标题 */
@@ -35,7 +36,8 @@ header {
   font-weight: normal;
 }
 .aside_return {
-  width: 0;
+  /*width: 0;*/
+  padding: .5em;
   transform: translateX(.5em);
 }
 .aside_title_text {
@@ -71,7 +73,8 @@ header {
 .aside_contentWrap {
   position: relative;
   height: 100%;
-  padding-bottom: 334px; /* 这个数值不保险 */
+  height: 100vh;
+  padding-bottom: 350px;
   overflow: auto;
 }
 /* 字母表 */
