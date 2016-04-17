@@ -22,9 +22,7 @@ export default function register() {
         let locationSrch = location.search;
         let urlEndPoint = locationSrch.indexOf('&');
         let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
-        // console.log(decodeURIComponent(url));
         location.href = decodeURIComponent(url);
-        // alert('成功');
       } else {
         if (res.msg) {
           modalText.textContent = res.msg;
@@ -51,7 +49,6 @@ export default function register() {
     //       // let locationSrch = location.search;
     //       // let urlEndPoint = locationSrch.indexOf('&');
     //       // let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
-    //       // // console.log(decodeURIComponent(url));
     //       // location.href = decodeURIComponent(url);
     //       alert('注册成功跳到某个页面');
     //     } else {

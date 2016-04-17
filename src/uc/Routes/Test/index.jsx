@@ -15,14 +15,12 @@ export default React.createClass({
     };
   },
   onChange: function (e, name) {
-    console.log(e.target.value, name);
     this.setState(Object.assign({}, this.state, {
       [name]: e.target.value
     }));
   },
   onSubmit: function (e) {
     e.preventDefault();
-    console.log(this.state);
   },
   render: function () {
     const form = {

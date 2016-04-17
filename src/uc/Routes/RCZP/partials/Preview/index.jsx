@@ -9,7 +9,6 @@ export default React.createClass({
     this.props.onResumePreview();
   },
   render: function () {
-    console.log(this.props);
     return (
       <div className="preview">
         <UTitle name="基本信息" />

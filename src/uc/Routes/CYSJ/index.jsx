@@ -36,7 +36,6 @@ export default React.createClass({
   },
   onSubmit: function (e) {
     e.preventDefault();
-    console.log(this.state.Release.data);
   },
   onHasReleaseList: function () {
     loadList.bind(this)({

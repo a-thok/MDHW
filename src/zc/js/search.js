@@ -45,7 +45,6 @@ export default function search() {
     }
   });
   const items = document.querySelectorAll('.zcList_item');
-  console.log(items.length);
   if (items.length > 0) {
     // 循环列表中的每个li
     $from('.zcList_item').forEach((el) => {

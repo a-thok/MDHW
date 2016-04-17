@@ -33,7 +33,6 @@ export function refrechCodeImg() {
 export function dataBinding(data, btn) {
   const inputs = $from('input[name]');
   const common = function () {
-    console.log(data);
     btn.disabled = false;
     inputs.forEach((_input) => {
       if (_input.required && !_input.value) btn.disabled = true;

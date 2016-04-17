@@ -50,7 +50,6 @@ export default React.createClass({
       list: 'SellerList',
       type,
       cb: function (items) {
-        console.log(items);
         items.forEach((item) => {item.showDetail = false;});
       },
       param: 'state',
