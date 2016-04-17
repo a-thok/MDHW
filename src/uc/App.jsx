@@ -6,14 +6,7 @@ export default React.createClass({
   getInitialState: function () {
     return {
       to: '',
-      profile: {
-        name: '郭大侠',
-        phone: 123456789211,
-        company: '创企信息科技有限公司',
-        intro: '一次创业什么什么什么什么',
-        msg: 0,
-        money: 0
-      }
+      profile: {}
     };
   },
   componentDidMount: function () {
