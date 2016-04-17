@@ -5,7 +5,7 @@ export default function Profile(props) {
   return (
     <div className="profile">
       <figure className="profile_figure">
-        <img src={ props.logo ? `http://${UPLOAD_HOST}/img/${props.logo}` : `http://${CDN_HOST}/images/default2.png`} alt={props.name} />
+        <img src={ props.logo ? `http://${UPLOAD_HOST}/img/${props.logo}` : `http://${CDN_HOST}/images/default2.png`} alt={props.account} />
         <figcaption className="profile_title">
         <span>{props.account}</span>
         {

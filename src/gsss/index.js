@@ -7,9 +7,11 @@ import './img/1-banner.png';
 import './img/iconfont-chengweitouziren2.png';
 import './img/iconfont-gongsi.png';
 import './img/hotlqt.png';
+import showMenu from 'showMenu';
 
 const pathname = window.location.pathname;
 
-if (pathname.indexOf('index') !== -1 || pathname === '/m/gsss') {
+if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
   index();
+  showMenu();
 }

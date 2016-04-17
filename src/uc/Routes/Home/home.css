@@ -69,9 +69,8 @@
   float: left;
   display: flex;
   align-items: center;
-  width:33.3333%;
-  height: 100%;
-  text-align: center; 
+  width: 33.3333%;
+  text-align: center;
 }
 .basics li:first-child::after,
 .basics li:last-child::before {

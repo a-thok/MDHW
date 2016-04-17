@@ -9,13 +9,17 @@ fastclick.attach(document.body);
 import assess from './js/assess.js';
 import index from './js/index.js';
 import company from './js/company.js';
+import showMenu from 'showMenu';
 
 const pathname = window.location.pathname;
 
 if (pathname.indexOf('assess') !== -1) {
   assess();
-} else if (window.location.pathname.indexOf('index') !== -1 || pathname === '/m/kj') {
+  showMenu();
+} else if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
   index();
+  showMenu();
 } else if (pathname.indexOf('company') !== -1) {
   company();
+  showMenu();
 }

@@ -15,9 +15,11 @@ import './img/pic6_6.png';
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
 fastclick.attach(document.body);
+import showMenu from 'showMenu';
 
 import index from './js/index.js';
 const pathname = window.location.pathname;
-if (pathname.indexOf('index') !== -1 || pathname === '/m/cqbh') {
+if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
   index();
+  showMenu();
 }

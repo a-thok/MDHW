@@ -13,13 +13,17 @@ fastclick.attach(document.body);
 import index from './js/index.js';
 import detail from './js/detail.js';
 import list from './js/list.js';
+import showMenu from 'showMenu';
 
 const pathname = window.location.pathname;
 
 if (pathname.indexOf('detail') !== -1) {
   detail();
-} else if (pathname.indexOf('index') !== -1 || pathname === '/m/zckj') {
+  showMenu();
+} else if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
   index();
+  showMenu();
 } else if (pathname.indexOf('list') !== -1) {
   list();
+  showMenu();
 }

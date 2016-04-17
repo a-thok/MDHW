@@ -127,8 +127,10 @@
 .investor_list_item_img {
   width: 50px;
   width: 17.3333vw;
+  max-width: 130px;
   height: 50px;
   height: 17.3333vw;
+  max-height: 130px;
   border-radius: 50%;
   /*background: red;*/
   flex-shrink: 0;
@@ -170,8 +172,10 @@
 .hotBody_list_item-a img {
   width: 50px;
   width: 17.3333vw;
+  max-width: 130px;
   height: 50px;
   height: 17.3333vw;
+  max-height: 130px;
   border-radius: 50%;
   /*background: red;*/
 }

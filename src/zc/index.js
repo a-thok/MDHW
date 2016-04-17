@@ -16,13 +16,17 @@ const pathname = window.location.pathname;
 if (pathname.indexOf('detail') !== -1) {
   detail();
   progress();
+  showMenu();
 } else if (pathname.indexOf('comment') !== -1) {
   comment();
+  showMenu();
 } else if (pathname.indexOf('progress') !== -1) {
   progress();
   showMenu();
 } else if (pathname.indexOf('search') !== -1) {
   search();
-} else if (pathname.indexOf('index') !== -1 || pathname === '/m/zc') {
+  showMenu();
+} else if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
   index();
+  showMenu();
 }
