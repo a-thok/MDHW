@@ -149,6 +149,10 @@
   background-repeat: no-repeat;
   background-size: 35%;
 }
+.header_menu_list_item a {
+  text-decoration: none;
+  color: #fff;
+}
 
 /*部分头部搜索图标*/
 .header_icon {

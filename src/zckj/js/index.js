@@ -1,9 +1,7 @@
 import { $ } from '../../common/js/func.js';
-import showMenu from 'showMenu';
 import slider from 'slider';
 
 export default function index() {
-  showMenu();
   slider($('.sliderBox'));
 
   // 获取数据，填充侧边栏

@@ -22,6 +22,6 @@ if (pathname.indexOf('detail') !== -1) {
   search();
 } else if (pathname.indexOf('list') !== -1) {
   list();
-} else if (pathname.indexOf('index') !== -1 || pathname === '/m/srdz') {
+} else if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
   index();
 }

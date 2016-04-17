@@ -8,10 +8,15 @@ fastclick.attach(document.body);
 import company from './js/company.js';
 import search from './js/search.js';
 import detail from './js/detail.js';
+import showMenu from 'showMenu';
+
 if (window.location.pathname.indexOf('company') !== -1) {
   company();
+  showMenu();
 } else if (window.location.pathname.indexOf('search') !== -1) {
   search();
+  showMenu();
 } else if (window.location.pathname.indexOf('detail') !== -1) {
   detail();
+  showMenu();
 }

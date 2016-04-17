@@ -11,11 +11,13 @@ import './img/carlqt.png';
 import './img/morepeoplelqt.png';
 import './img/twopeoplelqt.png';
 import './img/onepeoplelqt.png';
+import showMenu from 'showMenu';
 
 const pathname = window.location.pathname;
 
 import index from './js/index.js';
-if (pathname.indexOf('index') !== -1 || pathname === '/m/zxsj') {
+if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
   index();
+  showMenu();
 }
 
