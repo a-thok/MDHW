@@ -1,24 +1,67 @@
 .profile {
-  padding: 30px 20px 10px;
-  background: red;
+  height: 55.5556vw;
+  max-height: 416.6667px;
+  padding: 10px 20px 10px;
+  /*background: red;*/
   font-size: 14px;
   color: #fff;
+  background-image: url("./img/backlqt.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  line-height: 2;
+  text-align: center;
 }
-.profile > h1 {
-  font-size: 20px;
+.profile_figure {
+  height: 70%;
 }
-.profile > img { /* 兼容uc */
-  width: 100px;
-  height: 100px;
+.profile_figure > img {
+  width: 80px;
+  width: 24vw;
+  max-width: 180px;
+  height: 80px;
+  height: 24vw;
+  max-height: 180px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+.profile_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  margin-top: -10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.profile_para {
+  width: 95%;
+  height: 15%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.profile .fa {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 1em .5em .5em 1em;
 }
 
 .basics {
   background: #fff;
   font-size: 12px;
+  overflow: hidden;
 }
-.basics > li {
+.basics_item {
+  float: left;
   display: flex;
   align-items: center;
+  width:33.3333%;
+  height: 100%;
+  text-align: center; 
 }
 .basics li:first-child::after,
 .basics li:last-child::before {
@@ -28,12 +71,13 @@
   height: 50px;
   border-right: 1px solid var(--borderColorLight);
 }
-.basics > li > a {
+.basics_item > a {
   display: block;
   flex-basis: 100%;
   width: 100%;
   color: #333;
   text-decoration: none;
+  overflow: hidden;
 }
 .basics section {
   margin: 5px 0;
@@ -56,20 +100,32 @@
   margin-top: 28px;
   padding: 0 10px;
   background: #fff;
+  overflow: hidden;
 }
 .modules {
   display: flex;
   justify-content: space-between;
-  padding: 15px 0;
+  margin: 15px 0;
 }
-.modules > li {
+.modules_item {
   width: 22%;
   flex-basis: 22%;
 }
+
 .module {
-  width: 25%;
+  display: block;
   color: #333;
   text-decoration: none;
+}
+.modules_item_fig > div {
+  width: 50px;
+  width: 15vw;
+  max-width: 112.5px;
+  height: 50px;
+  height: 15vw;
+  max-height: 112.5px;
+  padding: 15%;
+  margin: 0 auto;
 }
 
 .ulinkWrap {
@@ -78,4 +134,32 @@
 }
 .ulinkWrap a {
   display: block;
+}
+.rczp {
+  background: #f7ba5b;
+}
+.zc {
+  background: #6ce;
+}
+.cysj {
+  background: #ea6644;
+}
+.srdz {
+  background: #7788f2;
+}
+.cygc {
+  background: #2bb2a3;
+}
+.kjfw {
+  background: #f82;
+}
+.zb {
+  background: #157cc7;
+}
+.cqbh {
+  background: #d04f6e;
+}
+.modules_item_fig_cap {
+  margin-top: .4em;
+  font-size: 14px;
 }
