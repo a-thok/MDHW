@@ -1,16 +1,21 @@
 import slider from 'slider';
-// import { $ } from 'func';
+import { $ } from 'func';
 
 
 export function index() {
-  slider(document.querySelector('.sliderBox'));
+  slider($('.sliderBox'));
 }
 
 export function scroll() {
-  let scrollBox = document.querySelector('.topLine_filterBox_scroll');
+  // 先复制一份需要滚动的html 代码
+  let parent = $('.topLine_filterBox');
+  parent.insertAdjacentHTML('beforeend', parent.innerHTML);
+
+  let scrollBox = $('.topLine_filterBox_scroll');
   let margintop = scrollBox.style.marginTop;
+
   function time() {
-    if (-margintop > scrollBox.clientHeight - 6) {
+    if (-margintop > scrollBox.clientHeight - 1) {
       margintop = 0;
     }
     margintop -= 1;
