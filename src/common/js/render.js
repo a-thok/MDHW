@@ -16,7 +16,7 @@ export default function render({ api, params, template, container, immediate, lo
 
   function noMore() {
     load.children[0].classList.remove('fa-spinner');
-    load.children[1].textContent = '没有更多条目';
+    load.children[1].textContent = '没有了哦';
   }
 
   container.listener = () => {
