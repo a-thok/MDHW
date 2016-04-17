@@ -34,7 +34,10 @@ export default React.createClass({
         <ul className="list list-plain">
           {content}
         </ul>
-        <Loading finished={this.props.finished} />
+        <Loading
+          finished={this.props.finished}
+          dataLen={this.props.data.length}
+        />
       </div>
     );
   }
