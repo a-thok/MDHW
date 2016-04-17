@@ -1,6 +1,8 @@
 import render from 'render';
 import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter } from 'filter';
 import gsTemplate from './gsTemplate.js';
+import overflow from 'overflow';
+import { $ } from 'func';
 
 export default function company() {
   let load = document.querySelector('.list_load');
@@ -27,4 +29,5 @@ export default function company() {
     render(config);
   });
   generateAreaFilter();
+  overflow($('.tagList'));
 }

@@ -4,7 +4,6 @@ import template from './template.js';
 import doSearch from 'doSearch';
 import render from 'render';
 
-
 export default function search() {
   let load = document.querySelector('.list_load');
   let config = {
