@@ -2,7 +2,6 @@ export default function deFavorite(url, list, id, index) {
   const currentPage = this.state[list].index;
   const whichPage = Math.ceil(index / 10);
 
-  console.log(whichPage, this.state);
   fetch(url, {
     method: 'POST',
     headers: {
@@ -24,7 +23,6 @@ export default function deFavorite(url, list, id, index) {
 
       const startIndex = (whichPage - 1) * 10;
       newState.data.splice(startIndex, 10, ...res.result.data);
-      console.log(newState.data);
 
       newState.fetching = false;
 

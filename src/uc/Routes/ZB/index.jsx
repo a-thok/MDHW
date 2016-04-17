@@ -44,7 +44,6 @@ export default React.createClass({
   },
   onSubmit: function (e) {
     e.preventDefault();
-    console.log(this.state.Release.data);
   },
   onCancle: function (id, index) {
     deFavorite.bind(this)('/m/sys/zb/collect/del', 'HasCollect', id, index);

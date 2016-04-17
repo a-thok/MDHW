@@ -13,7 +13,6 @@ export default function login() {
   dataBinding(data, login);
 
   function doLogin(e) {
-    console.log(e.target);
     e.preventDefault();
     login.disabled = true;
 
@@ -53,7 +52,6 @@ export default function login() {
     //       let locationSrch = location.search;
     //       let urlEndPoint = locationSrch.indexOf('&');
     //       let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
-    //       // console.log(decodeURIComponent(url));
     //       location.href = decodeURIComponent(url);
     //       // alert('登录成功');
     //     } else {

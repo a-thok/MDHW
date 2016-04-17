@@ -47,7 +47,6 @@ export default React.createClass({
       type,
       param: 'state',
       cb: function (items) {
-        console.log(items);
         items.forEach((item) => {item.showDetail = false;});
       },
       reset

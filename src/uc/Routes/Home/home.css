@@ -34,6 +34,10 @@
   margin-top: -10px;
   font-weight: bold;
   font-size: 18px;
+  color: #fff;
+}
+.profile_title > span:first-child {
+  margin-right: .5em;
 }
 .profile_para {
   width: 95%;
@@ -43,7 +47,13 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.profile .fa {
+.profile_para-center {
+  text-align: center;
+}
+.profile_para > span:first-child {
+  margin-right: 1em;
+}
+.profile .fa-edit {
   position: absolute;
   right: 0;
   bottom: 0;
