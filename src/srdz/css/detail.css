@@ -10,6 +10,9 @@
   background-color: var(--srdzColor);
 }
 /*介绍*/
+.intro {
+  margin-bottom: 0;
+}
 .intro_list {
   display: flex;
 }
