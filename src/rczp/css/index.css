@@ -21,22 +21,38 @@
   margin-bottom: 10px;
 }
 .cate_item_title-item {
-  padding: 0;
-  padding-bottom: 1em;
+  padding: .5em 0;
   width: 40.8%;
   color: var(--fontColorLight);
 }
-.cate_item_title .fa {
-  width: 50px;
-  width: 9.3333vw;
-  height: 50px;
-  height: 9.3333vw;
-  line-height: 50px;
-  line-height: 9.3333vw;
-  text-align: center;
-  border-radius: 50px;
+.special_list:last-child {
+  margin-bottom: 1em;
+}
+.cate-index .cate_item_list li {
+  font-size: 14px;
+  padding: 8px 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.cate-index .cate_item_title {
+  font-weight: bold;
+}
+.cate-index .cate_item_title .fa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  width: 6.6667vw;
+  max-width: 50px;
+  height: 35px;
+  height: 6.6667vw;
+  max-height: 50px;
+  border-radius: 50%;
+  margin-right: 1em;
   background: var(--rczpColor);
+  font-size: 16px;
   color: #fff;
+  text-align: center;
 }
 .famous_list_item {
   width: 48%;
