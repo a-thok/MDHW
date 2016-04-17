@@ -14,8 +14,8 @@ export default React.createClass({
           {...this.props.profile}
         />
         <Basics
-          msg={this.state.msg}
-          money={this.state.money}
+          msg={0}
+          money={0}
         />
         <Modules />
         {
