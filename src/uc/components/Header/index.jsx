@@ -9,7 +9,7 @@ export default function Header(props) {
         <Link style={{ visibility: props.to === false ? 'hidden' : 'visible' }} to={props.to || '/'}><button className="header_btn" type="button"><i className="fa fa-angle-left"></i></button></Link>
       </div>
       <div className="header_sect">
-        <a href="#" className="header_link">登录</a>
+        <span className="header_link">{props.account}</span>
       </div>
     </header>
   );

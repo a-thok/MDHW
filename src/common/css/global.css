@@ -12,6 +12,7 @@ ol {
 
 body {
   color: #333;
+  background: #ccc;
 }
 body.is-static {
   height: 100%;
