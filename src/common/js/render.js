@@ -4,6 +4,7 @@
  * @param {Object} config - render configuration
  */
 export default function render({ api, params, template, container, immediate, load }) {
+  document.removeEventListener('scroll', container.listener);
   // 设置fetch请求参数
   const body = params || {
     pageIndex: 1,
@@ -22,7 +23,7 @@ export default function render({ api, params, template, container, immediate, lo
   container.listener = () => {
     const pageHeight = document.body.offsetHeight;
     const pageScroll = document.body.scrollTop;
-    const docHeight = document.documentElement.clientHeight;
+    const docHeight = window.screen.height;
     const pageRemain = pageHeight - pageScroll - docHeight;
     if (pageRemain > loadRemain || fetching) return;
 
