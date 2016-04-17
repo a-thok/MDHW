@@ -62,13 +62,15 @@
 
 /*加载栏*/
 .list_load {
-  height: 20vw;
-  line-height: 20vw;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  min-height: 50px;
   color: #999;
 }
 .list_load .fa {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #fff;
 }
 .list_load_text {
