@@ -5,7 +5,7 @@ export default function template(data) {
     `${pre}<li class="hostlist_item">
       <a class="hostlist_item_a" href="http://${DIY_HOST}/m/diy/detail/${cur.id}">
         <div class="hostlist_item_img">
-          <img src="${url}">
+          <img src="${url}" atl="${cur.title}">
         </div>
         <div class="hostlist_content">
           <div class="base_title_wrap">

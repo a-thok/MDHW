@@ -9,7 +9,7 @@ export default function list() {
       return (
         `${pre}<li class="list_item list_item-border">
           <a class="list_item_a" href="http://${ZCKJ_HOST}/m/zckj/detail/${cur.id}">
-            <div class="list_item_img"><img src="${url}" alt=""></div>
+            <div class="list_item_img"><img src="${url}" alt="${cur.name}"></div>
             <div class="list_item_text">
               <p class="list_item_text_p list_item_text_p-title">${cur.name}</p>
               <p class="list_item_text_p list_item_text_p-light">${cur.province}${cur.city}${cur.addr}<p>
