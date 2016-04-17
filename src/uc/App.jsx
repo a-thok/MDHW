@@ -36,7 +36,7 @@ export default React.createClass({
     }
     return (
       <div>
-        <Header to={this.state.to} account={this.state.profile.account} />
+        <Header to={this.state.to} />
         {React.cloneElement(Child, Object.assign({ onChangeHash: this.onChangeHash }, { profile: props }))}
       </div>
     );
