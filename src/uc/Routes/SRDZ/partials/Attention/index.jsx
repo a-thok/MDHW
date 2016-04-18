@@ -20,7 +20,7 @@ export default React.createClass({
       <ListItem
         key={index}
         {...item}
-        img={item.productlmg}
+        img={`${item.productlmg}.jpg`}
         multiple={{ '成交量': item.num }}
         emp={`￥${item.price}/个`}
         small={item.name}
