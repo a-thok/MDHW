@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const config = {
   entry: {
-    'common': ['font-awesome/css/font-awesome.css', 'es6-promise', 'whatwg-fetch', 'fastclick'],
+    'common': ['normalize.css', 'font-awesome/css/font-awesome.css', 'es6-promise', 'whatwg-fetch', 'fastclick'],
     'rczp': [path.join(__dirname, 'src/rczp')],
     'kjfw': [path.join(__dirname, 'src/kjfw')],
     'zc': [path.join(__dirname, 'src/zc')],
@@ -53,6 +53,10 @@ const config = {
       'xhr': 'xhr.js',
       'overflowxhr': 'overflow.js'
     }
+  },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
   devtool: PRODUCTION ? 'source-map' : 'cheap-source-map',
   module: {
