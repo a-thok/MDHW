@@ -22,7 +22,7 @@ body.is-static {
 html,
 body,
 .page {
-  height: 100%;
+  min-height: 100%;
 }
 .page {
   max-width: 750px;
