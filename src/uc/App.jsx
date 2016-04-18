@@ -30,14 +30,19 @@ export default React.createClass({
   },
   render: function () {
     const Child = this.props.children;
-    let props;
-    if (Child.type.displayName === 'Home') {
-      props = this.state.profile;
+    let extra;
+    switch (Child.type.displayName) {
+      case 'Home':
+      case 'Account':
+        extra = { profile: this.state.profile };
+        break;
+      default:
+        extra = {};
     }
     return (
       <div>
         <Header to={this.state.to} />
-        {React.cloneElement(Child, Object.assign({ onChangeHash: this.onChangeHash }, { profile: props }))}
+        {React.cloneElement(Child, Object.assign({ onChangeHash: this.onChangeHash }, extra))}
       </div>
     );
   }
