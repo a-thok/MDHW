@@ -16,5 +16,4 @@ if (pathname.indexOf('denglu') !== -1) {
 } else if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
   scroll();
   index();
-  showMenu();
 }

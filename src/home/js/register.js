@@ -89,8 +89,8 @@ export default function register() {
   const acctipText = $('.acc_tip_content_text');
   const tip = $('.acc_tip ');
   const name = () => {
-    if (/^1\d{10}$/.test(phone.value)) {
-      fetch('/Reg/Check', {
+    if (/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|01[0])[0-9]{8}$/.test(phone.value)) {
+      fetch('/m/main/RegCheck', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

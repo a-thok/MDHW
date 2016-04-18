@@ -6,10 +6,10 @@ export default function Header(props) {
   return (
     <header className="header header-reverse">
       <div className="header_sect">
-        <Link style={{ visibility: props.to === false ? 'hidden' : 'visible' }} to={props.to || '/'}><button className="header_btn" type="button"><i className="fa fa-angle-left"></i></button></Link>
+        <Link className="header_link" style={{ visibility: props.to === false ? 'hidden' : 'visible' }} to={props.to || '/'}><i className="fa fa-angle-left"></i></Link>
       </div>
       <div className="header_sect">
-        <span className="header_link">{props.account}</span>
+        <a className="header_link" href={`${MAIN_HOST}/m/main/Logout`}>退出</a>
       </div>
     </header>
   );
