@@ -97,3 +97,13 @@
 .hot_more_LINK .fa {
   margin-left: 1em;
 }
+.header_sect-aside_text::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  margin-left: .4em;
+  border-width: 7px 0 7px 7px;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: #fff;
+}
