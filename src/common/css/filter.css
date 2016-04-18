@@ -15,10 +15,11 @@
   left: 0;
 }
 .filter_item {
-  width: 33.4%; /* 数值是为了兼容旧浏览器 */
+  /*width: 33.4%;  数值是为了兼容旧浏览器 */
   flex-basis: 33.3333%;
-  flex-grow: 1;
+  flex: 1;
 }
+
 /* 标题 */
 .filter_title {
   position: relative;
@@ -55,52 +56,57 @@
 
 /* 内容 */
 .filter_content {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
-  padding-bottom: 120px; /* 顶部过滤栏70 + 底部取消按钮50 */
-  border-bottom: 13.3333vw solid transparent;
+  padding-top: 50px; /* 顶部过滤栏50 */
+  border-top: 13.3333vw solid transparent; /* 头部高度 */
   margin-top: 1px;
   box-shadow: 0 0 3px #ddd;
   overflow: hidden;
-  transform: translateY(-105%);
+  transform: translateY(-100%);
   transition: transform .3s ease-out;
 }
-.is-fixed .filter_content {
-  border-bottom: 0;
-}
+/*.is-fixed .filter_content {
+  border-top: 0;
+}*/
 @media screen and (min-width: 750px) {
   .filter_content {
-    padding-bottom: 100px;
+    border-top-width: 100px;
   }
 }
 .filter_content-short {
-  height: auto;
-  padding: 10px 0;
-  border-bottom: 0;
-  background: #fff;
+  /*height: auto;*/
+  /*padding: 10px 0;*/
+  /*border-bottom: 0;*/
+  /*background: #fff;*/
 }
 .filter_content_wrap {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
+  /*display: flex;
+  flex-wrap: wrap;*/
+  /*height: 100%;*/
+  flex: 1;
+  background-color: #fff;
 }
-.filter_content-short .filter_content_wrap {
+/*.filter_content-short .filter_content_wrap {
   padding-bottom: 0;
-}
+}*/
 .is-show .filter_content {
   transform: translateY(0);
 }
 .filter_content_btns {
-  position: relative;
-  width: 100%;
-  height: 70px;
+  /*position: relative;*/
+  /*width: 100%;*/
+  /*height: 70px;*/
+  padding: 10px 0;
   background: #fff;
   box-shadow: 0 -3px 3px #ddd;
   text-align: center;
-  line-height: 70px;
+  /*line-height: 70px;*/
 }
 .filter_content_btn {
   width: 9em;
@@ -110,6 +116,7 @@
   background-color: var(--rczpColor);
   font-size: 18px;
   color: #fff;
+  line-height: normal;
 }
 .filter_content_textbtn {
   height: 48px;
@@ -123,8 +130,7 @@
 
 /* 列表模式 */
 .filter_content_list {
-  width: 100%;
-  background-color: #fff;
+  /*width: 100%;*/
 }
 .filter_content_list_item {
   display: flex;
