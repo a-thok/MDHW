@@ -10,7 +10,7 @@ export default React.createClass({
     };
   },
   componentDidMount: function () {
-    fetch('/m/User/Info/PersonEdit', {
+    fetch('/m/user/info/person', {
       method: 'GET',
       credentials: 'include'
     })
