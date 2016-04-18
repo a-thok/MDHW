@@ -17,7 +17,7 @@
       </div>
       <!--搜索框开始-->
       <div class="header_srch">
-        <input class="header_srch_input header_srch_input-nolabel" id="search" type="text" placeholder="请输入关键词">
+        <input class="header_srch_input header_srch_input-nolabel" id="search" type="search" placeholder="请输入关键词">
         <button class="header_btn header_srch_btn" type="button">搜索</button>
       </div>
       <!--搜索框结束-->
