@@ -10,13 +10,16 @@ import search from './js/search.js';
 import detail from './js/detail.js';
 import showMenu from 'showMenu';
 
-if (window.location.pathname.indexOf('company') !== -1) {
+const pathname = window.location.pathname;
+if (pathname.indexOf('company') !== -1) {
   company();
   showMenu();
-} else if (window.location.pathname.indexOf('search') !== -1) {
+} else if (pathname.indexOf('search') !== -1) {
   search();
   showMenu();
-} else if (window.location.pathname.indexOf('detail') !== -1) {
+} else if (pathname.indexOf('detail') !== -1) {
   detail();
+  showMenu();
+} else if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
   showMenu();
 }
