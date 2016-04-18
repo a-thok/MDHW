@@ -97,7 +97,7 @@ export function moreFilter(cb) {
     }
   });
   // 重置
-  $('.filter_content_textbtn').addEventListener('click', () => {
+  $('.reset').addEventListener('click', () => {
     $from('.tagList-filter').forEach(el => {
       $from(el.children).forEach((_el, _index) => {
         if (_index === 0) {
