@@ -63,9 +63,15 @@ export default function search() {
     render(config);
   });
   moreFilter((filter, type) => {
+    console.log(filter, type);
     config.params.pageIndex = 0;
     config.params[filter] = type;
     config.immediate = true;
+  }, () => {
+    // config.params.pageIndex = 0;
+    config.params = '';
+    config.immediate = true;
+    render(config);
   });
   // 更多选择
   $('.filter_content_btn-post').addEventListener('click', () => {

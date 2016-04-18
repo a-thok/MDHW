@@ -82,14 +82,14 @@ export function selectFilter(cb) {
 }
 
 // 更多过滤
-export function moreFilter(cb) {
+export function moreFilter(onset, reset) {
   // 选取
   $('.filter_content_more_main').addEventListener('click', e => {
     if (e.target.classList.contains('tagList_item-active')) return;
     if (e.target.classList.contains('tagList_item')) {
       const filter = e.target.parentElement.getAttribute('data-filter');
       const type = e.target.getAttribute('data-code');
-      cb(filter, type);
+      onset(filter, type);
       $from(e.target.parentElement.children).forEach(el => {
         el.classList.remove('tagList_item-active');
       });
@@ -107,6 +107,7 @@ export function moreFilter(cb) {
         }
       });
     });
+    reset();
   });
 }
 
