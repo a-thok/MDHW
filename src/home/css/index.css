@@ -7,7 +7,7 @@
   background-position: center  left;
   background-repeat: no-repeat;
   background-size: 25%;
-  background-image: url("../img/hotlqt.png");
+  background-image: url("../img/index.png");
 }
 .srch-join {
   margin-left: auto;
@@ -68,15 +68,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 27%;
+  padding-left: 17%;
   line-height: 3;
   font-size: 14px;
   color: #333;
   text-decoration: none;
   background-position: center  left;
   background-repeat: no-repeat;
-  background-size: 25%;
-  background-image: url("../img/hotlqt.png");
+  background-size: 14%;
+  background-image: url("../img/hot.png");
 }
 .topLine_link_p .fa {
   font-size: 12px;
