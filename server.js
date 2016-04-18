@@ -33,6 +33,7 @@ app.use('/m/DIY', proxy(url.parse('http://192.168.2.177:8092/m/DIY')));
 app.use('/m/Srdz', proxy(url.parse('http://192.168.2.177:8093/m/Srdz')));
 app.use('/m/Kj', proxy(url.parse('http://192.168.2.177:8087/m/Kj')));
 app.use('/m/sys', proxy(url.parse('http://192.168.2.177:8085/m/sys')));
+app.use('/m/user', proxy(url.parse('http://192.168.2.177:8085/m/user')));
 
 app.listen(app.get('port'), (err) => {
   if (err) {
