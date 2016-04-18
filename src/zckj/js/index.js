@@ -1,4 +1,4 @@
-import { $ } from '../../common/js/func.js';
+import { $, $from } from '../../common/js/func.js';
 import slider from 'slider';
 
 export default function index() {
@@ -39,32 +39,34 @@ export default function index() {
     });
 
   // 点击字母，滚动到相应位置
-  $('.alphabet').addEventListener('click', e => {
-    if (e.target.classList.contains('alphabet_item')) {
-      const container = $('.aside_contentWrap');
+  $from('.alphabet').forEach((item) => {
+    item.addEventListener('click', e => {
+      if (e.target.classList.contains('alphabet_item')) {
+        const container = $('.aside_contentWrap');
 
-      const alphabet = e.target.textContent.toLowerCase();
-      const target = $(`.aside_sect-${alphabet}`).offsetTop;
-      const span = (target - container.scrollTop) / 100;
+        const alphabet = e.target.textContent.toLowerCase();
+        const target = $(`.aside_sect-${alphabet}`).offsetTop;
+        const span = (target - container.scrollTop) / 100;
 
-      const scroll = () => {
-        const lastScrollTop = container.scrollTop;
-        if (lastScrollTop === target) return;
+        const scroll = () => {
+          const lastScrollTop = container.scrollTop;
+          if (lastScrollTop === target) return;
 
-        const remainSpan = target - lastScrollTop;
-        const noEnoughRemainSpan = (lastScrollTop < target && remainSpan < span) || (lastScrollTop > target && remainSpan > span);
-        if (noEnoughRemainSpan) {
-          container.scrollTop = target;
-          return;
-        }
+          const remainSpan = target - lastScrollTop;
+          const noEnoughRemainSpan = (lastScrollTop < target && remainSpan < span) || (lastScrollTop > target && remainSpan > span);
+          if (noEnoughRemainSpan) {
+            container.scrollTop = target;
+            return;
+          }
 
-        container.scrollTop += span;
-        if (lastScrollTop === container.scrollTop) return;
-        setTimeout(scroll, 1);
-      };
+          container.scrollTop += span;
+          if (lastScrollTop === container.scrollTop) return;
+          setTimeout(scroll, 1);
+        };
 
-      scroll();
-    }
+        scroll();
+      }
+    });
   });
 
   // 点击顶栏城市，滑出侧边栏
