@@ -1,6 +1,9 @@
 /*
   **输入信息**
 */
+.header_menu > i {
+  background: #888;
+}
 .acc,
 .acc_func,
 .other {

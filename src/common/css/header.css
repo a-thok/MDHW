@@ -20,14 +20,25 @@
 .header-noleft {
   justify-content: flex-end;
 }
+.header_sect {
+  height: 100%;
+}
+.header_sect-aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .header_btn {
   border: 0;
   background: transparent;
   font-size: 28px;
   color: #fff;
-  /*line-height: 1;*/
 }
 .header_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   font-size: 16px;
   color: #fff;
   text-decoration: none;
@@ -130,6 +141,9 @@
   border-radius: 5px;
   background: #3f4042;
   font-size: 14px;
+}
+.header_menu_list .header_link {
+  color: #fff;
 }
 .header_menu_list_item {
   padding: 1em 0;
