@@ -17,14 +17,14 @@
   background: #fff;
 }
 .list-pain_content,
- .list-pain_title {
+.list-pain_title {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
   font-size: 18px;
   border-bottom: 1px solid var(--borderColorLight);
 }
-.list-pain_title{
+.list-pain_title {
   font-weight: normal;
 }
 .list-pain_title,
