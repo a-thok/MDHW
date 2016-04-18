@@ -29,7 +29,6 @@ body,
   min-height: 100vh;
   margin: 0 auto;
   /*overflow: hidden;*/
-  /*可能要单独设一个类，因为有的页面没有底栏*/
   margin-bottom: 55px;
   margin-bottom: 12vw;
   background-color: var(--pageColor);

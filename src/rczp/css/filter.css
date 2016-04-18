@@ -6,7 +6,6 @@
   display: flex;
   width: 100%;
   flex: 1;
-  /*background-color: #fff;*/
 }
 .filter_content_list-province,
 .filter_content_list-city {
