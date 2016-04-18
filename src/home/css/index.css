@@ -15,17 +15,19 @@
   width: 67.4667%;
   padding: 10px 0;
 }
-.srch_input {
+.srch-join .srch_input {
   display: block;
   width: 100%;
-  padding: 0 15px;
-  border-radius: 5px;
+  padding-left: 15px;
+  border: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.srch_label {
-  margin-left: -2.5em;
-  border-radius: 5px;
+.srch-join .srch_label {
+  border-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-left: 0;
-  padding: 0 .8em;
 }
 /* 列表 */
 .grid_item_icon {
