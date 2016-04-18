@@ -33,7 +33,7 @@ export default React.createClass({
       ];
       return (<ListItem
         {...item}
-        img={item.frontpic}
+        img={`${item.frontpic}.jpg`}
         key={index}
         index={index}
         multiple={{ '进度': item.test, '状态': item.status }}

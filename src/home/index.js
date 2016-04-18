@@ -4,6 +4,9 @@ import login from './js/login.js';
 import register from './js/register.js';
 import { index, scroll } from './js/index.js';
 import showMenu from 'showMenu';
+import './img/lunbolqt.png';
+import './img/hot.png';
+import './img/index.png';
 
 const pathname = window.location.pathname;
 

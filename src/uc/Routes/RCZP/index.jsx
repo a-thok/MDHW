@@ -62,7 +62,7 @@ export default React.createClass({
   },
   onEvaluateList: function () {
     loadList.bind(this)({
-      url: '/m/sys/hr/comment/companylist',
+      url: '/m/sys/hr/comment/personList',
       list: 'Evaluate',
       cb: function (data) {
         data.forEach((item) => {

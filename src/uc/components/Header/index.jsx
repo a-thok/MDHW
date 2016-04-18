@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 export default function Header(props) {
-  console.log(props);
   return (
     <header className="header header-reverse">
       <div className="header_sect">

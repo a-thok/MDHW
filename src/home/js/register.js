@@ -17,7 +17,7 @@ export default function register() {
     e.preventDefault();
     register.disabled = true;
 
-    xhr('/m/Main/RegPhone', data, (res) => {
+    xhr('/m/reg/phone', data, (res) => {
       if (res.success) {
         let locationSrch = location.search;
         let urlEndPoint = locationSrch.indexOf('&');
@@ -90,7 +90,7 @@ export default function register() {
   const tip = $('.acc_tip ');
   const name = () => {
     if (/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|01[0])[0-9]{8}$/.test(phone.value)) {
-      fetch('/m/main/RegCheck', {
+      fetch('/m/reg/check', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

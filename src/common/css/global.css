@@ -10,7 +10,6 @@ ul,
 ol {
   list-style: none;
 }
-
 body {
   color: #333;
   background: #ccc;
@@ -19,9 +18,14 @@ body.is-static {
   height: 100%;
   overflow: hidden;
 }
+/* 兼容烂UC */
+html,
+body,
+.page {
+  height: 100%;
+}
 .page {
   max-width: 750px;
-  min-height: 100%;
   min-height: 100vh;
   margin: 0 auto;
   /*overflow: hidden;*/

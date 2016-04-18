@@ -16,7 +16,7 @@ export default function login() {
     e.preventDefault();
     login.disabled = true;
 
-    xhr('/m/main/Login', data, (res) => {
+    xhr('/m/login/dhw', data, (res) => {
       if (res.success) {
         let locationSrch = location.search;
         let urlEndPoint = locationSrch.indexOf('&');
