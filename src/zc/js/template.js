@@ -48,7 +48,9 @@ export default function template(data) {
             <div class="zcList_item_info_sect_number"><span class="zcList_item_number">${cur.numSy}</span>天</div>
           </div>
         </div>
-        <progress class="zcList_item_progress" max="100" value="${cur.percentage}"></progress>
+        <div class="zcList_item_progress">
+          <div class="zcList_item_progress_info" style="width: ${cur.percentage}"></div>
+        </div>
         <div class="zcList_item_intro">${cur.purpose}</div>
         </a>
       </li>`
