@@ -34,6 +34,8 @@ app.use('/m/Srdz', proxy(url.parse('http://192.168.2.177:8093/m/Srdz')));
 app.use('/m/Kj', proxy(url.parse('http://192.168.2.177:8087/m/Kj')));
 app.use('/m/sys', proxy(url.parse('http://192.168.2.177:8085/m/sys')));
 app.use('/m/user', proxy(url.parse('http://192.168.2.177:8085/m/user')));
+app.use('/m/login', proxy(url.parse('http://192.168.2.177:8085/m/login')));
+app.use('/m/reg', proxy(url.parse('http://192.168.2.177:8085/m/reg')));
 
 app.listen(app.get('port'), (err) => {
   if (err) {
