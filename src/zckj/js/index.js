@@ -83,12 +83,12 @@ export default function index() {
     const classList = e.target.classList;
     // 点击省份，展开城市列表
     if (classList.contains('aside_item')) {
-      [...$('.aside_contentWrap .aside_fold')].forEach(item => {
+      $from('.aside_contentWrap .aside_fold').forEach(item => {
         item.style.height = '';
       });
       const ul = e.target.nextElementSibling;
-      const height = ul.style.height;
-      ul.style.height = height ? '' : `${ul.getAttribute('data-height')}px`;
+      const height = ul.clientHeight;
+      ul.style.height = height ? 0 : `${ul.getAttribute('data-height')}px`;
     }
 
     // 点击城市，关闭侧边栏，替换顶栏城市名字

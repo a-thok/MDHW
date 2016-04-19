@@ -32,7 +32,6 @@ body,
   margin-bottom: 55px;
   margin-bottom: 12vw;
   background-color: var(--pageColor);
-  overflow: hidden;
 }
 @media screen and (min-width: 750px) {
   .page {
