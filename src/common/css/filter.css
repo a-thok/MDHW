@@ -67,7 +67,8 @@
   background: #fff;
   box-shadow: 0 0 3px #ddd;
   overflow: hidden;
-  transform: translateY(-100%);
+  transform: scaleY(0);
+  transform-origin: 0 0;
   transition: transform .3s ease-out;
 }
 @media screen and (min-width: 750px) {
@@ -96,7 +97,7 @@
   }
 }
 .is-show .filter_content {
-  transform: translateY(0);
+  transform: scaleY(1);
 }
 .filter_content_btns {
   /*flex: 0;*/
