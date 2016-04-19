@@ -13,7 +13,7 @@ export default function template(data) {
         let thousand = str.slice(-8, -4);
         money = `${million}亿${thousand}万`;
       } else {
-        let million = str.slice(-4, -3);
+        let million = str.slice(0, -3);
         let thousand = str.slice(-3);
         money = `${million},${thousand}`;
       }
