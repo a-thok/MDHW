@@ -14,6 +14,10 @@ body {
   color: #333;
   background: #ccc;
 }
+input[type=search] {
+  -webkit-appearance: none; /*safari*/
+}
+
 html.is-static,
 html.is-static body {
   height: 100%;
