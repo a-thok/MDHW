@@ -6,7 +6,8 @@ export default React.createClass({
   getInitialState: function () {
     return {
       to: '',
-      profile: {}
+      profile: {},
+      temp: {}
     };
   },
   componentDidMount: function () {
@@ -15,7 +16,19 @@ export default React.createClass({
       credentials: 'include'
     })
       .then(res => res.json())
-      .then(res => this.setState({ profile: res.result }));
+      .then(res => this.setState({
+        profile: res.result,
+        temp: res.result
+      }));
+  },
+  onChange: function (newText, field) {
+    const newState = Object.assign({}, this.state.temp);
+    newState[field] = newText;
+    console.log(newText, field);
+    this.setState({ temp: newState });
+  },
+  onKeyup: function (newText, field) {
+    console.log(newText, field);
   },
   onChangeHash: function () {
     const hash = location.hash.slice(1).replace(/\?.*/, '');
@@ -33,8 +46,15 @@ export default React.createClass({
     let extra;
     switch (Child.type.displayName) {
       case 'Home':
-      case 'Account':
         extra = { profile: this.state.profile };
+        break;
+      case 'Account':
+        extra = {
+          profile: this.state.profile,
+          temp: this.state.temp,
+          onChange: this.onChange,
+          onKeyup: this.onKeyup
+        };
         break;
       default:
         extra = {};

@@ -38,3 +38,8 @@
 .uLink:last-child .uLink_right {
   border: 0;
 }
+.uLink_right_info {
+  display: inline-block;
+  width: 70%;
+  text-align: right;
+}
