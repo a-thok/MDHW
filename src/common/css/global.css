@@ -19,7 +19,8 @@ input[type=search] {
 }
 
 html.is-static,
-html.is-static body {
+html.is-static body,
+html.is-static .page {
   height: 100%;
   overflow: hidden;
 }

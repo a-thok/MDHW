@@ -31,25 +31,6 @@
 .list_item_a {
   color: #333;
 }
-.filter_content_list {
-  height: 100%;
-  overflow: auto;
-}
-.filter_content_list-province,
-.filter_content_list-city {
-  width: 50%;
-  flex-basis: 50%;
-}
-.filter_content_list-city {
-  background-color: #e5e5e5;
-}
-.filter_content_list-province {
-  border-right: 1px solid var(--borderColorLight);
-}
-.filter_content_list-city .filter_content_list_item {
-  border-color: #c3c3c3;
-  background-color: #e5e5e5;
-}
 .cate {
   width: 0;
   height: 0;

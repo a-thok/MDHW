@@ -32,7 +32,7 @@
 }
 .srch_input {
   display: block; /* uc */
-  width: 88%;
+  width: 83%;
   border-left: 0;
   border-top-left-radius: 0; /*safari*/
   border-bottom-left-radius: 0; /*safari*/

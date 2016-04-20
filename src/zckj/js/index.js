@@ -3,7 +3,15 @@ import slider from 'slider';
 
 export default function index() {
   slider($('.sliderBox'));
-  $('.aside_wrap').style.height = `${document.documentElement.clientHeight}px`;
+
+  // 计算侧边栏主内容区高度
+  // function asideWrapHeight() {
+  //   $('.aside_wrap').style.height = `${document.documentElement.clientHeight}px`;
+  // }
+  // asideWrapHeight();
+  // window.addEventListener('resize', () => {
+  //   asideWrapHeight();
+  // });
 
   // 获取数据，填充侧边栏
   fetch('/Dict/city2')

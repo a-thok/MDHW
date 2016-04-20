@@ -19,15 +19,6 @@ export function fixFilter() {
 
 // 显示过滤
 export function showFilter() {
-  const headerHeight = $('.header').clientHeight;
-  const remain = document.documentElement.clientHeight - headerHeight - 50;
-  const docWidth = document.documentElement.clientWidth;
-  $from('.filter_content').forEach(item => {
-    item.style.height = `${remain}px`;
-    item.style.width = `${docWidth > 750 ? 750 : docWidth}px`;
-  });
-  // $('.filter_content_list-province').style.height = `${remain * 0.88}px`;
-
   $from('.filter_title').forEach((el, index) => {
     el.addEventListener('click', e => {
       document.documentElement.classList.add('is-static'); // 阻止body滚动
@@ -93,26 +84,26 @@ export function selectFilter(cb) {
 // 更多过滤
 export function moreFilter(onset, reset) {
   // 选取
-  $('.filter_content_more_main').addEventListener('click', e => {
-    if (e.target.classList.contains('tagList_item-active')) return;
-    if (e.target.classList.contains('tagList_item')) {
+  $('.filter_content_more').addEventListener('click', e => {
+    if (e.target.classList.contains('filter_more_list_item-active')) return;
+    if (e.target.classList.contains('filter_more_list_item')) {
       const filter = e.target.parentElement.getAttribute('data-filter');
       const type = e.target.getAttribute('data-code');
       onset(filter, type);
       $from(e.target.parentElement.children).forEach(el => {
-        el.classList.remove('tagList_item-active');
+        el.classList.remove('filter_more_list_item-active');
       });
-      e.target.classList.add('tagList_item-active');
+      e.target.classList.add('filter_more_list_item-active');
     }
   });
   // 重置
   $('.reset').addEventListener('click', () => {
-    $from('.tagList-filter').forEach(el => {
+    $from('.filter_more_list').forEach(el => {
       $from(el.children).forEach((_el, _index) => {
         if (_index === 0) {
-          _el.classList.add('tagList_item-active');
+          _el.classList.add('filter_more_list_item-active');
         } else {
-          _el.classList.remove('tagList_item-active');
+          _el.classList.remove('filter_more_list_item-active');
         }
       });
     });
