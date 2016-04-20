@@ -14,8 +14,13 @@ body {
   color: #333;
   background: #ccc;
 }
+input[type=search] {
+  -webkit-appearance: none; /*safari*/
+}
+
 html.is-static,
-html.is-static body {
+html.is-static body,
+html.is-static .page {
   height: 100%;
   overflow: hidden;
 }

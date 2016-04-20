@@ -5,3 +5,10 @@
   color: #333;
   text-decoration: none;
 }
+.grid.filter_content_list {
+  height: auto;
+  margin: 2em 0;
+}
+.filter_content {
+  height: auto;
+}

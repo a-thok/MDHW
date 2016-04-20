@@ -27,7 +27,7 @@ export default function doSearch({ config, srchbtn, url, keywordProp }) {
     if (e.target.nodeName === 'LI') { // 临时
       setView();
       const keyword = e.target.textContent.trim();
-      const input = document.querySelector('.header_srch_input');
+      const input = document.querySelector('.header_srch_input') || document.querySelector('.srch_input');
       input.value = keyword;
       config.params = {
         [keywordProp]: keyword,

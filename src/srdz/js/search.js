@@ -19,7 +19,11 @@ export default function search() {
     template,
     load,
     api: '/m/Srdz/SrdzList',
-    container: document.querySelector('.hostlist')
+    container: document.querySelector('.hostlist'),
+    params: {
+      pageIndex: 1,
+      pageSize: 10
+    }
   };
 
   doSearch({

@@ -68,8 +68,11 @@ export default function search() {
     config.params[filter] = type;
     config.immediate = true;
   }, () => {
-    // config.params.pageIndex = 0;
-    config.params = '';
+    config.params.gzjy = '';
+    config.params.xlyq = '';
+    config.params.gsgm = '';
+    config.params.sort = '';
+    config.params.pageIndex = 0;
     config.immediate = true;
     render(config);
   });
