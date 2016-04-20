@@ -1,0 +1,28 @@
+.contactTitle {
+  font-weight: normal;
+  padding: 10px 3.7333%;
+}
+.contactTitle::before {
+  display: inline-block;
+  content: "";
+  height: .5em;
+  margin-right: .6em;
+  border: 3px solid var(--gsypageColor);
+}
+.contactText {
+  padding: 10px 3.7333%;
+  /*font-size: 18px;*/
+  background: #fff;
+}
+.contactList {
+  padding: 0 3.7333%;
+  font-size: 14px;
+  color: var(--fontColorLight);
+}
+.contactList_item {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 2;
+}
