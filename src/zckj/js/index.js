@@ -3,6 +3,7 @@ import slider from 'slider';
 
 export default function index() {
   slider($('.sliderBox'));
+  $('.aside_wrap').style.height = `${document.documentElement.clientHeight}px`;
 
   // 获取数据，填充侧边栏
   fetch('/Dict/city2')
@@ -71,12 +72,12 @@ export default function index() {
 
   // 点击顶栏城市，滑出侧边栏
   $('.header_sect-aside').addEventListener('click', () => {
-    document.body.classList.add('is-static'); // 阻止body滚动
+    document.documentElement.classList.add('is-static'); // 阻止body滚动
     $('.aside').classList.add('is-show');
   });
   $('.aside_return').addEventListener('click', () => {
     $('.aside').classList.remove('is-show');
-    document.body.classList.remove('is-static'); // 恢复body滚动
+    document.documentElement.classList.remove('is-static'); // 恢复body滚动
   });
 
   $('.aside_contentWrap').addEventListener('click', e => {
@@ -96,7 +97,7 @@ export default function index() {
       const text = e.target.textContent;
       $('.header_sect-aside_text').textContent = text;
       $('.aside').classList.remove('is-show');
-      document.body.classList.remove('is-static'); // 恢复body滚动
+      document.documentElement.classList.remove('is-static'); // 恢复body滚动
     }
   });
 }

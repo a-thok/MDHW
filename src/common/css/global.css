@@ -14,7 +14,8 @@ body {
   color: #333;
   background: #ccc;
 }
-body.is-static {
+html.is-static,
+html.is-static body {
   height: 100%;
   overflow: hidden;
 }

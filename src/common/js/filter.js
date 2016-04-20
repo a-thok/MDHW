@@ -19,15 +19,24 @@ export function fixFilter() {
 
 // 显示过滤
 export function showFilter() {
+  const headerHeight = $('.header').clientHeight;
+  const remain = document.documentElement.clientHeight - headerHeight - 50;
+  const docWidth = document.documentElement.clientWidth;
+  $from('.filter_content').forEach(item => {
+    item.style.height = `${remain}px`;
+    item.style.width = `${docWidth > 750 ? 750 : docWidth}px`;
+  });
+  // $('.filter_content_list-province').style.height = `${remain * 0.88}px`;
+
   $from('.filter_title').forEach((el, index) => {
     el.addEventListener('click', e => {
-      document.body.classList.add('is-static'); // 阻止body滚动
+      document.documentElement.classList.add('is-static'); // 阻止body滚动
       $from('.filter_item').forEach((_el, _index) => {
         if (_index !== index) _el.classList.remove('is-show');
       });
       const wrapper = $parent(e.target, '.filter_item');
       const isShow = wrapper.classList.toggle('is-show');
-      if (!isShow) document.body.classList.remove('is-static'); // 恢复body滚动
+      if (!isShow) document.documentElement.classList.remove('is-static'); // 恢复body滚动
     });
   });
 }
@@ -37,7 +46,7 @@ export function hideFilter() {
   $from('.filter_content_btn').forEach((el) => {
     el.addEventListener('click', e => {
       $parent(e.target, '.filter_item').classList.remove('is-show');
-      document.body.classList.remove('is-static'); // 恢复body滚动
+      document.documentElement.classList.remove('is-static'); // 恢复body滚动
     });
   });
 }
@@ -75,7 +84,7 @@ export function selectFilter(cb) {
         cb(filter, type);
         // 隐藏当前过滤器
         wrapper.classList.remove('is-show');
-        document.body.classList.remove('is-static'); // 恢复body滚动
+        document.documentElement.classList.remove('is-static'); // 恢复body滚动
       }
     });
   });
