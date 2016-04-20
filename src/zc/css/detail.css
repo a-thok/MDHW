@@ -233,3 +233,19 @@ ul.dialog_sublist-border {
 .jiathis_txt.jtico {
   padding: 0 .5em;
 }
+
+/*众筹金额*/
+.zcInfo_price {
+  padding-bottom: 16px;
+}
+.zcInfo_price_item {
+  display: inline;
+}
+@media screen and (max-width: 450px) {
+    .zcInfo_price_item {
+      display: block;
+  }
+    .zcInfo_price_sprit {
+    display: none;
+  }
+}
