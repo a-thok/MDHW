@@ -24,3 +24,24 @@
     font-size: 41.3px;
   }
 }
+.header_menu > i {
+  background: #888;
+}
+.all {
+  background: #f82;
+}
+.kfzb {
+  background: #f7ba5b;
+}
+.zxzb {
+  background: #ea6644;
+}
+.yxzb {
+  background: #6ce;
+}
+.dszb {
+  background: #157cc7;
+}
+.qt {
+  background: #d04f6e;
+}

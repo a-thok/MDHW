@@ -1,27 +1,26 @@
 export default function template(data) {
-  return data.result.data.reduce((pre, cur) => {
-    function count(len, str) {
-      let money;
-      if (len < 4) {
-        money = str;
-      } else if (len === 7) {
-        money = `${str.slice(0, 1)}百万`;
-      } else if (len === 8) {
-        money = `${str.slice(0, 1)}千万`;
-      } else if (len >= 9) {
-        let million = str.slice(0, -8);
-        let thousand = str.slice(-8, -4);
-        money = `${million}亿${thousand}万`;
-      } else {
-        let million = str.slice(0, -3);
-        let thousand = str.slice(-3);
-        money = `${million},${thousand}`;
-      }
-      return money;
-    }
-    let moneyAll = count(cur.moneyAll.toString().length, cur.moneyAll.toString());
-    let moneySum = count(cur.moneySum.toString().length, cur.moneySum.toString());
-    return (
+  return data.result.data.reduce((pre, cur) => (
+    // function count(len, str) {
+    //   let money;
+    //   if (len < 4) {
+    //     money = str;
+    //   } else if (len === 7) {
+    //     money = `${str.slice(0, 1)}百万`;
+    //   } else if (len === 8) {
+    //     money = `${str.slice(0, 1)}千万`;
+    //   } else if (len >= 9) {
+    //     let million = str.slice(0, -8);
+    //     let thousand = str.slice(-8, -4);
+    //     money = `${million}亿${thousand}万`;
+    //   } else {
+    //     let million = str.slice(0, -3);
+    //     let thousand = str.slice(-3);
+    //     money = `${million},${thousand}`;
+    //   }
+    //   return money;
+    // }
+    // let moneyAll = count(cur.moneyAll.toString().length, cur.moneyAll.toString());
+    // let moneySum = count(cur.moneySum.toString().length, cur.moneySum.toString());
     `${pre}
     <li class="zcList_item">
         <h6 class="zcList_item_header">
@@ -33,7 +32,11 @@ export default function template(data) {
           <span class="zcTag zcTag-transparent">${cur.ztmc}</span>
           <img src="http://${UPLOAD_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.title}">
         </div>
-        <div class="zcList_item_money">筹集金额 ￥<span class="zcList_item_number">${moneySum}</span>/ ￥<span class="zcList_item_number">${moneyAll}</span></div>
+        <div class="zcList_item_money">
+          <p class="zcInfo_price_item">筹集金额 ￥<span class="zcList_item_number">${cur.moneySum}</span></p>
+          <span class="zcInfo_price_sprit">/</span>
+          <p class="zcInfo_price_item">目标金额 ￥<span class="zcList_item_number">${cur.moneyAll}</span></p>
+        </div>
         <div class="zcList_item_info">
           <div class="zcList_item_info_sect">
             <div class="zcList_item_info_sect_title">支持人数</div>
@@ -49,11 +52,10 @@ export default function template(data) {
           </div>
         </div>
         <div class="zcList_item_progress">
-          <div class="zcList_item_progress_info" style="width: ${cur.percentage}"></div>
+          <div class="zcList_item_progress_info" style="width: ${cur.percentage}%"></div>
         </div>
         <div class="zcList_item_intro">${cur.purpose}</div>
         </a>
       </li>`
-      );
-  }, '');
+      ), '');
 }
