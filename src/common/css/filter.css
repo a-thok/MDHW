@@ -9,11 +9,11 @@
   background-color: #fff;
   font-size: 15px;
 }
-.filter.is-fixed {
+/*.filter.is-fixed {
   position: fixed;
   top: 0;
   left: 0;
-}
+}*/
 .filter_item {
   flex-basis: 33.3333%;
   flex: 1;
@@ -21,10 +21,10 @@
 
 /* 标题 */
 .filter_title {
-  position: relative;
-  z-index: 1;
+  /*position: relative;*/
+  /*z-index: 1;*/
   padding: 1em 0;
-  background: #fff;
+  /*background: #fff;*/
   text-align: center;
 }
 .filter_title-line {
@@ -55,15 +55,16 @@
 
 /* 内容 */
 .filter_content {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
-  width: 100%;
-  height: 100%;
-  height: 100vh;
-  padding-top: 50px; /* 顶部过滤栏50 */
+  width: 100vw;
+  max-width: 750px;
+  /*height: 100%;*/
+  /*height: 100vh;*/
+  /*padding-top: 50px;  顶部过滤栏50 */
   border: 0 solid;
-  border-top: 13.3333vw solid transparent; /* 头部高度 */
+  /*border-top: 13.3333vw solid transparent;  头部高度 */
   background: #fff;
   box-shadow: 0 0 3px #ddd;
   overflow: hidden;
@@ -71,13 +72,13 @@
   transform-origin: 0 0;
   transition: transform .3s ease-out;
 }
-@media screen and (min-width: 750px) {
+/*@media screen and (min-width: 750px) {
   .filter_content {
     left: 50%;
     max-width: 750px;
     margin-left: -375px;
   }
-}
+}*/
 .filter_content::before {
   content: '';
   height: 1px;
@@ -86,7 +87,7 @@
 .is-fixed .filter_content {
   border-top: 0;
 }
-@media screen and (max-width: 375px) {
+/*@media screen and (max-width: 375px) {
   .filter_content {
     border-top-width: 50px;
   }
@@ -95,7 +96,7 @@
   .filter_content {
     border-top-width: 100px;
   }
-}
+}*/
 .is-show .filter_content {
   transform: scaleY(1);
 }
@@ -137,6 +138,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /*letter-spacing: .5em;*/
   height: 54px;
   padding: 0 7.4667%;
   border-bottom: 1px solid var(--borderColorLight);
