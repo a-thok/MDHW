@@ -7,6 +7,19 @@ import Reservation from './routes/Reservation';
 import ReservationImfor from './routes/ReservationImfor';
 import Addresses from './routes/Addresses';
 
+import Account from './routes/Account';
+import AccountHome from './routes/Account/partials/Home';
+// import Logo from './routes/Account/partials/Logo';
+import Edit from './routes/Account/partials/Edit';
+// import AccountAddress from './routes/Account/partials/Address';
+// import PetName from './routes/Account/partials/PetName';
+// import Gender from './routes/Account/partials/Gender';
+// import Email from './routes/Account/partials/Email';
+// import RealName from './routes/Account/partials/RealName';
+// import Signature from './routes/Account/partials/Signature';
+// import BindAccount from './routes/Account/partials/BindAccount';
+// import Phone from './routes/Account/partials/Phone';
+
 import RCZP from './routes/RCZP';
 import RczpHome from './routes/RCZP/partials/Home';
 import Preview from './routes/RCZP/partials/Preview';
@@ -46,6 +59,24 @@ ReactDOM.render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
+      <Route path="/account" component={Account}>
+        <IndexRoute component={AccountHome} />
+        <Route path="/account/edit" component={Edit} />
+        {
+          /*
+          <Route path="/account/logo" component={Logo} />
+          <Route path="/account/updatepw" component={UpdatePW} />
+          <Route path="/account/address" component={AccountAddress} />
+          <Route path="/account/petname" component={PetName} />
+          <Route path="/account/gender" component={Gender} />
+          <Route path="/account/email" component={Email} />
+          <Route path="/account/realname" component={RealName} />
+          <Route path="/account/signature" component={Signature} />
+          <Route path="/account/bindaccount" component={BindAccount} />
+          <Route path="/account/phone" component={Phone} />
+          */
+        }
+      </Route>
       <Route path="/rczp" component={RCZP}>
         <IndexRoute component={RczpHome} />
         <Route path="/rczp/preview" component={Preview} />
