@@ -52,7 +52,7 @@ export default function template(data) {
           </div>
         </div>
         <div class="zcList_item_progress">
-          <div class="zcList_item_progress_info" style="width: ${cur.percentage}"></div>
+          <div class="zcList_item_progress_info" style="width: ${cur.percentage}%"></div>
         </div>
         <div class="zcList_item_intro">${cur.purpose}</div>
         </a>
