@@ -14,20 +14,21 @@
 }
 .filter_content_more_sect_title {
   font-weight: normal;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: .2rem;
   line-height: 2.4;
 }
 .filter_more_list {
-  margin-left: .8em;
-  font-size: 16px;
+  margin-left: 1em;
   overflow: hidden;
 }
 .filter_more_list_item {
   display: inline-block;
-  padding: .4em .6em;
+  padding: .6em 1em;
   border: 1px solid var(--borderColorLight);
   border-radius: 3px;
   margin-bottom: .8em;
+  font-size: .18rem;
 }
 .filter_more_list_item-active {
   border-color: var(--rczpColorDark);

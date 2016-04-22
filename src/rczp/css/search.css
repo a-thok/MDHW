@@ -7,14 +7,19 @@
   width: 100%;
   top: 100%;
   left: 0;
-  z-index: -1;
-  transform: translateY(-100%) scale(1, 0);
-  transition: transform .5s ease-in-out;
-  background-color: #fff;
+  border: 1px solid var(--borderColorLight);
+  border-bottom: 0;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  background: #fff;
+  overflow: hidden;
   color: var(--fontColorLight);
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition: transform .2s ease-in-out;
 }
 .header_srch_select.is-show {
-  transform: translateY(0) scale(1, 1);
+  transform: scaleY(1);
 }
 .header_srch_select_item {
   padding: .4em 0;
@@ -22,20 +27,15 @@
   border-bottom: 1px solid var(--borderColorLight);
 }
 .list_item_text_p {
-  color: var(--fontColorLight);
-  font-size: 12px;
-}
-.post_info {
-  font-size: 16px;
-}
-.post_name {
-  margin-right: .8em;
-  color: var(--rczpColor);
-  font-size: 18px;
-}
-.post_info-color {
   color: #333;
 }
+.post_name {
+  font-size: .26rem;
+  color: var(--rczpColor);
+}
+/*.post_info-color {
+  color: #333;
+}*/
 .post_salary {
   color: var(--HighlightColorOrange);
   margin-right: .8em;

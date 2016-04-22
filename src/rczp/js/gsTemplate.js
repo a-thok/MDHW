@@ -4,16 +4,14 @@ export default function gsTemplate(data) {
     let url = cur.logo ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
     return (
       `${pre}<li class="list_item">
-            <a class="list_item_a" href="#">
+            <a class="linkWrapper" href="#">
               <div class="list_item_img"><img src="${url}" alt="${cur.compay}"></div>
               <div class="list_item_text">
-                <p class="list_item_text_p company_info">
-                  ${cur.compay}</span>
-                  ${cur.trade}/${cur.Nature}/规模:${cur.scale}
-                </p>
-                <p class="list_item_text_p company_post">
-                  <span>${cur.jobs.length}</span>个在招职位
-                  <span>${cur.numEvaluation}</span>条面试评价
+                <h3 class="list_item_text_p company_info">${cur.compay}</h3>
+                <p class="list_item_text_p">${cur.trade} / ${cur.Nature} / 规模:${cur.scale}</p>
+                <p class="list_item_text_p">
+                  <span class="list_item_text_p_item"><span>${cur.jobs.length}</span>个在招职位</span>
+                  <span class="list_item_text_p_item"><span>${cur.numEvaluation}</span>条面试评价</span>
                 </p>
                 <ul class="tagList">
                   ${fuli}
