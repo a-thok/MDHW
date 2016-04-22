@@ -31,7 +31,7 @@ export default function template(data) {
         
         <section class="list_item_img">
           <span class="zcTag">众筹中</span>
-          <a href="http://${ZC_HOST}/m/zc/detail/${cur.id}">
+          <a href="http://${ZC_HOST}/m/home/detail/${cur.id}">
             <img src="http://${UPLOAD_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.title}">
           </a>
         </section>
