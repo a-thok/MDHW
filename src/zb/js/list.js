@@ -8,7 +8,7 @@ export function list() {
   let config = {
     template,
     load,
-    api: '/m/ZB/ZbList',
+    api: '/m/zb/project/List',
     params: {
       pageIndex: 1,
       pageSize: 10
@@ -26,7 +26,7 @@ export function list() {
   });
 }
 export function listFilter() {
-  fetch('/m/ZB/ZbTypeList')
+  fetch('/m/zb/project/typelist')
     .then(res => res.json())
     .then(data => {
       const html = data.result.reduce((prev, curr) => (

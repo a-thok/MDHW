@@ -20,11 +20,11 @@
 .filter_content_list_item_icon .fa {
   margin-right: .6em;
 }
-.hostlist_item_info_item {
-  width: 28%;
+.hostlist_item_info_item-em {
+  width: 30%;
 }
 .hostlist_item_info_item-big {
-  width: 44%;
+  width: 30%;
 }
 .hostlist_item_a {
   display: block;

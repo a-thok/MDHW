@@ -15,9 +15,9 @@ export default function template(data) {
                 ￥<strong>${cur.totalfin}</strong>
               </div>
               <div class="hostlist_item_info_item hostlist_item_info_item-big">
-                ${cur.num}<span class="hostlist_item_info_item_label">人参与</span> | <span class="hostlist_item_info_item_label">交付周期：</span>${cur.procycle}天
+                ${cur.num}<span class="hostlist_item_info_item_label">人参与</span>
               </div>
-              <div class="hostlist_item_info_item">
+              <div class="hostlist_item_info_item hostlist_item_info_item-nameW">
                 <span class="hostlist_item_info_item_label">发布者：</span>${cur.fbzname}
               </div>
             </div>
