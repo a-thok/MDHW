@@ -1,71 +1,85 @@
 /*众筹详情图片样式*/
 .dtImg {
-  padding-top: 2px;
+  /*padding-top: 2px;*/
   position: relative;
+  width: 100%;
+  height: 4rem;
+  overflow: hidden;
 }
 .dtImg_img {
   width: 100%;
-  height: 250px;/* uc */
-  height: 64.5333vw;
-  max-height: 484px;
 }
 /*分享按钮样式*/
 .dtImg_btn {
   position: absolute;
-  right: 3.4667%;
-  bottom: 10px;/* uc */
-  bottom: 3.2vw;
-  width: 70px;
-  height: 70px;
-  text-align: center;
-  line-height: 70px;
+  right: .25rem;
+  bottom: .25rem;
+  width: .7rem;
+  height: .7rem;
   border-radius: 50%;
+  background: #000;
   opacity: .5;
-  font-size: 55px;
+  font-size: .5rem;
   color: #fff;
-  background-color: #333;
+  text-align: center;
+  line-height: .7rem;
 }
+
 /*众筹详情内容样式*/
-.dtSection {
-  padding: 10px 3.7333%;
-  background-color: #fff;
-  font-size: 15px;
+.zcInfo {
+  padding: 1em 1.2em;
+  background: #fff;
+  font-size: .18rem;
 }
-.dtSection_p {
+/*.dtSection_p {
   display: flex;
   padding-bottom: 16px;
   align-items: center;
+}*/
+.zcInfo_title {
+  /*font-weight: normal;*/
+  font-size: .28rem;
 }
-.dtSection_p_status {
-  width: 64px;
-  height: 26px;
-  padding-left: .5333%;
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
+.zcInfo_title_status {
+  /*width: 64px;
+  height: 26px;*/
+  /*padding-left: .5333%;*/
+  padding: .2em .3em;
+  border-bottom-left-radius: .4em;
+  border-top-left-radius: .4em;
+  margin-right: .5em;
+  background: var(--zcColor);
   color: #fff;
-  background-color: var(--zcColor);
-  flex-shrink: 0;
 }
-.dtSection_p_tgle {
+/*.dtSection_p_tgle {
   width: 0;
   height: 26px;
   border-width: .615em;
   border-style: solid;
   border-color: transparent transparent transparent var(--zcColor);
+}*/
+/*.zcInfo_funds {
+  padding: .8em 0;
+  border-bottom: 4px dotted var(--borderColorLight);
 }
-.dtSection_p_count {
+.zcInfo_funds_item {
+  display: inline-block;
+}
+.zcInfo_funds_item_num {
+  margin: 0 .2em;
   font-weight: bold;
-  margin-bottom: 10px;
-  padding-right: 5px;
-  font-size: 28px;
+  font-size: .28rem;
 }
-.dtSection_p-border {
+.zcInfo_funds_slash {
+  margin: 0 .5em;
+}*/
+/*.dtSection_p-border {
   border-bottom: 3px dotted var(--borderColorLight);
-}
-.dtSection_p-font {
+}*/
+/*.dtSection_p-font {
   font-size: 20px;
-}
-.dtSection_progress {
+}*/
+/*.dtSection_progress {
   display: flex;
   padding-top: 16px;
   padding-bottom: 14px;
@@ -81,34 +95,31 @@
 }
 .dtSection_progress_item_font {
   font-size: 26px;
-}
-.dtSection_line {
+}*/
+/*.dtSection_line {
   height: 1.6vw;
   max-height: 12px;
   background-color: var(--zcColor);
   border-radius: 6px;
-}
-.dtSection_text {
+}*/
+/*.zcInfo_text {
   display: flex;
-  margin: 20px 0;
+  margin-top: 1em;
   justify-content: space-between;
+  align-items: center;
 }
-.dtSection_text_span {
-  width: 76.2%;
-  height: 13.6%;
-  max-height: 78px;
-  overflow-wrap: break-word;
-  overflow-y: scroll;
-  padding: 0 1.3333%;
-  flex-shrink: 0;
-  font-size: 14px;
-}
-.dtSection_text_icon {
-  padding-right: 14px;
-}
+.zcInfo_text_content {
+  flex: 1;
+  flex-basis: 85%;
+  width: 85%;
+  padding: .4em;
+}*/
+/*.zcInfo .fa {
+  font-size: 1rem;
+}*/
 
 /*字体图标样式*/
-.rmb-red {
+/*.rmb-red {
   font-size: 18px;
 }
 .rmb-black {
@@ -127,20 +138,75 @@
 .angle-rightred,
 .dtSupport_list_li_title_span {
   color: var(--zcColor);
-}
+}*/
 
 /*众筹回报信息样式*/
-.dtSupport {
-  padding: 0 3.7333%;
-  font-size: 15px;
+.zcSupportList {
+  padding: 0 1.2em;
+  font-size: .18rem;
 }
-.dtSupport_list {
-  margin-top: 2em;
-  padding-bottom: 10px;
+.zcSupportList_item {
+  /*margin-top: 2em;*/
+  /*padding-bottom: 10px;*/
   border: 1px solid var(--borderColorLight);
+  margin-bottom: 2em;
   background-color: #fff;
 }
-.dtSupport_list_li {
+.zcSupportList_item_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em 1em;
+  border-bottom: 1px solid var(--borderColorLight);
+  font-size: .18rem;
+}
+.zcSupportMoney {
+  color: var(--zcColor);
+}
+.zcSupportMoney_num {
+  font-weight: bold;
+  font-size: .28rem;
+}
+.zcSupportLink {
+  padding-left: 1em;
+  font-size: .24rem;
+  color: #333;
+  text-decoration: none;
+}
+.zcSupportList_item_content {
+  padding: 1em;
+}
+.zcSupportList_item_content_tilte {
+  font-size: .18rem;
+}
+.zcSupportList_item_content_text {
+  display: flex;
+  margin: .4em 0;
+  font-size: .18rem;
+}
+.zcSupportList_item_content_text span {
+  flex: 1;
+}
+span.zcSupportLabel {
+  flex: 0;
+  display: block;
+  flex-basis: 5.5em;
+  width: 5.5em;
+}
+.zcSupportLabel.long {
+  flex-basis: 9.5em;
+  width: 9.5em;
+}
+.zcSupportList_div {
+  height: 0;
+  border-top: 1px solid var(--borderColorLight);
+  margin: 1em 0;
+}
+.zcSupportList .bold {
+  font-weight: bold;
+}
+
+/*.dtSupport_list_li {
   border-bottom: 1px solid var(--borderColorLight);
 }
 .dtSupport_list_text {
@@ -166,7 +232,7 @@
 }
 .dtSupport_list_text_item-font {
   color: #333;
-}
+}*/
 
 /*项目进展样式*/
 ul.dialog_sublist-borderLeft {
@@ -178,13 +244,14 @@ ul.dialog_sublist-borderLeft {
 }
 
 /*评论样式*/
-.dialog_title-flex {
-  display: flex;
-  justify-content: space-between;
-}
 .dialog_title_more {
+  position: absolute;
+  top: 50%;
+  right: 1em;
   text-decoration: none;
   color: #333;
+  font-size: .18rem;
+  transform: translateY(-50%);
 }
 ul.dialog_sublist-border {
   border: 0;
@@ -199,43 +266,8 @@ ul.dialog_sublist-border {
   white-space: pre;
 }
 
-/*分享滑动*/
-.sliderShare {
-  position: fixed;
-  display: none;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background: rgba(51, 51, 51, .3);
-}
-.sliderShare_box {
-  position: absolute;
-  width: 100%;
-  height: 20.3333vw;
-  max-height: 100px;
-  bottom: 0;
-  padding: 0 3.7333%;
-  background-color: #fff;
-}
-.sliderShare_box_cencel {
-  position: absolute;
-  top: .2em;
-  right: 1em;
-}
-.sliderShare_box span.jiathis_txt {
-  font-size: 16px;
-}
-.jiathis_style_m {
-  margin-top: 1.5em;
-}
-
-.jiathis_txt.jtico {
-  padding: 0 .5em;
-}
-
 /*众筹金额*/
-.zcInfo_price {
+/*.zcInfo_price {
   padding-bottom: 16px;
 }
 .zcInfo_price_item {
@@ -248,4 +280,4 @@ ul.dialog_sublist-border {
     .zcInfo_price_sprit {
     display: none;
   }
-}
+}*/

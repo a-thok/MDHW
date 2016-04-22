@@ -1,11 +1,6 @@
 /*
  * 格子列表
  */
-.gridWrap {
-  background-color: #fff;
-  border-bottom: 1px solid var(--borderColorLight);
-}
-
 .grid_item_icon.tech {
   background-color: #4dbdcc;
 }
