@@ -9,12 +9,12 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: .8em 2.1918%;
+  padding-bottom: .8em;
   border-bottom: 1px solid var(--pageColor);
-  font-size: 14px;
+  /*font-size: 14px;*/
 }
 .list_item_title .fa {
-  font-size: 22px;
+  font-size: .22rem;
   margin-right: .3em;
   color: var(--zcColor);
 }
@@ -22,80 +22,75 @@
   **公司信息**
 */
 .list_item_content {
-  padding: 0 2.1918%;
+  /*padding: 0 2.1918%;*/
 }
 /**公司名称**/
 .list_item_content_title {
   line-height: 2.5;
   font-weight: normal;
-  font-size: 16px;
+  font-size: .26rem;
 }
 /**公司信息**/
 .list_item_content_info {
   display: flex;
-  justify-content: flex-start;
+  /*justify-content: flex-start;*/
+  align-items: center;
 }
 /**公司信息左边**/
 .list_item_content_info_left {
-  width: 28%;
-  min-width: 108px;
-  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  overflow: hidden;
 }
 .list_item_content_info_left img {
-  width: 80%;
-  height: 18vw;
-  max-height: 135px;
-  flex-wrap: wrap;
+  width: 100%;
 }
 .list_item_phone {
-  flex-grow: 1;
-  flex-wrap: wrap;
-  display: inline-block;
-  margin-top: .5em;
-  font-size: 12px;
-  color: #666;
+  /*font-size: .18rem;*/
 }
-.list_item_content_info_left .fa {
-  font-size: 14px;
-  margin-right: .3em;
+.list_item_phone .fa {
+  margin-right: .5em;
 }
 /**公司信息右边**/
 .list_item_content_info_right {
+  flex: 1;
   margin-left: 1.5em;
 }
 .iconList {
   display: flex;
+  margin: .3em 0;
 }
 .iconList_item .fa {
-  font-size: 20px;
-  margin-right: .3em;
+  font-size: .2rem;
+  margin-right: .8em;
   /*color: var(--zcColor);*/
 }
-.tagList-kjfw {
-  flex-wrap: wrap;
-  padding-top: 1em;
+/*字体颜色和背景颜色可能要设为变量*/
+.tagList-kjfw .tagList_item {
+  padding: .3em .4em;
+  /*border-color: var(--kjfwColor);*/
+  /*background-color: #fcf5e6;*/
+  color: var(--kjfwColor);
 }
-.tagList-kjfw .tagList_item { /*字体颜色和背景颜色可能要设为变量*/
-  color: #ff7516;
-  background-color: #fcf5e6;
-  margin-bottom: 5px;
-}
+
 .list_item_content_text {
-  margin-top: 1em;
-  padding: 1em 5px;
-  font-size: 12px;
+  margin: 1em 0;
+  padding: .6em 1em;
+  border-radius: 3px;
   background-color: var(--pageColor);
+  color: var(--fontColorLight);
 }
 .list_item_content_text span {
   color: var(--zcColor);
 }
+
 /**查看公司详情**/
 .list_item_detail {
-  flex-grow: 1;
-  padding: .8em 2.1918%;
-  font-size: 14px;
-  color: blue;
+  display: block;
+  /*padding: .2em 0;*/
+  color: var(--kjfwColor);
   text-align: right;
+  text-decoration: none;
 }
 /*
   **查看更多**

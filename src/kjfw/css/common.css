@@ -1,5 +1,6 @@
 .header-logo {
   background-image: url("../img/kjfw_logo.png");
+  background-size: 50%;
 }
 .listWrap-margin {
   margin-top: 0;
@@ -15,11 +16,4 @@
 }
 .iconList_item .fa-picture-o {
   color: #888;
-}
-.list_link {
-  text-decoration: none;
-  display: block;
-}
-.link-color {
-  color: #333;
 }
