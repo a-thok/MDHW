@@ -10,7 +10,9 @@ export default function goToSearch({ input, partialUrl, btn }) {
       search();
     }
   });
-  btn.addEventListener('click', () => {
-    search();
-  });
+  if (btn) {
+    btn.addEventListener('click', () => {
+      search();
+    });
+  }
 }

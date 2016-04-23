@@ -4,13 +4,13 @@ import goToSearch from 'goToSearch';
 export default function index() {
   goToSearch({
     input: $('.srch_input'),
-    partialUrl: `http://${ZC_HOST}/m/zc/search?kw=`,
-    btn: $('.srch_btn')
+    partialUrl: `http://${ZC_HOST}/m/zc/search?kw=`
   });
+
   // 点赞
-  $('.zcList').addEventListener('click', (e) => {
+  $('.list').addEventListener('click', (e) => {
     if (e.target.classList.contains('fa-thumbs-o-up')) {
-      const item = $parent(e.target, '.zcList_item');
+      const item = $parent(e.target, '.list_item');
       const id = item.getAttribute('data-id');
       const num = $cookie().num;
       if (num && num.split(',').indexOf(id) !== -1) return;
@@ -20,7 +20,7 @@ export default function index() {
   });
 
   // 循环列表中的每个li
-  $from('.zcList_item').forEach((el) => {
+  $from('.list_item').forEach((el) => {
     const id = el.getAttribute('data-id');
     if (!$cookie().num) return;
     const ids = $cookie().num.split(',');
