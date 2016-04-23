@@ -5,5 +5,5 @@ import favorite from 'favorite';
 export default function detail() {
   overflow($('.tagList'));
 
-  favorite($('icon_link'), 'jobid', '/m/rczp/Collect/Add', '/m/rczp/Collect/Del');
+  favorite($('.icon_link'), 'jobid', '/m/hr/Collect/Add', '/m/hr/Collect/Del');
 }
