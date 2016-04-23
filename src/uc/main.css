@@ -8,3 +8,8 @@
 @import "./routes/RCZP/rczp.css";
 @import "./routes/ZC/zc.css";
 @import "./routes/SRDZ/srdz.css";
+
+/*临时代码*/
+* {
+  font-size: .18rem;
+}

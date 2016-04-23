@@ -14,7 +14,7 @@ export default function index() {
   // });
 
   // 获取数据，填充侧边栏
-  fetch('/Dict/city2')
+  fetch(`http://${MAIN_HOST}/Dict/city2`)
     .then(res => res.json())
     .then(data => {
       const htmlObj = {};

@@ -68,3 +68,13 @@
 .ftCtrl_item_btn {
   background-color: var(--srdzColor);
 }
+
+/* 封面图 */
+.frontPic {
+  width: 100%;
+  height: 3rem;
+  overflow: hidden;
+}
+.frontPic img {
+  width: 100%;
+}

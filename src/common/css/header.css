@@ -135,18 +135,19 @@
   transform: translateY(0) scaleY(1);
 }
 .header_menu_list {
-  width: 150px;
-  padding: 0 20px 3em;
+  padding: 0 1em 1em;
   border-radius: 5px;
   background: #3f4042;
-  font-size: 14px;
+  font-size: .18rem;
 }
 .header_menu_list .header_link {
   color: #fff;
 }
 .header_menu_list_item {
-  padding: 1em 0;
+  display: block;
   border-bottom: 1px solid #595a5c;
+  padding: 1em;
+  white-space: nowrap;
 }
 .arrow-wrap {
   text-align: right;

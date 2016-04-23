@@ -50,6 +50,10 @@
   height: 3rem;/* 临时 */
   overflow: hidden;
 }
+.list_item_img a {
+  display: block;
+  width: 100%;
+}
 .list_item_img img {
   width: 100%;
 }

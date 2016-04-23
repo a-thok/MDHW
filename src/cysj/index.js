@@ -12,6 +12,7 @@ showMenu();
 
 // 各页面JS
 const pathname = window.location.pathname;
+const pathArr = pathname.split('/');
 import list from './js/list.js';
 import detail from './js/detail.js';
 import search from './js/search.js';
@@ -23,6 +24,6 @@ if (pathname.indexOf('list') !== -1) {
   detail();
 } else if (pathname.indexOf('search') !== -1) {
   search();
-} else if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
+} else if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
 }

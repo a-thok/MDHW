@@ -34,12 +34,11 @@
 }
 .acc_input {
   width: 100%;
-  padding: 0 3%;
+  padding: 1em 1em;
   border: 1px solid var(--borderColorLight);
   border-radius: 5px;
   font-size: .26rem;
   color: #333;
-  line-height: 3.2;
 }
 .acc_input.showPassword {
   position: absolute;

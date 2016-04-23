@@ -6,7 +6,7 @@ export default function index() {
   slider($('.sliderBox'));
   goToSearch({
     input: $('.srch_input'),
-    partialUrl: `http://${DIY_HOST}/m/diy/search?kw=`,
+    partialUrl: `http://${DIY_HOST}/m/home/search?kw=`,
     btn: $('.srch_btn')
   });
 }

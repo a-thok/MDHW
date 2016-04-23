@@ -6,7 +6,7 @@ export default function index() {
   slider($('.sliderBox'));
   goToSearch({
     input: $('.srch_input'),
-    partialUrl: `http://${ZB_HOST}/m/zb/search?kw=`,
+    partialUrl: `http://${ZB_HOST}/m/home/search?kw=`,
     btn: $('.srch_btn')
   });
 }
