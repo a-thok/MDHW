@@ -1,13 +1,13 @@
 .base_content_em {
-  font-size: 16px;
-  line-height: 2.6;
+  /*font-size: 16px;*/
+  /*line-height: 2.6;*/
 }
 .base_content_para-tag {
   clear: both;
 }
 .tagListLabel {
   flex-shrink: 0;
-  font-size: 14px;
+  font-size: .16rem;
 }
 .base_content_para-tag {
   display: flex;
@@ -15,7 +15,7 @@
   line-height: 28px;
   overflow: hidden;
 }
-@media screen and (max-width: 369px) {
+/*@media screen and (max-width: 300px) {
   .base_content_r {
     clear: both;
     width: 100%;
@@ -33,12 +33,13 @@
     float: left;
     line-height: 28px;
   }
-}
+}*/
 .dtDeliver {
   width: 100%;
   padding: 1em 0;
   border: 0;
   background: var(--rczpColor);
+  font-size: .25rem;
   color: #fff;
 }
 .icon_link {

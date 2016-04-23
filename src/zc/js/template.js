@@ -22,40 +22,47 @@ export default function template(data) {
     // let moneyAll = count(cur.moneyAll.toString().length, cur.moneyAll.toString());
     // let moneySum = count(cur.moneySum.toString().length, cur.moneySum.toString());
     `${pre}
-    <li class="zcList_item">
-        <h6 class="zcList_item_header">
-          <div class="zcList_item_header_text"><span class="zcTag">${cur.name}</span>${cur.title}</div>
+    <li class="list_item">
+        <h6 class="list_item_header">
+          <span class="zcTag">${cur.name}</span>
+          <span class="list_item_header_text">${cur.title}</span>
           <i class="fa fa-thumbs-o-up"></i>
         </h6>
-        <a class="list_link link-color" href="//${ZC_HOST}/m/zc/detail/${cur.id}">
-        <div class="zcList_item_img">
-          <span class="zcTag zcTag-transparent">${cur.ztmc}</span>
-          <img src="http://${UPLOAD_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.title}">
-        </div>
-        <div class="zcList_item_money">
-          <p class="zcInfo_price_item">筹集金额 ￥<span class="zcList_item_number">${cur.moneySum}</span></p>
-          <span class="zcInfo_price_sprit">/</span>
-          <p class="zcInfo_price_item">目标金额 ￥<span class="zcList_item_number">${cur.moneyAll}</span></p>
-        </div>
-        <div class="zcList_item_info">
-          <div class="zcList_item_info_sect">
-            <div class="zcList_item_info_sect_title">支持人数</div>
-            <div class="zcList_item_info_sect_number"><span class="zcList_item_number">${cur.support}</span></div>
+        
+        <section class="list_item_img">
+          <span class="zcTag">众筹中</span>
+          <a href="http://${ZC_HOST}/m/home/detail/${cur.id}">
+            <img src="http://${UPLOAD_HOST}/img/${cur.frontpic}_280x280.jpg" alt="${cur.title}">
+          </a>
+        </section>
+        
+        <section class="list_item_money">
+          <p class="list_wrap">筹集金额 ￥<span class="list_item_number">${cur.moneySum}</span></p>
+          <p class="list_wrap">目标金额 ￥<span class="list_item_number">${cur.moneyAll}</span></p>
+        </section>
+        
+        <section class="list_item_info">
+          <div class="list_item_info_sect">
+            <div class="list_item_info_sect_title">支持人数</div>
+            <div class="list_item_number">${cur.support}</div>
           </div>
-          <div class="zcList_item_info_sect">
-            <div class="zcList_item_info_sect_title">项目进度</div>
-            <div class="zcList_item_info_sect_number"><span class="zcList_item_number">${cur.progress}%</span></div>
+          <div class="list_item_info_sect">
+            <div class="list_item_info_sect_title">项目进度</div>
+            <div class="list_item_number">${cur.progress}%</div>
           </div>
-          <div class="zcList_item_info_sect">
-            <div class="zcList_item_info_sect_title">剩余天数</div>
-            <div class="zcList_item_info_sect_number"><span class="zcList_item_number">${cur.numSy}</span>天</div>
+          <div class="list_item_info_sect">
+            <div class="list_item_info_sect_title">剩余天数</div>
+            <div class="list_item_number">${cur.numSy}天</div>
           </div>
-        </div>
-        <div class="zcList_item_progress">
-          <div class="zcList_item_progress_info" style="width: ${cur.percentage}%"></div>
-        </div>
-        <div class="zcList_item_intro">${cur.purpose}</div>
-        </a>
+        </section>
+        
+        <section class="list_item_progress">
+          <div class="list_item_progress_info" style="width: ${cur.percentage}%"></div>
+        </section>
+        
+        <p class="list_item_intro">
+          ${cur.purpose}
+        </p>
       </li>`
       ), '');
 }

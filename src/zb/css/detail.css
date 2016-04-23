@@ -8,40 +8,4 @@
 .ftCtrl_item_btn {
   background-color: var(--zbColor);
 }
-/*分享滑动*/
-.sliderShare {
-  position: fixed;
-  display: none;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background: rgba(51, 51, 51, .3);
-}
-.sliderShare_box {
-  position: fixed;
-  width: 100%;
-  height: 20.3333vw;
-  max-height: 100px;
-  bottom: 0;
-  padding: .5em 3.7333%;
-  background-color: #fff;
-}
-.sliderShare_box_text {
-  display: flex;
-  padding: 5px 0;
-  justify-content: space-between;
-}
-.sliderShare_box_text span {
-  display: inline-block;
-  width: 32%;
-  text-align: center;
-}
-.sliderShare_box_text button {
-  width: 20%;
-  padding: .5em 0;
-  border: 0;
-  border-radius: 5px;
-  background: red;
-  color: #fff;
-}
+

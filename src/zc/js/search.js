@@ -9,12 +9,12 @@ export default function search() {
   let config = {
     template,
     load,
-    api: '/m/ZC/ZcList',
+    api: '/m/zc/project/List',
     params: {
       pageIndex: 1,
       pageSize: 10
     },
-    container: $('.zcList')
+    container: $('.list')
   };
 
   doSearch({
@@ -34,9 +34,9 @@ export default function search() {
     render(config);
   });
   // 点赞
-  $('.zcList').addEventListener('click', (e) => {
+  $('.list').addEventListener('click', (e) => {
     if (e.target.classList.contains('fa-thumbs-o-up')) {
-      const item = $parent(e.target, '.zcList_item');
+      const item = $parent(e.target, '.list_item');
       const id = item.getAttribute('data-id');
       const num = $cookie().num;
       if (num && num.split(',').indexOf(id) !== -1) return;
@@ -44,10 +44,10 @@ export default function search() {
       document.cookie = `num=${num ? $cookie().num : ''},${id}`;
     }
   });
-  const items = document.querySelectorAll('.zcList_item');
+  const items = document.querySelectorAll('.list_item');
   if (items.length > 0) {
     // 循环列表中的每个li
-    $from('.zcList_item').forEach((el) => {
+    $from('.list_item').forEach((el) => {
       const id = el.getAttribute('data-id');
       if (!$cookie().num) return;
       const ids = $cookie().num.split(',');

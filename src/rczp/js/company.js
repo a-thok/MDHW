@@ -1,5 +1,5 @@
 import render from 'render';
-import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter } from 'filter';
+import { fixFilter, showFilter, selectFilter, generateAreaFilter } from 'filter';
 import gsTemplate from './gsTemplate.js';
 import overflow from 'overflow';
 import { $ } from 'func';
@@ -9,7 +9,7 @@ export default function company() {
   let config = {
     load,
     template: gsTemplate,
-    api: '/m/HR/CompanyList',
+    api: '/m/HR/Company/list',
     params: {
       pageIndex: 1,
       pageSize: 10
@@ -21,7 +21,6 @@ export default function company() {
   // 过滤
   fixFilter();
   showFilter();
-  hideFilter();
   selectFilter((filter, type) => {
     config.params.pageIndex = 0;
     config.params[filter] = type;

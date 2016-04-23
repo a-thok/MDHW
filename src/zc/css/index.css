@@ -5,70 +5,77 @@
   background-color: var(--zcColor);
   color: #fff;
 }
-.zcTag-transparent {
-  background-color: #999;
+.list_item_img .zcTag {
+  background: #333;
   opacity: .7;
 }
 /* 众筹列表 */
-.zcList {
-  padding: 0 3.7333%;
+.list_item {
+  border-radius: 5px;
 }
-.zcList_item {
-  padding: 0 16px;
-  border-radius: 10px;
-  margin-top: 20px;
-  background-color: #fff;
-}
-.zcList_item_header {
+/* 标题 */
+.list_item_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
-  line-height: 3;
+  padding: .5em 0;
+  font-weight: normal;
+  font-size: .18rem;
 }
-.zcList_item_header .zcTag {
+.list_item_header .zcTag {
+  display: block;
   margin-right: .5em;
   font-weight: normal;
-  font-size: 13px;
 }
-.zcList_item_header .fa {
-  padding: .5em;
+.list_item_header .fa {
+  display: block;
+  padding: .4em 0 .4em 1em;
+  font-size: .25rem;
 }
-.zcList_item_img {
-  position: relative;
-  margin: 0 -16px;
-  height: 200px;/* 临时 */
+.list_item_header_text {
+  display: block;
+  flex: 1;
+  font-weight: bold;
+  font-size: .3rem;
 }
-.zcList_item_img img {
+/* 图片 */
+.list_link {
+  display: block;
   width: 100%;
-  height: 100%;
 }
-.zcList_item_img .zcTag {
+.list_item_img {
+  width: auto;
+  position: relative;
+  margin: 0 -.2rem;
+  height: 3rem;/* 临时 */
+  overflow: hidden;
+}
+.list_item_img img {
+  width: 100%;
+}
+.list_item_img .zcTag {
   position: absolute;
   top: 15px;
   left: 15px;
 }
-.zcList_item_money,
-.zcList_item_info {
-  font-size: 14px;
+.list_item_money,
+.list_item_info {
   color: var(--fontColorLight);
 }
-.zcList_item_number {
+.list_item_number {
   color: #333;
-  font-size: 18px;
+  font-size: .22rem;
 }
-.zcList_item_money {
+.list_item_money {
   padding: .8em 0;
   border-bottom: 1px dotted var(--borderColorLight);
 }
-.zcList_item_info {
+.list_item_info {
   display: flex;
   justify-content: space-around;
 }
-.zcList_item_info_sect {
+.list_item_info_sect {
   padding: .8em 0;
-}
-.zcList_item_info_sect_number {
   text-align: center;
 }
 @keyframes progress-bar-stripes {
@@ -79,25 +86,24 @@
     background-position: 0 0;
   }
 }
-.zcList_item_progress {
+.list_item_progress {
   width: 100%;
   height: 10px;
   border-radius: 3px;
   background: #e6e6e6;
   overflow: hidden;
 }
-.zcList_item_progress_info {
+.list_item_progress_info {
   height: 10px;
   animation: progress-bar-stripes 2s linear infinite;
   background: var(--zcColor) linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
   background-size: 20px 20px;
 }
-.zcList_item_intro {
-  font-size: 14px;
+.list_item_intro {
   padding: 1.2em 0;
 }
 
 /*点赞切换样式*/
-.zcList_item_header .cgColor {
+.list_item_header .cgColor {
   color: var(--zcColor);
 }

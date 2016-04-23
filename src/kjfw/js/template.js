@@ -19,16 +19,16 @@ export default function template(data) {
           </div>
           <!--公司信息  开始-->
           <div class="list_item_content">
-          <a class="list_link link-color" href="#" alt="福州市圣鹏财务顾问有限公司">
+            <a class="linkWrapperB" href="#" alt="${cur.company}">
               <h3 class="list_item_content_title">
                 ${cur.company}
               </h3>
               <div class="list_item_content_info">
                 <div class="list_item_content_info_left">
-                  <img src="${url}" alt="${cur.company}">
-                  <span class="list_item_phone"><i class="fa fa-phone"></i>${cur.phone}</span>
+                    <img src="${url}" alt="${cur.company}">
                 </div>
                 <div class="list_item_content_info_right">
+                  <p class="list_item_phone"><i class="fa fa-phone"></i>${cur.phone}</p>
                   <ul class="iconList">
                     <li class="iconList_item"><i class="fa fa-shield"></i></li>
                     <li class="iconList_item"><i class="fa fa-sort-amount-desc"></i></li>
@@ -41,7 +41,7 @@ export default function template(data) {
                 </div>
               </div>
             </a>
-            <a class="list_link link-color" href="">
+            <a class="linkWrapperB" href="">
               <p class="list_item_content_text">
                 ${detail}...
                 <span>>></span>

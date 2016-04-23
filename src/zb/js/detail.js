@@ -1,10 +1,10 @@
 import { $, $cookie } from 'func';
+import share from 'share';
 
 export default function detail() {
-  const likebtn = $('.ftCtrl_item')[0];
-  const share = $('.ftCtrl_item')[2];
-  let text = $('.sliderShare');
+  share($('.ftCtrl_item')[2]);
 
+  const likebtn = $('.ftCtrl_item')[0];
   likebtn.addEventListener('click', e => {
     const star = e.currentTarget.children[0];
 
@@ -47,17 +47,5 @@ export default function detail() {
           }
         });
     }
-  });
-  let cancel = $('.sliderShare_box_cancel');
-  let sure = $('.sliderShare_box_sure');
-  share.addEventListener('click', () => {
-    text.style.display = 'block';
-  });
-  cancel.addEventListener('click', () => {
-    text.style.display = 'none';
-  });
-  sure.addEventListener('click', () => {
-    text.style.display = 'none';
-    alert('分享成功！');
   });
 }

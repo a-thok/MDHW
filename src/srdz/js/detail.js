@@ -1,8 +1,13 @@
 import { $, $from } from '../../common/js/func.js';
 import slider from 'slider';
+import share from 'share';
+
 //  切换显示
 export default function detail() {
+  share($('.ftCtrl_item')[2]);
+
   slider(document.querySelector('.sliderBox'));
+
   $from('.intro_list_item').forEach((el, index) => {
     const ul = $('.userInput');
     el.addEventListener('click', e => {

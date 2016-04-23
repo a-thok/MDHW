@@ -16,39 +16,45 @@ header {
 /* 侧边总标题 */
 .aside_title {
   position: relative;
-  height: 40px;
+  /*height: 40px;
   height: 13.3333vw;
-  max-height: 100px;
+  max-height: 100px;*/
   font-weight: normal;
   text-align: center;
-  line-height: 40px;
-  line-height: 13.3333vw;
+  /*line-height: 40px;
+  line-height: 13.3333vw;*/
+  font-size: .3rem;
+  line-height: 3;
 }
-@media screen and (min-width: 750px) {
+/*@media screen and (min-width: 750px) {
   .aside_title {
     line-height: 100px;
   }
-}
+}*/
 .aside_return {
+  display: flex;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 0;
-  padding: .5em;
-  margin-top: -1em;
+  height: 100%;
+  padding: 0 1em;
+  margin-top: -.45rem;
+  font-size: .5rem;
 }
 /* 侧边分区 */
 .aside_sect_title {
-  padding: .4em 15px;
+  padding: .4em 1em;
   background: #eceef0;
   color: var(--fontColorLight);
   font-weight: normal;
-  font-size: 14px;
+  font-size: .2rem;
 }
 /* 侧边列表项 */
 .aside_item,
 .aside_fold_item {
-  padding: .8em 15px;
-  font-size: 16px;
+  padding: .8em 1em;
+  /*font-size: 16px;*/
 }
 /* 侧边默认不展开列表 */
 .aside_fold {
@@ -69,13 +75,14 @@ header {
 .alphabet {
   display: flex;
   flex-wrap: wrap;
-  padding: 2%;
+  /*padding: 2%;*/
 }
 .alphabet_item {
   width: 20%;
   flex-basis: 20%;
   flex-shrink: 0;
-  font-size: 16px;
-  padding: .6em 0;
+  /*font-size: 16px;*/
+  /*padding: .6em 0;*/
+  line-height: 3;
   text-align: center;
 }

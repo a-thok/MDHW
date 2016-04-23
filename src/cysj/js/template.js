@@ -3,7 +3,7 @@ export default function template(data) {
     let url = cur.logo ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
     return (
     `${pre}<li class="hostlist_item">
-      <a class="hostlist_item_a" href="http://${DIY_HOST}/m/diy/detail/${cur.id}">
+      <a class="linkWrapper" href="http://${DIY_HOST}/m/diy/detail/${cur.id}">
         <div class="hostlist_item_img">
           <img src="${url}" atl="${cur.title}">
         </div>

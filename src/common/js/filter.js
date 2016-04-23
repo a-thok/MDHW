@@ -17,7 +17,7 @@ export function fixFilter() {
   window.addEventListener('resize', calc);
 }
 
-// 显示过滤
+// 显示/隐藏过滤
 export function showFilter() {
   $from('.filter_title').forEach((el, index) => {
     el.addEventListener('click', e => {
@@ -28,16 +28,6 @@ export function showFilter() {
       const wrapper = $parent(e.target, '.filter_item');
       const isShow = wrapper.classList.toggle('is-show');
       if (!isShow) document.documentElement.classList.remove('is-static'); // 恢复body滚动
-    });
-  });
-}
-
-// 隐藏过滤
-export function hideFilter() {
-  $from('.filter_content_btn').forEach((el) => {
-    el.addEventListener('click', e => {
-      $parent(e.target, '.filter_item').classList.remove('is-show');
-      document.documentElement.classList.remove('is-static'); // 恢复body滚动
     });
   });
 }

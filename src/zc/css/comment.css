@@ -2,27 +2,30 @@
  * 对话框盒子
  */
 .dialog {
-  margin: 2em 3.7333%;
+  margin: 2em .2rem;
   border: 1px solid var(--borderColorLight);
+  font-size: .18rem;
 }
 
 /** 标题 **/
 .dialog_title {
-  padding: 1em 2.6667%;
+  position: relative;
+  padding: 0 .3rem;
   border-bottom: 1px solid var(--pageColor);
-  font-weight: normal;
-  font-size: 16px;
   background-color: #fff;
+  font-weight: normal;
+  font-size: .28rem;
+  line-height: 2.8;
 }
 .dialog_title .fa {
-  font-size: 20px;
   margin-right: .5em;
+  font-size: .35rem;
   color: var(--zcColor);
 }
 
 /** 列表 **/
 .dialog_list_item {
-  padding: 1em 3.4482%;
+  padding: 1em .3rem;
   margin-bottom: .8em;
   background-color: #fff;
 }
@@ -32,45 +35,39 @@
   align-items: center;
 }
 .dialog_list_item_user_avatar {
-  width: 55px;/* uc兼容 */
-  width: 11.4942vw;
-  max-width: 80px;
-  height: 55px;/* uc兼容 */
-  height: 11.4942vw;
-  max-height: 80px;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
 }
 .dialog_list_item_user_name {
   margin-left: .8em;
-  font-size: 15px;
+  font-weight: bold;
+  font-size: .26rem;
 }
 /* 评论 */
 .dialog_list_item_content {
-  padding: .8em 0;
-  font-size: 14px;
-  line-height: 1.5;
+  margin: 1em 0;
 }
 /* 评论时间 */
 .dialog_list_item_info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
   color: var(--fontColorLight);
 }
 .dialog_list_item_info_time .fa {
   margin-right: .3em;
-  font-size: 14px;
 }
 .dialog_list_item_info_btn {
   border: 0;
+  margin-left: 1em;
   background-color: transparent;
   color: var(--zcColor);
   cursor: pointer;
+  font-size: .2rem;
 }
 .dialog_list_item_info_btn .fa {
   margin-right: .3em;
-  font-size: 24px;
 }
 
 /* 子评论列表 */
@@ -104,7 +101,6 @@
 }
 .dialog_sublist_progressTime {
   margin-left: -2em;
-  font-size: 12px;
   color: var(--fontColorLight);
 }
 .dialog_sublist_progressTime time {
@@ -113,17 +109,17 @@
   background-color: #fff;
 }
 .dialog_sublist_item_username {
-  font-size: 13px;
+  font-weight: bold;
+  font-size: .22rem;
 }
 .dialog_sublist_item_comment {
   width: 85%;
   flex-basis: 85%;
   position: relative;
-  padding: 1em 1em .4em;
+  padding: 1em;
   border-radius: 5px;
   margin-top: 15px;
   background-color: #e9e7e7;
-  font-size: 12px;
 }
 .dialog_sublist_item_comment-progress {
   margin-top: 5px;
@@ -153,9 +149,9 @@
 .isAuto {
   height: auto;
 }
-.dialog_list_item_info_time {
+.dialog_sublist_item .dialog_list_item_info_time {
   display: block;
-  margin-top: 8px;
+  margin-top: 1em;
   text-align: right;
 }
 .dialog_sublist_item_comment_more {
@@ -185,65 +181,56 @@
 .reply {
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 50%;
   display: flex;
-  /*justify-content: space-between;*/
-  align-items: center;
   width: 100%;
-  height: 50px; /* uc兼容 */
-  height: 15.3333vw;
-  max-height: 115px;
-  padding: 0 3.7333%;
-  background-color: #fff;
+  max-width: 750px;
+  padding: .5em 1em;
+  background: #fff;
+  box-shadow: 0 -3px 3px #eee;
+  font-size: .28rem;
+  transform: translateX(-50%);
 }
 .reply_box {
-  position: relative;
-  width: 84%;
-  flex-basis: 84%;
+  flex: 1;
   display: flex;
-  height: 65.2173%;
+  position: relative;
 }
 .replay_box_input,
 .replay_box_label {
-  height: 100%;
   border: 1px solid var(--borderColorLight);
 }
 .replay_box_input {
+  flex: 1;
   display: block;
-  width: 85%;
-  flex-basis: 85%;
   padding-left: 1em;
   border-right: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 .replay_box_label {
-  width: 15%;
-  flex-basis: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 .5em;
   border-left: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  font-size: 26px;
+  font-size: .45rem;
   color: var(--fontColorLight);
 }
 .reply_btn {
-  display: block; /* uc兼容*/
-  width: 16%;
-  flex-basis: 16%;
+  padding: .5em .2em;
   border: 0;
-  background-color: transparent;
-  font-size: 14px;
+  background: transparent;
   color: var(--zcColor);
-  text-align: center;
   cursor: pointer;
 }
 .reply_box_name {
   position: absolute;
-  top: 2.5vw;
-  left: 2vw;
+  top: 0;
+  left: 0;
+  padding: .5em;
   color: #2991c6;
 }
 .is-hidden {
@@ -251,9 +238,4 @@
 }
 .is-focus {
   box-shadow: inset 0 0 5px #2991c6;
-}
-
-/*子评论回复时间*/
-.sub_time {
-  padding-right: 1em;
 }

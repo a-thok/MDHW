@@ -18,7 +18,7 @@ export default function search() {
   let config = {
     template,
     load,
-    api: '/m/Srdz/SrdzList',
+    api: '/m/srdz/project/list',
     container: document.querySelector('.hostlist'),
     params: {
       pageIndex: 1,

@@ -92,9 +92,9 @@ export function $cookie() {
 }
 
 // 翻页回调
-export function pageCallback(body, data) {
-  const page = document.querySelector('.pagination_current');
-  const pageNum = document.querySelector('.pagination_total');
-  page.textContent = body.pageIndex;
-  pageNum.textContent = Math.ceil(data.result.total / body.pageSize);
-}
+// export function pageCallback(body, data) {
+//   const page = document.querySelector('.pagination_current');
+//   const pageNum = document.querySelector('.pagination_total');
+//   page.textContent = body.pageIndex;
+//   pageNum.textContent = Math.ceil(data.result.total / body.pageSize);
+// }

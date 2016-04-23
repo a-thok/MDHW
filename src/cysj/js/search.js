@@ -9,7 +9,7 @@ export default function search() {
   let config = {
     template,
     load,
-    api: '/m/DIY/DiyList',
+    api: '/m/diy/project/List',
     params: {
       pageIndex: 1,
       pageSize: 10

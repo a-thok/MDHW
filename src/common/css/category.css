@@ -1,6 +1,6 @@
 /* 分类盒子 */
 .cate_item {
-  padding: 20px 0 5px;
+  padding: 1em .2rem;
   margin-bottom: 2px;
   background: #fff;
   color: #666;
@@ -8,7 +8,7 @@
 .cate_item_title {
   display: flex;
   align-items: center;
-  padding-left: 3.73%;
+  font-size: .22rem;
 }
 .cate_item_title .fa {
   margin-right: .25em;
@@ -17,16 +17,24 @@
 }
 .cate_item_list {
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding: 0 6.5%;
+  padding: 0 1.5em;
 }
 .cate_item_list li {
-  width: 30%;
-  flex-basis: 30%;
-  margin: 8px 1.6667%;
-  font-size: 16px;
+  width: 33.3333%;
+  flex-basis: 33.3333%;
+  margin: .4em 0;
+  /*margin-right: 5%;*/
+  font-size: .2rem;
   text-align: center;
+}
+.cate_item_list li a {
+  display: block;
+  padding: .5em 0;
+  margin: 0 .5em;
+  text-decoration: none;
+}
+.cate_item_list li:last-child {
+  margin-right: 0;
 }
 
 /* 热门搜索变体 */
@@ -36,9 +44,9 @@
   background-color: transparent;
 }
 .cate_item-search_title {
-  margin-bottom: 10px;
+  font-size: .28rem;
+  line-height: 3;
 }
-.cate_item-search_list li {
-  padding: .4em 0;
+.cate_item-search_list li a {
   background-color: #fff;
 }

@@ -9,6 +9,7 @@
 .other {
   padding: 0 4%;
   margin-top: 25px;
+  font-size: .18rem;
 }
 .acc_link {
   text-decoration: none;
@@ -33,14 +34,12 @@
 }
 .acc_input {
   width: 100%;
-  height: 50px; /*uc兼容*/
-  height: 14vw;
-  max-height: 94px;
   padding: 0 3%;
   border: 1px solid var(--borderColorLight);
   border-radius: 5px;
-  font-size: 16px;
+  font-size: .26rem;
   color: #333;
+  line-height: 3.2;
 }
 .acc_input.showPassword {
   position: absolute;
@@ -54,7 +53,7 @@
   margin-top: 0;
 }
 /* 获取验证码按钮 */
-.acc_getCode {
+/*.acc_getCode {
   float: right;
   width: 49%;
   height: 50px;
@@ -62,11 +61,10 @@
   max-height: 94px;
   border: 1px solid var(--borderColorLight);
   border-radius: 5px;
-  font-size: 16px;
   color: var(--fontColorLight);
-}
+}*/
 .acc_input-hasLabel {
-  padding-right: 28%;
+  padding-right: 1.6rem;
 }
 /* label */
 .acc_label {
@@ -76,10 +74,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  height: 50px; /*uc兼容*/
-  height: 14vw;
-  max-height: 94px;
+  width: 1.6rem;
+  height: 100%;
   padding: 1px;
 }
 .acc_label-hasBorder::before {
@@ -91,13 +87,14 @@
 }
 /* 验证码 */
 .acc_label_code {
+  display: flex;
   width: 100%;
-  padding: 5%;
+  height: 100%;
   text-align: center;
 }
 .acc_label_code img {
-  width: 100%;
-  vertical-align: middle;
+  margin: auto;
+  width: 80%;
 }
 /* 切换开关 */
 .acc_switcher {
@@ -123,19 +120,18 @@
 }
 /* 文本 */
 .acc_text {
-  font-size: 14px;
   color: var(--fontColorLight);
   line-height: 3.6;
 }
 .acc_text .fa {
-  width: 22px;
-  height: 22px;
+  width: .3rem;
+  height: .3rem;
   border-radius: 50%;
   margin-right: .5em;
   background: #ccc;
   color: #fff;
   text-align: center;
-  line-height: 22px;
+  line-height: .3rem;
 }
 /* 记住登录 */
 #remember {
@@ -147,14 +143,12 @@
 /* 大按钮 */
 .acc_btn {
   width: 100%;
-  height: 50px; /*uc兼容*/
-  height: 14vw;
-  max-height: 94px;
-  font-size: 18px;
   border: 0;
   border-radius: 5px;
   background-color: var(--mgsColor);
+  font-size: .28rem;
   color: #fff;
+  line-height: 3.2;
 }
 .acc_btn[disabled] {
   background-color: #e2e2e2;
@@ -163,21 +157,21 @@
 /* 报错 */
 .modal {
   position: fixed;
-  top: 0;
+  top: 5%;
   left: 50%;
   z-index: 5;
   width: 90%;
-  padding: 0 3.7333%;
+  max-width: 675px;
+  padding: 0 .2rem;
   border-radius: 5px;
   border: 1px solid var(--borderColorLight);
-  margin-top: 20px;
-  margin-left: -45%;
   background: rgba(0, 0, 0, .7);
-  font-size: 14px;
+  font-size: .2rem;
   color: #fff;
   /*box-shadow: 0 5px 15px rgba(0, 0, 0, .5);*/
   visibility: hidden;
   opacity: 0;
+  transform: translateX(-50%);
 }
 .modal-first {
   display: none;
@@ -196,35 +190,34 @@
 .modal_btn button {
   border-radius: 5px;
   padding: .5em 2em;
-  font-size: 12px;
   border: 0;
   background: var(--mgsColor);
   color: #fff;
 }
 .modal.is-show {
-  animation: show 2.5s forwards;
+  animation: show 3s forwards;
 }
 
 @keyframes show {
   0% {
     visibility: visible;
     opacity: 0;
-    transform: translateY(-10%);
+    transform: translate(-50%, -10%);
   }
   5% {
     visibility: visible;
     opacity: 1;
-    transform: translateY(0%);
+    transform: translate(-50%, 0%);
   }
   10% {
     visibility: visible;
     opacity: 1;
-    transform: translateY(-10%);
+    transform: translate(-50%, -10%);
   }
   20% {
     visibility: visible;
     opacity: 1;
-    transform: translateY(0%);
+    transform: translate(-50%, 0%);
   }
   70% {
     visibility: visible;
@@ -265,12 +258,11 @@
 /* 提示框 */
 .acc_tip {
   position: absolute;
-  top: -33px;
-  left: 5px;
   padding: 0 .8em;
   border-radius: 3px;
   background: rgba(0, 0, 0, .7);
   color: #fff;
+  transform: translate(1em, -70%);
 }
 .is-hidden {
   display: none;
@@ -281,7 +273,6 @@
 .acc_tip_content_text {
   display: inline-block;
   padding: .6em 0;
-  font-size: 12px;
 }
 .acc_tip_content .fa {
   margin-right: .5em;
@@ -290,6 +281,6 @@
 .arrow-down {
   position: absolute;
   top: 100%;
-  left: 10px;
+  left: 1em;
   border-bottom-color: rgba(0, 0, 0, .7);
 }

@@ -1,17 +1,13 @@
 /* 公司列表 */
 .company_info {
-  color: var(--fontColorLight);
+  font-size: .26rem;
 }
-.company_name {
-  margin-right: .4em;
-  font-size: 18px;
-}
-.company_comment,
+/*.company_comment,
 .company_post {
   font-size: 14px;
-}
-.company_comment span,
-.company_post span {
+}*/
+.list_item_text_p_item span {
+  margin-right: .2em;
   color: var(--rczpColor);
 }
 .filter_content_list_item.is-active {

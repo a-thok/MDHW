@@ -1,4 +1,5 @@
-import { fixFilter, showFilter, hideFilter, selectFilter, generateAreaFilter, moreFilter } from 'filter';
+import hideFilter from './hideFilter';
+import { fixFilter, showFilter, selectFilter, generateAreaFilter, moreFilter } from 'filter';
 import { $ } from 'func';
 import zwTemplate from './zwTemplate';
 import gsTemplate from './gsTemplate';
@@ -7,9 +8,11 @@ import render from 'render';
 
 export default function search() {
   // 搜索类型选择
+  const select = $('.header_srch_select');
   $('.header_srch_label').addEventListener('click', (e) => {
+    e.stopPropagation();
     // 切换显示
-    $('.header_srch_select').classList.toggle('is-show');
+    select.classList.toggle('is-show');
     // 切换选择项
     if (e.target.classList.contains('header_srch_select_item')) {
       const searchText = e.currentTarget.querySelector('.header_srch_label_text');
@@ -18,11 +21,16 @@ export default function search() {
       searchText.setAttribute('data-type', searchText.textContent === '职位' ? 1 : 2);
     }
   });
+  // 隐藏搜索类型选择
+  document.body.addEventListener('click', () => {
+    select.classList.remove('is-show');
+  });
+
   let load = document.querySelector('.list_load');
   let config = {
     load,
     template: zwTemplate,
-    api: '/m/HR/JobList',
+    api: '/m/HR/Job/list',
     params: {
       pageIndex: 1,
       pageSize: 10
@@ -40,12 +48,12 @@ export default function search() {
       const type = searchText.getAttributeNode('data-type').value;
       if (+type === 1) {
         config.template = zwTemplate;
-        config.api = '/m/HR/JobList';
+        config.api = '/m/HR/Job/list';
         config.params.compay = '';
         config.params.zwmc = keyword;
       } else {
         config.template = gsTemplate;
-        config.api = '/m/HR/CompanyList';
+        config.api = '/m/HR/Company/list';
         config.params.zwmc = '';
         config.params.compay = keyword;
       }
@@ -63,7 +71,6 @@ export default function search() {
     render(config);
   });
   moreFilter((filter, type) => {
-    console.log(filter, type);
     config.params.pageIndex = 0;
     config.params[filter] = type;
     config.immediate = true;

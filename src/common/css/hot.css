@@ -2,12 +2,15 @@
  * 众包式推荐列表，列表项标题和详情页base共享样式
  */
 /* base基础上微调 */
+.hostlist .base_title_text {
+  line-height: 2;
+}
 .base_title_wrap_label {
   margin-right: .2em;
 }
 .base_title_text-small {
   font-weight: normal;
-  font-size: 14px;
+  font-size: .2rem;
 }
 .hotwrap {
   margin-top: 20px;
@@ -18,31 +21,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 .5em;
+  padding: 1em .2rem 1em 0;
 }
 .titleA {
   border-color: var(--zbColor);
 }
 .hottitle_more {
-  font-size: 14px;
+  font-size: .18rem;
   color: var(--fontColorLight);
   text-decoration: none;
 }
 /* 列表 */
 .hostlist {
-  border-width: 1px 0;
+  /*border-width: 1px 0;
   border-style: solid;
-  border-color: var(--borderColorLight);
+  border-color: var(--borderColorLight);*/
+  font-size: .18rem;
 }
 .hostlist_item {
-  padding: 15px 3.3333%;
+  padding: .2rem;
   border-bottom: 1px dashed var(--borderColorLight);
   background: #fff;
 }
-.hostlist_item_a {
+/*.hostlist_item_a {
   display: flex;
   text-decoration: none;
-}
+}*/
 .hostlist_item_img {
   width: 16%;
   flex-basis: 16%;
@@ -65,28 +69,29 @@
   color: var(--zbColor);
 }
 .hostlist_item_info {
-  flex-grow: 1;
+  /*flex-grow: 1;*/
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  font-size: 12px;
+  margin-top: .6em;
+  /*font-size: 12px;*/
 }
 .hostlist_item_info_item-em {
   color: var(--zbColor);
 }
 .hostlist_item_info_item-em strong {
-  font-size: 18px;
+  /*font-size: 18px;*/
 }
 .hostlist_item_info_item_label {
   color: var(--fontColorLight);
 }
 
 /*热门订制 列表样式 待整理*/
-.hostlist_item_info_item-moneyW,
 .hostlist_item_info_item-nameW {
-  width: 110px;
-}
-.hostlist_item_info_item-numW {
-  width: 75px;
+  width: 40%;
   text-align: right;
+}
+.hostlist_item_info_item-moneyW,
+.hostlist_item_info_item-numW {
+  width: 30%;
 }

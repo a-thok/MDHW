@@ -15,7 +15,6 @@
   position: relative;
   display: flex;
   justify-content: center;
-  height: 50px;
 }
 .titleLine_line {
   position: absolute;
@@ -27,12 +26,11 @@
 .titleLine_text {
   position: relative;
   z-index: 1;
-  line-height: 50px; /*uc兼容*/
-  padding: 0 10px;
+  padding: 0 1em;
   background-color: var(--pageColor);
   font-weight: normal;
-  font-size: 16px;
   color: var(--fontColorLight);
+  line-height: 5;
 }
 
 .other_list {
@@ -45,7 +43,7 @@
   border-width: 1px;
   border-style: solid;
   border-radius: 50%;
-  font-size: 30px;
+  font-size: .5rem;
 }
 .other_list .fa-weixin {
   border-color: #ff9d91;

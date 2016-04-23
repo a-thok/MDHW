@@ -24,7 +24,8 @@ export default function doSearch({ config, srchbtn, url, keywordProp }) {
 
   // 点击热门搜索项，获取文本，作为keyword的值，并搜索
   hot.addEventListener('click', (e) => {
-    if (e.target.nodeName === 'LI') { // 临时
+    if (e.target.nodeName === 'A') { // 临时
+      e.preventDefault();
       setView();
       const keyword = e.target.textContent.trim();
       const input = document.querySelector('.header_srch_input') || document.querySelector('.srch_input');

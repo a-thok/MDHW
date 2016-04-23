@@ -9,7 +9,7 @@ export default function search() {
   let config = {
     template,
     load,
-    api: '/m/ZB/ZbList',
+    api: '/m/zb/project/List',
     params: {
       pageIndex: 1,
       pageSize: 10

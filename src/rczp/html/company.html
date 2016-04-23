@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>公司列表 - 人才招聘 - 梦高速</title>
   <!--<link rel="stylesheet" href="/css/rczp.css">-->
+  <script src="//cdn.dreamhiway.com/mstatic/lib/flexible.js"></script>
 </head>
 
 <body>
@@ -43,9 +44,9 @@
             <ul class="filter_content_list filter_content_list-province"></ul>
             <ul class="filter_content_list filter_content_list-city" data-filter="citycode"></ul>
           </div>
-          <div class="filter_content_btns">
+          <!--<div class="filter_content_btns">
             <button class="filter_content_btn" type="button">取消</button>
-          </div>
+          </div>-->
         </div>
       </div>
       <div class="filter_item">
@@ -56,19 +57,17 @@
           </span>
         </div>
         <div class="filter_content">
-          <div class="filter_content_wrap">
-            <ul class="filter_content_list" data-filter="scale">
-              <li class="filter_content_list_item" data-code="">规模不限<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="5-10人">5-10人<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="10-50人">10-50人<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="50-100人">50-100人<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="100-200人">100-200人<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="200以上">200以上<i class="fa fa-check-circle"></i></li>
-            </ul>
-          </div>
-          <div class="filter_content_btns">
+          <ul class="filter_content_list" data-filter="scale">
+            <li class="filter_content_list_item" data-code="">规模不限<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="5-10人">5-10人<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="10-50人">10-50人<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="50-100人">50-100人<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="100-200人">100-200人<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="200以上">200以上<i class="fa fa-check-circle"></i></li>
+          </ul>
+          <!--<div class="filter_content_btns">
             <button class="filter_content_btn" type="button">取消</button>
-          </div>
+          </div>-->
         </div>
       </div>
       <div class="filter_item">
@@ -79,137 +78,84 @@
           </span>
         </div>
         <div class="filter_content">
-          <div class="filter_content_wrap">
-            <ul class="filter_content_list" data-filter="trade">
-              <li class="filter_content_list_item" data-code="">行业不限<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="房地产">房地产<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="金融">金融<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="消费品">消费品<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="汽车·制造">汽车·制造<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="医疗·化工">医疗·化工<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="会计">会计<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="硬件">硬件<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="社交网络">社交网络<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="旅游">旅游<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="医疗健康">医疗健康<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="生活服务">生活服务<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="信息安全">信息安全<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="数据服务">数据服务<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="广告营销">广告营销<i class="fa fa-check-circle"></i></li>
-              <li class="filter_content_list_item" data-code="其他">其他<i class="fa fa-check-circle"></i></li>
-            </ul>
-          </div>
-          <div class="filter_content_btns">
+          <ul class="filter_content_list" data-filter="trade">
+            <li class="filter_content_list_item" data-code="">行业不限<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="房地产">房地产<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="金融">金融<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="消费品">消费品<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="汽车·制造">汽车·制造<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="医疗·化工">医疗·化工<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="会计">会计<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="硬件">硬件<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="社交网络">社交网络<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="旅游">旅游<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="医疗健康">医疗健康<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="生活服务">生活服务<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="信息安全">信息安全<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="数据服务">数据服务<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="广告营销">广告营销<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="其他">其他<i class="fa fa-check-circle"></i></li>
+          </ul>
+          <!--<div class="filter_content_btns">
             <button class="filter_content_btn" type="button">取消</button>
-          </div>
+          </div>-->
         </div>
       </div>
     </section>
     <!--过滤栏 结束-->
 
     <!--列表 开始-->
-    <section class="listWrap">
-      <ul class="list">
-        <li class="list_item">
-          <a class="list_item_a" href="">
-            <div class="list_item_img">
-              <img src="http://192.168.2.10:82/img/cpzc/201511/e6e09b151c63443fb177de6eece1d697.jpg" alt="${cur.compay}">
-            </div>
-            <div class="list_item_text">
-              <p class="list_item_text_p company_info"><span class="company_name list_margin">圈子在线</span>互联网/私营企业/规模:1-50人</p>
-              <p class="list_item_text_p company_comment"><span>8</span>条面试评价</p>
-              <p class="list_item_text_p company_post"><span>6</span>个在招职位</p>
-              <ul class="tagList">
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-              </ul>
-            </div>
-          </a>
-        </li>
-       <li class="list_item">
-          <a class="list_item_a" href="">
-            <div class="list_item_img">
-              <img src="http://192.168.2.10:82/img/cpzc/201511/e6e09b151c63443fb177de6eece1d697.jpg" alt="${cur.compay}">
-            </div>
-            <div class="list_item_text">
-              <p class="list_item_text_p company_info"><span class="company_name list_margin">圈子在线</span>互联网/私营企业/规模:1-50人</p>
-              <p class="list_item_text_p company_comment"><span>8</span>条面试评价</p>
-              <p class="list_item_text_p company_post"><span>6</span>个在招职位</p>
-              <ul class="tagList">
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-              </ul>
-            </div>
-          </a>
-        </li>
-        <li class="list_item">
-          <a class="list_item_a" href="">
-            <div class="list_item_img">
-              <img src="http://192.168.2.10:82/img/cpzc/201511/e6e09b151c63443fb177de6eece1d697.jpg" alt="${cur.compay}">
-            </div>
-            <div class="list_item_text">
-              <p class="list_item_text_p company_info"><span class="company_name list_margin">圈子在线</span>互联网/私营企业/规模:1-50人</p>
-              <p class="list_item_text_p company_comment"><span>8</span>条面试评价</p>
-              <p class="list_item_text_p company_post"><span>6</span>个在招职位</p>
-              <ul class="tagList">
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-              </ul>
-            </div>
-          </a>
-        </li>
-        <li class="list_item">
-          <a class="list_item_a" href="">
-            <div class="list_item_img">
-              <img src="http://192.168.2.10:82/img/cpzc/201511/e6e09b151c63443fb177de6eece1d697.jpg" alt="${cur.compay}">
-            </div>
-            <div class="list_item_text">
-              <p class="list_item_text_p company_info"><span class="company_name list_margin">圈子在线</span>互联网/私营企业/规模:1-50人</p>
-              <p class="list_item_text_p company_comment"><span>8</span>条面试评价</p>
-              <p class="list_item_text_p company_post"><span>6</span>个在招职位</p>
-              <ul class="tagList">
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-              </ul>
-            </div>
-          </a>
-        </li>
-        <li class="list_item">
-          <a class="list_item_a" href="">
-            <div class="list_item_img">
-              <img src="http://192.168.2.10:82/img/cpzc/201511/e6e09b151c63443fb177de6eece1d697.jpg" alt="${cur.compay}">
-            </div>
-            <div class="list_item_text">
-              <p class="list_item_text_p company_info"><span class="company_name list_margin">圈子在线</span>互联网/私营企业/规模:1-50人</p>
-              <p class="list_item_text_p company_comment"><span>8</span>条面试评价</p>
-              <p class="list_item_text_p company_post"><span>6</span>个在招职位</p>
-              <ul class="tagList">
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-                <li class="tagList_item">公司发展前景大</li>
-              </ul>
-            </div>
-          </a>
-        </li>
-      </ul>
-      <!--<button class="list_more" type="button">查看更多</button>-->
-    </section>
+    <ul class="list">
+      <li class="list_item">
+        <a class="linkWrapper" href="">
+          <div class="list_item_img">
+            <img src="http://192.168.2.10:82/img/cpzc/201511/e6e09b151c63443fb177de6eece1d697.jpg" alt="${cur.compay}">
+          </div>
+          <div class="list_item_text">
+            <p class="list_item_text_p company_info">圈子在线</p>
+            <p class="list_item_text_p">互联网 / 私营企业 / 规模:1-50人</p>
+            <p class="list_item_text_p">
+              <span class="list_item_text_p_item"><span>8</span>条面试评价</span>
+              <span class="list_item_text_p_item"><span>6</span>个在招职位</span>
+            </p>
+            <ul class="tagList">
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+            </ul>
+          </div>
+        </a>
+      </li>
+      <li class="list_item">
+        <a class="linkWrapper" href="">
+          <div class="list_item_img">
+            <img src="http://192.168.2.10:82/img/cpzc/201511/e6e09b151c63443fb177de6eece1d697.jpg" alt="${cur.compay}">
+          </div>
+          <div class="list_item_text">
+            <p class="list_item_text_p company_info">圈子在线</p>
+            <p class="list_item_text_p">互联网 / 私营企业 / 规模:1-50人</p>
+            <p class="list_item_text_p">
+              <span class="list_item_text_p_item"><span>8</span>条面试评价</span>
+              <span class="list_item_text_p_item"><span>6</span>个在招职位</span>
+            </p>
+            <ul class="tagList">
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+              <li class="tagList_item">公司发展前景大</li>
+            </ul>
+          </div>
+        </a>
+      </li>
+    </ul>
     <!--列表 结束-->
 
-    <!-- 加载栏 开始-->
+    <!--加载栏 开始-->
     <div class="list_load">
-      <i class="fa fa-spinner fa-pulse"></i><span class="list_load_text">加载中...</span>
+      <i class="fa fa-spinner fa-pulse"></i><span class="list_load_text"></span>
     </div>
-    <!-- 加载栏 结束-->
+    <!--加载栏 结束-->
 
     <!--导航 开始-->
     <nav class="nav">

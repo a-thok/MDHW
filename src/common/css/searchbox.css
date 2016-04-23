@@ -1,7 +1,13 @@
 .srch {
   display: flex;
   align-items: stretch;
-  padding: 10px 3.7333%;
+  margin: 1em .2rem;
+  font-size: .2rem;
+}
+.srch-bg {
+  padding: 1em .2rem;
+  margin: 0;
+  background: #fff;
 }
 .srch_wrap {
   width: 83%;
@@ -10,36 +16,31 @@
 }
 .srch_label,
 .srch_input {
-  height: 50px; /* uc */
+  /*height: 50px;
   height: 9.3333vw;
-  max-height: 70px;
+  max-height: 70px;*/
+  padding: .8em 0;
   border: 1px solid var(--borderColorLight);
   background-color: #fff;
 }
 .srch_label {
   display: flex;
   align-items: center;
-  padding: 0 2% 0 5%;
+  padding: 0 1.6em;
   border-right: 0;
-  border-top-left-radius: 25px; /* uc */
-  border-top-left-radius: 4.6667vw;
-  border-bottom-left-radius: 25px; /* uc */
-  border-bottom-left-radius: 4.6667vw;
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
   color: var(--fontColorLight);
 }
-.srch_label .fa {
-  font-size: 20px;
-}
 .srch_input {
+  flex: 1;
   display: block; /* uc */
-  width: 83%;
+  /*width: 83%;*/
   border-left: 0;
-  border-top-left-radius: 0; /*safari*/
-  border-bottom-left-radius: 0; /*safari*/
-  border-top-right-radius: 25px; /* uc */
-  border-top-right-radius: 4.6667vw;
-  border-bottom-right-radius: 25px; /* uc */
-  border-bottom-right-radius: 4.6667vw;
+  /*border-top-left-radius: 0;
+  border-bottom-left-radius: 0;*/
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
 }
 .srch_btn {
   display: block; /* uc */
@@ -47,7 +48,7 @@
   flex-basis: 17%;
   border: 0;
   background-color: transparent;
-  font-size: 16px;
+  cursor: pointer;
 }
 
 /* 左右拼合变体 */
@@ -55,18 +56,18 @@
   justify-content: space-between;
 }
 .srch-join .srch_wrap {
-  width: 77%;
-  flex-basis: 77%;
+  flex: 1;
 }
 .srch-join .srch_label {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 .srch-join .srch_input {
-  border-top-left-radius: 0;
+  border-radius: 0;
+  /*border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;*/
 }
 .srch-join .srch_btn {
   width: 22%;
@@ -74,6 +75,5 @@
   border: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  font-size: 16px;
   color: #fff;
 }

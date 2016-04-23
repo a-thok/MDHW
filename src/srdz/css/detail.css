@@ -15,12 +15,16 @@
 }
 .intro_list {
   display: flex;
+  justify-content: space-between;
+  font-size: .26rem;
 }
 .intro_list_item {
-  padding: 1em 0;
+  position: relative;
+  flex-basis: 49%;
+  width: 49%;
+  padding: .6em 0;
   text-align: center;
   border-bottom: 1px solid var(--borderColorLight);
-  flex-grow: 1;
 }
 .intro_list_item-color {
   color: var(--srdzColor);
@@ -30,13 +34,15 @@
   display: flex;
 }
 .intro_list_item-border::after {
+  position: absolute;
+  top: 20%;
+  right: -2.5%;
   content: "";
   display: inline-block;
-  height: 20px;
-  border: 1px solid var(--borderColorLight);
+  height: 60%;
+  border-right: 1px solid var(--borderColorLight);
 }
 .intro_list_span {
-  font-size: 16px;
   width: 100%;
 }
 /*用户编辑文本*/
