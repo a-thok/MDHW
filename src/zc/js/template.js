@@ -26,7 +26,7 @@ export default function template(data) {
         <h6 class="list_item_header">
           <span class="zcTag">${cur.name}</span>
           <span class="list_item_header_text">${cur.title}</span>
-          <i class="fa fa-thumbs-o-up"></i>
+          <i class="fa fa-thumbs-o-up${cur.laud ? ' cgColor' : ''}"></i>
         </h6>
         
         <section class="list_item_img">

@@ -25,15 +25,16 @@
   padding: .6em 0;
   text-align: center;
   border-bottom: 1px solid var(--borderColorLight);
+  cursor: pointer;
 }
-.intro_list_item-color {
+.intro_list_item.is-active {
   color: var(--srdzColor);
   border-bottom: 1px solid var(--srdzColor);
 }
-.intro_list_item-border {
+.intro_list_item:first-child {
   display: flex;
 }
-.intro_list_item-border::after {
+.intro_list_item:first-child::after {
   position: absolute;
   top: 20%;
   right: -2.5%;
@@ -48,8 +49,9 @@
 /*用户编辑文本*/
 .userInput_item {
   display: none;
+
 }
-.userInput_show {
+.userInput_item.is-show {
   display: block;
 }
 .list_item_a {

@@ -281,3 +281,11 @@ ul.dialog_sublist-border {
     display: none;
   }
 }*/
+
+.ftCtrl_item {
+  color: var(--zcColor);
+}
+.ftCtrl_item_btn {
+  background: var(--zcColor);
+}
+

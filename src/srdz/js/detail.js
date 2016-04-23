@@ -1,23 +1,27 @@
 import { $, $from } from '../../common/js/func.js';
 import slider from 'slider';
 import share from 'share';
+import favorite from 'favorite';
 
 //  切换显示
 export default function detail() {
+  favorite($('.ftCtrl_item')[0], 'id', '/m/srdz/Collect/Add', '/m/srdz/Collect/Del');
   share($('.ftCtrl_item')[2]);
 
   slider(document.querySelector('.sliderBox'));
 
-  $from('.intro_list_item').forEach((el, index) => {
-    const ul = $('.userInput');
-    el.addEventListener('click', e => {
-      if (e.currentTarget.classList.contains('intro_list_item-color')) return;
-      $from(e.currentTarget.parentElement.children).forEach((_e, _index) => {
-        _e.classList.remove('intro_list_item-color');
-        ul.children[_index].classList.remove('userInput_show');
-      });
-      e.currentTarget.classList.add('intro_list_item-color');
-      ul.children[index].classList.add('userInput_show');
+  // 详情显示切换
+  const ul = $('.userInput');
+  const items = $('.intro_list_item');
+  $from(items).forEach((el, i) => {
+    el.addEventListener('click', (e) => {
+      const another = i === 0 ? 1 : 0;
+      // 清除另一项
+      items[another].classList.remove('is-active');
+      ul.children[another].classList.remove('is-show');
+      // 选中当前项
+      e.currentTarget.classList.add('is-active');
+      ul.children[i].classList.add('is-show');
     });
   });
 }
