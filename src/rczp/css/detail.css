@@ -41,6 +41,10 @@
   background: var(--rczpColor);
   font-size: .25rem;
   color: #fff;
+  cursor: pointer;
+}
+.dtDeliver[disabled] {
+  background: #bbb;
 }
 .icon_link {
   color: var(--fontColorLight);
