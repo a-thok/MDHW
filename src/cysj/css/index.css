@@ -6,40 +6,71 @@
 /* 功能 */
 .grid-func .grid_item_icon {
   background: #f1f1f1;
+  font-size: .4rem;
+  color: #333;
 }
 /* 分类 */
 .grid-cate .grid_item_icon {
   border-radius: 0;
   background: transparent;
+  font-size: .7rem;
+  color: #333;
 }
 
 /* 标题 */
 .titleA {
   border-color: var(--cysjColor);
-  margin-left: .5em;
 }
 
 /* 赏金大厅 */
-.demand_title {
+.demand {
+  display: flex;
+  padding: 1em 3em;
+  border: 1px solid var(--borderColorLight);
+  border-width: 1px 0;
+  margin: .5em .2rem 1em;
+  font-size: .18rem;
+  color: #333;
+  text-decoration: none;
+}
+.demand_img img {
+  width: .8rem;
+  margin-right: 1em;
+}
+.demand_content {
+  flex: 1;
+}
+.demand_content_title {
+  color: #2ecc71;
+  font-size: .28rem;
+}
+.demand_content_text {
+  margin-top: 1em;
+}
+.demand_icon {
+  display: flex;
+}
+.demand_icon .fa {
+  margin: auto;
+  font-size: .8rem;
+  color: var(--fontColorLight);
+}
+/*.demand_title {
   margin-bottom: 10px;
   font-size: 16px;
   color: #2ecc71;
 }
 .demand_text {
   color: var(--fontColorLight);
-}
-.grid_item-big {
+}*/
+/*.grid_item-big {
   width: 26%;
   flex-basis: 26%;
-}
+}*/
 .base_title_text a,
 .list_item_link {
   color: #333;
   text-decoration: none;
-}
-.grid_item_icon .fa {
-  color: #000;
-  font-size: 30px;
 }
 .list_item-flex {
   display: flex;
