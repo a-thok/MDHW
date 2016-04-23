@@ -53,7 +53,8 @@ const config = {
       'xhr': 'xhr.js',
       'overflow': 'overflow.js',
       'goTop': 'goTop.js',
-      'showMenu': 'showMenu.js'
+      'showMenu': 'showMenu.js',
+      'share': 'share.js'
     }
   },
   externals: {
@@ -132,7 +133,7 @@ const config = {
 
 // add shared js and css to common chunck
 const BASE_CSS_PATH = path.join(__dirname, './src/common/css/base.css');
-const PATH_ARRAY = ['func', 'render', 'filter', 'slider', 'doSearch', 'goToSearch', 'xhr', 'overflow', 'goTop', 'showMenu']
+const PATH_ARRAY = ['func', 'render', 'filter', 'slider', 'doSearch', 'goToSearch', 'xhr', 'overflow', 'goTop', 'showMenu', 'share']
   .map((item) => path.join(__dirname, `./src/common/js/${item}.js`));
 config.entry.common.push(BASE_CSS_PATH);
 config.entry.common = config.entry.common.concat(PATH_ARRAY);
