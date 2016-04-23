@@ -5,21 +5,26 @@
  * 推荐
  */
 .hot {
-  padding: 0 1.3333%;
+  padding: 0 .2rem;
   background-color: #fff;
   overflow: hidden;
+}
+.hot .titleA {
+  margin: .6em 0;
 }
 /** 列表 **/
 .hot_list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-size: .18rem;
 }
 .hot_list_item {
+  position: relative;
   width: 48%;
   border: 1px solid var(--borderColorLight);
   border-radius: 5px;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   background-color: var(--borderColorLight);
   overflow: hidden;
   color: var(--fontColorLight);
@@ -45,58 +50,56 @@
   height: 100%;
 }
 .hot_list_item_logo_cert {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 50%;
-  height: 50%;
-  padding: 3px 0;
+  padding: 1.2rem .6rem .1rem;
   background-color: #f58f3e;
-  transform: translateX(135%) translateY(-230%) rotate(45deg);
-  font-size: 12px;
+  transform: translateX(50%) translateY(-50%) rotate(45deg);
   color: #fff;
 }
 .hot_list_item_title {
-  margin-top: .5em;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 2.2;
+  font-size: .26rem;
+  line-height: 2;
 }
 .hot_list_item_address {
   padding: 0 .6em;
   font-style: normal;
-  font-size: 12px;
   text-align: center;
 }
 .hot_list_item_apply {
-  /*display: block;*/
-  margin: 1.5em 0;
   padding: .5em 1em;
   border: 0;
   border-radius: 5px;
+  margin: .6em 0;
   background: var(--zckjColor);
-  /*text-decoration: none;*/
   color: #fff;
 }
 /** 更多 **/
 .zckjMore {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 1em 0;
+  font-size: .18rem;
 }
-.hot_more_LINK {
+.hot_more_link {
   display: block;
-  padding: 10px;
+  width: 50%;
+  padding: .6em 0;
+  border-radius: 50px;
+  background: var(--zckjColor);
+  color: #fff;
   text-align: center;
   text-decoration: none;
-  color: #fff;
-  border-radius: 50px;
-  width: 50%;
-  background: var(--zckjColor);
 }
-.hot_more_LINK .fa {
+.hot_more_link .fa {
   margin-left: 1em;
 }
+
 .header_sect-aside_text::after {
   content: "";
   display: inline-block;

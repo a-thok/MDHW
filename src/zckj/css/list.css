@@ -10,7 +10,7 @@
 /* 列表样式 */
 .list_item_text_p,
 .list_item_text_btn {
-  font-size: 14px;
+  font-size: .18rem;
 }
 .list_item-border {
   padding: 5% 2.5%;
@@ -19,7 +19,7 @@
   border-bottom: 1px dotted var(--borderColorLight);
 }
 .list_item_text_p-title {
-  font-size: 16px;
+  font-size: .26rem;
 }
 .list_item_btn { /* 考虑合并样式 */
   padding: 6px 8.4667%;
@@ -27,6 +27,7 @@
   border-radius: 4px;
   color: #fff;
   background-color: var(--zckjColor);
+  cursor: pointer;
 }
 .list_item_a {
   color: #333;

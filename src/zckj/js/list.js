@@ -8,7 +8,7 @@ export default function list() {
       let url = `http://${CDN_HOST}/mstatic/img/lqt.png`;
       return (
         `${pre}<li class="list_item list_item-border">
-          <a class="list_item_a" href="http://${ZCKJ_HOST}/m/zckj/detail/${cur.id}">
+          <a class="linkWrapper" href="http://${ZCKJ_HOST}/m/home/detail/${cur.id}">
             <div class="list_item_img"><img src="${url}" alt="${cur.name}"></div>
             <div class="list_item_text">
               <p class="list_item_text_p list_item_text_p-title">${cur.name}</p>
@@ -25,7 +25,7 @@ export default function list() {
   let config = {
     template,
     load,
-    api: '/m/Zckj/MakerSpaceList',
+    api: '/m/zckj/makerspace/list',
     params: {
       pageIndex: 1,
       pageSize: 10
