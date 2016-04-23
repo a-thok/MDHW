@@ -7,8 +7,8 @@ export function index() {
 }
 
 export function scroll() {
-  let filterBox = document.querySelector('.topLine_filterBox');
-  let scrollBox = document.querySelector('.topLine_filterBox_scroll');
+  let filterBox = document.querySelector('.topLinksWrapper');
+  let scrollBox = document.querySelector('.topLinks');
   let margintop = scrollBox.style.marginTop;
   filterBox.insertAdjacentHTML('beforeend', filterBox.innerHTML);
   function time() {
