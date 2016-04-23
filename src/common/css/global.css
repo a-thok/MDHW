@@ -5,6 +5,7 @@ figure {
   margin: 0;
   outline: 0;
   font-family: "microsoft yahei", sans-serif;
+  line-height: 1.5;
 }
 ul,
 ol {
@@ -14,8 +15,15 @@ body {
   color: #333;
   background: #ccc;
 }
-input[type=search] {
-  -webkit-appearance: none; /*safari*/
+a {
+  color: #333;
+}
+input { /*safari*/
+  border-radius: 0;
+}
+input,
+input[type=search] { /*safari*/
+  -webkit-appearance: none;
 }
 
 html.is-static,
@@ -35,15 +43,15 @@ body,
   min-height: 100vh;
   margin: 0 auto;
   /*overflow: hidden;*/
-  margin-bottom: 55px;
-  margin-bottom: 12vw;
+  padding-bottom: .2rem;
+  margin-bottom: .84rem;
   background-color: var(--pageColor);
 }
-@media screen and (min-width: 750px) {
+/*@media screen and (min-width: 750px) {
   .page {
     margin-bottom: 90px;
   }
-}
+}*/
 .page-noMb {
   margin-bottom: 0;
 }

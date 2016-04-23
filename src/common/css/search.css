@@ -3,7 +3,6 @@
 .list_more.is-hidden,
 .filter.is-hidden,
 .pagination.is-hidden,
-.list_load.is-hidden,
-.popWrap.is-hidden {
+.list_load.is-hidden {
   display: none;
 }

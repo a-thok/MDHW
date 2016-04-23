@@ -13,54 +13,57 @@
 
 /* 摘要 */
 .base {
-  padding: .8em 3.3333%;
+  padding: .8em .2rem;
   margin-bottom: 20px;
 }
 /* 标题 */
 .base_title {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  margin-right: -3.5%;
+  align-items: center;
+  margin: .8em 0;
+  margin-right: -.2rem;
 }
 .base_title_wrap {
   display: block;
-  flex-grow: 1;
-  padding-bottom: 12px;
-  font-size: 16px;
+  flex: 1;
+  /*padding-bottom: 1em;*/
 }
 .base_title_text {
+  font-size: .28rem;
+  line-height: 1;
+  margin: .5em 0;
+}
+.base_title_wrap .base_title_text {
   display: inline;
-  font-size: 16px;
 }
 .base_title_tag {
   padding: .1em .5em;
   border-radius: 4px;
   background: #efc028;
-  font-size: 12px;
   color: #fff;
   white-space: nowrap;
 }
 .base_title_label {
   flex-shrink: 0;
   display: flex;
-  height: 28px;
-  padding-right: .5em;
+  /*height: 28px;*/
+  padding: .3em .5em;
+  padding-left: 0;
   /*margin-left: 1em;*/
   background: var(--zbColor);
-  font-size: 16px;
+  font-size: .2rem;
   color: #fff;
-  line-height: 28px;
+  /*line-height: 28px;*/
 }
 .base_title_label .arrow {
-  display: block;
-  border-width: 0 14px 8px;
+  border-width: 0 .3rem .2rem;
   border-bottom-color: #fff;
-  /*margin-right: -10px;*/
+  margin-left: -.15rem;
 }
 /* 内容 */
 .base_content {
-  font-size: 14px;
+  font-size: .18rem;
 }
 .base_content::after {
   content: "";
@@ -77,19 +80,25 @@
   line-height: 2;
 }
 .base_content_label {
+  font-size: .18rem;
   color: var(--fontColorLight);
   text-align: right;
 }
 .base_content_em {
-  font-size: 28px;
+  font-size: .26rem;
   color: var(--zbColor);
-  line-height: 2;
 }
 
 /* 基本信息 */
+.info_title,
+.intro_title {
+  font-size: .22rem;
+}
+
 .info {
   display: flex;
-  padding: 10px 2%;
+  padding: .8em .2rem;
+  font-size: .18rem;
 }
 /*主内容*/
 .info_content {
@@ -100,25 +109,22 @@
 }
 .info_title,
 .info_para {
-  line-height: 2.2;
+  line-height: 2;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .info-compact .info_title,
 .info-compact .info_para {
-  line-height: 1.6;
-}
-.info_title {
-  font-size: 16px;
+  /*line-height: 1.6;*/
 }
 .info-compact .info_title {
-  font-size: 14px;
+  /*font-size: 14px;*/
 }
 .info_para {
-  font-size: 14px;
+  /*font-size: 14px;*/
 }
 .info-compact .info_para {
-  font-size: 12px;
+  /*font-size: 12px;*/
 }
 .info_para-light {
   color: var(--fontColorLight);
@@ -137,10 +143,16 @@
   align-items: center;
 }
 .info_img {
-  margin-right: 10px;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: .25rem;
+  overflow: hidden;
+}
+.info_img img {
+  width: 100%;
 }
 .info_icon .fa {
-  font-size: 36px;
+  font-size: .4rem;
   padding: .2em .2em;
 }
 /* 简介 */
@@ -148,10 +160,10 @@
   margin: 20px 0;
 }
 .intro_title {
-  padding: .8em 1em;
+  padding: .8em .2rem;
   border-bottom: 1px solid var(--borderColorLight);
 }
 .userInput {
-  padding: 1em;
-  font-size: 13px;
+  padding: .8em .2rem;
+  font-size: .18rem;
 }

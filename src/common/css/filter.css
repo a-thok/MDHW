@@ -5,7 +5,7 @@
   max-width: 750px;
   border-bottom: 1px solid var(--borderColorLight);
   background-color: #fff;
-  font-size: 15px;
+  font-size: .2rem;
 }
 /*.filter.is-fixed {
   position: fixed;
@@ -21,7 +21,7 @@
 .filter_title {
   position: relative;
   z-index: 2;
-  padding: 1em 0;
+  padding: 1.2em 0;
   text-align: center;
 }
 .filter_title-line {
@@ -53,24 +53,24 @@
 /* 内容 */
 .filter_content {
   position: absolute;
-  top: 0;
-  top: calc(13.3333vw + 50px);
+  top: 1.78rem;
+  /*top: calc(1rem + .74rem);*/
   left: 0;
   z-index: 1;
   width: 100%;
   max-width: 750px;
-  border: 1px solid transparent;
+  /*border: 1px solid transparent;*/
   /* 兼容旧浏览器 */
   height: 100%;
-  padding-top: 50px;  /* 顶部过滤栏50 */
-  border-top-width: 13.3333vw solid transparent;  /*头部高度 */
+  height: calc(100vh - 1rem - .78rem);
   /* 兼容旧浏览器 */
   /* 现代浏览器 */
-  height: calc(100vh - 13.3333vw - 50px);
+  /*height: calc(100vh - 1rem - .74rem);
   padding-top: 0vh;
-  border-top-width: 0vh;
+  border-top-width: 0vh;*/
   /* 现代浏览器 */
-  margin-top: 1px;
+  /*margin-top: 1px;*/
+  border-top: 1px solid var(--borderColorLight);
   background: #fff;
   box-shadow: 0 2px 2px #ccc;
   overflow: hidden;
@@ -78,20 +78,20 @@
   transform-origin: 0 0;
   transition: transform .3s ease-out;
 }
-@media screen and (max-width: 375px) {
+/*@media screen and (max-width: 375px) {
   .filter_content {
     top: calc(50px + 50px + 0vh);
-    height: calc(100vh - 50px - 50px);
+    height: calc(100vh - 50px - .74rem);
     border-top-width: 50px;
     border-top-width: 0vh;
   }
-}
+}*/
 @media screen and (min-width: 750px) {
   .filter_content {
-    top: calc(100px + 50px + 0vh);
+    /*top: calc(100px + .74rem + 0vh);*/
     left: 50%;
     width: 750px;
-    height: calc(100vh - 100px - 50px);
+    /*height: calc(100vh - 100px - .74rem);*/
     margin-left: -375px;
   }
 }
@@ -104,7 +104,6 @@
 
 /* 列表模式 */
 .filter_content_list {
-  /*flex: 1;*/
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -113,12 +112,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*letter-spacing: .5em;*/
-  height: 54px;
-  padding: 0 7.4667%;
+  padding: 1.6em 2em;
   border-bottom: 1px solid var(--borderColorLight);
   background-color: #fff;
-  line-height: 54px;
 }
 .filter_content_list_item .fa-check-circle {
   display: none;

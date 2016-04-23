@@ -10,12 +10,14 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 12vw;
+  /*height: .8rem;*/
+  /*height: 12vw;
   min-height: 45px;
-  max-height: 90px;
+  max-height: 90px;*/
   border-top: 1px solid var(--borderColorLight);
   background: #fff;
   box-shadow: 0 -1px 3px #ddd;
+  font-size: .24rem;
 }
 @media screen and (min-width: 750px) {
   .nav,
@@ -26,38 +28,34 @@
   }
 }
 .nav_link {
-  width: 20%;
-  flex-basis: 20%;
+  flex-basis: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  font-size: 16px;
+  width: 25%;
+  /*height: 100%;*/
+  padding: 1em 0;
+  /*font-size: 16px;*/
   color: #333;
   text-decoration: none;
 }
-@media screen and (min-width: 550px) {
+/*@media screen and (min-width: 550px) {
   .nav_link {
     font-size: 20px;
   }
-}
+}*/
 .nav_link .fa {
-  font-size: 20px;
   margin-right: .25em;
 }
 
 /* 底部操作 最外层样式和nav共用 */
-.ftCtrl .fa {
-  font-size: 20px;
-}
 .ftCtrl_item {
   flex-basis: 30%;
   width: 50%;
   flex-grow: 1;
   display: block;
-  padding: .6em 0;
   border-left: 1px solid var(--borderColorLight);
-  font-size: 14px; /* 考虑合并字体大小 */
+  border-right: 1px solid var(--borderColorLight);
   text-align: center;
 }
 .ftCtrl_item:first-child {
@@ -66,23 +64,26 @@
 .ftCtrl_item-link {
   flex-basis: 15%;
   width: 30%;
+  padding: 1em 0;
+  border: 0;
   text-decoration: none;
 }
+.ftCtrl_item .fa {
+  margin-right: .5em;
+}
 .ftCtrl_item_btn { /* 考虑合并按钮样式 */
-  padding: .6em 1.6em;
+  padding: .6em 1.5em;
   border: 0;
   border-radius: 3px;
-  font-size: 15px;
   color: #fff;
 }
 /* 折行式变体，HTML有变化 */
-.nav_link_wrap {
-  font-size: 13px;
+/*.nav_link_wrap {
   text-align: center;
 }
 .nav_link_wrap .fa {
   margin-right: 0;
-}
+}*/
 
 /* 翻页模块 最外层样式和nav共用 */
 .pagination {
