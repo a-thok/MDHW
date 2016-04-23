@@ -21,11 +21,9 @@ export default function render({ api, params, template, container, immediate, lo
   }
 
   container.listener = () => {
-    const pageHeight = document.body.offsetHeight;
-    const pageScroll = document.body.scrollTop;
-    const docHeight = window.screen.height;
-    const pageRemain = pageHeight - pageScroll - docHeight;
-    if (pageRemain > loadRemain || fetching) return;
+    const windowHeight = window.innerHeight;
+    const pageBottom = document.body.getBoundingClientRect().bottom;
+    if (pageBottom - windowHeight > loadRemain || fetching) return;
 
     body.pageIndex++;
     if (body.pageIndex > totalPages) {
