@@ -1,6 +1,9 @@
 import { $ } from 'func';
+import share from 'share';
 
 export default function detail() {
+  share($('.ftCtrl_item')[2]);
+
   const contanct = $('.person_bar_btn');
   contanct.addEventListener('click', () => {
     alert('联系电话：1575958####!');
