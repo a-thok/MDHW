@@ -6,39 +6,39 @@ import deFavorite from '../../mixins/deFavorite.js';
 export default React.createClass({
   getInitialState: function () {
     return {
-      HasCollect: {
+      Collection: {
         index: 0,
         fetching: false,
         finished: false,
         data: []
       },
-      HasRelease: {
+      Published: {
         index: 0,
         fetching: false,
         finished: false,
         data: []
       },
-      Release: {
+      Publish: {
         data: { a: '1', b: '1', c: '1', d: '1', e: '1', g: '1' }
       }
     };
   },
-  onHasCollectList: function () {
+  onCollectionList: function () {
     loadList.bind(this)({
       url: '/m/sys/zb/Collect/List',
-      list: 'HasCollect'
+      list: 'Collection'
     });
-    fetching.bind(this)('HasCollect');
+    fetching.bind(this)('Collection');
   },
-  onHasReleaseList: function () {
+  onPublishedList: function () {
     loadList.bind(this)({
-      url: '/m/sys/ZB/publish/List',
-      list: 'HasRelease'
+      url: '/m/sys/ZB/Publish/List',
+      list: 'Published'
     });
-    fetching.bind(this)('HasRelease');
+    fetching.bind(this)('Published');
   },
   onChange: function (e, name) {
-    const newState = Object.assign({}, this.state.Release);
+    const newState = Object.assign({}, this.state.Publish);
     newState.data[name] = e.target.value;
     this.setState(newState);
   },
@@ -46,8 +46,8 @@ export default React.createClass({
     e.preventDefault();
   },
   onCancle: function (id, index) {
-    deFavorite.bind(this)('/m/sys/zb/collect/del', 'HasCollect', id, index);
-    fetching.bind(this)('HasCollect');
+    deFavorite.bind(this)('/m/sys/zb/collect/del', 'Collection', id, index);
+    fetching.bind(this)('Collection');
   },
   render: function () {
     const Child = this.props.children;
@@ -55,18 +55,18 @@ export default React.createClass({
 
     let extra;
     switch (ChildName) {
-      case 'HasCollect':
+      case 'Collection':
         extra = {
-          onHasCollectList: this.onHasCollectList,
+          onCollectionList: this.onCollectionList,
           onCancle: this.onCancle
         };
         break;
-      case 'HasRelease':
+      case 'Published':
         extra = {
-          onHasReleaseList: this.onHasReleaseList
+          onPublishedList: this.onPublishedList
         };
         break;
-      case 'Release':
+      case 'Publish':
         extra = {
           onChange: this.onChange,
           onSubmit: this.onSubmit

@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  /*justify-content: space-between;*/
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  text-decoration: none;
+}
+.navbar .fa {
+  padding: 0 .6em;
+  font-size: .3rem;
+}
+.navbar div {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--borderColorLight);
+  font-size: .24rem;
+  line-height: 2.8;
+}
+.navbar div span {
+  display: block;
+}

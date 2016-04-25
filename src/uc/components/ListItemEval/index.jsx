@@ -13,25 +13,25 @@ export default React.createClass({
     const display = this.props.tooLong ? 'inline' : 'none';
     const text = this.props.unfold ? '收起' : '展开';
     return (
-      <li className="listItem">
-        <section className="listItem_img">
+      <li className="list_item">
+        <section className="list_item_img">
           <img src={`http://${UPLOAD_HOST}/img/${this.props.logo}`} alt={this.props.position} />
         </section>
-        <section className="listItem_text">
-          <h3 className="listItem_title">
+        <section className="list_item_text">
+          <h3 className="list_item_title">
             {this.props.position}
             <span
-              className="listItem_unfold"
+              className="list_item_unfold"
               style={{ display }}
               onClick={this.handleUnfold}
             >{text}</span>
           </h3>
           <p
-            className="listItem_content"
+            className="list_item_content"
             style={{ height }}
             ref="content"
           >{this.props.about}</p>
-          <p className="listItem_time">{this.props.time}</p>
+          <p className="list_item_para list_item_para-right">{this.props.time}</p>
         </section>
       </li>
     );

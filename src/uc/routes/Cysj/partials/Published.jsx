@@ -1,0 +1,44 @@
+import React from 'react';
+import ListItemPlain from '../../../components/ListItemPlain';
+import Loading from '../../../components/Loading';
+import getHash from '../../../mixins/getHash';
+import removeWindowEvent from '../../../mixins/removeWindowEvent';
+
+export default React.createClass({
+  mixins: [getHash, removeWindowEvent],
+  componentDidMount: function () {
+    this.props.onPublishedList();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  handleScroll: function () {
+    const body = document.body;
+    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
+    if (remain < 50) this.props.onPublishedList();
+  },
+  render: function () {
+    let content = this.props.data.map((item, index) => (
+      <ListItemPlain
+        key={index}
+        info={item.protype}
+        small={item.status}
+        title={item.title}
+        elems={[
+          <span className="fontColor">￥ {item.money}</span>,
+          <span>{item.count}参与</span>,
+          <span>{item.transaction}</span>
+        ]}
+      />
+    ));
+    return (
+      <div>
+        <ul className="list list-plain">
+          {content}
+        </ul>
+        <Loading
+          finished={this.props.finished}
+          dataLen={this.props.data.length}
+        />
+      </div>
+    );
+  }
+});

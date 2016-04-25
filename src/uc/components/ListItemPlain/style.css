@@ -1,0 +1,45 @@
+.list-plain {
+  padding: 0;
+  background: transparent;
+  font-size: .18rem;
+}
+.list-plain .list-item {
+  padding: .3em .2rem;
+  margin: 1em 0;
+  background: #fff;
+}
+.list-plain .list_item_para {
+  display: flex;
+  justify-content: space-between;
+  padding: .6em .5em;
+}
+.list_item_para_header {
+  font-size: .22rem;
+}
+.list_item_para_header::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  margin-right: .4em;
+  border-left: 3px solid #f00;
+}
+.list_item_para_small {
+  color: var(--fontColorLight);
+}
+.list-plain .list_item_title {
+  padding-left: 1em;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: var(--borderColorLight);
+  line-height: 2.2;
+}
+
+/* 以下待修改 */
+.list-link {
+  text-decoration: none;
+  color: #46a0ce;
+}
+.fontColor {
+  color: red;
+}

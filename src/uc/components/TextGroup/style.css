@@ -1,0 +1,15 @@
+.TextGroupWrapper {
+  background: #fff;
+  overflow: hidden;
+}
+.textGroup {
+  margin: .6em 0;
+  font-size: .18rem;
+}
+.textGroup_label {
+  display: inline-block;
+  width: 8em;
+  padding-left: 2em;
+  margin-right: 1em;
+  text-align: right;
+}

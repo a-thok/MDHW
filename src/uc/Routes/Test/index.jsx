@@ -1,5 +1,5 @@
 import React from 'react';
-import UGroup from '../../components/UGroup';
+import FormGroup from '../../components/FormGroup';
 import FormButton from '../../components/FormButton';
 
 export default React.createClass({
@@ -33,7 +33,7 @@ export default React.createClass({
       g: { type: 'input', label: '联系方式', id: 'projectname', placeholder: '请填写您的手机号码' }
     };
     const nodes = Object.keys(this.state).map((item, index) => (
-      <UGroup
+      <FormGroup
         key={index}
         name={item}
         value={this.state[item]}

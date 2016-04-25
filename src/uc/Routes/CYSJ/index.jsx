@@ -6,22 +6,22 @@ import deFavorite from '../../mixins/deFavorite.js';
 export default React.createClass({
   getInitialState: function () {
     return {
-      Release: {
+      Publish: {
         data: { a: '', b: '', c: '', d: '', e: '', f: '', g: '' }
       },
-      HasRelease: {
+      Published: {
         index: 0,
         fetching: false,
         finished: false,
         data: []
       },
-      HasCollect: {
+      Collection: {
         index: 0,
         fetching: false,
         finished: false,
         data: []
       },
-      HasDelivery: {
+      Delivered: {
         index: 0,
         fetching: false,
         finished: false,
@@ -30,37 +30,37 @@ export default React.createClass({
     };
   },
   onChange: function (e, name) {
-    const newState = Object.assign({}, this.state.Release);
+    const newState = Object.assign({}, this.state.Publish);
     newState.data[name] = e.target.value;
     this.setState(newState);
   },
   onSubmit: function (e) {
     e.preventDefault();
   },
-  onHasReleaseList: function () {
+  onPublishedList: function () {
     loadList.bind(this)({
       url: '/m/sys/diy/Publish/List',
-      list: 'HasRelease'
+      list: 'Published'
     });
-    fetching.bind(this)('HasRelease');
+    fetching.bind(this)('Published');
   },
-  onHasCollectList: function () {
+  onCollectionList: function () {
     loadList.bind(this)({
       url: '/m/sys/diy/collect/list',
-      list: 'HasCollect'
+      list: 'Collection'
     });
-    fetching.bind(this)('HasCollect');
+    fetching.bind(this)('Collection');
   },
-  onHasDeliveryList: function () {
+  onDeliveredList: function () {
     loadList.bind(this)({
       url: '/m/sys/diy/Deal/BidsList',
-      list: 'HasDelivery'
+      list: 'Delivered'
     });
-    fetching.bind(this)('HasDelivery');
+    fetching.bind(this)('Delivered');
   },
   onCancle: function (id, index) {
-    deFavorite.bind(this)('/m/sys/diy/collect/del', 'HasCollect', id, index);
-    fetching.bind(this)('HasCollect');
+    deFavorite.bind(this)('/m/sys/diy/collect/del', 'Collection', id, index);
+    fetching.bind(this)('Collection');
   },
   render: function () {
     const Child = this.props.children;
@@ -68,26 +68,26 @@ export default React.createClass({
 
     let extra;
     switch (ChildName) {
-      case 'Release':
+      case 'Publish':
         extra = {
           onChange: this.onChange,
           onSubmit: this.onSubmit
         };
         break;
-      case 'HasRelease':
+      case 'Published':
         extra = {
-          onHasReleaseList: this.onHasReleaseList
+          onPublishedList: this.onPublishedList
         };
         break;
-      case 'HasCollect':
+      case 'Collection':
         extra = {
-          onHasCollectList: this.onHasCollectList,
+          onCollectionList: this.onCollectionList,
           onCancle: this.onCancle
         };
         break;
-      case 'HasDelivery':
+      case 'Delivered':
         extra = {
-          onHasDeliveryList: this.onHasDeliveryList
+          onDeliveredList: this.onDeliveredList
         };
         break;
       default:

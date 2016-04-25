@@ -5,20 +5,20 @@ import fetching from '../../mixins/fetching.js';
 export default React.createClass({
   getInitialState: function () {
     return {
-      Attention: {
+      Follow: {
         index: 0,
         fetching: false,
         finished: false,
         data: []
       },
-      BuyerList: {
+      Buyer: {
         index: 0,
         fetching: false,
         finished: false,
         type: 0,
         data: []
       },
-      SellerList: {
+      Seller: {
         index: 0,
         fetching: false,
         finished: false,
@@ -27,27 +27,27 @@ export default React.createClass({
       }
     };
   },
-  onAttentionList: function () {
+  onFollowList: function () {
     loadList.bind(this)({
       url: '/m/sys/Srdz/Collect/List',
-      list: 'Attention'
+      list: 'Follow'
     });
-    fetching.bind(this)('Attention');
+    fetching.bind(this)('Follow');
   },
-  onBuyerListList: function (type) {
+  onBuyerList: function (type) {
     loadList.bind(this)({
-      url: '/m/sys/Srdz/Deal/BuyerList',
-      list: 'BuyerList',
+      url: '/m/sys/Srdz/Deal/Buyer',
+      list: 'Buyer',
       type: type === undefined ? 0 : type,
       param: 'state',
       reset: type !== undefined
     });
-    fetching.bind(this)('BuyerList');
+    fetching.bind(this)('Buyer');
   },
-  onSellerListList: function (type, reset) {
+  onSeller: function (type, reset) {
     loadList.bind(this)({
-      url: '/m/sys/Srdz/Deal/SellerList',
-      list: 'SellerList',
+      url: '/m/sys/Srdz/Deal/Seller',
+      list: 'Seller',
       type,
       cb: function (items) {
         items.forEach((item) => {item.showDetail = false;});
@@ -55,10 +55,10 @@ export default React.createClass({
       param: 'state',
       reset
     });
-    fetching.bind(this)('SellerList');
+    fetching.bind(this)('Seller');
   },
   onShowDetail: function (index) {
-    const newState = Object.assign({}, this.state.SellerList);
+    const newState = Object.assign({}, this.state.Seller);
     newState.data[index].showDetail = !newState.data[index].showDetail;
     this.setState(newState);
   },
@@ -68,20 +68,20 @@ export default React.createClass({
 
     let extra;
     switch (ChildName) {
-      case 'Attention':
+      case 'Follow':
         extra = {
-          onAttentionList: this.onAttentionList
+          onFollowList: this.onFollowList
         };
         break;
-      case 'SellerList':
+      case 'Seller':
         extra = {
-          onSellerListList: this.onSellerListList,
+          onSeller: this.onSeller,
           onShowDetail: this.onShowDetail
         };
         break;
-      case 'BuyerList':
+      case 'Buyer':
         extra = {
-          onBuyerListList: this.onBuyerListList
+          onBuyerList: this.onBuyerList
         };
         break;
       default:

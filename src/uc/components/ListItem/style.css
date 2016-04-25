@@ -1,90 +1,55 @@
-.listItem {
-  display: flex;
-  padding: 20px 0 10px 0;
-  border-bottom: 2px solid #ccc;
-  font-size: 12px;
-}
-.listItem:last-child {
-  border: 0;
-}
-.listItem_title {
-  font-weight: normal;
-  font-size: 15px;
-}
-.listItem_img {
-  flex-shrink: 0;
-  width: 92px;
-  height: 92px;
-  overflow: hidden;
-}
-.listItem_img img {
-  width: 100%;
+.list {
+  margin: 1em 0;
+  padding: 0 .2rem;
+  background: #fff;
 }
 
-/* list-eval */
-.listItem_title-eval small {
-  font-size: 12px;
+.list_item {
+  display: flex;
+  padding: .5em 0 1em;
+  border: 0;
+  border-bottom: 1px solid var(--borderColorLight);
 }
-.listItem_unfold {
+.list_item:last-child {
+  border: 0;
+}
+.list_item_img img {
+  width: 100%;
+}
+.list_item_text {
+  flex: 1;
+}
+.list_item_title {
+  font-size: .24rem;
+}
+.list_item_title_small {
+  margin-left: .6em;
+  font-weight: normal;
+  font-size: .16rem;
+}
+.list_item_para {
+  line-height: 2;
+}
+.list_item_para:last-child {
+  display: flex;
+  justify-content: space-between;
+}
+.multiple_item {
+  margin-right: 1em;
+  /*color: red;*/
+}
+
+/* comment */
+.list_item_unfold {
   float: right;
   cursor: pointer;
-  font-size: 14px;
 }
-.listItem_content {
+.list_item_content {
   margin-top: .5em;
   overflow: hidden;
-  font-size: 14px;
-  line-height: 16px;
   text-indent: 2em;
   word-break: break-all;
 }
-.listItem_time {
+.list_item_para-right {
   text-align: right;
-  line-height: 1.8;
-}
-
-.listItem section > div > div {
-  line-height: 1.8;
-}
-.listItem .multiple span > span {
-  margin-right: 1em;
-  color: red;
-}
-.listItem .other {
-  font-size: 16px;
-}
-
-/* list-rich */
-.listItem_img-rich {
-  align-self: center;
-  width: 70px;
-  width: 20vw;
-  height: 70px;
-  height: 20vw;
-}
-.listItem_text {
-  flex-grow: 1;
-  margin-left: 10px;
-}
-.listItem_title-rich {
-  line-height: 16px;
-}
-.listItem_title_small {
-  margin-left: .6em;
-}
-.listItem_emp {
-  margin-top: .5em;
-  font-size: 14px;
-}
-.listItem_last {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  font-size: 12px;
-}
-.listItem_last_r {
-  font-size: 14px;
-}
-.listItem_lastItem {
-  margin-right: .5em;
 }
