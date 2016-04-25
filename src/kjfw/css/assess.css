@@ -48,6 +48,7 @@
   margin: 1em 0;
   background: #fff;
   font-size: .24rem;
+  cursor: pointer;
 }
 .content_btn em {
   font-style: normal;

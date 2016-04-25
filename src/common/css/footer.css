@@ -76,6 +76,7 @@
   border: 0;
   border-radius: 3px;
   color: #fff;
+  cursor: pointer;
 }
 /* 折行式变体，HTML有变化 */
 /*.nav_link_wrap {

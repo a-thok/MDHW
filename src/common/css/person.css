@@ -30,6 +30,7 @@
   border: 0;
   border-radius: 3px;
   color: #fff;
+  cursor: pointer;
 }
 .person_bar_btn .fa {
   margin-right: .4em;

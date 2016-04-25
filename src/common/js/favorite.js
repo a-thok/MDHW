@@ -9,6 +9,7 @@ export default function favorite(btn, prop, addApi, delApi) {
       location.href = `http://${MAIN_HOST}/m/main/denglu?redirectURL=${encodeURIComponent(location.href)}`;
     } else {
       const id = location.pathname.replace(/.*\//, '');
+      // const id = +location.pathname.replace(/.*\//, '');
       // const id = 55;  // 临时自定义的id
       const unFav = starCl.contains('fa-star-o'); // 是否收藏
       const api = unFav ? addApi : delApi;// 判断接口类型
