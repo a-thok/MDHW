@@ -1,10 +1,8 @@
 import { $, $parent, $cookie } from 'func';
 import render from 'render';
-import showMenu from 'showMenu';
 import xhr from 'xhr';
 
 export default function comment() {
-  showMenu();
   function template(data) {
     return data.result.data.reduce((pre, cur) => {
       const child = cur.child.reduce((_pre, _cur) => (
