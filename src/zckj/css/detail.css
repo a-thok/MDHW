@@ -54,3 +54,32 @@
   background-repeat: no-repeat;
   background-size: 18%;
 }
+
+/*微信，微博滑出样式*/
+.ftCtrl_item_wb,
+.ftCtrl_item_wx {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  padding: .1rem;
+  top: 0;
+  background-color: #fff;
+}
+.ftCtrl_item_wb {
+  left: 0;
+  transform: translate(-100%, -101%);
+  transition: transform .1s;
+  
+}
+.ftCtrl_item_wx {
+  right: 0;
+  transform: translate(100%, -101%);
+  transition: transform .1s;
+}
+.ftCtrl_item_wb img,
+.ftCtrl_item_wx img {
+  width: 100%;
+}
+.is-filter {
+  transform: translate(0, -101%);
+}
