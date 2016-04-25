@@ -37,6 +37,9 @@
   flex: 1;
   font-weight: bold;
   font-size: .3rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 /* 图片 */
 .list_link {
@@ -105,6 +108,7 @@
 }
 .list_item_intro {
   padding: 1.2em 0;
+  word-break: break-all; /* 项目摘要折行*/
 }
 
 /*点赞切换样式*/

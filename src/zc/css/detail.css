@@ -30,6 +30,7 @@
   padding: 1em 1.2em;
   background: #fff;
   font-size: .18rem;
+  word-wrap: break-word; /*众筹详情折行*/
 }
 /*.dtSection_p {
   display: flex;
@@ -175,6 +176,7 @@
 }
 .zcSupportList_item_content {
   padding: 1em;
+  word-break: break-word; /*众筹汇报折行*/
 }
 .zcSupportList_item_content_tilte {
   font-size: .18rem;

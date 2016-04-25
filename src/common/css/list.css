@@ -35,8 +35,11 @@
   width: 100%;
 }
 /* 文本 */
-.list_item_text {
-  flex: 1;
+.list_item_text { /*文本截断*/
+  flex-grow: 1;
+  width: 50%;
+  flex-basis: 50%;
+  white-space: nowrap;
 }
 .list_item_img img { /*修改样式，暂改列表图片大小*/
   width: 100%;
@@ -45,6 +48,8 @@
   /*margin-bottom: 6px;*/
   font-size: .18rem;
   line-height: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .list_item_text_p-light {
   color: var(--fontColorLight);
