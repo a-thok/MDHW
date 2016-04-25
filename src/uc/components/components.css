@@ -4,61 +4,10 @@
 @import "./FormItemSelect/style.css";
 @import "./FormItemTextRight/style.css";
 @import "./ListItem/style.css";
+@import "./ListItemPlain/style.css";
 @import "./ListItemDetail/style.css";
 /*@import "./ListItemPlain/style.css";*/
-@import "./UGroup/style.css";
-@import "./ULink/style.css";
-@import "./UTextGroup/style.css";
-@import "./UTitle/style.css";
-
-.list {
-  margin: 10px 0;
-  padding: 0 3.7333%;
-  background: #fff;
-}
-.list-pain_content,
-.list-pain_title {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  font-size: 18px;
-  border-bottom: 1px solid var(--borderColorLight);
-}
-.list-pain_title {
-  font-weight: normal;
-}
-.list-pain_title,
-.list-pain_content-text {
-  padding: 10px .4em;
-}
-.list-pain_content {
-  font-size: 15PX;
-  color: var(--fontColorLight);
-}
-.list-pain_content-text {
-  border: 0;
-}
-.list-link {
-  text-decoration: none;
-  color: #46a0ce;
-}
-.fontColor {
-  color: red;
-}
-.list-pain_border::before {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 16px;
-  margin-right: .4em;
-  border-left: 3px solid #f00;
-}
-.list-plain {
-  padding: 0;
-  background: rgba(255, 255, 255, 0);
-}
-.list-item-pain {
-  padding: 0 3.7333%;
-  margin: 10px 0;
-  background: #fff;
-}
+@import "./FormGroup/style.css";
+@import "./Navbar/style.css";
+@import "./TextGroup/style.css";
+@import "./Title/style.css";

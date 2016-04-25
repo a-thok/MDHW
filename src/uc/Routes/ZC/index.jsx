@@ -5,7 +5,7 @@ import fetching from '../../mixins/fetching.js';
 export default React.createClass({
   getInitialState: function () {
     return {
-      Attention: {
+      Follow: {
         index: 0,
         fetching: false,
         finished: false,
@@ -26,12 +26,12 @@ export default React.createClass({
       }
     };
   },
-  onAttentionList: function () {
+  onFollowList: function () {
     loadList.bind(this)({
       url: '/m/sys/ZC/Collect/List',
-      list: 'Attention'
+      list: 'Follow'
     });
-    fetching.bind(this)('Attention');
+    fetching.bind(this)('Follow');
   },
   onSupportList: function () {
     loadList.bind(this)({
@@ -70,9 +70,9 @@ export default React.createClass({
           onShowDetail: this.onShowDetail
         };
         break;
-      case 'Attention':
+      case 'Follow':
         extra = {
-          onAttentionList: this.onAttentionList
+          onFollowList: this.onFollowList
         };
         break;
       case 'Support':

@@ -3,8 +3,7 @@ import React from 'react';
 import Profile from './Profile';
 import Basics from './Basics';
 import Modules from './Modules';
-import ULink from '../../components/ULink';
-import { Link } from 'react-router';
+import Navbar from '../../components/Navbar';
 import getHash from '../../mixins/getHash';
 
 export default React.createClass({
@@ -30,8 +29,8 @@ export default React.createClass({
           */
         }
         <div className="ulinkWrap">
-          <Link to="/dfadsf"><ULink text="帮助" icon="question-circle" /></Link>
-          <Link to="/dfadsf"><ULink text="设置" icon="gear" /></Link>
+          <Navbar to="dfadas" text="帮助" icon="question-circle" />
+          <Navbar to="dfadfa" text="设置" icon="gear" />
         </div>
       </div>
     );

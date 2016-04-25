@@ -7,10 +7,10 @@ import Reservation from './routes/Reservation';
 import ReservationImfor from './routes/ReservationImfor';
 import Addresses from './routes/Addresses';
 
-import Account from './routes/Account';
-import AccountHome from './routes/Account/partials/Home';
-// import Logo from './routes/Account/partials/Logo';
-import Edit from './routes/Account/partials/Edit';
+// import Account from './routes/Account';
+// import AccountHome from './routes/Account/partials/Home';
+// // import Logo from './routes/Account/partials/Logo';
+// import Edit from './routes/Account/partials/Edit';
 // import AccountAddress from './routes/Account/partials/Address';
 // import PetName from './routes/Account/partials/PetName';
 // import Gender from './routes/Account/partials/Gender';
@@ -20,37 +20,37 @@ import Edit from './routes/Account/partials/Edit';
 // import BindAccount from './routes/Account/partials/BindAccount';
 // import Phone from './routes/Account/partials/Phone';
 
-import RCZP from './routes/RCZP';
-import RczpHome from './routes/RCZP/partials/Home';
-import Preview from './routes/RCZP/partials/Preview';
-import Evaluate from './routes/RCZP/partials/Evaluate';
-import Position from './routes/RCZP/partials/Position';
-import Resume from './routes/RCZP/partials/Resume';
+import Rczp from './routes/Rczp';
+import RczpNav from './routes/Rczp/partials/Nav';
+import RczpResumePre from './routes/Rczp/partials/ResumePre';
+import RczpComment from './routes/Rczp/partials/Comment';
+import RczpPost from './routes/Rczp/partials/Post';
+import RczpResume from './routes/Rczp/partials/Resume';
 
-import CYSJ from './routes/CYSJ';
-import CysjHome from './routes/CYSJ/partials/Home';
-import CysjRelease from './routes/CYSJ/partials/Release';
-import CysjHasRelease from './routes/CYSJ/partials/HasRelease';
-import CysjHasCollect from './routes/CYSJ/partials/HasCollect';
-import HasDelivery from './routes/CYSJ/partials/HasDelivery';
+import Cysj from './routes/Cysj';
+import CysjNav from './routes/Cysj/partials/Nav';
+import CysjPublish from './routes/Cysj/partials/Publish';
+import CysjPublished from './routes/Cysj/partials/Published';
+import CysjCollection from './routes/CYSJ/partials/Collection';
+import CysjDelivered from './routes/CYSJ/partials/Delivered';
 
-import SRDZ from './routes/SRDZ';
-import SrdzHome from './routes/SRDZ/partials/Home';
-import BuyerList from './routes/SRDZ/partials/BuyerList';
-import SellerList from './routes/SRDZ/partials/SellerList';
-import Attention from './routes/SRDZ/partials/Attention';
+import Srdz from './routes/Srdz';
+import SrdzNav from './routes/Srdz/partials/Nav';
+import SrdzBuyer from './routes/Srdz/partials/Buyer';
+import SrdzSeller from './routes/Srdz/partials/Seller';
+import SrdzFollow from './routes/Srdz/partials/Follow';
 
-import ZB from './routes/ZB';
-import ZbHome from './routes/ZB/partials/Home';
-import ZbRelease from './routes/ZB/partials/Release';
-import ZbHasRelease from './routes/ZB/partials/HasRelease';
-import ZbHasCollect from './routes/ZB/partials/HasCollect';
+import Zb from './routes/Zb';
+import ZbNav from './routes/Zb/partials/Nav';
+import ZbPublish from './routes/Zb/partials/Publish';
+import ZbPublished from './routes/Zb/partials/Published';
+import ZbCollection from './routes/Zb/partials/Collection';
 
-import ZC from './routes/ZC';
-import ZcHome from './routes/ZC/partials/Home';
-import Order from './routes/ZC/partials/Order';
-import ZcAttention from './routes/ZC/partials/Attention';
-import Support from './routes/ZC/partials/Support';
+import Zc from './routes/Zc';
+import ZcNav from './routes/Zc/partials/Nav';
+import ZcOrder from './routes/Zc/partials/Order';
+import ZcFollowed from './routes/Zc/partials/Follow';
+import ZcSupport from './routes/Zc/partials/Support';
 
 import App from './App';
 import Test from './routes/Test';
@@ -59,55 +59,57 @@ ReactDOM.render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="/account" component={Account}>
-        <IndexRoute component={AccountHome} />
-        <Route path="/account/edit" component={Edit} />
-        {
-          /*
-          <Route path="/account/logo" component={Logo} />
-          <Route path="/account/updatepw" component={UpdatePW} />
-          <Route path="/account/address" component={AccountAddress} />
-          <Route path="/account/petname" component={PetName} />
-          <Route path="/account/gender" component={Gender} />
-          <Route path="/account/email" component={Email} />
-          <Route path="/account/realname" component={RealName} />
-          <Route path="/account/signature" component={Signature} />
-          <Route path="/account/bindaccount" component={BindAccount} />
-          <Route path="/account/phone" component={Phone} />
-          */
-        }
+      {
+        // <Route path="/account" component={Account}>
+        //   <IndexRoute component={AccountHome} />
+        //   <Route path="/account/edit" component={Edit} />
+        //   {
+        //     /*
+        //     <Route path="/account/logo" component={Logo} />
+        //     <Route path="/account/updatepw" component={UpdatePW} />
+        //     <Route path="/account/address" component={AccountAddress} />
+        //     <Route path="/account/petname" component={PetName} />
+        //     <Route path="/account/gender" component={Gender} />
+        //     <Route path="/account/email" component={Email} />
+        //     <Route path="/account/realname" component={RealName} />
+        //     <Route path="/account/signature" component={Signature} />
+        //     <Route path="/account/bindaccount" component={BindAccount} />
+        //     <Route path="/account/phone" component={Phone} />
+        //     */
+        //   }
+        // </Route>
+      }
+      <Route path="/rczp" component={Rczp}>
+        <IndexRoute component={RczpNav} />
+        <Route path="/rczp/preview" component={RczpResumePre} />
+        <Route path="/rczp/comment" component={RczpComment} />
+        <Route path="/rczp/post" component={RczpPost} />
+        <Route path="/rczp/resume" component={RczpResume} />
       </Route>
-      <Route path="/rczp" component={RCZP}>
-        <IndexRoute component={RczpHome} />
-        <Route path="/rczp/preview" component={Preview} />
-        <Route path="/rczp/evaluate" component={Evaluate} />
-        <Route path="/rczp/position" component={Position} />
-        <Route path="/rczp/resume" component={Resume} />
+      <Route path="/cysj" component={Cysj}>
+        <IndexRoute component={CysjNav} />
+        <Route path="/cysj/publish" component={CysjPublish} />
+        <Route path="/cysj/published" component={CysjPublished} />
+        <Route path="/cysj/collection" component={CysjCollection} />
+        <Route path="/cysj/delivered" component={CysjDelivered} />
       </Route>
-      <Route path="/cysj" component={CYSJ}>
-        <IndexRoute component={CysjHome} />
-        <Route path="/cysj/release" component={CysjRelease} />
-        <Route path="/cysj/hasRelease" component={CysjHasRelease} />
-        <Route path="/cysj/hascollect" component={CysjHasCollect} />
-        <Route path="/cysj/hasdelivery" component={HasDelivery} />
+      <Route path="/Srdz" component={Srdz}>
+        <IndexRoute component={SrdzNav} />
+        <Route path="/Srdz/buyer" component={SrdzBuyer} />
+        <Route path="/Srdz/seller" component={SrdzSeller} />
+        <Route path="/Srdz/follow" component={SrdzFollow} />
       </Route>
-      <Route path="/srdz" component={SRDZ}>
-        <IndexRoute component={SrdzHome} />
-        <Route path="/srdz/buyerList" component={BuyerList} />
-        <Route path="/srdz/sellerList" component={SellerList} />
-        <Route path="/srdz/attention" component={Attention} />
+      <Route path="/zb" component={Zb}>
+        <IndexRoute component={ZbNav} />
+        <Route path="/zb/publish" component={ZbPublish} />
+        <Route path="/zb/published" component={ZbPublished} />
+        <Route path="/zb/collection" component={ZbCollection} />
       </Route>
-      <Route path="/zb" component={ZB}>
-        <IndexRoute component={ZbHome} />
-        <Route path="/zb/release" component={ZbRelease} />
-        <Route path="/zb/hasrelease" component={ZbHasRelease} />
-        <Route path="/zb/hascollect" component={ZbHasCollect} />
-      </Route>
-      <Route path="/zc" component={ZC}>
-        <IndexRoute component={ZcHome} />
-        <Route path="/zc/order" component={Order} />
-        <Route path="/zc/attention" component={ZcAttention} />
-        <Route path="/zc/support" component={Support} />
+      <Route path="/zc" component={Zc}>
+        <IndexRoute component={ZcNav} />
+        <Route path="/zc/follow" component={ZcFollowed} />
+        <Route path="/zc/support" component={ZcSupport} />
+        <Route path="/zc/order" component={ZcOrder} />
       </Route>
       <Route path="/address" component={Addresses} />
       <Route path="/reservation" component={Reservation} />
