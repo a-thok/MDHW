@@ -28,6 +28,7 @@
   display: block;
   flex: 1;
   /*padding-bottom: 1em;*/
+  word-break: break-word; /*项目标题折行*/
 }
 .base_title_text {
   font-size: .28rem;
@@ -166,4 +167,5 @@
 .userInput {
   padding: .8em .2rem;
   font-size: .18rem;
+  word-break: break-word;
 }
