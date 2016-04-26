@@ -1,5 +1,5 @@
-export default function remain() {
+export default function scroll(cb) {
   const windowHeight = window.innerHeight;
   const pageBottom = document.body.getBoundingClientRect().bottom;
-  return pageBottom - windowHeight;
+  if (pageBottom - windowHeight < 50) cb();
 }

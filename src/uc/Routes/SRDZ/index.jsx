@@ -27,16 +27,18 @@ export default React.createClass({
       }
     };
   },
-  onFollowList: function () {
+  // 请求关注列表
+  fetchFollow: function () {
     loadList.bind(this)({
       url: '/m/sys/Srdz/Collect/List',
       list: 'Follow'
     });
     fetching.bind(this)('Follow');
   },
-  onBuyerList: function (type) {
+  // 请求买家订单列表
+  fetchBuyer: function (type) {
     loadList.bind(this)({
-      url: '/m/sys/Srdz/Deal/Buyer',
+      url: '/m/sys/Srdz/Deal/BuyerList',
       list: 'Buyer',
       type: type === undefined ? 0 : type,
       param: 'state',
@@ -44,9 +46,10 @@ export default React.createClass({
     });
     fetching.bind(this)('Buyer');
   },
-  onSeller: function (type, reset) {
+  // 请求卖家订单列表
+  fetchSeller: function (type, reset) {
     loadList.bind(this)({
-      url: '/m/sys/Srdz/Deal/Seller',
+      url: '/m/sys/Srdz/Deal/SellerList',
       list: 'Seller',
       type,
       cb: function (items) {
@@ -57,11 +60,13 @@ export default React.createClass({
     });
     fetching.bind(this)('Seller');
   },
-  onShowDetail: function (index) {
+  // 显示详情
+  showDetail: function (index) {
     const newState = Object.assign({}, this.state.Seller);
     newState.data[index].showDetail = !newState.data[index].showDetail;
     this.setState(newState);
   },
+  // 渲染
   render: function () {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
@@ -70,18 +75,18 @@ export default React.createClass({
     switch (ChildName) {
       case 'Follow':
         extra = {
-          onFollowList: this.onFollowList
+          fetchFollow: this.fetchFollow
         };
         break;
       case 'Seller':
         extra = {
-          onSeller: this.onSeller,
-          onShowDetail: this.onShowDetail
+          fetchSeller: this.fetchSeller,
+          showDetail: this.showDetail
         };
         break;
       case 'Buyer':
         extra = {
-          onBuyerList: this.onBuyerList
+          fetchBuyer: this.fetchBuyer
         };
         break;
       default:

@@ -1,24 +1,22 @@
 import React from 'react';
 import ListItem from '../../../components/ListItem';
-import ListItemDetail from '../../../components/ListItemDetail';
 import Loading from '../../../components/Loading';
 import getHash from '../../../mixins/getHash';
+import scroll from '../../../mixins/scroll';
 import removeWindowEvent from '../../../mixins/removeWindowEvent';
 
 export default React.createClass({
   mixins: [getHash, removeWindowEvent],
   componentDidMount: function () {
-    this.props.onSellerList(0, false);
+    this.props.fetchSeller(0, false);
     window.addEventListener('scroll', this.handleScroll);
   },
   handleClick: function (type) {
     if (type === this.props.type) return;
-    this.props.onSellerList(type, true);
+    this.props.fetchSeller(type, true);
   },
   handleScroll: function () {
-    const body = document.body;
-    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
-    if (remain < 50) this.props.onSellerList();
+    scroll(this.props.fetchSeller);
   },
   render: function () {
     let content = this.props.data.map((item, index) => {
@@ -40,8 +38,8 @@ export default React.createClass({
         emp={['买家名称', item.receiveName]}
         title={item.projectName}
         tep="down"
-        extra={<ListItemDetail data={detail} />}
-        onShowDetail={this.props.onShowDetail}
+        detail={detail}
+        onShowDetail={this.props.showDetail}
       />);
     });
     return (

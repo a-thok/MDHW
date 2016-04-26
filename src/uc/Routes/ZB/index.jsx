@@ -23,20 +23,7 @@ export default React.createClass({
       }
     };
   },
-  onCollectionList: function () {
-    loadList.bind(this)({
-      url: '/m/sys/zb/Collect/List',
-      list: 'Collection'
-    });
-    fetching.bind(this)('Collection');
-  },
-  onPublishedList: function () {
-    loadList.bind(this)({
-      url: '/m/sys/ZB/Publish/List',
-      list: 'Published'
-    });
-    fetching.bind(this)('Published');
-  },
+  // 表单提交
   onChange: function (e, name) {
     const newState = Object.assign({}, this.state.Publish);
     newState.data[name] = e.target.value;
@@ -45,10 +32,28 @@ export default React.createClass({
   onSubmit: function (e) {
     e.preventDefault();
   },
-  onCancle: function (id, index) {
+  // 请求收藏列表
+  fetchCollection: function () {
+    loadList.bind(this)({
+      url: '/m/sys/zb/Collect/List',
+      list: 'Collection'
+    });
+    fetching.bind(this)('Collection');
+  },
+  // 取消收藏
+  delCollection: function (id, index) {
     deFavorite.bind(this)('/m/sys/zb/collect/del', 'Collection', id, index);
     fetching.bind(this)('Collection');
   },
+  // 请求已发布列表
+  fetchPublished: function () {
+    loadList.bind(this)({
+      url: '/m/sys/ZB/Publish/List',
+      list: 'Published'
+    });
+    fetching.bind(this)('Published');
+  },
+  // 渲染
   render: function () {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
@@ -57,13 +62,13 @@ export default React.createClass({
     switch (ChildName) {
       case 'Collection':
         extra = {
-          onCollectionList: this.onCollectionList,
-          onCancle: this.onCancle
+          fetchCollection: this.fetchCollection,
+          delCollection: this.delCollection
         };
         break;
       case 'Published':
         extra = {
-          onPublishedList: this.onPublishedList
+          fetchPublished: this.fetchPublished
         };
         break;
       case 'Publish':

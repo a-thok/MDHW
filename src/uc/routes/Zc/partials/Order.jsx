@@ -3,23 +3,21 @@ import ListTab from '../../../components/ListTab';
 import ListItem from '../../../components/ListItem';
 import Loading from '../../../components/Loading';
 import getHash from '../../../mixins/getHash';
+import scroll from '../../../mixins/scroll';
 import removeWindowEvent from '../../../mixins/removeWindowEvent';
-import ListItemDetail from '../../../components/ListItemDetail';
 
 export default React.createClass({
   mixins: [getHash, removeWindowEvent],
   componentDidMount: function () {
-    this.props.onOrderList(0, false);
+    this.props.fetchOrder(0, false);
     window.addEventListener('scroll', this.handleScroll);
   },
   handleScroll: function () {
-    const body = document.body;
-    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
-    if (remain < 50) this.props.onOrderList();
+    scroll(this.props.fetchOrder);
   },
   handleClick: function (type) {
     if (type === this.props.type) return;
-    this.props.onOrderList(type, true);
+    this.props.fetchOrder(type, true);
   },
   render: function () {
     const tabs = [{ text: '已付款', type: 0 }, { text: '待付款', type: 1 }].map(item => (
@@ -50,7 +48,7 @@ export default React.createClass({
         title={item.projectName}
         small={item.typename}
         emp={['目标', item.moneyall]}
-        extra={<ListItemDetail data={detail} />}
+        detail={detail}
         onShowDetail={this.props.onShowDetail}
       />);
     });

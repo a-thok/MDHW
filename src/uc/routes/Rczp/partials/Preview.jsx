@@ -6,7 +6,7 @@ import getHash from '../../../mixins/getHash';
 export default React.createClass({
   mixins: [getHash],
   componentDidMount: function () {
-    this.props.fetchResumePre();
+    this.props.fetchPreview();
   },
   render: function () {
     return (

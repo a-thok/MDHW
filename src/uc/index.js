@@ -3,9 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Home from './routes/Home';
-import Reservation from './routes/Reservation';
-import ReservationImfor from './routes/ReservationImfor';
-import Addresses from './routes/Addresses';
 
 // import Account from './routes/Account';
 // import AccountHome from './routes/Account/partials/Home';
@@ -22,7 +19,7 @@ import Addresses from './routes/Addresses';
 
 import Rczp from './routes/Rczp';
 import RczpNav from './routes/Rczp/partials/Nav';
-import RczpResumePre from './routes/Rczp/partials/ResumePre';
+import RczpPreview from './routes/Rczp/partials/Preview';
 import RczpComment from './routes/Rczp/partials/Comment';
 import RczpPost from './routes/Rczp/partials/Post';
 import RczpResume from './routes/Rczp/partials/Resume';
@@ -53,7 +50,12 @@ import ZcFollowed from './routes/Zc/partials/Follow';
 import ZcSupport from './routes/Zc/partials/Support';
 
 import App from './App';
-import Test from './routes/Test';
+
+import Settings from './routes/Settings';
+import SettingsNav from './routes/Settings/partials/Nav';
+import Reservation from './routes/Settings/partials/Reservation';
+import ReservationImfor from './routes/Settings/partials/ReservationImfor';
+import Addresses from './routes/Settings/partials/Addresses';
 
 ReactDOM.render((
   <Router history={hashHistory}>
@@ -81,7 +83,7 @@ ReactDOM.render((
       }
       <Route path="/rczp" component={Rczp}>
         <IndexRoute component={RczpNav} />
-        <Route path="/rczp/preview" component={RczpResumePre} />
+        <Route path="/rczp/preview" component={RczpPreview} />
         <Route path="/rczp/comment" component={RczpComment} />
         <Route path="/rczp/post" component={RczpPost} />
         <Route path="/rczp/resume" component={RczpResume} />
@@ -111,10 +113,12 @@ ReactDOM.render((
         <Route path="/zc/support" component={ZcSupport} />
         <Route path="/zc/order" component={ZcOrder} />
       </Route>
-      <Route path="/address" component={Addresses} />
-      <Route path="/reservation" component={Reservation} />
-      <Route path="/reservationImfor" component={ReservationImfor} />
-      <Route path="/test" component={Test} />
+      <Route path="/settings" component={Settings}>
+        <IndexRoute component={SettingsNav} />
+        <Route path="/settings/address" component={Addresses} />
+        <Route path="/settings/reservation" component={Reservation} />
+        <Route path="/settings/reservationImfor" component={ReservationImfor} />
+      </Route>
     </Route>
   </Router>
   ), document.querySelector('.page')

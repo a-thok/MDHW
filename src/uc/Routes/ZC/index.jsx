@@ -26,21 +26,24 @@ export default React.createClass({
       }
     };
   },
-  onFollowList: function () {
+  // 请求关注列表
+  fetchFollow: function () {
     loadList.bind(this)({
       url: '/m/sys/ZC/Collect/List',
       list: 'Follow'
     });
     fetching.bind(this)('Follow');
   },
-  onSupportList: function () {
+  // 请求支持列表
+  fetchSupport: function () {
     loadList.bind(this)({
       url: '/m/sys/ZC/Deal/SupportList',
       list: 'Support'
     });
     fetching.bind(this)('Support');
   },
-  onOrderList: function (type, reset) {
+  // 请求订单列表
+  fetchOrder: function (type, reset) {
     loadList.bind(this)({
       url: '/m/sys/ZC/Deal/InvestList',
       list: 'Order',
@@ -53,11 +56,13 @@ export default React.createClass({
     });
     fetching.bind(this)('Order');
   },
-  onShowDetail: function (index) {
+  // 显示详情
+  showDetail: function (index) {
     const newState = Object.assign({}, this.state.Order);
     newState.data[index].showDetail = !newState.data[index].showDetail;
     this.setState(newState);
   },
+  // 渲染
   render: function () {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
@@ -66,18 +71,18 @@ export default React.createClass({
     switch (ChildName) {
       case 'Order':
         extra = {
-          onOrderList: this.onOrderList,
-          onShowDetail: this.onShowDetail
+          fetchOrder: this.fetchOrder,
+          showDetail: this.showDetail
         };
         break;
       case 'Follow':
         extra = {
-          onFollowList: this.onFollowList
+          fetchFollow: this.fetchFollow
         };
         break;
       case 'Support':
         extra = {
-          onSupportList: this.onSupportList
+          fetchSupport: this.fetchSupport
         };
         break;
       default:
