@@ -5,6 +5,8 @@ import './img/zckj_logo.png';
 import './img/lqt.png';
 import './img/iconfont-qiyerenzheng1.png';
 import './img/iconfont-qiyerenzheng.png';
+import './img/weibo.png';
+import './img/weixin.jpg';
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
