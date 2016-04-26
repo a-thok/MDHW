@@ -31,7 +31,8 @@ export default function assess() {
     }
 
     tipCl.remove('is_show');
-    fetch('/m/KJ/AssessmentAdd', {
+    fetch('/m/KJ/assess/add', {
+    // fetch('/m/KJ/AssessmentAdd', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

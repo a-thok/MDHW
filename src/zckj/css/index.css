@@ -14,12 +14,14 @@
 }
 /** 列表 **/
 .hot_list {
-  display: flex;
+  /*display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-between;*/
   font-size: .18rem;
+  overflow: hidden;
 }
 .hot_list_item {
+  float: left;
   position: relative;
   width: 48%;
   border: 1px solid var(--borderColorLight);
@@ -28,6 +30,9 @@
   background-color: var(--borderColorLight);
   overflow: hidden;
   color: var(--fontColorLight);
+}
+.hot_list_item:nth-child(odd) {
+  margin-right: 4%;
 }
 .hot_list_item_a {
   display: flex;

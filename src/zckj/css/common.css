@@ -26,11 +26,6 @@ header {
   font-size: .3rem;
   line-height: 3;
 }
-/*@media screen and (min-width: 750px) {
-  .aside_title {
-    line-height: 100px;
-  }
-}*/
 .aside_return {
   display: flex;
   align-items: center;
