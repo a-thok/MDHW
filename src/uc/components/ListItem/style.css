@@ -5,13 +5,16 @@
 }
 
 .list_item {
-  display: flex;
-  padding: .5em 0 1em;
+  padding: 1em 0;
   border: 0;
+  margin: 0;
   border-bottom: 1px solid var(--borderColorLight);
 }
 .list_item:last-child {
   border: 0;
+}
+.list_item_main {
+  display: flex;
 }
 .list_item_img img {
   width: 100%;
@@ -52,4 +55,39 @@
 }
 .list_item_para-right {
   text-align: right;
+}
+
+/* 详情 */
+.list_item_para .fa-angle-up,
+.list_item_para .fa-angle-down {
+  font-size: .3rem;
+}
+.list_item_detail {
+  max-height: 0;
+  margin-top: 1em;
+  background: #f9f7de;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(0, 1, .5, 1);
+}
+.list_item_detail.is-show {
+  max-height: 4.824rem;
+}
+.detailGroup {
+  padding: .6em .5em;
+  border-bottom: .2em solid #fff;
+}
+.detailGroup_label {
+  display: inline-block;
+  width: 6em;
+  color: #666;
+  text-align: right;
+}
+.list_item_detail_link {
+  display: block;
+  width: 50%;
+  margin: 1.5em auto;
+  background: #fff;
+  line-height: 3.5;
+  text-align: center;
+  text-decoration: none;
 }

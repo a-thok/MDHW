@@ -19,6 +19,9 @@
   font-size: .24rem;
   line-height: 2.8;
 }
+.navbar:last-child div {
+  border: 0;
+}
 .navbar div span {
   display: block;
 }

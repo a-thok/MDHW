@@ -2,18 +2,17 @@ import React from 'react';
 import ListItem from '../../../components/ListItem';
 import Loading from '../../../components/Loading';
 import getHash from '../../../mixins/getHash';
+import scroll from '../../../mixins/scroll';
 import removeWindowEvent from '../../../mixins/removeWindowEvent';
 
 export default React.createClass({
   mixins: [getHash, removeWindowEvent],
   componentDidMount: function () {
-    this.props.onResemuList();
+    this.props.fetchResume();
     window.addEventListener('scroll', this.handleScroll);
   },
   handleScroll: function () {
-    const body = document.body;
-    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
-    if (remain < 50) this.props.onResemuList();
+    scroll(this.props.fetchResume);
   },
   render: function () {
     let contentList = this.props.data.map((item, index) => (

@@ -29,6 +29,7 @@ export default React.createClass({
       }
     };
   },
+  // 提交表单
   onChange: function (e, name) {
     const newState = Object.assign({}, this.state.Publish);
     newState.data[name] = e.target.value;
@@ -37,31 +38,36 @@ export default React.createClass({
   onSubmit: function (e) {
     e.preventDefault();
   },
-  onPublishedList: function () {
+  // 请求已发布列表
+  fetchPublished: function () {
     loadList.bind(this)({
       url: '/m/sys/diy/Publish/List',
       list: 'Published'
     });
     fetching.bind(this)('Published');
   },
-  onCollectionList: function () {
+  // 请求收藏列表
+  fetchCollection: function () {
     loadList.bind(this)({
       url: '/m/sys/diy/collect/list',
       list: 'Collection'
     });
     fetching.bind(this)('Collection');
   },
-  onDeliveredList: function () {
+  // 取消收藏
+  delCollection: function (id, index) {
+    deFavorite.bind(this)('/m/sys/diy/collect/del', 'Collection', id, index);
+    fetching.bind(this)('Collection');
+  },
+  // 请求已投递列表
+  fetchDelivered: function () {
     loadList.bind(this)({
       url: '/m/sys/diy/Deal/BidsList',
       list: 'Delivered'
     });
     fetching.bind(this)('Delivered');
   },
-  onCancle: function (id, index) {
-    deFavorite.bind(this)('/m/sys/diy/collect/del', 'Collection', id, index);
-    fetching.bind(this)('Collection');
-  },
+  // 渲染
   render: function () {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
@@ -76,18 +82,18 @@ export default React.createClass({
         break;
       case 'Published':
         extra = {
-          onPublishedList: this.onPublishedList
+          fetchPublished: this.fetchPublished
         };
         break;
       case 'Collection':
         extra = {
-          onCollectionList: this.onCollectionList,
-          onCancle: this.onCancle
+          fetchCollection: this.fetchCollection,
+          delCollection: this.delCollection
         };
         break;
       case 'Delivered':
         extra = {
-          onDeliveredList: this.onDeliveredList
+          fetchDelivered: this.fetchDelivered
         };
         break;
       default:

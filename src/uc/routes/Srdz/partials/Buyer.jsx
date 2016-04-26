@@ -2,22 +2,21 @@ import React from 'react';
 import ListItem from '../../../components/ListItem';
 import Loading from '../../../components/Loading';
 import getHash from '../../../mixins/getHash';
+import scroll from '../../../mixins/scroll';
 import removeWindowEvent from '../../../mixins/removeWindowEvent';
 
 export default React.createClass({
   mixins: [getHash, removeWindowEvent],
   componentDidMount: function () {
-    this.props.onBuyerList(0, false);
+    this.props.fetchBuyer(0, false);
     window.addEventListener('scroll', this.handleScroll);
   },
   handleClick: function (type) {
     if (type === this.props.type) return;
-    this.props.onBuyerList(type, true);
+    this.props.fetchBuyer(type, true);
   },
   handleScroll: function () {
-    const body = document.body;
-    const remain = body.scrollHeight - body.scrollTop - window.screen.height;
-    if (remain < 50) this.props.onBuyerList();
+    scroll(this.props.fetchBuyer);
   },
   render: function () {
     let contentList = this.props.data.map((item, index) => (

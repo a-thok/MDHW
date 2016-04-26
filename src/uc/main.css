@@ -1,14 +1,5 @@
 @import "../common/css/var.css";
-@import "./routes/Reservation/box.css";
-@import "./routes/ReservationImfor/box.css";
+@import "./routes/Settings/settings.css";
 @import "./routes/Home/home.css";
-@import "./routes/Addresses/addresses.css";
 
 @import "./components/components.css";
-@import "./routes/ZC/zc.css";
-@import "./routes/SRDZ/srdz.css";
-
-/*临时代码*/
-* {
-  font-size: .18rem;
-}

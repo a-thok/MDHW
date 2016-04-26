@@ -1,8 +1,8 @@
 import React from 'react';
-import TextGroup from '../../components/TextGroup';
-import FormItemInput from '../../components/FormItemInput';
-import FormItemTextRight from '../../components/FormItemTextRight';
-import Counter from '../../components/Counter';
+import TextGroup from '../../../../components/TextGroup';
+import FormItemInput from '../../../../components/FormItemInput';
+import FormItemTextRight from '../../../../components/FormItemTextRight';
+import Counter from '../../../../components/Counter';
 
 
 const Reservation = React.createClass({

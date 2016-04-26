@@ -3,10 +3,10 @@ import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
 
 export default React.createClass({
-  // 状态
+  // 初始状态
   getInitialState: function () {
     return {
-      ResumePre: {
+      Preview: {
         items: []
       },
       Resume: {
@@ -29,36 +29,6 @@ export default React.createClass({
       }
     };
   },
-  // 获取职位列表
-  onPostList: function () {
-    loadList.bind(this)({
-      url: '/m/sys/hr/collect/list',
-      list: 'Post'
-    });
-    fetching.bind(this)('Post');
-  },
-  // 获取简历列表
-  onResemuList: function () {
-    loadList.bind(this)({
-      url: '/m/sys/hr/deliver/deliverylist',
-      list: 'Resume'
-    });
-    fetching.bind(this)('Resume');
-  },
-  // 获取评论列表
-  onCommentList: function () {
-    loadList.bind(this)({
-      url: '/m/sys/hr/comment/personList',
-      list: 'Comment',
-      cb: function (data) {
-        data.forEach((item) => {
-          item.tooLong = false;
-          item.unfold = false;
-        });
-      }
-    });
-    fetching.bind(this)('Resume');
-  },
   // 判断评论是否过长
   onTooLong: function (index) {
     const newState = Object.assign({}, this.state);
@@ -71,8 +41,8 @@ export default React.createClass({
     newState.Comment.data[index].unfold = !newState.Comment.data[index].unfold;
     this.setState(newState);
   },
-  // 获取简历预览
-  fetchResumePre: function () {
+  // 请求简历预览
+  fetchPreview: function () {
     fetch('/m/sys/hr/resumes/detail', {
       method: 'GET',
       credentials: 'include'
@@ -88,42 +58,74 @@ export default React.createClass({
         newState.city = newState.location;
         delete newState.location;
 
-        this.setState({ ResumePre: newState });
+        this.setState({ Preview: newState });
       });
+  },
+  // 请求简历列表
+  fetchResume: function () {
+    loadList.bind(this)({
+      url: '/m/sys/hr/deliver/deliverylist',
+      list: 'Resume'
+    });
+    fetching.bind(this)('Resume');
+  },
+  // 请求职位列表
+  fetchPost: function () {
+    loadList.bind(this)({
+      url: '/m/sys/hr/collect/list',
+      list: 'Post'
+    });
+    fetching.bind(this)('Post');
+  },
+  // 请求评论列表
+  fetchComment: function () {
+    loadList.bind(this)({
+      url: '/m/sys/hr/comment/personList',
+      list: 'Comment',
+      cb: function (data) {
+        data.forEach((item) => {
+          item.tooLong = false;
+          item.unfold = false;
+        });
+      }
+    });
+    fetching.bind(this)('Resume');
   },
   // 渲染
   render: function () {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
 
+    // 每个页面的特定属性 (props)
     let extra;
     switch (ChildName) {
-      case 'ResumePre':
+      case 'Preview':
         extra = {
-          fetchResumePre: this.fetchResumePre
+          fetchPreview: this.fetchPreview
         };
         break;
       case 'Resume':
         extra = {
-          onResemuList: this.onResemuList
+          fetchResume: this.fetchResume
         };
         break;
       case 'Comment':
         extra = {
-          onCommentList: this.onCommentList,
+          fetchComment: this.fetchComment,
           onUnfold: this.onUnfold,
           onTooLong: this.onTooLong
         };
         break;
       case 'Post':
         extra = {
-          onPostList: this.onPostList
+          fetchPost: this.fetchPost
         };
         break;
       default:
         extra = {};
     }
 
+    // 渲染并传递属性
     return (
       <div>
         {

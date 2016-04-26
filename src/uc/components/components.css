@@ -3,9 +3,9 @@
 @import "./FormItemInput/style.css";
 @import "./FormItemSelect/style.css";
 @import "./FormItemTextRight/style.css";
+@import "./ListTab/style.css";
 @import "./ListItem/style.css";
 @import "./ListItemPlain/style.css";
-@import "./ListItemDetail/style.css";
 /*@import "./ListItemPlain/style.css";*/
 @import "./FormGroup/style.css";
 @import "./Navbar/style.css";

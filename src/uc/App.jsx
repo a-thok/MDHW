@@ -37,7 +37,7 @@ export default React.createClass({
       to = false;
     } else {
       const indexOfSlash = hash.lastIndexOf('/');
-      to = indexOfSlash === 1 ? '/' : hash.slice(0, indexOfSlash);
+      to = indexOfSlash < 2 ? '/' : hash.slice(0, indexOfSlash);
     }
     this.setState({ to });
   },

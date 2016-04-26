@@ -1,7 +1,7 @@
 import React from 'react';
-import FormItemInput from '../../components/FormItemInput';
-import FormItemSelect from '../../components/FormItemSelect';
-import FormButton from '../../components/FormButton';
+import FormItemInput from '../../../../components/FormItemInput';
+import FormItemSelect from '../../../../components/FormItemSelect';
+import FormButton from '../../../../components/FormButton';
 
 const ReservationImfor = React.createClass({
   getInitialState: function () {

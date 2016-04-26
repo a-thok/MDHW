@@ -1,61 +1,55 @@
+/* 个人资料 */
 .profile {
   position: relative;
-  padding: 1em 2em;
-  background: url("./img/backlqt.png") center center no-repeat;
-  background-size: 140%;
-  font-size: .18rem;
+  padding: 1em .2rem;
+  background: url("routes/Home/img/backlqt.png") center center no-repeat;
+  background-size: 120%;
+  font-size: .2rem;
   color: #fff;
   line-height: 2;
   text-align: center;
 }
-.profile_figure {
-  height: 70%;
-}
 .profile_figure > img {
   width: 1.8rem;
   height: 1.8rem;
-  border: 5px solid #fff;
+  border: .3em solid #fff;
   border-radius: 50%;
 }
 .profile_title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1em 0;
+  margin: .5em 0;
   font-weight: bold;
   color: #fff;
 }
-.profile_title > span:first-child {
-  margin-right: .5em;
-}
+
 .profile_para {
-  width: 95%;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  line-height: 2.4;
+  line-height: 2;
 }
 .profile_para-center {
   text-align: center;
 }
-.profile_para > span:first-child {
+.profile_name,
+.profile_tel {
   margin-right: 1em;
 }
 .profile .fa-edit {
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: 1em .5em .5em 1em;
+  padding: 1em .3em .3em 1em;
 }
 
+/* 基本功能 */
 .basics {
+  display: flex;
+  align-items: flex-start;
   background: #fff;
   font-size: .18rem;
-  overflow: hidden;
 }
 .basics_item {
-  float: left;
   display: flex;
   align-items: center;
   width: 33.3333%;
@@ -66,94 +60,86 @@
   content: "";
   display: block;
   width: 0;
-  height: 50px;
+  height: 3em;
   border-right: 1px solid var(--borderColorLight);
 }
 .basics_item > a {
+  flex: 1;
   display: block;
-  flex-basis: 100%;
   width: 100%;
-  color: #333;
+  padding: .4em 0;
   text-decoration: none;
-  overflow: hidden;
-}
-.basics section {
-  margin: .2em 0;
 }
 .basics .fa {
-  width: .4rem;
-  height: .4rem;
+  width: .6rem;
+  height: .6rem;
   border-radius: 50%;
   background: red;
-  font-size: .2rem;
+  font-size: .4rem;
   color: #fff;
-  line-height: .4rem;
+  line-height: .6rem;
   text-align: center;
+}
+.basic_text {
+  line-height: 2;
 }
 .basics_num {
   color: red;
 }
-
-.modulesWrap {
-  margin-top: 28px;
-  padding: 0 10px;
+/* 子模块 */
+.modules {
+  margin: 1em 0;
+  padding-bottom: 1em;
   background: #fff;
   overflow: hidden;
 }
-.modules {
-  display: flex;
-  justify-content: space-between;
-  margin: 15px 0;
-}
-.modules_item {
-  width: 22%;
-  flex-basis: 22%;
-}
-
 .module {
-  display: block;
-  color: #333;
+  float: left;
+  width: 25%;
+  margin-top: 1em;
   text-decoration: none;
-  font-size: .2rem;
 }
-.modules_item_fig > div {
-  width: 1.1rem;
-  height: 1.1rem;
-  padding: 15%;
+.module_icon {
+  width: 1rem;
+  height: 1rem;
   margin: 0 auto;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-
-/*.ulinkWrap {
-  margin: 20px 0;
-  background: #fff;
+.module_text {
+  text-align: center;
+  line-height: 2;
 }
-.ulinkWrap a {
-  display: block;
-}*/
 .rczp {
-  background: #f7ba5b;
+  background-color: #f7ba5b;
+  background-image: url("routes/Home/img/rczp.png");
 }
 .zc {
-  background: #6ce;
+  background-color: #6ce;
+  background-image: url("routes/Home/img/zc.png");
 }
 .cysj {
-  background: #ea6644;
+  background-color: #ea6644;
+  background-image: url("routes/Home/img/rczp.png");
 }
 .srdz {
-  background: #7788f2;
+  background-color: #7788f2;
+  background-image: url("routes/Home/img/rczp.png");
 }
 .cygc {
-  background: #2bb2a3;
+  background-color: #2bb2a3;
+  background-image: url("routes/Home/img/cygc.png");
 }
 .kjfw {
-  background: #f82;
+  background-color: #f82;
+  background-image: url("routes/Home/img/rczp.png");
 }
 .zb {
-  background: #157cc7;
+  background-color: #157cc7;
+  background-image: url("routes/Home/img/zb.png");
 }
 .cqbh {
-  background: #d04f6e;
-}
-.modules_item_fig_cap {
-  margin-top: .4em;
+  background-color: #d04f6e;
+  background-image: url("routes/Home/img/cqbh.png");
 }
