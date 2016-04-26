@@ -8,12 +8,13 @@ export default function company() {
   let config = {
     template,
     load,
-    api: '/m/KJ/CompanyList',
+    api: '/m/KJ/company/list',
+    // api: '/m/KJ/CompanyList',
     params: {
       pageIndex: 1,
       pageSize: 10
     },
-    container: $('.listWrap')
+    container: $('.list')
   };
   render(config);
   doSearch({

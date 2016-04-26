@@ -1,22 +1,23 @@
 .contactTitle {
   font-weight: normal;
-  padding: 10px 3.7333%;
+  padding: .2em .2rem;
+  font-size: .22rem;
 }
 .contactTitle::before {
   display: inline-block;
   content: "";
-  height: .5em;
+  height: .8em;
   margin-right: .6em;
-  border: 3px solid var(--gsypageColor);
+  border: 3px solid var(--companyColor);
 }
 .contactText {
-  padding: 10px 3.7333%;
-  /*font-size: 18px;*/
+  padding: .2em .2rem;
+  font-size: .22rem;
   background: #fff;
 }
 .contactList {
-  padding: 0 3.7333%;
-  font-size: 14px;
+  padding: 0 .2rem;
+  font-size: .18rem;
   color: var(--fontColorLight);
 }
 .contactList_item {
