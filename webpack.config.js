@@ -33,7 +33,8 @@ const config = {
     'uc': [path.join(__dirname, 'src/uc')],
     'home': [path.join(__dirname, 'src/home')],
     'zxsj': [path.join(__dirname, 'src/zxsj')],
-    'gsss': [path.join(__dirname, 'src/gsss')]
+    'gsss': [path.join(__dirname, 'src/gsss')],
+    'company': [path.join(__dirname, 'src/company')]
   },
   output: {
     path: path.join(__dirname, '/dist/'),

@@ -1,11 +1,14 @@
-.gsypage {
+.page {
+  overflow: hidden;
+}
+.company {
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   border-top: 7px solid var(--companyColor);
 }
-.gsypage_text {
+.company_text {
   font-size: .22rem;
   color: var(--companyColor);
 }
