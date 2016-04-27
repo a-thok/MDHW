@@ -18,7 +18,7 @@ export default function template(data) {
           </div>
           <!--公司信息  开始-->
           <div class="list_item_content">
-            <a class="linkWrapperB" href="#" alt="${cur.company}">
+            <a class="linkWrapperB" href="http://${MAIN_HOST}/m/company/index/${cur.id}" alt="${cur.company}">
               <h3 class="list_item_content_title">
                 ${cur.company}
               </h3>
@@ -40,7 +40,7 @@ export default function template(data) {
                 </div>
               </div>
             </a>
-            <a class="linkWrapperB" href="">
+            <a class="linkWrapperB" href="http://${MAIN_HOST}/m/company/index/${cur.id}">
               <p class="list_item_content_text">
                 ${detail}...
                 <span>>></span>
