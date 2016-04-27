@@ -4,7 +4,7 @@ export default function gsTemplate(data) {
     let url = cur.logo ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
     return (
       `${pre}<li class="list_item">
-            <a class="linkWrapper" href="#">
+            <a class="linkWrapper" href="http://${MAIN_HOST}/m/company/index/${cur.id}">
               <div class="list_item_img"><img src="${url}" alt="${cur.compay}"></div>
               <div class="list_item_text">
                 <h3 class="list_item_text_p company_info">${cur.compay}</h3>
