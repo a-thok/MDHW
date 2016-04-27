@@ -8,9 +8,8 @@ export default function detail() {
 
   $('.ftCtrl_item')[2].addEventListener('click', (e) => {
     const id = location.pathname.replace(/.*\//, '');
-    // const id = 108;  // 临时自定义的id
-
-    if ($cookie().num.indexOf(id) !== -1) return;
+    // const id = 139;  // 临时自定义的id
+    if ($cookie().num && $cookie().num.indexOf(id) !== -1) return;
     // const starCl = e.currentTarget.querySelector('.fa').classList;
     // const unFav = starCl.contains('fa-star-o'); // 是否收藏
 
