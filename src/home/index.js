@@ -17,8 +17,6 @@ const pathArr = pathname.split('/');
 import login from './js/login.js';
 import register from './js/register.js';
 import { index, scroll } from './js/index.js';
-import company from './js/company.js';
-import contact from './js/contact.js';
 
 if (pathname.indexOf('denglu') !== -1) {
   login();
@@ -27,8 +25,4 @@ if (pathname.indexOf('denglu') !== -1) {
 } else if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   scroll();
   index();
-} else if (pathname.indexOf('company') !== -1) {
-  company();
-} else if (pathname.indexOf('contact') !== -1) {
-  contact();
 }
