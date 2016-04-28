@@ -50,3 +50,6 @@
   color: var(--fontColorLight);
   text-decoration: none;
 }
+.linkWrapper {
+  width: 100%;
+}
