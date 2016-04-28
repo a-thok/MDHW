@@ -1,0 +1,28 @@
+.formCheck {
+  padding: 0 1em;
+}
+.formCheck * {
+  vertical-align: middle;
+  line-height: 4;
+}
+.formCheck_input {
+  display: none;
+}
+.formCheck_emu {
+  width: 1.1em;
+  height: 1.1em;
+  border: 1px solid #cc1414;
+  margin-right: .8em;
+  color: #fff;
+  line-height: 1.1em;
+  text-align: center;
+}
+.formCheck_emu::before {
+  visibility: hidden;
+}
+.formCheck_input:checked + .formCheck_emu {
+  background: #cc1414;
+}
+.formCheck_input:checked + .formCheck_emu::before {
+  visibility: visible;
+}

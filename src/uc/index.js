@@ -48,39 +48,21 @@ import ZcNav from './routes/Zc/partials/Nav';
 import ZcOrder from './routes/Zc/partials/Order';
 import ZcFollowed from './routes/Zc/partials/Follow';
 import ZcSupport from './routes/Zc/partials/Support';
+import ZcOrderForm from './routes/Zc/partials/OrderForm';
 
 import App from './App';
 
 import Settings from './routes/Settings';
 import SettingsNav from './routes/Settings/partials/Nav';
-import Reservation from './routes/Settings/partials/Reservation';
-import ReservationImfor from './routes/Settings/partials/ReservationImfor';
-import Addresses from './routes/Settings/partials/Addresses';
+import Addresses from './routes/Settings/partials/Address';
+import AddressForm from './routes/Settings/partials/AddressForm';
+import Account from './routes/Settings/partials/Account';
+import AccountForm from './routes/Settings/partials/AccountForm';
 
 ReactDOM.render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      {
-        // <Route path="/account" component={Account}>
-        //   <IndexRoute component={AccountHome} />
-        //   <Route path="/account/edit" component={Edit} />
-        //   {
-        //     /*
-        //     <Route path="/account/logo" component={Logo} />
-        //     <Route path="/account/updatepw" component={UpdatePW} />
-        //     <Route path="/account/address" component={AccountAddress} />
-        //     <Route path="/account/petname" component={PetName} />
-        //     <Route path="/account/gender" component={Gender} />
-        //     <Route path="/account/email" component={Email} />
-        //     <Route path="/account/realname" component={RealName} />
-        //     <Route path="/account/signature" component={Signature} />
-        //     <Route path="/account/bindaccount" component={BindAccount} />
-        //     <Route path="/account/phone" component={Phone} />
-        //     */
-        //   }
-        // </Route>
-      }
       <Route path="/rczp" component={Rczp}>
         <IndexRoute component={RczpNav} />
         <Route path="/rczp/preview" component={RczpPreview} />
@@ -112,12 +94,15 @@ ReactDOM.render((
         <Route path="/zc/follow" component={ZcFollowed} />
         <Route path="/zc/support" component={ZcSupport} />
         <Route path="/zc/order" component={ZcOrder} />
+        <Route path="/zc/orderform" component={ZcOrderForm} />
       </Route>
       <Route path="/settings" component={Settings}>
         <IndexRoute component={SettingsNav} />
         <Route path="/settings/address" component={Addresses} />
-        <Route path="/settings/reservation" component={Reservation} />
-        <Route path="/settings/reservationImfor" component={ReservationImfor} />
+        <Route path="/settings/newaddress" component={AddressForm} />
+        <Route path="/settings/editaddress" component={AddressForm} />
+        <Route path="/settings/account" component={Account} />
+        <Route path="/settings/account/edit" component={AccountForm} />
       </Route>
     </Route>
   </Router>

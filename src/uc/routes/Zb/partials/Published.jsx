@@ -21,8 +21,8 @@ export default React.createClass({
          info={data.name}
          title={data.title}
          elems={[
-           <span className="fontColor">项目金额: ￥{data.money}</span>,
-           <span>{data.endtime}</span>
+           <span>项目金额：￥{data.totalfin}</span>,
+           <span>截止时间：{data.endtime}</span>
          ]}
        />
     ));

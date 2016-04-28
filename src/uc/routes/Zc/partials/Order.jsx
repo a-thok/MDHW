@@ -47,9 +47,10 @@ export default React.createClass({
         multiple={{ '进度': item.test, '状态': item.status }}
         title={item.projectName}
         small={item.typename}
-        emp={['目标', item.moneyall]}
+        emp={['目标', `￥${item.moneyall}`]}
         detail={detail}
-        onShowDetail={this.props.onShowDetail}
+        onShowDetail={this.props.showDetail}
+        last={['筹款金额', `￥${item.moneySum}`]}
       />);
     });
 

@@ -24,7 +24,7 @@ export default React.createClass({
           title={item.title}
           small={item.name}
           emp={['目标', item.moneys]}
-          other={`￥${item.supportmoney}`}
+          last={['支持金额', `￥${item.supportmoney}`]}
         />
       ));
     return (

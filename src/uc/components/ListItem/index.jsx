@@ -22,11 +22,16 @@ export default function listItem(props) {
         </div>
         <div className="list_item_text">
           <h3 className="list_item_title">{props.title}
-            <small className="list_item_title_small" style={{ display }}>[{props.small}]</small>
+            <small className="list_item_title_small" style={{ display }}>{props.small}</small>
           </h3>
-          <p className="list_item_para">{props.emp[0]}：<span>{props.emp[1]}</span></p>
-          <p className="list_item_para">
-            <div>{ multipleNodes }</div>
+          <p className="list_item_para em">{props.emp[0]}：<span>{props.emp[1]}</span></p>
+          <p className="list_item_para">{ multipleNodes }</p>
+          <p className="list_item_para flex last">
+            <div>
+              {props.last && props.last[0]}
+              {props.last && props.last[0] ? '：' : null}
+              <span>{props.last && props.last[1]}</span>
+            </div>
             <div><span onClick={handleonClick}>{props.detail ? fa : props.other}</span></div>
           </p>
         </div>

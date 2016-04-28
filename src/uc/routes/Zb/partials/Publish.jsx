@@ -24,7 +24,7 @@ export default React.createClass({
       />
     ));
     return (
-      <form onSubmit={this.props.onSubmit}>
+      <form className="form" onSubmit={this.props.onSubmit}>
         { nodes }
         <FormButton
           style={{

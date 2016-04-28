@@ -1,0 +1,16 @@
+.formGroupSimple {
+  display: flex;
+  padding: 0 .2rem;
+  border-bottom: 1px solid var(--borderColorLight);
+  font-size: .18rem;
+}
+.formGroupSimple_label {
+  width: 6em;
+  padding: 1.2em 0;
+  text-align: right;
+}
+.formGroupSimple_input {
+  flex: 1;
+  padding: 1.2em;
+  border: 0;
+}

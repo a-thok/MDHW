@@ -1,5 +1,6 @@
 @import "../common/css/var.css";
 @import "./routes/Settings/settings.css";
 @import "./routes/Home/home.css";
+@import "./routes/Zc/style.css";
 
 @import "./components/components.css";

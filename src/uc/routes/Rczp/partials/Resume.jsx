@@ -21,10 +21,11 @@ export default React.createClass({
         {...item}
         img={item.logo}
         title={item.position}
-        small={item.tdcgsj}
+        small={item.gsdz}
         emp={['月薪', item.money]}
         other={item.qysfck}
         multiple={{ '公司': item.company }}
+        last={['', item.tdcgsj]}
       />
     ));
     return (

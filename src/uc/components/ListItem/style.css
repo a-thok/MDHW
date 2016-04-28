@@ -15,6 +15,10 @@
 }
 .list_item_main {
   display: flex;
+  align-items: center;
+}
+.list_item_img {
+  margin-right: .8em;
 }
 .list_item_img img {
   width: 100%;
@@ -24,37 +28,29 @@
 }
 .list_item_title {
   font-size: .24rem;
+  color: var(--rczpColor);
+  line-height: 2;
 }
 .list_item_title_small {
   margin-left: .6em;
   font-weight: normal;
   font-size: .16rem;
+  color: #333;
 }
-.list_item_para {
-  line-height: 2;
+.list_item_para,
+.list_item_para.last span {
+  line-height: 1.8;
 }
-.list_item_para:last-child {
+.list_item_para.em {
+  color: var(--kjfwColor);
+}
+.list_item_para.flex {
   display: flex;
   justify-content: space-between;
 }
 .multiple_item {
   margin-right: 1em;
   /*color: red;*/
-}
-
-/* comment */
-.list_item_unfold {
-  float: right;
-  cursor: pointer;
-}
-.list_item_content {
-  margin-top: .5em;
-  overflow: hidden;
-  text-indent: 2em;
-  word-break: break-all;
-}
-.list_item_para-right {
-  text-align: right;
 }
 
 /* 详情 */
@@ -70,7 +66,7 @@
   transition: max-height .5s cubic-bezier(0, 1, .5, 1);
 }
 .list_item_detail.is-show {
-  max-height: 4.824rem;
+  max-height: 6rem;
 }
 .detailGroup {
   padding: .6em .5em;

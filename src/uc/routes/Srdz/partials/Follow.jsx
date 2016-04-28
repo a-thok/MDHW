@@ -21,7 +21,7 @@ export default React.createClass({
         {...item}
         img={`${item.productlmg}.jpg`}
         multiple={{ '成交量': item.num }}
-        emp={`￥${item.price}/个`}
+        emp={['单价', item.price]}
         small={item.name}
         other="取消关注"
       />

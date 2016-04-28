@@ -1,0 +1,42 @@
+.order_sect {
+  padding: 1em .2rem;
+  margin-bottom: 1em;
+  background: #fff;
+  font-size: .18rem;
+}
+
+.order_sect .textGroup_label,
+.numGroup_name,
+.orderLabel {
+  width: 5.5em;
+  padding: 0;
+  text-align: right;
+}
+
+.numGroup {
+  display: flex;
+  justify-content: space-between;
+  font-size: .18rem;
+}
+.numGroup > div {
+  line-height: 2;
+}
+.numGroup_name {
+  color: var(--fontColorLight);
+}
+.numGroup .counter_label,
+.numGroup .counter_input {
+  line-height: 2;
+}
+
+.orderInputGroup {
+  display: flex;
+}
+.orderLabel {
+  padding: .5em 0;
+}
+.orderInput {
+  flex: 1;
+  padding: .5em 1em;
+  border: 0;
+}
