@@ -26,6 +26,7 @@ export default React.createClass({
         other="已投递"
         multiple={{ '公司': item.compay }}
         label={item.time}
+        last={['', item.publictime]}
       />
     ));
     return (

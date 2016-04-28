@@ -1,3 +1,2 @@
-@import "./partials/Addresses/address.css";
-@import "./partials/Reservation/box.css";
-@import "./partials/ReservationImfor/box.css";
+@import "./partials/Address/style.css";
+@import "./partials/AccountForm/style.css";

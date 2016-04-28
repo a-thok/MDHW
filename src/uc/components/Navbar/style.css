@@ -25,3 +25,6 @@
 .navbar div span {
   display: block;
 }
+.navbar .fa-angle-right {
+  color: var(--fontColorLight);
+}

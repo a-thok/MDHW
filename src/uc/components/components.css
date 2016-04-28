@@ -1,10 +1,12 @@
 @import "./Counter/style.css";
 @import "./FormButton/style.css";
-@import "./FormItemInput/style.css";
-@import "./FormItemSelect/style.css";
+@import "./FormGroupSimple/style.css";
+@import "./FormAddress/style.css";
+@import "./FormCheck/style.css";
 @import "./FormItemTextRight/style.css";
 @import "./ListTab/style.css";
 @import "./ListItem/style.css";
+@import "./ListItemComment/style.css";
 @import "./ListItemPlain/style.css";
 /*@import "./ListItemPlain/style.css";*/
 @import "./FormGroup/style.css";

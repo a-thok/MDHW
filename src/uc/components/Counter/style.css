@@ -1,13 +1,18 @@
+.counter {
+  border: 1px solid var(--borderColorLight);
+  font-size: .18rem;
+  text-align: center;
+}
 .counter_label {
   display: inline-block;
-  width: 1.4em;
-  text-align: center;
-  border: 1px solid #999;
+  width: 2em;
   background: #f5f5f5;
 }
 .counter_input {
-  width: 2.5em;
-  height: 1.7em;
-  padding-left: .8em;
-  vertical-align: top;
+  width: 3em;
+  padding: 0 .5em;
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: var(--borderColorLight);
+  text-align: center;
 }

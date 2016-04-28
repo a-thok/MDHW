@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItemEval from '../../../components/ListItemEval';
+import ListItemComment from '../../../components/ListItemComment';
 import Loading from '../../../components/Loading';
 import getHash from '../../../mixins/getHash';
 import scroll from '../../../mixins/scroll';
@@ -16,7 +16,7 @@ export default React.createClass({
   },
   render: function () {
     let commentList = this.props.data.map((item, index) => (
-      <ListItemEval
+      <ListItemComment
         key={index}
         index={index}
         {...item}
@@ -26,7 +26,7 @@ export default React.createClass({
     ));
     return (
       <div>
-        <ul className="list list-eval">
+        <ul className="list">
           { commentList }
         </ul>
         <Loading

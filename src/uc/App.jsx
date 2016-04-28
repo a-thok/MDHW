@@ -7,7 +7,7 @@ export default React.createClass({
     return {
       to: '',
       profile: {},
-      temp: {}
+      profileTemp: {}
     };
   },
   componentDidMount: function () {
@@ -18,17 +18,34 @@ export default React.createClass({
       .then(res => res.json())
       .then(res => this.setState({
         profile: res.result,
-        temp: res.result
+        profileTemp: res.result
       }));
   },
-  onChange: function (newText, field) {
-    const newState = Object.assign({}, this.state.temp);
-    newState[field] = newText;
-    console.log(newText, field);
-    this.setState({ temp: newState });
+  onProfileChange: function (key, value) {
+    const newState = Object.assign({}, this.state.profileTemp);
+    newState[key] = value;
+    this.setState({ profileTemp: newState });
   },
-  onKeyup: function (newText, field) {
-    console.log(newText, field);
+  onUndoProfileChange: function (key) {
+    const newState = Object.assign({}, this.state.profileTemp);
+    newState[key] = this.state.profile[key];
+    this.setState({ profileTemp: newState });
+  },
+  onSubmitProfileChange: function (key) {
+    const newState = Object.assign({}, this.state.profile);
+    newState[key] = this.state.profileTemp[key];
+    fetch('/m/user/info/person/Edit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify(newState)
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+      });
   },
   onChangeHash: function () {
     const hash = location.hash.slice(1).replace(/\?.*/, '');
@@ -48,12 +65,13 @@ export default React.createClass({
       case 'Home':
         extra = { profile: this.state.profile };
         break;
-      case 'Account':
+      case 'Settings':
         extra = {
           profile: this.state.profile,
-          temp: this.state.temp,
-          onChange: this.onChange,
-          onKeyup: this.onKeyup
+          profileTemp: this.state.profileTemp,
+          onProfileChange: this.onProfileChange,
+          onUndoProfileChange: this.onUndoProfileChange,
+          onSubmitProfileChange: this.onSubmitProfileChange
         };
         break;
       default:

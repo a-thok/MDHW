@@ -1,0 +1,44 @@
+.accountInputWrapper {
+  display: flex;
+  align-items: stretch;
+  margin-top: 1em;
+  font-size: .24rem;
+}
+.accountInput {
+  flex: 1;
+  padding-left: 1em;
+  border: 0;
+}
+.accountInputWrapper .fa-close {
+  background: #fff;
+  font-size: .4rem;
+  padding: .5em;
+}
+.accountInputWrapper .fa-close.is-hidden::before {
+  visibility: hidden;
+}
+
+/* 临时样式 */
+.accountRadioWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+}
+.accountRadioWrapper input {
+  display: none;
+}
+.accountRadioWrapper label {
+  vertical-align: middle;
+}
+.accountRadioWrapper .labelEmu {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid #000;
+  margin: 0 1em 0 3em;
+  border-radius: 50%;
+}
+.accountRadioWrapper input:checked + .labelEmu {
+  background: #000;
+}

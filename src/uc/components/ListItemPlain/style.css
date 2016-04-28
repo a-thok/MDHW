@@ -14,13 +14,17 @@
   padding: .6em .5em;
 }
 .list_item_para_header {
-  font-size: .22rem;
+  max-width: 100%;
+  color: var(--fontColorLight);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .list_item_para_header::before {
   content: "";
   display: inline-block;
   width: 1px;
-  height: 16px;
+  height: 1em;
   margin-right: .4em;
   border-left: 3px solid #f00;
 }
@@ -33,6 +37,10 @@
   border-style: solid;
   border-color: var(--borderColorLight);
   line-height: 2.2;
+  color: #333;
+}
+.list-plain .list_item_para:last-child {
+  color: #f60;
 }
 
 /* 以下待修改 */
@@ -40,6 +48,6 @@
   text-decoration: none;
   color: #46a0ce;
 }
-.fontColor {
+/*.fontColor {
   color: red;
-}
+}*/

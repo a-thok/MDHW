@@ -92,6 +92,7 @@
   padding-bottom: 1em;
   background: #fff;
   overflow: hidden;
+  font-size: .18rem;
 }
 .module {
   float: left;
