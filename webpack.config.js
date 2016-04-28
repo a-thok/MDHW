@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const config = {
   entry: {
-    'common': ['normalize.css', 'font-awesome/css/font-awesome.css', 'es6-promise', 'whatwg-fetch', 'fastclick'],
+    'common': ['normalize.css', 'es6-promise', 'whatwg-fetch', 'fastclick'],
     'rczp': [path.join(__dirname, 'src/rczp')],
     'kjfw': [path.join(__dirname, 'src/kjfw')],
     'zc': [path.join(__dirname, 'src/zc')],
@@ -34,7 +34,8 @@ const config = {
     'home': [path.join(__dirname, 'src/home')],
     'zxsj': [path.join(__dirname, 'src/zxsj')],
     'gsss': [path.join(__dirname, 'src/gsss')],
-    'company': [path.join(__dirname, 'src/company')]
+    'company': [path.join(__dirname, 'src/company')],
+    'person': [path.join(__dirname, 'src/person')]
   },
   output: {
     path: path.join(__dirname, '/dist/'),

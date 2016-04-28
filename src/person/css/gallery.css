@@ -1,0 +1,64 @@
+.galleryList {
+  padding: 0 .2rem;
+  overflow: hidden;
+}
+.galleryList_item {
+  float: left;
+  width: 48.5%;
+  margin-top: 1.5em;
+  font-size: .22rem;
+  background: #fff;
+}
+.galleryList_item:nth-child(odd) {
+  margin-right: 3%;
+}
+.galleryList_item_img {
+  /*display: flex;
+  flex-direction: column;*/
+  width: 100%;
+  /*height: 3rem;*/
+}
+.galleryList_item_img img {
+  display: block;
+  width: 100%;
+  flex: 1;
+}
+.galleryList_item_img figcaption {
+  text-align: center;
+  line-height: 2.5;
+}
+
+/* 弹出 */
+.gallery_popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform .2s ease-in-out;
+}
+.gallery_popup.is-show {
+  transform: translate(-50%, -50%) scale(1);
+}
+.gallery_popup .fa-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: #fff;
+  font-size: .3rem;
+  line-height: .5rem;
+  text-align: center;
+  transform: translate(30%, -30%);
+}
+.gallery_popup_img {
+  width: 100%;
+  border: 1.2em solid #fff;
+  border-radius: 3px;
+}
+@media screen and (max-width: 750px) {
+  .gallery_popup {
+    width: 85%;
+  }
+}

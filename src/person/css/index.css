@@ -1,0 +1,71 @@
+.dtImg {
+  display: block;
+  width: 100%;
+  /*height: 4rem;*/
+  /*overflow: hidden;*/
+}
+.dtImg_img,
+.userImg img {
+  width: 100%;
+  display: block;
+}
+/* 用户信息 */
+.user {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .8em .5em;
+  background: #fff;
+}
+.userImg {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: -1em;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userMsg {
+  flex: 1;
+  margin-left: 1em;
+  font-size: .2rem;
+}
+.userMsg_name {
+  line-height: 1.5;
+}
+.userMsg_msg {
+  display: flex;
+  justify-content: space-between;
+  padding: .2em 0;
+}
+.userMsg_msg .fa {
+  font-size: .3rem;
+}
+.userMsg_msg_color,
+.userMsg_text {
+  color: var(--fontColorLight);
+}
+/* 数据 */
+.Detail_list {
+  display: flex;
+  padding: 0 .2rem;
+  border-top: 1px solid var(--borderColorLight);
+  background: #fff;
+  font-size: .18rem;
+}
+.Detail_list_item {
+  position: relative;
+  width: 33%;
+  margin: .8em 0;
+}
+.Detail_list li:nth-child(2n) {
+  border-left: 1px solid var(--borderColorLight);
+  border-right: 1px solid var(--borderColorLight);
+}
+.Detail_list_item span {
+  display: block;
+  text-align: center;
+}
+.Detail_list_item span:first-child {
+  color: #ff7200;
+}
+
