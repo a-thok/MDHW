@@ -40,7 +40,7 @@ body,
 }
 .page {
   max-width: 750px;
-  /*min-height: 100vh;*/
+  min-height: 100vh;
   margin: 0 auto;
   /*overflow: hidden;*/
   padding-bottom: .2rem;
