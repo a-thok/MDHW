@@ -103,7 +103,7 @@
 }
 /*主内容*/
 .info_content {
-  flex-grow: 1;
+  flex: 1;
   flex-basis: 50%;
   width: 50%;
   white-space: nowrap;
@@ -168,4 +168,8 @@
   padding: .8em .2rem;
   font-size: .18rem;
   word-break: break-word;
+}
+.userInput p {
+  margin-bottom: 1em;
+  text-indent: 2em;
 }

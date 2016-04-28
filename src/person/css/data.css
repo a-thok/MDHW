@@ -1,0 +1,61 @@
+/* 头像 */
+.portrait {
+  display: flex;
+  background: #fff;
+}
+.signature span:first-child,
+.portraitImg {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portraitImg img {
+  display: block;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+}
+.portraitList {
+  width: 75%;
+  border-left: 1px solid var(--borderColorLight);
+}
+.portraitList li:nth-child(n+2) {
+  border-top: 1px solid var(--borderColorLight);
+}
+.portraitList_item {
+  padding: 0 1em;
+  line-height: 3;
+  font-size: .22rem;
+  color: var(--fontColorLight);
+}
+/* 个性签名 */
+.signature {
+  display: flex;
+  padding: .5em 0;
+  border-top: 1px solid var(--borderColorLight);
+  font-size: .22rem;
+  background: #fff;
+}
+.signature span:last-child {
+  display: inline-block;
+  width: 75%;
+  padding: 0 1em;
+  color: var(--fontColorLight);
+}
+/* 详细信息 */
+.details {
+  margin-top: 1em;
+  background: #fff;
+}
+.details_item {
+  padding: 0 1em;
+  border-bottom: 1px solid var(--borderColorLight);
+  font-size: .22rem;
+  line-height: 3;
+}
+.details_item span {
+  margin-left: 2em;
+  color: var(--fontColorLight);
+}
+

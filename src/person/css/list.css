@@ -1,0 +1,52 @@
+.textList_item {
+  padding: .5em 1em;
+  margin-top: 1em;
+  font-size: .18rem;
+  background: #fff;
+}
+.portrait-pad {
+  padding: .5em 0;
+}
+.textList_item_msg {
+  flex: 1;
+  margin-left: 1em;
+}
+.textList_item_msg_title {
+  display: flex;
+  justify-content: space-between;
+  padding: .5em 0;
+  font-size: .22rem;
+}
+.textList_item_msg_text,
+.textList_item_text {
+  color: var(--fontColorLight);
+}
+.textList_item_text {
+  text-indent: 2em;
+}
+.textList_item_msg_title .fa {
+  margin-right: .2em;
+}
+.textList_item_title {
+  padding: .5em 0;
+}
+.textList_item_img {
+  display: flex;
+}
+.textList_item_img img {
+  width: 32%;
+}
+.textList_item_img img:nth-child(n+2) {
+  margin-left: 2%;
+}
+.attentionBtn {
+  width: 100%;
+  border: 0;
+  padding: .8em 0;
+  margin-top: 1em;
+  font-size: .22rem;
+  background: #fff;
+}
+.attentionBtn .fa {
+  margin-right: .6em;
+}

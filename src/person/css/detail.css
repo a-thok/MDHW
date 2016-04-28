@@ -1,0 +1,37 @@
+.portrait-color {
+  padding: 1em .2rem;
+  background: #f7f7f7;
+}
+.detailImg {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.detailImg img {
+  width: 100%;
+}
+.detailInfo {
+  flex: 1;
+  margin-left: 1em;
+  font-size: .2rem;
+}
+.detailInfo_text {
+  line-height: 2;
+  font-size: .18rem;
+  color: var(--fontColorLight);
+}
+.detailInfo_text span:nth-child(n+2) {
+  margin-left: 1em;
+}
+.detailInfo_text .fa {
+  margin-right: .3em;
+}
+/* 用户输入 */
+.userInput {
+  padding-top: 2em;
+  background: #fff;
+}
+.textList .userInput {
+  padding: .5em 0 0;
+}
