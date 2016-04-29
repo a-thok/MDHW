@@ -42,7 +42,7 @@ export default function slider(element, config) {
   window.addEventListener('load', () => {
     // 是沿x轴还是y轴滑动
     const isX = config.axis === 'x';
-    const translateDir = isX ? 'translateX' : 'translateY';
+    // const translateDir = isX ? 'translateX' : 'translateY';
     const clientSize = isX ? 'clientWidth' : 'clientHeight';
 
     // 设置基本样式
@@ -52,9 +52,8 @@ export default function slider(element, config) {
     element.setAttribute('style', elementStyle);
 
     const slider = element.querySelector('.slider');
-    const sliderStyle = `display:flex;transform:${translateDir}(0);transition:transform ${config.speed} ${config.timingFunction}`;
+    const sliderStyle = `position:absolute;top:0;left:0;overflow:hidden;transition:all ${config.speed} ${config.timingFunction}`;
     slider.setAttribute('style', sliderStyle);
-    if (!isX) slider.style.flexWrap = 'wrap'; // 如果是纵向滑动，每个图片应该自占一行
 
     // 获得子元素及其个数
     const sliderItems = slider.children;
@@ -65,9 +64,9 @@ export default function slider(element, config) {
     slider.style[isX ? 'width' : 'height'] = `${count}00%`;
     $from(sliderItems).forEach(item => {
       item.style[isX ? 'width' : 'height'] = `${100 / count}%`;
-      if (isX) item.style.flexShrink = '0'; // 如果是横向滑动，图片宽度不收缩
+      if (isX) item.style.float = 'left'; // 如果是横向滑动图片左浮动
     });
-    span = slider[clientSize] / count; // 计算span
+    span = element[clientSize]; // 计算span
 
     // 是否显示圆点
     const dots = element.querySelector('.dots');
@@ -98,12 +97,12 @@ export default function slider(element, config) {
 
     // 自动滑动
     function autoMove() {
-      const pos = parseInt(slider.style.transform.slice(11), 10);
+      const pos = parseInt(slider.style.left, 10);
       if (-pos >= span * (count - 1)) {
-        slider.style.transform = `${translateDir}(0)`;
+        slider.style.left = 0;
         if (hasDots) changeDots(); // 圆点
       } else {
-        slider.style.transform = `${translateDir}(${pos - span}px)`;
+        slider.style.left = `${pos - span}px`;
         if (hasDots) changeDots(pos, +1); // 圆点
       }
     }
@@ -112,14 +111,14 @@ export default function slider(element, config) {
     // 手动滑动
     function move(isUpOrLeft) {
       clearInterval(slider.animation); // 清除自动滑动
-      const pos = parseInt(slider.style.transform.slice(11), 10);
+      const pos = parseInt(slider.style.left, 10);
       if (isUpOrLeft) {
         if (-pos >= span * (count - 1)) return;
-        slider.style.transform = `${translateDir}(${pos - span}px)`;
+        slider.style.left = `${pos - span}px`;
         if (hasDots) changeDots(pos, +1); // 圆点
       } else {
         if (-pos < span) return;
-        slider.style.transform = `${translateDir}(${pos + span}px)`;
+        slider.style.left = `${pos + span}px`;
         if (hasDots) changeDots(pos, -1); // 圆点
       }
       slider.animation = setInterval(autoMove, config.interval); // 恢复自动滑动
@@ -132,9 +131,9 @@ export default function slider(element, config) {
     // 窗口大小改变时，重新计算相关数据
     window.addEventListener('resize', () => {
       clearInterval(slider.animation);
-      slider.style.transform = `${translateDir}(0px)`;
+      slider.style.left = 0;
       element.style.height = `${document.querySelector('img').clientHeight}px`;
-      span = slider[clientSize] / count;
+      span = element[clientSize];
       slider.animation = setInterval(autoMove, config.interval);
     });
   });
