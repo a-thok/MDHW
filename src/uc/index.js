@@ -4,18 +4,8 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Home from './routes/Home';
 
-// import Account from './routes/Account';
-// import AccountHome from './routes/Account/partials/Home';
-// // import Logo from './routes/Account/partials/Logo';
-// import Edit from './routes/Account/partials/Edit';
-// import AccountAddress from './routes/Account/partials/Address';
-// import PetName from './routes/Account/partials/PetName';
-// import Gender from './routes/Account/partials/Gender';
-// import Email from './routes/Account/partials/Email';
-// import RealName from './routes/Account/partials/RealName';
-// import Signature from './routes/Account/partials/Signature';
-// import BindAccount from './routes/Account/partials/BindAccount';
-// import Phone from './routes/Account/partials/Phone';
+// page最小高度为窗口高度
+document.querySelector('.page').style.minHeight = `${window.innerHeight}px`;
 
 import Rczp from './routes/Rczp';
 import RczpNav from './routes/Rczp/partials/Nav';
