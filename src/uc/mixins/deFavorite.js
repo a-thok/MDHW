@@ -1,4 +1,4 @@
-export default function deFavorite(url, list, id, index) {
+export default function deFavorite(url, list, prop, id, index) {
   const currentPage = this.state[list].index;
   const whichPage = Math.ceil(index / 10);
 
@@ -10,7 +10,7 @@ export default function deFavorite(url, list, id, index) {
     body: JSON.stringify({
       pageIndex: whichPage,
       pageSize: 10,
-      fpid: id
+      [prop]: id
     }),
     credentials: 'include'
   })

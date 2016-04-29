@@ -26,7 +26,7 @@ export default React.createClass({
         title={item.title}
         elems={[
           <span>结束时间: {item.endtime}</span>,
-          <a className="list-link" href="#" onClick={(e) => this.handleClick(e, item.id, index)}>取消收藏</a>
+          <span className="list_operate" onClick={(e) => this.handleClick(e, item.id, index)}>取消收藏</span>
         ]}
       />
     ));

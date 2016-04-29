@@ -42,12 +42,3 @@
 .list-plain .list_item_para:last-child {
   color: #f60;
 }
-
-/* 以下待修改 */
-.list-link {
-  text-decoration: none;
-  color: #46a0ce;
-}
-/*.fontColor {
-  color: red;
-}*/

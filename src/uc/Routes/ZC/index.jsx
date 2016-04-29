@@ -57,7 +57,7 @@ export default React.createClass({
     fetching.bind(this)('Order');
   },
   // 显示详情
-  showDetail: function (index) {
+  toggleDetail: function (index) {
     const newState = Object.assign({}, this.state.Order);
     newState.data[index].showDetail = !newState.data[index].showDetail;
     this.setState(newState);
@@ -72,7 +72,7 @@ export default React.createClass({
       case 'Order':
         extra = {
           fetchOrder: this.fetchOrder,
-          showDetail: this.showDetail
+          toggleDetail: this.toggleDetail
         };
         break;
       case 'Follow':

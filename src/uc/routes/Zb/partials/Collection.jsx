@@ -16,7 +16,7 @@ export default React.createClass({
   },
   handleClick: function (e, id, index) {
     e.preventDefault();
-    this.props.onCancle(id, index);
+    this.props.delCollection(id, index);
   },
   render: function () {
     let content = this.props.data.map((item, index) => (
@@ -26,7 +26,7 @@ export default React.createClass({
         title={item.title}
         elems={[
           <span>结束时间: {item.endtime}</span>,
-          <a className="list-link" href="#" onClick={(e) => this.handleClick(e, item.id, index)}>取消收藏</a>
+          <a className="list_operate" href="#" onClick={(e) => this.handleClick(e, item.id, index)}>取消收藏</a>
         ]}
       />
     ));

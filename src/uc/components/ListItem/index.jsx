@@ -3,7 +3,13 @@ import Detail from './Detail';
 
 export default function listItem(props) {
   let handleonClick = function () {
-    props.onShowDetail(props.index);
+    if (props.detail) {
+      props.toggleDetail(props.index);
+    } else if (props.other === '取消关注') {
+      props.delFollow(props.id, props.index);
+    } else if (props.other.props.children === '确认收货') {
+      props.orderConfirm(props.number, props.index);
+    }
   };
   const fa = props.showDetail ? <i className="fa fa-angle-up"></i> : <i className="fa fa-angle-down"></i>;
   const display = props.small ? 'inline' : 'none';
