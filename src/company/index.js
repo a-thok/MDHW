@@ -14,10 +14,12 @@ import './img/company_zlcy.png';
 import fastclick from 'fastclick';
 fastclick.attach(document.body);
 
-import index from './js/index.js';
-import contact from './js/contact.js';
+// page最小高度为窗口高度
+document.querySelector('.page').style.minHeight = `${window.innerHeight}px`;
 
 const pathname = window.location.pathname;
+import index from './js/index.js';
+import contact from './js/contact.js';
 
 if (pathname.indexOf('index') !== -1) {
   index();
