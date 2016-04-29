@@ -1,4 +1,4 @@
-export default function loadList({ url, list, cb, type, param, reset }) {
+export default function loadList({ url, list, cb, params, type, reset }) {
   let newState;
   if (reset) {
     newState = {
@@ -18,8 +18,8 @@ export default function loadList({ url, list, cb, type, param, reset }) {
     pageIndex: ++newState.index,
     pageSize: 10
   };
-  if (param) body[param] = type;
 
+  if (params) Object.assign(body, params);
 
   fetch(url, {
     method: 'POST',

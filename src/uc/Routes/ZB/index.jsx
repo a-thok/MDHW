@@ -42,7 +42,7 @@ export default React.createClass({
   },
   // 取消收藏
   delCollection: function (id, index) {
-    deFavorite.bind(this)('/m/sys/zb/collect/del', 'Collection', id, index);
+    deFavorite.bind(this)('/m/sys/zb/collect/del', 'Collection', 'fpid', id, index);
     fetching.bind(this)('Collection');
   },
   // 请求已发布列表

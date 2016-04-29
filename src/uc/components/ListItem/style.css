@@ -87,3 +87,10 @@
   text-align: center;
   text-decoration: none;
 }
+
+/* 操作颜色 */
+.list_operate {
+  color: #46a0ce;
+  text-decoration: none;
+  cursor: pointer;
+}

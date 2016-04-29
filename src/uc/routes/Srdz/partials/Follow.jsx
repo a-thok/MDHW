@@ -15,21 +15,25 @@ export default React.createClass({
     scroll(this.props.fetchFollow);
   },
   render: function () {
+    // console.log(this.props);
     let contentList = this.props.data.map((item, index) => (
       <ListItem
         key={index}
         {...item}
+        title={<a className="list_operate" href={item.url}>{item.title}</a>}
         img={`${item.productlmg}.jpg`}
         multiple={{ '成交量': item.num }}
         emp={['单价', item.price]}
         small={item.name}
-        other="取消关注"
+        other={<span className="list_operate">取消关注</span>}
+        delFollow={this.props.delFollow}
+        index={index}
       />
     ));
     return (
       <div>
         <ul className="list">
-          {contentList}
+            {contentList}
         </ul>
         <Loading
           finished={this.props.finished}
