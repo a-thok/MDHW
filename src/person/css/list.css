@@ -1,8 +1,10 @@
 .textList_item {
+  display: block;
   padding: .5em 1em;
   margin-top: 1em;
   font-size: .18rem;
   background: #fff;
+  text-decoration: none;
 }
 .portrait-pad {
   padding: .5em 0;

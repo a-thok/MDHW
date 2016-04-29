@@ -69,7 +69,6 @@
   left: 0;
   transform: translate(-100%, -101%);
   transition: transform .1s;
-  
 }
 .ftCtrl_item_wx {
   right: 0;
