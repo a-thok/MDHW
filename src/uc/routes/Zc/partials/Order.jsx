@@ -49,7 +49,7 @@ export default React.createClass({
         small={item.typename}
         emp={['目标', `￥${item.moneyall}`]}
         detail={detail}
-        onShowDetail={this.props.showDetail}
+        toggleDetail={this.props.toggleDetail}
         last={['筹款金额', `￥${item.moneySum}`]}
       />);
     });

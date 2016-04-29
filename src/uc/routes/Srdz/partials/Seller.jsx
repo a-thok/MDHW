@@ -39,7 +39,7 @@ export default React.createClass({
         title={item.projectName}
         tep="down"
         detail={detail}
-        onShowDetail={this.props.showDetail}
+        toggleDetail={this.props.toggleDetail}
       />);
     });
     return (

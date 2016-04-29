@@ -1,6 +1,7 @@
 import React from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
+import deFavorite from '../../mixins/deFavorite.js';
 
 export default React.createClass({
   getInitialState: function () {
@@ -36,13 +37,17 @@ export default React.createClass({
     fetching.bind(this)('Follow');
   },
   // 请求买家订单列表
-  fetchBuyer: function (type) {
+  fetchBuyer: function (states, statee) {
     loadList.bind(this)({
       url: '/m/sys/Srdz/Deal/BuyerList',
       list: 'Buyer',
-      type: type === undefined ? 0 : type,
+      params: {
+        states,
+        statee
+      },
+      type: states === -1 ? 0 : 1,
       param: 'state',
-      reset: type !== undefined
+      reset: states !== undefined
     });
     fetching.bind(this)('Buyer');
   },
@@ -61,10 +66,36 @@ export default React.createClass({
     fetching.bind(this)('Seller');
   },
   // 显示详情
-  showDetail: function (index) {
+  toggleDetail: function (index) {
     const newState = Object.assign({}, this.state.Seller);
     newState.data[index].showDetail = !newState.data[index].showDetail;
-    this.setState(newState);
+    this.setState({ Seller: newState });
+  },
+  delFollow: function (id, index) {
+    deFavorite.bind(this)('/m/sys/srdz/collect/del', 'Follow', 'id', id, index);
+    fetching.bind(this)('Follow');
+  },
+  orderConfirm: function (number, index) {
+    console.log(index);
+    fetch('/m/Sys/Srdz/Deal/Confirm', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ number }),
+      credentials: 'include'
+    })
+    .then(res => res.json())
+    .then(res => {
+      if (res.success) {
+        const newState = Object.assign({}, this.state.Buyer);
+        newState.data[index].state = 3;
+        newState.data[index].stateName = '已收货';
+        this.setState({ Buyer: newState });
+      } else {
+        alert('服务器错误，请稍后重试');
+      }
+    });
   },
   // 渲染
   render: function () {
@@ -75,18 +106,20 @@ export default React.createClass({
     switch (ChildName) {
       case 'Follow':
         extra = {
-          fetchFollow: this.fetchFollow
+          fetchFollow: this.fetchFollow,
+          delFollow: this.delFollow
         };
         break;
       case 'Seller':
         extra = {
           fetchSeller: this.fetchSeller,
-          showDetail: this.showDetail
+          toggleDetail: this.toggleDetail
         };
         break;
       case 'Buyer':
         extra = {
-          fetchBuyer: this.fetchBuyer
+          fetchBuyer: this.fetchBuyer,
+          orderConfirm: this.orderConfirm
         };
         break;
       default:

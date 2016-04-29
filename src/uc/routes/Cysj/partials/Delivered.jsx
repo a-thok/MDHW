@@ -23,7 +23,7 @@ export default React.createClass({
         elems={[
           <span className="fontColor">报价: ￥{item.quote}</span>,
           <span>工作周期: {item.worktime}天</span>,
-          <a className="list-link" href="#">查看详情</a>
+          <a className="list_operate" href="#">查看详情</a>
         ]}
       />
     ));
