@@ -1,27 +1,12 @@
-'use strict';
-
 const path = require('path');
 const webpack = require('webpack');
-const CleanPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const PRODUCTION = process.env.NODE_ENV !== 'development'; // 判断测试还是打包
-const RELEASE = process.env.NODE_ENV === 'production';  // 判断打包到内网还是外网
-console.log(process.env.NODE_ENV);
 
-let publicPath;
-if (process.env.NODE_ENV === 'development') {
-  publicPath = '/';
-} else {
-  if (process.env.NODE_ENV === 'production') {
-    publicPath = '//cdn.dreamhiway.com/mstatic/';
-  } else {
-    publicPath = 'http://192.168.2.10:81/mstatic/';
-  }
-}
+const PRODUCTION = process.env.NODE_ENV === 'production';  // 判断打包到内网还是外网
+console.log(process.env.NODE_ENV);
 
 const config = {
   entry: {
-    'common': ['normalize.css', 'font-awesome/css/font-awesome.css', 'es6-promise', 'whatwg-fetch', 'fastclick'],
+    'common': ['normalize.css', 'es6-promise', 'whatwg-fetch', 'fastclick'],
     'rczp': [path.join(__dirname, 'src/rczp')],
     'kjfw': [path.join(__dirname, 'src/kjfw')],
     'zc': [path.join(__dirname, 'src/zc')],
@@ -37,7 +22,7 @@ const config = {
   },
   output: {
     path: path.join(__dirname, '/dist/'),
-    publicPath,
+    publicPath: '/',
     filename: 'js/[name].js'
   },
   resolve: {
@@ -62,21 +47,21 @@ const config = {
     'react': 'React',
     'react-dom': 'ReactDOM'
   },
-  devtool: PRODUCTION ? 'source-map' : 'cheap-source-map',
+  devtool: 'cheap-source-map',
   module: {
     loaders: [
       {
         test: /\.css$/,
-        loader: PRODUCTION ? ExtractTextPlugin.extract('style', 'css!postcss') : 'style!css?sourceMap!postcss'
+        loader: 'style!css?sourceMap!postcss'
       },
       {
         test: /\.jsx?$/,
-        loader: PRODUCTION ? 'babel' : 'babel!eslint',
+        loader: 'babel!eslint',
         exclude: path.resolve(__dirname, 'node_modules')
       },
       {
         test: /\.(woff|svg|eot|ttf)\??.*$/,
-        loader: PRODUCTION ? 'url' : 'url?sourceMap',
+        loader: 'url?sourceMap',
         query: {
           limit: 10000,
           name: 'font/[name].[ext]?[hash:7]'
@@ -84,7 +69,7 @@ const config = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: PRODUCTION ? 'file' : 'url?sourceMap',
+        loader: 'url?sourceMap',
         query: {
           name: 'img/[name].[ext]?[hash:7]'
         }
@@ -94,31 +79,26 @@ const config = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('common', 'js/common.js', Infinity),
     new webpack.DefinePlugin({
-      __SERVER__: !PRODUCTION,
-      __DEVELOPMENT__: !PRODUCTION,
-      __DEVTOOLS__: !PRODUCTION,
-      CDN_HOST: RELEASE ? JSON.stringify('cdn.dreamhiway.com') : JSON.stringify('192.168.2.10:81'),
+      // __SERVER__: !PRODUCTION,
+      // __DEVELOPMENT__: !PRODUCTION,
+      // __DEVTOOLS__: !PRODUCTION,
+      CDN_HOST: PRODUCTION ? JSON.stringify('cdn.dreamhiway.com') : JSON.stringify('192.168.2.10:81'),
       UPLOAD_HOST: JSON.stringify('upload.dreamhiway.com'),
-      MAIN_HOST: RELEASE ? JSON.stringify('www.dreamhiway.com') : JSON.stringify('192.168.2.177:8085'),
-      HR_HOST: RELEASE ? JSON.stringify('hr.dreamhiway.com') : JSON.stringify('192.168.2.177:8086'),
-      ZC_HOST: RELEASE ? JSON.stringify('zc.dreamhiway.com') : JSON.stringify('192.168.2.177:8088'),
-      ZB_HOST: RELEASE ? JSON.stringify('zb.dreamhiway.com') : JSON.stringify('192.168.2.177:8090'),
-      ZCKJ_HOST: RELEASE ? JSON.stringify('zckj.dreamhiway.com') : JSON.stringify('192.168.2.177:8091'),
-      DIY_HOST: RELEASE ? JSON.stringify('diy.dreamhiway.com') : JSON.stringify('192.168.2.177:8092'),
-      SRDZ_HOST: RELEASE ? JSON.stringify('srdz.dreamhiway.com') : JSON.stringify('192.168.2.177:8093'),
-      KJ_HOST: RELEASE ? JSON.stringify('kj.dreamhiway.com') : JSON.stringify('192.168.2.177:8087'),
+      MAIN_HOST: PRODUCTION ? JSON.stringify('www.dreamhiway.com') : JSON.stringify('192.168.2.177:8085'),
+      HR_HOST: PRODUCTION ? JSON.stringify('hr.dreamhiway.com') : JSON.stringify('192.168.2.177:8086'),
+      ZC_HOST: PRODUCTION ? JSON.stringify('zc.dreamhiway.com') : JSON.stringify('192.168.2.177:8088'),
+      ZB_HOST: PRODUCTION ? JSON.stringify('zb.dreamhiway.com') : JSON.stringify('192.168.2.177:8090'),
+      ZCKJ_HOST: PRODUCTION ? JSON.stringify('zckj.dreamhiway.com') : JSON.stringify('192.168.2.177:8091'),
+      DIY_HOST: PRODUCTION ? JSON.stringify('diy.dreamhiway.com') : JSON.stringify('192.168.2.177:8092'),
+      SRDZ_HOST: PRODUCTION ? JSON.stringify('srdz.dreamhiway.com') : JSON.stringify('192.168.2.177:8093'),
+      KJ_HOST: PRODUCTION ? JSON.stringify('kj.dreamhiway.com') : JSON.stringify('192.168.2.177:8087'),
       'process.env': {
         BABEL_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     })
   ],
   postcss: function (webpack) {
-    return PRODUCTION ? [
-      require('postcss-import')({
-        addDependencyTo: webpack
-      }),
-      require('postcss-cssnext')()
-    ] : [
+    return [
       require('postcss-import')({
         addDependencyTo: webpack
       }),
@@ -138,32 +118,5 @@ const PATH_ARRAY = ['func', 'render', 'filter', 'slider', 'doSearch', 'goToSearc
   .map((item) => path.join(__dirname, `./src/common/js/${item}.js`));
 config.entry.common.push(BASE_CSS_PATH);
 config.entry.common = config.entry.common.concat(PATH_ARRAY);
-
-// add different plugins for production and development
-let extraPlugins;
-if (PRODUCTION) {
-  extraPlugins = [
-    new CleanPlugin('dist'),
-    new ExtractTextPlugin('css/[name].css'),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
-  ];
-} else {
-  const hotClient = 'webpack-hot-middleware/client?noInfo=true&reload=true';
-  Object.keys(config.entry).forEach((name) => {
-    config.entry[name] = [hotClient].concat(config.entry[name]);
-  });
-
-  extraPlugins = [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ];
-}
-config.plugins = config.plugins.concat(extraPlugins);
 
 module.exports = config;
