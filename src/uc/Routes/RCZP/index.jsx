@@ -51,11 +51,15 @@ export default React.createClass({
       .then(res => {
         const newState = {};
         res.result.items.forEach((item) => {
+          if (item.type === 1) {
+            item.content.city = item.content.location;
+            delete item.content.location;
+          }
           Object.assign(newState, item.content);
         });
 
         // location 和 react-router 有命名冲突
-        newState.city = newState.location;
+        newState.wishCity = newState.location;
         delete newState.location;
 
         this.setState({ Preview: newState });

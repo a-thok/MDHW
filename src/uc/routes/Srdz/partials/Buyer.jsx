@@ -11,9 +11,8 @@ export default React.createClass({
     this.props.fetchBuyer(-1, 1);
     window.addEventListener('scroll', this.handleScroll);
   },
-  handleClick: function (state1, state2, type) {
-    if (type === this.props.type) return;
-    this.props.fetchBuyer(state1, state2, true);
+  handleClick: function (state1, state2) {
+    this.props.fetchBuyer(state1, state2);
   },
   handleScroll: function () {
     scroll(this.props.fetchBuyer);

@@ -19,7 +19,7 @@ export default React.createClass({
         data: []
       },
       Publish: {
-        data: { a: '1', b: '1', c: '1', d: '1', e: '1', g: '1' }
+        data: { type: 1 }
       }
     };
   },
@@ -31,6 +31,26 @@ export default React.createClass({
   },
   onSubmit: function (e) {
     e.preventDefault();
+    console.log(this.state.Publish.data);
+    fetch('/m/Sys/ZB/Publish/Add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify(Object.assign(
+          {},
+          this.state.Publish.data
+        ))
+    })
+    .then(res => res.json())
+    .then(res => {
+      if (res.success) {
+        window.location.hash = '#';
+      } else {
+        alert('服务器错误，请稍候重试');
+      }
+    });
   },
   // 请求收藏列表
   fetchCollection: function () {

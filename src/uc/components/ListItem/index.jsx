@@ -5,7 +5,7 @@ export default function listItem(props) {
   let handleonClick = function () {
     if (props.detail) {
       props.toggleDetail(props.index);
-    } else if (props.other === '取消关注') {
+    } else if (props.other.props.children === '取消关注') {
       props.delFollow(props.id, props.index);
     } else if (props.other.props.children === '确认收货') {
       props.orderConfirm(props.number, props.index);

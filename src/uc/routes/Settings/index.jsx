@@ -6,6 +6,7 @@ export default React.createClass({
   getInitialState: function () {
     return {
       Address: {
+        index: 0,
         data: [],
         fetching: false,
         finished: false
@@ -33,12 +34,16 @@ export default React.createClass({
       newState.areaData.forEach((item) => {
         if (item.code === code) {
           newState.data.area[type] = item;
+          newState.data.area.city = item.citys[0];
+          newState.data.area.district = newState.data.area.city.districts[0];
         }
       });
     } else if (type === 'city') {
       newState.data.area.province.citys.forEach((item) => {
         if (item.code === code) {
           newState.data.area[type] = item;
+          newState.data.area.district = item.districts[0];
+          console.log(newState);
         }
       });
     } else {
@@ -51,6 +56,7 @@ export default React.createClass({
     this.setState({ AddressForm: newState });
   },
   onSubmit: function (id) {
+    const pageIndex = this.state.Address.index;
     if (id) {
       fetch('/m/User/addr/Edit', {
         method: 'POST',
@@ -62,6 +68,14 @@ export default React.createClass({
           { id },
           this.state.AddressForm.data
         ))
+      })
+      .then(res => res.json())
+      .then(res => {
+        if (res.success) {
+          window.location.hash = '#/settings/address';
+        } else {
+          alert('服务器错误，请稍候重试');
+        }
       });
     } else {
       fetch('/m/User/addr/Add', {
@@ -70,9 +84,41 @@ export default React.createClass({
           'Content-Type': 'application/json'
         },
         credentials: 'include',
-        body: JSON.stringify(this.state.AddressForm.data)
+        body: JSON.stringify(Object.assign(
+          {
+            pageIndex,
+            pageSize: 10
+          },
+          this.state.AddressForm.data
+        ))
+      })
+      .then(res => res.json())
+      .then(res => {
+        const newState = Object.assign({}, this.state.Address);
+        if (res.success) {
+          newState.finished = (pageIndex * 10) >= res.result.total;
+          const end = (pageIndex - 1) * 10;
+          newState.fetching = false;
+          newState.data = newState.data.slice(0, end);
+          newState.data = newState.data.concat(res.result.data);
+          this.setState({ Address: newState });
+          window.location.hash = '#/settings/address';
+        } else {
+          alert('服务器错误，请稍候重试');
+        }
       });
     }
+  },
+  onReset: function () {
+    const newState = Object.assign({}, this.state.AddressForm);
+    newState.data = {
+      area: {
+        province: {},
+        city: {},
+        district: {}
+      }
+    };
+    this.setState({ AddressForm: newState });
   },
   fetchAreaData: function () {
     fetch(`http://${MAIN_HOST}/Dict/city2`)
@@ -147,6 +193,7 @@ export default React.createClass({
           onAddressChange: this.onAddressChange,
           onAreaChange: this.onAreaChange,
           onSubmit: this.onSubmit,
+          onReset: this.onReset,
           fetchAddressDetail: this.fetchAddressDetail
         };
         break;

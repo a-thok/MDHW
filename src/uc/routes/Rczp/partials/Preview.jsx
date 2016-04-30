@@ -25,10 +25,10 @@ export default React.createClass({
         <Title name="期望工作" />
         <div className="TextGroupWrapper">
           {/* 下面的字段名是错的 */}
-          <TextGroup name="期望职位" text={this.props.wishpos} />
-          <TextGroup name="职位性质" text={this.props.posnature} />
-          <TextGroup name="期望城市" text={this.props.wishcity} />
-          <TextGroup name="期望月薪" text={this.props.wishsalary} />
+          <TextGroup name="期望职位" text={this.props.position} />
+          <TextGroup name="职位性质" text={this.props.nature} />
+          <TextGroup name="期望城市" text={this.props.wishCity} />
+          <TextGroup name="期望月薪" text={this.props.salary} />
         </div>
       </div>
     );

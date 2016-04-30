@@ -34,7 +34,7 @@ export default React.createClass({
   onSubmitProfileChange: function (key) {
     const newState = Object.assign({}, this.state.profile);
     newState[key] = this.state.profileTemp[key];
-    fetch('/m/user/info/person/Edit', {
+    fetch('/m/user/info/personEdit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -44,7 +44,10 @@ export default React.createClass({
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res);
+        if (res.success) {
+          this.setState({ profile: newState });
+          window.location.hash = '#/settings/account';
+        }
       });
   },
   onChangeHash: function () {

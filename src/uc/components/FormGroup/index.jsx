@@ -26,7 +26,7 @@ export default function FormGroup(props) {
       ></textarea>);
       break;
     case 'select':
-      const options = props.options.map((item, index) => <option key={index} >{ item }</option>);
+      const options = props.options.map((item, index) => <option key={index} value={item.value} >{ item.text }</option>);
       formNode = (
         <select
           name={props.name}

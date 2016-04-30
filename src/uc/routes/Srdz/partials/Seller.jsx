@@ -8,12 +8,11 @@ import removeWindowEvent from '../../../mixins/removeWindowEvent';
 export default React.createClass({
   mixins: [getHash, removeWindowEvent],
   componentDidMount: function () {
-    this.props.fetchSeller(0, false);
+    this.props.fetchSeller(-1, 1);
     window.addEventListener('scroll', this.handleScroll);
   },
-  handleClick: function (type) {
-    if (type === this.props.type) return;
-    this.props.fetchSeller(type, true);
+  handleClick: function (state1, state2) {
+    this.props.fetchSeller(state1, state2);
   },
   handleScroll: function () {
     scroll(this.props.fetchSeller);
@@ -47,11 +46,11 @@ export default React.createClass({
         <ul className="listTabs">
           <li
             className={ `listTab${this.props.type === 0 ? ' is-active' : ''}` }
-            onClick={() => this.handleClick(0) }
+            onClick={() => this.handleClick(-1, 1) }
           >待付款</li>
           <li
             className={ `listTab${this.props.type === 1 ? ' is-active' : ''}` }
-            onClick={() => this.handleClick(1) }
+            onClick={() => this.handleClick(0, 5) }
           >已付款</li>
         </ul>
         <ul className="list">

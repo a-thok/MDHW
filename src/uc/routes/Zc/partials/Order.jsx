@@ -1,5 +1,5 @@
 import React from 'react';
-import ListTab from '../../../components/ListTab';
+// import ListTab from '../../../components/ListTab';
 import ListItem from '../../../components/ListItem';
 import Loading from '../../../components/Loading';
 import getHash from '../../../mixins/getHash';
@@ -15,19 +15,18 @@ export default React.createClass({
   handleScroll: function () {
     scroll(this.props.fetchOrder);
   },
-  handleClick: function (type) {
-    if (type === this.props.type) return;
-    this.props.fetchOrder(type, true);
+  handleClick: function (state1, state2) {
+    this.props.fetchOrder(state1, state2);
   },
   render: function () {
-    const tabs = [{ text: '已付款', type: 0 }, { text: '待付款', type: 1 }].map(item => (
-      <ListTab
-        text={item.text}
-        type={item.type}
-        active={this.props.type}
-        handleClick={this.handleClick}
-      />
-    ));
+    // const tabs = [{ text: '已付款', type: 0 }, { text: '待付款', type: 1 }].map(item => (
+    //   <ListTab
+    //     text={item.text}
+    //     type={item.type}
+    //     active={this.props.type}
+    //     handleClick={this.handleClick}
+    //   />
+    // ));
 
     let content = this.props.data.map((item, index) => {
       const detail = [
@@ -57,7 +56,14 @@ export default React.createClass({
     return (
       <div>
         <ul className="listTabs">
-          {tabs}
+          <li
+            className={ `listTab${this.props.type === 0 ? ' is-active' : ''}` }
+            onClick={() => this.handleClick(-1, 1) }
+          >待付款</li>
+          <li
+            className={ `listTab${this.props.type === 1 ? ' is-active' : ''}` }
+            onClick={() => this.handleClick(0, 5) }
+          >已付款</li>
         </ul>
         <ul className="list">
           {content}

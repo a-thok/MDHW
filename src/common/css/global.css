@@ -22,9 +22,9 @@ input { /*safari*/
   border-radius: 0;
 }
 input,
-input[type=search],
-input[type=checkbox], { /*safari*/
-  -webkit-appearance: none;
+select,
+textarea { /*safari*/
+  -webkit-appearance: none !important;
 }
 
 html.is-static,
