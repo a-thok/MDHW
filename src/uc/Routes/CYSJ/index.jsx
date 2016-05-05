@@ -101,8 +101,7 @@ export default React.createClass({
   onTbSubmit: function (e) {
     e.preventDefault();
     if (!this.state.data) return;
-    // let cpid = localStorage.getItem(id)
-    let cpid = 11; // 临时Id
+    let cpid = localStorage.getItem('cpid');
     fetch('/m/diy/witkey/bids', {
       method: 'POST',
       headers: {
