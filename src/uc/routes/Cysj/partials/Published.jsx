@@ -26,6 +26,7 @@ export default React.createClass({
           <span>{item.count}参与</span>,
           <span>{item.transaction}</span>
         ]}
+        url={item.url}
       />
     ));
     return (
