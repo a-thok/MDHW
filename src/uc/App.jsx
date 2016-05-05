@@ -5,7 +5,10 @@ import Header from './components/Header';
 export default React.createClass({
   getInitialState: function () {
     return {
-      to: '',
+      Header: {
+        to: '',
+        isShowMenu: false
+      },
       profile: {},
       profileTemp: {}
     };
@@ -61,6 +64,11 @@ export default React.createClass({
     }
     this.setState({ to });
   },
+  onToggleMenu: function () {
+    const newHeader = Object.assign({}, this.state.Header);
+    newHeader.isShowMenu = !newHeader.isShowMenu;
+    this.setState({ Header: newHeader });
+  },
   render: function () {
     const Child = this.props.children;
     let extra;
@@ -82,7 +90,7 @@ export default React.createClass({
     }
     return (
       <div>
-        <Header to={this.state.to} />
+        <Header {...this.state.Header} onToggleMenu={ this.onToggleMenu } />
         {React.cloneElement(Child, Object.assign({ onChangeHash: this.onChangeHash }, extra))}
       </div>
     );

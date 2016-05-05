@@ -35,6 +35,10 @@
 .profile_tel {
   margin-right: 1em;
 }
+.profile_link {
+  display: block;
+  color: #fff;
+}
 .profile .fa-edit {
   position: absolute;
   right: 0;

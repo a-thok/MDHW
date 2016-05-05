@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export default function Profile(props) {
   const isMale = props.p_sex === 'male';
@@ -20,7 +21,9 @@ export default function Profile(props) {
         <span>{`邮箱: ${props.email || '未绑定'}`}</span>
       </p>
       <p className="profile_para">{props.p_signature}</p>
-      <i className="fa fa-edit"></i>
+      <Link className="profile_link" to="/settings">
+        <i className="fa fa-edit"></i>
+      </Link>
     </div>
   );
 }
