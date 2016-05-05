@@ -20,6 +20,7 @@ import CysjPublish from './routes/Cysj/partials/Publish';
 import CysjPublished from './routes/Cysj/partials/Published';
 import CysjCollection from './routes/CYSJ/partials/Collection';
 import CysjDelivered from './routes/CYSJ/partials/Delivered';
+import CysjBidding from './routes/CYSJ/partials/Bidding';
 
 import Srdz from './routes/Srdz';
 import SrdzNav from './routes/Srdz/partials/Nav';
@@ -66,6 +67,7 @@ ReactDOM.render((
         <Route path="/cysj/published" component={CysjPublished} />
         <Route path="/cysj/collection" component={CysjCollection} />
         <Route path="/cysj/delivered" component={CysjDelivered} />
+        <Route path="/cysj/bidding" component={CysjBidding} />
       </Route>
       <Route path="/Srdz" component={Srdz}>
         <IndexRoute component={SrdzNav} />

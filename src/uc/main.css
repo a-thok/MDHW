@@ -2,5 +2,6 @@
 @import "./routes/Settings/settings.css";
 @import "./routes/Home/home.css";
 @import "./routes/Zc/style.css";
+@import "./routes/CYSJ/style.css";
 
 @import "./components/components.css";

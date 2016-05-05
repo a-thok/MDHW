@@ -26,17 +26,82 @@ export default React.createClass({
         fetching: false,
         finished: false,
         data: []
+      },
+      Bidding: {
+        areaData: [],
+        data: {},
+        areares: {
+          area: {
+            province: {},
+            city: {},
+            district: {}
+          }
+        }
       }
     };
   },
+  // 选择地址
+  onAddressChange: function (key, value) {
+    const newState = Object.assign({}, this.state.Bidding);
+    newState.areares[key] = value;
+    this.setState({ Bidding: newState });
+  },
+  onAreaChange: function (type, code) {
+    const newState = Object.assign({}, this.state.Bidding);
+    if (type === 'province') {
+      newState.areaData.forEach((item) => {
+        if (item.code === code) {
+          newState.areares.area[type] = item;
+        }
+      });
+    } else if (type === 'city') {
+      newState.areares.area.province.citys.forEach((item) => {
+        if (item.code === code) {
+          newState.areares.area[type] = item;
+        }
+      });
+    } else {
+      newState.areares.area.city.districts.forEach((item) => {
+        if (item.code === code) {
+          newState.areares.area[type] = item;
+        }
+      });
+    }
+    this.setState({ Bidding: newState });
+  },
   // 提交表单
-  onChange: function (e, name) {
-    const newState = Object.assign({}, this.state.Publish);
+  onChange: function (e, name, list) {
+    const newState = Object.assign({}, this.state[list]);
     newState.data[name] = e.target.value;
     this.setState(newState);
   },
   onSubmit: function (e) {
     e.preventDefault();
+    if (!this.state.data) return;
+    // let cpid = localStorage.getItem(id)
+    let cpid = 11; // 临时Id
+    fetch('/m/diy/witkey/bids', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        cpid,
+        intro: this.state.data.intro,
+        quote: this.state.data.quote,
+        worktime: this.state.data.worktime,
+        address: this.state.areares.address
+      })
+    })
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.success) {
+        alert('投标成功'); // 临时代码
+      } else {
+        alert(res.msg[0]);
+      }
+    });
   },
   // 请求已发布列表
   fetchPublished: function () {
@@ -67,6 +132,49 @@ export default React.createClass({
     });
     fetching.bind(this)('Delivered');
   },
+  // 获取地址
+  fetchAreaData: function () {
+    fetch(`http://${MAIN_HOST}/Dict/city2`)
+      .then(res => res.json())
+      .then(res => {
+        const newState = Object.assign({}, this.state.Bidding);
+        newState.areaData = res.result;
+        this.setState({ Bidding: newState });
+      });
+  },
+  fetchAddress: function () {
+    loadList.bind(this)({
+      url: '/m/User/addr/List',
+      list: 'Address'
+    });
+    fetching.bind(this)('Address');
+  },
+  fetchAddressDetail: function (id) {
+    fetch('/m/User/addr/detail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({ id })
+    })
+      .then(res => res.json())
+      .then(res => {
+        const newState = Object.assign({}, this.state.Bidding);
+        newState.areares = res.result.areares;
+        newState.areaData.forEach((item) => {
+          if (item.code === newState.areares.area.province.code) {
+            newState.areares.area.province = item;
+          }
+        });
+        newState.areares.area.province.citys.forEach((item) => {
+          if (item.code === newState.areares.area.city.code) {
+            newState.areares.area.city = item;
+          }
+        });
+        this.setState({ Bidding: newState });
+      });
+  },
   // 渲染
   render: function () {
     const Child = this.props.children;
@@ -94,6 +202,16 @@ export default React.createClass({
       case 'Delivered':
         extra = {
           fetchDelivered: this.fetchDelivered
+        };
+        break;
+      case 'Bidding':
+        extra = {
+          onChange: this.onChange,
+          fetchAddressDetail: this.fetchAddressDetail,
+          fetchAreaData: this.fetchAreaData,
+          onAddressChange: this.onAddressChange,
+          onAreaChange: this.onAreaChange,
+          onSubmit: this.onSubmit
         };
         break;
       default:

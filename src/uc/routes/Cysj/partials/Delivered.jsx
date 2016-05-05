@@ -25,6 +25,7 @@ export default React.createClass({
           <span>工作周期: {item.worktime}天</span>,
           <a className="list_operate" href="#">查看详情</a>
         ]}
+        url={item.url}
       />
     ));
     return (

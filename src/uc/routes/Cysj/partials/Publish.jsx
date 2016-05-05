@@ -19,7 +19,8 @@ export default React.createClass({
         name={item}
         value={this.props.data[item]}
         { ...form[item] }
-        onChange={(e, name) => this.props.onChange(e, name)}
+        onChange={this.props.onChange}
+        list = "Publish"
       />
     ));
     return (
