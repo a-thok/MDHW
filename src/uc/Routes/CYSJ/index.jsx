@@ -98,7 +98,8 @@ export default React.createClass({
       }
     });
   },
-  onTbSubmit: function () {
+  onTbSubmit: function (e) {
+    e.preventDefault();
     if (!this.state.data) return;
     // let cpid = localStorage.getItem(id)
     let cpid = 11; // 临时Id
@@ -246,7 +247,7 @@ export default React.createClass({
           fetchAreaData: this.fetchAreaData,
           onAddressChange: this.onAddressChange,
           onAreaChange: this.onAreaChange,
-          onSubmit: this.onSubmit
+          onTbSubmit: this.onTbSubmit
         };
         break;
       default:
