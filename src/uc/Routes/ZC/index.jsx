@@ -43,16 +43,19 @@ export default React.createClass({
     fetching.bind(this)('Support');
   },
   // 请求订单列表
-  fetchOrder: function (type, reset) {
+  fetchOrder: function (states, statee) {
     loadList.bind(this)({
       url: '/m/sys/ZC/Deal/InvestList',
       list: 'Order',
-      type,
-      param: 'state',
+      params: {
+        states,
+        statee
+      },
+      type: states === -1 ? 0 : 1,
+      reset: states !== undefined,
       cb: function (items) {
         items.forEach((item) => {item.showDetail = false;});
-      },
-      reset
+      }
     });
     fetching.bind(this)('Order');
   },

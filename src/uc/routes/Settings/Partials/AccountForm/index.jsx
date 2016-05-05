@@ -1,5 +1,6 @@
 import React from 'react';
 import getHash from '../../../../mixins/getHash';
+import FormButton from '../../../../components/FormButton';
 
 export default React.createClass({
   mixins: [getHash],
@@ -51,6 +52,7 @@ export default React.createClass({
     }
     return (
       <form
+        className="accountForm"
         onSubmit={(e) => {
           e.preventDefault();
           this.props.onSubmit(type);
@@ -63,6 +65,7 @@ export default React.createClass({
             onClick={() => this.props.onClick(type)}
           ></i>
         </div>
+        <FormButton value="确定" type="submit" />
       </form>
     );
   }

@@ -32,6 +32,7 @@
   padding: .4em 1em;
   color: #cc1414;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .addressWrapper .list_load {

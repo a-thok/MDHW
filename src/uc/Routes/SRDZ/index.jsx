@@ -46,22 +46,24 @@ export default React.createClass({
         statee
       },
       type: states === -1 ? 0 : 1,
-      param: 'state',
       reset: states !== undefined
     });
     fetching.bind(this)('Buyer');
   },
   // 请求卖家订单列表
-  fetchSeller: function (type, reset) {
+  fetchSeller: function (states, statee) {
     loadList.bind(this)({
       url: '/m/sys/Srdz/Deal/SellerList',
       list: 'Seller',
-      type,
+      params: {
+        states,
+        statee
+      },
+      type: states === -1 ? 0 : 1,
+      reset: states !== undefined,
       cb: function (items) {
         items.forEach((item) => {item.showDetail = false;});
-      },
-      param: 'state',
-      reset
+      }
     });
     fetching.bind(this)('Seller');
   },

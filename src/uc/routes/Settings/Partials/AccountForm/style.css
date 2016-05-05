@@ -35,10 +35,10 @@
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
-  border: 1px solid #000;
+  border: 1px solid var(--ucColor);
   margin: 0 1em 0 3em;
   border-radius: 50%;
 }
 .accountRadioWrapper input:checked + .labelEmu {
-  background: #000;
+  background: var(--ucColor);
 }

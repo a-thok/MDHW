@@ -9,24 +9,27 @@ export default React.createClass({
   mixins: [getHash],
   componentDidMount: function () {
     const hash = window.location.hash;
-    if (hash.indexOf('editaddress') !== -1) {
+    if (hash.indexOf('/address/edit') !== -1) {
       let id;
       hash.replace(/id=(\d+)/, (str, $1) => { id = $1; });
       this.props.fetchAddressDetail(id);
+    } else {
+      this.props.onReset();
     }
   },
   handleSubmit: function (e) {
     e.preventDefault();
     const hash = window.location.hash;
-    if (hash.indexOf('editaddress') !== -1) {
+    if (hash.indexOf('/address/edit') !== -1) {
       let id;
       hash.replace(/id=(\d+)/, (str, $1) => { id = $1; });
       this.props.onSubmit(id);
     } else {
-      this.props.onSsubmit();
+      this.props.onSubmit();
     }
   },
   render: function () {
+    // console.log(this.props);
     return (
       <form className="addressForm" onSubmit={this.handleSubmit}>
         <FormGroupSimple

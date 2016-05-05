@@ -7,7 +7,8 @@ export default React.createClass({
   getInitialState: function () {
     return {
       Publish: {
-        data: { a: '', b: '', c: '', d: '', e: '', f: '', g: '' }
+        types: [],
+        data: { type: 1 }
       },
       Published: {
         index: 0,
@@ -77,6 +78,27 @@ export default React.createClass({
   },
   onSubmit: function (e) {
     e.preventDefault();
+    fetch('/m/sys/diy/Publish/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify(Object.assign(
+          {},
+          this.state.Publish.data
+        ))
+    })
+    .then(res => res.json())
+    .then(res => {
+      if (res.success) {
+        window.location.hash = '#';
+      } else {
+        alert('服务器错误，请稍候重试');
+      }
+    });
+  },
+  onTbSubmit: function () {
     if (!this.state.data) return;
     // let cpid = localStorage.getItem(id)
     let cpid = 11; // 临时Id
@@ -102,6 +124,18 @@ export default React.createClass({
         alert(res.msg[0]);
       }
     });
+  },
+  // 请求发布类型
+  fetchTypes: function () {
+    fetch('/m/diy/project/TypeList')
+      .then(res => res.json())
+      .then(res => {
+        const newState = this.state.Publish;
+        res.result.forEach(list => {
+          newState.types = newState.types.concat(list.item.map(item => ({ text: item.protype, value: item.id })));
+        });
+        this.setState({ Publish: newState });
+      });
   },
   // 请求已发布列表
   fetchPublished: function () {
@@ -185,7 +219,8 @@ export default React.createClass({
       case 'Publish':
         extra = {
           onChange: this.onChange,
-          onSubmit: this.onSubmit
+          onSubmit: this.onSubmit,
+          fetchTypes: this.fetchTypes
         };
         break;
       case 'Published':

@@ -69,6 +69,7 @@
   max-height: 6rem;
 }
 .detailGroup {
+  display: flex;
   padding: .6em .5em;
   border-bottom: .2em solid #fff;
 }
@@ -77,6 +78,9 @@
   width: 6em;
   color: #666;
   text-align: right;
+}
+.detailGroup_text {
+  flex: 1;
 }
 .list_item_detail_link {
   display: block;

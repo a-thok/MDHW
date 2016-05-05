@@ -9,7 +9,7 @@ export default function Address(props) {
         <address>{props.province_name} {props.city_name} {props.district_name}</address>
         <address>
           {props.address}
-          <Link to={`/settings/editaddress?id=${props.id}`} className="fa fa-edit" onClick={props.onClick} />
+          <Link to={`/settings/address/edit?id=${props.id}`} className="fa fa-edit" onClick={props.onClick} />
         </address>
       </div>
       <i

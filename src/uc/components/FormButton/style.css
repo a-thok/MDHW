@@ -1,3 +1,6 @@
+.formButtonWrapper {
+  text-align: center;
+}
 .formButton {
   width: 80%;
   border: 0;

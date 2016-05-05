@@ -91,8 +91,8 @@ ReactDOM.render((
       <Route path="/settings" component={Settings}>
         <IndexRoute component={SettingsNav} />
         <Route path="/settings/address" component={Addresses} />
-        <Route path="/settings/newaddress" component={AddressForm} />
-        <Route path="/settings/editaddress" component={AddressForm} />
+        <Route path="/settings/address/add" component={AddressForm} />
+        <Route path="/settings/address/edit" component={AddressForm} />
         <Route path="/settings/account" component={Account} />
         <Route path="/settings/account/edit" component={AccountForm} />
       </Route>
