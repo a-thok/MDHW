@@ -264,7 +264,7 @@ export default React.createClass({
           fetchAreaData: this.fetchAreaData,
           onAddressChange: this.onAddressChange,
           onAreaChange: this.onAreaChange,
-          onSubmit: this.onSubmit
+          onTbSubmit: this.onTbSubmit
         };
         break;
       default:

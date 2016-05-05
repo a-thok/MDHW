@@ -31,7 +31,7 @@ export default React.createClass({
               />
     ));
     return (
-      <form className="form" onSubmit={this.props.onSubmit}>
+      <form className="form" onSubmit={this.props.onTbSubmit}>
         <section className="Bidding">
           <div className="Bidding_img">
             <img src="#" />
