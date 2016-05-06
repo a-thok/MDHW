@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0,  minimum-scale=1, maximum-scale=1">
-  <title>注册页 - 梦高速</title>
+  <title>梦高速 - 快速注册</title>
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!--<link rel="stylesheet" href="/css/home.css">-->
   <script src="//cdn.dreamhiway.com/mstatic/lib/flexible.js"></script>
 </head>
 
 <body>
-  <div class="page">
+  <div class="page page-noMb">
     <!--头部 开始-->
     <header class="header header-reverse">
       <div class="header_sect">
@@ -31,18 +31,10 @@
       </div>
     </header>
     <!--头部 结束-->
-
+    
     <!--输入信息  开始-->
     <form class="acc">
-      <div class="acc_group">
-        <input class="acc_input acc_input-hasLabel" name="verify" type="text" placeholder="请输入验证码" required>
-        <label class="acc_label acc_label-hasBorder">
-          <div class="acc_label_code">
-            <img class="codeImg" src="http://192.168.2.133:8085/m/main/VerifyCode" alt="验证码">
-          </div>
-        </label>
-      </div>
-      
+      <p class="qqregister">快速注册</p>
       <div class="acc_group">
         <div class="acc_tip is-hidden">
           <p class="acc_tip_content">
@@ -53,20 +45,6 @@
         </div>
         <input class="acc_input" name="phone" type="text" placeholder="请输入手机号" required>
       </div>
-      <!--<div class="acc_group">
-        <input class="acc_input acc_input-short" type="text" placeholder="请输入手机号">
-        <button class="acc_getCode" type="button">获取短信验证码</button>
-      </div>
-      <div class="acc_group">
-        <input class="acc_input" type="text" placeholder="请输入短信验证码">
-      </div>-->
-      <!--<div class="acc_group">
-        <div class="acc_tip is-hidden">
-          <p class="acc_tip_content"><i class="fa fa-hand-o-right"></i>4-20位字符，支持汉字、字母、数字及“-”、"_"组合</p>
-          <i class="arrow arrow-down"></i>
-        </div>
-        <input class="acc_input attention" type="text" placeholder="请输入用户名">
-      </div>-->
       <div class="acc_group">
         <input class="acc_input acc_input-hasLabel" name="pwd" type="password" placeholder="请设置6-20位的登录密码" required>
         <input class="acc_input acc_input-hasLabel showPassword" type="text">
@@ -76,12 +54,15 @@
           </div>
         </label>
       </div>
-
-      <p class="acc_text">注册即视为同意<a class="acc_link" href="#">《梦高速用户注册协议》</a></p>
-
+      <p class="acc_text">
+        <input class="remember" name="autoLogin" id="remember" type="checkbox">
+        <label for="remember"><i class="fa fa-check"></i></label>
+        <label for="remember">同意<a class="acc_link" href="#">《梦高速用户注册协议》</a></label>
+      </p>
+      <span class="qqregister_text">注册后，您的QQ账号和梦高速账号都可以登录</span>
       <button class="acc_btn register" type="button" disabled>注册</button>
     </form>
-    
+    <!--输入信息  结束-->
     <!--报错  开始-->
     <div class="modal">
       <p class="modal_content">
@@ -92,7 +73,7 @@
         <button type="button">确定</button>
       </div>-->
     </div>
-    <!--报错  开始-->
+    <!--报错  结束-->
   </div>
 
   <script src="/js/common.js"></script>

@@ -21,12 +21,18 @@ const pathname = window.location.pathname;
 const pathArr = pathname.split('/');
 import login from './js/login.js';
 import register from './js/register.js';
+import qqregister from './js/qqregister.js';
+import qqbind from './js/qqbind.js';
 import { index, scroll } from './js/index.js';
 
-if (pathname.indexOf('denglu') !== -1) {
+if (pathname.indexOf('/denglu') !== -1) {
   login();
-} else if (pathname.indexOf('register') !== -1) {
+} else if (pathname.indexOf('/register') !== -1) {
   register();
+} else if (pathname.indexOf('qqregister') !== -1) {
+  qqregister();
+} else if (pathname.indexOf('qqbind') !== -1) {
+  qqbind();
 } else if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   scroll();
   index();

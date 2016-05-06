@@ -1,0 +1,10 @@
+.binding {
+  margin-top: .5rem;
+}
+.binding_pwd {
+  display: block;
+  margin-top: .5rem;
+  text-align: right;
+  text-decoration: none;
+  color: var(--fontColorLight);
+}
