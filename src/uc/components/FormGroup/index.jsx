@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FormGroup(props) {
   function handleChange(e) {
-    props.onChange(e, props.name);
+    props.onChange(e, props.name, props.list);
   }
   let formNode;
   switch (props.type) {
@@ -39,7 +39,6 @@ export default function FormGroup(props) {
     default:
       return null;
   }
-
   return (
     <div className="formGroup">
       <label className="formGroup_label" htmlFor={props.id}>{ props.label }</label>
