@@ -36,6 +36,7 @@ export default React.createClass({
         emp={['金额', item.total_fee]}
         orderConfirm={this.props.orderConfirm}
         index={index}
+        url={item.url}
       />
     );
     });
