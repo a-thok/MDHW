@@ -283,3 +283,64 @@
   left: 1em;
   border-bottom-color: rgba(0, 0, 0, .7);
 }
+
+/*找回密码*/
+.acc-nomar {
+  margin-top: 0;
+}
+.acc_p {
+  padding: 1em 0;
+  font-size: .26rem;
+}
+.acc_info {
+  padding: 1em 0;
+  font-size: .18rem;
+  color: #888;
+}
+.acc_p_resend {
+  padding: .8em 1em;
+  border-radius: 5px;
+  background-color: #e2e2e2;
+}
+.acc_p-nopad {
+  padding-top: 0;
+}
+.acc_info-alignR {
+  text-align: right;
+}
+.acc_info-alignC {
+  text-align: center;
+}
+.acc_info_link {
+  color: #888;
+}
+.acc_btn-mar {
+  margin: 1em 0;
+}
+.banner {
+  position: relative;
+  width: 100%;
+}
+.banner img {
+  width: 100%;
+}
+.banner_info {
+  position: absolute;
+  width: 100%;
+  bottom: .12rem;
+}
+.banner_info_p {
+  text-align: center;
+  color: #fff;
+  font-size: .18rem;
+}
+.banner_info_p-font {
+  font-size: .24rem;
+}
+.is-btn {
+  display: inline-block;
+  width: 6em;
+  text-align: center;
+  color: #fff;
+  background-color: #f15353;
+}
