@@ -2,6 +2,7 @@ import React from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
 import deFavorite from '../../mixins/deFavorite.js';
+import { $cookie } from 'func';
 
 export default React.createClass({
   getInitialState: function () {
@@ -101,8 +102,8 @@ export default React.createClass({
   onTbSubmit: function (e) {
     e.preventDefault();
     if (!this.state.data) return;
-    let cpid = localStorage.getItem('cpid');
-    fetch('/m/diy/witkey/bids', {
+    let cpid = $cookie().cpid;
+    fetch('/m/sys/diy/witkey/bids', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -119,7 +120,7 @@ export default React.createClass({
     .then((res) => res.json())
     .then((res) => {
       if (res.success) {
-        alert('投标成功'); // 临时代码
+        location.href = decodeURIComponent(location.search).replace(/.*=/, '');
       } else {
         alert(res.msg[0]);
       }
