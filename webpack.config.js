@@ -86,14 +86,14 @@ const config = {
       // __DEVTOOLS__: !PRODUCTION,
       CDN_HOST: PRODUCTION ? JSON.stringify('cdn.dreamhiway.com') : JSON.stringify('192.168.2.10:81'),
       UPLOAD_HOST: JSON.stringify('upload.dreamhiway.com'),
-      MAIN_HOST: PRODUCTION ? JSON.stringify('www.dreamhiway.com') : JSON.stringify('192.168.2.177:8085'),
-      HR_HOST: PRODUCTION ? JSON.stringify('hr.dreamhiway.com') : JSON.stringify('192.168.2.177:8086'),
-      ZC_HOST: PRODUCTION ? JSON.stringify('zc.dreamhiway.com') : JSON.stringify('192.168.2.177:8088'),
-      ZB_HOST: PRODUCTION ? JSON.stringify('zb.dreamhiway.com') : JSON.stringify('192.168.2.177:8090'),
-      ZCKJ_HOST: PRODUCTION ? JSON.stringify('zckj.dreamhiway.com') : JSON.stringify('192.168.2.177:8091'),
-      DIY_HOST: PRODUCTION ? JSON.stringify('diy.dreamhiway.com') : JSON.stringify('192.168.2.177:8092'),
-      SRDZ_HOST: PRODUCTION ? JSON.stringify('srdz.dreamhiway.com') : JSON.stringify('192.168.2.177:8093'),
-      KJ_HOST: PRODUCTION ? JSON.stringify('kj.dreamhiway.com') : JSON.stringify('192.168.2.177:8087'),
+      MAIN_HOST: PRODUCTION ? JSON.stringify('www.dreamhiway.com') : JSON.stringify('192.168.2.133:8085'),
+      HR_HOST: PRODUCTION ? JSON.stringify('hr.dreamhiway.com') : JSON.stringify('192.168.2.133:8086'),
+      ZC_HOST: PRODUCTION ? JSON.stringify('zc.dreamhiway.com') : JSON.stringify('192.168.2.133:8088'),
+      ZB_HOST: PRODUCTION ? JSON.stringify('zb.dreamhiway.com') : JSON.stringify('192.168.2.133:8090'),
+      ZCKJ_HOST: PRODUCTION ? JSON.stringify('zckj.dreamhiway.com') : JSON.stringify('192.168.2.133:8091'),
+      DIY_HOST: PRODUCTION ? JSON.stringify('diy.dreamhiway.com') : JSON.stringify('192.168.2.133:8092'),
+      SRDZ_HOST: PRODUCTION ? JSON.stringify('srdz.dreamhiway.com') : JSON.stringify('192.168.2.133:8093'),
+      KJ_HOST: PRODUCTION ? JSON.stringify('kj.dreamhiway.com') : JSON.stringify('192.168.2.133:8087'),
       'process.env': {
         BABEL_ENV: JSON.stringify(process.env.NODE_ENV)
       }

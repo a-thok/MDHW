@@ -21,7 +21,7 @@ export default function login() {
         let locationSrch = location.search;
         let urlEndPoint = locationSrch.indexOf('&');
         let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
-        location.href = decodeURIComponent(url);
+        location.href = url ? decodeURIComponent(url) : `http://${MAIN_HOST}/m`;
       } else {
         const cl = $('.acc_group-verify').classList;
         if (!cl.contains('is-show')) {

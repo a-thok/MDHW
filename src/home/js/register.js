@@ -22,7 +22,7 @@ export default function register() {
         let locationSrch = location.search;
         let urlEndPoint = locationSrch.indexOf('&');
         let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
-        location.href = decodeURIComponent(url);
+        location.herf = `http://${MAIN_HOST}/m/main/denglu?redirectURL=${url}`;
       } else {
         if (res.msg) {
           modalText.textContent = res.msg;
