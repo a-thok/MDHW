@@ -12,10 +12,9 @@ export default function Header(props) {
         <div className={ props.isShowMenu === false ? 'header_menu_wrap' : 'header_menu_wrap is-show' }>
           <div className="arrow-wrap"><i className="arrow"></i></div>
           <ul className="header_menu_list">
-            <li className="header_menu_list_item"><a className="header_link" href="#">梦高速首页</a></li>
-            <li className="header_menu_list_item"><a className="header_link" href="#">创客空间</a></li>
-            <li className="header_menu_list_item"><a className="header_link" href="#">关于我们</a></li>
-            <li className="header_menu_list_item"><a className="header_link" href="#">个人中心</a></li>
+            <li className="header_menu_list_item"><a className="header_link" href={`http://${MAIN_HOST}/m`}>梦高速首页</a></li>
+            <li className="header_menu_list_item"><a className="header_link" href={`http://${MAIN_HOST}/m/person/index/${props.id}`}>个人彩页</a></li>
+            <li className="header_menu_list_item"><a className="header_link" href="/main/Logout">退出</a></li>
           </ul>
         </div>
       </div>

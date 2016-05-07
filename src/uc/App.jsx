@@ -90,7 +90,11 @@ export default React.createClass({
     }
     return (
       <div>
-        <Header {...this.state.Header} onToggleMenu={ this.onToggleMenu } />
+        <Header
+          {...this.state.Header}
+          onToggleMenu={ this.onToggleMenu }
+          id = {this.state.profile.id}
+        />
         {React.cloneElement(Child, Object.assign({ onChangeHash: this.onChangeHash }, extra))}
       </div>
     );
