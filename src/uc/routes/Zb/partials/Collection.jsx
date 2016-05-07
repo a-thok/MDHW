@@ -28,6 +28,7 @@ export default React.createClass({
           <span>结束时间: {item.endtime}</span>,
           <a className="list_operate" href="#" onClick={(e) => this.handleClick(e, item.id, index)}>取消收藏</a>
         ]}
+        url={item.url}
       />
     ));
     return (

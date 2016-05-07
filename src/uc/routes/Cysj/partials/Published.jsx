@@ -15,6 +15,7 @@ export default React.createClass({
     scroll(this.props.fetchPublished);
   },
   render: function () {
+    console.log(this.props.data);
     let content = this.props.data.map((item, index) => (
       <ListItemPlain
         key={index}

@@ -15,15 +15,16 @@ export default React.createClass({
     scroll(this.props.fetchPublished);
   },
   render: function () {
-    let content = this.props.data.map((data, index) => (
+    let content = this.props.data.map((item, index) => (
        <ListItemPlain
          key={index}
-         info={data.name}
-         title={data.title}
+         info={item.name}
+         title={item.title}
          elems={[
-           <span>项目金额：￥{data.totalfin}</span>,
-           <span>截止时间：{data.endtime}</span>
+           <span>项目金额：￥{item.totalfin}</span>,
+           <span>截止时间：{item.endtime}</span>
          ]}
+         url={item.url}
        />
     ));
     return (
