@@ -2,6 +2,7 @@ import React from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
 import deFavorite from '../../mixins/deFavorite.js';
+import { $cookie } from 'func';
 
 export default React.createClass({
   getInitialState: function () {
