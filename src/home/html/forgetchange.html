@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0,  minimum-scale=1, maximum-scale=1">
+  <title>找回密码 - 梦高速</title>
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="/css/home.css">-->
+  <script src="//cdn.dreamhiway.com/mstatic/lib/flexible.js"></script>
+</head>
+<body>
+  <div class="page no-bottom">
+    <!--头部 开始-->
+    <header class="header header-reverse">
+      <div class="header_sect">
+        <a class="header_link" href="#"><i class="fa fa-angle-left"></i></a>
+      </div>
+      <div class="header_sect header_sect-menu">
+        <span class="header_menu"><i></i><i></i><i></i></span>
+        <div class="header_menu_wrap">
+          <div class="arrow-wrap"><i class="arrow"></i></div>
+          <ul class="header_menu_list">
+            <li class="header_menu_list_item"><a class="header_link" href="#">梦高速首页</a></li>
+            <li class="header_menu_list_item"><a class="header_link" href="#">创客空间</a></li>
+            <li class="header_menu_list_item"><a class="header_link" href="#">关于我们</a></li>
+            <li class="header_menu_list_item"><a class="header_link" href="#">个人中心</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!--头部 结束-->
+    
+    <section class="banner"">
+      <img src="../img/psd_found.png" alt="kjfw_pg1.png">
+      <div class="banner_info">
+        <p class="banner_info_p">验证码已发送到<span class="phone">111****1234</span>的手机上</p>
+        <p class="banner_info_p banner_info_p-font">用户名:<span class="username"></span></p>
+      </div>
+    </section>
+    
+    <!--输入信息  开始-->
+    <form class="acc acc-nomar">
+      
+      <p class="acc_p acc_p-nopad">验证码:</p>
+      <div class="acc_group">
+        <input class="acc_input" name="mobilecode" type="text" placeholder="请输入短信/邮箱验证码" required>
+      </div>
+      <p class="acc_info acc_info-alignR">
+        <span class="acc_p_resend">
+          <span class="codeTime">100</span>s重新发送验证码
+        </span>
+      </p>
+      <p class="acc_p">设置新的登录密码</p>
+      <div class="acc_group">
+        <input class="acc_input acc_input-hasLabel" name="newpwd" type="password" placeholder="6-20位,不能与旧密码相同" required>
+        <input class="acc_input acc_input-hasLabel showPassword" type="text">
+        <label class="acc_label">
+          <div class="acc_switcher">
+            <div class="acc_switcher_btn"></div>
+          </div>
+        </label>
+      </div>
+      <p class="acc_info">
+        备注：请将密码设置为6-20位，并且由字母，数字和符号两种以上组成，不能与旧密码相同
+      </p>
+      <button class="acc_btn acc_btn-mar login" type="submit" disabled>完成</button>
+    </form>
+    <!--输入信息  结束-->
+    
+    <!--报错  开始-->
+    <div class="modal">
+      <p class="modal_content">
+        <i class="fa fa-exclamation-triangle"></i>
+        <span class="modal_content_text">账号或密码错误，请重新输入。</span>
+      </p>
+    </div>
+    <!--报错  开始-->
+  </div>
+  
+  <script src="/js/common.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

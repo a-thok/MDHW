@@ -3,6 +3,7 @@ import './css/main.css';
 import './img/lunbolqt.png';
 import './img/hot.png';
 import './img/index.png';
+import './img/psd_found.png';
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
@@ -23,6 +24,8 @@ import login from './js/login.js';
 import register from './js/register.js';
 import qqregister from './js/qqregister.js';
 import qqbind from './js/qqbind.js';
+import forgetpwd from './js/forgetpwd.js';
+import forgetchange from './js/forgetchange.js';
 import { index, scroll } from './js/index.js';
 
 if (pathname.indexOf('/denglu') !== -1) {
@@ -33,6 +36,10 @@ if (pathname.indexOf('/denglu') !== -1) {
   qqregister();
 } else if (pathname.indexOf('qqbind') !== -1) {
   qqbind();
+} else if (pathname.indexOf('forgetpwd') !== -1) {
+  forgetpwd();
+} else if (pathname.indexOf('forgetchange') !== -1) {
+  forgetchange();
 } else if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   scroll();
   index();

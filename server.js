@@ -37,6 +37,7 @@ app.use('/m/user', proxy(url.parse('http://192.168.2.133:8085/m/user')));
 app.use('/m/login', proxy(url.parse('http://192.168.2.133:8085/m/login')));
 app.use('/m/reg', proxy(url.parse('http://192.168.2.133:8085/m/reg')));
 app.use('/m/Third', proxy(url.parse('http://192.168.2.133:8085/m/Third')));
+app.use('/m/Pwd', proxy(url.parse('http://192.168.2.133:8085/m/pwd')));
 
 app.listen(app.get('port'), (err) => {
   if (err) {
