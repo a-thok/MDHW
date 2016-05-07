@@ -137,24 +137,6 @@ export default React.createClass({
         });
         this.setState({ Publish: newState });
       });
-=======
-      body: JSON.stringify({
-        cpid,
-        intro: this.state.data.intro,
-        quote: this.state.data.quote,
-        worktime: this.state.data.worktime,
-        address: this.state.areares.address
-      })
-    })
-    .then((res) => res.json())
-    .then((res) => {
-      if (res.success) {
-        alert('投标成功'); // 临时代码
-      } else {
-        alert(res.msg[0]);
-      }
-    });
->>>>>>> 创意设计投标
   },
   // 请求已发布列表
   fetchPublished: function () {
