@@ -35,7 +35,8 @@ export function dataBinding(data, btn) {
   const common = function () {
     btn.disabled = false;
     inputs.forEach((_input) => {
-      if (_input.required && !_input.value) btn.disabled = true;
+      if (!_input.required) return;
+      if ((_input.type === 'checkbox' && !_input.checked || !_input.value)) btn.disabled = true;
     });
   };
 

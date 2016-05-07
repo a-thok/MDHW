@@ -17,11 +17,7 @@ export default function qqbind() {
     register.disabled = true;
     xhr('/m/Third/QQ/Bind', data, (res) => {
       if (res.success) {
-        // let locationSrch = location.search;
-        // let urlEndPoint = locationSrch.indexOf('&');
-        // let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
-        // location.href = decodeURIComponent(url);
-        location.href = `${MAIN_HOST}/m`;
+        location.href = `http://${MAIN_HOST}/m/main/denglu`;
       } else {
         if (res.msg) {
           modalText.textContent = res.msg;

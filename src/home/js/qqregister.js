@@ -18,11 +18,7 @@ export default function qqregister() {
 
     xhr('/m/Third/QQ/RegPhone', data, (res) => {
       if (res.success) {
-        // let locationSrch = location.search;
-        // let urlEndPoint = locationSrch.indexOf('&');
-        // let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
-        // location.href = decodeURIComponent(url);
-        console.log(1);
+        location.href = `http://${MAIN_HOST}/m/main/denglu`;
       } else {
         if (res.msg) {
           modalText.textContent = res.msg;
