@@ -10,29 +10,48 @@
   flex: 1;
   text-align: left;
 }
-.address_item_check {
+/*.address_item_check {
   width: .3rem;
   height: .3rem;
-  border: 2px solid #cc1414;
+  border: 2px solid #f23030;
   border-radius: 50%;
   font-size: .18rem;
-  color: #cc1414;
+  color: #f23030;
   line-height: .27rem;
   text-align: center;
-}
+}*/
 
 .address_item h3 {
   line-height: 1.8;
+  color: #f23030;
+  font-weight: normal;
 }
 .address_item address {
   font-style: normal;
   color: var(--fontColorLight);
 }
+.address_item_content_text {
+  padding: 0 .8em;
+  margin-right: .5em;
+  color: #fff;
+  background: #f23030;
+}
 .address_item .fa-edit {
-  padding: .4em 1em;
-  color: #cc1414;
+  padding: .4em .5em;
+  color: #f23030;
   cursor: pointer;
   text-decoration: none;
+  font-size: .3rem;
+}
+.address_item_flex {
+  display: flex;
+}
+.address_item_border::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 30px;
+  border-right: 1px solid var(--borderColorLight);
 }
 
 .addressWrapper .list_load {
@@ -44,7 +63,7 @@
   width: 100%;
   max-width: 750px;
   height: .7rem;
-  background: #cc1414;
+  background: #f23030;
   font-size: .2rem;
   color: #fff;
   line-height: .7rem;

@@ -1,0 +1,160 @@
+.srdzAddresss {
+  display: flex;
+  border-bottom: 5px solid #ccc;
+  padding: .2rem;
+  background: #fff;
+  font-size: .2rem;
+}
+.srdzAddresss .fa {
+  display: block;
+}
+.srdzAddresss_content {
+  width: 90%;
+}
+.srdzAddresss_content_title {
+  padding: .5em 0 .5em .25rem;
+}
+.srdzAddresss_content_tel {
+  margin-left: .4rem;
+}
+.srdzAddresss_content_init {
+  padding: 0 .8em;
+  margin-left: .2rem;
+  font-weight: normal;
+  font-size: .18rem;
+  color: #fff;
+  background: #f23030;
+}
+.srdzAddresss_content_text {
+  display: flex;
+}
+.srdzAddresss_content_text span {
+  display: block;
+  flex: 1;
+}
+.srdzAddresss_content .fa-map-marker {
+  width: .25rem;
+  font-size: .24rem;
+  color: var(--fontColorLight);
+}
+.srdzAddresss .fa-angle-right {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  font-size: .4rem;
+  color: var(--fontColorLight);
+}
+.srdzMsg {
+  display: flex;
+  align-items: center;
+  border-bottom: 5px solid #ccc;
+  padding: .25rem .2rem;
+}
+.srdzMsg_img {
+  display: flex;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .2rem;
+  overflow: hidden;
+}
+.srdzMsg_img img {
+  width: 100%;
+}
+.srdzMsg_text {
+  flex: 1;
+}
+.srdzMsg_text_title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: .3em;
+  font-size: .22rem;
+  font-weight: normal;
+}
+.srdzMsg_text span {
+  display: block;
+  font-size: .18rem;
+}
+.srdzMsg_text .srdzMsg_text_money {
+  font-size: .22rem;
+  color: #f23030;
+}
+.srdzList {
+  padding-left: .2rem;
+  border-bottom: 5px solid #ccc;
+}
+.srdzList li:nth-child(n+2) {
+  border-top: 1px solid #ccc;
+}
+.srdzList_items {
+  padding: .2rem .25rem;
+  font-size: .2rem;
+}
+.srdzList_items {
+  display: flex;
+  justify-content: space-between;
+}
+.srdzList_items .fa {
+  display: flex;
+  align-items: center;
+  color: #f23030;
+}
+.srdzPay {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-size: .24rem;
+  background: #fff;
+  color: #f23030;
+}
+.srdzPay_text {
+  width: 75%;
+  padding: .8em .5em .8em 0;
+  text-align: right;
+}
+.srdzPay_btn {
+  width: 25%;
+  padding: .8em 0;
+  text-decoration: none;
+  text-align: center;
+  background: #f23030;
+  color: #fff;
+}
+@media screen and (min-width: 750px) {
+  .srdzPay {
+    width: 750px;
+  }
+}
+.payList {
+  background: #fff;
+  font-size: .22rem;
+}
+.payList_order {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--borderColorLight);
+  padding: .8em .2rem;
+  color: var(--fontColorLight);
+}
+.payList_order span {
+  color: #f23030;
+}
+.payList_pay {
+  padding: .5em .2rem .5em .35rem;
+  cursor: pointer;
+}
+.payList_pay_money {
+  display: flex;
+  justify-content: space-between;
+  padding: .2rem 0;
+  padding-left: .6rem;
+  background-position: center  left;
+  background-repeat: no-repeat;
+  background-size: .5rem;
+  background-image: url("routes/Srdz/img/zhifubao.png");
+}
+.payList_pay_money .fa {
+  font-size: .4rem;
+  color: var(--fontColorLight);
+}

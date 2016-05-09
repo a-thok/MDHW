@@ -1,5 +1,5 @@
 import { $, $from } from '../../common/js/func.js';
-import slider from 'slider';
+// import slider from 'slider';
 import share from 'share';
 import favorite from 'favorite';
 
@@ -8,7 +8,7 @@ export default function detail() {
   favorite($('.ftCtrl_item')[0], 'id', '/m/srdz/Collect/Add', '/m/srdz/Collect/Del');
   share($('.ftCtrl_item')[2]);
 
-  slider(document.querySelector('.sliderBox'));
+  // slider(document.querySelector('.sliderBox'));
 
   // 详情显示切换
   const ul = $('.userInput');
@@ -23,5 +23,29 @@ export default function detail() {
       e.currentTarget.classList.add('is-active');
       ul.children[i].classList.add('is-show');
     });
+  });
+
+  // 立即定制
+  const btn = $('.ftCtrl_item_btn');
+  btn.addEventListener('click', () => {
+    const arr = location.pathname.split('/');
+    const productid = arr[arr.length - 1];
+    fetch('/m/sys/srdz/Shopcart/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        productid,
+        count: 1, // temp
+        body: 1 // temp
+      })
+    })
+      .then(res => res.json())
+      .then(res => {
+        document.cookie = `cartID=${res.result};path=/;domain=dreamhiway.com`;
+        location.href = `http://${MAIN_HOST}/m/user#/srdz/order`;
+      });
   });
 }

@@ -22,7 +22,9 @@ export default class Address extends Component {
     const itemNodes = this.props.data.map((item, index) => (
       <Item
         key={index}
+        index={index}
         {...item}
+        onSelectAddr={this.props.onSelectAddr}
       />
     ));
     return (

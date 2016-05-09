@@ -10,7 +10,8 @@ export default class App extends Component {
         isShowMenu: false
       },
       profile: {},
-      profileTemp: {}
+      profileTemp: {},
+      orderAddr: {}
     };
   }
 
@@ -64,6 +65,22 @@ export default class App extends Component {
     this.setState({ Header: newHeader });
   }
 
+  onChangeHash() {
+    const hash = location.hash.slice(1).replace(/\?.*/, '');
+    let to;
+    if (hash === '/') {
+      to = false;
+    } else {
+      const indexOfSlash = hash.lastIndexOf('/');
+      to = indexOfSlash < 2 ? '/' : hash.slice(0, indexOfSlash);
+    }
+    this.setState({ to });
+  }
+
+  onChangeOrderAddr(orderAddr) {
+    this.setState({ orderAddr });
+  }
+
   render() {
     const Child = this.props.children;
     const path = getPath.call(this, 'Home', 1);
@@ -79,8 +96,12 @@ export default class App extends Component {
           profileTemp: this.state.profileTemp,
           onProfileChange: this.onProfileChange.bind(this),
           onUndoProfileChange: this.onUndoProfileChange.bind(this),
-          onSubmitProfileChange: this.onSubmitProfileChange.bind(this)
+          onSubmitProfileChange: this.onSubmitProfileChange.bind(this),
+          onChangeOrderAddr: this.onChangeOrderAddr.bind(this)
         };
+        break;
+      case 'Srdz':
+        extra = { orderAddr: this.state.orderAddr };
         break;
       default:
         extra = {};

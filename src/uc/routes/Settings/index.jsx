@@ -25,6 +25,10 @@ export default class Settings extends Component {
     };
   }
 
+  onSelectAddr(index) {
+    this.props.onChangeOrderAddr(this.state.Address.data[index]);
+  }
+
   onAddressChange(key, value) {
     const newState = Object.assign({}, this.state.AddressForm);
     newState.data[key] = value;
@@ -209,7 +213,8 @@ export default class Settings extends Component {
         break;
       case 'Address':
         extra = {
-          fetchAddress: this.fetchAddress.bind(this)
+          fetchAddress: this.fetchAddress.bind(this),
+          onSelectAddr: this.onSelectAddr.bind(this)
         };
         break;
       case 'AddressForm':

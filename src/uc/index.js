@@ -28,6 +28,8 @@ import SrdzNav from './routes/Srdz/partials/Nav';
 import SrdzBuyer from './routes/Srdz/partials/Buyer';
 import SrdzSeller from './routes/Srdz/partials/Seller';
 import SrdzFollow from './routes/Srdz/partials/Follow';
+import SrdzOrder from './routes/Srdz/partials/Order';
+import SrdzPay from './routes/Srdz/partials/Pay';
 
 import Zb from './routes/Zb';
 import ZbNav from './routes/Zb/partials/Nav';
@@ -76,6 +78,8 @@ ReactDOM.render((
         <Route path="/Srdz/buyer" component={SrdzBuyer} />
         <Route path="/Srdz/seller" component={SrdzSeller} />
         <Route path="/Srdz/follow" component={SrdzFollow} />
+        <Route path="/Srdz/order" component={SrdzOrder} />
+        <Route path="/Srdz/pay" component={SrdzPay} />
       </Route>
       <Route path="/zb" component={Zb}>
         <IndexRoute component={ZbNav} />
