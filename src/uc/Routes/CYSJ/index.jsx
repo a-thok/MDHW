@@ -168,7 +168,7 @@ export default React.createClass({
         newState.areaData = res.result;
         this.setState({ Bidding: newState }, () => {
           const newState = Object.assign({}, this.state.Bidding);
-          // let cpid = $cookie().cpid;
+          let cpid = $cookie().cpid;
           fetch('/m/sys/diy/Witkey/Info', {
             method: 'POST',
             headers: {
@@ -176,7 +176,7 @@ export default React.createClass({
             },
             credentials: 'include',
             body: JSON.stringify({
-              cpid: 61
+              cpid
             })
           })
             .then(res => res.json())
