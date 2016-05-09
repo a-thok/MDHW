@@ -32,6 +32,7 @@ export default React.createClass({
       Bidding: {
         areaData: [],
         data: {},
+        detail: [],
         areares: {
           area: {
             province: {},
@@ -124,6 +125,25 @@ export default React.createClass({
       } else {
         alert(res.msg[0]);
       }
+    });
+  },
+  fetchDetail: function () {
+    const newState = Object.assign({}, this.state.Bidding);
+    let id = $cookie().cpid;
+    fetch('/m/diy/project/Detail', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        id
+      })
+    })
+    .then(res => res.json())
+    .then(res => {
+      newState.detail = res.result;
+      this.setState({ Bidding: newState });
     });
   },
   // 请求发布类型
@@ -245,6 +265,7 @@ export default React.createClass({
           onChange: this.onChange,
           fetchAddressDetail: this.fetchAddressDetail,
           fetchAreaData: this.fetchAreaData,
+          fetchDetail: this.fetchDetail,
           onAddressChange: this.onAddressChange,
           onAreaChange: this.onAreaChange,
           onTbSubmit: this.onTbSubmit

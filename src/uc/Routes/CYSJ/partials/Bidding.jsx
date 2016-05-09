@@ -8,6 +8,7 @@ export default React.createClass({
   mixins: [getHash],
   componentDidMount: function () {
     const hash = window.location.hash;
+    this.props.fetchDetail();
     if (hash.indexOf('editaddress') !== -1) {
       let id;
       hash.replace(/id=(\d+)/, (str, $1) => { id = $1; });
@@ -15,6 +16,15 @@ export default React.createClass({
     }
   },
   render: function () {
+    let title;
+    let imgUrl;
+    let name;
+    console.log(this.props.detail);
+    this.props.detail.map((item) => (
+    title = item.title,
+    imgUrl = item.logo ? `http://${UPLOAD_HOST}/img/${item.logo}` : 'http://cdn.dreamhiway.com/images/default2.png',
+    name = item.fbzname
+    ));
     const form = {
       intro: { type: 'textarea', label: '报价说明', id: 'projectname', placeholder: '请输入说明' },
       quote: { type: 'input', label: '报价', id: 'projectname', placeholder: '单位：元' },
@@ -34,11 +44,11 @@ export default React.createClass({
       <form className="form" onSubmit={this.props.onTbSubmit}>
         <section className="Bidding">
           <div className="Bidding_img">
-            <img src="#" />
+            <img src={imgUrl} />
           </div>
           <div className="Bidding_info">
-            <p className="Bidding_info_title">一元易购，一元夺宝APP一元易购，一元夺宝APP一元易购，一元夺宝APP一元易购，一元夺宝APP</p>
-            <p className="Bidding_info_need"><span>需求方:</span>中科医院</p>
+            <p className="Bidding_info_title">{title}</p>
+            <p className="Bidding_info_need"><span>需求方:</span>{name}</p>
           </div>
         </section>
         {nodes}

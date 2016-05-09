@@ -13,7 +13,6 @@ export default function detail() {
     const url = $cookie().accountType ?
       `http://${MAIN_HOST}/m/user?redirectURL=${encodeURIComponent(location.href)}#/cysj/bidding` :
       `http://${MAIN_HOST}/m/main/denglu?redirectURL=${encodeURIComponent(location.href)}`;
-    console.log(url);
     location.href = url;
   });
 }
