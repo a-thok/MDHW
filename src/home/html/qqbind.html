@@ -43,7 +43,7 @@
           </p>
           <i class="arrow arrow-down"></i>
         </div>
-        <input class="acc_input" name="phone" type="text" placeholder="请输入用户/邮箱/已验证手机" required>
+        <input class="acc_input" name="name" type="text" placeholder="请输入用户/邮箱/已验证手机" required>
       </div>
       <div class="acc_group">
         <input class="acc_input acc_input-hasLabel" name="pwd" type="password" placeholder="请输入密码" required>
@@ -51,6 +51,14 @@
         <label class="acc_label">
           <div class="acc_switcher">
             <div class="acc_switcher_btn"></div>
+          </div>
+        </label>
+      </div>
+      <div class="acc_group acc_group-verify">
+        <input class="acc_input" name="verify" type="text" placeholder="请输入验证码"> <!--required-->
+        <label class="acc_label">
+          <div class="acc_label_code">
+            <img class="codeImg" src="http://192.168.2.133:8085/Login/VerifyCode" alt="">
           </div>
         </label>
       </div>
