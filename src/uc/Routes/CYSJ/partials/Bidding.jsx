@@ -19,7 +19,6 @@ export default React.createClass({
     let title;
     let imgUrl;
     let name;
-    console.log(this.props.detail);
     this.props.detail.map((item) => (
     title = item.title,
     imgUrl = item.logo ? `http://${UPLOAD_HOST}/img/${item.logo}` : 'http://cdn.dreamhiway.com/images/default2.png',

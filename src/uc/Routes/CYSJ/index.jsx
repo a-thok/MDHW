@@ -129,15 +129,15 @@ export default React.createClass({
   },
   fetchDetail: function () {
     const newState = Object.assign({}, this.state.Bidding);
-    let id = $cookie().cpid;
-    fetch('/m/diy/project/Detail', {
+    let cpid = $cookie().cpid;
+    fetch('/m/sys/diy/Witkey/Info', {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json'
       },
       credentials: 'include',
       body: JSON.stringify({
-        id
+        cpid
       })
     })
     .then(res => res.json())

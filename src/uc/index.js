@@ -19,9 +19,9 @@ import Cysj from './routes/Cysj';
 import CysjNav from './routes/Cysj/partials/Nav';
 import CysjPublish from './routes/Cysj/partials/Publish';
 import CysjPublished from './routes/Cysj/partials/Published';
-import CysjCollection from './routes/CYSJ/partials/Collection';
-import CysjDelivered from './routes/CYSJ/partials/Delivered';
-import CysjBidding from './routes/CYSJ/partials/Bidding';
+import CysjCollection from './routes/Cysj/partials/Collection';
+import CysjDelivered from './routes/Cysj/partials/Delivered';
+import CysjBidding from './routes/Cysj/partials/Bidding';
 
 import Srdz from './routes/Srdz';
 import SrdzNav from './routes/Srdz/partials/Nav';

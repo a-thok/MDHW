@@ -4,9 +4,11 @@
   align-items: center;
 }
 .Bidding_img {
-  background: red;
+  display: flex;
   width: 1rem;
   height: 1rem;
+  align-items: center;
+  background-color: #f3f3f3;
 }
 .Bidding_img img {
   width: 100%;
