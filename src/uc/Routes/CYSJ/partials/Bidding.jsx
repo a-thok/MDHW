@@ -6,15 +6,6 @@ import getHash from '../../../mixins/getHash';
 
 export default React.createClass({
   mixins: [getHash],
-  componentDidMount: function () {
-    const hash = window.location.hash;
-    this.props.fetchDetail();
-    if (hash.indexOf('editaddress') !== -1) {
-      let id;
-      hash.replace(/id=(\d+)/, (str, $1) => { id = $1; });
-      this.props.fetchAddressDetail(id);
-    }
-  },
   render: function () {
     let title;
     let imgUrl;
@@ -30,14 +21,14 @@ export default React.createClass({
       worktime: { type: 'input', label: '周期', id: 'projectname', placeholder: '单位：天' }
     };
     const nodes = Object.keys(form).map((item, index) => (
-              <FormGroup
-                key={index}
-                name={item}
-                {...form[item]}
-                value={this.props.data[item]}
-                onChange={this.props.onChange}
-                list="Bidding"
-              />
+      <FormGroup
+        key={index}
+        name={item}
+        {...form[item]}
+        value={this.props.data[item]}
+        onChange={this.props.onChange}
+        list="Bidding"
+      />
     ));
     return (
       <form className="form" onSubmit={this.props.onTbSubmit}>
@@ -54,12 +45,11 @@ export default React.createClass({
         <FormAddress
           name="address"
           selectName="area"
-          fetchAreaData={this.props.fetchAreaData}
+          fetchAreaData={this.props.fetchAreaDataAndDetail}
           areaData={this.props.areaData}
           onAreaChange={this.props.onAreaChange}
-          area={this.props.areares.area}
-          value={this.props.areares.address}
-          onChange={this.props.onAddressChange}
+          area={this.props.data.area}
+          hideTextarea
         />
         <FormButton
           style={{

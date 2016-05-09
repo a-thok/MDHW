@@ -33,14 +33,17 @@ export default React.createClass({
             }
           </select>
         </div>
-        <textarea
-          className="formAddress_detail"
-          name={this.props.address}
-          placeholder="请输入详细地址"
-          value={this.props.value || ''}
-          onChange={(e) => this.props.onChange(this.props.name, e.target.value.trim())}
-        >
-        </textarea>
+        { this.props.hideTextarea ?
+          null :
+          (<textarea
+            className="formAddress_detail"
+            name={this.props.address}
+            placeholder="请输入详细地址"
+            value={this.props.value || ''}
+            onChange={(e) => this.props.onChange(this.props.name, e.target.value.trim())}
+          >
+          </textarea>)
+        }
       </div>
     );
   }
