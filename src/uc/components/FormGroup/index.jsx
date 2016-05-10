@@ -36,6 +36,26 @@ export default function FormGroup(props) {
         >{options}</select>
       );
       break;
+    case 'singleCheckbox':
+      formNode = (
+        <div>
+          <input
+            style={{ display: 'none' }}
+            type="checkbox"
+            name={props.name}
+            id={props.id}
+            checked={props.value}
+            onChange={handleChange}
+          />
+          <label
+            className="formGroupCheckbox"
+            htmlFor={props.id}
+          >
+            <i className="fa fa-check"></i>
+          </label>
+        </div>
+      );
+      break;
     default:
       return null;
   }

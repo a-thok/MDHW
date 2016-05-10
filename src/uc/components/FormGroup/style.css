@@ -1,7 +1,7 @@
 .form {
   padding: 1em 0;
   background: #fff;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .formGroup {
@@ -27,6 +27,24 @@
 }
 .formGroup textarea {
   height: 5.5em;
+}
+
+.formGroupCheckbox {
+  display: flex;
+  width: .25rem;
+  height: .25rem;
+  border: 1px solid #f00;
+}
+input:checked + .formGroupCheckbox {
+  background: #f00;
+}
+.formGroupCheckbox .fa {
+  display: none;
+  margin: auto;
+  color: #fff;
+}
+input:checked + .formGroupCheckbox .fa {
+  display: block;
 }
 
 /*.form_tb {

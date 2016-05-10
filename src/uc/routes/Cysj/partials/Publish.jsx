@@ -17,7 +17,7 @@ export default class Publish extends Component {
       xmzq: { type: 'input', label: '项目周期', placeholder: '请填写项目周期' },
       transaction: { type: 'input', label: '交易模式', placeholder: '请填写您的交易模式' },
       endtime: { type: 'input', label: '截止日期', placeholder: '截止日期' },
-      agreement: { type: 'input', label: '是否同意', placeholder: '是/否' }
+      agreement: { type: 'singleCheckbox', label: '是否同意' }
     };
     const nodes = Object.keys(form).map((item, index) => (
       <FormGroup

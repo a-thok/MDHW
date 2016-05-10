@@ -21,9 +21,7 @@ a {
 input { /*safari*/
   border-radius: 0;
 }
-input,
-select,
-textarea { /*safari*/
+input { /*safari*/
   -webkit-appearance: none !important;
 }
 

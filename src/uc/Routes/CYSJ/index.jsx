@@ -10,7 +10,7 @@ export default class Cysj extends Component {
     this.state = {
       Publish: {
         types: [],
-        data: { type: 1 }
+        data: { type: 1, agreement: false }
       },
       Published: {
         index: 0,
@@ -72,7 +72,7 @@ export default class Cysj extends Component {
   // 提交表单
   onChange(e, name, list) {
     const newState = Object.assign({}, this.state[list]);
-    newState.data[name] = e.target.value;
+    newState.data[name] = e.target.value === 'on' ? e.target.checked : e.target.value;
     this.setState(newState);
   }
 

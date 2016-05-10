@@ -17,7 +17,7 @@ export default function Home(props) {
       />
       <Modules />
       <div>
-        <Navbar to="/settings" text="帮助" icon="question-circle" />
+        {/* <Navbar to="#" text="帮助" icon="question-circle" />} */}
         <Navbar to="/settings" text="设置" icon="gear" />
       </div>
     </div>
