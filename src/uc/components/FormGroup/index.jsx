@@ -26,14 +26,14 @@ export default function FormGroup(props) {
       ></textarea>);
       break;
     case 'select':
-      const options = props.options.map((item, index) => <option key={index} value={item.value} >{ item.text }</option>);
+      const options = props.options.map((item, index) => <option key={index} value={item.value} >{item.text}</option>);
       formNode = (
         <select
           name={props.name}
           id={props.id}
           value={props.value}
           onChange={handleChange}
-        >{ options }</select>
+        >{options}</select>
       );
       break;
     default:
@@ -41,7 +41,7 @@ export default function FormGroup(props) {
   }
   return (
     <div className="formGroup">
-      <label className="formGroup_label" htmlFor={props.id}>{ props.label }</label>
+      <label className="formGroup_label" htmlFor={props.id}>{props.label}</label>
       {formNode}
     </div>
   );

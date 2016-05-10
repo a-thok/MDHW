@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TextGroup from '../../../../components/TextGroup';
 import NumGroup from './NumGroup';
 import Counter from '../../../../components/Counter';
 
 
-export default React.createClass({
-  getInitialState: function () {
+export default class OrderFomr extends Component {
+  getInitialState() {
     let state = {
       name: '深圳大律师',
       person: '电子设备有限公司',
@@ -20,19 +20,22 @@ export default React.createClass({
       fx: '风险提示内容'
     };
     return state;
-  },
-  onAddNumber: function () {
+  }
+
+  onAddNumber() {
     let newState = Object.assign({}, this.state);
     newState.repayNum += 1;
     this.setState(newState);
-  },
-  onReduceNumber: function () {
+  }
+
+  onReduceNumber() {
     let newState = Object.assign({}, this.state);
     if (newState.repayNum < 1) return;
     newState.repayNum -= 1;
     this.setState(newState);
-  },
-  render: function () {
+  }
+
+  render() {
     return (
       <div className="order">
         <section className="order_sect">
@@ -61,4 +64,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ListItemComment from '../../../components/ListItemComment';
 import Loading from '../../../components/Loading';
 import scroll from '../../../mixins/scroll';
-import removeWindowEvent from '../../../mixins/removeWindowEvent';
 
-export default React.createClass({
-  mixins: [removeWindowEvent],
-  componentDidMount: function () {
+export default class Comment extends Component {
+  componentDidMount() {
     this.props.fetchComment();
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  handleScroll: function () {
-    scroll(this.props.fetchComment);
-  },
-  render: function () {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmoun() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  handleScroll() {
+    scroll(this.props.fetchComment).bind(this);
+  }
+
+  render() {
     let commentList = this.props.data.map((item, index) => (
       <ListItemComment
         key={index}
@@ -26,7 +30,7 @@ export default React.createClass({
     return (
       <div>
         <ul className="list">
-          { commentList }
+          {commentList}
         </ul>
         <Loading
           finished={this.props.finished}
@@ -35,4 +39,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

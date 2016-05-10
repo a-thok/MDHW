@@ -13,11 +13,12 @@ module.exports = {
     "quote-props": 0,
     "strict": 0,
     "prefer-const": 0,
-    "react/prefer-es6-class": 0,
-    "react/prefer-stateless-function": 0,
     "func-names": 0,
     "react/prop-types": 0,
-    "no-case-declarations": 0
+    "no-case-declarations": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "import/no-unresolved": 0,
+    "jsx-a11y/img-has-alt": 0
   },
   
   'globals': {

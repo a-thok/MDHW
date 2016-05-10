@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Item from './Item';
 import Loading from '../../../../components/Loading';
 import scroll from '../../../../mixins/scroll';
-import removeWindowEvent from '../../../../mixins/removeWindowEvent';
 
-export default React.createClass({
-  mixins: [removeWindowEvent],
-  componentDidMount: function () {
+export default class Address extends Component {
+  componentDidMount() {
     this.props.fetchAddress();
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  handleScroll: function () {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmoun() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  handleScroll() {
     scroll(this.props.fetchAddress);
-  },
-  render: function () {
+  }
+
+  render() {
     console.log(this.props);
     const itemNodes = this.props.data.map((item, index) => (
       <Item
@@ -35,4 +39,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

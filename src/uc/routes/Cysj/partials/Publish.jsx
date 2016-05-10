@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FormGroup from '../../../components/FormGroup';
 import FormButton from '../../../components/FormButton';
 
-export default React.createClass({
-  componentDidMount: function () {
+export default class Publish extends Component {
+  componentDidMount() {
     this.props.fetchTypes();
-  },
-  render: function () {
+  }
+
+  render() {
     const form = {
       type: { type: 'select', label: '项目类型', options: this.props.types },
       title: { type: 'input', label: '项目名称', placeholder: '请填写项目名称' },
@@ -25,13 +26,13 @@ export default React.createClass({
         id={item}
         value={this.props.data[item]}
         { ...form[item] }
-        onChange={(e) => this.props.onChange(e, item)}
-        list = "Publish"
+        onChange={(e) => this.props.onChange(e, item, 'Publish')}
+        list="Publish"
       />
     ));
     return (
       <form className="form" onSubmit={this.props.onSubmit}>
-        { nodes }
+        {nodes}
         <FormButton
           type="submit"
           value="提交"
@@ -39,4 +40,4 @@ export default React.createClass({
       </form>
     );
   }
-});
+}

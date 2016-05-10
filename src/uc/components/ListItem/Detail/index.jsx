@@ -6,7 +6,7 @@ export default function Detail(props) {
   return (
     <section className={`list_item_detail${props.showDetail ? ' is-show' : ''}`}>
       {nodes}
-        <a className="list_item_detail_link" href="#">查看详情</a>
+      <a className="list_item_detail_link" href="#">查看详情</a>
     </section>
   );
 }

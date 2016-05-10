@@ -5,23 +5,21 @@ import Basics from './Basics';
 import Modules from './Modules/'; // ???
 import Navbar from '../../components/Navbar';
 
-export default React.createClass({
-  render: function () {
-    return (
-      <div className="home">
-        <Profile
-          {...this.props.profile}
-        />
-        <Basics
-          message={this.props.profile.message}
-          balance={this.props.profile.balance}
-        />
-        <Modules />
-        <div>
-          <Navbar to="/settings" text="帮助" icon="question-circle" />
-          <Navbar to="/settings" text="设置" icon="gear" />
-        </div>
+export default function Home(props) {
+  return (
+    <div className="home">
+      <Profile
+        {...props.profile}
+      />
+      <Basics
+        message={props.profile.message}
+        balance={props.profile.balance}
+      />
+      <Modules />
+      <div>
+        <Navbar to="/settings" text="帮助" icon="question-circle" />
+        <Navbar to="/settings" text="设置" icon="gear" />
       </div>
-    );
-  }
-});
+    </div>
+  );
+}

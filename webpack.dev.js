@@ -6,6 +6,8 @@ Object.keys(config.entry).forEach((name) => {
   config.entry[name] = [hotClient].concat(config.entry[name]);
 });
 
+config.devtool = 'eval-source-map';
+
 config.plugins = (config.plugins || []).concat([
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin()

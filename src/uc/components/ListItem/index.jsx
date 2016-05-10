@@ -14,9 +14,9 @@ export default function listItem(props) {
   const fa = props.showDetail ? <i className="fa fa-angle-up"></i> : <i className="fa fa-angle-down"></i>;
   const display = props.small ? 'inline' : 'none';
   let multipleNodes = Object.keys(props.multiple).map((item, index) => (
-      <span className="multiple_item" key={index}>
-        <span>{item}</span>：{props.multiple[item]}
-      </span>
+    <span className="multiple_item" key={index}>
+      <span>{item}</span>：{props.multiple[item]}
+    </span>
   ));
 
   return (
@@ -33,7 +33,7 @@ export default function listItem(props) {
             <small className="list_item_title_small" style={{ display }}>{props.small}</small>
           </h3>
           <p className="list_item_para em">{props.emp[0]}：<span>{props.emp[1]}</span></p>
-          <p className="list_item_para">{ multipleNodes }</p>
+          <p className="list_item_para">{multipleNodes}</p>
           <p className="list_item_para flex last">
             <div>
               {props.last && props.last[0]}

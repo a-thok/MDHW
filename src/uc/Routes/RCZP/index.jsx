@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
 
-export default React.createClass({
-  // 初始状态
-  getInitialState: function () {
-    return {
+export default class Rczp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       Preview: {
         items: []
       },
@@ -28,21 +28,23 @@ export default React.createClass({
         data: []
       }
     };
-  },
+  }
   // 判断评论是否过长
-  onTooLong: function (index) {
+  onTooLong(index) {
     const newState = Object.assign({}, this.state);
     newState.Comment.data[index].tooLong = true;
     this.setState(newState);
-  },
+  }
+
   // 判断过长评论是否折叠
-  onUnfold: function (index) {
+  onUnfold(index) {
     const newState = Object.assign({}, this.state);
     newState.Comment.data[index].unfold = !newState.Comment.data[index].unfold;
     this.setState(newState);
-  },
+  }
+
   // 请求简历预览
-  fetchPreview: function () {
+  fetchPreview() {
     fetch('/m/sys/hr/resumes/detail', {
       method: 'GET',
       credentials: 'include'
@@ -64,29 +66,32 @@ export default React.createClass({
 
         this.setState({ Preview: newState });
       });
-  },
+  }
+
   // 请求简历列表
-  fetchResume: function () {
+  fetchResume() {
     loadList.bind(this)({
       url: '/m/sys/hr/deliver/deliverylist',
       list: 'Resume'
     });
     fetching.bind(this)('Resume');
-  },
+  }
+
   // 请求职位列表
-  fetchPost: function () {
+  fetchPost() {
     loadList.bind(this)({
       url: '/m/sys/hr/collect/list',
       list: 'Post'
     });
     fetching.bind(this)('Post');
-  },
+  }
+
   // 请求评论列表
-  fetchComment: function () {
+  fetchComment() {
     loadList.bind(this)({
       url: '/m/sys/hr/comment/personList',
       list: 'Comment',
-      cb: function (data) {
+      cb(data) {
         data.forEach((item) => {
           item.tooLong = false;
           item.unfold = false;
@@ -94,9 +99,10 @@ export default React.createClass({
       }
     });
     fetching.bind(this)('Resume');
-  },
+  }
+
   // 渲染
-  render: function () {
+  render() {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
 
@@ -105,24 +111,24 @@ export default React.createClass({
     switch (ChildName) {
       case 'Preview':
         extra = {
-          fetchPreview: this.fetchPreview
+          fetchPreview: this.fetchPreview.bind(this)
         };
         break;
       case 'Resume':
         extra = {
-          fetchResume: this.fetchResume
+          fetchResume: this.fetchResume.bind(this)
         };
         break;
       case 'Comment':
         extra = {
-          fetchComment: this.fetchComment,
-          onUnfold: this.onUnfold,
-          onTooLong: this.onTooLong
+          fetchComment: this.fetchComment.bind(this),
+          onUnfold: this.onUnfold.bind(this),
+          onTooLong: this.onTooLong.bind(this)
         };
         break;
       case 'Post':
         extra = {
-          fetchPost: this.fetchPost
+          fetchPost: this.fetchPost.bind(this)
         };
         break;
       default:
@@ -134,7 +140,7 @@ export default React.createClass({
       <div>
         {
           React.cloneElement(Child, Object.assign(
-            { onChangeHash: this.props.onChangeHash },
+            {},
             this.state[ChildName],
             extra
           ))
@@ -142,4 +148,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

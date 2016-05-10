@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ListItem from '../../../components/ListItem';
 import Loading from '../../../components/Loading';
 import scroll from '../../../mixins/scroll';
-import removeWindowEvent from '../../../mixins/removeWindowEvent';
 
-export default React.createClass({
-  mixins: [removeWindowEvent],
-  componentDidMount: function () {
+export default class Seller extends Component {
+  componentDidMount() {
     this.props.fetchSeller(-1, 1);
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  handleClick: function (state1, state2) {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmoun() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  handleClick(state1, state2) {
     this.props.fetchSeller(state1, state2);
-  },
-  handleScroll: function () {
+  }
+
+  handleScroll() {
     scroll(this.props.fetchSeller);
-  },
-  render: function () {
+  }
+
+  render() {
     let content = this.props.data.map((item, index) => {
       const detail = [
         { name: '收件人', text: item.receiveName },
@@ -44,12 +49,12 @@ export default React.createClass({
       <div>
         <ul className="listTabs">
           <li
-            className={ `listTab${this.props.type === 0 ? ' is-active' : ''}` }
-            onClick={() => this.handleClick(-1, 1) }
+            className={`listTab${this.props.type === 0 ? ' is-active' : ''}`}
+            onClick={() => this.handleClick(-1, 1)}
           >待付款</li>
           <li
-            className={ `listTab${this.props.type === 1 ? ' is-active' : ''}` }
-            onClick={() => this.handleClick(0, 5) }
+            className={`listTab${this.props.type === 1 ? ' is-active' : ''}`}
+            onClick={() => this.handleClick(0, 5)}
           >已付款</li>
         </ul>
         <ul className="list">
@@ -62,4 +67,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

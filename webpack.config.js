@@ -49,7 +49,6 @@ const config = {
     'react': 'React',
     'react-dom': 'ReactDOM'
   },
-  devtool: 'cheap-source-map',
   module: {
     loaders: [
       {

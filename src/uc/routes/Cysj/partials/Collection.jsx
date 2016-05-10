@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ListItemPlain from '../../../components/ListItemPlain';
 import Loading from '../../../components/Loading';
 import scroll from '../../../mixins/scroll';
-import removeWindowEvent from '../../../mixins/removeWindowEvent';
 
-export default React.createClass({
-  mixins: [removeWindowEvent],
-  componentDidMount: function () {
+export default class Collection extends Component {
+  componentDidMount() {
     this.props.fetchCollection();
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  handleScroll: function () {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmoun() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  handleScroll() {
     scroll(this.props.fetchCollection);
-  },
-  handleClick: function (e, id, index) {
+  }
+
+  handleClick(e, id, index) {
     e.preventDefault();
     this.props.delCollection(id, index);
-  },
-  render: function () {
+  }
+
+  render() {
     let content = this.props.data.map((item, index) => (
       <ListItemPlain
         key={index}
@@ -42,4 +47,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
 import deFavorite from '../../mixins/deFavorite.js';
 
-export default React.createClass({
-  getInitialState: function () {
-    return {
+export default class Srdz extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       Follow: {
         index: 0,
         fetching: false,
@@ -27,17 +28,19 @@ export default React.createClass({
         data: []
       }
     };
-  },
+  }
+
   // 请求关注列表
-  fetchFollow: function () {
+  fetchFollow() {
     loadList.bind(this)({
       url: '/m/sys/Srdz/Collect/List',
       list: 'Follow'
     });
     fetching.bind(this)('Follow');
-  },
+  }
+
   // 请求买家订单列表
-  fetchBuyer: function (states, statee) {
+  fetchBuyer(states, statee) {
     loadList.bind(this)({
       url: '/m/sys/Srdz/Deal/BuyerList',
       list: 'Buyer',
@@ -49,9 +52,10 @@ export default React.createClass({
       reset: states !== undefined
     });
     fetching.bind(this)('Buyer');
-  },
+  }
+
   // 请求卖家订单列表
-  fetchSeller: function (states, statee) {
+  fetchSeller(states, statee) {
     loadList.bind(this)({
       url: '/m/sys/Srdz/Deal/SellerList',
       list: 'Seller',
@@ -61,23 +65,26 @@ export default React.createClass({
       },
       type: states === -1 ? 0 : 1,
       reset: states !== undefined,
-      cb: function (items) {
-        items.forEach((item) => {item.showDetail = false;});
+      cb(items) {
+        items.forEach((item) => { item.showDetail = false; });
       }
     });
     fetching.bind(this)('Seller');
-  },
+  }
+
   // 显示详情
-  toggleDetail: function (index) {
+  toggleDetail(index) {
     const newState = Object.assign({}, this.state.Seller);
     newState.data[index].showDetail = !newState.data[index].showDetail;
     this.setState({ Seller: newState });
-  },
-  delFollow: function (id, index) {
+  }
+
+  delFollow(id, index) {
     deFavorite.bind(this)('/m/sys/srdz/collect/del', 'Follow', 'id', id, index);
     fetching.bind(this)('Follow');
-  },
-  orderConfirm: function (number, index) {
+  }
+
+  orderConfirm(number, index) {
     console.log(index);
     fetch('/m/Sys/Srdz/Deal/Confirm', {
       method: 'POST',
@@ -98,9 +105,10 @@ export default React.createClass({
         alert('服务器错误，请稍后重试');
       }
     });
-  },
+  }
+
   // 渲染
-  render: function () {
+  render() {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
 
@@ -108,20 +116,20 @@ export default React.createClass({
     switch (ChildName) {
       case 'Follow':
         extra = {
-          fetchFollow: this.fetchFollow,
-          delFollow: this.delFollow
+          fetchFollow: this.fetchFollow.bind(this),
+          delFollow: this.delFollow.bind(this)
         };
         break;
       case 'Seller':
         extra = {
-          fetchSeller: this.fetchSeller,
-          toggleDetail: this.toggleDetail
+          fetchSeller: this.fetchSeller.bind(this),
+          toggleDetail: this.toggleDetail.bind(this)
         };
         break;
       case 'Buyer':
         extra = {
-          fetchBuyer: this.fetchBuyer,
-          orderConfirm: this.orderConfirm
+          fetchBuyer: this.fetchBuyer.bind(this),
+          orderConfirm: this.orderConfirm.bind(this)
         };
         break;
       default:
@@ -134,11 +142,10 @@ export default React.createClass({
           React.cloneElement(Child, Object.assign(
             {},
             this.state[ChildName],
-            { onChangeHash: this.props.onChangeHash },
             extra
           ))
         }
       </div>
     );
   }
-});
+}
