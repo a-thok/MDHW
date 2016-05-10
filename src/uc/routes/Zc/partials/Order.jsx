@@ -2,12 +2,11 @@ import React from 'react';
 // import ListTab from '../../../components/ListTab';
 import ListItem from '../../../components/ListItem';
 import Loading from '../../../components/Loading';
-import getHash from '../../../mixins/getHash';
 import scroll from '../../../mixins/scroll';
 import removeWindowEvent from '../../../mixins/removeWindowEvent';
 
 export default React.createClass({
-  mixins: [getHash, removeWindowEvent],
+  mixins: [removeWindowEvent],
   componentDidMount: function () {
     this.props.fetchOrder(0, false);
     window.addEventListener('scroll', this.handleScroll);

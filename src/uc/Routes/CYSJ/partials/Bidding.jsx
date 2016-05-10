@@ -2,10 +2,8 @@ import React from 'react';
 import FormGroup from '../../../components/FormGroup';
 import FormButton from '../../../components/FormButton';
 import FormAddress from '../../../components/FormAddress';
-import getHash from '../../../mixins/getHash';
 
 export default React.createClass({
-  mixins: [getHash],
   render: function () {
     let title;
     let imgUrl;

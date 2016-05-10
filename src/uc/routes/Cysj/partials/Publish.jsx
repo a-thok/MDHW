@@ -1,10 +1,8 @@
 import React from 'react';
 import FormGroup from '../../../components/FormGroup';
 import FormButton from '../../../components/FormButton';
-import getHash from '../../../mixins/getHash';
 
 export default React.createClass({
-  mixins: [getHash],
   componentDidMount: function () {
     this.props.fetchTypes();
   },

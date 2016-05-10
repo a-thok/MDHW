@@ -1,9 +1,7 @@
 import React from 'react';
 import Navbar from '../../../../components/Navbar';
-import getHash from '../../../../mixins/getHash';
 
 export default React.createClass({
-  mixins: [getHash],
   render: function () {
     const logo = <img src={this.props.profile.logo} alt="#" style={{ backgroundColor: 'red', borderRadius: '50%' }} />;
     const sex = this.props.profile.p_sex === 'man' ? '男' : '女';

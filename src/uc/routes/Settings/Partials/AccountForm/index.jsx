@@ -1,9 +1,7 @@
 import React from 'react';
-import getHash from '../../../../mixins/getHash';
 import FormButton from '../../../../components/FormButton';
 
 export default React.createClass({
-  mixins: [getHash],
   render: function () {
     const hash = window.location.hash;
     let type;

@@ -1,12 +1,10 @@
 import React from 'react';
-import getHash from '../../../../mixins/getHash';
 import FormGroupSimple from '../../../../components/FormGroupSimple';
 import FormAddress from '../../../../components/FormAddress';
 import FormCheck from '../../../../components/FormCheck';
 import FormButton from '../../../../components/FormButton';
 
 export default React.createClass({
-  mixins: [getHash],
   componentDidMount: function () {
     const hash = window.location.hash;
     if (hash.indexOf('/address/edit') !== -1) {

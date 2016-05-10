@@ -6,7 +6,6 @@ export default React.createClass({
   getInitialState: function () {
     return {
       Header: {
-        to: '',
         isShowMenu: false
       },
       profile: {},
@@ -53,17 +52,6 @@ export default React.createClass({
         }
       });
   },
-  onChangeHash: function () {
-    const hash = location.hash.slice(1).replace(/\?.*/, '');
-    let to;
-    if (hash === '/') {
-      to = false;
-    } else {
-      const indexOfSlash = hash.lastIndexOf('/');
-      to = indexOfSlash < 2 ? '/' : hash.slice(0, indexOfSlash);
-    }
-    this.setState({ to });
-  },
   onToggleMenu: function () {
     const newHeader = Object.assign({}, this.state.Header);
     newHeader.isShowMenu = !newHeader.isShowMenu;
@@ -95,7 +83,7 @@ export default React.createClass({
           onToggleMenu={ this.onToggleMenu }
           id = {this.state.profile.id}
         />
-        {React.cloneElement(Child, Object.assign({ onChangeHash: this.onChangeHash }, extra))}
+        {React.cloneElement(Child, extra)}
       </div>
     );
   }

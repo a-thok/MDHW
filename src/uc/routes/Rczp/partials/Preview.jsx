@@ -1,10 +1,8 @@
 import React from 'react';
 import Title from '../../../components/Title';
 import TextGroup from '../../../components/TextGroup';
-import getHash from '../../../mixins/getHash';
 
 export default React.createClass({
-  mixins: [getHash],
   componentDidMount: function () {
     this.props.fetchPreview();
   },

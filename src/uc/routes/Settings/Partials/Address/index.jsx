@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
-import getHash from '../../../../mixins/getHash';
 import Item from './Item';
 import Loading from '../../../../components/Loading';
 import scroll from '../../../../mixins/scroll';
 import removeWindowEvent from '../../../../mixins/removeWindowEvent';
 
 export default React.createClass({
-  mixins: [getHash, removeWindowEvent],
+  mixins: [removeWindowEvent],
   componentDidMount: function () {
     this.props.fetchAddress();
     window.addEventListener('scroll', this.handleScroll);

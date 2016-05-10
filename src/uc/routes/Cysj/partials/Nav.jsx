@@ -1,9 +1,7 @@
 import React from 'react';
 import Navbar from '../../../components/Navbar';
-import getHash from '../../../mixins/getHash';
 
 export default React.createClass({
-  mixins: [getHash],
   render: function () {
     return (
       <div >

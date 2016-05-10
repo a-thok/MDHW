@@ -4,10 +4,8 @@ import Profile from './Profile';
 import Basics from './Basics';
 import Modules from './Modules/'; // ???
 import Navbar from '../../components/Navbar';
-import getHash from '../../mixins/getHash';
 
 export default React.createClass({
-  mixins: [getHash],
   render: function () {
     return (
       <div className="home">

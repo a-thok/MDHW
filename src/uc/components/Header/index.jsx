@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 
 export default function Header(props) {
+  function handleClick(e) {
+    e.preventDefault();
+    history.back();
+  }
   return (
     <header className="header header-reverse">
       <div className="header_sect">
-        <Link className="header_link" style={{ visibility: props.to === false ? 'hidden' : 'visible' }} to={props.to || '/'}><i className="fa fa-angle-left"></i></Link>
+        <a className="header_link" href="#" onClick={handleClick}><i className="fa fa-angle-left"></i></a>
       </div>
       <div className="header_sect header_sect-menu">
         <span className="header_menu" onClick={ props.onToggleMenu} ><i></i><i></i><i></i></span>
