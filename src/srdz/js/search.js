@@ -48,4 +48,13 @@ export default function search() {
     config.immediate = true;
     render(config);
   });
+
+  const s = location.search;
+  if (/(^\?|&)kw\=/.test(s)) {
+    let c = Object.assign({}, config);
+    const value = s.replace(/(?:^\?|&)kw\=([^&]*)(&.*|$)/, (str, $1) => $1);
+    c.params.title = value;
+    c.immediate = false;
+    render(c);
+  }
 }

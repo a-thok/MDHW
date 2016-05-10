@@ -33,6 +33,15 @@ export default function search() {
     config.immediate = true;
     render(config);
   });
+
+  const s = location.search;
+  if (/(^\?|&)kw\=/.test(s)) {
+    let c = Object.assign({}, config);
+    const value = s.replace(/(?:^\?|&)kw\=([^&]*)(&.*|$)/, (str, $1) => $1);
+    c.params.keyword = value;
+    c.immediate = false;
+    render(c);
+  }
   // 点赞
   $('.list').addEventListener('click', (e) => {
     if (e.target.classList.contains('fa-thumbs-o-up')) {
