@@ -21,7 +21,7 @@ export default function Profile(props) {
         <span>{`邮箱: ${props.email || '未绑定'}`}</span>
       </p>
       <p className="profile_para">{props.p_signature}</p>
-      <Link className="profile_link" to="/settings">
+      <Link className="profile_link" to="/settings/account">
         <i className="fa fa-edit"></i>
       </Link>
     </div>
