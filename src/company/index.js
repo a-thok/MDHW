@@ -14,6 +14,10 @@ import './img/company_zlcy.png';
 import fastclick from 'fastclick';
 fastclick.attach(document.body);
 
+// 显示菜单
+import showMenu from 'showMenu';
+showMenu();
+
 // page最小高度为窗口高度
 document.querySelector('.page').style.minHeight = `${window.innerHeight}px`;
 
