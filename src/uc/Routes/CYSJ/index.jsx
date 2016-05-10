@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
 import deFavorite from '../../mixins/deFavorite.js';
 import { $cookie } from 'func';
 
-export default React.createClass({
-  getInitialState: function () {
-    return {
+export default class Cysj extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       Publish: {
         types: [],
         data: { type: 1 }
@@ -41,9 +42,10 @@ export default React.createClass({
         detail: []
       }
     };
-  },
+  }
+
   // 选择地址
-  onAreaChange: function (type, code) {
+  onAreaChange(type, code) {
     const newState = Object.assign({}, this.state.Bidding);
     if (type === 'province') {
       newState.areaData.forEach((item) => {
@@ -65,14 +67,16 @@ export default React.createClass({
       });
     }
     this.setState({ Bidding: newState });
-  },
+  }
+
   // 提交表单
-  onChange: function (e, name, list) {
+  onChange(e, name, list) {
     const newState = Object.assign({}, this.state[list]);
     newState.data[name] = e.target.value;
     this.setState(newState);
-  },
-  onSubmit: function (e) {
+  }
+
+  onSubmit(e) {
     e.preventDefault();
     fetch('/m/sys/diy/Publish/add', {
       method: 'POST',
@@ -93,8 +97,9 @@ export default React.createClass({
         alert('服务器错误，请稍候重试');
       }
     });
-  },
-  onTbSubmit: function (e) {
+  }
+
+  onTbSubmit(e) {
     e.preventDefault();
     if (!this.state.data) return;
     let cpid = $cookie().cpid;
@@ -117,9 +122,10 @@ export default React.createClass({
         alert(res.msg[0]);
       }
     });
-  },
+  }
+
   // 请求发布类型
-  fetchTypes: function () {
+  fetchTypes() {
     fetch('/m/diy/project/TypeList')
       .then(res => res.json())
       .then(res => {
@@ -129,38 +135,43 @@ export default React.createClass({
         });
         this.setState({ Publish: newState });
       });
-  },
+  }
+
   // 请求已发布列表
-  fetchPublished: function () {
+  fetchPublished() {
     loadList.bind(this)({
       url: '/m/sys/diy/Publish/List',
       list: 'Published'
     });
     fetching.bind(this)('Published');
-  },
+  }
+
   // 请求收藏列表
-  fetchCollection: function () {
+  fetchCollection() {
     loadList.bind(this)({
       url: '/m/sys/diy/collect/list',
       list: 'Collection'
     });
     fetching.bind(this)('Collection');
-  },
+  }
+
   // 取消收藏
-  delCollection: function (id, index) {
+  delCollection(id, index) {
     deFavorite.bind(this)('/m/sys/diy/collect/del', 'Collection', 'fpid', id, index);
     fetching.bind(this)('Collection');
-  },
+  }
+
   // 请求已投递列表
-  fetchDelivered: function () {
+  fetchDelivered() {
     loadList.bind(this)({
       url: '/m/sys/diy/Deal/BidsList',
       list: 'Delivered'
     });
     fetching.bind(this)('Delivered');
-  },
+  }
+
   // 获取地址
-  fetchAreaDataAndDetail: function () {
+  fetchAreaDataAndDetail() {
     fetch(`http://${MAIN_HOST}/Dict/city2`)
       .then(res => res.json())
       .then(res => {
@@ -186,9 +197,10 @@ export default React.createClass({
             });
         });
       });
-  },
+  }
+
   // 渲染
-  render: function () {
+  render() {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
 
@@ -196,34 +208,34 @@ export default React.createClass({
     switch (ChildName) {
       case 'Publish':
         extra = {
-          onChange: this.onChange,
-          onSubmit: this.onSubmit,
-          fetchTypes: this.fetchTypes
+          onChange: this.onChange.bind(this),
+          onSubmit: this.onSubmit.bind(this),
+          fetchTypes: this.fetchTypes.bind(this)
         };
         break;
       case 'Published':
         extra = {
-          fetchPublished: this.fetchPublished
+          fetchPublished: this.fetchPublished.bind(this)
         };
         break;
       case 'Collection':
         extra = {
-          fetchCollection: this.fetchCollection,
-          delCollection: this.delCollection
+          fetchCollection: this.fetchCollection.bind(this),
+          delCollection: this.delCollection.bind(this)
         };
         break;
       case 'Delivered':
         extra = {
-          fetchDelivered: this.fetchDelivered
+          fetchDelivered: this.fetchDelivered.bind(this)
         };
         break;
       case 'Bidding':
         extra = {
-          onChange: this.onChange,
-          fetchAreaDataAndDetail: this.fetchAreaDataAndDetail,
-          fetchDetail: this.fetchDetail,
-          onAreaChange: this.onAreaChange,
-          onTbSubmit: this.onTbSubmit
+          onChange: this.onChange.bind(this),
+          fetchAreaDataAndDetail: this.fetchAreaDataAndDetail.bind(this),
+          fetchDetail: this.fetchDetail.bind(this),
+          onAreaChange: this.onAreaChange.bind(this),
+          onTbSubmit: this.onTbSubmit.bind(this)
         };
         break;
       default:
@@ -236,11 +248,10 @@ export default React.createClass({
           React.cloneElement(Child, Object.assign(
             {},
             this.state[ChildName],
-            { onChangeHash: this.props.onChangeHash },
             extra
           ))
         }
       </div>
     );
   }
-});
+}

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Title from '../../../components/Title';
 import TextGroup from '../../../components/TextGroup';
 
-export default React.createClass({
-  componentDidMount: function () {
+export default class Preview extends Component {
+  componentDidMount() {
     this.props.fetchPreview();
-  },
-  render: function () {
+  }
+
+  render() {
     return (
       <div className="preview">
         <Title name="基本信息" />
@@ -22,7 +23,6 @@ export default React.createClass({
         </div>
         <Title name="期望工作" />
         <div className="TextGroupWrapper">
-          {/* 下面的字段名是错的 */}
           <TextGroup name="期望职位" text={this.props.position} />
           <TextGroup name="职位性质" text={this.props.nature} />
           <TextGroup name="期望城市" text={this.props.wishCity} />
@@ -31,4 +31,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

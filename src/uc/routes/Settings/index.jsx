@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
 
-export default React.createClass({
-  getInitialState: function () {
-    return {
+export default class Settings extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       Address: {
         index: 0,
         data: [],
@@ -22,13 +23,15 @@ export default React.createClass({
         }
       }
     };
-  },
-  onAddressChange: function (key, value) {
+  }
+
+  onAddressChange(key, value) {
     const newState = Object.assign({}, this.state.AddressForm);
     newState.data[key] = value;
     this.setState({ AddressForm: newState });
-  },
-  onAreaChange: function (type, code) {
+  }
+
+  onAreaChange(type, code) {
     const newState = Object.assign({}, this.state.AddressForm);
     if (type === 'province') {
       newState.areaData.forEach((item) => {
@@ -54,8 +57,9 @@ export default React.createClass({
       });
     }
     this.setState({ AddressForm: newState });
-  },
-  onSubmit: function (id) {
+  }
+
+  onSubmit(id) {
     const pageIndex = this.state.Address.index;
     if (id) {
       fetch('/m/User/addr/Edit', {
@@ -108,8 +112,9 @@ export default React.createClass({
         }
       });
     }
-  },
-  onReset: function () {
+  }
+
+  onReset() {
     const newState = Object.assign({}, this.state.AddressForm);
     newState.data = {
       area: {
@@ -119,8 +124,9 @@ export default React.createClass({
       }
     };
     this.setState({ AddressForm: newState });
-  },
-  fetchAreaData: function () {
+  }
+
+  fetchAreaData() {
     fetch(`http://${MAIN_HOST}/Dict/city2`)
       .then(res => res.json())
       .then(res => {
@@ -128,15 +134,17 @@ export default React.createClass({
         newState.areaData = res.result;
         this.setState({ AddressForm: newState });
       });
-  },
-  fetchAddress: function () {
+  }
+
+  fetchAddress() {
     loadList.bind(this)({
       url: '/m/User/addr/List',
       list: 'Address'
     });
     fetching.bind(this)('Address');
-  },
-  fetchAddressDetail: function (id) {
+  }
+
+  fetchAddressDetail(id) {
     fetch('/m/User/addr/detail', {
       method: 'POST',
       headers: {
@@ -161,8 +169,9 @@ export default React.createClass({
         });
         this.setState({ AddressForm: newState });
       });
-  },
-  render: function () {
+  }
+
+  render() {
     const Child = this.props.children;
     const ChildName = Child.type.displayName || Child.type.name;
 
@@ -177,24 +186,24 @@ export default React.createClass({
         extra = {
           profile: this.props.profile,
           profileTemp: this.props.profileTemp,
-          onChange: this.props.onProfileChange,
-          onClick: this.props.onUndoProfileChange,
-          onSubmit: this.props.onSubmitProfileChange
+          onChange: this.props.onProfileChange.bind(this),
+          onClick: this.props.onUndoProfileChange.bind(this),
+          onSubmit: this.props.onSubmitProfileChange.bind(this)
         };
         break;
       case 'Address':
         extra = {
-          fetchAddress: this.fetchAddress
+          fetchAddress: this.fetchAddress.bind(this)
         };
         break;
       case 'AddressForm':
         extra = {
-          fetchAreaData: this.fetchAreaData,
-          onAddressChange: this.onAddressChange,
-          onAreaChange: this.onAreaChange,
-          onSubmit: this.onSubmit,
-          onReset: this.onReset,
-          fetchAddressDetail: this.fetchAddressDetail
+          fetchAreaData: this.fetchAreaData.bind(this),
+          onAddressChange: this.onAddressChange.bind(this),
+          onAreaChange: this.onAreaChange.bind(this),
+          onSubmit: this.onSubmit.bind(this),
+          onReset: this.onReset.bind(this),
+          fetchAddressDetail: this.fetchAddressDetail.bind(this)
         };
         break;
       default:
@@ -206,7 +215,6 @@ export default React.createClass({
         {
           React.cloneElement(Child, Object.assign(
             {},
-            { onChangeHash: this.props.onChangeHash },
             this.state[ChildName],
             extra
           ))
@@ -214,4 +222,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default React.createClass({
-  componentDidMount: function () {
+export default class FormAddress extends Component {
+  componentDidMount() {
     if (!this.props.areaData.length) this.props.fetchAreaData();
-  },
-  handleChange: function (e, type) {
+  }
+
+  handleChange(e, type) {
     this.props.onAreaChange(type, e.target.value);
-  },
-  render: function () {
+  }
+
+  render() {
     return (
       <div className="formAddress">
         <div className="formAddress_select">
@@ -33,19 +35,19 @@ export default React.createClass({
             }
           </select>
         </div>
-        { this.props.hideTextarea ?
-          null :
-          (<textarea
-            className="formAddress_detail"
-            name={this.props.address}
-            placeholder="请输入详细地址"
-            value={this.props.value || ''}
-            onChange={(e) => this.props.onChange(this.props.name, e.target.value.trim())}
-          >
-          </textarea>)
+        {
+          this.props.hideTextarea ?
+            null :
+            (<textarea
+              className="formAddress_detail"
+              name={this.props.address}
+              placeholder="请输入详细地址"
+              value={this.props.value || ''}
+              onChange={(e) => this.props.onChange(this.props.name, e.target.value.trim())}
+            >
+            </textarea>)
         }
       </div>
     );
   }
-});
-
+}

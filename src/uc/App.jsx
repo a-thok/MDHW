@@ -1,18 +1,19 @@
-import React from 'react';
-
+import React, { Component } from 'react';
 import Header from './components/Header';
 
-export default React.createClass({
-  getInitialState: function () {
-    return {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       Header: {
         isShowMenu: false
       },
       profile: {},
       profileTemp: {}
     };
-  },
-  componentDidMount: function () {
+  }
+
+  componentDidMount() {
     fetch('/m/user/info/person', {
       method: 'GET',
       credentials: 'include'
@@ -22,18 +23,21 @@ export default React.createClass({
         profile: res.result,
         profileTemp: res.result
       }));
-  },
-  onProfileChange: function (key, value) {
+  }
+
+  onProfileChange(key, value) {
     const newState = Object.assign({}, this.state.profileTemp);
     newState[key] = value;
     this.setState({ profileTemp: newState });
-  },
-  onUndoProfileChange: function (key) {
+  }
+
+  onUndoProfileChange(key) {
     const newState = Object.assign({}, this.state.profileTemp);
     newState[key] = this.state.profile[key];
     this.setState({ profileTemp: newState });
-  },
-  onSubmitProfileChange: function (key) {
+  }
+
+  onSubmitProfileChange(key) {
     const newState = Object.assign({}, this.state.profile);
     newState[key] = this.state.profileTemp[key];
     fetch('/m/user/info/personEdit', {
@@ -51,16 +55,20 @@ export default React.createClass({
           window.location.hash = '#/settings/account';
         }
       });
-  },
-  onToggleMenu: function () {
+  }
+
+  onToggleMenu() {
     const newHeader = Object.assign({}, this.state.Header);
     newHeader.isShowMenu = !newHeader.isShowMenu;
     this.setState({ Header: newHeader });
-  },
-  render: function () {
+  }
+
+  render() {
     const Child = this.props.children;
+    const ChildName = Child.type.displayName || Child.type.name;
+
     let extra;
-    switch (Child.type.displayName) {
+    switch (ChildName) {
       case 'Home':
         extra = { profile: this.state.profile };
         break;
@@ -68,9 +76,9 @@ export default React.createClass({
         extra = {
           profile: this.state.profile,
           profileTemp: this.state.profileTemp,
-          onProfileChange: this.onProfileChange,
-          onUndoProfileChange: this.onUndoProfileChange,
-          onSubmitProfileChange: this.onSubmitProfileChange
+          onProfileChange: this.onProfileChange.bind(this),
+          onUndoProfileChange: this.onUndoProfileChange.bind(this),
+          onSubmitProfileChange: this.onSubmitProfileChange.bind(this)
         };
         break;
       default:
@@ -80,11 +88,11 @@ export default React.createClass({
       <div>
         <Header
           {...this.state.Header}
-          onToggleMenu={ this.onToggleMenu }
-          id = {this.state.profile.id}
+          onToggleMenu={this.onToggleMenu}
+          id={this.state.profile.id}
         />
         {React.cloneElement(Child, extra)}
       </div>
     );
   }
-});
+}
