@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import ListTab from '../../../components/ListTab';
 import ListItem from '../../../components/ListItem';
 import Loading from '../../../components/Loading';
 import scroll from '../../../mixins/scroll';
-import removeWindowEvent from '../../../mixins/removeWindowEvent';
 
-export default React.createClass({
-  mixins: [removeWindowEvent],
-  componentDidMount: function () {
+export default class Order extends Component {
+  componentDidMount() {
     this.props.fetchOrder(0, false);
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  handleScroll: function () {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmoun() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  handleScroll() {
     scroll(this.props.fetchOrder);
-  },
-  handleClick: function (state1, state2) {
+  }
+
+  handleClick(state1, state2) {
     this.props.fetchOrder(state1, state2);
-  },
-  render: function () {
+  }
+
+  render() {
     // const tabs = [{ text: '已付款', type: 0 }, { text: '待付款', type: 1 }].map(item => (
     //   <ListTab
     //     text={item.text}
@@ -56,12 +61,12 @@ export default React.createClass({
       <div>
         <ul className="listTabs">
           <li
-            className={ `listTab${this.props.type === 0 ? ' is-active' : ''}` }
-            onClick={() => this.handleClick(-1, 1) }
+            className={`listTab${this.props.type === 0 ? ' is-active' : ''}`}
+            onClick={() => this.handleClick(-1, 1)}
           >待付款</li>
           <li
-            className={ `listTab${this.props.type === 1 ? ' is-active' : ''}` }
-            onClick={() => this.handleClick(0, 5) }
+            className={`listTab${this.props.type === 1 ? ' is-active' : ''}`}
+            onClick={() => this.handleClick(0, 5)}
           >已付款</li>
         </ul>
         <ul className="list">
@@ -74,4 +79,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

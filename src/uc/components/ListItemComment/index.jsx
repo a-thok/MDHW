@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default React.createClass({
-  componentDidMount: function () {
+export default class ListItemComment extends Component {
+  componentDidMount() {
     const content = this.refs.content;
     if (content.scrollHeight > 48) this.props.onTooLong(this.props.index);
-  },
-  handleUnfold: function () {
+  }
+
+  handleUnfold() {
     this.props.onUnfold(this.props.index);
-  },
-  render: function () {
+  }
+
+  render() {
     const height = this.props.unfold ? 'auto' : '48px';
     const display = this.props.tooLong ? 'inline' : 'none';
     const text = this.props.unfold ? '收起' : '展开';
@@ -36,4 +38,4 @@ export default React.createClass({
       </li>
     );
   }
-});
+}

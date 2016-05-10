@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FormGroupSimple from '../../../../components/FormGroupSimple';
 import FormAddress from '../../../../components/FormAddress';
 import FormCheck from '../../../../components/FormCheck';
 import FormButton from '../../../../components/FormButton';
 
-export default React.createClass({
-  componentDidMount: function () {
+export default class AddressForm extends Component {
+  componentDidMount() {
     const hash = window.location.hash;
     if (hash.indexOf('/address/edit') !== -1) {
       let id;
@@ -14,8 +14,9 @@ export default React.createClass({
     } else {
       this.props.onReset();
     }
-  },
-  handleSubmit: function (e) {
+  }
+
+  handleSubmit(e) {
     e.preventDefault();
     const hash = window.location.hash;
     if (hash.indexOf('/address/edit') !== -1) {
@@ -25,11 +26,12 @@ export default React.createClass({
     } else {
       this.props.onSubmit();
     }
-  },
-  render: function () {
+  }
+
+  render() {
     // console.log(this.props);
     return (
-      <form className="addressForm" onSubmit={this.handleSubmit}>
+      <form className="addressForm" onSubmit={(e) => this.handleSubmit(e)}>
         <FormGroupSimple
           label="姓名"
           name="name"
@@ -83,5 +85,4 @@ export default React.createClass({
       </form>
     );
   }
-});
-
+}
