@@ -60,11 +60,6 @@
   display: flex;
   margin: .3em 0;
 }
-.iconList_item .fa {
-  font-size: .2rem;
-  margin-right: .8em;
-  /*color: var(--zcColor);*/
-}
 /*字体颜色和背景颜色可能要设为变量*/
 .tagList-kjfw .tagList_item {
   padding: .3em .4em;

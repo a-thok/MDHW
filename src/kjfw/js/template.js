@@ -4,11 +4,11 @@ export default function template(data) {
 
     let rz;
     const auth = `<li
-      class="iconList_item iconList_item_bg ${cur.auth ? 'auth' : 'noAuth'}"
+      class="iconList_item ${cur.auth ? 'auth' : 'noAuth'}"
       title="企业认证"
     ></li>`;
     const level = cur.level ?
-      `<li class="iconList_item iconList_item_bg level${cur.level}" title="等级"></li>` :
+      `<li class="iconList_item level${cur.level}" title="等级"></li>` :
       '';
     if (cur.rz.length) {
       rz = cur.rz.reduce((_pre, _cur) => (
@@ -66,7 +66,3 @@ export default function template(data) {
         </li>`);
   }, '');
 }
-// <li class="iconList_item is-flex"><i class="iconList_item_bg first" title="企业认证"></i></li>
-//                     <li class="iconList_item is-flex"><i class="iconList_item_bg second" title="品质认证"></i></li>
-//                     <li class="iconList_item is-flex"><i class="iconList_item_bg third" title="服务认证"></i></li>
-//                     <li class="iconList_item is-flex"><i class="iconList_item_bg fourth" title="梦高速企业认证"></i></li>

@@ -18,7 +18,8 @@ module.exports = {
     "no-case-declarations": 0,
     "react/jsx-first-prop-new-line": 0,
     "import/no-unresolved": 0,
-    "jsx-a11y/img-has-alt": 0
+    "jsx-a11y/img-has-alt": 0,
+    "no-useless-escape": 0
   },
   
   'globals': {

@@ -21,25 +21,33 @@
 /*认证图标*/
 .is-flex {
   display: flex;
-  padding: 0 .2em;
   align-items: center;
 }
-.iconList_item_bg {
-  width: .25rem;
-  height: .2rem;
+.iconList_item {
+  width: .2rem;
+  height: .22rem;
+  margin: 0 .2em;
+}
+.iconList_item img {
+  width: 100%;
 }
 .auth {
-  background: url("../img/auth.png") no-repeat 4px 0;
+  background: url("../img/auth_1.png");
+  background-size: 100%;
 }
 .noAuth {
-  background: url("../img/auth.png") no-repeat 4px -19px;
+  background: url("../img/auth_2.png");
+  background-size: 100%;
 }
 .level1 {
-  background: url("../img/level.png") no-repeat 4px -39px;
+  background: url("../img/level_1.png");
+  background-size: 100%;
 }
 .level2 {
-  background: url("../img/level.png") no-repeat 4px -19px;
+  background: url("../img/level_2.png");
+  background-size: 100%;
 }
 .level3 {
-  background: url("../img/level.png") no-repeat 4px 1px;
+  background: url("../img/level_3.png");
+  background-size: 100%;
 }
