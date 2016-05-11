@@ -5,7 +5,7 @@
 .listWrap-margin {
   margin-top: 0;
 }
-.iconList_item .fa-shield {
+/*.iconList_item .fa-shield {
   color: #4d8a53;
 }
 .iconList_item .fa-sort-amount-desc {
@@ -16,4 +16,30 @@
 }
 .iconList_item .fa-picture-o {
   color: #888;
+}*/
+
+/*认证图标*/
+.is-flex {
+  display: flex;
+  padding: 0 .2em;
+  align-items: center;
+}
+.iconList_item_bg {
+  width: .25rem;
+  height: .2rem;
+}
+.auth {
+  background: url("../img/auth.png") no-repeat 4px 0;
+}
+.noAuth {
+  background: url("../img/auth.png") no-repeat 4px -19px;
+}
+.level1 {
+  background: url("../img/level.png") no-repeat 4px -39px;
+}
+.level2 {
+  background: url("../img/level.png") no-repeat 4px -19px;
+}
+.level3 {
+  background: url("../img/level.png") no-repeat 4px 1px;
 }

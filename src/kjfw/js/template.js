@@ -1,6 +1,23 @@
 export default function template(data) {
   return data.result.data.reduce((pre, cur) => {
     let business = '';
+
+    let rz;
+    const auth = `<li
+      class="iconList_item iconList_item_bg ${cur.auth ? 'auth' : 'noAuth'}"
+      title="企业认证"
+    ></li>`;
+    const level = cur.level ?
+      `<li class="iconList_item iconList_item_bg level${cur.level}" title="等级"></li>` :
+      '';
+    if (cur.rz.length) {
+      rz = cur.rz.reduce((_pre, _cur) => (
+          `${_pre}<li class="iconList_item is-flex"><img src="http://192.168.2.10:81${_cur.img}" title="${_cur.title}"></li>`
+        ), '');
+    } else {
+      rz = '';
+    }
+
     if (!cur.business) {
       business = '';
     } else {
@@ -29,10 +46,9 @@ export default function template(data) {
                 <div class="list_item_content_info_right">
                   <p class="list_item_phone"><i class="fa fa-phone"></i>${cur.phone}</p>
                   <ul class="iconList">
-                    <li class="iconList_item"><i class="fa fa-shield"></i></li>
-                    <li class="iconList_item"><i class="fa fa-sort-amount-desc"></i></li>
-                    <li class="iconList_item"><i class="fa fa-car"></i></li>
-                    <li class="iconList_item"><i class="fa fa-picture-o"></i></li>
+                    ${auth}
+                    ${level}
+                    ${rz}
                   </ul>
                   <ul class="tagList tagList-kjfw">
                     ${business}
@@ -50,3 +66,7 @@ export default function template(data) {
         </li>`);
   }, '');
 }
+// <li class="iconList_item is-flex"><i class="iconList_item_bg first" title="企业认证"></i></li>
+//                     <li class="iconList_item is-flex"><i class="iconList_item_bg second" title="品质认证"></i></li>
+//                     <li class="iconList_item is-flex"><i class="iconList_item_bg third" title="服务认证"></i></li>
+//                     <li class="iconList_item is-flex"><i class="iconList_item_bg fourth" title="梦高速企业认证"></i></li>
