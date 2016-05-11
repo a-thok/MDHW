@@ -22,7 +22,7 @@ export default class Published extends Component {
       <ListItemPlain
         key={index}
         info={item.protype}
-        small={item.status}
+        small={item.state}
         title={item.title}
         elems={[
           <span className="fontColor">￥ {item.money}</span>,
