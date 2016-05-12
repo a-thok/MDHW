@@ -14,7 +14,7 @@ export default class Comment extends Component {
   }
 
   handleScroll() {
-    scroll(this.props.fetchComment).bind(this);
+    scroll(this.props.fetchComment);
   }
 
   render() {
