@@ -18,7 +18,6 @@ export default class Follow extends Component {
   }
 
   render() {
-    // console.log(this.props);
     let contentList = this.props.data.map((item, index) => (
       <ListItem
         key={index}

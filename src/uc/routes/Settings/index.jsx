@@ -46,7 +46,6 @@ export default class Settings extends Component {
         if (item.code === code) {
           newState.data.area[type] = item;
           newState.data.area.district = item.districts[0];
-          console.log(newState);
         }
       });
     } else {

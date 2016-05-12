@@ -19,7 +19,6 @@ export default class Address extends Component {
   }
 
   render() {
-    console.log(this.props);
     const itemNodes = this.props.data.map((item, index) => (
       <Item
         key={index}

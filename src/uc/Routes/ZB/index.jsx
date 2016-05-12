@@ -35,7 +35,6 @@ export default class Zb extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log(this.state.Publish.data);
     fetch('/m/Sys/ZB/Publish/Add', {
       method: 'POST',
       headers: {

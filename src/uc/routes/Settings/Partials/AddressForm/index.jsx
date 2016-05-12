@@ -29,7 +29,6 @@ export default class AddressForm extends Component {
   }
 
   render() {
-    // console.log(this.props);
     return (
       <form className="addressForm" onSubmit={(e) => this.handleSubmit(e)}>
         <FormGroupSimple

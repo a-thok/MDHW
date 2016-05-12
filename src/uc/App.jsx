@@ -67,7 +67,6 @@ export default class App extends Component {
   render() {
     const Child = this.props.children;
     const path = getPath.call(this, 'Home', 1);
-    console.log(path);
 
     let extra;
     switch (path) {

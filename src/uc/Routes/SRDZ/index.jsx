@@ -86,7 +86,6 @@ export default class Srdz extends Component {
   }
 
   orderConfirm(number, index) {
-    console.log(index);
     fetch('/m/Sys/Srdz/Deal/Confirm', {
       method: 'POST',
       headers: {

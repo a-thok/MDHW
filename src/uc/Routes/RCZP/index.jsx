@@ -106,7 +106,6 @@ export default class Rczp extends Component {
   render() {
     const Child = this.props.children;
     const path = getPath.call(this, 'Nav');
-    console.log(path);
 
     // 每个页面的特定属性 (props)
     let extra;
