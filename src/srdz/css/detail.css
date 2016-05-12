@@ -5,6 +5,119 @@
 .base_content_num {
   color: #65bd34;
 }
+.srdzGoods {
+  padding: 0 .2rem;
+  background: #fff;
+  font-size: .2rem;
+}
+/*商品信息*/
+.goods {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--borderColorLight);
+  padding: .2rem 0;
+}
+.goods_img {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  overflow: hidden;
+}
+.goods_img img {
+  width: 100%;
+}
+.goods_msg {
+  flex: 1;
+  margin-left: .2rem;
+}
+.goods_msg span {
+  display: block;
+}
+.goods_msg_money {
+  margin-top: 1em;
+  font-size: .24rem;
+  color: var(--srdzColor);
+}
+/*款式选择*/
+.model {
+  padding-bottom: .2rem;
+  border-bottom: 1px solid var(--borderColorLight);
+}
+.numberTitle,
+.modelTitle {
+  line-height: 3;
+}
+.modelList {
+  overflow: hidden;
+}
+
+.modelList_item {
+  position: relative;
+  float: left;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 5px;
+  margin-bottom: .5em;
+  margin-right: .5em;
+  padding: .5em 1em;
+  overflow: hidden;
+}
+.modelList_item_div {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1em .2em;
+  transform: translateX(25%) translateY(30%) rotate(45deg);
+  background: var(--srdzColor);
+  color: #fff;
+  font-size: .18rem;
+}
+.modelList_item_div-block {
+  display: block;
+}
+.modelList_item_div .fa {
+  transform: translateX(-18%) translateY(7%) rotate(-45deg);
+}
+.modelList_item-sk {
+  border-color: var(--srdzColor);
+}
+/*数量*/
+.number {
+  padding-bottom: .2rem;
+}
+.numberFlex {
+  display: flex;
+  align-items: center;
+}
+.number_choose {
+  overflow: hidden;
+  font-size: .22rem;
+  color: var(--srdzColor);
+}
+.number_choose label {
+  float: left;
+  padding: .5em 1em;
+  border: 1px solid var(--borderColorLight);
+}
+.number_choose label:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.number_choose label:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.number_choose input {
+  float: left;
+  width: .8rem;
+  padding: .5em 0;
+  border: 1px solid var(--borderColorLight);
+  text-align: center;
+}
+.number-text {
+  margin-left: 1em;
+  color: var(--fontColorLight);
+}
 /*雇主*/
 .person_bar_btn {
   background-color: var(--srdzColor);

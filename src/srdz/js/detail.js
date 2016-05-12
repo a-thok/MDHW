@@ -9,6 +9,37 @@ export default function detail() {
   share($('.ftCtrl_item')[2]);
 
   // slider(document.querySelector('.sliderBox'));
+  // 选择颜色
+  const modelListItems = $('.modelList_item');
+  const checks = $from('.modelList_item_div');
+  let code;
+  $from(modelListItems).forEach((el, i, arr) => {
+    el.addEventListener('click', () => {
+      arr.forEach((e) => {
+        e.classList.remove('modelList_item-sk');
+      });
+      checks.forEach((e) => {
+        e.classList.remove('modelList_item_div-block');
+      });
+      modelListItems[i].classList.add('modelList_item-sk');
+      checks[i].classList.add('modelList_item_div-block');
+      code = modelListItems[i].getAttribute('data-code');
+    });
+  });
+  // 选择数量
+  const labels = $from('.number_choose label');
+  let number = $('.number_choose input');
+  labels.forEach((el, i) => {
+    el.addEventListener('click', () => {
+      if (i === 0) {
+        if (+(number.value) === 1) return;
+        number.value = number.value - 1;
+      } else {
+        if (+(number.value) === 5) return;
+        number.value = +(number.value) + 1;
+      }
+    });
+  });
 
   // 详情显示切换
   const ul = $('.userInput');
@@ -38,8 +69,8 @@ export default function detail() {
       credentials: 'include',
       body: JSON.stringify({
         productid,
-        count: 1, // temp
-        body: 1 // temp
+        count: number.value, // temp
+        body: code // temp
       })
     })
       .then(res => res.json())
