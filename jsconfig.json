@@ -1,6 +1,6 @@
 {
-  // "exclude": [
-  //   "node",
-  //   "webpack"
-  // ]
+  "exclude": [
+    "node",
+    "webpack"
+  ]
 }
