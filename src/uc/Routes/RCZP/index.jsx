@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
+import getPath from '../../mixins/getPath.js';
 
 export default class Rczp extends Component {
   constructor(props) {
@@ -104,11 +105,12 @@ export default class Rczp extends Component {
   // 渲染
   render() {
     const Child = this.props.children;
-    const ChildName = Child.type.displayName || Child.type.name;
+    const path = getPath.call(this, 'Nav');
+    console.log(path);
 
     // 每个页面的特定属性 (props)
     let extra;
-    switch (ChildName) {
+    switch (path) {
       case 'Preview':
         extra = {
           fetchPreview: this.fetchPreview.bind(this)
@@ -141,7 +143,7 @@ export default class Rczp extends Component {
         {
           React.cloneElement(Child, Object.assign(
             {},
-            this.state[ChildName],
+            this.state[path],
             extra
           ))
         }

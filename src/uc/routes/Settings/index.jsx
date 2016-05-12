@@ -173,10 +173,27 @@ export default class Settings extends Component {
 
   render() {
     const Child = this.props.children;
-    const ChildName = Child.type.displayName || Child.type.name;
+    let path;
+    switch (this.props.location.pathname) {
+      case '/settings/address':
+        path = 'Address';
+        break;
+      case '/settings/address/add':
+      case '/settings/address/edit':
+        path = 'AddressForm';
+        break;
+      case '/settings/account':
+        path = 'Account';
+        break;
+      case '/settings/account/edit':
+        path = 'AccountForm';
+        break;
+      default:
+        path = null;
+    }
 
     let extra;
-    switch (ChildName) {
+    switch (path) {
       case 'Account':
         extra = {
           profile: this.props.profile
@@ -215,7 +232,7 @@ export default class Settings extends Component {
         {
           React.cloneElement(Child, Object.assign(
             {},
-            this.state[ChildName],
+            this.state[path],
             extra
           ))
         }

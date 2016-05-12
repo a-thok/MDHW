@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
 import deFavorite from '../../mixins/deFavorite.js';
+import getPath from '../../mixins/getPath.js';
 
 export default class Zb extends Component {
   constructor(props) {
@@ -83,10 +84,10 @@ export default class Zb extends Component {
   // 渲染
   render() {
     const Child = this.props.children;
-    const ChildName = Child.type.displayName || Child.type.name;
+    const path = getPath.call(this, 'Nav');
 
     let extra;
-    switch (ChildName) {
+    switch (path) {
       case 'Collection':
         extra = {
           fetchCollection: this.fetchCollection.bind(this),
@@ -113,7 +114,7 @@ export default class Zb extends Component {
         {
           React.cloneElement(Child, Object.assign(
             {},
-            this.state[ChildName],
+            this.state[path],
             extra
           ))
         }

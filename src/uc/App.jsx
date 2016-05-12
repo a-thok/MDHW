@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
+import getPath from './mixins/getPath.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -65,10 +66,11 @@ export default class App extends Component {
 
   render() {
     const Child = this.props.children;
-    const ChildName = Child.type.displayName || Child.type.name;
+    const path = getPath.call(this, 'Home', 1);
+    console.log(path);
 
     let extra;
-    switch (ChildName) {
+    switch (path) {
       case 'Home':
         extra = { profile: this.state.profile };
         break;

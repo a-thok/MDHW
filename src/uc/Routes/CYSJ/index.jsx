@@ -3,6 +3,7 @@ import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
 import deFavorite from '../../mixins/deFavorite.js';
 import { $cookie } from 'func';
+import getPath from '../../mixins/getPath.js';
 
 export default class Cysj extends Component {
   constructor(props) {
@@ -202,10 +203,10 @@ export default class Cysj extends Component {
   // 渲染
   render() {
     const Child = this.props.children;
-    const ChildName = Child.type.displayName || Child.type.name;
+    const path = getPath.call(this, 'Nav');
 
     let extra;
-    switch (ChildName) {
+    switch (path) {
       case 'Publish':
         extra = {
           onChange: this.onChange.bind(this),
@@ -247,7 +248,7 @@ export default class Cysj extends Component {
         {
           React.cloneElement(Child, Object.assign(
             {},
-            this.state[ChildName],
+            this.state[path],
             extra
           ))
         }
