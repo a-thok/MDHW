@@ -177,17 +177,17 @@ export default class Srdz extends Component {
       body: JSON.stringify({ number }),
       credentials: 'include'
     })
-    .then(res => res.json())
-    .then(res => {
-      if (res.success) {
-        const newState = Object.assign({}, this.state.Buyer);
-        newState.data[index].state = 3;
-        newState.data[index].stateName = '已收货';
-        this.setState({ Buyer: newState });
-      } else {
-        alert('服务器错误，请稍后重试');
-      }
-    });
+      .then(res => res.json())
+      .then(res => {
+        if (res.success) {
+          const newState = Object.assign({}, this.state.Buyer);
+          newState.data[index].state = 3;
+          newState.data[index].stateName = '已收货';
+          this.setState({ Buyer: newState });
+        } else {
+          alert('服务器错误，请稍后重试');
+        }
+      });
   }
 
   // 渲染
