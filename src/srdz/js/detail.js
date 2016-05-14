@@ -8,36 +8,39 @@ export default function detail() {
   favorite($('.ftCtrl_item')[0], 'id', '/m/srdz/Collect/Add', '/m/srdz/Collect/Del');
   share($('.ftCtrl_item')[2]);
 
+  const params = { body: {} };
+
   // slider(document.querySelector('.sliderBox'));
   // 选择颜色
-  const modelListItems = $('.modelList_item');
-  const checks = $from('.modelList_item_div');
-  let code;
-  $from(modelListItems).forEach((el, i, arr) => {
-    el.addEventListener('click', () => {
-      arr.forEach((e) => {
-        e.classList.remove('modelList_item-sk');
-      });
-      checks.forEach((e) => {
-        e.classList.remove('modelList_item_div-block');
-      });
-      modelListItems[i].classList.add('modelList_item-sk');
-      checks[i].classList.add('modelList_item_div-block');
-      code = modelListItems[i].getAttribute('data-code');
+  const models = $from('.model');
+  models.forEach((e) => {
+    e.addEventListener('click', e => {
+      const type = e.target.getAttribute('data-code');
+      const name = e.currentTarget.querySelector('.modelTitle').getAttribute('data-name');
+      if (e.target.classList.contains('modelList_item')) {
+        $from(e.target.parentElement.children).forEach((e) => {
+          e.classList.remove('modelList_item-sk');
+        });
+        e.target.classList.add('modelList_item-sk');
+      }
+      params.body[name] = type;
     });
   });
+
   // 选择数量
   const labels = $from('.number_choose label');
-  let number = $('.number_choose input');
+  let amount = $('.number_choose input');
+  let stock = +($('.stock').textContent);
   labels.forEach((el, i) => {
     el.addEventListener('click', () => {
       if (i === 0) {
-        if (+(number.value) === 1) return;
-        number.value = number.value - 1;
+        if (+(amount.value) <= 1) return;
+        amount.value -= 1;
       } else {
-        if (+(number.value) === 5) return;
-        number.value = +(number.value) + 1;
+        if (+(amount.value) >= stock) return;
+        amount.value = +(amount.value) + 1;
       }
+      params.count = amount.value;
     });
   });
 
@@ -67,11 +70,7 @@ export default function detail() {
         'Content-Type': 'application/json'
       },
       credentials: 'include',
-      body: JSON.stringify({
-        productid,
-        count: number.value, // temp
-        body: code // temp
-      })
+      body: JSON.stringify(Object.assign({ productid }, params))
     })
       .then(res => res.json())
       .then(res => {

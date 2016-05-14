@@ -42,15 +42,12 @@
 .model {
   padding-bottom: .2rem;
   border-bottom: 1px solid var(--borderColorLight);
+  overflow: hidden;
 }
 .numberTitle,
 .modelTitle {
   line-height: 3;
 }
-.modelList {
-  overflow: hidden;
-}
-
 .modelList_item {
   position: relative;
   float: left;
@@ -59,6 +56,7 @@
   margin-bottom: .5em;
   margin-right: .5em;
   padding: .5em 1em;
+  cursor: pointer;
   overflow: hidden;
 }
 .modelList_item_div {
@@ -72,7 +70,7 @@
   color: #fff;
   font-size: .18rem;
 }
-.modelList_item_div-block {
+.modelList_item-sk .modelList_item_div-block {
   display: block;
 }
 .modelList_item_div .fa {
