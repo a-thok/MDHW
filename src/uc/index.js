@@ -34,6 +34,7 @@ import ZbNav from './routes/Zb/partials/Nav';
 import ZbPublish from './routes/Zb/partials/Publish';
 import ZbPublished from './routes/Zb/partials/Published';
 import ZbCollection from './routes/Zb/partials/Collection';
+import ZbBidding from './routes/Zb/partials/Bidding';
 
 import Zc from './routes/Zc';
 import ZcNav from './routes/Zc/partials/Nav';
@@ -81,6 +82,7 @@ ReactDOM.render((
         <Route path="/zb/publish" component={ZbPublish} />
         <Route path="/zb/published" component={ZbPublished} />
         <Route path="/zb/collection" component={ZbCollection} />
+        <Route path="/zb/bidding" component={ZbBidding} />
       </Route>
       <Route path="/zc" component={Zc}>
         <IndexRoute component={ZcNav} />

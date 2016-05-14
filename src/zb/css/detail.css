@@ -8,4 +8,99 @@
 .ftCtrl_item_btn {
   background-color: var(--zbColor);
 }
+/*介绍*/
+.intro {
+  margin-bottom: 0;
+}
+.intro_list {
+  display: flex;
+  justify-content: space-between;
+  font-size: .26rem;
+}
+.intro_list_item {
+  position: relative;
+  flex-basis: 49%;
+  width: 49%;
+  padding: .6em 0;
+  text-align: center;
+  border-bottom: 1px solid var(--borderColorLight);
+  cursor: pointer;
+}
+.intro_list_item.is-active {
+  color: var(--srdzColor);
+  border-bottom: 1px solid var(--srdzColor);
+}
+.intro_list_item:first-child {
+  display: flex;
+}
+.intro_list_item:first-child::after {
+  position: absolute;
+  top: 20%;
+  right: -2.5%;
+  content: "";
+  display: inline-block;
+  height: 60%;
+  border-right: 1px solid var(--borderColorLight);
+}
+.intro_list_span {
+  width: 100%;
+}
+/*用户编辑文本*/
+.userInput_item {
+  display: none;
 
+}
+/*.userInput_item-background {
+  background: #e7e8ed;
+}*/
+.userInput_item.is-show {
+  display: block;
+}
+.list_item_a {
+  color: #333;
+}
+.userInput li img {
+  width: 100%;
+}
+.userInput_itemList li {
+  border-radius: 5px;
+  padding: .5em;
+  padding-top: 0;
+  margin-top: .5rem;
+  background: #e7e8ed;
+}
+.userInput_item_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--borderColorLight);
+  padding: .2rem 0;
+  font-size: .24rem;
+}
+.userInput_item_title_money {
+  font-weight: bolder;
+}
+.userInput_item_title_money span {
+  font-size: .18rem;
+  color: var(--fontColorLight);
+}
+.userInput_item_btn {
+  border: 0;
+  border-radius: 5px;
+  padding: .5em 2em;
+  background: var(--srdzColor);
+  color: #fff;
+  font-size: .2rem;
+}
+.userInput_item_input {
+  font-size: .18rem;
+}
+.userInput_item_input h3 {
+  padding: .5em 0;
+}
+.userInput_item_input p {
+  line-height: 2;
+}
+.is-none {
+  display: none;
+}

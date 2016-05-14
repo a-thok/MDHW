@@ -26,7 +26,7 @@ export default function Publish(props) {
       id={item}
       value={props.data[item]}
       { ...form[item] }
-      onChange={(e) => props.onChange(e, item)}
+      onChange={(e) => props.onChange(e, item, 'Publish')}
     />
   ));
 

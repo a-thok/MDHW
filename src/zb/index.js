@@ -19,6 +19,7 @@ import { list, listFilter } from './js/list.js';
 import detail from './js/detail.js';
 import search from './js/search.js';
 import index from './js/index.js';
+import toubiao from './js/toubiao.js';
 
 if (pathname.indexOf('list') !== -1) {
   list();
@@ -30,4 +31,6 @@ if (pathname.indexOf('list') !== -1) {
   listFilter();
 } else if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
+} else if (pathname.indexOf('toubiao') !== -1) {
+  toubiao();
 }

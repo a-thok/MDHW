@@ -1,3 +1,4 @@
+import { $cookie } from 'func';
 import React, { Component } from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
@@ -22,13 +23,40 @@ export default class Zb extends Component {
       },
       Publish: {
         data: { type: 1 }
+      },
+      Bidding: {
+        data: {}
       }
     };
   }
 
+  //  投标
+  onTbSubmit(e) {
+    e.preventDefault();
+    const cookie = $cookie();
+    fetch('/m/sys/zb/witkey/bids', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify(Object.assign({
+        fpid: cookie.zb_fpid,
+        misid: cookie.zb_type
+      }, this.state.Bidding.data))
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success) {
+          location.href = decodeURIComponent(location.search).replace(/.*=/, '');
+        } else {
+          alert(res.msg[0]);
+        }
+      });
+  }
   // 表单提交
-  onChange(e, name) {
-    const newState = Object.assign({}, this.state.Publish);
+  onChange(e, name, form) {
+    const newState = Object.assign({}, this.state[form]);
     newState.data[name] = e.target.value;
     this.setState(newState);
   }
@@ -102,6 +130,12 @@ export default class Zb extends Component {
         extra = {
           onChange: this.onChange.bind(this),
           onSubmit: this.onSubmit.bind(this)
+        };
+        break;
+      case 'Bidding':
+        extra = {
+          onChange: this.onChange.bind(this),
+          onTbSubmit: this.onTbSubmit.bind(this)
         };
         break;
       default:
