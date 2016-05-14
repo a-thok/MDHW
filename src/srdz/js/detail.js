@@ -8,7 +8,7 @@ export default function detail() {
   favorite($('.ftCtrl_item')[0], 'id', '/m/srdz/Collect/Add', '/m/srdz/Collect/Del');
   share($('.ftCtrl_item')[2]);
 
-  const params = { body: {} };
+  const params = { sku: {} };
 
   // slider(document.querySelector('.sliderBox'));
   // 选择颜色
@@ -23,7 +23,7 @@ export default function detail() {
         });
         e.target.classList.add('modelList_item-sk');
       }
-      params.body[name] = type;
+      params.sku[name] = type;
     });
   });
 
@@ -64,13 +64,16 @@ export default function detail() {
   btn.addEventListener('click', () => {
     const arr = location.pathname.split('/');
     const productid = arr[arr.length - 1];
-    fetch('/m/sys/srdz/Shopcart/add', {
+    fetch(`http://${MAIN_HOST}/m/sys/srdz/Shopcart/add`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       credentials: 'include',
-      body: JSON.stringify(Object.assign({ productid }, params))
+      body: JSON.stringify(Object.assign({
+        productid,
+        body: Object.keys(params.sku).reduce((prev, curr) => prev + params.sku[curr], '')
+      }, params))
     })
       .then(res => res.json())
       .then(res => {
