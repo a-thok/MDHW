@@ -66,6 +66,7 @@ export default function detail() {
     const productid = arr[arr.length - 1];
     fetch(`http://${MAIN_HOST}/m/sys/srdz/Shopcart/add`, {
       method: 'POST',
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
       },
