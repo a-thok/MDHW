@@ -70,13 +70,13 @@
   color: #fff;
   font-size: .18rem;
 }
-.modelList_item-sk .modelList_item_div-block {
+.modelList_item.is-active .modelList_item_div-block {
   display: block;
 }
 .modelList_item_div .fa {
   transform: translateX(-18%) translateY(7%) rotate(-45deg);
 }
-.modelList_item-sk {
+.modelList_item.is-active {
   border-color: var(--srdzColor);
 }
 /*数量*/
