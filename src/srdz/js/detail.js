@@ -9,7 +9,7 @@ export default function detail() {
   favorite($('.ftCtrl_item')[0], 'id', '/m/srdz/Collect/Add', '/m/srdz/Collect/Del');
   share($('.ftCtrl_item')[2]);
 
-  const params = { sku: {} };
+  const params = { sku: {}, count: 1 };
 
   // slider(document.querySelector('.sliderBox'));
   // 选择颜色
