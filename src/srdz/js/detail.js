@@ -1,4 +1,5 @@
 import { $, $from } from '../../common/js/func.js';
+import xhr from 'xhr';
 // import slider from 'slider';
 import share from 'share';
 import favorite from 'favorite';
@@ -13,17 +14,31 @@ export default function detail() {
   // slider(document.querySelector('.sliderBox'));
   // 选择颜色
   const models = $from('.model');
-  models.forEach((e) => {
-    e.addEventListener('click', e => {
-      const type = e.target.getAttribute('data-code');
-      const name = e.currentTarget.querySelector('.modelTitle').getAttribute('data-name');
-      if (e.target.classList.contains('modelList_item')) {
-        $from(e.target.parentElement.children).forEach((e) => {
-          e.classList.remove('modelList_item-sk');
-        });
-        e.target.classList.add('modelList_item-sk');
+
+  models.forEach((model) => {
+    const key = model.querySelector('.modelTitle').getAttribute('data-name');
+    const children = model.children;
+
+    for (let i = 1, len = children.length; i < len; i++) {
+      if (children[i].classList.contains('is-active')) {
+        const value = children[i].getAttribute('data-code');
+        params.sku[key] = value;
+        break;
       }
-      params.sku[name] = type;
+    }
+
+    model.addEventListener('click', (e) => {
+      const value = e.target.getAttribute('data-code');
+      if (e.target.classList.contains('modelList_item')) {
+        $from(children).forEach((child) => {
+          if (child === e.target) {
+            child.classList.add('is-active');
+          } else {
+            child.classList.remove('is-active');
+          }
+        });
+      }
+      params.sku[key] = value;
     });
   });
 
@@ -64,22 +79,29 @@ export default function detail() {
   btn.addEventListener('click', () => {
     const arr = location.pathname.split('/');
     const productid = arr[arr.length - 1];
-    fetch(`http://${MAIN_HOST}/m/sys/srdz/Shopcart/add`, {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include',
-      body: JSON.stringify(Object.assign({
-        productid,
-        body: Object.keys(params.sku).reduce((prev, curr) => prev + params.sku[curr], '')
-      }, params))
-    })
-      .then(res => res.json())
-      .then(res => {
-        document.cookie = `cartID=${res.result};path=/;domain=dreamhiway.com`;
-        location.href = `http://${MAIN_HOST}/m/user#/srdz/order`;
-      });
+    xhr(`http://${MAIN_HOST}/m/sys/srdz/Shopcart/add`, Object.assign({
+      productid,
+      body: Object.keys(params.sku).reduce((prev, curr) => prev + params.sku[curr], '')
+    }, params), (res) => {
+      document.cookie = `cartID=${res.result};path=/;domain=dreamhiway.com`;
+      location.href = `http://${MAIN_HOST}/m/user#/srdz/order`;
+    }, true);
+    // fetch(`http://${MAIN_HOST}/m/sys/srdz/Shopcart/add`, {
+    //   method: 'POST',
+    //   mode: 'cors',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   credentials: 'include',
+    //   body: JSON.stringify(Object.assign({
+    //     productid,
+    //     body: Object.keys(params.sku).reduce((prev, curr) => prev + params.sku[curr], '')
+    //   }, params))
+    // })
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     document.cookie = `cartID=${res.result};path=/;domain=dreamhiway.com`;
+    //     location.href = `http://${MAIN_HOST}/m/user#/srdz/order`;
+    //   });
   });
 }

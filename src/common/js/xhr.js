@@ -1,4 +1,4 @@
-export default function xhr(url, params, success) {
+export default function xhr(url, params, success, cors) {
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
@@ -8,6 +8,8 @@ export default function xhr(url, params, success) {
       }
     }
   };
+
+  if (cors) xhr.withCredentials = true;
 
   xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
