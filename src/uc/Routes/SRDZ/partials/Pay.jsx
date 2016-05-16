@@ -10,7 +10,7 @@ export default function Pay(props) {
       credentials: 'include',
       body: JSON.stringify({
         payment,
-        number: this.props.number
+        number: props.number
       })
     });
   }
