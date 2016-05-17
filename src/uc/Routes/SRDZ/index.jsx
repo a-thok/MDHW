@@ -1,3 +1,4 @@
+import { $cookie } from 'func';
 import React, { Component } from 'react';
 import loadList from '../../mixins/loadList.js';
 import fetching from '../../mixins/fetching.js';
@@ -46,7 +47,7 @@ export default class Srdz extends Component {
         'Content-Type': 'application/json'
       },
       credentials: 'include',
-      body: JSON.stringify({ id: 61 /* $cookie().cartID */ })
+      body: JSON.stringify({ id: $cookie().cartID /* $cookie().cartID */ })
     })
       .then((res) => res.json())
       .then((res) => {
@@ -90,7 +91,7 @@ export default class Srdz extends Component {
         districtCode,
         receiveAddress,
         remark: '',
-        shoppingCartID: [1]  /* $cookie().cartID */,
+        shoppingCartID: [$cookie().cartID]  /* $cookie().cartID */,
         isinvoice: this.state.Order.invoice,
         invoicehead: '个人'
       })
