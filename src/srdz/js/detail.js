@@ -1,4 +1,4 @@
-import { $, $from } from '../../common/js/func.js';
+import { $, $from } from 'func';
 import xhr from 'xhr';
 // import slider from 'slider';
 import share from 'share';
@@ -84,7 +84,7 @@ export default function detail() {
       body: Object.keys(params.sku).reduce((prev, curr) => prev + params.sku[curr], '')
     }, params), (res) => {
       document.cookie = `cartID=${res.result};path=/;domain=dreamhiway.com`;
-      location.href = `http://${MAIN_HOST}/m/user#/srdz/order`;
+      location.href = `http://${MAIN_HOST}/m/user#/srdz/order`; // 未登录情况下，转跳可能有问题
     }, true);
     // fetch(`http://${MAIN_HOST}/m/sys/srdz/Shopcart/add`, {
     //   method: 'POST',

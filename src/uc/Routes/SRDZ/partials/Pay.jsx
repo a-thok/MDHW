@@ -2,17 +2,7 @@ import React from 'react';
 
 export default function Pay(props) {
   function handleClick(payment) {
-    fetch('/m/sys/srdz/order/alipay', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include',
-      body: JSON.stringify({
-        payment,
-        number: props.number
-      })
-    });
+    location.href = `http://www.dreamhiway.com/m/sys/srdz/order/alipay?payment=${payment}&number=${props.number}`;
   }
 
   return (
