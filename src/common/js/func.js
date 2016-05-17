@@ -18,7 +18,7 @@ export function $parent(el, selector) {
 
 export function $from(selector) {
   const els = (typeof selector === 'string') ? document.querySelectorAll(selector) : selector;
-  if (!els.length) return [els];
+  // if (!els.length) return [els];
   return Array.prototype.slice.call(els);
 }
 
