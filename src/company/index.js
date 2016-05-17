@@ -24,10 +24,28 @@ document.querySelector('.page').style.minHeight = `${window.innerHeight}px`;
 const pathname = window.location.pathname;
 import index from './js/index.js';
 import contact from './js/contact.js';
+import proDetail from './js/proDetail.js';
+import newsDetail from './js/newsDetail.js';
+import newsList from './js/newsList.js';
+import caseList from './js/caseList.js';
+import proList from './js/proList.js';
+import joblist from './js/joblist.js';
 
 if (pathname.indexOf('index') !== -1) {
   index();
 } else if (pathname.indexOf('contact') !== -1) {
   contact();
+} else if (pathname.indexOf('prodetail') !== -1) {
+  proDetail();
+} else if (pathname.indexOf('newsdetail') !== -1) {
+  newsDetail();
+} else if (pathname.indexOf('newsList') !== -1) {
+  newsList();
+} else if (pathname.indexOf('caseList') !== -1) {
+  caseList();
+} else if (pathname.indexOf('proList') !== -1) {
+  proList();
+} else if (pathname.indexOf('joblist') !== -1) {
+  joblist();
 }
 

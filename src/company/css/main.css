@@ -1,3 +1,11 @@
 @import "../../common/css/var.css";
+@import "./common.css";
 @import "./index.css";
 @import "./contact.css";
+@import "./caseList.css";
+@import "./newsList.css";
+@import "./newsDetail.css";
+@import "./proList.css";
+@import "./proDetail.css";
+@import "./joblist.css";
+@import "./about.css";

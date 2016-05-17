@@ -1,0 +1,25 @@
+.dtinfo {
+  padding: 0 .22rem;
+  font-size: .2rem;
+}
+.dtinfo_item-tag {
+  display: flex;
+  align-items: center;
+}
+.dttag_type {
+  margin-left: 1em;
+  padding: .2em;
+  border-radius: 5px;
+  border: 2px solid var(--borderColorLight);
+  color: var(--companyColor);
+}
+.dtItem-date {
+  color: var(--fontColorLight);
+}
+.dtinfo_item {
+  padding: .4em 0;
+}
+.fa.fa-tag {
+  color: var(--fontColorLight);
+  font-size: .4rem;
+}

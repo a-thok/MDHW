@@ -1,0 +1,25 @@
+.proList {
+  background-color: #fff;
+}
+.proList_item {
+  display: flex;
+  padding: .22rem;
+  align-items: center;
+  border-bottom: 1px solid var(--borderColorLight);
+}
+.proList_item_img {
+  display: flex;
+  width: 2rem;
+  height: 1.2rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+.proList_item_img img {
+  width: 100%;
+}
+.proList_item_title {
+  padding-left: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

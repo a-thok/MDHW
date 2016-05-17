@@ -1,29 +1,18 @@
-.contactTitle {
-  font-weight: normal;
-  padding: .2em .2rem;
-  font-size: .22rem;
-}
-.contactTitle::before {
-  display: inline-block;
-  content: "";
-  height: .8em;
-  margin-right: .6em;
-  border: 3px solid var(--companyColor);
+.contact {
+  background-color: #fff;
 }
 .contactText {
-  padding: .2em .2rem;
+  padding: .2rem;
   font-size: .22rem;
-  background: #fff;
 }
 .contactList {
-  padding: 0 .2rem;
-  font-size: .18rem;
-  color: var(--fontColorLight);
+  padding: 0 .2rem .2rem;
+  font-size: .22rem;
 }
 .contactList_item {
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  line-height: 2;
+  line-height: 3;
 }

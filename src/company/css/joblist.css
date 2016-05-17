@@ -1,0 +1,33 @@
+.gsList {
+  padding: .22rem 0;
+  background-color: #f5f5f5;
+}
+.gsList_item {
+  display: flex;
+  margin: 0 .2rem .22rem;
+  padding: 1.8em 1.3em;
+  border-radius: 10px;
+  box-shadow: 0 5px 3px #ccc;
+  background-color: #fff;
+  justify-content: space-between;
+}
+.gsList_item_info {
+  width: 100%;
+}
+.gsList_item_info span {
+  padding: 0 .4em;
+}
+.no-shrink {
+  width: auto;
+  text-align: right;
+  flex-shrink: 0;
+}
+.gsList_item_info_text {
+  padding-bottom: 1em;
+}
+.info-color {
+  color: var(--fontColorLight);
+}
+.salary-color {
+  color: #f55;
+}
