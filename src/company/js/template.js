@@ -1,11 +1,11 @@
 
 export function newsTemplate(data) {
   return data.result.data.reduce((pre, cur) => (
-    `${pre}<a class="hy_link" href="#">
+    `${pre}<a class="hy_link" href="http://${MAIN_HOST}/m/company/newsDetail/${cur.id}">
           <li class="newCList_item">
             <div class="newCList_item_text">
               <sapn class="arrow arrow-right arrow-color"></sapn>
-              <sapn class="has-padding">${cur.title}</sapn>
+              <sapn class="newCList_item_text_title">${cur.title}</sapn>
             </div>
             <span><i class="fa fa-angle-right"></i><span>
           </li>
@@ -15,7 +15,7 @@ export function newsTemplate(data) {
 
 export function caseTemplate(data) {
   return data.result.data.reduce((pre, cur) => {
-    const img = cur.img ? `http://${UPLOAD_HOST}/img/${cur.img}` : 'http://cdn.dreamhiway.com/images/default2.png';
+    const img = cur.img ? `http://${UPLOAD_HOST}/img/${cur.img}.jpg` : 'http://cdn.dreamhiway.com/images/default2.png';
     console.log(img);
     return (
     `${pre} <li class="caseList_item">
@@ -32,7 +32,7 @@ export function caseTemplate(data) {
 
 export function proTemplate(data) {
   return data.result.data.reduce((pre, cur) => {
-    const img = cur.img ? `http://${UPLOAD_HOST}/img/${cur.img}` : 'http://cdn.dreamhiway.com/images/default2.png';
+    const img = cur.img ? `http://${UPLOAD_HOST}/img/${cur.img}.jpg` : 'http://cdn.dreamhiway.com/images/default2.png';
     console.log(img);
     return (
     `${pre} <a class="hy_link" href="${cur.url}">

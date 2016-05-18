@@ -27,7 +27,7 @@ export default function template(data) {
       }
     }
     let detail = cur.prof.length > 65 ? cur.prof.substr(0, 65) : cur.prof;
-    let url = cur.log ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
+    let url = cur.logo ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
     return (
       `${pre}<li class="list_item">
           <div class="list_item_title">
