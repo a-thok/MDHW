@@ -13,6 +13,7 @@ export default class App extends Component {
       profileTemp: {},
       orderAddr: {}
     };
+    this.onToggleMenu = this.onToggleMenu.bind(this);
   }
 
   componentDidMount() {
@@ -110,7 +111,7 @@ export default class App extends Component {
       <div>
         <Header
           {...this.state.Header}
-          onToggleMenu={() => this.onToggleMenu()}
+          onToggleMenu={this.onToggleMenu}
           id={this.state.profile.id}
         />
         {React.cloneElement(Child, extra)}
