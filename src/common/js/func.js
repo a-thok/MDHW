@@ -4,21 +4,17 @@ export function $(selector, parent) {
   return els;
 }
 
-export function $parent(el, selector) {
-  if (!el.parentElement) return;
-  if (selector[0] === '.' && el.parentElement.classList.contains(selector.slice(1))) {
-    return el.parentElement;
-  } else if (selector[0] === '#' && el.parentElement.id === selector.slice(1)) {
-    return el.parentElement;
-  } else if (el.parentElement.nodeName.toLowerCase() === selector) {
-    return el.parentElement;
+export function $parent(el, query) {
+  const elems = Array.prototype.slice.call(document.querySelectorAll(query));
+  function recursion(el, elems) {
+    const result = elems.filter(elem => elem === el.parentElement);
+    return result[0] || $parent(el.parentElement, query);
   }
-  return $parent(el.parentElement, selector);
+  return recursion(el, elems);
 }
 
-export function $from(selector) {
-  const els = (typeof selector === 'string') ? document.querySelectorAll(selector) : selector;
-  // if (!els.length) return [els];
+export function $from(query) {
+  const els = (typeof query === 'string') ? document.querySelectorAll(query) : query;
   return Array.prototype.slice.call(els);
 }
 
