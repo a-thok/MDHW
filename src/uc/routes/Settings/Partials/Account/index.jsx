@@ -2,8 +2,8 @@ import React from 'react';
 import Navbar from '../../../../components/Navbar';
 
 export default function Account(props) {
-  let url = '/settings/account/edit?type=';
-  let profile = props.profile;
+  const url = '/settings/account/edit?type=';
+  const profile = props.profile;
   return (
     <div>
       {/* <Navbar to={`${url}logo`} text="头像" info={<img src={profile.logo} alt={profile.account} />} /> */}

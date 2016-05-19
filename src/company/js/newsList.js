@@ -4,9 +4,9 @@ import { $ } from 'func';
 
 export default function () {
   const load = $('.list_load');
-  let companyid = location.pathname.replace(/.*\//, '');
+  const companyid = location.pathname.replace(/.*\//, '');
   // let companyid = 48;
-  let config = {
+  const config = {
     load,
     template: newsTemplate,
     api: '/m/Com/Info/NewsList',

@@ -26,8 +26,8 @@ export default function search() {
     select.classList.remove('is-show');
   });
 
-  let load = document.querySelector('.list_load');
-  let config = {
+  const load = document.querySelector('.list_load');
+  const config = {
     load,
     template: zwTemplate,
     api: '/m/HR/Job/list',

@@ -103,8 +103,8 @@ export default class Cysj extends Component {
   onTbSubmit(e) {
     e.preventDefault();
     if (!this.state.data) return;
-    let cpid = $cookie().cpid;
-    let body = Object.assign({}, this.state.Bidding.data);
+    const cpid = $cookie().cpid;
+    const body = Object.assign({}, this.state.Bidding.data);
     body.address = `${body.area.province.name}-${body.area.city.name}`;
     delete body.area;
     fetch('/m/sys/diy/witkey/bids', {
@@ -180,7 +180,7 @@ export default class Cysj extends Component {
         newState.areaData = res.result;
         this.setState({ Bidding: newState }, () => {
           const newState = Object.assign({}, this.state.Bidding);
-          let cpid = $cookie().cpid;
+          const cpid = $cookie().cpid;
           fetch('/m/sys/diy/Witkey/Info', {
             method: 'POST',
             headers: {
@@ -234,7 +234,6 @@ export default class Cysj extends Component {
         extra = {
           onChange: this.onChange.bind(this),
           fetchAreaDataAndDetail: this.fetchAreaDataAndDetail.bind(this),
-          fetchDetail: this.fetchDetail.bind(this),
           onAreaChange: this.onAreaChange.bind(this),
           onTbSubmit: this.onTbSubmit.bind(this)
         };

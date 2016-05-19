@@ -5,6 +5,7 @@ export default function FormGroup(props) {
     props.onChange(e, props.name, props.list);
   }
   let formNode;
+  let options;
   switch (props.type) {
     case 'input':
       formNode = (<input
@@ -26,7 +27,7 @@ export default function FormGroup(props) {
       ></textarea>);
       break;
     case 'select':
-      const options = props.options.map((item, index) => <option key={index} value={item.value} >{item.text}</option>);
+      options = props.options.map((item, index) => <option key={index} value={item.value} >{item.text}</option>);
       formNode = (
         <select
           name={props.name}

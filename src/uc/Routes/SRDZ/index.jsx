@@ -150,7 +150,7 @@ export default class Srdz extends Component {
       },
       type: states === -1 ? 0 : 1,
       reset: states !== undefined,
-      cb: function (items) {
+      cb(items) {
         items.forEach((item) => { item.showDetail = false; });
       }
     });

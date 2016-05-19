@@ -5,7 +5,7 @@ import doSearch from 'doSearch';
 export default function list() {
   function template(data) {
     return data.result.data.reduce((pre, cur) => {
-      let url = `http://${CDN_HOST}/mstatic/img/lqt.png`;
+      const url = `http://${CDN_HOST}/mstatic/img/lqt.png`;
       return (
         `${pre}<li class="list_item list_item-border">
           <a class="linkWrapper" href="http://${ZCKJ_HOST}/m/home/detail/${cur.id}">
@@ -21,8 +21,8 @@ export default function list() {
       );
     }, '');
   }
-  let load = document.querySelector('.list_load');
-  let config = {
+  const load = document.querySelector('.list_load');
+  const config = {
     template,
     load,
     api: '/m/zckj/makerspace/list',

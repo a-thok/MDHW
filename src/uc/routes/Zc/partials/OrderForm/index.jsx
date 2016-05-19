@@ -6,7 +6,7 @@ import Counter from '../../../../components/Counter';
 
 export default class OrderFomr extends Component {
   getInitialState() {
-    let state = {
+    const state = {
       name: '深圳大律师',
       person: '电子设备有限公司',
       text: '支持一元，获得免费专业解答',
@@ -23,13 +23,13 @@ export default class OrderFomr extends Component {
   }
 
   onAddNumber() {
-    let newState = Object.assign({}, this.state);
+    const newState = Object.assign({}, this.state);
     newState.repayNum += 1;
     this.setState(newState);
   }
 
   onReduceNumber() {
-    let newState = Object.assign({}, this.state);
+    const newState = Object.assign({}, this.state);
     if (newState.repayNum < 1) return;
     newState.repayNum -= 1;
     this.setState(newState);

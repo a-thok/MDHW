@@ -5,8 +5,8 @@ import overflow from 'overflow';
 import { $ } from 'func';
 
 export default function company() {
-  let load = document.querySelector('.list_load');
-  let config = {
+  const load = document.querySelector('.list_load');
+  const config = {
     load,
     template: gsTemplate,
     api: '/m/HR/Company/list',

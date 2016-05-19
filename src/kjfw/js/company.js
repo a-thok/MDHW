@@ -4,8 +4,8 @@ import render from 'render';
 import doSearch from 'doSearch';
 
 export default function company() {
-  let load = document.querySelector('.list_load');
-  let config = {
+  const load = document.querySelector('.list_load');
+  const config = {
     template,
     load,
     api: '/m/KJ/company/list',

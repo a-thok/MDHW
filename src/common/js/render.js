@@ -10,7 +10,7 @@ export default function render({ api, params, template, container, immediate, lo
     pageIndex: 1,
     pageSize: 10
   };
-  let loadRemain = load.clientHeight;
+  const loadRemain = load.clientHeight;
   // 总页数
   let totalPages;
   let fetching = false;

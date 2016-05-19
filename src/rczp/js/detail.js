@@ -14,7 +14,7 @@ export default function detail() {
       location.href = `http://${MAIN_HOST}/m/main/denglu?redirectURL=${encodeURIComponent(location.href)}`;
     } else {
       // let JobID = location.pathname.replace(/.*\//, ''); 上传时启用
-      let ResumeID = parseInt(e.currentTarget.getAttribute('data-resume'), 10);
+      const ResumeID = parseInt(e.currentTarget.getAttribute('data-resume'), 10);
       // let userID = 4;
       // fetch('/m/hr/Resume/Delivery', {
       //   method: 'POST',
@@ -36,7 +36,7 @@ export default function detail() {
       //       alert('投递失败');
       //     }
       //   });
-      let params = {
+      const params = {
         ResumeID,
         JobID: 111
       };

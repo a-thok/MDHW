@@ -32,7 +32,7 @@ export default function comment() {
         </li>`;
     }, '');
   }
-  let load = document.querySelector('.list_load');
+  const load = document.querySelector('.list_load');
   render({
     template,
     load,
@@ -82,7 +82,7 @@ export default function comment() {
       replyInput.classList.add('is-focus');
 
       // 获取用户名存放标签的宽度
-      let width = replyName.offsetWidth;
+      const width = replyName.offsetWidth;
       replyInput.style.paddingLeft = `${14 + width}px`;
       replyInput.value = '';
     });
@@ -99,8 +99,8 @@ export default function comment() {
       const date = dt.toISOString().slice(0, -5).replace(/T/, ' ');
 
       // 获取浏览框中的项目id
-      let proPath = window.location.pathname;
-      let array = proPath.split('/');
+      const proPath = window.location.pathname;
+      const array = proPath.split('/');
       if (isRootComment) {
         // 插入发布的新评论
         const html = template({ result: { data: [{ comment, date, user, child: [] }] } });
@@ -127,7 +127,7 @@ export default function comment() {
         document.body.scrollTop = replyComment.querySelector('.dialog_sublist').lastElementChild.offsetTop;
       }
 
-      let params = {
+      const params = {
         fpid: array[4].replace(/[?#].*/, ''),
         fid: isRootComment ? 0 : replyId,
         comment,

@@ -4,8 +4,8 @@ import { showFilter, selectFilter } from 'filter';
 import template from './template.js';
 
 export function list() {
-  let load = document.querySelector('.list_load');
-  let config = {
+  const load = document.querySelector('.list_load');
+  const config = {
     template,
     load,
     api: '/m/zb/project/List',

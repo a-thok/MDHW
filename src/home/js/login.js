@@ -18,9 +18,9 @@ export default function login() {
 
     xhr('/m/login/dhw', data, (res) => {
       if (res.success) {
-        let locationSrch = location.search;
-        let urlEndPoint = locationSrch.indexOf('&');
-        let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
+        const locationSrch = location.search;
+        const urlEndPoint = locationSrch.indexOf('&');
+        const url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
         location.href = url ? decodeURIComponent(url) : `http://${MAIN_HOST}/m`;
       } else {
         const cl = $('.acc_group-verify').classList;

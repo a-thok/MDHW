@@ -28,7 +28,7 @@ export default function favorite(btn, prop, addApi, delApi) {
           if (res.success) {
             const span = e.target.querySelector('span');
             if (span) {
-              let count = +span.textContent;
+              const count = +span.textContent;
               span.textContent = unFav ? count + 1 : count - 1;
             }
             starCl.toggle('fa-star-o');

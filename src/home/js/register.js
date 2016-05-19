@@ -19,9 +19,9 @@ export default function register() {
 
     xhr('/m/reg/phone', data, (res) => {
       if (res.success) {
-        let locationSrch = location.search;
-        let urlEndPoint = locationSrch.indexOf('&');
-        let url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
+        const locationSrch = location.search;
+        const urlEndPoint = locationSrch.indexOf('&');
+        const url = locationSrch.slice(13, locationSrch.length - urlEndPoint);
         location.herf = `http://${MAIN_HOST}/m/main/denglu?redirectURL=${url}`;
       } else {
         if (res.msg) {

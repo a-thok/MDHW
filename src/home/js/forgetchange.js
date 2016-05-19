@@ -15,8 +15,8 @@ export default function forgetchange() {
 // 显示验证手机号
   phone.textContent = localStorage.getItem('phone');
   username.textContent = localStorage.getItem('name');
-  let keyword = localStorage.getItem('name');
-  let type = localStorage.getItem('type');
+  const keyword = localStorage.getItem('name');
+  const type = localStorage.getItem('type');
   data = Object.assign(data, { keyword }, { type });
 // 验证重新发送
   let num = 100;

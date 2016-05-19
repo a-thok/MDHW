@@ -4,8 +4,8 @@ import template from './template.js';
 import render from 'render';
 
 export default function list() {
-  let load = document.querySelector('.list_load');
-  let config = {
+  const load = document.querySelector('.list_load');
+  const config = {
     template,
     load,
     api: '/m/DIY/DiyList',

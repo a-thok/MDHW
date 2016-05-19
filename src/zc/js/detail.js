@@ -36,7 +36,7 @@ export default function detail() {
           }
           const span = target.querySelector('span');
 
-          let count = +span.textContent;
+          const count = +span.textContent;
           span.textContent = count + 1;
           // starCl.toggle('fa-star-o');
         } else {

@@ -2,7 +2,7 @@ export default function goToSearch({ input, partialUrl, btn }) {
   function search() {
     const keyword = input.value.trim();
     // if (!keyword) return;
-    let url = `${partialUrl}${keyword}`;
+    const url = `${partialUrl}${keyword}`;
     location.href = url;
   }
   input.addEventListener('keyup', e => {

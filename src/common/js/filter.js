@@ -54,7 +54,7 @@ export function selectFilter(cb) {
           type = e.target.getAttribute('data-code');
           text = e.target.textContent.trim();
         } else {
-          let target = $parent(e.target, '.filter_content_list_item');
+          const target = $parent(e.target, '.filter_content_list_item');
           target.classList.add('is-active');
           type = target.getAttribute('data-code');
           text = target.textContent.trim();

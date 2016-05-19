@@ -44,8 +44,8 @@ export default function detail() {
 
   // 选择数量
   const labels = $from('.number_choose label');
-  let amount = $('.number_choose input');
-  let stock = +($('.stock').textContent);
+  const amount = $('.number_choose input');
+  const stock = +($('.stock').textContent);
   labels.forEach((el, i) => {
     el.addEventListener('click', () => {
       if (i === 0) {

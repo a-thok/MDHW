@@ -14,7 +14,7 @@ export default function loadList({ url, list, cb, params, type, reset }) {
 
   if (newState.fetching || newState.finished) return;
 
-  let body = {
+  const body = {
     pageIndex: ++newState.index,
     pageSize: 10
   };

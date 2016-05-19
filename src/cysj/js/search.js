@@ -5,8 +5,8 @@ import doSearch from 'doSearch';
 import render from 'render';
 
 export default function search() {
-  let load = document.querySelector('.list_load');
-  let config = {
+  const load = document.querySelector('.list_load');
+  const config = {
     template,
     load,
     api: '/m/diy/project/List',
@@ -37,7 +37,7 @@ export default function search() {
 
   const s = location.search;
   if (/(^\?|&)kw\=/.test(s)) {
-    let c = Object.assign({}, config);
+    const c = Object.assign({}, config);
     const value = s.replace(/(?:^\?|&)kw\=([^&]*)(&.*|$)/, (str, $1) => $1);
     c.params.title = value;
     c.immediate = false;

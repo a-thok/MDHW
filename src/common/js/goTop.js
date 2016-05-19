@@ -2,7 +2,7 @@ import { $ } from 'func';
 
 // 返回顶部
 export default function goTop() {
-  let goTopBtn = $('.scrollTop');
+  const goTopBtn = $('.scrollTop');
   document.addEventListener('scroll', () => {
     const pageScroll = document.body.scrollTop;
     if (pageScroll > 50) {
@@ -16,8 +16,8 @@ export default function goTop() {
       scrollTime();
     }
     goTopBtn.addEventListener('click', () => {
-      let distance = document.body.scrollTop;
-      let speed = distance / 1000;
+      const distance = document.body.scrollTop;
+      const speed = distance / 1000;
       goTopBtn.timer = setTimeout(() => scrollTime(speed), 100);
     });
   });

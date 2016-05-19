@@ -5,8 +5,8 @@ import render from 'render';
 import { fixFilter, showFilter, selectFilter } from 'filter';
 
 export default function search() {
-  let load = document.querySelector('.list_load');
-  let config = {
+  const load = document.querySelector('.list_load');
+  const config = {
     template,
     load,
     api: '/m/zc/project/List',
@@ -36,7 +36,7 @@ export default function search() {
 
   const s = location.search;
   if (/(^\?|&)kw\=/.test(s)) {
-    let c = Object.assign({}, config);
+    const c = Object.assign({}, config);
     const value = s.replace(/(?:^\?|&)kw\=([^&]*)(&.*|$)/, (str, $1) => $1);
     c.params.keyword = value;
     c.immediate = false;
