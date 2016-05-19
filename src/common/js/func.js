@@ -1,5 +1,5 @@
-export function $(selector, parent) {
-  const els = (parent || document).querySelectorAll(selector);
+export function $(query, parent) {
+  const els = (parent || document).querySelectorAll(query);
   if (els.length === 1) return els[0];
   return els;
 }
