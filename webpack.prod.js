@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const config = require('./webpack.config.js');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const postcssImporter = require('postcss-import');
+const postcssCssnext = require('postcss-cssnext');
 
 const PRODUCTION = process.env.NODE_ENV === 'production';  // 判断打包到内网还是外网
 
@@ -28,10 +30,10 @@ config.plugins = (config.plugins || []).concat([
 
 config.postcss = function (webpack) {
   return [
-    require('postcss-import')({
+    postcssImporter({
       addDependencyTo: webpack
     }),
-    require('postcss-cssnext')()
+    postcssCssnext()
   ];
 };
 
