@@ -17,8 +17,12 @@ export default function Profile(props) {
         </figcaption>
       </figure>
       <p className="profile_para profile_para-center">
-        <span className="profile_tel">{`手机: ${props.phone || '未绑定'}`}</span>
-        <span>{`邮箱: ${props.email || '未绑定'}`}</span>
+        <span className="profile_tel">{`绑定手机：${props.phone || '未绑定'}`}</span>
+        <span>{`绑定邮箱：${props.email || '未绑定'}`}</span>
+      </p>
+      <p className="profile_para profile_para-center">
+        <span className="profile_tel">{`个人手机：${props.p_phone || '未绑定'}`}</span>
+        <span>{`个人邮箱：${props.p_email || '未绑定'}`}</span>
       </p>
       <p className="profile_para">{props.p_signature}</p>
       <Link className="profile_link" to="/settings/account">
