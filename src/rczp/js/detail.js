@@ -13,7 +13,7 @@ export default function detail() {
     if (!$cookie().accountType) {
       location.href = `http://${MAIN_HOST}/m/main/denglu?redirectURL=${encodeURIComponent(location.href)}`;
     } else {
-      // let JobID = location.pathname.replace(/.*\//, ''); 上传时启用
+      const JobID = location.pathname.replace(/.*\//, '');
       const ResumeID = parseInt(e.currentTarget.getAttribute('data-resume'), 10);
       // let userID = 4;
       // fetch('/m/hr/Resume/Delivery', {
@@ -38,7 +38,7 @@ export default function detail() {
       //   });
       const params = {
         ResumeID,
-        JobID: 111
+        JobID
       };
       xhr('/m/hr/Resume/Delivery', params, (data) => {
         if (data.success) {
@@ -46,7 +46,6 @@ export default function detail() {
           deliverBtn.textContent = '已投递';
         } else {
           alert('投递失败,请稍后再试');
-          return;
         }
       });
     }
