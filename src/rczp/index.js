@@ -17,6 +17,7 @@ const pathname = window.location.pathname;
 import company from './js/company.js';
 import search from './js/search.js';
 import detail from './js/detail.js';
+import index from './js/index.js';
 
 if (pathname.indexOf('company') !== -1) {
   company();
@@ -24,6 +25,6 @@ if (pathname.indexOf('company') !== -1) {
   search();
 } else if (pathname.indexOf('detail') !== -1) {
   detail();
+} else if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
+  index();
 }
-// else if (pathname.indexOf('index') !== -1 || pathname.split('/').length < 4) {
-// }
