@@ -1,9 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 const postcssImporter = require('postcss-import');
-const stylelint = require('stylelint');
+// const stylelint = require('stylelint');
 const postcssCssnext = require('postcss-cssnext');
-const postcssReporter = require('postcss-reporter');
+// const postcssReporter = require('postcss-reporter');
 
 const PRODUCTION = process.env.NODE_ENV === 'production';  // 判断打包到内网还是外网
 console.log(process.env.NODE_ENV);
@@ -24,7 +24,8 @@ const config = {
     'zxsj': [path.join(__dirname, 'src/zxsj')],
     'gsss': [path.join(__dirname, 'src/gsss')],
     'company': [path.join(__dirname, 'src/company')],
-    'person': [path.join(__dirname, 'src/person')]
+    'person': [path.join(__dirname, 'src/person')],
+    'myj': [path.join(__dirname, 'src/myj')]
   },
   output: {
     path: path.join(__dirname, '/dist/'),
@@ -107,12 +108,12 @@ const config = {
       postcssImporter({
         addDependencyTo: webpack
       }),
-      stylelint(),
-      postcssCssnext(),
-      postcssReporter({
-        clearMessages: true
-        // throwError: true
-      })
+      // stylelint(),
+      postcssCssnext()
+      // postcssReporter({
+      //   clearMessages: true
+      //   // throwError: true
+      // })
     ];
   }
 };
