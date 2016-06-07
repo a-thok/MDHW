@@ -13,6 +13,7 @@ import './img/004.png';
 import './img/005.png';
 import './img/006.png';
 import './img/007.png';
+import './img/myjlogo.png';
 
 
 // 解决click事件的移动端延迟

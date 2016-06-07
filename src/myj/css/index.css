@@ -1,3 +1,6 @@
+.header-logo {
+  background-image: url("../img/myjlogo.png");
+}
 .gnbox {
   margin: 10px 0;
   background: #fff;
