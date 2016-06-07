@@ -1,6 +1,6 @@
 import { $, $from } from 'func';
 
-export default function detail() {
+export default function list() {
   const ul = $('.userInput');
   const items = $('.intro_list_item');
   $from(items).forEach((el, i) => {

@@ -26,12 +26,14 @@ showMenu();
 // page最小高度为窗口高度
 document.querySelector('.page').style.minHeight = `${window.innerHeight}px`;
 
-import index from './js/index';
-import list from './js/list';
+// 各页面JS
+const pathname = window.location.pathname;
+const pathArr = pathname.split('/');
+import index from './js/index.js';
+import list from './js/list.js';
 
-const path = window.location.pathname;
-if (path.includes('index')) {
-  index();
-} else if (path.includes('list')) {
+if (pathname.indexOf('list') !== -1) {
   list();
+} else if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
+  index();
 }
