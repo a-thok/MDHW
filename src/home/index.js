@@ -25,7 +25,9 @@ const pathArr = pathname.split('/');
 import login from './js/login.js';
 import register from './js/register.js';
 import qqregister from './js/qqregister.js';
+import thirdregister from './js/thirdregister.js';
 import qqbind from './js/qqbind.js';
+import thirdbind from './js/thirdbind.js';
 import forgetpwd from './js/forgetpwd.js';
 import forgetchange from './js/forgetchange.js';
 import { index } from './js/index.js';
@@ -36,8 +38,12 @@ if (pathname.indexOf('/denglu') !== -1) {
   register();
 } else if (pathname.indexOf('qqregister') !== -1) {
   qqregister();
+} else if (pathname.indexOf('thirdregister') !== -1) {
+  thirdregister();
 } else if (pathname.indexOf('qqbind') !== -1) {
   qqbind();
+} else if (pathname.indexOf('thirdbind') !== -1) {
+  thirdbind();
 } else if (pathname.indexOf('forgetpwd') !== -1) {
   forgetpwd();
 } else if (pathname.indexOf('forgetchange') !== -1) {
