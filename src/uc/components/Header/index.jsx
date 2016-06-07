@@ -18,7 +18,7 @@ export default function Header(props) {
           <ul className="header_menu_list">
             <li className="header_menu_list_item"><a className="header_link" href={`http://${MAIN_HOST}/m`}>梦高速首页</a></li>
             <li className="header_menu_list_item"><a className="header_link" href={`http://${MAIN_HOST}/m/person/index/${props.id}`}>个人彩页</a></li>
-            <li className="header_menu_list_item"><a className="header_link" href="/main/Logout">退出</a></li>
+            <li className="header_menu_list_item"><a className="header_link" href="/m/main/Logout">退出</a></li>
           </ul>
         </div>
       </div>
