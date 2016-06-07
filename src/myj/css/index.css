@@ -1,3 +1,34 @@
-.grid {
-  margin: 0 .6rem;
+.gnbox {
+  margin: 10px 0;
+  background: #fff;
+  /*& .grid {
+    margin: 0 .1rem;
+  }*/
+}
+.grid_item_icon {
+  margin: 0 auto;
+}
+.advertise {
+  display: flex;
+}
+.advertise_img {
+  width: 33.6%;
+  display: block;
+  text-decoration: none;
+  & img {
+    display: block;
+    width: 100%;
+  }
+}
+.advertise_tj {
+  width: 66.4%;
+}
+.advertise_img-big {
+  width: 100%;
+}
+.advertise_img-small {
+  width: 50%;
+}
+.advertise_tj_fw {
+  display: flex;
 }

@@ -1,0 +1,20 @@
+.myjFind_img {
+  width: 100%;
+  display: block;
+  margin-top: .13rem;
+  text-decoration: none;
+  & img {
+    display: block;
+    width: 100%;
+  }
+}
+.myj_margin {
+  margin: 0 .1rem;
+}
+.myjFind_flex {
+  display: flex;
+  justify-content: space-between;
+}
+.myjFind_img_div {
+  width: 49%;
+}

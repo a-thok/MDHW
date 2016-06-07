@@ -1,0 +1,96 @@
+/*介绍*/
+.intro_list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .58rem;
+  font-size: .26rem;
+  background: #fff;
+}
+.intro_list_item {
+  position: relative;
+  width: 40%;
+  padding: .6em 0;
+  text-align: center;
+  cursor: pointer;
+}
+.intro_list_item.is-active {
+  color: var(--myjColor);
+  border-bottom: 3px solid var(--myjColor);
+}
+.intro_list_item:first-child {
+  display: flex;
+}
+.intro_list_span {
+  width: 100%;
+}
+/*商品列表*/
+.userInput {
+  padding: 0;
+}
+.userInput_item {
+  display: none;
+
+}
+.userInput_item.is-show {
+  display: block;
+}
+.userInput_itemList {
+  overflow: hidden;
+}
+.userInput_itemList li:nth-child(2n) {
+  margin-left: 1.2%;
+}
+.userInput_itemList_item {
+  float: left;
+  width: 49.4%;
+  margin-top: 1.2%;
+  background: #fff;
+  font-size: .22rem;
+  & a {
+    display: block;
+    text-decoration: none;
+    & img {
+      width: 100%;
+    }
+    & p {
+      padding: .5em;
+      margin: 0;
+    }
+    & div {
+      font-size: .18rem;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1em;
+      margin-bottom: 1em;
+    }
+    & span:first-child {
+      font-size: .26rem;
+      color: red;
+    }
+    & span:last-child {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
+/*商家列表*/
+.hostlist {
+  margin-top: .5em;
+}
+.hostlist_item {
+  border-bottom: 2px solid var(--borderColorLight);
+   & a {
+    display: block;
+    text-decoration: none;
+    display: flex;
+    & h2 {
+      font-weight: normal;
+    }
+    & p {
+      margin: 0;
+    }
+    & p:last-child {
+      color: var(--fontColorLight);
+    }
+  }
+}
