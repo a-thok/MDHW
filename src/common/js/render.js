@@ -4,7 +4,7 @@
  * @param {Object} config - render configuration
  */
 export default function render({ api, params, template, container, immediate, load }) {
-  document.removeEventListener('scroll', container.listener);
+  document.removeEventListener('scroll', window.listener);
   // 设置fetch请求参数
   const body = params || {
     pageIndex: 1,
@@ -20,7 +20,7 @@ export default function render({ api, params, template, container, immediate, lo
     load.children[1].textContent = '没有了哦';
   }
 
-  container.listener = () => {
+  window.listener = () => {
     const windowHeight = window.innerHeight;
     const pageBottom = document.body.getBoundingClientRect().bottom;
     if (pageBottom - windowHeight > loadRemain || fetching) return;
@@ -64,10 +64,10 @@ export default function render({ api, params, template, container, immediate, lo
       });
   };
 
-  document.addEventListener('scroll', container.listener);
+  document.addEventListener('scroll', window.listener);
 
   if (immediate) {
     container.innerHTML = '';
-    container.listener();
+    window.listener();
   }
 }
