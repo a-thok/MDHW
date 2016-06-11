@@ -1,12 +1,12 @@
 export default function sjTemplate(data) {
   return data.result.data.reduce((pre, cur) => {
-    const url = cur.logo ? `http://${UPLOAD_HOST}/img/${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
+    const url = cur.logo ? `${cur.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
     // 商家认证
     const auth = `<p class="iconList_item ${cur.auth === false ? 'noAuth' : 'Auth'}">商家认证：</p>`;
     return (`${pre}<li class="hostlist_item">
             <a href="http://${HR_HOST}//m/home/detail/${cur.id}">
               <div class="hostlist_item_img">
-                <img src="${url}" alt="${cur.title}">
+                <img src="${url}" alt="${cur.name}">
               </div>
               <div class="hostlist_content">
                 <h2>${cur.name}</h2>

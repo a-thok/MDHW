@@ -44,23 +44,34 @@
   width: 49.4%;
   margin-top: 1.2%;
   background: #fff;
-  font-size: .22rem;
+  font-size: .18rem;
   & a {
     display: block;
     text-decoration: none;
+    & .userInput_itemList_item_img {
+      width: 100%;
+      height: 3.71rem;
+      display: flex;
+      background: #fff;
+      overflow: hidden;
+    }
     & img {
       width: 100%;
+      margin: 0 auto;
     }
     & p {
       padding: .5em;
+      height: .72rem;
       margin: 0;
+      overflow: hidden;
     }
-    & div {
-      font-size: .18rem;
+    & .userInput_itemList_item_text {
+      /*font-size: .18rem;*/
       display: flex;
       justify-content: space-between;
       padding: 0 1em;
       margin-bottom: 1em;
+      color: var(--fontColorLight);
     }
     & span:first-child {
       font-size: .26rem;
