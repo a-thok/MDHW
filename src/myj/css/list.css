@@ -57,7 +57,7 @@
     }
     & img {
       width: 100%;
-      margin: 0 auto;
+      align-self: center;
     }
     & p {
       padding: .5em;
