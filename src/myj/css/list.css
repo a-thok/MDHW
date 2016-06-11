@@ -93,3 +93,16 @@
     }
   }
 }
+.iconList_item {
+  width: 1.1rem;
+}
+.Auth {
+  background: url("../img/auth_1.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.noAuth {
+  background: url("../img/auth_2.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
