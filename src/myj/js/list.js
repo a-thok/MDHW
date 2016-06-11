@@ -8,13 +8,16 @@ export default function list() {
   const items = $('.intro_list_item');
   const load = document.querySelector('.list_load');
   // 商品列表
+  const arr = window.location.pathname.match(/\/\d+-\d+/)[0].slice(1).split('-');
   const spConfig = {
     load,
     template: spTemplate,
     api: '/m/o2o/Product/List',
     params: {
       pageIndex: 1,
-      pageSize: 10
+      pageSize: 10,
+      city: arr[0],
+      type: arr[1]
     },
     replace: true,
     container: document.querySelector('.userInput_itemList')
@@ -27,7 +30,9 @@ export default function list() {
     api: '/m/o2o/Store/List',
     params: {
       pageIndex: 1,
-      pageSize: 10
+      pageSize: 10,
+      city: arr[0],
+      type: arr[1]
     },
     replace: true,
     container: document.querySelector('.hostlist')
