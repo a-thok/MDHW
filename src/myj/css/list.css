@@ -23,23 +23,29 @@
   width: 100%;
 }
 /*商品列表*/
-.userInput {
+.result {
   padding: 0;
 }
-.userInput_item {
+.result_item {
   display: none;
-
 }
-.userInput_item.is-show {
+.result_item.is-show {
   display: block;
 }
-.userInput_itemList {
+.myj_list {
+  display: none;
   overflow: hidden;
 }
-.userInput_itemList li:nth-child(2n) {
+.result_item .myj_list {
+  display: block;
+}
+.myj_list.is-active {
+  display: block;
+}
+.myj_list li:nth-child(2n) {
   margin-left: 1.2%;
 }
-.userInput_itemList_item {
+.myj_list_item {
   float: left;
   width: 49.4%;
   margin-top: 1.2%;
@@ -48,7 +54,7 @@
   & a {
     display: block;
     text-decoration: none;
-    & .userInput_itemList_item_img {
+    & .myj_list_item_img {
       width: 100%;
       height: 3.71rem;
       display: flex;
@@ -65,7 +71,7 @@
       margin: 0;
       overflow: hidden;
     }
-    & .userInput_itemList_item_text {
+    & .myj_list_item_text {
       /*font-size: .18rem;*/
       display: flex;
       justify-content: space-between;

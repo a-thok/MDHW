@@ -6,16 +6,16 @@
 .srch_input {
   background: #ebeced;
 }
-.gnboxTwo {
+.gnbox-sub {
   margin: 0;
 }
-.two {
+.gnbox-sub .grid {
   display: inherit;
   overflow: hidden;
   padding-left: .5em;
   padding-right: .5em;
 }
-.two .grid_item {
+.gnbox-sub .grid_item {
   width: 25%;
   float: left;
 }

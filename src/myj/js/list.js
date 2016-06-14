@@ -7,7 +7,7 @@ import { showFilter, selectFilter, generateAreaFilter } from 'filter';
 
 export default function list() {
   typeFilter();
-  const ul = $('.userInput');
+  const ul = $('.result');
   const items = $('.intro_list_item');
   const load = document.querySelector('.list_load');
   // 商品列表
@@ -23,7 +23,7 @@ export default function list() {
       // type: arr[1]
     },
     replace: true,
-    container: document.querySelector('.userInput_itemList')
+    container: document.querySelector('.myj_list')
   };
   render(spConfig);
   // 商家列表
@@ -40,25 +40,28 @@ export default function list() {
     replace: true,
     container: document.querySelector('.hostlist')
   };
-  let config = $('.is-active').textContent === '商品列表' ? spConfig : sjConfig;
+  let config = spConfig;
+  const filterItems = $from('.filter_item');
   $from(items).forEach((el, i) => {
     el.addEventListener('click', (e) => {
+      filterItems.forEach(filterItem => filterItem.classList.remove('is-show'));
       const another = i === 0 ? 1 : 0;
-      const cb = i === 0 ? spConfig : sjConfig;
+      config = i === 0 ? spConfig : sjConfig;
       // 清除另一项
       items[another].classList.remove('is-active');
       ul.children[another].classList.remove('is-show');
       // 选中当前项
       e.currentTarget.classList.add('is-active');
       ul.children[i].classList.add('is-show');
-      config = $('.is-active').textContent === '商品列表' ? spConfig : sjConfig;
-      render(cb);
+      config.immediate = false;
+      render(config);
     });
   });
   // 城市过滤栏
   generateAreaFilter(true);
   showFilter();
   selectFilter((filter, type) => {
+    console.log(config);
     config.params.pageIndex = 0;
     config.params[filter] = type;
     config.immediate = true;
