@@ -1,0 +1,46 @@
+/*头部*/
+.header_srch {
+  width: 70%;
+}
+.srch_label,
+.srch_input {
+  background: #ebeced;
+}
+.gnboxTwo {
+  margin: 0;
+}
+.two {
+  display: inherit;
+  overflow: hidden;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+.two .grid_item {
+  width: 25%;
+  float: left;
+}
+.sliderBoxTwo {
+  border: 1px solid var(--borderColorLight);
+}
+.filterTwo {
+  background: linear-gradient(to bottom, #fff 60%, #f6f6f6);
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+.filter_title-line::after {
+  border: 0;
+}
+.filter_content_list_item.is-active {
+  color: var(--myjColor);
+}
+.filter_content_list-leibie,
+.leibie_item {
+  border-color: #c3c3c3;
+  background-color: #e5e5e5;
+}
+.choose_color .grid_item_icon {
+  background: var(--myjColor);
+}
+.choose_color .grid_item_text {
+  color: var(--myjColor);
+}

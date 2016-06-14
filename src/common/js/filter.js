@@ -36,6 +36,7 @@ export function showFilter() {
 export function selectFilter(cb) {
   $from('.filter_content_list').forEach(el => {
     if (el.classList.contains('filter_content_list-province')) return;
+    if (el.classList.contains('filter_content_list-detail')) return;
 
     el.addEventListener('click', e => {
       const cl = e.target.classList;
@@ -49,15 +50,18 @@ export function selectFilter(cb) {
 
         let type; // 过滤值
         let text; // 填充文本
+
+        const dataText = e.target.getAttribute('data-text');
+
         if (cl.contains('filter_content_list_item')) {
           cl.add('is-active');
-          type = e.target.getAttribute('data-code');
-          text = e.target.textContent.trim();
+          type = e.target.getAttribute('data-code') || e.target.getAttribute('data-city');
+          text = dataText || e.target.textContent.trim();
         } else {
           const target = $parent(e.target, '.filter_content_list_item');
           target.classList.add('is-active');
-          type = target.getAttribute('data-code');
-          text = target.textContent.trim();
+          type = target.getAttribute('data-code') || e.target.getAttribute('data-city');
+          text = dataText || e.target.textContent.trim();
         }
 
         wrapper.querySelector('.filter_active').textContent = text;
@@ -102,7 +106,7 @@ export function moreFilter(onset, reset) {
 }
 
 // 生成省市过滤列表
-export function generateAreaFilter() {
+export function generateAreaFilter(myj) {
   fetch(`http://${MAIN_HOST}/Dict/city`)
     .then(res => res.json())
     .then(data => {
@@ -110,12 +114,19 @@ export function generateAreaFilter() {
       const provinceContainer = $('.filter_content_list-province');
       const cityContainer = $('.filter_content_list-city');
 
+      // 梦云街
+      const dataProp = myj ? 'data-city' : 'data-code';
+      function getCode(code) {
+        return myj ? code.slice(0, 4) : code;
+      }
+
+
       // 填充省份列表
       provinceContainer.innerHTML = areaData.reduce((previousValue, currentValue) => {
         if (currentValue.type === 'province') {
           return (
             `${previousValue}
-            <li class="filter_content_list_item province_item" data-code="${currentValue.code}">
+            <li class="filter_content_list_item province_item" ${dataProp}="${currentValue.code}">
               ${currentValue.name}
             </li>`
           );
@@ -125,20 +136,24 @@ export function generateAreaFilter() {
 
       // 选择省份
       provinceContainer.addEventListener('click', e => {
+        const text = e.target.textContent.trim();
+        const code = e.target.getAttribute('data-city');
+        const initial = myj ? `<li class="filter_content_list_item city_item" data-city="${getCode(code)}" data-text="${text}">全部</li>` : '';
+
         if (e.target.nodeName === 'LI') {
-          const code = e.target.getAttribute('data-code');
+          const code = e.target.getAttribute(dataProp);
           // 填充城市列表
           cityContainer.innerHTML = areaData.reduce((previousValue, currentValue) => {
             if (currentValue.type === 'city' && currentValue.code.slice(0, 2) === code.slice(0, 2)) {
               return (
                 `${previousValue}
-                <li class="filter_content_list_item city_item" data-code="${currentValue.code}">
+                <li class="filter_content_list_item city_item" ${dataProp}="${getCode(currentValue.code)}">
                   ${currentValue.name}
                 </li>`
               );
             }
             return previousValue;
-          }, '');
+          }, initial);
         }
       });
     });

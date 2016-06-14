@@ -32,9 +32,12 @@ const pathname = window.location.pathname;
 const pathArr = pathname.split('/');
 import index from './js/index.js';
 import list from './js/list.js';
+import sub from './js/sub.js';
 
 if (pathname.indexOf('list') !== -1) {
   list();
 } else if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
+} else if (pathname.match(/\d{2}-\d{2}/)) {
+  sub();
 }

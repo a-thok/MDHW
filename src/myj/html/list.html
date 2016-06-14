@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!--<link rel="stylesheet" href="/css/myj.css">-->
   <script src="//cdn.dreamhiway.com/mstatic/lib/flexible.js"></script>
+  <script>
+    var types = [{"id":"10","name":"服装街","pid":"0","item":[{"id":"1001","name":"女上装","pid":"10"},{"id":"1002","name":"女下装","pid":"10"},{"id":"1003","name":"裙装","pid":"10"},{"id":"1004","name":"内衣","pid":"10"},{"id":"1005","name":"男上装","pid":"10"},{"id":"1006","name":"男下装","pid":"10"},{"id":"1007","name":"童装","pid":"10"},{"id":"1008","name":"鞋包","pid":"10"},{"id":"1009","name":"配件","pid":"10"},{"id":"1010","name":"其他","pid":"10"}]},{"id":"11","name":"数码电器城","pid":"0","item":[{"id":"1101","name":"大家电","pid":"11"},{"id":"1102","name":"厨卫电器","pid":"11"},{"id":"1103","name":"生活电器","pid":"11"},{"id":"1104","name":"数码","pid":"11"},{"id":"1105","name":"手机","pid":"11"},{"id":"1106","name":"电脑","pid":"11"},{"id":"1107","name":"其他","pid":"11"}]},{"id":"12","name":"艺术文化馆","pid":"0","item":[{"id":"1201","name":"瓷器","pid":"12"},{"id":"1202","name":"玉器","pid":"12"},{"id":"1203","name":"木器","pid":"12"},{"id":"1204","name":"字画","pid":"12"},{"id":"1205","name":"钱币","pid":"12"},{"id":"1206","name":"邮品","pid":"12"},{"id":"1207","name":"珠宝","pid":"12"},{"id":"1208","name":"工艺品","pid":"12"},{"id":"1209","name":"其他","pid":"12"}]},{"id":"13","name":"美食街","pid":"0","item":[{"id":"1301","name":"甜点饮品","pid":"13"},{"id":"1302","name":"火锅烧烤","pid":"13"},{"id":"1303","name":"自助餐","pid":"13"},{"id":"1304","name":"日韩料理","pid":"13"},{"id":"1305","name":"西餐","pid":"13"},{"id":"1306","name":"外国菜","pid":"13"},{"id":"1307","name":"闽菜","pid":"13"},{"id":"1308","name":"东北菜","pid":"13"},{"id":"1309","name":"川湘菜","pid":"13"},{"id":"1310","name":"咖啡酒吧茶馆","pid":"13"},{"id":"1311","name":"其他美食","pid":"13"}]},{"id":"14","name":"日用商超","pid":"0","item":[{"id":"1401","name":"生鲜水果","pid":"14"},{"id":"1402","name":"饮料酒水","pid":"14"},{"id":"1403","name":"粮油副食","pid":"14"},{"id":"1404","name":"生活用品","pid":"14"},{"id":"1405","name":"鲜花园艺","pid":"14"},{"id":"1406","name":"宠物用品","pid":"14"},{"id":"1407","name":"其他","pid":"14"}]},{"id":"15","name":"辅料街","pid":"0","item":[{"id":"1501","name":"纽、纽扣","pid":"15"},{"id":"1502","name":"花边","pid":"15"},{"id":"1503","name":"拉链","pid":"15"},{"id":"1504","name":"织带、线、绳类","pid":"15"},{"id":"1505","name":"衣架","pid":"15"},{"id":"1506","name":"衬料","pid":"15"},{"id":"1507","name":"腰带","pid":"15"},{"id":"1508","name":"饰品、配饰","pid":"15"},{"id":"1509","name":"皮毛、羽毛","pid":"15"},{"id":"1510","name":"机械","pid":"15"},{"id":"1511","name":"其他辅料","pid":"15"}]},{"id":"16","name":"其他","pid":"0","item":[{"id":"1601","name":"其他","pid":"16"}]}]
+  </script>
 </head>
 
 <body>
@@ -38,6 +41,72 @@
       <li class="intro_list_item">商家列表</li>
     </ul>
     <!--介绍  结束-->
+     <!--过滤栏 开始-->
+    <section class="filter filterTwo">
+      <div class="filter_item">
+        <div class="filter_title filter_title-line">
+          <span class="filter_title_text">
+            <span class="filter_active">全部</span>
+          <i class="fa fa-angle-up"></i>
+          </span>
+        </div>
+        <!--<div class="filter_content">
+          <ul class="filter_content_list" data-filter="type">
+            <li class="filter_content_list_item" data-code="1001">女上装<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1002">女下装<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1003">裙装<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1004">内衣<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1005">男上装<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1006">男下装<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1007">裙装<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1008">童装<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1009">鞋包<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1010">配件<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="1011">其他<i class="fa fa-check-circle"></i></li>
+          </ul>
+        </div>-->
+        <div class="filter_content">
+          <div class="filter_content_wrap">
+            <ul class="filter_content_list filter_content_list-detail"></ul>
+            <ul class="filter_content_list filter_content_list-leibie" data-filter="type">
+              <li class="filter_city_attention">请先选择左侧的类别</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">
+            <span class="filter_active">地区不限</span>
+          <i class="fa fa-angle-up"></i>
+          </span>
+        </div>
+        <div class="filter_content">
+          <div class="filter_content_wrap">
+            <ul class="filter_content_list filter_content_list-province"></ul>
+            <ul class="filter_content_list filter_content_list-city" data-filter="city">
+              <li class="filter_city_attention">请先选择左侧的省份</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">
+            <span class="filter_active">智能排序</span>
+          <i class="fa fa-angle-up"></i>
+          </span>
+        </div>
+        <div class="filter_content">
+          <ul class="filter_content_list" data-filter="">
+            <li class="filter_content_list_item" data-code="">智能排序<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="">离我最近<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="">人气最高<i class="fa fa-check-circle"></i></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--过滤栏 结束-->
     <ul class="userInput">
 
       <!--商品列表 开始-->
