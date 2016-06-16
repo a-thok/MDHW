@@ -44,3 +44,9 @@
 .choose_color .grid_item_text {
   color: var(--myjColor);
 }
+.noHave {
+  text-align: center;
+  padding: 2em 0;
+  font-size: .26rem;
+  color: var(--fontColorLight);
+}

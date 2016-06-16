@@ -23,21 +23,27 @@ fastclick.attach(document.body);
 // 显示菜单
 import showMenu from 'showMenu';
 showMenu();
+// 加载地图
+import map from './js/map.js';
+map();
 
 // page最小高度为窗口高度
 document.querySelector('.page').style.minHeight = `${window.innerHeight}px`;
 
 // 各页面JS
 const pathname = window.location.pathname;
-const pathArr = pathname.split('/');
 import index from './js/index.js';
 import list from './js/list.js';
 import sub from './js/sub.js';
+import detail from './js/detail.js';
+
 
 if (pathname.indexOf('list') !== -1) {
   list();
-} else if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
+} else if (/\/m($|\/$|\/home)/.test(pathname)) {
   index();
-} else if (pathname.match(/\d{2}-\d{2}/)) {
+} else if (/\d{2}-\d{2}/.test(pathname)) {
   sub();
+} else if (/\/\d+\.html/.test(pathname)) {
+  detail();
 }

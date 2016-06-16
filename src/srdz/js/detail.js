@@ -31,6 +31,7 @@ export default function detail() {
       const value = e.target.getAttribute('data-code');
       if (e.target.classList.contains('modelList_item')) {
         $from(children).forEach((child) => {
+          console.log(child);
           if (child === e.target) {
             child.classList.add('is-active');
           } else {

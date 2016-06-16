@@ -11,7 +11,9 @@ export default function list() {
   const items = $('.intro_list_item');
   const load = document.querySelector('.list_load');
   // 商品列表
-  // const arr = window.location.pathname.match(/\/\d+-\d+/)[0].slice(1).split('-');
+  const arr = window.location.pathname.match(/\/\d+-\d+/)[0].slice(1).split('-');
+  // const num = window.location.search.slice(1).split('&')[1].split('=')[1];
+  const ddidStr = window.location.search.match(/ddid=(\d+)/);
   const spConfig = {
     load,
     template: spTemplate,
@@ -32,10 +34,11 @@ export default function list() {
     template: sjTemplate,
     api: '/m/o2o/Store/List',
     params: {
-      pageIndex: 0,
-      pageSize: 10
+      pageIndex: 1,
+      pageSize: 10,
       // city: arr[0],
-      // type: arr[1]
+      type: arr[1],
+      ddid: ddidStr && ddidStr[1]
     },
     replace: true,
     container: document.querySelector('.hostlist')

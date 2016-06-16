@@ -6,10 +6,11 @@ import goToSearch from 'goToSearch';
 export default function sub() {
   // 轮播
   slider($('.sliderBox'));
+  const type = window.location.pathname.match(/\/\d+-\d+/)[0].slice(1);
   // 搜索
   goToSearch({
     input: $('.srch_input'),
-    partialUrl: `http://${MYJ_HOST}/m/home/list?kw=`
+    partialUrl: `http://${MYJ_HOST}/m/list/${type}?keyword=`
   });
 
   const subClasses = $from('.grid_item');
