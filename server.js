@@ -40,6 +40,7 @@ app.use('/m/Third', proxy(url.parse('http://192.168.2.18:8085/m/Third')));
 app.use('/m/Pwd', proxy(url.parse('http://192.168.2.18:8085/m/pwd')));
 app.use('/m/Com', proxy(url.parse('http://192.168.2.18:8085/m/Com')));
 app.use('/m/o2o', proxy(url.parse('http://192.168.2.18:8098/m/o2o')));
+app.use('/m/confirm', proxy(url.parse('http://192.168.2.18:8098/m/confirm')));
 
 app.listen(app.get('port'), (err) => {
   if (err) {
