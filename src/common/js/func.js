@@ -94,3 +94,11 @@ export function $cookie() {
 //   page.textContent = body.pageIndex;
 //   pageNum.textContent = Math.ceil(data.result.total / body.pageSize);
 // }
+
+export function $debounce(fn, delay) {
+  let timer = null;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}

@@ -5,19 +5,15 @@ import xhr from 'xhr';
 
 
 export default function detail() {
-  const purchaseBtn = $('.purchase_btn');
   const closeBtn = $('.orderHeader_close');
   const order = $('.order_backColor');
-  purchaseBtn.addEventListener('click', () => {
-    order.classList.add('is-block');
-  });
   closeBtn.addEventListener('click', () => {
     order.classList.remove('is-block');
   });
   // 轮播
   slider($('.sliderBox'));
   // 转载
-  share($('.fa-share-square-o'));
+  share($('.purchase_msg_share'));
   // 选择数量
   const orderLists = $from('.orderList_item');
   const params = { count: 1 };
@@ -47,16 +43,26 @@ export default function detail() {
         const value = e.target.getAttribute('data-index');
         sku[index] = value;
       }
+      const selecteds = $from('.orderList_itemList_item.is-click');
+      const arr = [];
+      selecteds.forEach((selected, i) => {
+        arr[i] = selected.textContent;
+      });
+      const text = $('.orderHeader_msg_text_content');
+      text.innerText = '';
+      for (let i = 0; i < arr.length; i++) {
+        text.innerText += `"${arr[i]}"`;
+      }
     });
   });
   // 收藏
-  const soucang = $('.shoucang .fa');
+  const shoucang = $('.shoucang .fa');
   console.log(window.IsCollect);
   if (window.IsCollect === 1) {
-    soucang.classList.remove('fa-star-o');
-    soucang.classList.add('fa-star');
+    shoucang.classList.remove('fa-star-o');
+    shoucang.classList.add('fa-star');
   }
-  soucang.addEventListener('click', () => {
+  shoucang.addEventListener('click', () => {
     if (!$cookie().accountType) {
       // 如果未登录，转跳登录页
       location.href = `http://${MAIN_HOST}/m/main/denglu?redirectURL=${encodeURIComponent(location.href)}`;
@@ -72,30 +78,65 @@ export default function detail() {
         .then(res => res.json())
         .then(res => {
           if (res.result === true) {
-            soucang.classList.remove('fa-star-o');
-            soucang.classList.add('fa-star');
-            alert('收藏成功');
+            shoucang.classList.remove('fa-star-o');
+            // shoucang.classList.toggle('fa-star');
           }
         });
     }
   });
-  // 立即购买
-  const btn = $from('.orderBtnbox_btn');
-  btn.forEach((el, i) => {
-    el.addEventListener('click', () => {
-      params.skuid = window.skus[sku.toString()].id;
+
+
+  // 底栏状态切换
+  // const links = $from('.myjFoot_link');
+  // links.forEach((link) => {
+  //   link.addEventListener('click', (e) => {
+  //     for (let i = 0; i < links.length; i++) {
+  //       links[i].querySelector('.fa').classList.remove('is-color');
+  //     }
+  //     e.target.querySelector('.fa').classList.add('is-color');
+  //   });
+  // });
+
+
+  // 底栏按钮
+  let confirmAction;
+  const confirmBtn = $('.orderBtnbox_btn');
+  const modal = $('.modal');
+  function confirmFn() {
+    order.classList.remove('is-block');
+    if (confirmAction === 'ADD_TO_CART') {
+      params.skuid = sku.length ? window.skus[sku.toString()].id : null;
       xhr('/m/o2o/ShopCart/Add', Object.assign({
         productid: window.productid
       }, params), (res) => {
-        if (i === 0) {
-          alert('添加购物车成功');
-        } else {
-          console.log(res);
-          alert('购物成功');
-          // document.cookie = `cartID=${res.result};path=/;domain=dreamhiway.com`;
-          // location.href = `http://${MAIN_HOST}/m/user#/myj/order`; // 未登录情况下，转跳可能有问题
+        if (res.success === true) {
+          modal.classList.add('is-show');
+          setTimeout(() => modal.classList.remove('is-show'), 2500);
         }
       }, true);
+    } else if (confirmAction === 'GO_TO_ORDER') {
+      xhr('/m/o2o/ShopCart/Add', Object.assign({
+        productid: window.productid
+      }, params), (res) => {
+        if (res.success === true) {
+          // document.cookie = `cartID=${res.result};path=/;domain=dreamhiway.com`;
+          location.href = `http://${MYJ_HOST}/m/confirm?`;
+        }
+      }, true);
+    }
+  }
+  confirmBtn.addEventListener('click', confirmFn);
+
+  const btns = $from('.myjFoot_btn');
+  btns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      order.classList.add('is-block');
+      if (!$cookie().accountType) {
+        // 如果未登录，转跳登录页
+        location.href = `http://${MAIN_HOST}/m/main/denglu?redirectURL=${encodeURIComponent(location.href)}`;
+      } else {
+        confirmAction = (i === 0) ? 'ADD_TO_CART' : 'GO_TO_ORDER';
+      }
     });
   });
 }

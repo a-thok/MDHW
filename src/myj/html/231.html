@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="page page-noMb">
+  <div class="page">
     <!--头部 开始-->
     <header class="header header-reverse company">
       <div class="header_sect">
@@ -19,8 +19,20 @@
       </div>
       <h3 class="company_text">商品详情</h3>
       <div class="header_chooseBox">
-        <span class="shoucang"><i class="fa fa-star-o"></i></span>
-        <span><i class="fa fa-share-square-o"></i></span>
+        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+
+        <div class="header_sect header_sect-menu">
+          <span class="header_menu"><i></i><i></i><i></i></span>
+          <div class="header_menu_wrap">
+            <div class="arrow-wrap"><i class="arrow"></i></div>
+            <ul class="header_menu_list">
+              <li class="header_menu_list_item"><a class="header_link" href="#">梦高速首页</a></li>
+              <li class="header_menu_list_item"><a class="header_link" href="#">创客空间</a></li>
+              <li class="header_menu_list_item"><a class="header_link" href="#">关于我们</a></li>
+              <li class="header_menu_list_item"><a class="header_link" href="#">个人中心</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
     <!--头部 结束-->
@@ -38,13 +50,18 @@
       </ul>
     </div>
     <!--轮播 结束-->
+
     <div class="purchase">
+      <div class="purchase_msg">
+        <p class="purchase_msg_text">方法结合更加符合机房环境不就行发货如何规划规划局呵呵分居后发货</p>
+        <span class="purchase_msg_share"><i class="fa fa-share-alt"></i>分享</span>
+      </div>
       <div class="purchase_price">
-        <p class="purchase_price_now">￥<span>158</span></p>
+        <p class="purchase_price_now"><span>￥</span>158</p>
         <p class="purchase_price_counter">门市价：￥158</p>
       </div>
-      <button class="purchase_btn" type="button">立即购买</button>
     </div>
+
     <!--商家信息  开始-->
     <div class="store">
       <p class="store_shangjia">商家信息</p>
@@ -69,10 +86,12 @@
       </div>
     </div>
     <!--商品详情  结束-->
+
     <h2 class="titleLine">
       <div class="titleLine_line"></div>
       <div class="titleLine_text">已经到底了</div>
     </h2>
+
     <!-- 分享选择滑出  开始-->
     <div class="sliderShare">
       <div class="sliderShare_box">
@@ -81,60 +100,80 @@
       </div>
     </div>
     <!--分享选择滑出  结束-->
+
     <!--订单信息  开始-->
     <div class="order_backColor">
       <div class="order">
-        <div class="orderHeader">
-          <span>选择分类</span>
-          <span class="orderHeader_close">X</span>
-        </div>
-        <ul class="orderList">
-          <li class="orderList_item">
-            <p class="orderList_itemTitle">尺码</p>
-            <ul class="orderList_itemList">
-              <li class="orderList_itemList_item is-click" data-lev="0" data-index="0">38</li>
-              <li class="orderList_itemList_item" data-lev="0" data-index="0">38</li>
-              <li class="orderList_itemList_item" data-lev="0" data-index="1">38</li>
-              <!--<li class="orderList_itemList_item" data-lev="0" data-index="2">3121218</li>
-              <li class="orderList_itemList_item" data-lev="0" data-index="3">38</li>
-              <li class="orderList_itemList_item" data-lev="0" data-index="4">34564156228</li>
-              <li class="orderList_itemList_item" data-lev="0" data-index="5">38</li>
-              <li class="orderList_itemList_item" data-lev="0" data-index="6">326326658</li>
-              <li class="orderList_itemList_item" data-lev="0" data-index="7">38</li>
-              <li class="orderList_itemList_item" data-lev="0" data-index="8">38</li>-->
-            </ul>
-          </li>
-          <li class="orderList_item">
-            <p class="orderList_itemTitle">形状</p>
-            <ul class="orderList_itemList">
-              <li class="orderList_itemList_item is-click" data-lev="1" data-index="0">38</li>
-              <li class="orderList_itemList_item" data-lev="1" data-index="1">38</li>
-              <li class="orderList_itemList_item" data-lev="1" data-index="2">38</li>
-            </ul>
-          </li>
-        </ul>
-        <!--数量  开始-->
-        <dl class="number">
-          <dt class="numberTitle">购买数量</dt>
-          <dd class="numberFlex">
-            <div class="number_choose">
-              <label for="">-</label>
-              <input type="number" value="1">
-              <label for="">+</label>
+        <div class="orderPadding">
+          <div class="orderHeader">
+            <div class="orderHeader_msg">
+              <div class="orderHeader_msg_img">
+                <img src="http://tse1.mm.bing.net/th?&id=OIP.M1040a5800c1d3251d5cf33bbd6082120o0&w=135&h=135&c=0&pid=1.9&rs=0&p=0" alt="">
+              </div>
+              <div class="orderHeader_msg_text">
+                <p class="orderHeader_msg_textCoin">￥89</p>
+                <p class="orderHeader_msg_text_price">门店价：￥100</p>
+                <p>已选：<span class="orderHeader_msg_text_content">"38""圆形"</span></p>
+              </div>
             </div>
-          </dd>
-        </dl>
-        <!--数量  结束-->
-        <div class="orderBtnbox">
-          <button class="orderBtnbox_btn orderBtnbox_btn-color" type="button">加入购物车</button>
-          <button class="orderBtnbox_btn orderBtnbox_btn_buy" type="button">立即购买</button>
+            <span class="orderHeader_close"><i class="fa fa-close"></i></span>
+          </div>
+          <ul class="orderList">
+            <li class="orderList_item">
+              <p class="orderList_itemTitle">尺码</p>
+              <ul class="orderList_itemList">
+                <li class="orderList_itemList_item is-click" data-lev="0" data-index="0">38</li>
+                <li class="orderList_itemList_item" data-lev="0" data-index="0">39</li>
+                <li class="orderList_itemList_item" data-lev="0" data-index="1">40</li>
+              </ul>
+            </li>
+            <li class="orderList_item">
+              <p class="orderList_itemTitle">形状</p>
+              <ul class="orderList_itemList">
+                <li class="orderList_itemList_item is-click" data-lev="1" data-index="0">圆形</li>
+                <li class="orderList_itemList_item" data-lev="1" data-index="1">正方形</li>
+                <li class="orderList_itemList_item" data-lev="1" data-index="2">长方形</li>
+              </ul>
+            </li>
+          </ul>
+          <!--数量  开始-->
+          <dl class="number">
+            <dt class="numberTitle">购买数量</dt>
+            <dd class="numberFlex">
+              <div class="number_choose">
+                <label for="">-</label>
+                <input type="number" value="1">
+                <label for="">+</label>
+              </div>
+            </dd>
+          </dl>
+          <!--数量  结束-->
         </div>
+        <button class="orderBtnbox_btn" type="button">确定</button>
       </div>
     </div>
     <!--订单信息  结束-->
+
+    <!--底栏  开始-->
+    <div class="myjFoot">
+      <a class="myjFoot_link" href="#"><i class="fa fa-television is-color"></i>官网</a>
+      <a class="myjFoot_link" href="#"><i class="fa fa-shopping-basket"></i>店铺</a>
+      <a class="myjFoot_link shoucang" href="#"><i class="fa fa-star fa-star-o"></i>收藏</a>
+      <button class="myjFoot_btn myjFoot_btn-car" type="button">加入购物车</button>
+      <button class="myjFoot_btn myjFoot_btn-shop" type="button">立即购买</button>
+    </div>
+    <!--底栏  结束-->
+    <!--提示  开始-->
+    <div class="modal">
+      <span><i class="fa fa-github-alt"></i></span>
+      <span class="modal_content_text">宝贝添加成功，在购物车等亲 ~ ~</span>
+    </div>
+    <!--提示  结束-->
   </div>
-
-
+  <script>
+    var skus= {"0,0":{"id":64,"price":2100.00},"0,1":{"id":65,"price":201.00},"1,0":{"id":66,"price":212.10},"1,1":{"id":67,"price":212.11}};
+    var productid= 260;
+  </script>
   <script src="/js/common.js"></script>
   <script src="/js/myj.js"></script>
   <script src="http://v3.jiathis.com/code/jiathis_m.js"></script>

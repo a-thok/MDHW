@@ -36,14 +36,17 @@ import index from './js/index.js';
 import list from './js/list.js';
 import sub from './js/sub.js';
 import detail from './js/detail.js';
+import car from './js/car.js';
 
 
 if (pathname.indexOf('list') !== -1) {
   list();
-} else if (/\/m($|\/$|\/home)/.test(pathname)) {
+} else if (/\/m(\/home)?(\/\d{2})?(\/)?$/.test(pathname)) {
   index();
 } else if (/\d{2}-\d{2}/.test(pathname)) {
   sub();
 } else if (/\/\d+\.html/.test(pathname)) {
   detail();
+} else if (pathname.indexOf('shopcart') !== -1) {
+  car();
 }

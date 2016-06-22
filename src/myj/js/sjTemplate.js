@@ -4,7 +4,7 @@ export default function sjTemplate(data) {
     // 商家认证
     const auth = `<p class="iconList_item ${cur.auth === false ? 'noAuth' : 'Auth'}">商家认证：</p>`;
     return (`${pre}<li class="hostlist_item">
-            <a href="http://${HR_HOST}//m/home/detail/${cur.id}">
+            <a href="http:/${MYJ_HOST}//m/${cur.id}.html">
               <div class="hostlist_item_img">
                 <img src="${url}" alt="${cur.name}">
               </div>

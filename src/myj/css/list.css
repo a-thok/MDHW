@@ -66,9 +66,9 @@
       align-self: center;
     }
     & p {
-      padding: .5em;
-      height: .72rem;
-      margin: 0;
+      padding: 0 .5em;
+      height: .8rem;
+      margin: 0 .5em;
       overflow: hidden;
     }
     & .myj_list_item_text {
@@ -81,7 +81,7 @@
     }
     & span:first-child {
       font-size: .26rem;
-      color: red;
+      color: var(--myjqdColor);
     }
     & span:last-child {
       display: flex;
