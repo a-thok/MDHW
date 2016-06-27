@@ -1,2 +1,4 @@
 @import "../../common/css/var.css";
 @import "./index.css";
+@import "./search.css";
+@import "./list.css";
