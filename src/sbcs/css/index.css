@@ -1,0 +1,103 @@
+.sbcs {
+  padding-top: 1em;
+  background: #fff;
+}
+.srch-join {
+  margin-top: 0;
+}
+.srch_btn {
+  background: var(--sbcsColor);
+}
+.grid_item_icon {
+  border-radius: 35%;
+}
+.grid .sb {
+  background: linear-gradient(180deg, #00d3de, #00d3de);
+}
+.grid .sbjx {
+  background: linear-gradient(180deg, #f8ab3d, #e37f25);
+}
+.grid .sbfl {
+  background: linear-gradient(180deg, #f96a58, #e3253b);
+}
+.grid .qgzq {
+  background: linear-gradient(180deg, #5bceff, #0370ba);
+}
+.grid .msb {
+  background: linear-gradient(180deg, #f9c63e, #e39c25);
+}
+/** 推荐 **/
+.hotwrap {
+  border-top: 3px solid #64cdfe;
+}
+.titleA {
+  border: 0;
+  padding: 0;
+}
+.hot {
+  display: flex;
+  justify-content: space-between;
+  padding: .8em .2rem;
+  border-top: 1px solid var(--borderColorLight);
+}
+.hot section {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hot section img {
+  width: 100%;
+}
+/* 热门商标分类 */
+.sbcs_hot {
+  margin-top: .1rem;
+  background: #fff;
+}
+.titleLine {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: .6rem;
+  margin: 0 3.7333%;
+}
+.titleLine_line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid #ddd;
+}
+.titleLine_text {
+  position: relative;
+  z-index: 1;
+  line-height: .6rem;
+  padding: 0 .3rem;
+  font-weight: normal;
+  font-size: .2rem;
+  background: #fff;
+}
+.grid-func .grid_item_icon {
+  background: #fff;
+}
+/* 底部 */
+.nav {
+  z-index: 2;
+}
+.nav_link {
+  display: initial;
+  text-align: center;
+  padding: .5em 0;
+  border-right: 1px solid var(--borderColorLight);
+  color: var(--fontColorLight);
+}
+.nav_link span {
+  display: block;
+}
+.nav_link .fa {
+  margin: 0;
+  font-size: .35rem;
+}
+.nav_link-active {
+  color: var(--sbcsColor);
+}
