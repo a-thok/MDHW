@@ -24,6 +24,7 @@ const config = {
     'zxsj': [path.join(__dirname, 'src/zxsj')],
     'gsss': [path.join(__dirname, 'src/gsss')],
     'company': [path.join(__dirname, 'src/company')],
+    'sbcs': [path.join(__dirname, 'src/sbcs')],
     'person': [path.join(__dirname, 'src/person')]
   },
   output: {
