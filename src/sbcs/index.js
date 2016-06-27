@@ -1,5 +1,6 @@
 import './css/main.css';
 import './img/banner.png';
+import './img/sbcs-logo.png';
 import './img/sbcs_1.png';
 import './img/sbcs_2.png';
 import './img/sbcs_3.png';
@@ -29,7 +30,10 @@ document.querySelector('.page').style.minHeight = `${window.innerHeight}px`;
 const pathname = window.location.pathname;
 const pathArr = pathname.split('/');
 import index from './js/index.js';
+import list from './js/list.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
+} else if (pathname.indexOf('list') !== -1) {
+  list();
 }
