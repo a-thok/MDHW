@@ -29,6 +29,7 @@
 /** 推荐 **/
 .hotwrap {
   border-top: 3px solid #64cdfe;
+  margin-top: .2rem;
 }
 .titleA {
   border: 0;
@@ -51,7 +52,7 @@
 }
 /* 热门商标分类 */
 .sbcs_hot {
-  margin-top: .1rem;
+  margin-top: .2rem;
   background: #fff;
 }
 .titleLine {
