@@ -20,9 +20,9 @@ export default function list() {
     api: '/m/o2o/Product/List',
     params: {
       pageIndex: 1,
-      pageSize: 10
-      // city: arr[0],
-      // type: arr[1]
+      pageSize: 10,
+      city: arr[0],
+      type: arr[1]
     },
     replace: true,
     container: document.querySelector('.myj_list')

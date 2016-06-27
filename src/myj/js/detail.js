@@ -53,14 +53,15 @@ export default function detail() {
       for (let i = 0; i < arr.length; i++) {
         text.innerText += `"${arr[i]}"`;
       }
+      const Price = $('.orderHeader_msg_textCoin');
+      Price.innerText = `￥${window.skus[sku.toString()].price}`;
     });
   });
   // 收藏
   const shoucang = $('.shoucang .fa');
-  console.log(window.IsCollect);
+  // console.log(window.IsCollect);
   if (window.IsCollect === 1) {
     shoucang.classList.remove('fa-star-o');
-    shoucang.classList.add('fa-star');
   }
   shoucang.addEventListener('click', () => {
     if (!$cookie().accountType) {
@@ -78,8 +79,11 @@ export default function detail() {
         .then(res => res.json())
         .then(res => {
           if (res.result === true) {
-            shoucang.classList.remove('fa-star-o');
-            // shoucang.classList.toggle('fa-star');
+            if (window.IsCollect === 0) {
+              shoucang.classList.remove('fa-star-o');
+            } else {
+              shoucang.classList.remove('fa-star-o');
+            }
           }
         });
     }
@@ -103,9 +107,18 @@ export default function detail() {
   const confirmBtn = $('.orderBtnbox_btn');
   const modal = $('.modal');
   function confirmFn() {
+    let arrSkuid = [];
+    const subject = {
+      'productid': window.productid,
+      'skuid': 0,
+      'count': $('.number_choose input').value
+    };
+    arrSkuid = [subject];
+    console.log(arrSkuid);
+
     order.classList.remove('is-block');
+    params.skuid = sku.length ? window.skus[sku.toString()].id : arrSkuid;
     if (confirmAction === 'ADD_TO_CART') {
-      params.skuid = sku.length ? window.skus[sku.toString()].id : null;
       xhr('/m/o2o/ShopCart/Add', Object.assign({
         productid: window.productid
       }, params), (res) => {
@@ -119,8 +132,9 @@ export default function detail() {
         productid: window.productid
       }, params), (res) => {
         if (res.success === true) {
+          location.href = `http://${MAIN_HOST}/m/user#/myj/order`;
           // document.cookie = `cartID=${res.result};path=/;domain=dreamhiway.com`;
-          location.href = `http://${MYJ_HOST}/m/confirm?`;
+          // location.href = 'http://www.dreamhiway.com/m/home/attention';
         }
       }, true);
     }

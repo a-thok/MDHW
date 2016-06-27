@@ -1,6 +1,8 @@
 import { cloose } from './cloose.js';
 import { change } from './change.js';
 import { $ } from 'func';
+import xhr from 'xhr';
+
 
 export default function car() {
   // 选择
@@ -21,9 +23,38 @@ export default function car() {
       };
       arrNumber[i] = subject;
     }
-    const form = document.getElementById('form');
-    form.p.value = JSON.stringify(arrNumber);
-    form.submit();
+
+    xhr(`http://${MAIN_HOST}/m/sys/o2o/order/confirm`, Object.assign({
+      p: JSON.stringify(arrNumber)
+    }), (res) => {
+      console.log(JSON.stringify(res.result));
+      const str = encodeURIComponent(JSON.stringify(res.result));
+      console.log(str);
+      document.cookie = `myjdata=${str};path='/'`;
+    }, true);
+    // fetch(`http://${MAIN_HOST}/m/sys/o2o/order/confirm`, {
+    //   method: 'POST',
+    //   mode: 'cors',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   credentials: 'include',
+    //   body: JSON.stringify({
+    //     p: JSON.stringify(arrNumber)
+    //   })
+    // })
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     if (res.success) {
+    //       console.log(res.result.data);
+    //       const str = JSON.stringify(res.result);
+    //       document.cookie = `myjdata:${str};path=/;domain=dreamhiway.com`;
+    //     }
+    //   });
+
+    // const form = document.getElementById('form');
+    // form.p.value = JSON.stringify(arrNumber);
+    // form.submit();
   });
   // 删除
   const remove = $('.carBottom-wancheng .carJiesuan');

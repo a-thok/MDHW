@@ -34,7 +34,7 @@ export function change() {
   // const amount = $from('.carList_item_listMsg-wancheng input');
   // 数量更新函数
   function updateRemote(parent) {
-    console.log(parent);
+    // console.log(parent);
     fetch('/m/o2o/ShopCart/Update', {
       method: 'POST',
       headers: {
@@ -50,7 +50,7 @@ export function change() {
       .then(res => res.json())
       .then(res => {
         if (res.success === true) {
-          console.log(1);
+          // console.log(1);
         }
       });
   }

@@ -45,6 +45,10 @@ import ZcFollowed from './routes/Zc/partials/Follow';
 import ZcSupport from './routes/Zc/partials/Support';
 import ZcOrderForm from './routes/Zc/partials/OrderForm';
 
+import Myj from './routes/Myj';
+import MyjNav from './routes/Myj/partials/Nav';
+import MyjOrder from './routes/Myj/partials/Order';
+
 import App from './App';
 
 import Settings from './routes/Settings';
@@ -94,6 +98,10 @@ ReactDOM.render((
         <Route path="/zc/support" component={ZcSupport} />
         <Route path="/zc/order" component={ZcOrder} />
         <Route path="/zc/orderform" component={ZcOrderForm} />
+      </Route>
+      <Route path="/myj" component={Myj}>
+        <IndexRoute component={MyjNav} />
+        <Route path="/myj/order" component={MyjOrder} />
       </Route>
       <Route path="/settings" component={Settings}>
         <IndexRoute component={SettingsNav} />

@@ -3,9 +3,13 @@ import { Link } from 'react-router';
 
 export default function Address(props) {
   function handleClick() {
-    if (location.hash.indexOf('order=true') !== -1) {
+    if (location.hash.indexOf('order=srdz') !== -1) {
       props.onSelectAddr(props.index);
       location.hash = '#/srdz/order';
+    }
+    if (location.hash.indexOf('order=myj') !== -1) {
+      props.onSelectAddr(props.index);
+      location.hash = '#/myj/order';
     }
   }
   return (

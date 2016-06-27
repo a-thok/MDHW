@@ -1,0 +1,213 @@
+.order {
+  margin-bottom: .7rem;
+}
+.myjaddress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2rem;
+  background: #fff;
+  text-decoration: none;
+}
+.addressUser {
+  width: 90%;
+  font-size: .2rem;
+}
+.addressUser_msg {
+  display: flex;
+  justify-content: space-between;
+  margin-left: .38rem;
+  margin-bottom: .5em;
+}
+.addressUser_text {
+  display: flex;
+}
+.addressUser_text span {
+  display: block;
+  margin-right: .2rem;
+}
+.addressUser_text .fa {
+  font-size: .3rem;
+  color: var(--fontColorLight);
+}
+.address_span {
+  width: 10%;
+  text-align: center;
+  font-size: .3rem;
+  color: var(--fontColorLight);
+}
+/*商家*/
+.businessList {
+  font-size: .2rem;
+}
+.businessList_item {
+  background: #fff;
+}
+.businessList li {
+  margin-top: .2rem;
+}
+.businessList_item_name {
+  padding: .8em .2rem;
+}
+.businessList_item li:nth-child(n+2) {
+  margin-top: .1rem;
+}
+.businessList_itemList {
+  background: #f5f5f5;
+  padding: .5em .2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.businessList_itemList_img {
+  width: 1.5rem;
+  height: 1.5rem;
+  overflow: hidden;
+}
+.businessList_itemList_img img {
+  display: block;
+  width: 100%;
+}
+.businessList_itemList_content {
+  width: 70%;
+}
+.businessList_itemList_contentText {
+  width: 90%;
+}
+.businessList_itemList_contentSize {
+  color: var(--fontColorLight);
+  margin-top: .5em;
+}
+.businessList_itemList_contentNum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .2rem;
+}
+.businessList_itemList_contentNum_money {
+  font-size: .3rem;
+  color: var(--myjColor);
+}
+.businessList_item_DC,
+.businessList_item_pay {
+  padding: .2rem;
+  border-top: 1px solid var(--borderColorLight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .22rem;
+  background: #fff;
+}
+/*.businessList_item_pay,
+.businessList_item_DC {
+  margin: 0 .2rem;
+  padding: .2rem 0;
+  border-bottom: 1px solid var(--borderColorLight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .22rem;
+}*/
+.businessList_item_pay .fa,
+.businessList_item_DC .fa {
+  padding: 2px 0;
+  margin-left: .5em;
+  font-size: .3rem;
+  color: var(--fontColorLight);
+}
+.businessList_item_msg {
+  margin: 0 .2rem;
+  padding: .2rem 0;
+  text-align: right;
+  font-size: .22rem;
+}
+.businessList_item_msgSpan {
+  margin-left: 1em;
+}
+.businessList_item_msgSpan span {
+  color: var(--myjColor);
+}
+/*提交订单*/
+.submitOrder {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 750px;
+  border-top: 1px solid var(--borderColorLight);
+  font-size: .2rem;
+  background: #fff;
+}
+.submitOrder-money {
+  color: var(--myjColor);
+  font-size: .24rem;
+}
+.submitOrder_btn {
+  padding: .8em 2.5em;
+  margin-left: 1em;
+  border: 0;
+  font-size: .22rem;
+  color: #fff;
+  background: var(--myjColor);
+}
+/*配送方式*/
+.paymode,
+.dcmode {
+  display: none;
+}
+.paymode,
+.dcmode {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 750px;
+  height: 100%;
+  background: rgba(51,51,51,.3);
+  z-index: 3;
+}
+.paymodeText,
+.dcmodeText {
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 750px;
+}
+.paymodeText_title,
+.dcmodeText_title {
+  text-align: center;
+  padding: .2rem 0;
+  font-size: .22rem;
+}
+.paymodeText_mode,
+.dcmodeText_mode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2rem 0;
+  margin: 0 .2rem;
+  border-bottom: 1px solid var(--borderColorLight);
+  font-size: .18rem;
+}
+.paymodeText_mode .fa,
+.dcmodeText_mode .fa {
+  padding: .3em;
+  border: 2px solid var(--borderColorLight);
+  border-radius: 50%;
+  color: #fff;
+}
+.paymodeText_btn,
+.dcmodeText_btn {
+  margin-top: 1.5rem;
+  padding: .2rem 0;
+  width: 100%;
+  border: 0;
+  font-size: .22rem;
+  background: #e62e25;
+  color: #fff;
+}
+.paymodeText_mode .is-click,
+.dcmodeText_mode .is-click {
+  background: #e62e25;
+}

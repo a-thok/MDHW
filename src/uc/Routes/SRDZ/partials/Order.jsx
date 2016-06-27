@@ -6,7 +6,7 @@ export default class Order extends Component {
   }
 
   handleClick() {
-    window.location.hash = '#/settings/address?order=true';
+    window.location.hash = '#/settings/address?order=srdz';
   }
 
   render() {
