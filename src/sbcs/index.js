@@ -1,4 +1,10 @@
 import './css/main.css';
+import './img/banner.png';
+import './img/sbcs_1.png';
+import './img/sbcs_2.png';
+import './img/sbcs_3.png';
+import './img/sbcs_4.png';
+import './img/sbcs_5.png';
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
