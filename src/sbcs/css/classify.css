@@ -1,0 +1,37 @@
+.classifyList {
+  margin: .2rem;
+  border: 1px solid var(--borderColorLight);
+  border-bottom: 0;
+}
+.classifyList {
+  overflow: hidden;
+}
+.classifyList_item {
+  float: left;
+  width: 25%;
+  height: 1.5rem;
+  border-right: 1px solid var(--borderColorLight);
+  border-bottom: 1px solid var(--borderColorLight);
+}
+.classifyList_item_link {
+  width: 100%;
+  display: block;
+  padding: 0 .5em;
+  text-align: center;
+  text-decoration: none;
+  font-size: .2rem;
+}
+.classifyList_item_logo {
+  display: block;
+  margin: 0 auto;
+  padding: .6em 0;
+  background: linear-gradient(180deg, #f58555, #f64a35);/*暂时*/
+  background-clip: -webkit-text;/*暂时*/
+  color: transparent;/*暂时*/
+}
+.classifyList_item_logo .iconfont {
+  font-size: .4rem;
+}
+.classifyList li:nth-child(4n) {
+  border-right: 0;
+}
