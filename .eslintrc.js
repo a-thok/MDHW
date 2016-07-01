@@ -32,6 +32,7 @@ module.exports = {
     ZCKJ_HOST: true,
     DIY_HOST: true,
     SRDZ_HOST: true,
+    SBCS_HOST: true,
     KJ_HOST: true
   }
 }

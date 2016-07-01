@@ -98,6 +98,7 @@ const config = {
       DIY_HOST: PRODUCTION ? JSON.stringify('diy.dreamhiway.com') : JSON.stringify('192.168.2.18:8092'),
       SRDZ_HOST: PRODUCTION ? JSON.stringify('srdz.dreamhiway.com') : JSON.stringify('192.168.2.18:8093'),
       KJ_HOST: PRODUCTION ? JSON.stringify('kj.dreamhiway.com') : JSON.stringify('192.168.2.18:8087'),
+      SBCS_HOST: PRODUCTION ? JSON.stringify('tmall.dreamhiway.com') : JSON.stringify('192.168.2.29:8097'),
       'process.env': {
         BABEL_ENV: JSON.stringify(process.env.NODE_ENV)
       }
