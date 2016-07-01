@@ -85,20 +85,22 @@
 .nav {
   z-index: 2;
 }
-.nav_link {
-  display: initial;
+.nav_link_block {
+  display: block;
+  width: 25%;
   text-align: center;
   padding: .5em 0;
   border-right: 1px solid var(--borderColorLight);
   color: var(--fontColorLight);
+  text-decoration: none;
 }
-.nav_link span {
+.nav_link_block span {
   display: block;
 }
-.nav_link .fa {
-  margin: 0;
+.nav_link_block .fa {
+  margin: 0 auto;
   font-size: .35rem;
 }
-.nav_link-active {
+.nnav_link_block-active {
   color: var(--sbcsColor);
 }
