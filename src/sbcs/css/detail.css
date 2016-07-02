@@ -1,0 +1,137 @@
+.trademark {
+  width: 100%;
+}
+.trademark_pic {
+  overflow: hidden;
+  width: 100%;
+}
+.trademark_pic img {
+  display: block;
+  width: 100%;
+}
+.trademark_info {
+  padding: 1em 2em 0;
+  background-color: #fff;
+}
+.trademark_info p {
+  padding-bottom: 1em;
+  font-size: .18rem;
+  color: var(--fontColorLight);
+}
+.trademark_name {
+  font-size: .2rem;
+  color: #222;
+}
+.trademark_sort {
+  display: inline-block;
+  width: .6rem;
+  text-align: center;
+  font-size: .2rem;
+  color: #fff;
+  background-color: #0cba88;
+  border-radius: 4px;
+}
+.trademark_price {
+  font-size: .28rem;
+  color: var(--sbcsColor);
+}
+.trademark_detail {
+  margin-top: 1.2em;
+  padding: 1em 2em;
+  font-size: .22rem;
+  background-color: #fff;
+}
+.trademark_detail li {
+  line-height: .36rem;
+  color: var(--fontColorLight);
+}
+.trademark_detail span {
+  word-break: break-all;
+  color: #222;
+}
+.sbcs_prompt {
+  margin-top: 1em;
+  padding: 1.2em 2em .4em;
+  background-color: #fff;
+}
+.sbcs_prompt h2 {
+  font-size: .24rem;
+}
+.sbcs_server ul {
+  overflow: hidden;
+  margin: 1em 0;
+}
+.sbcs_server li {
+  float: left;
+  width: 50%;
+  color: var(--fontColorLight);
+  font-size: .18rem;
+}
+.shangbiao_buying_pic {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.shangbiao_buying_pic img {
+  width: 100%;
+}
+.sbcs_buying ul {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #f2f2f2;
+}
+.sbcs_buying li {
+  color: var(--fontColorLight);
+  font-size: .18rem;
+}
+.sbcs_buying table  {
+  width: 100%;
+  margin-top: 2em;
+  text-align: center;
+  font-size: .18rem;
+  border-color:  #f8f8f8;
+}
+.sbcs_buying table span {
+  color: #ff6a49;
+}
+.sbcs_buying td {
+  padding: 1em 0;
+  color: var(--fontColorLight);
+}
+.tb_header {
+  height: .8rem;
+  background-color: #f8f8f8;
+}
+.trademark_recommend {
+  margin-top: 2em;
+}
+.trademark_recommend h3 {
+  padding-left: 1em;
+}
+.nav_link_block button {
+  width: 1.6rem;
+  height: .6rem;
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+  background-color: var(--sbcsColor);
+}
+.nav :last-child {
+  border-right: 0;
+}
+/*底栏*/
+.ftCtrl_item_btn {
+  background-color: var(--sbcsColor);
+}
+.sbcs_footer_icon {
+  display: block;
+  margin: 0 auto;
+}
+.sbcs_footer_icon .fa {
+  margin: 0;
+  font-size: .4rem;
+}
+.sbcs_footer_icon-active {
+  color: var(--sbcsColor);
+}
