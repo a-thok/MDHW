@@ -82,8 +82,8 @@
   margin-top: 5em;
 }
 .shangbiao_buying_pic {
-  width: 100%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 3em auto 1em;
   overflow: hidden;
 }
 .shangbiao_buying_pic img {
@@ -92,12 +92,14 @@
 .sbcs_buying ul {
   display: flex;
   justify-content: space-between;
+  width: 94%;
+  margin: 0 auto;
   padding-bottom: 2em;
   border-bottom: 1px solid #f2f2f2;
 }
 .sbcs_buying li {
   color: var(--fontColorLight);
-  font-size: .18rem;
+  font-size: .24rem;
 }
 .sbcs_buying table  {
   width: 100%;

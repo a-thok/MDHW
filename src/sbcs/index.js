@@ -15,6 +15,7 @@ import './img/hot_5.png';
 import './img/hot_6.png';
 import './img/hot_7.png';
 import './img/hot_8.png';
+import './img/liucheng.png';
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
