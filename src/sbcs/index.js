@@ -6,6 +6,7 @@ import './img/sbcs_2.png';
 import './img/sbcs_3.png';
 import './img/sbcs_4.png';
 import './img/sbcs_5.png';
+import './img/sbcs_6.png';
 import './img/hot_1.png';
 import './img/hot_2.png';
 import './img/hot_3.png';
@@ -31,6 +32,8 @@ const pathname = window.location.pathname;
 const pathArr = pathname.split('/');
 import index from './js/index.js';
 import list from './js/list.js';
+// import search from './js/search.js';
+// import detail from './js/detail.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();

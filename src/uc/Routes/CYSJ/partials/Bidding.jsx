@@ -7,11 +7,11 @@ export default function Bidding(props) {
   let title;
   let imgUrl;
   let name;
-  props.detail.map((item) => (
-  title = item.title,
-  imgUrl = item.logo ? `http://${UPLOAD_HOST}/img/${item.logo}` : 'http://cdn.dreamhiway.com/images/default2.png',
-  name = item.fbzname
-  ));
+  props.detail.forEach((item) => {
+    title = item.title;
+    imgUrl = item.logo ? `http://${UPLOAD_HOST}/img/${item.logo}` : 'http://cdn.dreamhiway.com/images/default2.png';
+    name = item.fbzname;
+  });
   const form = {
     intro: { type: 'textarea', label: '报价说明', id: 'projectname', placeholder: '请输入说明' },
     quote: { type: 'input', label: '报价', id: 'projectname', placeholder: '单位：元' },

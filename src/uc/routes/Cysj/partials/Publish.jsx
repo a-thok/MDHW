@@ -25,7 +25,7 @@ export default class Publish extends Component {
         name={item}
         id={item}
         value={this.props.data[item]}
-        { ...form[item] }
+        {...form[item]}
         onChange={(e) => this.props.onChange(e, item, 'Publish')}
         list="Publish"
       />
