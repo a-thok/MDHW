@@ -7,5 +7,5 @@
     "at-rule-empty-line-before": null,
     "number-leading-zero": "never"
   },
-  "ignoreFiles": ["node_modules/normalize.css/normalize.css"]
+  "ignoreFiles": ["node_modules/normalize.css/normalize.css", "src/sbcs/css/iconfont.css"]
 }
