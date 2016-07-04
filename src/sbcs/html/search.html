@@ -19,14 +19,141 @@
       </div>
       <div class="header_search">
         <label class="header_search_label" for="search"><i class="fa fa-search"></i></label>
-        <input class="header_search_input" type="search" placeholder="请输入关键词">
-        <span class="header_search_clear"><i class="fa fa-times-circle-o"></i></span>
+        <input class="header_search_input" id="search" type="search" placeholder="请输入关键词">
+        <label class="header_search_clear" for="search"><i class="fa fa-times-circle-o"></i></label>
       </div>
       <div class="header_search_btn">
-        <button>搜索</button>
+        <button type="button">搜索</button>
       </div>
     </header>
     <!--头部 结束-->
+
+     <!--过滤栏 开始-->
+    <section class="filter is-hidden">
+      <div class="filter_item">
+        <div class="filter_title filter_title-line">
+          <span class="filter_title_text">
+            <span class="filter_active">类别</span>
+          <i class="fa fa-angle-up"></i>
+          </span>
+        </div>
+        <div class="filter_content">
+          <ul class="filter_content_list filter_content_list-type" data-filter="pcode">
+            <li class="filter_content_list_item" data-code="">不限<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="01">01类 化工原料<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="02">02类 油漆涂料<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="03">03类 化妆日用<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="04">04类 工业油脂<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="05">05类 药品制剂<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="06">06类 五金器具<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="07">07类 机械机器<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="08">08类 手工用具<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="09">09类 电子电器<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="10">10类 医疗器械<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="11">11类 家用电器<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="12">12类 运输工具<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="13">13类 烟花爆竹<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="14">14类 珠宝手表<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="15">15类 乐器乐谱<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="16">16类 文具办公<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="17">17类 橡塑制品<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="18">18类 皮具箱包<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="19">19类 建筑材料<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="20">20类 家具工艺<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="21">21类 厨具日用<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="22">22类 缆绳帐篷<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="23">23类 纱线丝纺<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="24">24类 床上用品<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="25">25类 服装鞋帽<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="26">26类 花边纽扣<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="27">27类 地毯席垫<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="28">28类 运 动<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="29">29类 食品鱼肉<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="30">30类 食品米面<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="31">31类 生鲜农产<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="32">32类 啤酒饮料<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="33">33类 酒精饮料<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="34">34类 烟草制品<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="35">35类 广告管理<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="36">36类 金融经济<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="37">37类 修理安装<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="38">38类 广播通讯<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="39">39类 运输旅行<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="40">40类 加工服务<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="41">41类 教育娱乐<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="42">42类 科技科学<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="43">43类 餐馆住宿<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="44">44类 医疗美容<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="45">45类 法律安全<i class="fa fa-check-circle"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title filter_title-line">
+          <span class="filter_title_text">
+            <span class="filter_active">价格</span>
+          <i class="fa fa-angle-up"></i>
+          </span>
+        </div>
+        <div class="filter_content">
+          <ul class="filter_content_list" data-filter="price1" data-filterBig="price2">
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="" data-codeBig="">不限<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="" data-codeBig="1">1万以下<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="1" data-codeBig="3">1-3万<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="5" data-codeBig="10">5-10万<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="10" data-codeBig="20">10-20万<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="20" data-codeBig="50">20-50万<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="50" data-codeBig="">50万以上<i class="fa fa-check-circle"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title filter_title-line">
+          <span class="filter_title_text">
+            <span class="filter_active">类型</span>
+          <i class="fa fa-angle-up"></i>
+          </span>
+        </div>
+        <div class="filter_content">
+          <ul class="filter_content_list" data-filter="num">
+            <li class="filter_content_list_item" data-code="">不限</li>
+            <li class="filter_content_list_item" data-code="纯中文">纯中文<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="纯字母">纯字母<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="纯数字">纯数字<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item" data-code="纯图形">纯图形<i class="fa fa-check-circle"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="filter_item">
+        <div class="filter_title">
+          <span class="filter_title_text">
+            <span class="filter_active">注册年限</span>
+          <i class="fa fa-angle-up"></i>
+          </span>
+        </div>
+        <div class="filter_content">
+          <ul class="filter_content_list" data-filter="year1" data-filterBig="year2">
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="" data-codeBig="">不限<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="" data-codeBig="1">1年以下<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="1" data-codeBig="">1年以上<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="2" data-codeBig="">2年以上<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="3" data-codeBig="">3年以上<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="4" data-codeBig="">4年以上<i class="fa fa-check-circle"></i></li>
+            <li class="filter_content_list_item filter_content_list_item_more" data-code="5" data-codeBig="">5年以上<i class="fa fa-check-circle"></i></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--过滤栏 结束-->
+    <!--列表开始-->
+    <ul class="shangbiao-list"></ul>
+    <!--列表结束-->
+
+    <!--加载栏 开始-->
+    <div class="list_load is-hidden">
+      <i class="fa fa-spinner fa-pulse"></i><span class="list_load_text"></span>
+    </div>
+    <!--加载栏 结束-->
 
     <!--导航 开始-->
     <nav class="nav">
