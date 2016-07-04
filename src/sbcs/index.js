@@ -33,7 +33,7 @@ const pathname = window.location.pathname;
 const pathArr = pathname.split('/');
 import index from './js/index.js';
 import list from './js/list.js';
-// import search from './js/search.js';
+import search from './js/search.js';
 import detail from './js/detail.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
@@ -42,4 +42,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   list();
 } else if (pathname.indexOf('detail') !== -1) {
   detail();
+} else if (pathname.indexOf('search') !== -1) {
+  search();
 }
