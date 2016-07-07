@@ -7,7 +7,7 @@ const postcssCssnext = require('postcss-cssnext');
 
 const PRODUCTION = process.env.NODE_ENV === 'production';  // 判断打包到内网还是外网
 
-config.output.publicPath = PRODUCTION ? '//cdn.dreamhiway.com/mstatic/' : 'http://192.168.2.10:81/mstatic/';
+config.output.publicPath = PRODUCTION ? '//cdn.dreamhiway.com/mstatic/' : 'http://192.168.2.80:81/mstatic/';
 
 config.devtool = 'source-map';
 
