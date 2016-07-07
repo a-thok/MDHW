@@ -15,7 +15,7 @@ export default function list() {
     api: '/m/rshop/Search/SearchList',
     params: {
       pcode,
-      pageIndex: 0,
+      pageIndex: 1,
       pageSize: 10
     },
     container: $('.shangbiao-list')
