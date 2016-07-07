@@ -15,6 +15,7 @@ import './img/hot_5.png';
 import './img/hot_6.png';
 import './img/hot_7.png';
 import './img/hot_8.png';
+import './img/product.png';
 import './img/liucheng.png';
 
 // 解决click事件的移动端延迟
@@ -34,6 +35,7 @@ const pathArr = pathname.split('/');
 import index from './js/index.js';
 import list from './js/list.js';
 import search from './js/search.js';
+import fast from './js/fast.js';
 import detail from './js/detail.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
@@ -44,4 +46,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   detail();
 } else if (pathname.indexOf('search') !== -1) {
   search();
+} else if (pathname.indexOf('fast') !== -1) {
+  fast();
 }
