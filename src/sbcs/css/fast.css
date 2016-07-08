@@ -1,0 +1,109 @@
+.page-backimg {
+  background-image: url('../img/product.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.header-opacity {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 0;
+}
+.header-opacity .header_menu > i {
+  background: #fff;
+}
+.header-opacity .header_link {
+  color: #fff;
+}
+.message {
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 80%;
+}
+.message_btn,
+.message_input {
+  width: 100%;
+  margin-top: 1.5em;
+  border: 0;
+  border-radius: 8px;
+  padding: .8em 1em;
+  font-size: .2rem;
+}
+.message_btn {
+  cursor: pointer;
+}
+.message_btn.is-show {
+  background: var(--sbcsColor);
+  color: #fff;
+}
+/*提示*/
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: 80%;
+  max-width: 600px;
+  padding: .2rem;
+  border-radius: 5px;
+  border: 1px solid var(--borderColorLight);
+  background: rgba(0, 0, 0, .7);
+  font-size: .2rem;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+.modal-first {
+  display: none;
+}
+.modal_content {
+  padding: .8em;
+  text-align: center;
+}
+.modal_content .fa {
+  color: var(--sbcsColor);
+  margin-right: .8em;
+}
+.modal_btn {
+  text-align: right;
+}
+.modal_btn button {
+  border-radius: 5px;
+  padding: .5em 2em;
+  border: 0;
+  background: var(--sbcsColor);
+  color: #fff;
+}
+.modal.is-show {
+  animation: show 3s forwards;
+}
+
+@keyframes show {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: translate(-50%, -10%);
+  }
+  5% {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0%);
+  }
+  10% {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -10%);
+  }
+  20% {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0%);
+  }
+  70% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
