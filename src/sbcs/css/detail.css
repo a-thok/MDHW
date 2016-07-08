@@ -166,3 +166,70 @@
 .sbcs_footer_icon-active {
   color: var(--sbcsColor);
 }
+/*弹窗*/
+.pupop_bg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-width: 750px;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(0,0,0,.6);
+}
+.pupop_bg .is-show {
+  display: block;
+}
+.shopping_pupop {
+  position: absolute;
+  width: 92.27%;
+  max-width: 692px;
+  top: 30%;
+  left: 4%;
+  z-index: 2;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.shopping_pupop_head {
+  overflow: hidden;
+  border-bottom: 2px solid #d9d9d9;
+}
+.shopping_pupop_head h1 {
+  float: left;
+  margin: .56em 1em;
+  font-size: .24rem;
+  color: #333;
+}
+.close_pupop {
+  display: block;
+  float: right;
+  padding: .4em .6em;
+  font-size: .22rem;
+  color:#999;
+  cursor: pointer;
+}
+.shopping_pupop_content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.4em 0 .2em;
+  font-size: .22rem;
+}
+.shopping_pupop_content p {
+  line-height: .4rem;
+  color: #444;
+}
+.shopping_pupop_content span {
+  color: #fe0000;
+}
+.shopping_OK {
+  display: block;
+  width: 30%;
+  margin: 1.2em auto;
+  padding: .8em;
+  text-align: center;
+  font-size: .18rem;
+  color: #fff;
+  background-color: var(--sbcsColor);
+  border: 0;
+  cursor: pointer;
+}
