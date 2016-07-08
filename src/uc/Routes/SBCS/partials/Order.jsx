@@ -7,9 +7,7 @@ export default class Order extends Component {
   render() {
     return (
       <div>
-        <div className="sbcs_order_warn">
-          <p><i className="fa fa-exclamation-circle"></i>建议您下单前先与卖家确认是否可交易或下单后练习卖家</p>
-        </div>
+        <div className="remind"><i className="fa fa-exclamation-triangle"></i>建议您下单前先与卖家确认是否可交易或下单后联系卖家</div>
         <h1 className="trademark_name">商标名称：<span className="trademark_name-cont">梦高速</span></h1>
         <ul className="sbcs_order_detl">
           <li><span className="sbcs_order_detl-name">交易方式：</span><span className="sbcs_order_detail-cont">转让</span></li>
@@ -38,6 +36,7 @@ export default class Order extends Component {
           </div>
         </div>
 
+        {/*
         <div className="sbcs_srzt">
           <div className="sbcs_srzt_cont">
             <div className="sbcs_srzt_cont-left">
@@ -57,7 +56,7 @@ export default class Order extends Component {
             </div>
           </div>
         </div>
-
+        */}
         <div className="sbcs_note">
           <div className="sbcs_note-left">
             <p>备注信息：</p>
