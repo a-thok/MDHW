@@ -5,8 +5,17 @@ export default class Sbcs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Order: {}
+      Order: {},
+      Pay: {
+        type: 0
+      }
     };
+  }
+  // 选择支付方式
+  changeInvoice(type) {
+    const newState = this.state.Pay;
+    newState.type = type;
+    this.setState({ Pay: newState });
   }
   // 渲染
   render() {
@@ -18,6 +27,12 @@ export default class Sbcs extends Component {
       case 'Order':
         extra = {
           // fetchOrder: this.fetchOrder.bind(this),
+          // toggleDetail: this.toggleDetail.bind(this)
+        };
+        break;
+      case 'Pay':
+        extra = {
+          changeInvoice: this.changeInvoice.bind(this)
           // toggleDetail: this.toggleDetail.bind(this)
         };
         break;

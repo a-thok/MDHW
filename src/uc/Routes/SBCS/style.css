@@ -1,18 +1,4 @@
 /*订单信息*/
-.sbcs_order_warn {
-  color: #fff;
-  background-color: #484f55;
-}
-.sbcs_order_warn p {
-  padding: .6em 0;
-  text-align: center;
-  font-size: .22rem;
-}
-.sbcs_order_warn .fa {
-  padding: 0 .2em;
-  font-size: .3rem;
-  color: #9e7b28;
-}
 .trademark_name {
   margin: 0;
   padding: 1em 2em;
@@ -71,7 +57,7 @@
   justify-content: space-around;
   align-content: center;
 }
-.sbcs_addr-map .fa, 
+.sbcs_addr-map .fa,
 .sbcs_srzt-map .fa {
   padding-top: .2em;
   font-size: .4rem;
@@ -126,7 +112,7 @@
 }
 .risk_warning-cont p {
   line-height: .34rem;
-  font-size: .20rem;
+  font-size: .2rem;
   color: #888;
 }
 .risk_warning-up {
@@ -166,4 +152,68 @@
   background-color: #f64914;
   border: 0;
   border-radius: 4px;
+}
+/*支付页*/
+.remind {
+  padding: .5em 1em;
+  font-size: .2rem;
+  background: #484f55;
+  color: #fff;
+}
+.fa-exclamation-triangle {
+  margin-right: .5em;
+  font-size: .3rem;
+  color: #eba101;
+}
+.payment {
+  margin-top: .5rem;
+  padding: 0 1em;
+  background: #fff;
+  font-size: .24rem;
+}
+.paymentList {
+  padding: 1em 0 1em .7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--borderColorLight);
+  background-position: center  left;
+  background-repeat: no-repeat;
+  background-size: .5rem;
+}
+.paymentList-weixin {
+  background-image: url("routes/Sbcs/img/weixin.png");
+}
+.paymentList-zhifubao {
+  background-image: url("routes/Sbcs/img/zhifubao.png");
+}
+.paymentList-card {
+  background-image: url("routes/Sbcs/img/card.png");
+}
+.paymentList_size {
+  margin-top: .5em;
+  font-size: .18rem;
+  color: var(--fontColorLight);
+}
+.fa-check {
+  padding: .5em;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+}
+.paymentList .is-show {
+  background: var(--sbcsColor);
+}
+.payBtn {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: .5rem;
+  padding: 1em 0;
+  border: 0;
+  border-radius: 10px;
+  font-size: .2rem;
+  background: var(--sbcsColor);
+  color: #fff;
 }

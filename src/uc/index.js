@@ -48,6 +48,7 @@ import ZcOrderForm from './routes/Zc/partials/OrderForm';
 import Sbcs from './routes/Sbcs';
 import SbcsNav from './routes/Sbcs/partials/Nav';
 import SbcsOrder from './routes/Sbcs/partials/Order';
+import SbcsPay from './routes/Sbcs/partials/Pay';
 
 import App from './App';
 
@@ -102,6 +103,7 @@ ReactDOM.render((
       <Route path="/sbcs" component={Sbcs}>
         <IndexRoute component={SbcsNav} />
         <Route path="/sbcs/order" component={SbcsOrder} />
+        <Route path="/sbcs/pay" component={SbcsPay} />
       </Route>
       <Route path="/settings" component={Settings}>
         <IndexRoute component={SettingsNav} />
