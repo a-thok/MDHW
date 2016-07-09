@@ -36,7 +36,7 @@ export default class Address extends Component {
           finished={this.props.finished}
           dataLen={this.props.data.length}
         />
-        <Link className="addAddress" to="/settings/address/add">+ 添加新地址</Link>
+        <Link className="addAddress" to="/settings/address/add">+ 添加新联系信息</Link>
       </div>
     );
   }

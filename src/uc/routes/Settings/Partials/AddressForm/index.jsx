@@ -32,14 +32,14 @@ export default class AddressForm extends Component {
     return (
       <form className="addressForm" onSubmit={(e) => this.handleSubmit(e)}>
         <FormGroupSimple
-          label="姓名"
+          label="姓名 *"
           name="name"
           placeholder="请输入姓名"
           value={this.props.data.name}
           onChange={this.props.onAddressChange}
         />
         <FormGroupSimple
-          label="手机"
+          label="手机 *"
           name="mobile"
           placeholder="请输入收件人手机号码"
           value={this.props.data.mobile}
@@ -53,7 +53,7 @@ export default class AddressForm extends Component {
           onChange={this.props.onAddressChange}
         />
         <FormGroupSimple
-          label="地址"
+          label="地址 *"
           content={
             <FormAddress
               name="address"
@@ -70,7 +70,7 @@ export default class AddressForm extends Component {
         <FormGroupSimple
           content={
             <FormCheck
-              text="设为默认地址"
+              text="设为默认联系人"
               name="isDefault"
               value={this.props.data.isDefault}
               onChange={this.props.onAddressChange}

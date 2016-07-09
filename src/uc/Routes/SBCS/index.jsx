@@ -15,6 +15,10 @@ export default class Sbcs extends Component {
     this.changeInvoice = this.changeInvoice.bind(this);
     this.collapse = this.collapse.bind(this);
   }
+  // 获取订单数据
+  // getData() {
+  //   const newState = Object.assign({}, this.state.Order);
+  // }
   // 风险提示
   collapse() {
     const newState = this.state.Order;
