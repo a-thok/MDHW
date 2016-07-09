@@ -5,12 +5,25 @@ export default class Sbcs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Order: {},
+      Order: {
+        mode: 1
+      },
       Pay: {
         type: 0
       }
     };
     this.changeInvoice = this.changeInvoice.bind(this);
+    this.collapse = this.collapse.bind(this);
+  }
+  // 风险提示
+  collapse() {
+    const newState = this.state.Order;
+    if (newState.mode === 1) {
+      newState.mode--;
+    } else {
+      newState.mode++;
+    }
+    this.setState({ Order: newState });
   }
   // 选择支付方式
   changeInvoice(type) {
@@ -27,6 +40,7 @@ export default class Sbcs extends Component {
     switch (path) {
       case 'Order':
         extra = {
+          collapse: this.collapse
           // fetchOrder: this.fetchOrder.bind(this),
           // toggleDetail: this.toggleDetail.bind(this)
         };

@@ -68,15 +68,17 @@ export default class Order extends Component {
         <div className="risk_warning">
           <div className="risk_warning-cont">
             <h3><i className="fa fa-exclamation-circle"></i>风险提示</h3>
-            <p>1.此非一口价交易品，不确定交易品有货或价格不变，此方式卖家不承担违约责任。建议您下单前先与卖家确认是否可交易或下单后联系卖家。</p>
-            <p>2.本平台为保障交易安全，避免出现卖家对转让手续弄虚作假，特强制有本平台指定的第三方代理机构办理官方转让手续，（商标转让）费用为1000.00元/件。</p>
-            <span className="risk_warning-up"><i className="fa fa-angle-double-up"></i></span>
+            <div className={`risk_warning-detl${this.props.mode === 1 ? 'is-show' : ''}`}>
+              <p>1.此非一口价交易品，不确定交易品有货或价格不变，此方式卖家不承担违约责任。建议您下单前先与卖家确认是否可交易或下单后联系卖家。</p>
+              <p>2.本平台为保障交易安全，避免出现卖家对转让手续弄虚作假，特强制有本平台指定的第三方代理机构办理官方转让手续，（商标转让）费用为1000.00元/件。</p>
+            </div>
+            <span className="risk_warning-up" onClick={this.props.collapse}><i className={`fa${this.props.mode === 1 ? ' fa-angle-double-up' : ' fa-angle-double-down'}`}></i></span>
           </div>
         </div>
 
         <div className="sbcs_order_footer">
           <p>支付总金额：<span className="sbcs_order-money">¥199999.00元</span></p>
-          <button className="sbcs_order-btn">提交订单</button>
+          <button className="sbcs_order-btn" onClick={this.props.submitOrder}>提交订单</button>
         </div>
 
       </div >
