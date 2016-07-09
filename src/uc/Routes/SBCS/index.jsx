@@ -10,6 +10,7 @@ export default class Sbcs extends Component {
         type: 0
       }
     };
+    this.changeInvoice = this.changeInvoice.bind(this);
   }
   // 选择支付方式
   changeInvoice(type) {
@@ -32,7 +33,7 @@ export default class Sbcs extends Component {
         break;
       case 'Pay':
         extra = {
-          changeInvoice: this.changeInvoice.bind(this)
+          changeInvoice: this.changeInvoice
           // toggleDetail: this.toggleDetail.bind(this)
         };
         break;
