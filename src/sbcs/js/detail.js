@@ -21,9 +21,24 @@ export default function detail() {
   btn.addEventListener('click', () => {
     const arr = location.pathname.split('/');
     const id = arr[arr.length - 1];
-    xhr('/m/RShop/Order/OrderConfirm', id, (res) => {
+    xhr('/m/RShop/Order/OrderConfirm', JSON.stringify({ id }), (res) => {
       document.cookie = `SbcsID=${res.result};path=/;domain=dreamhiway.com`;
       // location.href = `http://${MAIN_HOST}/m/user#/Sbcs/order`; // 未登录情况下，转跳可能有问题
     }, true);
+
+    // fetch('/m/RShop/Order/OrderConfirm', {
+    //   method: 'POST',
+    //   mode: 'cors',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   credentials: 'include',
+    //   body: JSON.stringify({ id })
+    // })
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     document.cookie = `SbcsID=${res.result};path=/;domain=dreamhiway.com`;
+    //     // location.href = `http://${MAIN_HOST}/m/user#/Sbcs/order`;
+    //   });
   });
 }
