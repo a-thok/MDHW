@@ -57,7 +57,7 @@
   justify-content: space-around;
   align-content: center;
 }
-.sbcs_addr-map .fa, 
+.sbcs_addr-map .fa,
 .sbcs_srzt-map .fa {
   padding-top: .2em;
   font-size: .4rem;
@@ -120,7 +120,7 @@
 }
 .risk_warning-cont p {
   line-height: .34rem;
-  font-size: .20rem;
+  font-size: .2rem;
   color: #888;
 }
 .risk_warning-up {
