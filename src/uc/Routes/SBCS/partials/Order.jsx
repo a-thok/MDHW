@@ -3,12 +3,16 @@ import React, { Component } from 'react';
 export default class Order extends Component {
   componentDidMount() {
   }
+  handleClick() {
+    window.location.hash = '#/settings/address?order=1';
+  }
 
   render() {
     return (
       <div>
         <div className="remind"><i className="fa fa-exclamation-triangle"></i>建议您下单前先与卖家确认是否可交易或下单后联系卖家</div>
         <h1 className="trademark_name">商标名称：<span className="trademark_name-cont">梦高速</span></h1>
+        // 订单信息
         <ul className="sbcs_order_detl">
           <li><span className="sbcs_order_detl-name">交易方式：</span><span className="sbcs_order_detail-cont">转让</span></li>
           <li><span className="sbcs_order_detl-name">售价：</span><span className="sbcs_order_detail-cont">¥199999.00</span></li>
@@ -16,7 +20,7 @@ export default class Order extends Component {
           <li> <span className="sbcs_order_detl-name">优惠：</span><span className="sbcs_order_detail-cont">-¥0.00</span></li>
           <li><span className="sbcs_order_detl-name">实付：</span><span className="sbcs_order_detail-cont">¥199999.00</span></li>
         </ul>
-
+        // 联系信息
         <div className="sbcs_contact">
           <div className="sbcs_contact_cont">
             <div className="sbcs_contact_cont-left">
@@ -30,13 +34,13 @@ export default class Order extends Component {
                 </div>
               </div>
             </div>
-            <div className="sbcs_addr-change">
+            <div className="sbcs_addr-change" onClick={this.handleClick}>
               <i className="fa fa-angle-right"></i>
             </div>
           </div>
         </div>
-
         {/*
+          // 受让主体或选择代持
         <div className="sbcs_srzt">
           <div className="sbcs_srzt_cont">
             <div className="sbcs_srzt_cont-left">
@@ -57,6 +61,7 @@ export default class Order extends Component {
           </div>
         </div>
         */}
+        // 备注信息
         <div className="sbcs_note">
           <div className="sbcs_note-left">
             <p>备注信息：</p>
@@ -64,7 +69,7 @@ export default class Order extends Component {
           </div>
           <textarea className="sbcs_note-cont" type="text" placeholder="请填写留言信息" ></textarea>
         </div>
-
+        // 风险提示
         <div className="risk_warning">
           <div className="risk_warning-cont">
             <h3><i className="fa fa-exclamation-circle"></i>风险提示</h3>
@@ -78,7 +83,7 @@ export default class Order extends Component {
 
         <div className="sbcs_order_footer">
           <p>支付总金额：<span className="sbcs_order-money">¥199999.00元</span></p>
-          <button className="sbcs_order-btn" onClick={this.props.submitOrder}>提交订单</button>
+          <button className="sbcs_order-btn" onClick={this.props.postOrder}>提交订单</button>
         </div>
 
       </div >

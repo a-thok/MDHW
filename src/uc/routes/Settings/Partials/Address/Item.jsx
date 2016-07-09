@@ -7,6 +7,10 @@ export default function Address(props) {
       props.onSelectAddr(props.index);
       location.hash = '#/srdz/order';
     }
+    if (location.hash.indexOf('order=1') !== -1) {
+      props.onSelectAddr(props.index);
+      location.hash = '#/sbcs/order';
+    }
   }
   return (
     <li className="address_item">
