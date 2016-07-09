@@ -1,6 +1,7 @@
 import { $ } from 'func';
 import share from 'share';
 import favorite from 'favorite';
+import xhr from 'xhr';
 
 export default function detail() {
   favorite($('.ftCtrl_item')[0], 'id', '/m/RShop/Collect/CollectAdd', '/m/RShop/Collect/CollectDel');
@@ -14,5 +15,15 @@ export default function detail() {
   // 关闭弹窗
   $('.close_pupop').addEventListener('click', () => {
     text.classList.remove('is-show');
+  });
+  // 确认购买
+  const btn = $('.shopping_OK');
+  btn.addEventListener('click', () => {
+    const arr = location.pathname.split('/');
+    const id = arr[arr.length - 1];
+    xhr('/m/RShop/Order/OrderConfirm', id, (res) => {
+      document.cookie = `SbcsID=${res.result};path=/;domain=dreamhiway.com`;
+      // location.href = `http://${MAIN_HOST}/m/user#/Sbcs/order`; // 未登录情况下，转跳可能有问题
+    }, true);
   });
 }
