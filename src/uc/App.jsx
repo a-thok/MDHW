@@ -104,6 +104,9 @@ export default class App extends Component {
       case 'Srdz':
         extra = { orderAddr: this.state.orderAddr };
         break;
+      case 'Sbcs':
+        extra = { orderAddr: this.state.orderAddr };
+        break;
       default:
         extra = {};
     }

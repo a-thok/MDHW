@@ -24,13 +24,14 @@ export default class Order extends Component {
         <div className="sbcs_contact" onClick={this.handleClick}>
           <div className="sbcs_contact_cont">
             <div className="sbcs_contact_cont-left">
-              <p>联系信息：<span className="sbcs_contact_info">张三 15423625412</span></p>
+              <p>联系信息：<span className="sbcs_contact_info">{this.props.orderAddr.name || '请设置个人信息'} {this.props.orderAddr.mobile || ''}</span></p>
               <div className="sbcs_contact_addr">
                 <div className="sbcs_addr-map">
                   <i className=" fa fa-map-marker"></i>
                 </div>
                 <div className="sbcs_addr-info">
-                  <p>福建省 石狮市 鸿山镇 国家高新区创新创业中心1-7</p>
+                  <p>{this.props.orderAddr.province_name || 'xx'}省{this.props.orderAddr.city_name || 'xx'}市
+                    {this.props.orderAddr.district_name || ''}{this.props.orderAddr.address || ''}</p>
                 </div>
               </div>
             </div>

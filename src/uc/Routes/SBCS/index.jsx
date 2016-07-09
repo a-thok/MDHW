@@ -40,7 +40,8 @@ export default class Sbcs extends Component {
     switch (path) {
       case 'Order':
         extra = {
-          collapse: this.collapse
+          collapse: this.collapse,
+          orderAddr: this.props.orderAddr
           // fetchOrder: this.fetchOrder.bind(this),
           // toggleDetail: this.toggleDetail.bind(this)
         };
