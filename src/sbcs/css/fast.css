@@ -41,7 +41,7 @@
 }
 @media screen and (min-width: 750px) {
   .message .filter_content {
-    left: 57%;
+    left: 54.5%;
     width: 600px;
   }
 }
