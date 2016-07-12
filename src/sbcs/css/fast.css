@@ -18,6 +18,37 @@
   margin-top: 2rem;
   width: 80%;
 }
+.message .filter_item {
+  background: #fff;
+}
+.message .filter_title {
+  padding: 0;
+}
+.message .filter_title_text {
+  display: flex;
+  justify-content: space-between;
+}
+.message .filter_content {
+  left: 10%;
+  top: 3.62rem;
+  width: 80%;
+  height: calc(100vh - 5rem);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.message .filter_content_list_item {
+  background: rgba(0, 0, 0, .5);
+}
+@media screen and (min-width: 750px) {
+  .message .filter_content {
+    left: 57%;
+    width: 600px;
+  }
+}
+.message .filter_title-line::after {
+  border: 0;
+}
+.message .filter_item,
 .message_btn,
 .message_input {
   width: 100%;
