@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 export default class Order extends Component {
   componentDidMount() {
+    this.props.fetchOrder();
   }
   handleClick() {
     window.location.hash = '#/settings/address?order=1';
@@ -11,27 +12,27 @@ export default class Order extends Component {
     return (
       <div>
         <div className="remind"><i className="fa fa-exclamation-triangle"></i>建议您下单前先与卖家确认是否可交易或下单后联系卖家</div>
-        <h1 className="trademark_name">商标名称：<span className="trademark_name-cont">梦高速</span></h1>
+        <h1 className="trademark_name">商标名称：<span className="trademark_name-cont">{this.props.data.name}</span></h1>
         {/* 订单信息 */}
         <ul className="sbcs_order_detl">
-          <li><span className="sbcs_order_detl-name">交易方式：</span><span className="sbcs_order_detail-cont">转让</span></li>
-          <li><span className="sbcs_order_detl-name">售价：</span><span className="sbcs_order_detail-cont">¥199999.00</span></li>
+          <li><span className="sbcs_order_detl-name">交易方式：</span><span className="sbcs_order_detail-cont">{this.props.data.tradetypeName}</span></li>
+          <li><span className="sbcs_order_detl-name">售价：</span><span className="sbcs_order_detail-cont">{this.props.data.price}</span></li>
           <li><span className="sbcs_order_detl-name">手续费：</span><span className="sbcs_order_detail-cont">¥0.00</span></li>
           <li> <span className="sbcs_order_detl-name">优惠：</span><span className="sbcs_order_detail-cont">-¥0.00</span></li>
-          <li><span className="sbcs_order_detl-name">实付：</span><span className="sbcs_order_detail-cont">¥199999.00</span></li>
+          <li><span className="sbcs_order_detl-name">订金：</span><span className="sbcs_order_detail-cont">¥{this.props.data.price}</span></li>
         </ul>
         {/* 联系信息 */}
         <div className="sbcs_contact" onClick={this.handleClick}>
           <div className="sbcs_contact_cont">
             <div className="sbcs_contact_cont-left">
-              <p>联系信息：<span className="sbcs_contact_info">{this.props.orderAddr.name || '请设置个人信息'} {this.props.orderAddr.mobile || ''}</span></p>
+              <p>联系信息：<span className="sbcs_contact_info">{this.props.orderAddr.name || this.props.ret.name || '请设置个人信息'} {this.props.orderAddr.mobile || this.props.ret.mobile || ''}</span></p>
               <div className="sbcs_contact_addr">
                 <div className="sbcs_addr-map">
                   <i className=" fa fa-map-marker"></i>
                 </div>
                 <div className="sbcs_addr-info">
-                  <p>{this.props.orderAddr.province_name || 'xx'}省{this.props.orderAddr.city_name || 'xx'}市
-                    {this.props.orderAddr.district_name || ''}{this.props.orderAddr.address || ''}</p>
+                  <p>{this.props.orderAddr.province_name || this.props.ret.province_name || 'xx'}省{this.props.orderAddr.city_name || this.props.ret.city_name || 'xx'}市
+                    {this.props.orderAddr.district_name || this.props.ret.district_name || ''}{this.props.orderAddr.address || this.props.ret.address || ''}</p>
                 </div>
               </div>
             </div>
@@ -67,7 +68,7 @@ export default class Order extends Component {
             <p>备注信息：</p>
             <i className="fa fa-pencil-square-o"></i>
           </div>
-          <textarea className="sbcs_note-cont" type="text" placeholder="请填写留言信息" ></textarea>
+          <textarea className="sbcs_note-cont" type="textarea" placeholder="请填写留言信息" onChange={(e) => this.props.textChange(e.target.value)}></textarea>
         </div>
         {/* 风险提示 */}
         <div className="risk_warning">
@@ -82,7 +83,7 @@ export default class Order extends Component {
         </div>
 
         <div className="sbcs_order_footer">
-          <p>支付总金额：<span className="sbcs_order-money">¥199999.00元</span></p>
+          <p>支付总金额：<span className="sbcs_order-money">¥{this.props.data.price}元</span></p>
           <button className="sbcs_order-btn" onClick={this.props.postOrder}>提交订单</button>
         </div>
 
