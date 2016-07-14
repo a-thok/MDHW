@@ -15,6 +15,8 @@ export default function demand() {
       pageIndex: 1,
       pageSize: 10
     },
+    immediate: true,
+    replace: true,
     container: $('.hostlist')
   };
   render(config);
