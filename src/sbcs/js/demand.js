@@ -12,7 +12,7 @@ export default function demand() {
     template: sbqgTemplate,
     api: '/m/rshop/Fast/DemandList',
     params: {
-      pageIndex: 1,
+      pageIndex: 0,
       pageSize: 10
     },
     immediate: true,

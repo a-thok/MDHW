@@ -32,7 +32,11 @@ export default function fast() {
   const sellprice = $('.message_input-sellprice');
   input.forEach(e => {
     e.addEventListener('input', () => {
-      if (phone.value !== '') {
+      // 希望价格条件
+      if (sellprice.value < 0) {
+        sellprice.value = 1;
+      }
+      if (/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|01[0])[0-9]{8}$/.test(phone.value)) {
         btn.classList.add('is-show');
       } else {
         btn.classList.remove('is-show');
