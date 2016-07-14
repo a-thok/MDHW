@@ -17,6 +17,7 @@ import './img/hot_7.png';
 import './img/hot_8.png';
 import './img/product.png';
 import './img/liucheng.png';
+import './img/sbjx_1.png';
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
@@ -37,6 +38,7 @@ import list from './js/list.js';
 import search from './js/search.js';
 import fast from './js/fast.js';
 import detail from './js/detail.js';
+import boutique from './js/boutique.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -48,4 +50,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   search();
 } else if (pathname.indexOf('fast') !== -1) {
   fast();
+} else if (pathname.indexOf('boutique') !== -1) {
+  boutique();
 }

@@ -1,0 +1,16 @@
+.choiceList {
+  padding: 0 .2rem;
+}
+.choiceList_item {
+  margin: .2rem 0;
+}
+.choiceList_itemLink {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+}
+.choiceList_itemLink img {
+  display: block;
+  width: 100%;
+}
