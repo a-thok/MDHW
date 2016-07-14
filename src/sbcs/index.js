@@ -39,6 +39,7 @@ import search from './js/search.js';
 import fast from './js/fast.js';
 import detail from './js/detail.js';
 import boutique from './js/boutique.js';
+import demand from './js/demand.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -52,4 +53,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   fast();
 } else if (pathname.indexOf('boutique') !== -1) {
   boutique();
+} else if (pathname.indexOf('demand') !== -1) {
+  demand();
 }

@@ -1,0 +1,46 @@
+.hostlist_item_a {
+  display: block;
+  text-decoration: none;
+}
+.base_title_tagBlue {
+  background: #06c1ae;
+}
+.base_title_tagRed {
+  background: #eb3e40;
+}
+.issueBuy {
+  position: fixed;
+  right: 50%;
+  bottom: 10%;
+  margin-right: -50%;
+  width: 1.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2rem;
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  font-size: .2rem;
+  background: #f86d43;
+  opacity: .8;
+}
+@media screen and (min-width: 750px) {
+  .issueBuy {
+    margin-right: -375px;
+  }
+}
+.issueBuy_logo {
+  width: .6rem;
+  height: .6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: .3rem;
+  background: #fff;
+  color: #f64914;
+}
+.issueBuy_font {
+  width: .5rem;
+  color: #fff;
+}
