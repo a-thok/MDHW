@@ -12,11 +12,11 @@ export default function demand() {
     template: sbqgTemplate,
     api: '/m/rshop/Fast/DemandList',
     params: {
-      pageIndex: 0,
+      pageIndex: 1,
       pageSize: 10
     },
-    immediate: true,
-    replace: true,
+    // immediate: true,
+    // replace: true,
     container: $('.hostlist')
   };
   render(config);

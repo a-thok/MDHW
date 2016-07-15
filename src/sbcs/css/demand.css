@@ -2,10 +2,16 @@
   display: block;
   text-decoration: none;
 }
-.base_title_tagBlue {
+.base_title_tag {
+  margin-left: .5em;
+}
+.base_title_wrap > span:first-child {
+  background: #efc028;
+}
+.base_title_wrap > span:nth-child(odd) {
   background: #06c1ae;
 }
-.base_title_tagRed {
+.base_title_wrap > span:last-child {
   background: #eb3e40;
 }
 .issueBuy {
