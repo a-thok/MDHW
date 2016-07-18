@@ -229,3 +229,93 @@
   background: var(--sbcsColor);
   color: #fff;
 }
+/*发布商标求购页*/
+.buyForm {
+  background-color: #fff;
+  font-size: .22rem;
+}
+.formCont {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 1em;
+}
+.formCont_label {
+  display: inline-block;
+  width: 24%;
+  text-align: right;
+}
+.formCont_span,
+.formCont_input {
+  width: 53.33%;
+  padding: .4em .6em;
+  border: 1px solid #ccc;
+}
+.formCont_input-main {
+  background-color: #ddd;
+  cursor: pointer;
+}
+.formCont_span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.sort_more {
+  display: block;
+  width: 100%;
+  padding: 1em .5em 0;
+  display: flex;
+  justify-content: center;
+}
+.select_more {
+  width: 15.73%;
+  margin-left: 1.4em;
+  padding: .4em .2em;
+  text-align: center;
+  color: #fff;
+  background-color: var(--sbcsColor);
+  border: 0;
+  cursor: pointer;
+}
+.formCont_label-need {
+  color: #f00;
+}
+.formCont_text-label {
+  align-self: flex-start;
+}
+.formCont_text {
+  width: 70.66%;
+  height: 1rem;
+  padding: .4em;
+  font-size: .18rem;
+  border: 1px solid #ccc;
+}
+.formBottn {
+  width: 100%;
+  margin-top: 2em;
+  padding-bottom: 4em;
+  text-align: center;
+}
+.fabu_btn {
+   width: 77.33%;
+   text-align: center;
+   padding: .4em;
+   color: #fff;
+   background-color: var(--sbcsColor);
+   border: 0;
+   border-radius: 4px;
+   cursor: pointer;
+ }
+.formCont_list {
+   position: absolute;
+   width: 31.1%;
+   height: 60%;
+   top: 8em;
+   left: 20.28em;
+   overflow: auto;
+   z-index: 1;
+ }
+ .is-hidden {
+   display: none;
+ }

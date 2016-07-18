@@ -16,6 +16,14 @@ export default class Sbcs extends Component {
       Pay: {
         data: {},
         type: 'wapAlipay'
+      },
+      Fbqg: {
+        moreBtn1: 0,
+        moreBtn2: 1,
+        data: {}
+      },
+      Submit: {
+        data: {}
       }
     };
     this.changeInvoice = this.changeInvoice.bind(this);
@@ -24,6 +32,7 @@ export default class Sbcs extends Component {
     this.postOrder = this.postOrder.bind(this);
     this.payClick = this.payClick.bind(this);
     this.textChange = this.textChange.bind(this);
+    this.postMore = this.postMore.bind(this);
   }
   //  备注信息
   textChange(value) {
@@ -132,6 +141,23 @@ export default class Sbcs extends Component {
     newState.type = type;
     this.setState({ Pay: newState });
   }
+  // 发布求购-分类-多选
+  postMore() {
+    console.log(111);
+    const newState = this.state.Fbqg;
+    if (newState.moreBtn1 === 0) {
+      newState.moreBtn1++;
+      console.log(newState.moreBtn1);
+    } else if (newState.moreBtn1 === 1 && newState.moreBtn2 === 1) {
+      newState.moreBtn2++;
+      console.log(newState.moreBtn2);
+    } else if (newState.moreBtn2 === 2) {
+      alert('最多只能选择三种分类！');
+      console.log(newState.moreBtn2);
+    }
+    this.setState({ Order: newState });
+  }
+  
   // 渲染
   render() {
     const Child = this.props.children;
@@ -153,6 +179,15 @@ export default class Sbcs extends Component {
           changeInvoice: this.changeInvoice,
           payClick: this.payClick,
           fetchOrder: this.fetchOrder
+        };
+        break;
+      case 'Fbqg':
+        extra = {
+          postMore: this.postMore
+        };
+        break;
+      case 'Submit':
+        extra = {
         };
         break;
       default:
