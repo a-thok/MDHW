@@ -77,6 +77,9 @@
   margin-top: 1em;
   color: var(--fontColorLight);
 }
+.answerList_item_contentMsg a {
+  text-decoration: none;
+}
 .answerList_item_contentMsg_reply {
   padding: 0 1em;
   cursor: pointer;

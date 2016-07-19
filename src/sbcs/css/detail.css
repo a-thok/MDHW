@@ -162,8 +162,6 @@
 .sbcs_footer_icon .fa {
   margin: 0;
   font-size: .4rem;
-}
-.sbcs_footer_icon-active {
   color: var(--sbcsColor);
 }
 /*弹窗*/

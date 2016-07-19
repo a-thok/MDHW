@@ -31,15 +31,4 @@ export default function detail() {
     //   location.href = `http://${MAIN_HOST}/m/user#/Sbcs/order`; // 未登录情况下，转跳可能有问题
     // }, true);
   });
-  //  判断收藏
-  function name() {
-    const yes = $('.sbcs_footer_icon .fa-star-o');
-    const footerText = $('.sbcs_footer_icon-text');
-    if (yes.length === 0) {
-      footerText.innerHTML = '已收藏';
-    } else {
-      footerText.innerHTML = '收藏';
-    }
-  }
-  window.setInterval(name, 500);
 }
