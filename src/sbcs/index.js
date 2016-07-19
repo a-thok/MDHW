@@ -41,6 +41,7 @@ import detail from './js/detail.js';
 import boutique from './js/boutique.js';
 import demand from './js/demand.js';
 import require from './js/require.js';
+import submit from './js/submit.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -58,4 +59,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   demand();
 } else if (pathname.indexOf('require') !== -1) {
   require();
+} else if (pathname.indexOf('submit') !== -1) {
+  submit();
 }

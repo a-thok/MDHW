@@ -68,9 +68,14 @@ export default function require() {
       .then(res => res.json())
       .then((res) => {
         if (res.success) {
-          console.log(+text.textContent);
-          text.textContent = +text.textContent + 1;
+          console.log(1);
         }
       });
+  });
+  // 提交商标
+  const submitBtn = $('.ftCtrl_item_btn');
+  submitBtn.addEventListener('click', () => {
+    document.cookie = `submitId=${id};path=/;domain=dreamhiway.com`;
+    location.href = `http://${SBCS_HOST}/m/home/submit`;
   });
 }
