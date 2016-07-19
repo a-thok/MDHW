@@ -10,11 +10,11 @@
   width: 100%;
 }
 .trademark_info {
-  padding: 1em 2em 0;
+  padding: 1em .2rem 0;
   background-color: #fff;
 }
 .trademark_info p {
-  padding-bottom: 1em;
+  padding-bottom: .5em;
   font-size: .18rem;
   color: var(--fontColorLight);
 }
@@ -37,8 +37,8 @@
 }
 .trademark_detail {
   margin-top: 1.5em;
-  padding: 1em 2em;
-  font-size: .22rem;
+  padding: 1em .2rem;
+  font-size: .18rem;
   background-color: #fff;
 }
 .trademark_detail li {

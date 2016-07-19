@@ -30,20 +30,7 @@ export default function fast() {
   const input = $from('.message_input');
   const phone = $('.message_input-phone');
   const sellprice = $('.message_input-sellprice');
-  input.forEach(e => {
-    e.addEventListener('input', () => {
-      // 希望价格条件
-      if (sellprice.value < 0) {
-        sellprice.value = 1;
-      }
-      if (/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|01[0])[0-9]{8}$/.test(phone.value)) {
-        btn.classList.add('is-show');
-      } else {
-        btn.classList.remove('is-show');
-      }
-    });
-  });
-  btn.addEventListener('click', () => {
+  function fetchData() {
     // 向后台传入参数，发送请求
     fetch('/m/rshop/fast/fastadd', {
       method: 'POST',
@@ -64,6 +51,22 @@ export default function fast() {
           setTimeout(() => modal.classList.remove('is-show'), 2500);
         }
       });
+  }
+  input.forEach(e => {
+    e.addEventListener('input', () => {
+      // 希望价格条件
+      if (sellprice.value < 0) {
+        sellprice.value = 1;
+      }
+      if (/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|01[0])[0-9]{8}$/.test(phone.value)) {
+        btn.classList.add('is-show');
+        btn.addEventListener('click', fetchData);
+      } else {
+        console.log(1);
+        btn.classList.remove('is-show');
+        btn.removeEventListener('click', fetchData);
+      }
+    });
   });
   // 过滤
   showFilter();

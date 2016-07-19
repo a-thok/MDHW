@@ -10,7 +10,7 @@ export default function demand() {
   const config = {
     load,
     template: sbqgTemplate,
-    api: '/m/rshop/Fast/DemandList',
+    api: '/m/rshop/Demand/DemandList',
     params: {
       pageIndex: 1,
       pageSize: 10
