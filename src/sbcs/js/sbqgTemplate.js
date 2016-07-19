@@ -3,7 +3,7 @@ export default function sbqgTemplate(data) {
     const product = cur.product.reduce((_pre, _cur) => `${_pre}<span class="base_title_tag">${_cur}</span>`, '');
     return (
       `${pre}<li class="hostlist_item">
-        <a class="hostlist_item_a" href="http://${SBCS_HOST}/m/home/detail/${cur.id}">
+        <a class="hostlist_item_a" href="http://${SBCS_HOST}/m/home/require/${cur.id}">
           <div class="hostlist_content">
             <div class="base_title_wrap">
               <h2 class="base_title_text base_title_text-small"><span class="base_title_wrap_label">[第${cur.pcode}类]</span>${cur.title}</h2>
