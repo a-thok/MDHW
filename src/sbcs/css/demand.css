@@ -15,6 +15,7 @@
   background: #eb3e40;
 }
 .issueBuy {
+  display: block;
   position: fixed;
   right: 50%;
   bottom: 10%;
@@ -29,6 +30,7 @@
   font-size: .2rem;
   background: #f86d43;
   opacity: .8;
+  text-decoration: none;
 }
 @media screen and (min-width: 750px) {
   .issueBuy {
