@@ -11,7 +11,7 @@
  * Based on stackoverflow user Stoive's code snippet:
  * http://stackoverflow.com/q/4998908
  */
-
+/*eslint-disable*/
 /*global window, atob, Blob, ArrayBuffer, Uint8Array, define, module */
 
 ;(function (window) {

@@ -1,13 +1,15 @@
 import { $ } from 'func';
-import './canvas-to-blob';
+import './libs/canvas-to-blob';
 
 export default function submit() {
-  const params = { url: '' };
+  const params = {};
   // 图片上传
   const file = document.getElementById('file');
   const img = $('.submitImg_img');
   file.addEventListener('change', (e) => {
-    const file = e.target.files[0];
+    const files = e.target.files;
+    if (!files.length) return;
+    const file = files[0];
     // 图片预览
     const fileReader = new FileReader();
     fileReader.addEventListener('load', (el) => {
@@ -26,11 +28,12 @@ export default function submit() {
     canvas.toBlob((blob) => {
       // 上传服务器
       formData.append('file', blob);
-      fetch('http://upload.dreamhiway.com/uploadimg', {
+      fetch('http://upload.dreamhiway.com/uploadimg?key=rshop&t=530x270&keyword=undefined', {
         method: 'POST',
         headers: {
           'Content-Type': 'multipart/form-data'
         },
+        mode: 'cors',
         credential: 'include',
         body: formData
       })

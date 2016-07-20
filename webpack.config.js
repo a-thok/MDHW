@@ -63,7 +63,7 @@ const config = {
       {
         test: /\.jsx?$/,
         loader: 'babel!eslint',
-        exclude: [/node_modules/, /canvas-to-blob/]
+        exclude: [/node_modules/, /libs/]
       },
       {
         test: /\.(woff|svg|eot|ttf)\??.*$/,
