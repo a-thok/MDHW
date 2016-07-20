@@ -32,8 +32,18 @@
     <!--头部 结束-->
     <div class="sbcsSubmit">
       <textarea class="textarea" type="textarea" placeholder="请填在这里输入...(不超过200字)"></textarea>
-      <input class="sbcsSubmit_input" type="file" value="电脑晒图">
-      <p class="sbcsSubmit_text"><b>注释：</b>出于性能考虑，此图片只能上传<span>.jpg/.png</span>格式且大小不超过<span>1M</span>。</p>
+      <div class="upload">
+        <div class="upload_img" id="form">
+          <input class="sbcsSubmit_input" type="file" id="file">
+          <label class="sbcsSubmit_lable" for="file">上传图片</label>
+        </div>
+        <p class="sbcsSubmit_text"><b>注释：</b>出于性能考虑，此图片只能上传<span>.jpg/.png</span>格式且大小不超过<span>1M</span>。</p>
+      </div>
+      <!--上传图片预览  开始-->
+      <div class="submitImg">
+        <img class="submitImg_img" src="" alt="">
+      </div>
+      <!--上传图片预览  结束-->
     </div>
     <button class="submitBtn" type="button">提交商标</button>
     <!--提示 开始-->
