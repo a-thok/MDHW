@@ -42,6 +42,7 @@ import boutique from './js/boutique.js';
 import demand from './js/demand.js';
 import require from './js/require.js';
 import submit from './js/submit.js';
+import fbqg from './js/fbqg.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -61,4 +62,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   require();
 } else if (pathname.indexOf('submit') !== -1) {
   submit();
+} else if (pathname.indexOf('fbqg') !== -1) {
+  fbqg();
 }

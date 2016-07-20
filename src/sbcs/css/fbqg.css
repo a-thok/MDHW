@@ -1,0 +1,121 @@
+/*发布商标求购页*/
+.buyForm {
+  background-color: #fff;
+  font-size: .22rem;
+}
+.formCont {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-top: 1em;
+}
+.formCont_label {
+  display: inline-block;
+  width: 24%;
+  text-align: right;
+}
+.formCont_input {
+  width: 2.8rem;
+  padding: .4em .6em;
+  border: 1px solid #ccc;
+}
+.sort_more {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+}
+.select_btn{
+  width: 24%;
+  text-align: center;
+}
+.select_more {
+  width: 73%;
+  padding: .4em .2em;
+  text-align: center;
+  color: #fff;
+  background-color: #f64914;
+  border: 0;
+  cursor: pointer;
+}
+.formCont_label-need {
+  color: #f00;
+}
+.formCont_text-label {
+  align-self: flex-start;
+}
+.formCont_text {
+  width: 70.66%;
+  height: 1rem;
+  padding: .4em;
+  font-size: .18rem;
+  border: 1px solid #ccc;
+}
+.sort_more .filter_title,
+.formCont .filter_title {
+  padding: 0;
+  width: 2.8rem;
+  padding: .4em .6em;
+  border: 1px solid #ccc;
+  background-color: #ddd;
+}
+@media screen and (min-width: 420px) {
+  .formCont_input,
+  .sort_more .filter_title,
+  .formCont .filter_title {
+    width: 3.8rem;
+  }
+}
+.sort_more .filter_title_text,
+.formCont .filter_title_text {
+  display: flex;
+  justify-content: space-between;
+}
+.sort_more .filter_content,
+.formCont .filter_content {
+  width: 2.8rem;
+  top: 100%;
+  left: 24%;
+}
+@media screen and (min-width: 420px) {
+  .sort_more .filter_content,
+  .formCont .filter_content {
+    width: 3.8rem;
+    left: 74%;
+}
+}
+.sort_more .filter_content_list_item,
+.formCont .filter_content_list_item {
+  padding: 1em;
+}
+.sort_more .filter_content,
+.formCont .filter_content {
+  height: calc(100vh - 4rem);
+  overflow: auto;
+  z-index: 3;
+}
+.formBottn {
+  width: 100%;
+  margin-top: 2em;
+  padding-bottom: 4em;
+  text-align: center;
+}
+.fabu_btn {
+   width: 77.33%;
+   text-align: center;
+   padding: .4em;
+   color: #fff;
+   background-color: #f64914;
+   border: 0;
+   border-radius: 4px;
+   cursor: pointer;
+ }
+ /*.sort_more.is-hidden,*/
+ .sort_more-second.is-hidden,
+ .sort_more-third.is-hidden {
+   display: none;
+ }
+ .sort_more .is-active {
+   display: block;
+ }
