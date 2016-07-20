@@ -50,19 +50,18 @@ export default function require() {
                 <span class="replyList_item_text">${textReply.value}</span>
               </li>`;
     const subCommentList = replyComment.querySelector('.replyList');
+    const userName = replyComment.querySelector('.answerList_item_contentTitle');
     subCommentList.insertAdjacentHTML('beforeEnd', html);
     // 获取评论内容给后台
-    fetch('/m/RShop/Comment/Add', {
+    fetch('/m/RShop/Comment/Message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       credentials: 'include',
       body: JSON.stringify({
-        fpid: id,
-        fid: replyComment.getAttribute('data-code'),
-        comment: textReply.value,
-        type: 0
+        to: userName.textContent,
+        message: textReply.value
       })
     })
       .then(res => res.json())
