@@ -27,7 +27,10 @@ document.querySelector('.page').style.minHeight = `${window.innerHeight}px`;
 const pathname = window.location.pathname;
 const pathArr = pathname.split('/');
 import index from './js/index.js';
+import apply from './js/apply.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
+} else if (pathname.indexOf('apply') !== -1) {
+  apply();
 }

@@ -11,7 +11,7 @@
   font-size: .22rem;
   color: var(--fontColorLight);
 }
-.apply_navList_item-active {
+.apply_navList_item.is-active {
   background-color: var(--pageColor);
   border-bottom: 4px solid var(--cqbhColor);
 }
