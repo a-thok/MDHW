@@ -1,16 +1,11 @@
-import { $ } from 'func';
 import { refrechCodeImg } from './refrechCodeImg';
+import { $ } from 'func';
+import { showFilter } from 'filter';
 
-export default function apply() {
-  // const navListItems = $from('.apply_navList_item');
-  // navListItems.forEach((e) => {
-  //   e.addEventListener('click', (el) => {
-  //     for (let i = 0; i < navListItems.length; i++) {
-  //       navListItems[i].classList.remove('is-active');
-  //     }
-  //     el.target.classList.add('is-active');
-  //   });
-  // });
+export default function copyright() {
+  // 点击切换验证码
+  const refresh = refrechCodeImg();
+  refresh();
   const modal = $('.modal');
   const modalText = modal.querySelector('.modal_content_text');
   // 电话号码规则验证
@@ -22,9 +17,6 @@ export default function apply() {
       setTimeout(() => modal.classList.remove('is-show'), 2500);
     }
   });
-  // 点击切换验证码
-  const refresh = refrechCodeImg();
-  refresh();
   // 提交
   const submitBtn = $('.submit_btn');
   const name = $('.apply_info_input-name');
@@ -33,12 +25,12 @@ export default function apply() {
   const qq = $('.apply_info_input-qq');
   const verify = $('.apply_info_input-verify');
   submitBtn.addEventListener('click', () => {
-    if ((name.value.length <= 0) || (phone.value.length <= 0)) {
-      modalText.textContent = '商业名称或电话号码不能为空！';
+    if (phone.value.length <= 0) {
+      modalText.textContent = '电话号码不能为空！';
       modal.classList.add('is-show');
       setTimeout(() => modal.classList.remove('is-show'), 2500);
     } else {
-      fetch('/m/Cqbh/Apply/Add', {
+      fetch('/m/Cqbh/Copyright/Add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -72,4 +64,6 @@ export default function apply() {
         });
     }
   });
+  // 过滤
+  showFilter();
 }
