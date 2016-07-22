@@ -34,3 +34,6 @@
   height: calc(100vh - 7.2rem);
   overflow: auto;
 }
+.apply_info_input .is-active {
+  color: var(--sbcsColor);
+}
