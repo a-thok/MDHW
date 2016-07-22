@@ -1,8 +1,12 @@
 import { refrechCodeImg } from './refrechCodeImg';
+import { select } from './select';
 import { $ } from 'func';
 import { showFilter } from 'filter';
 
 export default function copyright() {
+  // 过滤
+  showFilter();
+  select();
   // 点击切换验证码
   const refresh = refrechCodeImg();
   refresh();
@@ -19,12 +23,13 @@ export default function copyright() {
   });
   // 提交
   const submitBtn = $('.submit_btn');
+  const ul = $('.filter_content_list');
   const name = $('.apply_info_input-name');
-  const industry = $('.apply_info_input-industry');
   const Contacts = $('.apply_info_input-Contacts');
   const qq = $('.apply_info_input-qq');
   const verify = $('.apply_info_input-verify');
   submitBtn.addEventListener('click', () => {
+    const type = ul.querySelector('.is-active').getAttribute('data-code');
     if (phone.value.length <= 0) {
       modalText.textContent = '电话号码不能为空！';
       modal.classList.add('is-show');
@@ -37,8 +42,8 @@ export default function copyright() {
         },
         credentials: 'include',
         body: JSON.stringify({
+          type,
           name: name.value,
-          industry: industry.value,
           Contacts: Contacts.value,
           phone: phone.value,
           qq: qq.value,
@@ -64,6 +69,4 @@ export default function copyright() {
         });
     }
   });
-  // 过滤
-  showFilter();
 }
