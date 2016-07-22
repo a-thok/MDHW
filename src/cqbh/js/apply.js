@@ -1,4 +1,5 @@
 import { $ } from 'func';
+import { refrechCodeImg } from './refrechCodeImg';
 
 export default function apply() {
   // const navListItems = $from('.apply_navList_item');
@@ -22,17 +23,7 @@ export default function apply() {
     }
   });
   // 点击切换验证码
-  const refresh = function refrechCodeImg() {
-    const codeImg = $('.codeImg');
-    const refresh = function (img) {
-      const code = Math.random();
-      img.src = `/m/Cqbh/Apply/VerifyCode?_=${code}`;
-    };
-    codeImg.addEventListener('click', e => refresh(e.target));
-    return function () {
-      refresh(codeImg);
-    };
-  };
+  const refresh = refrechCodeImg();
   refresh();
   // 提交
   const submitBtn = $('.submit_btn');
