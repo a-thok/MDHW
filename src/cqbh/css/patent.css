@@ -1,0 +1,36 @@
+
+.apply_info_input .filter_title-line::after {
+  border: 0;
+}
+.apply_info_input {
+  position: relative;
+}
+.apply_info_input .filter_title {
+  padding: 0;
+  padding: .4em .6em;
+  color: var(--fontColorLight);
+}
+.apply_info_input .filter_title_text {
+  display: flex;
+  justify-content: space-between;
+}
+.apply_info_input .filter_content {
+  width: 3.8rem;
+  top: 1.12rem;
+  left: 22%;
+}
+@media screen and (min-width: 550px) {
+  .apply_info_input .filter_content {
+    width: 5.5rem;
+    left: 74%;
+    top: 1.12rem;
+  }
+}
+.apply_info_input .filter_content_list_item {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, .4);
+}
+.apply_info_input .filter_content {
+  height: calc(100vh - 4rem);
+  overflow: auto;
+}
