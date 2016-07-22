@@ -43,6 +43,11 @@
 .apply_server_style-ttl h3 {
   font-size: .28rem;
 }
+.apply_server_style-ttl_text {
+  margin-top: .5em;
+  font-size: .2rem;
+  color: var(--cqbhColor);
+}
 .apply_server_style-price {
   color: #f50;
   font-size: .24rem;
