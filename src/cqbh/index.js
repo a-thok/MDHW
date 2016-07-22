@@ -28,9 +28,12 @@ const pathname = window.location.pathname;
 const pathArr = pathname.split('/');
 import index from './js/index.js';
 import apply from './js/apply.js';
+import copyright from './js/copyright.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
 } else if (pathname.indexOf('apply') !== -1) {
   apply();
+} else if (pathname.indexOf('copyright') !== -1) {
+  copyright();
 }
