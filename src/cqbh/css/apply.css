@@ -6,16 +6,16 @@
 .apply_navList li {
   width: 20%;
   flex-shrink: 0;
-  padding: .2rem 0;
   text-align: center;
   font-size: .22rem;
   color: var(--fontColorLight);
 }
-.apply_navList_item.is-active {
+.apply_navList_link.is-active {
   background-color: var(--pageColor);
   border-bottom: 4px solid var(--cqbhColor);
 }
 .apply_navList_link {
+  padding: .2rem 0;
   display: block;
   text-decoration: none;
   color: var(--fontColorLight);

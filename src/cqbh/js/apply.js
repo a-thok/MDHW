@@ -1,23 +1,15 @@
-import { $, $from } from 'func';
+import { $ } from 'func';
 
 export default function apply() {
-  // const navList = $('.apply_navList');
-  // navList.addEventListener('click', (e) => {
-  //   const items = navList.querySelectorAll('.apply_navList_item');
-  //   for (let i = 0; i < items.length; i++) {
-  //     items[i].classList.remove('is-active');
-  //   }
-  //   e.target.classList.add('is-active');
+  // const navListItems = $from('.apply_navList_item');
+  // navListItems.forEach((e) => {
+  //   e.addEventListener('click', (el) => {
+  //     for (let i = 0; i < navListItems.length; i++) {
+  //       navListItems[i].classList.remove('is-active');
+  //     }
+  //     el.target.classList.add('is-active');
+  //   });
   // });
-  const navListItems = $from('.apply_navList_item');
-  navListItems.forEach((e) => {
-    e.addEventListener('click', (el) => {
-      for (let i = 0; i < navListItems.length; i++) {
-        navListItems[i].classList.remove('is-active');
-      }
-      el.target.classList.add('is-active');
-    });
-  });
   const modal = $('.modal');
   const modalText = modal.querySelector('.modal_content_text');
   // 电话号码规则验证
