@@ -9,7 +9,8 @@ const modules = [
   { to: 'zc', text: '众筹' },
   { to: 'cqbh', text: '产权保护' },
   { to: 'cygc', text: '创意工厂' },
-  { to: 'srdz', text: '私人定制' }
+  { to: 'srdz', text: '私人定制' },
+  { to: 'sbcs', text: '商标超市' }
 ];
 
 export default function Modules() {
