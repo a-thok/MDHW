@@ -115,3 +115,6 @@
   width: 83%;
   color: var(--fontColorLight);
 }
+.trademark_detail a {
+  text-decoration: none;
+}

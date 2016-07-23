@@ -48,6 +48,7 @@ import ZcOrderForm from './routes/Zc/partials/OrderForm';
 import Sbcs from './routes/Sbcs';
 import SbcsNav from './routes/Sbcs/partials/Nav';
 import SbcsSbfollow from './routes/Sbcs/partials/Sbfollow';
+import SbcsQgfollow from './routes/Sbcs/partials/Qgfollow';
 import SbcsOrder from './routes/Sbcs/partials/Order';
 import SbcsPay from './routes/Sbcs/partials/Pay';
 import SbcsBuyer from './routes/Sbcs/partials/Buyer';
@@ -105,6 +106,7 @@ ReactDOM.render((
       <Route path="/sbcs" component={Sbcs}>
         <IndexRoute component={SbcsNav} />
         <Route path="/sbcs/sbfollow" component={SbcsSbfollow} />
+        <Route path="/sbcs/qgfollow" component={SbcsQgfollow} />
         <Route path="/sbcs/order" component={SbcsOrder} />
         <Route path="/sbcs/pay" component={SbcsPay} />
         <Route path="/sbcs/buyer" component={SbcsBuyer} />
@@ -119,5 +121,5 @@ ReactDOM.render((
       </Route>
     </Route>
   </Router>
-  ), document.querySelector('.page')
+), document.querySelector('.page')
 );

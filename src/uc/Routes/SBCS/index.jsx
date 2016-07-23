@@ -14,6 +14,12 @@ export default class Sbcs extends Component {
         finished: false,
         data: []
       },
+      Qgfollow: {
+        index: 0,
+        fetching: false,
+        finished: false,
+        data: []
+      },
       Buyer: {
         index: 0,
         fetching: false,
@@ -39,6 +45,7 @@ export default class Sbcs extends Component {
     this.postOrder = this.postOrder.bind(this);
     this.payClick = this.payClick.bind(this);
     this.fetchSbfollow = this.fetchSbfollow.bind(this);
+    this.fetchQgfollow = this.fetchQgfollow.bind(this);
     this.fetchBuyer = this.fetchBuyer.bind(this);
   }
   // 请求买家订单列表
@@ -56,6 +63,14 @@ export default class Sbcs extends Component {
       list: 'Sbfollow'
     });
     fetching.bind(this)('Sbfollow');
+  }
+  // 请求求购收藏
+  fetchQgfollow() {
+    loadList.bind(this)({
+      url: '/m/Sys/Rshop/Collect/DemandCollect',
+      list: 'Qgfollow'
+    });
+    fetching.bind(this)('Qgfollow');
   }
   //  备注信息
   textChange(value) {
@@ -175,6 +190,11 @@ export default class Sbcs extends Component {
       case 'Sbfollow':
         extra = {
           fetchSbfollow: this.fetchSbfollow
+        };
+        break;
+      case 'Qgfollow':
+        extra = {
+          fetchQgfollow: this.fetchQgfollow
         };
         break;
       case 'Buyer':
