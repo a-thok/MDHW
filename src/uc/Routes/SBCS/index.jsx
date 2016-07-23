@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import getPath from '../../mixins/getPath.js';
+import loadList from '../../mixins/loadList.js';
+import fetching from '../../mixins/fetching.js';
 // import { $cookie } from 'func';
 
 export default class Sbcs extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      Sbfollow: {
+        index: 0,
+        fetching: false,
+        finished: false,
+        data: []
+      },
       Order: {
         mode: 1,
         data: {},
@@ -23,6 +31,15 @@ export default class Sbcs extends Component {
     this.fetchOrder = this.fetchOrder.bind(this);
     this.postOrder = this.postOrder.bind(this);
     this.payClick = this.payClick.bind(this);
+    this.fetchSbfollow = this.fetchSbfollow.bind(this);
+  }
+  // 请求商标收藏
+  fetchSbfollow() {
+    loadList.bind(this)({
+      url: '/m/Sys/Rshop/Collect/ProductList',
+      list: 'Sbfollow'
+    });
+    fetching.bind(this)('Sbfollow');
   }
   //  备注信息
   textChange(value) {
@@ -139,6 +156,11 @@ export default class Sbcs extends Component {
 
     let extra;
     switch (path) {
+      case 'Sbfollow':
+        extra = {
+          fetchFollow: this.fetchSbfollow
+        };
+        break;
       case 'Order':
         extra = {
           collapse: this.collapse,
