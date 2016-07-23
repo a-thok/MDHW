@@ -7,6 +7,7 @@ export default function fbqg() {
   let pcode;
   let type;
   let time;
+
   const list = $from('.filter_content_list');
   list.forEach(f => {
     f.addEventListener('click', (e) => {
@@ -51,20 +52,39 @@ export default function fbqg() {
     }
   });
 
-  const title = $('.formCont_input-title');
+  // 价格条件
   const price = $('.formCont_input-price');
-  const product = $('.formCont_input-product');
+  price.addEventListener('input', () => {
+    if (price.value < 0) {
+      price.value = 1;
+    }
+  });
+
+  const modal = $('.modal');
+  const modalText = modal.querySelector('.modal_content_text');
+  // 电话号码规则验证
   const phone = $('.formCont_input-phone');
+  phone.addEventListener('change', () => {
+    if (!(/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|01[0])[0-9]{8}$/.test(phone.value))) {
+      modalText.textContent = '请填写正确的电话号码！';
+      modal.classList.add('is-show');
+      setTimeout(() => modal.classList.remove('is-show'), 2500);
+    }
+  });
+
+  // 发布
+  const title = $('.formCont_input-title');
+  const product = $('.formCont_input-product');
   const qq = $('.formCont_input-qq');
   const remark = $('.formCont_text');
   const btn = $('.fabu_btn');
-  const modal = $('.modal');
-  const modalText = modal.querySelector('.modal_content_text');
 
   btn.addEventListener('click', () => {
-    const enter = $('.formCont_input');
-    if (enter.value === '' || $('.formCont_text').value === '') {
+    const yes = title.value === '' || remark.value === '' || phone.value === '' || qq.value === '';
+    if (yes) {
       modalText.textContent = '请填写完整再发布！';
+      modal.classList.add('is-show');
+      setTimeout(() => modal.classList.remove('is-show'), 2500);
     } else {
       fetch('/m/RShop/Demand/Add', {
         method: 'POST',
@@ -87,12 +107,20 @@ export default function fbqg() {
         .then(res => res.json())
         .then(res => {
           if (res.success) {
-            modalText.textContent = '商标求购发成功！';
-            $('.formCont_input').val('');
+            modalText.textContent = '商标求购发布成功！';
+            modal.classList.add('is-show');
+            setTimeout(() => modal.classList.remove('is-show'), 2500);
+            // $('.formCont_input').val('');
+          } else {
+            if (res.msg) {
+              modalText.textContent = res.msg;
+            } else {
+              modalText.textContent = '未知错误，请稍候重试';
+            }
+            modal.classList.add('is-show');
+            setTimeout(() => modal.classList.remove('is-show'), 2500);
           }
         });
     }
-    modal.classList.add('is-show');
-    setTimeout(() => modal.classList.remove('is-show'), 2500);
   });
 }
