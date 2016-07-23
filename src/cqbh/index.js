@@ -29,6 +29,7 @@ const pathArr = pathname.split('/');
 import index from './js/index.js';
 import apply from './js/apply.js';
 import copyright from './js/copyright.js';
+import patent from './js/patent.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -36,4 +37,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   apply();
 } else if (pathname.indexOf('copyright') !== -1) {
   copyright();
+} else if (pathname.indexOf('patent') !== -1) {
+  patent();
 }

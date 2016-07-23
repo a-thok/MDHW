@@ -31,7 +31,7 @@
   background-color: rgba(0, 0, 0, .4);
 }
 .apply_info_input .filter_content {
-  height: calc(100vh - 7.2rem);
+  height: calc(100vh - 6.2rem);
   overflow: auto;
 }
 .apply_info_input .is-active {
