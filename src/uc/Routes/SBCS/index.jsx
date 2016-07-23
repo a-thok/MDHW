@@ -14,6 +14,13 @@ export default class Sbcs extends Component {
         finished: false,
         data: []
       },
+      Buyer: {
+        index: 0,
+        fetching: false,
+        finished: false,
+        type: 0,
+        data: []
+      },
       Order: {
         mode: 1,
         data: {},
@@ -32,6 +39,15 @@ export default class Sbcs extends Component {
     this.postOrder = this.postOrder.bind(this);
     this.payClick = this.payClick.bind(this);
     this.fetchSbfollow = this.fetchSbfollow.bind(this);
+    this.fetchBuyer = this.fetchBuyer.bind(this);
+  }
+  // 请求买家订单列表
+  fetchBuyer() {
+    loadList.bind(this)({
+      url: '/m/Sys/Rshop/Order/BuyerList',
+      list: 'Buyer'
+    });
+    fetching.bind(this)('Buyer');
   }
   // 请求商标收藏
   fetchSbfollow() {
@@ -158,7 +174,12 @@ export default class Sbcs extends Component {
     switch (path) {
       case 'Sbfollow':
         extra = {
-          fetchFollow: this.fetchSbfollow
+          fetchSbfollow: this.fetchSbfollow
+        };
+        break;
+      case 'Buyer':
+        extra = {
+          fetchBuyer: this.fetchBuyer
         };
         break;
       case 'Order':

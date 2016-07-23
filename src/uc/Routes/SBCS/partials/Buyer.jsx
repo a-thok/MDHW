@@ -3,9 +3,9 @@ import ListItem from '../../../components/ListItem';
 import Loading from '../../../components/Loading';
 import scroll from '../../../mixins/scroll';
 
-export default class Sbfollow extends Component {
+export default class Buyer extends Component {
   componentDidMount() {
-    this.props.fetchSbfollow();
+    this.props.fetchBuyer();
     window.addEventListener('scroll', this.handleScroll.bind(this));
   }
 
@@ -14,7 +14,7 @@ export default class Sbfollow extends Component {
   }
 
   handleScroll() {
-    scroll(this.props.fetchSbfollow);
+    scroll(this.props.fetchBuyer);
   }
 
   render() {
@@ -24,9 +24,10 @@ export default class Sbfollow extends Component {
         {...item}
         title={<a className="list_operate" href={item.url}>{item.name}</a>}
         img={item.img}
-        multiple={{ '大类名称': item.pcodeName }}
-        emp={['单价', item.price]}
+        multiple={{ '交易方式': item.tradetypeName }}
+        emp={['单价', item.totalFee]}
         small={item.date}
+        other={item.stateName}
         index={index}
       />
     ));

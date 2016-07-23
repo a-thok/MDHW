@@ -50,6 +50,7 @@ import SbcsNav from './routes/Sbcs/partials/Nav';
 import SbcsSbfollow from './routes/Sbcs/partials/Sbfollow';
 import SbcsOrder from './routes/Sbcs/partials/Order';
 import SbcsPay from './routes/Sbcs/partials/Pay';
+import SbcsBuyer from './routes/Sbcs/partials/Buyer';
 
 import App from './App';
 
@@ -106,6 +107,7 @@ ReactDOM.render((
         <Route path="/sbcs/sbfollow" component={SbcsSbfollow} />
         <Route path="/sbcs/order" component={SbcsOrder} />
         <Route path="/sbcs/pay" component={SbcsPay} />
+        <Route path="/sbcs/buyer" component={SbcsBuyer} />
       </Route>
       <Route path="/settings" component={Settings}>
         <IndexRoute component={SettingsNav} />
