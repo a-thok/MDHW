@@ -1,0 +1,239 @@
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+.softwareList_item_img img,
+.checkinList_item_img img,
+.chooseList_item img,
+.banner img {
+  width: 100%;
+  display: block;
+}
+.srch_btn_register {
+  width: 100%;
+  padding: .5em 0;
+  border: 0;
+  border-radius: 5px;
+  background: var(--cqbhqdColor);
+  color: #fff;
+  font-size: .22rem;
+  cursor: pointer;
+}
+/*版权选择*/
+.chooseList {
+  margin: .2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.chooseList_item {
+  display: block;
+  text-decoration: none;
+  width: 48%;
+}
+/*版权登记*/
+.software,
+.copyright,
+.checkin {
+  margin-top: .2rem;
+  padding: .2rem;
+  background-color: #fff;
+}
+.checkin_show {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: .2rem;
+  text-align: center;
+  font-size: .2rem;
+}
+.checkin_show_title {
+  font-size: .24rem;
+}
+.checkin_show_title span {
+  color: var(--cqbhqdColor);
+}
+.checkinList {
+  margin-top: .2rem;
+}
+.checkinList_item {
+  display: flex;
+  /*align-items: center;*/
+  margin: .2rem 0;
+}
+.checkinList_item_img {
+  width: 1.5rem;
+  margin-right: .2rem;
+  overflow: hidden;
+}
+.checkinList_item_content {
+  flex: 1;
+  font-size: .18rem;
+}
+/*作品著作权*/
+.software,
+.copyright {
+  padding-top: 0;
+}
+.software .hottitle,
+.copyright .hottitle {
+  color: var(--cqbhqdColor);
+  border-bottom: 2px solid var(--borderColorLight);
+}
+.software .titleA,
+.copyright .titleA {
+  margin: 0;
+  border-color: var(--cqbhqdColor);
+  border-width: 6px;
+}
+.copyrightList {
+  margin: .3rem;
+  /*margin-bottom: 0;*/
+  font-size: .2rem;
+  border-left: 2px dashed var(--borderColorLight);
+}
+.copyrightList li:nth-child(n+2) {
+  border-top: 2px dashed var(--borderColorLight);
+}
+.copyrightList li:first-child {
+  padding-top: 0;
+}
+.copyrightList li:last-child {
+  padding-bottom: 0;
+}
+.copyrightList_item {
+  display: flex;
+  align-items: center;
+  padding: .2rem 0;
+}
+.copyrightList_item_num {
+  margin-right: 1em;
+  margin-left: -1em;
+  padding: .3em .6em;
+  border-radius: 50%;
+  color: #fff;
+  background: #ffba00;
+}
+.copyrightList_item_color {
+  color: var(--fontColorLight);
+}
+/*软件著作权*/
+.softwareList {
+  padding: 0 .1rem;
+  overflow: hidden;
+  font-size: .18rem;
+}
+.softwareList_item {
+  float: left;
+  display: flex;
+  align-items: center;
+  padding: .5em 1em;
+  margin-top: 1em;
+}
+.softwareList_item_img {
+  width: .4rem;
+  overflow: hidden;
+  margin-right: .5em;
+}
+/** 弹窗 **/
+.is-static body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .7);
+}
+.dialog {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  width: 95%;
+  max-width: 712.5px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+.dialog.is-show {
+  display: block;
+}
+.dialog_ttl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  border-bottom: 1px solid var(--borderColorLight);
+  font-weight: normal;
+  font-size: .26rem;
+  line-height: 2.5;
+}
+.dialog_ttl .fa-close {
+  cursor: pointer;
+}
+.dialog_cnt {
+  padding: 1.5em 2em;
+  border-radius: 3px;
+  font-size: .18rem;
+}
+.dialog_text {
+  color: var(--fontColorLight);
+}
+.dialog_form {
+  text-align: center;
+}
+.dialog_form section {
+  display: flex;
+  margin: 1em 0;
+}
+.dialog_form section > label {
+  display: inline-block;
+  width: 6em;
+  line-height: 2.5;
+  text-align: right;
+}
+.dialog_form .required {
+  width: 2em;
+  font-weight: bold;
+  color: var(--cqbhqdColor);
+}
+.dialog_form input {
+  padding: 0 .5em;
+  flex: 1;
+  border-radius: 3px;
+  border: 1px solid var(--borderColorLight);
+  line-height: 2.5;
+}
+
+.types {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.types label {
+  flex-basis: 23%;
+  width: 23%;
+  display: block;
+  border: 1px solid var(--borderColorLight);
+  border-radius: 3px;
+  text-align: center;
+  line-height: 38px;
+  cursor: pointer;
+}
+.types input {
+  display: none;
+}
+input:checked + label {
+  color: #fff;
+  background: var(--cqbhColor);
+}
+.submit {
+  width: 40%;
+  border: 0;
+  border-radius: 3px;
+  background: var(--cqbhColor);
+  color: #fff;
+  line-height: 2.5;
+  cursor: pointer;
+}
+

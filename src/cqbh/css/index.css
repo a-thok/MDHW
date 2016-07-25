@@ -122,7 +122,8 @@
 .hotwrap {
   border-top: 2px solid #00a2e8;
 }
-.titleA {
+.gifts .titleA,
+.hotwrap .titleA {
   border: 0;
   padding: 0;
 }

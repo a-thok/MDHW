@@ -11,6 +11,20 @@ import './img/pic1_1.png';
 import './img/pic2_2.png';
 import './img/pic5_5.png';
 import './img/pic6_6.png';
+import './img/sbsq_1.png';
+import './img/1.png';
+import './img/11.png';
+import './img/12.png';
+import './img/01.png';
+import './img/02.png';
+import './img/03.png';
+import './img/04.png';
+import './img/05.png';
+import './img/001.png';
+import './img/002.png';
+import './img/003.png';
+import './img/004.png';
+import './img/005.png';
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
@@ -30,6 +44,7 @@ import index from './js/index.js';
 import apply from './js/apply.js';
 import copyright from './js/copyright.js';
 import patent from './js/patent.js';
+import register from './js/register.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -39,4 +54,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   copyright();
 } else if (pathname.indexOf('patent') !== -1) {
   patent();
+} else if (pathname.indexOf('register') !== -1) {
+  register();
 }
