@@ -110,7 +110,6 @@ export default function fbqg() {
             modalText.textContent = '商标求购发布成功！';
             modal.classList.add('is-show');
             setTimeout(() => modal.classList.remove('is-show'), 2500);
-            // $('.formCont_input').val('');
           } else {
             if (res.msg) {
               modalText.textContent = res.msg;
