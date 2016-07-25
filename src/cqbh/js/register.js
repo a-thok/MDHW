@@ -4,14 +4,15 @@ export default function register() {
   const btn = $('.srch_btn_register');
   const close = $('.fa-close');
   const dialogCl = $('.dialog').classList;
-  const docCl = document.documentElement.classList;
+  const docCl = $('.dialogReg').classList;
   btn.addEventListener('click', () => {
-    docCl.add('is-static');
+    console.log(docCl);
+    docCl.add('is-show');
     dialogCl.add('is-show');
   });
 
   close.addEventListener('click', () => {
-    docCl.remove('is-static');
+    docCl.remove('is-show');
     dialogCl.remove('is-show');
   });
 
@@ -54,7 +55,7 @@ export default function register() {
       .then(res => res.json())
       .then((res) => {
         if (res.success) {
-          docCl.remove('is-static');
+          docCl.remove('is-show');
           dialogCl.remove('is-show');
           form.reset();
           modalText.textContent = '恭喜您，您已提交成功,请耐心等待查询结果！';

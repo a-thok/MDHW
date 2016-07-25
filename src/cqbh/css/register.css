@@ -134,7 +134,8 @@
   margin-right: .5em;
 }
 /** 弹窗 **/
-.is-static body::before {
+.dialogReg {
+  display: none;
   content: "";
   position: absolute;
   top: 0;
@@ -155,6 +156,7 @@
   background: #fff;
   transform: translate(-50%, -50%);
 }
+.dialogReg.is-show,
 .dialog.is-show {
   display: block;
 }
