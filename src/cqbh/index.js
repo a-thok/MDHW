@@ -32,6 +32,12 @@ import './img/Korea.jpg';
 import './img/Taiwan.jpg';
 import './img/Germany.jpg';
 import './img/Aomen.jpg';
+import './img/banner01.png';
+import './img/pic_01.png';
+import './img/pic_02.png';
+import './img/pic_03.png';
+import './img/pic_05.png';
+
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
@@ -54,6 +60,7 @@ import patent from './js/patent.js';
 import register from './js/register.js';
 import international from './js/international.js';
 import inter from './js/inter.js';
+import domestic from './js/domestic.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -69,4 +76,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   international();
 } else if (pathname.indexOf('inter') !== -1) {
   inter();
+} else if (pathname.indexOf('domestic') !== -1) {
+  domestic();
 }
