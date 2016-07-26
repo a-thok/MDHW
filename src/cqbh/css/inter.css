@@ -1,0 +1,78 @@
+.gjsb {
+  background-color: #011c95;
+}
+.gjPostList_item {
+  width: 100%;
+  padding: 1em 0;
+  margin-top: .2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-size: .2rem;
+}
+.gjPostList_item_link {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding: .5em;
+  border: 2px solid #fff;
+  text-decoration: none;
+}
+.gjPostList_item_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2rem;
+  background: #fff;
+}
+.gjPostList_item_contentTit {
+  width: 2.5em;
+  font-size: .3rem;
+  display: flex;
+  justify-content: space-between;
+}
+.gjPostList_item_content_title {
+  width: 2em;
+}
+.gjPostList_item_content_line {
+  margin-top: -.3rem;
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: .8rem;
+  border-right: 2px solid var(--borderColorLight);
+}
+.gjPostList_item_content_text p {
+  line-height: 1.5;
+}
+.gjPostList_item_content_margin {
+  margin-left: 1em;
+}
+.gjPostList_item_content_color {
+  color: #ffba00;
+}
+.gjPostList_item_content_btn {
+  padding: .5em 1em;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #011c95;
+}
+.HongKong {
+  background-image: url("../img/xianggang.jpg");
+}
+.France {
+  background-image: url("../img/France.jpg");
+}
+.Korea {
+  background-image: url("../img/Korea.jpg");
+}
+.Taiwan {
+  background-image: url("../img/Taiwan.jpg");
+}
+.Germany {
+  background-image: url("../img/Germany.jpg");
+}
+.Aomen {
+  background-image: url("../img/Aomen.jpg");
+}

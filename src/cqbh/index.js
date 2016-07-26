@@ -25,6 +25,13 @@ import './img/002.png';
 import './img/003.png';
 import './img/004.png';
 import './img/005.png';
+import './img/banner.png';
+import './img/xianggang.jpg';
+import './img/France.jpg';
+import './img/Korea.jpg';
+import './img/Taiwan.jpg';
+import './img/Germany.jpg';
+import './img/Aomen.jpg';
 
 // 解决click事件的移动端延迟
 import fastclick from 'fastclick';
