@@ -53,6 +53,7 @@ import copyright from './js/copyright.js';
 import patent from './js/patent.js';
 import register from './js/register.js';
 import international from './js/international.js';
+import inter from './js/inter.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -66,4 +67,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   register();
 } else if (pathname.indexOf('international') !== -1) {
   international();
+} else if (pathname.indexOf('inter') !== -1) {
+  inter();
 }
