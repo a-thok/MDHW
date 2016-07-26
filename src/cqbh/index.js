@@ -25,7 +25,7 @@ import './img/002.png';
 import './img/003.png';
 import './img/004.png';
 import './img/005.png';
-import './img/banner.png';
+import './img/cqbhbanner.png';
 import './img/xianggang.jpg';
 import './img/France.jpg';
 import './img/Korea.jpg';
