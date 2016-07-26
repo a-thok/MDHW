@@ -45,6 +45,7 @@ import apply from './js/apply.js';
 import copyright from './js/copyright.js';
 import patent from './js/patent.js';
 import register from './js/register.js';
+import international from './js/international.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -56,4 +57,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   patent();
 } else if (pathname.indexOf('register') !== -1) {
   register();
+} else if (pathname.indexOf('international') !== -1) {
+  international();
 }
