@@ -54,26 +54,26 @@ document.querySelector('.page').style.minHeight = `${window.innerHeight}px`;
 const pathname = window.location.pathname;
 const pathArr = pathname.split('/');
 import index from './js/index.js';
-import apply from './js/apply.js';
+import domesticap from './js/domesticap.js';
+import copyrightap from './js/copyrightap.js';
+import patentap from './js/patentap.js';
 import copyright from './js/copyright.js';
-import patent from './js/patent.js';
-import register from './js/register.js';
-import international from './js/international.js';
+import interap from './js/interap.js';
 import inter from './js/inter.js';
 import domestic from './js/domestic.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
-} else if (pathname.indexOf('apply') !== -1) {
-  apply();
+} else if (pathname.indexOf('domesticap') !== -1) {
+  domesticap();
+} else if (pathname.indexOf('copyrightap') !== -1) {
+  copyrightap();
+} else if (pathname.indexOf('patentap') !== -1) {
+  patentap();
 } else if (pathname.indexOf('copyright') !== -1) {
   copyright();
-} else if (pathname.indexOf('patent') !== -1) {
-  patent();
-} else if (pathname.indexOf('register') !== -1) {
-  register();
-} else if (pathname.indexOf('international') !== -1) {
-  international();
+} else if (pathname.indexOf('interap') !== -1) {
+  interap();
 } else if (pathname.indexOf('inter') !== -1) {
   inter();
 } else if (pathname.indexOf('domestic') !== -1) {

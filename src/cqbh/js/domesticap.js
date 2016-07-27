@@ -1,7 +1,7 @@
 import { $ } from 'func';
 import { refrechCodeImg } from './refrechCodeImg';
 
-export default function apply() {
+export default function domesticap() {
   // const navListItems = $from('.apply_navList_item');
   // navListItems.forEach((e) => {
   //   e.addEventListener('click', (el) => {

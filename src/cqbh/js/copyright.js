@@ -1,72 +1,71 @@
-import { refrechCodeImg } from './refrechCodeImg';
-import { select } from './select';
 import { $ } from 'func';
-import { showFilter } from 'filter';
 
 export default function copyright() {
-  // 过滤
-  showFilter();
-  select();
-  // 点击切换验证码
-  const refresh = refrechCodeImg();
-  refresh();
-  const modal = $('.modal');
-  const modalText = modal.querySelector('.modal_content_text');
-  // 电话号码规则验证
-  const phone = $('.apply_info_input-number');
-  phone.addEventListener('change', () => {
-    if (!(/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|01[0])[0-9]{8}$/.test(phone.value))) {
+  const btn = $('.srch_btn_register');
+  const close = $('.fa-close');
+  const dialogCl = $('.dialog').classList;
+  const docCl = $('.dialogReg').classList;
+  btn.addEventListener('click', () => {
+    console.log(docCl);
+    docCl.add('is-show');
+    dialogCl.add('is-show');
+  });
+
+  close.addEventListener('click', () => {
+    docCl.remove('is-show');
+    dialogCl.remove('is-show');
+  });
+
+  const submit = $('.submit');
+  const form = $('.dialog_form');
+
+  submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    const Contacts = form.Contacts.value.trim();
+    const phone = form.phone.value.trim();
+    const name = form.name.value.trim();
+    const modal = $('.modal');
+    const modalText = modal.querySelector('.modal_content_text');
+    if (!Contacts || !phone || !name) {
+      modalText.textContent = '输入信息不能为空，请重新输入';
+      modal.classList.add('is-show');
+      setTimeout(() => modal.classList.remove('is-show'), 2500);
+      return;
+    }
+    // 电话号码规则验证
+    if (!(/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|01[0])[0-9]{8}$/.test(phone))) {
       modalText.textContent = '请填写正确的电话号码！';
       modal.classList.add('is-show');
       setTimeout(() => modal.classList.remove('is-show'), 2500);
+      return;
     }
-  });
-  // 提交
-  const submitBtn = $('.submit_btn');
-  const ul = $('.filter_content_list');
-  const name = $('.apply_info_input-name');
-  const Contacts = $('.apply_info_input-Contacts');
-  const qq = $('.apply_info_input-qq');
-  const verify = $('.apply_info_input-verify');
-  submitBtn.addEventListener('click', () => {
-    const type = ul.querySelector('.is-active').getAttribute('data-code');
-    if (phone.value.length <= 0) {
-      modalText.textContent = '电话号码不能为空！';
-      modal.classList.add('is-show');
-      setTimeout(() => modal.classList.remove('is-show'), 2500);
-    } else {
-      fetch('/m/Cqbh/Copyright/Add', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include',
-        body: JSON.stringify({
-          type,
-          name: name.value,
-          Contacts: Contacts.value,
-          phone: phone.value,
-          qq: qq.value,
-          verify: verify.value
-        })
+
+    fetch('/m/Cqbh/Copyright/Register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        Contacts,
+        phone,
+        name
       })
-        .then(res => res.json())
-        .then(res => {
-          if (res.success) {
-            modalText.textContent = '恭喜您，您已提交成功！';
-            modal.classList.add('is-show');
-            setTimeout(() => modal.classList.remove('is-show'), 2500);
-          } else {
-            if (res.msg) {
-              modalText.textContent = res.msg;
-            } else {
-              modalText.textContent = '未知错误，请稍候重试';
-            }
-            refresh();
-            modal.classList.add('is-show');
-            setTimeout(() => modal.classList.remove('is-show'), 2500);
-          }
-        });
-    }
+    })
+      .then(res => res.json())
+      .then((res) => {
+        if (res.success) {
+          docCl.remove('is-show');
+          dialogCl.remove('is-show');
+          form.reset();
+          modalText.textContent = '恭喜您，您已提交成功,请耐心等待查询结果！';
+          modal.classList.add('is-show');
+          setTimeout(() => modal.classList.remove('is-show'), 2500);
+        } else {
+          modalText.textContent = '服务器出错，提交失败，请稍候重试!';
+          modal.classList.add('is-show');
+          setTimeout(() => modal.classList.remove('is-show'), 2500);
+        }
+      });
   });
 }
