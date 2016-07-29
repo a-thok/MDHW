@@ -62,6 +62,7 @@ import interap from './js/interap.js';
 import inter from './js/inter.js';
 import domestic from './js/domestic.js';
 import customscp from './js/customscp.js';
+import customsap from './js/customsap.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -81,4 +82,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   domestic();
 } else if (pathname.indexOf('customscp') !== -1) {
   customscp();
+} else if (pathname.indexOf('customsap') !== -1) {
+  customsap();
 }
