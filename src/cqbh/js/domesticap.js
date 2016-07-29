@@ -38,7 +38,7 @@ export default function domesticap() {
       modal.classList.add('is-show');
       setTimeout(() => modal.classList.remove('is-show'), 2500);
     } else {
-      fetch('/m/Cqbh/Apply/Add', {
+      fetch('/m/Cqbh/Trademark/Add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

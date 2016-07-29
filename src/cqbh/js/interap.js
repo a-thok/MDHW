@@ -37,7 +37,7 @@ export default function interap() {
       modal.classList.add('is-show');
       setTimeout(() => modal.classList.remove('is-show'), 2500);
     } else {
-      fetch('/m/Cqbh/Apply/InterAdd', {
+      fetch('/m/Cqbh/Trademark/InterAdd', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
