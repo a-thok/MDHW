@@ -28,7 +28,7 @@
 .apply_server_style {
   display: flex;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: .4rem;
 }
 .apply_server_style-pic {
   width: 16.76%;
