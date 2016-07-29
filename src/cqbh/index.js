@@ -61,6 +61,7 @@ import copyright from './js/copyright.js';
 import interap from './js/interap.js';
 import inter from './js/inter.js';
 import domestic from './js/domestic.js';
+import customscp from './js/customscp.js';
 
 if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length === 4 && pathArr[3] === '')) {
   index();
@@ -78,4 +79,6 @@ if (pathname.indexOf('index') !== -1 || pathArr.length < 4 || (pathArr.length ==
   inter();
 } else if (pathname.indexOf('domestic') !== -1) {
   domestic();
+} else if (pathname.indexOf('customscp') !== -1) {
+  customscp();
 }
